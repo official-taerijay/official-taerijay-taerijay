@@ -3,20 +3,21 @@
 import { useState, useEffect } from "react";
 
 export default function MembersPage() {
-  // 1. 상태 정의 (상품/회원 데이터 및 로딩 상태)
-  const [products, setProducts] = useState<any[]>([]);
+  // 1. 상태 정의 (Vercel 타입 에러 방지를 위해 unknown 형식으로 변경)
+  const [products, setProducts] = useState<unknown[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  // 2. CSV 또는 API로부터 디즈니+ 상품 마스터 데이터 로드
+  // 2. 데이터 로드 로직
   useEffect(() => {
     async function fetchDashboardData() {
       try {
         setIsLoading(true);
-        // 추후 구성할 백엔드 API 또는 로컬 CSV 파싱 경로
         const response = await fetch("/api/products");
         if (response.ok) {
           const data = await response.json();
-          setProducts(data);
+          if (Array.isArray(data)) {
+            setProducts(data);
+          }
         }
       } catch (error) {
         console.error("데이터를 불러오는 중 에러가 발생했습니다:", error);
