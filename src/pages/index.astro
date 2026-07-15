@@ -1,35 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Dynamic Astro variables
-const lastUpdateDate = "2026.07.10";
+// Astro 서버사이드 정적 변수
+const lastUpdateDate = "2026.07.20";
 const totalItemCount = 613; 
 const monthlyUpdatedCount = 5;
 ---
 
 <Layout title="TAERIJAY (태리재이)+">
-	<!-- 모바일 최적화 및 디즈니+ 고정형 컨테이너 벨트 (max-w-[480px]) -->
+	<!-- 모바일 최적화 규칙 기반 max-w-[480px] 컨테이너 벨트 격리 락인 -->
 	<main class="w-full max-w-[480px] min-h-screen bg-[#0A192F] border-x border-[#5B0E1B] flex flex-col relative pb-24 shadow-2xl">
 		
-		<!-- HEADER SECTION -->
+		<!-- OTT TOP BRAND HEADER -->
 		<header class="w-full px-5 py-4 border-b border-[#5B0E1B] bg-[#0A192F]/90 backdrop-blur sticky top-0 z-40 flex items-center justify-between">
 			<div class="flex flex-col">
 				<span class="font-['League_Spartan'] text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-[#00E5FF] leading-none uppercase">taerijay+</span>
 				<span class="text-[8px] tracking-[0.2em] text-[#00E5FF] uppercase font-['League_Spartan'] mt-1">global k-travel platform</span>
 			</div>
 			
-			<!-- Global Language Selector Toggle -->
+			<!-- 실시간 다국어 인프라 변환 토글 스위치 -->
 			<div class="flex items-center bg-[#071120] border border-[#5B0E1B] rounded-full p-0.5" id="langToggleWrapper">
 				<button data-lang="en" class="lang-btn px-2.5 py-1 rounded-full text-[9px] font-bold uppercase transition-all duration-300 bg-[#5B0E1B] text-white">en</button>
 				<button data-lang="ko" class="lang-btn px-2.5 py-1 rounded-full text-[9px] font-bold uppercase transition-all duration-300 text-slate-400">ko</button>
 			</div>
 		</header>
 
-		<!-- HERO BANNER -->
+		<!-- DISNEY+ STYLE HERO SLIDER BANNER -->
 		<section class="w-full relative overflow-hidden px-5 py-6 border-b border-[#5B0E1B] bg-gradient-to-b from-[#0e2544] to-[#0A192F]">
 			<div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80');"></div>
 			<div class="relative z-10">
-				<!-- Live Badge -->
 				<div class="inline-flex items-center gap-1.5 bg-[#5B0E1B]/80 border border-[#5B0E1B] px-2.5 py-0.5 rounded-full mb-3">
 					<span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
 					<span class="text-[8px] font-['League_Spartan'] tracking-widest text-slate-200 uppercase font-bold">active status</span>
@@ -42,7 +41,7 @@ const monthlyUpdatedCount = 5;
 					<span class="lang-el" data-en="Access restricted curated database representing prime destination flow blueprints.">엄선된 핵심 한국 관광 루트 가이드북 및 무제한 액션 플랜 제공함.</span>
 				</p>
 
-				<!-- Real-time dynamic credentials bar -->
+				<!-- 동적 자산 현황판 -->
 				<div class="grid grid-cols-3 gap-2 bg-[#071120]/90 border border-[#5B0E1B] rounded p-2 text-center">
 					<div>
 						<div class="text-base font-black text-[#00E5FF] font-['League_Spartan']">{totalItemCount}</div>
@@ -66,7 +65,7 @@ const monthlyUpdatedCount = 5;
 			</div>
 		</section>
 
-		<!-- AUTH & STATUS PANEL (Google OAuth Simulation) -->
+		<!-- AUTH BATCH PANEL (Google OAuth & Session Simulator) -->
 		<section class="w-full px-5 py-4 border-b border-[#5B0E1B] bg-[#071120]/50">
 			<div class="flex items-center justify-between bg-[#0A192F] border border-[#5B0E1B] rounded-lg p-3" id="authBox">
 				<div class="flex items-center gap-3">
@@ -81,13 +80,14 @@ const monthlyUpdatedCount = 5;
 						</span>
 					</div>
 				</div>
+				<!-- 회원가입/로그인/로그아웃 스위칭 버튼 통합 -->
 				<button id="logoutBtn" class="px-3 py-1.5 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-slate-200 text-xs font-bold uppercase transition-all">
-					<span class="lang-el" data-en="Revoke">해제</span>
+					<span class="lang-el" data-en="Google Login">구글 로그인</span>
 				</button>
 			</div>
 		</section>
 
-		<!-- OTT GRID PLATFORM (8 CHANNELS) -->
+		<!-- DISNEY+ OTT 8 CHANNELS FORM FACTOR PLATFORM -->
 		<section class="w-full px-5 py-6 flex flex-col gap-5">
 			<div class="flex justify-between items-center mb-1">
 				<h2 class="text-xs uppercase tracking-wider font-bold text-slate-300 font-['League_Spartan'] flex items-center gap-2">
@@ -97,10 +97,10 @@ const monthlyUpdatedCount = 5;
 				<span class="text-[9px] text-slate-500 font-mono tracking-tighter">max-w: 480px / locked</span>
 			</div>
 
-			<!-- channel list start -->
+			<!-- 마스터 그리드 카드 스택 -->
 			<div class="flex flex-col gap-6">
 
-				<!-- MAIN CARD -->
+				<!-- BRAND 0: MAIN TAERIJAY -->
 				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
 						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#5B0E1B]">taerijay+ main</span>
@@ -109,7 +109,7 @@ const monthlyUpdatedCount = 5;
 					<div class="h-44 bg-slate-900 relative overflow-hidden flex items-center justify-center">
 						<div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=500&q=80');"></div>
 						<div class="relative z-10 text-center px-4">
-							<span class="font-['Playfair_Display'] text-3xl font-black italic tracking-tight text-slate-300/60 block mb-1">TAERIJAY</span>
+							<span class="font-['Playfair_Display'] text-3xl font-black italic tracking-tight text-slate-300/20 block mb-1">TAERIJAY</span>
 							<p class="text-xs text-[#5B0E1B] font-black uppercase tracking-widest font-['League_Spartan']">heritage premium frame</p>
 						</div>
 					</div>
@@ -135,7 +135,7 @@ const monthlyUpdatedCount = 5;
 					</div>
 				</div>
 
-				<!-- CHANNEL 1: protocol -->
+				<!-- BRAND 1: protocol -->
 				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
 						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#F16B24]">taerijay+ protocol</span>
@@ -170,7 +170,7 @@ const monthlyUpdatedCount = 5;
 					</div>
 				</div>
 
-				<!-- CHANNEL 2: mini -->
+				<!-- BRAND 2: mini -->
 				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
 						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#FBF9F4]">taerijay+ mini</span>
@@ -205,7 +205,7 @@ const monthlyUpdatedCount = 5;
 					</div>
 				</div>
 
-				<!-- CHANNEL 3: daiso -->
+				<!-- BRAND 3: daiso -->
 				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
 						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#E1261C]">taerijay+ daiso</span>
@@ -240,7 +240,7 @@ const monthlyUpdatedCount = 5;
 					</div>
 				</div>
 
-				<!-- CHANNEL 4: oliveyoung -->
+				<!-- BRAND 4: oliveyoung -->
 				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
 						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#6F8B2E]">taerijay+ oliveyoung</span>
@@ -275,7 +275,7 @@ const monthlyUpdatedCount = 5;
 					</div>
 				</div>
 
-				<!-- CHANNEL 5: emart -->
+				<!-- BRAND 5: emart -->
 				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
 						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#FFDD00]">taerijay+ emart</span>
@@ -310,7 +310,7 @@ const monthlyUpdatedCount = 5;
 					</div>
 				</div>
 
-				<!-- CHANNEL 6: convenience -->
+				<!-- BRAND 6: convenience -->
 				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
 						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#A14D7C]">taerijay+ convenience</span>
@@ -345,7 +345,7 @@ const monthlyUpdatedCount = 5;
 					</div>
 				</div>
 
-				<!-- CHANNEL 7: entertainment (OTT BRIDGE SYSTEM WITH LOCKOUT) -->
+				<!-- BRAND 7: entertainment (OTT HIGH-END BRIDGE SYSTEM WITH LOCKOUT) -->
 				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
 						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#00E5FF]">taerijay+ entertainment</span>
@@ -369,7 +369,7 @@ const monthlyUpdatedCount = 5;
 							<span class="lang-el" data-en="Explore 드라마, 영화, 예능, and official channels. Top 12 free. Click to access.">드라마, 영화, 예능, 대표님 유튜브를 포함한 순환 아웃링크 연계 플랫폼임.</span>
 						</p>
 
-						<!-- Streaming Selector (Drama / Movie / Show / YouTube) -->
+						<!-- Streaming Category Selector Grid -->
 						<div class="grid grid-cols-4 gap-1.5 pt-2">
 							<button data-cat="drama" class="cat-btn py-1.5 rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/70 border border-[#5B0E1B] text-[10px] font-bold uppercase text-white transition-all text-center">Drama</button>
 							<button data-cat="movie" class="cat-btn py-1.5 rounded bg-[#071120] hover:bg-[#5B0E1B]/40 border border-[#5B0E1B]/30 text-[10px] font-bold uppercase text-slate-400 transition-all text-center">Movie</button>
@@ -427,7 +427,7 @@ const monthlyUpdatedCount = 5;
 								<span class="text-xs text-slate-300 font-medium truncate">EP 12. Gyeongju Dynasty Walk (Drama)</span>
 								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 							</div>
-							<!-- Locked threshold items -->
+							<!-- Gating Threshold Gated Limit (Item 13+ Lock) -->
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-black/40 transition-all opacity-60" data-preview="false">
 								<span class="text-xs text-slate-500 font-medium truncate">EP 13. Deep Forest Temple Tour (Movie)</span>
 								<span class="text-[9px] px-1.5 py-0.5 bg-[#5B0E1B] text-white rounded font-bold flex items-center gap-1 shrink-0">🔒 Lock</span>
@@ -441,13 +441,12 @@ const monthlyUpdatedCount = 5;
 				</div>
 
 			</div>
-			<!-- channel list end -->
 		</section>
 
-		<!-- DEVICE MANAGEMENT INTERACTION (Astro Client-Side Simulator) -->
+		<!-- DEVICE MANAGEMENT MYPAGE INTERACTION PANEL -->
 		<section class="w-full px-5 py-6 border-y border-[#5B0E1B] bg-[#071120]/40">
 			<div class="flex flex-col gap-3">
-				<h3 class="text-xs font-black uppercase font-['League_Spartan'] text-[#00E5FF] tracking-wider">
+				<h3 class="text-xs font-black uppercase tracking-wider text-[#00E5FF] font-['League_Spartan']">
 					<span class="lang-el" data-en="Device Management">마이페이지 기기 관리</span>
 				</h3>
 				<p class="text-xs text-slate-400 leading-relaxed mb-1">
@@ -480,7 +479,7 @@ const monthlyUpdatedCount = 5;
 			</div>
 		</section>
 
-		<!-- 2-YEAR SUBSCRIPTION PRICING PLANS (PADDLE INTEGRATION SIMULATION) -->
+		<!-- 2-YEAR PREMIUM PASS PLANS (PADDLE SIMULATOR) -->
 		<section class="w-full px-5 py-6 bg-gradient-to-b from-[#0A192F] to-[#040c17]">
 			<div class="text-center mb-5">
 				<h2 class="text-base font-['Playfair_Display'] italic font-bold mb-1.5 text-white">
@@ -509,7 +508,7 @@ const monthlyUpdatedCount = 5;
 							</li>
 							<li class="flex items-center gap-1.5">
 								<span class="text-[#00E5FF]">✔</span>
-								<span class="lang-el" data-en="2 Essential Channel blueprint views">2개 필수 액티브 채널 데이터 제공</span>
+								<span class="lang-el" data-en="2 Essential Channel blueprint views">2개 필수 가사 데이터 열람 지원</span>
 							</li>
 						</ul>
 					</div>
@@ -518,7 +517,7 @@ const monthlyUpdatedCount = 5;
 					</button>
 				</div>
 
-				<!-- DOUBLE -->
+				<!-- DOUBLE VALUE Pass -->
 				<div class="rounded-lg border-2 border-[#5B0E1B] bg-[#0A192F] p-4 flex flex-col justify-between relative overflow-hidden shadow-lg shadow-[#5B0E1B]/40">
 					<div class="absolute top-0 right-0 px-2.5 py-0.5 bg-cyan-500 text-black text-[8px] font-black uppercase rounded-bl tracking-widest font-['League_Spartan']">best value</div>
 					<div class="mb-4">
@@ -543,7 +542,7 @@ const monthlyUpdatedCount = 5;
 					</button>
 				</div>
 
-				<!-- FULL INTEGRATION -->
+				<!-- INTEGRATED Pass -->
 				<div class="rounded-lg border border-[#5B0E1B] bg-[#071120]/80 p-4 flex flex-col justify-between relative overflow-hidden">
 					<div class="absolute top-0 right-0 px-2.5 py-0.5 bg-[#FFDD00] text-black text-[8px] font-black uppercase rounded-bl tracking-widest font-['League_Spartan']">all-in-one</div>
 					<div class="mb-4">
@@ -559,7 +558,7 @@ const monthlyUpdatedCount = 5;
 							</li>
 							<li class="flex items-center gap-1.5">
 								<span class="text-[#00E5FF]">✔</span>
-								<span class="lang-el" data-en="6 Premium Services whole view">6개 전체 채널 무제한 열람 제공함</span>
+								<span class="lang-el" data-en="6 Premium Services whole view">6개 서비스 전부 이용 가능함</span>
 							</li>
 						</ul>
 					</div>
@@ -570,9 +569,8 @@ const monthlyUpdatedCount = 5;
 			</div>
 		</section>
 
-		<!-- LEGAL INFORMATION & BRAND LINKS FOOTER -->
+		<!-- LEGAL INTEGRATED GLOBAL FOOTER SYSTEM -->
 		<footer class="w-full px-5 py-8 border-t border-[#5B0E1B] bg-[#040c17]">
-			<!-- Footer Grid Systems (4-Column Layout Simulation using blocks/grids) -->
 			<div class="grid grid-cols-2 gap-6 mb-8 text-left">
 				<div>
 					<h4 class="text-xs font-black uppercase tracking-wider text-slate-400 font-['League_Spartan'] mb-2.5">Learn More</h4>
@@ -593,17 +591,17 @@ const monthlyUpdatedCount = 5;
 				</div>
 			</div>
 
-			<!-- Official Outlinks for Traffic Bridging -->
+			<!-- Official Media Traffic Bridging Links -->
 			<div class="flex flex-col gap-4 border-t border-[#5B0E1B]/30 pt-6">
 				<h4 class="text-xs font-black uppercase tracking-wider text-slate-400 font-['League_Spartan'] text-center">Official Media Links</h4>
 				<div class="flex flex-wrap justify-center gap-2.5">
 					<a href="https://youtube.com" target="_blank" class="px-3 py-1.5 bg-red-950/40 hover:bg-red-950 border border-red-800 text-red-200 rounded text-xs font-black uppercase font-['League_Spartan'] transition-all">YouTube</a>
 					<a href="https://instagram.com" target="_blank" class="px-3 py-1.5 bg-fuchsia-950/40 hover:bg-fuchsia-950 border border-fuchsia-800 text-xs font-black uppercase font-['League_Spartan'] transition-all">Instagram</a>
 					<a href="https://tiktok.com" target="_blank" class="px-3 py-1.5 bg-slate-900 hover:bg-black border border-slate-700 text-xs font-black uppercase font-['League_Spartan'] transition-all">TikTok</a>
-					<a href="https://google.com" target="_blank" class="px-3 py-1.5 bg-blue-950/40 hover:bg-blue-950 border border-blue-800 text-blue-200 rounded text-xs font-black uppercase font-['League_Spartan'] transition-all">Google Blog</a>
-					<a href="https://naver.com" target="_blank" class="px-3 py-1.5 bg-emerald-950/40 hover:bg-emerald-950 border border-emerald-800 text-emerald-200 rounded text-xs font-black uppercase font-['League_Spartan'] transition-all">Naver Blog</a>
+					<a href="https://google.com" target="_blank" class="px-3 py-1.5 bg-blue-950/40 hover:bg-blue-950 border border-blue-800 text-xs font-black uppercase font-['League_Spartan'] transition-all">Google Blog</a>
+					<a href="https://naver.com" target="_blank" class="px-3 py-1.5 bg-emerald-950/40 hover:bg-emerald-950 border border-emerald-800 text-xs font-black uppercase font-['League_Spartan'] transition-all">Naver Blog</a>
 				</div>
-				<!-- Anti-scam Caution Alert Warning Box -->
+				<!-- Anti-Imitation Warning -->
 				<div class="bg-amber-950/30 border border-amber-900 rounded p-3 text-center mt-2">
 					<p class="text-xs text-amber-200 leading-normal font-medium">
 						⚠️ We do not operate any channels other than these five! <br />
@@ -612,7 +610,6 @@ const monthlyUpdatedCount = 5;
 				</div>
 			</div>
 
-			<!-- Signature & Copy block -->
 			<div class="text-center mt-8 pt-4 border-t border-[#5B0E1B]/20">
 				<span class="font-['League_Spartan'] text-base font-black text-slate-400 uppercase tracking-widest block mb-1">taerijay+</span>
 				<p class="text-[9px] text-slate-500 font-mono">© 2026 TAERIJAY. MADE IN KOREA. ALL RIGHTS RESERVED.</p>
@@ -680,7 +677,7 @@ const monthlyUpdatedCount = 5;
 			</div>
 		</div>
 
-		<!-- modal 5: payout trigger simulator -->
+		<!-- modal 5: Paddle Checkout Simulator -->
 		<div id="modal-checkout" class="modal-overlay fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-lg max-w-[400px] w-full p-5 flex flex-col gap-4 relative text-center">
 				<div class="text-4xl animate-bounce">💳</div>
@@ -701,7 +698,7 @@ const monthlyUpdatedCount = 5;
 			</div>
 		</div>
 
-		<!-- modal 6: locked episode gating limit warning -->
+		<!-- modal 6: Locked gating limit warning modal -->
 		<div id="modal-gating" class="modal-overlay fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-lg max-w-[400px] w-full p-6 flex flex-col gap-4 relative text-center">
 				<div class="text-5xl">🔒</div>
@@ -719,10 +716,10 @@ const monthlyUpdatedCount = 5;
 
 	</main>
 
-	<!-- Script element using inline browser script without Next.js dependencies -->
+	<!-- 아스트로 고유 라이프사이클 통제 클라이언트 스크립트 엔진 -->
 	<script is:inline>
 		document.addEventListener('DOMContentLoaded', () => {
-			// 1. Language Toggle System
+			// 1. Language Toggle Infrastructure
 			const langButtons = document.querySelectorAll('.lang-btn');
 			const translatableElements = document.querySelectorAll('.lang-el');
 			let currentLang = 'en';
@@ -743,22 +740,20 @@ const monthlyUpdatedCount = 5;
 					if (lang === 'en') {
 						el.textContent = el.dataset.en || el.textContent;
 					} else {
-						// Store EN as data-en if not present
 						if (!el.dataset.en) {
 							el.dataset.en = el.textContent;
 						}
-						// Search for Korean counterpart or fallback
 						el.textContent = el.getAttribute('data-ko') || el.textContent;
 					}
 				});
 			}
 
-			// Capture original Korean texts to data-ko before overriding
+			// Capture fallback
 			translatableElements.forEach(el => {
 				el.dataset.ko = el.textContent;
 			});
 
-			// Set initial language to English as requested (🌐 default 우선)
+			// Entry level force EN rule
 			setLanguage('en');
 
 			langButtons.forEach(btn => {
@@ -790,7 +785,7 @@ const monthlyUpdatedCount = 5;
 			});
 
 
-			// 3. Modal System (General Open & Close)
+			// 3. Modals Matrix Engine
 			const triggers = document.querySelectorAll('.modal-trigger');
 			const closers = document.querySelectorAll('.modal-close');
 			const overlays = document.querySelectorAll('.modal-overlay');
@@ -807,7 +802,7 @@ const monthlyUpdatedCount = 5;
 			});
 
 			closers.forEach(closer => {
-				closer.addEventListener('click', (e) => {
+				closer.addEventListener('click', () => {
 					const activeModal = closer.closest('.modal-overlay');
 					if (activeModal) {
 						activeModal.classList.add('hidden');
@@ -816,7 +811,6 @@ const monthlyUpdatedCount = 5;
 				});
 			});
 
-			// Hide modal when clicking backdrop
 			overlays.forEach(overlay => {
 				overlay.addEventListener('click', (e) => {
 					if (e.target === overlay) {
@@ -827,7 +821,7 @@ const monthlyUpdatedCount = 5;
 			});
 
 
-			// 4. Device Management Simulator (Revoke Action)
+			// 4. Device Management Revoke Simulator
 			const revokeButtons = document.querySelectorAll('.revoke-dev-btn');
 			revokeButtons.forEach(btn => {
 				btn.addEventListener('click', () => {
@@ -842,7 +836,7 @@ const monthlyUpdatedCount = 5;
 			});
 
 
-			// 5. Paddle Purchase Gating Trigger
+			// 5. Paddle Integration Simulator
 			const payButtons = document.querySelectorAll('.pay-btn');
 			const checkoutModal = document.getElementById('modal-checkout');
 			const checkoutTierText = document.getElementById('checkoutTier');
@@ -859,7 +853,7 @@ const monthlyUpdatedCount = 5;
 			});
 
 
-			// 6. Gating Simulation for Episode Threshold (Item 13+)
+			// 6. Gating Simulation threshold 13+ limit
 			const epRows = document.querySelectorAll('.ep-row');
 			const gatingModal = document.getElementById('modal-gating');
 
@@ -867,11 +861,9 @@ const monthlyUpdatedCount = 5;
 				row.addEventListener('click', () => {
 					const isPreview = row.dataset.preview === 'true';
 					if (isPreview) {
-						// Free redirect stream simulation
 						const url = row.dataset.url;
 						window.open(url, '_blank');
 					} else {
-						// Locked threshold limit modal display
 						if (gatingModal) {
 							gatingModal.classList.remove('hidden');
 							gatingModal.classList.add('flex');
@@ -881,24 +873,24 @@ const monthlyUpdatedCount = 5;
 			});
 
 
-			// 7. Session Logout Trigger (Google OAuth simulation update)
+			// 7. OAuth State Machine (Google Register / Login / Logout simulation)
 			const logoutBtn = document.getElementById('logoutBtn');
 			const userEmail = document.getElementById('userEmail');
 			logoutBtn.addEventListener('click', () => {
-				if (userEmail.textContent !== 'guest@taerijay.com') {
-					userEmail.textContent = 'guest@taerijay.com';
-					logoutBtn.textContent = currentLang === 'en' ? 'REVOKE' : '해제';
-					logoutBtn.classList.add('bg-[#5B0E1B]/30');
-					logoutBtn.classList.remove('bg-emerald-800');
-				} else {
-					// Simulate secure re-login (Google single sign-on verification batch)
-					userEmail.textContent = 'active-vip@taerijay.com';
+				if (userEmail.textContent === 'guest@taerijay.com') {
+					// Register & Sign In Simulation
+					userEmail.textContent = 'official-vip@taerijay.com';
 					logoutBtn.textContent = currentLang === 'en' ? 'LOGOUT' : '로그아웃';
 					logoutBtn.classList.remove('bg-[#5B0E1B]/30');
 					logoutBtn.classList.add('bg-emerald-800');
+				} else {
+					// Sign Out Simulation
+					userEmail.textContent = 'guest@taerijay.com';
+					logoutBtn.textContent = currentLang === 'en' ? 'GOOGLE LOGIN' : '구글 로그인';
+					logoutBtn.classList.add('bg-[#5B0E1B]/30');
+					logoutBtn.classList.remove('bg-emerald-800');
 				}
 			});
-
 		});
 	</script>
 </Layout>
