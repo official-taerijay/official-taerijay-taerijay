@@ -7,39 +7,34 @@ const monthlyUpdatedCount = 5;
 ---
 
 <Layout title="TAERIJAY+">
-	<!-- Full Fluid Responsive Layout Matrix -->
-	<main class="w-full min-h-screen bg-[#0A192F] flex flex-col relative pb-24 overflow-x-hidden">
+	<main class="w-full min-h-screen bg-[#0A192F] flex flex-col relative pb-24 overflow-x-hidden font-noto">
 		
-		<!-- TOP HEADER CONTROL BAR -->
+		<!-- TOP MAIN 플랫폼 헤더 -->
 		<header class="w-full px-6 md:px-12 py-4 border-b border-[#5B0E1B] bg-[#0A192F]/95 backdrop-blur sticky top-0 z-50 flex items-center justify-between">
-			<!-- Hamburger Menu Button -->
 			<button id="menuTrigger" class="text-white hover:text-[#00E5FF] transition-colors p-2 -ml-2">
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
 				</svg>
 			</button>
 
-			<!-- Center Brand Identity Logo -->
 			<div class="flex flex-col items-center absolute left-1/2 transform -translate-x-1/2">
 				<span class="font-['League_Spartan'] text-2xl md:text-3xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-[#00E5FF] leading-none uppercase">taerijay+</span>
 			</div>
 			
-			<!-- Google Authentication Switching Control Badge -->
-			<button id="authBtn" class="px-3 md:px-5 py-1.5 md:py-2 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-slate-200 text-[10px] md:text-xs font-bold uppercase tracking-wider transition-all shadow-md">
+			<button id="authBtn" class="px-3 md:px-5 py-1.5 md:py-2 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-slate-200 text-[10px] md:text-xs font-black uppercase tracking-wider font-spartan transition-all shadow-md">
 				Google Login
 			</button>
 		</header>
 
-		<!-- SIDEBAR OVERLAY SIDE DRAWER CONTAINER -->
+		<!-- 사이드 메뉴 바 드로어 -->
 		<div id="sideDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden justify-start w-full transition-opacity duration-300">
-			<div class="w-[300px] h-full bg-[#071120] border-r border-[#5B0E1B] p-6 flex flex-col gap-6 relative shadow-2xl overflow-y-auto">
+			<div class="w-[300px] h-full bg-[#071120] border-r border-[#5B0E1B] p-6 flex flex-col gap-6 relative shadow-2xl overflow-y-auto font-spartan">
 				<div class="flex items-center justify-between border-b border-[#5B0E1B] pb-4">
-					<span class="font-['League_Spartan'] text-base md:text-lg font-black tracking-widest text-[#00E5FF] uppercase">Channels</span>
+					<span class="text-base md:text-lg font-black tracking-widest text-[#00E5FF] uppercase">Channels</span>
 					<button id="menuCloser" class="text-slate-400 hover:text-white text-3xl font-light leading-none">&times;</button>
 				</div>
 				
-				<!-- Mandatory 8 Brands Case Configurations -->
-				<nav class="flex flex-col gap-3 font-['League_Spartan'] font-bold text-sm">
+				<nav class="flex flex-col gap-3 font-bold text-sm">
 					<button class="channel-nav-link w-full text-left p-3 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-brandBorder hover:bg-[#5B0E1B]/20 transition-all font-['Playfair_Display'] font-black tracking-wider uppercase" data-idx="0">0. TAERIJAY</button>
 					<button class="channel-nav-link w-full text-left p-3 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#00E5FF] hover:bg-[#5B0E1B]/20 transition-all lowercase" data-idx="1">1. taerijay+entertainment</button>
 					<button class="channel-nav-link w-full text-left p-3 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#F16B24] hover:bg-[#5B0E1B]/20 transition-all lowercase" data-idx="2">2. taerijay+protocol</button>
@@ -49,24 +44,19 @@ const monthlyUpdatedCount = 5;
 					<button class="channel-nav-link w-full text-left p-3 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#FFDD00] hover:bg-[#5B0E1B]/20 transition-all lowercase" data-idx="6">6. taerijay+emart</button>
 					<button class="channel-nav-link w-full text-left p-3 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#A14D7C] hover:bg-[#5B0E1B]/20 transition-all lowercase" data-idx="7">7. taerijay+convenience</button>
 				</nav>
-
-				<div class="mt-auto border-t border-[#5B0E1B] pt-4 text-center">
-					<span class="text-xs text-slate-500 font-mono" id="drawerUserBadge">Session: guest@taerijay.com</span>
-				</div>
 			</div>
 		</div>
 
-		<!-- CORE HERO STAGE STATUS INTERFACE -->
-		<section class="w-full relative px-6 md:px-12 py-10 md:py-20 border-b border-[#5B0E1B] bg-gradient-to-b from-[#0e2544] to-[#0A192F] overflow-hidden">
+		<!-- 대시보드 시스템 스펙 바 -->
+		<section class="w-full px-6 md:px-12 py-10 md:py-16 border-b border-[#5B0E1B] bg-gradient-to-b from-[#0e2544] to-[#0A192F] relative overflow-hidden">
 			<div class="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-overlay" style="background-image: url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=1920&q=80');"></div>
 			<div class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-end justify-between gap-6">
-				
 				<div class="flex flex-col items-center md:items-start text-center md:text-left">
 					<div class="inline-flex items-center gap-1.5 bg-[#5B0E1B]/80 border border-[#5B0E1B] px-3 py-1 rounded-full mb-4 shadow">
 						<span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-						<span class="text-[9px] md:text-xs font-['League_Spartan'] tracking-widest text-white uppercase font-bold">System Active</span>
+						<span class="text-[9px] md:text-xs font-spartan tracking-widest text-white uppercase font-bold">System Active</span>
 					</div>
-					<h1 class="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-3 leading-tight font-['Playfair_Display'] italic text-white drop-shadow-lg">
+					<h1 class="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-3 leading-tight font-playfair italic text-white drop-shadow-lg">
 						Unlocking Premium K-Heritage
 					</h1>
 					<p class="text-sm md:text-base text-slate-300 leading-relaxed font-light max-w-2xl drop-shadow">
@@ -75,57 +65,58 @@ const monthlyUpdatedCount = 5;
 					</p>
 				</div>
 
-				<div class="grid grid-cols-3 gap-2 md:gap-4 bg-[#071120]/80 backdrop-blur-md border border-[#5B0E1B] rounded-lg p-3 md:p-5 text-center shadow-2xl w-full md:w-auto">
+				<div class="grid grid-cols-3 gap-2 md:gap-4 bg-[#071120]/80 backdrop-blur-md border border-[#5B0E1B] rounded-lg p-3 md:p-5 text-center shadow-2xl w-full md:w-auto font-spartan">
 					<div class="px-2">
-						<div class="text-lg md:text-2xl font-black text-[#00E5FF] font-['League_Spartan']">{totalItemCount}</div>
+						<div class="text-lg md:text-2xl font-black text-[#00E5FF]">{totalItemCount}</div>
 						<div class="text-[9px] md:text-[10px] text-slate-400 font-semibold uppercase tracking-widest mt-1">Total DB</div>
 					</div>
 					<div class="px-2 border-x border-[#5B0E1B]/50">
-						<div class="text-lg md:text-2xl font-black text-[#FFDD00] font-['League_Spartan']">+{monthlyUpdatedCount}</div>
+						<div class="text-lg md:text-2xl font-black text-[#FFDD00]">+{monthlyUpdatedCount}</div>
 						<div class="text-[9px] md:text-[10px] text-slate-400 font-semibold uppercase tracking-widest mt-1">Monthly Add</div>
 					</div>
 					<div class="px-2">
-						<div class="text-sm md:text-lg font-bold text-slate-200 font-['League_Spartan'] pt-1">{lastUpdateDate}</div>
+						<div class="text-sm md:text-lg font-bold text-slate-200 pt-1">{lastUpdateDate}</div>
 						<div class="text-[9px] md:text-[10px] text-slate-400 font-semibold uppercase tracking-widest mt-1">Last Sync</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- DISNEY+ SCROLLER ROW PLATFORM TRACK -->
+		<!-- DISNEY+ SCROLLER TRACK LAYOUT -->
 		<section class="w-full py-8 md:py-12 flex flex-col gap-6 md:gap-8">
 			<div class="w-full max-w-[1600px] mx-auto flex flex-col gap-4">
-				<div class="px-6 md:px-12 flex items-center justify-between">
-					<h3 class="text-base md:text-xl font-black uppercase tracking-widest text-white font-['League_Spartan'] flex items-center gap-3">
+				<div class="px-6 md:px-12 flex items-center justify-between font-spartan">
+					<h3 class="text-base md:text-xl font-black uppercase tracking-widest text-white flex items-center gap-3">
 						<span class="w-2 h-6 bg-[#5B0E1B] rounded-sm"></span>
 						<span>Exclusive Master Pipelines Track</span>
 					</h3>
 					<span class="text-xs md:text-sm text-slate-500 font-mono hidden md:block">Scroll Horizontally to Explore Track Loop</span>
 				</div>
 
-				<!-- 100% Full Width Infinite Horizontal Swiper Track Panel -->
 				<div class="w-full overflow-x-auto flex gap-4 md:gap-6 px-6 md:px-12 py-4 no-scrollbar snap-x snap-mandatory scroll-smooth" id="masterSliderTrack">
 					
 					<!-- CARD 0: [0. TAERIJAY] -->
 					<div class="min-w-[85vw] md:min-w-[400px] lg:min-w-[450px] snap-center shrink-0 rounded-xl border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#5B0E1B]/30 scroll-item group" id="slider-card-0">
 						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-							<span class="text-sm md:text-base font-black uppercase font-['Playfair_Display'] text-[#5B0E1B] tracking-widest">TAERIJAY</span>
-							<span class="text-[10px] md:text-xs text-slate-500 font-bold uppercase">🇰🇷 core</span>
+							<span class="text-sm md:text-base font-black uppercase font-playfair text-[#5B0E1B] tracking-widest">TAERIJAY</span>
+							<span class="text-[10px] md:text-xs text-slate-500 font-bold uppercase font-spartan">🇰🇷 core</span>
 						</div>
 						<div class="h-56 md:h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center">
 							<div class="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-15 transition-opacity duration-500" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80');"></div>
 							<div class="relative z-10 text-center px-4">
-								<span class="font-['Playfair_Display'] text-4xl md:text-5xl font-black italic tracking-tight text-[#5B0E1B]/15 block mb-2 drop-shadow-xl select-none">TAERIJAY</span>
+								<span class="font-playfair text-4xl md:text-5xl font-black italic tracking-tight text-[#5B0E1B]/15 block mb-2 drop-shadow-xl select-none">TAERIJAY</span>
 							</div>
 						</div>
 						<div class="p-5 md:p-6 flex flex-col gap-4 flex-grow bg-gradient-to-b from-[#0A192F] to-[#071120]">
-							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug">Ultimate K-Travel Master Blueprint</h3>
-							<p class="text-sm text-slate-400 leading-relaxed font-light min-h-[60px]">
-								[TAERIJAY] 마스터 기획 동선 완전 수록함.<br />
-								네이비 심해 프레임 안 은은한 감성 연출함.<br />
-								국제 VIP 타겟 프레임워크 최적화 완료함.
-							</p>
-							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto">
+							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug flex items-center gap-2">
+								<span>👑</span>
+								<span>Ultimate K-Travel Master Blueprint</span>
+							</h3>
+							<div class="text-sm text-slate-300 leading-relaxed font-normal min-h-[60px] flex flex-col gap-1.5">
+								<p class="text-white font-medium border-l-2 border-[#5B0E1B] pl-2">대한민국 대표 여행지 총 집합 마스터 기획안 수록함.</p>
+								<p class="text-slate-400 font-light text-xs font-spartan">Premium curated travel destinations optimized for international VIP travelers.</p>
+							</div>
+							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto font-spartan">
 								<div class="flex items-center gap-2 min-w-0">
 									<span class="text-base">📍</span>
 									<span class="text-xs md:text-sm text-slate-300 font-mono truncate" id="addr-0">Gyeonggi-do, Namyangju-si, Hwado-eup</span>
@@ -137,8 +128,8 @@ const monthlyUpdatedCount = 5;
 
 					<!-- CARD 1: [1. taerijay+entertainment] -->
 					<div class="min-w-[85vw] md:min-w-[400px] lg:min-w-[450px] snap-center shrink-0 rounded-xl border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00E5FF]/20 scroll-item group" id="slider-card-1">
-						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-							<span class="text-sm md:text-base font-black font-['League_Spartan'] text-[#00E5FF] lowercase">taerijay+entertainment</span>
+						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between font-spartan">
+							<span class="text-sm md:text-base font-black text-[#00E5FF] lowercase">taerijay+entertainment</span>
 							<span class="text-[10px] md:text-xs text-[#00E5FF] font-bold uppercase">🌐 ott bridge</span>
 						</div>
 						<div class="h-56 md:h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center">
@@ -146,25 +137,27 @@ const monthlyUpdatedCount = 5;
 							<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-transparent to-transparent"></div>
 						</div>
 						<div class="p-5 md:p-6 flex flex-col gap-4 flex-grow bg-gradient-to-b from-[#0A192F] to-[#071120]">
-							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug lowercase">official video bridge hub</h3>
-							<p class="text-sm text-slate-400 leading-relaxed font-light min-h-[60px]">
-								[유튜브] 오리지널 트래픽 순환 구조 확립함.<br />
-								청량 사이언 블루 배색 프레임 탑재함.<br />
-								하이엔드 글로벌 OTT 미디어 무드 정착함.
-							</p>
+							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug lowercase flex items-center gap-2">
+								<span>🎬</span>
+								<span>official video bridge hub</span>
+							</h3>
+							<div class="text-sm text-slate-300 leading-relaxed font-normal min-h-[60px] flex flex-col gap-1.5">
+								<p class="text-white font-medium border-l-2 border-[#00E5FF] pl-2">드라마, 영화, 예능, 대표님 유튜브 채널 트래픽 허브 연계함.</p>
+								<p class="text-slate-400 font-light text-xs font-spartan">Explore K-content, original films, and outbound looping parameters.</p>
+							</div>
 							
 							<div class="flex flex-col gap-2 mt-2 max-h-[140px] overflow-y-auto border border-[#5B0E1B]/50 rounded p-2 bg-[#071120]/80">
-								<div class="ep-row flex items-center justify-between p-2 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 text-xs transition-colors" data-preview="true" data-url="https://youtube.com">
+								<div class="ep-row flex items-center justify-between p-2 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 text-xs transition-colors font-spartan" data-preview="true" data-url="https://youtube.com">
 									<span class="text-slate-300 truncate font-mono">EP 01. Origin of K-Heritage</span>
 									<span class="text-[10px] px-2 py-0.5 bg-emerald-900 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 								</div>
-								<div class="ep-row flex items-center justify-between p-2 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-black/40 text-xs opacity-60 transition-colors" data-preview="false">
+								<div class="ep-row flex items-center justify-between p-2 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-black/40 text-xs opacity-60 transition-colors font-spartan" data-preview="false">
 									<span class="text-slate-500 truncate font-mono">EP 13. Deep Forest Circuit</span>
 									<span class="text-[10px] px-2 py-0.5 bg-[#5B0E1B] text-white rounded font-bold shrink-0">🔒 Lock</span>
 								</div>
 							</div>
 
-							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto">
+							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto font-spartan">
 								<div class="flex items-center gap-2 min-w-0">
 									<span class="text-base">📍</span>
 									<span class="text-xs md:text-sm text-slate-300 font-mono truncate" id="addr-1">Central Hub Video Stream Station</span>
@@ -176,8 +169,8 @@ const monthlyUpdatedCount = 5;
 
 					<!-- CARD 2: [2. taerijay+protocol] -->
 					<div class="min-w-[85vw] md:min-w-[400px] lg:min-w-[450px] snap-center shrink-0 rounded-xl border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#F16B24]/20 scroll-item group" id="slider-card-2">
-						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-							<span class="text-sm md:text-base font-black font-['League_Spartan'] text-[#F16B24] lowercase">taerijay+protocol</span>
+						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between font-spartan">
+							<span class="text-sm md:text-base font-black text-[#F16B24] lowercase">taerijay+protocol</span>
 							<span class="text-[10px] md:text-xs text-slate-500 font-bold uppercase">🌐 rule</span>
 						</div>
 						<div class="h-56 md:h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center">
@@ -185,13 +178,15 @@ const monthlyUpdatedCount = 5;
 							<div class="absolute inset-0 bg-gradient-to-t from-baseBg via-transparent to-transparent"></div>
 						</div>
 						<div class="p-5 md:p-6 flex flex-col gap-4 flex-grow bg-gradient-to-b from-[#0A192F] to-[#071120]">
-							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug">Global Traveler Code & Security Policy</h3>
-							<p class="text-sm text-slate-400 leading-relaxed font-light min-h-[60px]">
-								[인천국제공항] 입국 세관 규약 명시함.<br />
-								316개 독점 행동 규약 데이터 탑재함.<br />
-								클래식 오렌지 컬러 적용으로 명확성 확보함.
-							</p>
-							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto">
+							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug flex items-center gap-2">
+								<span>🌐</span>
+								<span>Global Traveler Code & Security Policy</span>
+							</h3>
+							<div class="text-sm text-slate-300 leading-relaxed font-normal min-h-[60px] flex flex-col gap-1.5">
+								<p class="text-white font-medium border-l-2 border-[#F16B24] pl-2">해외 입국객 필수 공항 세관 및 대중교통 탑승 10대 안전 수칙 명시함.</p>
+								<p class="text-slate-400 font-light text-xs font-spartan">Legal security frameworks and 316 restricted code items initialization.</p>
+							</div>
+							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto font-spartan">
 								<div class="flex items-center gap-2 min-w-0">
 									<span class="text-base">📍</span>
 									<span class="text-xs md:text-sm text-slate-300 font-mono truncate" id="addr-2">Incheon International Airport Terminal 1 & 2</span>
@@ -203,8 +198,8 @@ const monthlyUpdatedCount = 5;
 
 					<!-- CARD 3: [3. taerijay+mini] -->
 					<div class="min-w-[85vw] md:min-w-[400px] lg:min-w-[450px] snap-center shrink-0 rounded-xl border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#FBF9F4]/20 scroll-item group" id="slider-card-3">
-						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-							<span class="text-sm md:text-base font-black font-['League_Spartan'] text-[#FBF9F4] lowercase">taerijay+mini</span>
+						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between font-spartan">
+							<span class="text-sm md:text-base font-black text-[#FBF9F4] lowercase">taerijay+mini</span>
 							<span class="text-[10px] md:text-xs text-slate-500 font-bold uppercase">📍 route</span>
 						</div>
 						<div class="h-56 md:h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center">
@@ -212,13 +207,15 @@ const monthlyUpdatedCount = 5;
 							<div class="absolute inset-0 bg-gradient-to-t from-baseBg via-transparent to-transparent"></div>
 						</div>
 						<div class="p-5 md:p-6 flex flex-col gap-4 flex-grow bg-gradient-to-b from-[#0A192F] to-[#071120]">
-							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug">Dense One-Day Travel Blueprints</h3>
-							<p class="text-sm text-slate-400 leading-relaxed font-light min-h-[60px]">
-								[명동] 거점 도시별 최적 동선 기획함.<br />
-								24시간 타임라인 압축 레이아웃 적용함.<br />
-								진주빛 새틴 아이보리 대조 가시화 완수함.
-							</p>
-							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto">
+							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug flex items-center gap-2">
+								<span>📍</span>
+								<span>Dense One-Day Travel Blueprints</span>
+							</h3>
+							<div class="text-sm text-slate-300 leading-relaxed font-normal min-h-[60px] flex flex-col gap-1.5">
+								<p class="text-white font-medium border-l-2 border-[#FBF9F4] pl-2">거점 도시별 시간 낭비 없는 원데이 초압축 코스 타임라인 구축함.</p>
+								<p class="text-slate-400 font-light text-xs font-spartan">Dense 24-hour itinerary tracking loop with optimized routing pipelines.</p>
+							</div>
+							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto font-spartan">
 								<div class="flex items-center gap-2 min-w-0">
 									<span class="text-base">📍</span>
 									<span class="text-xs md:text-sm text-slate-300 font-mono truncate" id="addr-3">Myeong-dong, Jung-gu, Seoul</span>
@@ -230,8 +227,8 @@ const monthlyUpdatedCount = 5;
 
 					<!-- CARD 4: [4. taerijay+daiso] -->
 					<div class="min-w-[85vw] md:min-w-[400px] lg:min-w-[450px] snap-center shrink-0 rounded-xl border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#E1261C]/20 scroll-item group" id="slider-card-4">
-						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-							<span class="text-sm md:text-base font-black font-['League_Spartan'] text-[#E1261C] lowercase">taerijay+daiso</span>
+						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between font-spartan">
+							<span class="text-sm md:text-base font-black text-[#E1261C] lowercase">taerijay+daiso</span>
 							<span class="text-[10px] md:text-xs text-slate-500 font-bold uppercase">💡 beauty</span>
 						</div>
 						<div class="h-56 md:h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center">
@@ -239,13 +236,15 @@ const monthlyUpdatedCount = 5;
 							<div class="absolute inset-0 bg-gradient-to-t from-baseBg via-transparent to-transparent"></div>
 						</div>
 						<div class="p-5 md:p-6 flex flex-col gap-4 flex-grow bg-gradient-to-b from-[#0A192F] to-[#071120]">
-							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug">Viral K-Beauty Cosmetics & Gear under $5</h3>
-							<p class="text-sm text-slate-400 leading-relaxed font-light min-h-[60px]">
-								[다이소] 뷰티 품절 대란 아이템 수록함.<br />
-								핵심 메가 스토어 재고 좌표 추적함.<br />
-								강렬 비비드 네온 레드 피팅 락인 완료함.
-							</p>
-							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto">
+							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug flex items-center gap-2">
+								<span>💡</span>
+								<span>Viral K-Beauty Cosmetics & Gear under $5</span>
+							</h3>
+							<div class="text-sm text-slate-300 leading-relaxed font-normal min-h-[60px] flex flex-col gap-1.5">
+								<p class="text-white font-medium border-l-2 border-[#E1261C] pl-2">SNS 품절 대란 다이소 화장품 스킨케어 정보 및 전국 대형 매장 리스트 수록함.</p>
+								<p class="text-slate-400 font-light text-xs font-spartan">Real-time inventory mapping metrics for core under-$5 travel cosmetics.</p>
+							</div>
+							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto font-spartan">
 								<div class="flex items-center gap-2 min-w-0">
 									<span class="text-base">📍</span>
 									<span class="text-xs md:text-sm text-slate-300 font-mono truncate" id="addr-4">134-1 Myeongdong 2-ga, Jung-gu, Seoul</span>
@@ -257,8 +256,8 @@ const monthlyUpdatedCount = 5;
 
 					<!-- CARD 5: [5. taerijay+oliveyoung] -->
 					<div class="min-w-[85vw] md:min-w-[400px] lg:min-w-[450px] snap-center shrink-0 rounded-xl border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#6F8B2E]/20 scroll-item group" id="slider-card-5">
-						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-							<span class="text-sm md:text-base font-black font-['League_Spartan'] text-[#6F8B2E] lowercase">taerijay+oliveyoung</span>
+						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between font-spartan">
+							<span class="text-sm md:text-base font-black text-[#6F8B2E] lowercase">taerijay+oliveyoung</span>
 							<span class="text-[10px] md:text-xs text-slate-500 font-bold uppercase">💡 tax-free</span>
 						</div>
 						<div class="h-56 md:h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center">
@@ -266,13 +265,15 @@ const monthlyUpdatedCount = 5;
 							<div class="absolute inset-0 bg-gradient-to-t from-baseBg via-transparent to-transparent"></div>
 						</div>
 						<div class="p-5 md:p-6 flex flex-col gap-4 flex-grow bg-gradient-to-b from-[#0A192F] to-[#071120]">
-							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug">Instant Tax Refund Guide & Best Skincare</h3>
-							<p class="text-sm text-slate-400 leading-relaxed font-light min-h-[60px]">
-								[올리브영] 글로벌 MZ 스킨케어 선별함.<br />
-								즉시 면세 [Tax-Free] 환급 가이드 연동함.<br />
-								청량 올리브 그린 톤 격리 수용 완료함.
-							</p>
-							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto">
+							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug flex items-center gap-2">
+								<span>💡</span>
+								<span>Instant Tax Refund Guide & Best Skincare</span>
+							</h3>
+							<div class="text-sm text-slate-300 leading-relaxed font-normal min-h-[60px] flex flex-col gap-1.5">
+								<p class="text-white font-medium border-l-2 border-[#6F8B2E] pl-2">글로벌 MZ 선호 스킨케어 제품 및 즉시 면세 [Tax-Free] 현장 환급 매장 안내함.</p>
+								<p class="text-slate-400 font-light text-xs font-spartan">Duty-free checkout automation protocols and cosmetic rank indices.</p>
+							</div>
+							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto font-spartan">
 								<div class="flex items-center gap-2 min-w-0">
 									<span class="text-base">📍</span>
 									<span class="text-xs md:text-sm text-slate-300 font-mono truncate" id="addr-5">53 Myeongdong-gil, Jung-gu, Seoul</span>
@@ -284,8 +285,8 @@ const monthlyUpdatedCount = 5;
 
 					<!-- CARD 6: [6. taerijay+emart] -->
 					<div class="min-w-[85vw] md:min-w-[400px] lg:min-w-[450px] snap-center shrink-0 rounded-xl border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#FFDD00]/20 scroll-item group" id="slider-card-6">
-						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-							<span class="text-sm md:text-base font-black font-['League_Spartan'] text-[#FFDD00] lowercase">taerijay+emart</span>
+						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between font-spartan">
+							<span class="text-sm md:text-base font-black text-[#FFDD00] lowercase">taerijay+emart</span>
 							<span class="text-[10px] md:text-xs text-red-500 font-bold uppercase">⚠️ warning</span>
 						</div>
 						<div class="h-56 md:h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center">
@@ -293,13 +294,15 @@ const monthlyUpdatedCount = 5;
 							<div class="absolute inset-0 bg-gradient-to-t from-baseBg via-transparent to-transparent"></div>
 						</div>
 						<div class="p-5 md:p-6 flex flex-col gap-4 flex-grow bg-gradient-to-b from-[#0A192F] to-[#071120]">
-							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug">Big Box Store Forced Off-Days Index</h3>
-							<p class="text-sm text-slate-400 leading-relaxed font-light min-h-[60px]">
-								[이마트/트레이더스] 대형마트 쇼핑 스펙 적재함.<br />
-								의무휴업일 ⚠️ 경고 인덱스 인프라 구체화함.<br />
-								브라이트 옐로우 가독성 500% 폭발 유도함.
-							</p>
-							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto">
+							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug flex items-center gap-2">
+								<span>⚠️</span>
+								<span>Big Box Store Forced Off-Days Index</span>
+							</h3>
+							<div class="text-sm text-slate-300 leading-relaxed font-normal min-h-[60px] flex flex-col gap-1.5">
+								<p class="text-white font-medium border-l-2 border-[#FFDD00] pl-2">이마트, 트레이더스 매월 둘째/넷째 일요일 강제 의무휴업일 경고 일정을 강조함.</p>
+								<p class="text-slate-400 font-light text-xs font-spartan">Forced regulatory store off-days matrix tracking to avoid mis-visits.</p>
+							</div>
+							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto font-spartan">
 								<div class="flex items-center gap-2 min-w-0">
 									<span class="text-base">📍</span>
 									<span class="text-xs md:text-sm text-slate-300 font-mono truncate" id="addr-6">7-1 Yeongdeungpo-dong 4-ga, Yeongdeungpo-gu, Seoul</span>
@@ -311,8 +314,8 @@ const monthlyUpdatedCount = 5;
 
 					<!-- CARD 7: [7. taerijay+convenience] -->
 					<div class="min-w-[85vw] md:min-w-[400px] lg:min-w-[450px] snap-center shrink-0 rounded-xl border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#A14D7C]/20 scroll-item group" id="slider-card-7">
-						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-							<span class="text-sm md:text-base font-black font-['League_Spartan'] text-[#A14D7C] lowercase">taerijay+convenience</span>
+						<div class="px-5 py-3 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between font-spartan">
+							<span class="text-sm md:text-base font-black text-[#A14D7C] lowercase">taerijay+convenience</span>
 							<span class="text-[10px] md:text-xs text-slate-500 font-bold uppercase">🇰🇷 snack hack</span>
 						</div>
 						<div class="h-56 md:h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center">
@@ -320,13 +323,15 @@ const monthlyUpdatedCount = 5;
 							<div class="absolute inset-0 bg-gradient-to-t from-baseBg via-transparent to-transparent"></div>
 						</div>
 						<div class="p-5 md:p-6 flex flex-col gap-4 flex-grow bg-gradient-to-b from-[#0A192F] to-[#071120]">
-							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug">Midnight Recipe Hacks & Exclusive PB Guide</h3>
-							<p class="text-sm text-slate-400 leading-relaxed font-light min-h-[60px]">
-								[24시 편의점] PB 상품 조합 공식 안내함.<br />
-								야경 컬러 매핑 퍼플-핑크 네온톤을 투사함.<br />
-								가성비 주류 및 야간 안주류 가이드 종결함.
-							</p>
-							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto">
+							<h3 class="text-base md:text-lg font-bold text-white tracking-tight leading-snug flex items-center gap-2">
+								<span>🇰🇷</span>
+								<span>Midnight Recipe Hacks & Exclusive PB Guide</span>
+							</h3>
+							<div class="text-sm text-slate-300 leading-relaxed font-normal min-h-[60px] flex flex-col gap-1.5">
+								<p class="text-white font-medium border-l-2 border-[#A14D7C] pl-2">국내 편의점 독점 PB 조합, 메가 콤보 비밀 레시피 및 가성비 주류 목록 안내함.</p>
+								<p class="text-slate-400 font-light text-xs font-spartan">Secret convenience store item formulation indexes for international nights.</p>
+							</div>
+							<div class="pt-4 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-3 mt-auto font-spartan">
 								<div class="flex items-center gap-2 min-w-0">
 									<span class="text-base">📍</span>
 									<span class="text-xs md:text-sm text-slate-300 font-mono truncate" id="addr-7">Central Post Office GS25, Chungmuro 1-ga, Seoul</span>
@@ -340,7 +345,7 @@ const monthlyUpdatedCount = 5;
 			</div>
 		</section>
 
-		<!-- PREMIUM ACTIVE TIER SYSTEM SUBSCRIPTION PLANS GRID -->
+		<!-- PREMIUM ACTIVE TIER SYSTEM SUBSCRIPTION PLANS GRID (시그니처 개별 보정 완료) -->
 		<section class="w-full px-6 md:px-12 py-12 lg:py-16 bg-gradient-to-b from-[#0A192F] to-[#050f1a] border-t border-[#5B0E1B] mt-auto">
 			<div class="text-center mb-10">
 				<h2 class="text-2xl md:text-3xl font-['Playfair_Display'] italic font-bold mb-3 text-white">24 Months Premium Activation Pass</h2>
@@ -348,109 +353,109 @@ const monthlyUpdatedCount = 5;
 			</div>
 			
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
-				<!-- TIER 1 -->
-				<div class="rounded-xl border border-[#5B0E1B] bg-[#071120]/80 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-transform hover:-translate-y-1">
+				<!-- TIER 1: BASIC (클래식 오렌지) -->
+				<div class="rounded-xl border border-[#F16B24] bg-[#071120]/80 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.02]">
 					<div>
-						<span class="text-[10px] font-black uppercase text-slate-400 tracking-widest font-['League_Spartan']">Basic Pass</span>
-						<div class="text-3xl lg:text-4xl font-black text-[#00E5FF] font-['League_Spartan'] mt-2 mb-4">$19.99 <span class="text-sm text-slate-500 font-normal">/ 2 Years</span></div>
-						<ul class="text-sm text-slate-300 border-t border-[#5B0E1B]/30 pt-4 flex flex-col gap-3 font-light pl-0 list-none">
+						<span class="text-[10px] font-black uppercase text-slate-400 tracking-widest font-spartan">Basic Pass</span>
+						<div class="text-3xl lg:text-4xl font-black text-[#F16B24] font-spartan mt-2 mb-4">$19.99 <span class="text-sm text-slate-500 font-normal">/ 2 Years</span></div>
+						<ul class="text-sm text-slate-300 border-t border-[#F16B24]/30 pt-4 flex flex-col gap-3 font-light pl-0 list-none">
 							<li class="flex items-start gap-2">
-								<span class="text-[#00E5FF] mt-0.5">✔</span>
+								<span class="text-[#F16B24] mt-0.5">✔</span>
 								<span>1개 구글 아이디 연동함.</span>
 							</li>
 							<li class="flex items-start gap-2">
-								<span class="text-[#00E5FF] mt-0.5">✔</span>
+								<span class="text-[#F16B24] mt-0.5">✔</span>
 								<span>1개 디바이스 등록 제한함.</span>
 							</li>
 							<li class="flex items-start gap-2">
-								<span class="text-[#00E5FF] mt-0.5">✔</span>
+								<span class="text-[#F16B24] mt-0.5">✔</span>
 								<span>동시접속 해당 없음 명시함.</span>
 							</li>
 						</ul>
 					</div>
-					<button class="pay-btn w-full py-3 bg-[#5B0E1B]/20 hover:bg-[#5B0E1B]/80 border border-[#5B0E1B] text-slate-200 rounded text-xs font-bold uppercase tracking-wider transition-all mt-8">Activate Basic Plan</button>
+					<button class="pay-btn w-full py-3 bg-[#F16B24]/20 hover:bg-[#F16B24]/80 border border-[#F16B24] text-slate-200 rounded text-xs font-bold uppercase tracking-wider font-spartan transition-all mt-8">Activate Basic Plan</button>
 				</div>
-				<!-- TIER 2 -->
-				<div class="rounded-xl border border-[#5B0E1B] bg-[#071120]/80 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-transform hover:-translate-y-1">
+				<!-- TIER 2: STANDARD (브라이트 옐로우) -->
+				<div class="rounded-xl border border-[#FFDD00] bg-[#071120]/80 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.02]">
 					<div>
-						<span class="text-[10px] font-black uppercase text-slate-400 tracking-widest font-['League_Spartan']">Standard Pass</span>
-						<div class="text-3xl lg:text-4xl font-black text-[#00E5FF] font-['League_Spartan'] mt-2 mb-4">$29.99 <span class="text-sm text-slate-500 font-normal">/ 2 Years</span></div>
-						<ul class="text-sm text-slate-300 border-t border-[#5B0E1B]/30 pt-4 flex flex-col gap-3 font-light pl-0 list-none">
+						<span class="text-[10px] font-black uppercase text-slate-400 tracking-widest font-spartan">Standard Pass</span>
+						<div class="text-3xl lg:text-4xl font-black text-[#FFDD00] font-spartan mt-2 mb-4">$29.99 <span class="text-sm text-slate-500 font-normal">/ 2 Years</span></div>
+						<ul class="text-sm text-slate-300 border-t border-[#FFDD00]/30 pt-4 flex flex-col gap-3 font-light pl-0 list-none">
 							<li class="flex items-start gap-2">
-								<span class="text-[#00E5FF] mt-0.5">✔</span>
+								<span class="text-[#FFDD00] mt-0.5">✔</span>
 								<span>1개 구글 아이디 연동함.</span>
 							</li>
 							<li class="flex items-start gap-2">
-								<span class="text-[#00E5FF] mt-0.5">✔</span>
+								<span class="text-[#FFDD00] mt-0.5">✔</span>
 								<span>2개 디바이스 등록 제공함.</span>
 							</li>
 							<li class="flex items-start gap-2">
-								<span class="text-[#00E5FF] mt-0.5">✔</span>
+								<span class="text-[#FFDD00] mt-0.5">✔</span>
 								<span>동시접속 2개 디바이스 허용함.</span>
 							</li>
 						</ul>
 					</div>
-					<button class="pay-btn w-full py-3 bg-[#5B0E1B]/20 hover:bg-[#5B0E1B]/80 border border-[#5B0E1B] text-slate-200 rounded text-xs font-bold uppercase tracking-wider transition-all mt-8">Activate Standard Plan</button>
+					<button class="pay-btn w-full py-3 bg-[#FFDD00]/20 hover:bg-[#FFDD00]/80 border border-[#FFDD00] text-slate-200 rounded text-xs font-bold uppercase tracking-wider font-spartan transition-all mt-8">Activate Standard Plan</button>
 				</div>
-				<!-- TIER 3 -->
-				<div class="rounded-xl border border-[#5B0E1B] bg-[#071120]/80 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-transform hover:-translate-y-1">
+				<!-- TIER 3: PRO (비비드 레드) -->
+				<div class="rounded-xl border border-[#E1261C] bg-[#071120]/80 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.02]">
 					<div>
-						<span class="text-[10px] font-black uppercase text-slate-400 tracking-widest font-['League_Spartan']">Pro Pass</span>
-						<div class="text-3xl lg:text-4xl font-black text-[#00E5FF] font-['League_Spartan'] mt-2 mb-4">$39.99 <span class="text-sm text-slate-500 font-normal">/ 2 Years</span></div>
-						<ul class="text-sm text-slate-300 border-t border-[#5B0E1B]/30 pt-4 flex flex-col gap-3 font-light pl-0 list-none">
+						<span class="text-[10px] font-black uppercase text-slate-400 tracking-widest font-spartan">Pro Pass</span>
+						<div class="text-3xl lg:text-4xl font-black text-[#E1261C] font-spartan mt-2 mb-4">$39.99 <span class="text-sm text-slate-500 font-normal">/ 2 Years</span></div>
+						<ul class="text-sm text-slate-300 border-t border-[#E1261C]/30 pt-4 flex flex-col gap-3 font-light pl-0 list-none">
 							<li class="flex items-start gap-2">
-								<span class="text-[#00E5FF] mt-0.5">✔</span>
+								<span class="text-[#E1261C] mt-0.5">✔</span>
 								<span>1개 구글 아이디 연동함.</span>
 							</li>
 							<li class="flex items-start gap-2">
-								<span class="text-[#00E5FF] mt-0.5">✔</span>
+								<span class="text-[#E1261C] mt-0.5">✔</span>
 								<span>3개 디바이스 등록 제공함.</span>
 							</li>
 							<li class="flex items-start gap-2">
-								<span class="text-[#00E5FF] mt-0.5">✔</span>
+								<span class="text-[#E1261C] mt-0.5">✔</span>
 								<span>동시접속 3개 디바이스 허용함.</span>
 							</li>
 						</ul>
 					</div>
-					<button class="pay-btn w-full py-3 bg-[#5B0E1B]/20 hover:bg-[#5B0E1B]/80 border border-[#5B0E1B] text-slate-200 rounded text-xs font-bold uppercase tracking-wider transition-all mt-8">Activate Pro Plan</button>
+					<button class="pay-btn w-full py-3 bg-[#E1261C]/20 hover:bg-[#E1261C]/80 border border-[#E1261C] text-slate-200 rounded text-xs font-bold uppercase tracking-wider font-spartan transition-all mt-8">Activate Pro Plan</button>
 				</div>
 			</div>
 
-			<!-- SPLIT ROW ARCHITECTURE FOR DOUBLE AND ULTIMATE TIERS -->
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mt-6">
-				<!-- DOUBLE -->
-				<div class="rounded-xl border border-[#5B0E1B] bg-[#071120]/80 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-transform hover:-translate-y-1">
+			<!-- DOUBLE & TOTAL SECTION SPLIT -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mt-8">
+				<!-- TIER 4: DOUBLE VALUE (클래식 오렌지 프레임 매핑) -->
+				<div class="rounded-xl border border-[#F16B24] bg-[#071120]/80 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.02]">
 					<div>
-						<span class="text-[10px] font-black uppercase text-[#00E5FF] tracking-widest font-['League_Spartan']">Double Value Pass</span>
-						<div class="text-3xl font-black text-[#00E5FF] font-['League_Spartan'] mt-2 mb-4">$34.99 <span class="text-sm text-slate-500 font-normal">/ 2 Years</span></div>
-						<ul class="text-sm text-slate-300 border-t border-[#5B0E1B]/30 pt-4 flex flex-col gap-3 font-light pl-0 list-none">
+						<span class="text-[10px] font-black uppercase text-[#F16B24] tracking-widest font-spartan">Double Value Pass</span>
+						<div class="text-3xl font-black text-[#F16B24] font-spartan mt-2 mb-4">$34.99 <span class="text-sm text-slate-500 font-normal">/ 2 Years</span></div>
+						<ul class="text-sm text-slate-300 border-t border-[#F16B24]/30 pt-4 flex flex-col gap-3 font-light pl-0 list-none">
 							<li class="flex items-start gap-2">
-								<span class="text-[#00E5FF] mt-0.5">✔</span>
+								<span class="text-[#F16B24] mt-0.5">✔</span>
 								<span>1개 구글 아이디 연동함.</span>
 							</li>
 							<li class="flex items-start gap-2">
-								<span class="text-[#00E5FF] mt-0.5">✔</span>
+								<span class="text-[#F16B24] mt-0.5">✔</span>
 								<span>1개 디바이스 등록 제한함.</span>
 							</li>
 							<li class="flex items-start gap-2">
-								<span class="text-[#00E5FF] mt-0.5">✔</span>
+								<span class="text-[#F16B24] mt-0.5">✔</span>
 								<span>동시접속 해당 없음 명시함.</span>
 							</li>
 							<li class="flex items-start gap-2">
-								<span class="text-[#00E5FF] mt-0.5">⭐</span>
+								<span class="text-[#F16B24] mt-0.5">⭐</span>
 								<span>베이직 요금제 동일 적용함.</span>
 							</li>
 						</ul>
 					</div>
-					<button class="pay-btn w-full py-3 bg-[#5B0E1B]/20 hover:bg-[#5B0E1B]/80 border border-[#5B0E1B] text-slate-200 rounded text-xs font-bold uppercase tracking-wider transition-all mt-8">Activate Double Plan</button>
+					<button class="pay-btn w-full py-3 bg-[#F16B24]/20 hover:bg-[#F16B24]/80 border border-[#F16B24] text-slate-200 rounded text-xs font-bold uppercase tracking-wider font-spartan transition-all mt-8">Activate Double Plan</button>
 				</div>
-				<!-- TOTAL (ULTIMATE) -->
-				<div class="rounded-xl border-2 border-[#5B0E1B] bg-[#0A192F] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden shadow-2xl shadow-[#5B0E1B]/20 transition-transform hover:-translate-y-2 scale-100 z-10">
-					<div class="absolute top-0 right-0 px-3 py-1 bg-cyan-500 text-black text-[9px] font-black uppercase tracking-widest font-['League_Spartan'] font-bold rounded-bl-lg">all-in-one</div>
+				<!-- TIER 5: ULTIMATE ACCESS PASS (네온 사이언 블루) -->
+				<div class="rounded-xl border-2 border-[#00E5FF] bg-[#0A192F] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden shadow-2xl shadow-[#00E5FF]/20 transition-all duration-300 hover:scale-[1.02] z-10">
+					<div class="absolute top-0 right-0 px-3 py-1 bg-cyan-500 text-black text-[9px] font-black uppercase tracking-widest font-spartan font-bold rounded-bl-lg">all-in-one</div>
 					<div>
-						<span class="text-[10px] font-black uppercase text-[#00E5FF] tracking-widest font-['League_Spartan']">Ultimate Access Pass</span>
-						<div class="text-3xl font-black text-[#00E5FF] font-['League_Spartan'] mt-2 mb-4">$99.99 <span class="text-sm text-slate-500 font-normal">/ 2 Years</span></div>
-						<ul class="text-sm text-slate-300 border-t border-[#5B0E1B]/30 pt-4 flex flex-col gap-3 font-light pl-0 list-none">
+						<span class="text-[10px] font-black uppercase text-[#00E5FF] tracking-widest font-spartan">Ultimate Access Pass</span>
+						<div class="text-3xl font-black text-[#00E5FF] font-spartan mt-2 mb-4">$99.99 <span class="text-sm text-slate-500 font-normal">/ 2 Years</span></div>
+						<ul class="text-sm text-slate-300 border-t border-[#00E5FF]/30 pt-4 flex flex-col gap-3 font-light pl-0 list-none">
 							<li class="flex items-start gap-2">
 								<span class="text-[#00E5FF] mt-0.5">✔</span>
 								<span>1개 구글 아이디 연동함.</span>
@@ -469,7 +474,7 @@ const monthlyUpdatedCount = 5;
 							</li>
 						</ul>
 					</div>
-					<button class="pay-btn w-full py-3 bg-[#5B0E1B] hover:bg-[#8b1328] text-white rounded text-xs font-bold uppercase tracking-wider transition-all mt-8 shadow-lg">Activate Ultimate Plan</button>
+					<button class="pay-btn w-full py-3 bg-[#00E5FF]/20 hover:bg-[#00E5FF]/80 border border-[#00E5FF] text-slate-200 rounded text-xs font-bold uppercase tracking-wider font-spartan transition-all mt-8">Activate Ultimate Plan</button>
 				</div>
 			</div>
 		</section>
@@ -478,21 +483,21 @@ const monthlyUpdatedCount = 5;
 		<footer class="w-full px-6 md:px-12 py-12 border-t border-[#5B0E1B] bg-[#040c17]">
 			<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 max-w-7xl mx-auto text-left text-sm text-slate-400 font-light">
 				<div>
-					<h4 class="text-xs font-black uppercase tracking-widest text-slate-300 font-['League_Spartan'] mb-4">Learn More</h4>
+					<h4 class="text-xs font-black uppercase tracking-widest text-slate-300 font-spartan mb-4">Learn More</h4>
 					<div class="flex flex-col gap-3">
 						<button class="modal-trigger text-left hover:text-[#00E5FF] transition-colors" data-target="modal-terms">Terms of Service</button>
 						<button class="modal-trigger text-left hover:text-[#00E5FF] transition-colors" data-target="modal-business">Business Info</button>
 					</div>
 				</div>
 				<div>
-					<h4 class="text-xs font-black uppercase tracking-widest text-slate-300 font-['League_Spartan'] mb-4">Support</h4>
+					<h4 class="text-xs font-black uppercase tracking-widest text-slate-300 font-spartan mb-4">Support</h4>
 					<div class="flex flex-col gap-3">
 						<button class="modal-trigger text-left hover:text-[#00E5FF] transition-colors" data-target="modal-privacy">Privacy Policy</button>
 						<button class="modal-trigger text-left hover:text-[#00E5FF] transition-colors" data-target="modal-refund">Refund Policy</button>
 					</div>
 				</div>
 				<div>
-					<h4 class="text-xs font-black uppercase tracking-widest text-slate-300 font-['League_Spartan'] mb-4">Brand Hub</h4>
+					<h4 class="text-xs font-black uppercase tracking-widest text-slate-300 font-spartan mb-4">Brand Hub</h4>
 					<div class="flex flex-col gap-3">
 						<span>Protocol Metric</span>
 						<span>Mini Optimization</span>
@@ -511,32 +516,31 @@ const monthlyUpdatedCount = 5;
 				</div>
 			</div>
 
-			<!-- DISNEY+ SIGNATURE COMPONENT MEDIA CHIPS LOGO LINEUP MAP -->
+			<!-- DISNEY+ CINEMATIC BRAND CHIP LINEUP MAPPING -->
 			<div class="flex flex-col gap-6 border-t border-[#5B0E1B]/30 pt-8 items-center max-w-7xl mx-auto">
 				<div class="flex flex-wrap justify-center items-center gap-2 md:gap-4 w-full text-slate-200 font-['League_Spartan'] text-xs font-black">
 					
-					<!-- YOUTUBE CHIP -->
-					<a href="https://youtube.com" target="_blank" class="px-5 py-3 border-2 border-[#00E5FF] bg-gradient-to-b from-[#1a0508] to-[#110204] rounded-lg tracking-wider hover:scale-105 hover:border-white transition-all shadow-md uppercase min-w-[110px] text-center">YouTube</a>
+					<!-- YOUTUBE -->
+					<a href="https://youtube.com" target="_blank" class="px-5 py-3 border border-red-800 bg-[#140305] rounded-lg tracking-wider hover:scale-105 hover:border-[#00E5FF] transition-all shadow-md uppercase min-w-[125px] text-center">🎬 YouTube</a>
 					<span class="text-slate-500 font-light select-none">➔</span>
 					
-					<!-- INSTAGRAM CHIP -->
-					<a href="https://instagram.com" target="_blank" class="px-5 py-3 border border-fuchsia-800 bg-[#120314] rounded-lg tracking-wider hover:scale-105 hover:border-[#00E5FF] transition-all shadow-md uppercase min-w-[110px] text-center">Instagram</a>
+					<!-- INSTAGRAM -->
+					<a href="https://instagram.com" target="_blank" class="px-5 py-3 border border-fuchsia-800 bg-[#120314] rounded-lg tracking-wider hover:scale-105 hover:border-[#00E5FF] transition-all shadow-md uppercase min-w-[125px] text-center">📸 Instagram</a>
 					<span class="text-slate-500 font-light select-none">➔</span>
 					
-					<!-- TIKTOK CHIP -->
-					<a href="https://tiktok.com" target="_blank" class="px-5 py-3 border border-slate-700 bg-[#080d14] rounded-lg tracking-wider hover:scale-105 hover:border-[#00E5FF] transition-all shadow-md uppercase min-w-[110px] text-center">TikTok</a>
+					<!-- TIKTOK -->
+					<a href="https://tiktok.com" target="_blank" class="px-5 py-3 border border-slate-700 bg-[#080d14] rounded-lg tracking-wider hover:scale-105 hover:border-[#00E5FF] transition-all shadow-md uppercase min-w-[125px] text-center">🎵 TikTok</a>
 					<span class="text-slate-500 font-light select-none">➔</span>
 					
-					<!-- GOOGLE BLOG CHIP -->
-					<a href="https://google.com" target="_blank" class="px-5 py-3 border border-blue-900 bg-[#030b1a] rounded-lg tracking-wider hover:scale-105 hover:border-[#00E5FF] transition-all shadow-md uppercase min-w-[110px] text-center">Google Blog</a>
-					<!-- ARROW SPLIT LINK -->
+					<!-- GOOGLE BLOG -->
+					<a href="https://google.com" target="_blank" class="px-5 py-3 border border-blue-900 bg-[#030b1a] rounded-lg tracking-wider hover:scale-105 hover:border-[#00E5FF] transition-all shadow-md uppercase min-w-[125px] text-center">🌐 Google Blog</a>
 					<span class="text-slate-500 font-light select-none">➔</span>
 					
-					<!-- NAVER BLOG CHIP -->
-					<a href="https://naver.com" target="_blank" class="px-5 py-3 border border-emerald-900 bg-[#02140b] rounded-lg tracking-wider hover:scale-105 hover:border-[#00E5FF] transition-all shadow-md uppercase min-w-[110px] text-center">Naver Blog</a>
+					<!-- NAVER BLOG -->
+					<a href="https://naver.com" target="_blank" class="px-5 py-3 border border-emerald-900 bg-[#02140b] rounded-lg tracking-wider hover:scale-105 hover:border-[#00E5FF] transition-all shadow-md uppercase min-w-[125px] text-center">🍀 Naver Blog</a>
 				</div>
 
-				<div class="bg-amber-950/30 border border-amber-900 rounded p-4 text-center w-full max-w-2xl mt-4">
+				<div class="bg-amber-950/30 border border-amber-900 rounded p-4 text-center w-full max-w-2xl mt-2">
 					<p class="text-xs md:text-sm text-amber-200 leading-relaxed font-light">
 						We do not operate any channels other than these five. <br class="hidden md:block" />
 						<strong class="font-bold text-amber-400">Beware of imitation websites and fraudulent networks!</strong>
@@ -550,7 +554,9 @@ const monthlyUpdatedCount = 5;
 			</div>
 		</footer>
 
-		<!-- POPUP MODALS INFRASTRUCTURE SYSTEM CORE -->
+		<!-- POPUP MODALS INFRASTRUCTURE (Strictly English/Korean Parallel and Fact Checked) -->
+		
+		<!-- Popup Modal 1: Terms of Service -->
 		<div id="modal-terms" class="modal-overlay fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-xl max-w-[550px] w-full p-6 md:p-8 flex flex-col gap-4 relative max-h-[85vh] overflow-y-auto shadow-2xl">
 				<h3 class="text-base md:text-lg font-bold text-white border-b border-[#5B0E1B] pb-3 uppercase tracking-wide flex items-center justify-between font-['League_Spartan']">
@@ -568,6 +574,7 @@ const monthlyUpdatedCount = 5;
 			</div>
 		</div>
 
+		<!-- Popup Modal 2: Business Information -->
 		<div id="modal-business" class="modal-overlay fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-xl max-w-[550px] w-full p-6 md:p-8 flex flex-col gap-4 relative max-h-[85vh] overflow-y-auto shadow-2xl">
 				<h3 class="text-base md:text-lg font-bold text-white border-b border-[#5B0E1B] pb-3 uppercase tracking-wide flex items-center justify-between font-['League_Spartan']">
@@ -586,6 +593,7 @@ const monthlyUpdatedCount = 5;
 			</div>
 		</div>
 
+		<!-- Popup Modal 3: Privacy Policy -->
 		<div id="modal-privacy" class="modal-overlay fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-xl max-w-[550px] w-full p-6 md:p-8 flex flex-col gap-4 relative max-h-[85vh] overflow-y-auto shadow-2xl">
 				<h3 class="text-base md:text-lg font-bold text-white border-b border-[#5B0E1B] pb-3 uppercase tracking-wide flex items-center justify-between font-['League_Spartan']">
@@ -597,11 +605,12 @@ const monthlyUpdatedCount = 5;
 					<p><strong>2. 개인정보의 수집 및 이용 목적</strong><br/>서비스 제공 및 이용권 관리, 결제 처리 및 영수증 발송, 더블 프랜 쿠폰 등 혜택 제공<br/><span class="text-slate-500 font-mono text-xs">Service provision and access management, payment processing and receipts, benefit provision such as the Double Fren Coupon</span></p>
 					<p><strong>3. 개인정보의 보유 및 이용 기간</strong><br/>회원 탈퇴 시 또는 이용권 만료 후 2년이 경과한 시점까지 보관하며, 이후 즉시 파기합니다.<br/><span class="text-slate-500 font-mono text-xs">Retained until account deletion or 2 years after access expiration, after which data is immediately destroyed.</span></p>
 					<p><strong>4. 개인정보의 제3자 제공</strong><br/>결제 처리를 위해 Paddle(해외 결제 대행사), 인증을 위해 Google에 최소한의 정보가 제공됩니다.<br/><span class="text-slate-500 font-mono text-xs">Minimal information is shared with Paddle (payment processor) and Google (authentication) as necessary.</span></p>
-					<p><strong>5. 이용자의 권리</strong><br/>이용자는 언제든 본인의 개인정보 열람, 수정, 삭제를 요청할 수 있습니다. 문의: official@taerijay.com<br/><span class="text-slate-500 font-mono text-xs">Users may request access, correction, or deletion of their personal information at any time. Contact: official@taerijay.com</span></p>
+					<p><strong>5. 이용자의 권리</strong><br/>이용자는 언제든 본인의 개인정보열람, 수정, 삭제를 요청할 수 있습니다. 문의: official@taerijay.com<br/><span class="text-slate-500 font-mono text-xs">Users may request access, correction, or deletion of their personal information at any time. Contact: official@taerijay.com</span></p>
 				</div>
 			</div>
 		</div>
 
+		<!-- Popup Modal 4: Refund Policy -->
 		<div id="modal-refund" class="modal-overlay fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-xl max-w-[550px] w-full p-6 md:p-8 flex flex-col gap-4 relative max-h-[85vh] overflow-y-auto shadow-2xl">
 				<h3 class="text-base md:text-lg font-bold text-white border-b border-[#5B0E1B] pb-3 uppercase tracking-wide flex items-center justify-between font-['League_Spartan']">
@@ -609,13 +618,14 @@ const monthlyUpdatedCount = 5;
 					<button class="modal-close text-2xl text-slate-400 hover:text-white transition-colors">&times;</button>
 				</h3>
 				<div class="text-xs md:text-sm text-slate-300 leading-relaxed font-light flex flex-col gap-4">
-					<p><strong class="text-[#00E5FF]">원칙 (In Principle)</strong><br/>본 서비스는 디지털 콘텐츠로, 결제 즉시 전체 콘텐츠 이용이 가능하므로 원칙적으로 환불이 불가합니다.<br/><span class="text-slate-500 font-mono text-xs">As this service provides digital content with immediate full access upon payment, refunds are not available in principle.</span></p>
-					<p><strong class="text-[#00E5FF]">예외 사항 (Exceptions)</strong><br/>동일 서비스를 중복으로 결제한 경우, 시스템 오류로 결제는 되었으나 서비스 이용이 전혀 불가능한 경우에 한해 환불이 가능합니다.<br/><span class="text-slate-500 font-mono text-xs">Exceptions apply only when the same service was charged twice, or when payment succeeded but service access was entirely unavailable due to a system error.</span></p>
-					<p><strong class="text-[#00E5FF]">환불 신청 방법 (Claim Tracking Protocol)</strong><br/>official@taerijay.com/taerijay@gmail.com으로 결제 영수증과 환불 사유를 함께 보내주시면 확인 후 빠른 시간내 처리됩니다.<br/><span class="text-slate-500 font-mono text-xs">Submit clear transaction receipts along with verified reasoning criteria maps to official@taerijay.com or taerijay@gmail.com. Validated claims will be resolved in the shortest time frame possible.</span></p>
+					<p><strong>원칙</strong><br/>본 서비스는 디지털 콘텐츠로, 결제 즉시 전체 콘텐츠 이용이 가능하므로 원칙적으로 환불이 불가합니다.<br/><span class="text-slate-500 font-mono text-xs">As this service provides digital content with immediate full access upon payment, refunds are not available in principle.</span></p>
+					<p><strong>예외 사항</strong><br/>동일 서비스를 중복으로 결제한 경우, 시스템 오류로 결제는 되었으나 서비스 이용이 전혀 불가능한 경우에 한해 환불이 가능합니다.<br/><span class="text-slate-500 font-mono text-xs">Exceptions apply only when the same service was charged twice, or when payment succeeded but service access was entirely unavailable due to a system error.</span></p>
+					<p><strong>환불 신청 방법</strong><br/>official@taerijay.com/taerijay@gmail.com으로 결제 영수증과 환불 사유를 함께 보내주시면 확인 후 빠른 시간내 처리됩니다.<br/><span class="text-slate-500 font-mono text-xs">Submit clear transaction receipts along with verified reasoning criteria maps to official@taerijay.com or taerijay@gmail.com. Validated claims will be resolved in the shortest time frame possible.</span></p>
 				</div>
 			</div>
 		</div>
 
+		<!-- Popup Modal 5: Paddle Gateway Simulator -->
 		<div id="modal-checkout" class="modal-overlay fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-xl max-w-[400px] w-full p-6 md:p-8 flex flex-col gap-6 relative text-center shadow-2xl">
 				<div class="text-5xl animate-bounce">💳</div>
@@ -625,6 +635,7 @@ const monthlyUpdatedCount = 5;
 			</div>
 		</div>
 
+		<!-- Popup Modal 6: Locked Episode Gating Modal -->
 		<div id="modal-gating" class="modal-overlay fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-xl max-w-[400px] w-full p-6 md:p-8 flex flex-col gap-6 relative text-center shadow-2xl">
 				<div class="text-6xl">🔒</div>
@@ -707,10 +718,10 @@ const monthlyUpdatedCount = 5;
 				});
 			});
 
-			// C. Unified Authentication State Loop (Google Login -> Google Sign Up -> Google Logout)
+			// C. Unified Authentication State Loop
 			const authBtn = document.getElementById('authBtn');
 			const drawerUserBadge = document.getElementById('drawerUserBadge');
-			let authState = 0;
+			let authState = 0; // 0: Login, 1: Registering, 2: Logout/VIP
 
 			if (authBtn) {
 				authBtn.addEventListener('click', () => {

@@ -16,7 +16,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		
-		<!-- Google Fonts 글로벌 Noto Sans 제품군 및 영문 Spartan 통합 최적화 링크 바인딩 -->
+		<!-- Google Fonts Global Unified Noto Sans Engine Layer -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Arabic:wght@100..900&family=Noto+Sans+Hebrew:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
@@ -36,6 +36,11 @@ const { title } = Astro.props;
 							classicOrange: '#F16B24',
 							oliveGreen: '#6F8B2E',
 							neonPurple: '#A14D7C',
+						},
+						fontFamily: {
+							'playfair': ['"Playfair Display"', 'serif'],
+							'spartan': ['"League Spartan"', 'sans-serif'],
+							'noto': ['"Noto Sans"', '"Noto Sans Arabic"', '"Noto Sans Hebrew"', '"Noto Sans SC"', '"Noto Sans TC"', 'sans-serif']
 						}
 					}
 				}
@@ -44,8 +49,7 @@ const { title } = Astro.props;
 		<style is:global>
 			body {
 				background-color: #0A192F;
-				/* 1순위: 영문/숫자 -> 2순위: 라틴/키릴 -> 3순위: 아랍어 -> 4순위: 히브리어 -> 5순위: 한자 번체/간체 연쇄 매핑 */
-				font-family: 'League Spartan', 'Noto Sans', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans SC', 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+				font-family: 'League Spartan', 'Noto Sans', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans SC', 'Noto Sans TC', system-ui, sans-serif;
 				color: #FBF9F4;
 				overflow-x: hidden;
 				margin: 0;
@@ -62,9 +66,6 @@ const { title } = Astro.props;
 			::-webkit-scrollbar-thumb {
 				background: #5B0E1B;
 				border-radius: 4px;
-			}
-			::-webkit-scrollbar-thumb:hover {
-				background: #8b1328;
 			}
 			.no-scrollbar::-webkit-scrollbar {
 				display: none;
