@@ -7,216 +7,425 @@ const monthlyUpdatedCount = 5;
 ---
 
 <Layout title="TAERIJAY (태리재이)+">
-	<main class="w-full max-w-[480px] min-h-screen bg-[#0A192F] border-x border-[#5B0E1B] flex flex-col relative pb-24 shadow-2xl overflow-hidden">
+	<!-- 화면 환경에 맞게 좌우로 자유롭게 늘어나는 가로 100% 유연한 레이아웃 구조 -->
+	<main class="w-full min-h-screen bg-[#0A192F] flex flex-col relative pb-24 overflow-hidden">
 		
-		<!-- TOP PREMIUM NAV BAR -->
-		<header class="w-full px-4 py-4 border-b border-[#5B0E1B] bg-[#0A192F]/95 backdrop-blur sticky top-0 z-50 flex items-center justify-between">
+		<!-- TOP HEADER INFRASTRUCTURE WITH EMBEDDED AUTH BUTTON -->
+		<header class="w-full px-6 py-4 border-b border-[#5B0E1B] bg-[#0A192F]/95 backdrop-blur sticky top-0 z-50 flex items-center justify-between">
 			<!-- LEFT: Hamburger Menu Button -->
-			<button id="menuTrigger" class="text-white hover:text-[#00E5FF] transition-colors p-1 flex items-center justify-center">
+			<button id="menuTrigger" class="text-white hover:text-[#00E5FF] transition-colors p-2 flex items-center justify-center">
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
 				</svg>
 			</button>
 
-			<!-- CENTER: Brand Logo -->
+			<!-- CENTER: Brand Typography Logo -->
 			<div class="flex flex-col items-center">
-				<span class="font-['League_Spartan'] text-xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-[#00E5FF] leading-none uppercase">taerijay+</span>
+				<span class="font-['League_Spartan'] text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-[#00E5FF] leading-none uppercase">taerijay+</span>
 			</div>
 			
-			<!-- RIGHT: Combined Auth Switcher Badge (Register/Login/Logout) -->
-			<button id="authBtn" class="px-2.5 py-1.5 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-slate-200 text-[10px] font-bold uppercase tracking-wider transition-all shadow">
+			<!-- RIGHT: Combined Auth Switcher Badge (Sign In / Register / Logout) -->
+			<button id="authBtn" class="px-4 py-2 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-slate-200 text-xs font-bold uppercase tracking-wider transition-all shadow-md">
 				Google Login
 			</button>
 		</header>
 
-		<!-- SIDEBAR HAMBURGER MENU DRAWER -->
-		<div id="sideDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden justify-start max-w-[480px] mx-auto border-x border-[#5B0E1B]">
-			<div class="w-[280px] h-full bg-[#071120] border-r border-[#5B0E1B] p-5 flex flex-col gap-6 relative animate-slide-in">
-				<div class="flex items-center justify-between border-b border-[#5B0E1B] pb-3">
+		<!-- SIDEBAR HAMBURGER DRAWER MECHANISM -->
+		<div id="sideDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden justify-start w-full">
+			<div class="w-[300px] h-full bg-[#071120] border-r border-[#5B0E1B] p-6 flex flex-col gap-6 relative">
+				<div class="flex items-center justify-between border-b border-[#5B0E1B] pb-4">
 					<span class="font-['League_Spartan'] text-base font-black tracking-widest text-[#00E5FF] uppercase">Premium Channels</span>
-					<button id="menuCloser" class="text-slate-400 hover:text-white text-2xl font-light leading-none">&times;</button>
+					<button id="menuCloser" class="text-slate-400 hover:text-white text-3xl font-light leading-none">&times;</button>
 				</div>
 				
-				<!-- 1 to 7 Channels navigation loop -->
-				<nav class="flex flex-col gap-2 font-['League_Spartan'] font-bold text-sm">
-					<button class="channel-nav-link w-full text-left p-2.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#F16B24] hover:bg-[#5B0E1B]/20 transition-all" data-target="ch-protocol">1. taerijay+ protocol</button>
-					<button class="channel-nav-link w-full text-left p-2.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#FBF9F4] hover:bg-[#5B0E1B]/20 transition-all" data-target="ch-mini">2. taerijay+ mini</button>
-					<button class="channel-nav-link w-full text-left p-2.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#E1261C] hover:bg-[#5B0E1B]/20 transition-all" data-target="ch-daiso">3. taerijay+ daiso</button>
-					<button class="channel-nav-link w-full text-left p-2.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#6F8B2E] hover:bg-[#5B0E1B]/20 transition-all" data-target="ch-oliveyoung">4. taerijay+ oliveyoung</button>
-					<button class="channel-nav-link w-full text-left p-2.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#FFDD00] hover:bg-[#5B0E1B]/20 transition-all" data-target="ch-emart">5. taerijay+ emart</button>
-					<button class="channel-nav-link w-full text-left p-2.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#A14D7C] hover:bg-[#5B0E1B]/20 transition-all" data-target="ch-convenience">6. taerijay+ convenience</button>
-					<button class="channel-nav-link w-full text-left p-2.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#00E5FF] hover:bg-[#5B0E1B]/20 transition-all" data-target="ch-entertainment">7. taerijay+ entertainment</button>
+				<!-- 1번부터 7번 채널까지의 명확한 영문 네비게이션 안착 -->
+				<nav class="flex flex-col gap-3 font-['League_Spartan'] font-bold text-sm">
+					<button class="channel-nav-link w-full text-left p-3 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#F16B24] hover:bg-[#5B0E1B]/20 transition-all" data-idx="0">1. taerijay+ protocol</button>
+					<button class="channel-nav-link w-full text-left p-3 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#FBF9F4] hover:bg-[#5B0E1B]/20 transition-all" data-idx="1">2. taerijay+ mini</button>
+					<button class="channel-nav-link w-full text-left p-3 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#E1261C] hover:bg-[#5B0E1B]/20 transition-all" data-idx="2">3. taerijay+ daiso</button>
+					<button class="channel-nav-link w-full text-left p-3 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#6F8B2E] hover:bg-[#5B0E1B]/20 transition-all" data-idx="3">4. taerijay+ oliveyoung</button>
+					<button class="channel-nav-link w-full text-left p-3 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#FFDD00] hover:bg-[#5B0E1B]/20 transition-all" data-idx="4">5. taerijay+ emart</button>
+					<button class="channel-nav-link w-full text-left p-3 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#A14D7C] hover:bg-[#5B0E1B]/20 transition-all" data-idx="5">6. taerijay+ convenience</button>
+					<button class="channel-nav-link w-full text-left p-3 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#00E5FF] hover:bg-[#5B0E1B]/20 transition-all" data-idx="6">7. taerijay+ entertainment</button>
 				</nav>
 
 				<div class="mt-auto border-t border-[#5B0E1B] pt-4 text-center">
-					<span class="text-[9px] text-slate-500 font-mono" id="drawerUserBadge">Session: guest@taerijay.com</span>
+					<span class="text-xs text-slate-500 font-mono" id="drawerUserBadge">Session: guest@taerijay.com</span>
 				</div>
 			</div>
 		</div>
 
-		<!-- HERO SPOTLIGHT STAGE -->
-		<section class="w-full relative overflow-hidden px-5 py-6 border-b border-[#5B0E1B] bg-gradient-to-b from-[#0e2544] to-[#0A192F]">
-			<div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80');"></div>
-			<div class="relative z-10">
-				<div class="inline-flex items-center gap-1.5 bg-[#5B0E1B]/80 border border-[#5B0E1B] px-2.5 py-0.5 rounded-full mb-3 shadow">
-					<span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-					<span class="text-[8px] font-['League_Spartan'] tracking-widest text-slate-200 uppercase font-bold">active status</span>
-				</div>
-				
-				<h1 class="text-xl font-bold tracking-tight mb-2 leading-tight font-['Playfair_Display'] italic">
-					Unlocking Premium K-Heritage
-				</h1>
-				<p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
-					Access restricted curated database representing prime destination flow blueprints. Use hamburger menu to navigate pipelines.
-				</p>
-
-				<div class="grid grid-cols-3 gap-2 bg-[#071120]/90 border border-[#5B0E1B] rounded p-2 text-center shadow-inner">
-					<div>
-						<div class="text-base font-black text-[#00E5FF] font-['League_Spartan']">{totalItemCount}</div>
-						<div class="text-[8px] text-slate-400 font-semibold uppercase">Total DB</div>
-					</div>
-					<div>
-						<div class="text-base font-black text-[#FFDD00] font-['League_Spartan']">+{monthlyUpdatedCount}</div>
-						<div class="text-[8px] text-slate-400 font-semibold uppercase">Monthly Add</div>
-					</div>
-					<div>
-						<div class="text-[13px] font-bold text-slate-200 font-['League_Spartan'] pt-0.5">{lastUpdateDate}</div>
-						<div class="text-[8px] text-slate-400 font-semibold uppercase">Last Sync</div>
-					</div>
-				</div>
+		<!-- BRAND DASHBOARD METRICS SUB-BAR -->
+		<section class="w-full px-6 py-4 bg-[#071120]/40 border-b border-[#5B0E1B] flex flex-wrap items-center justify-between gap-4">
+			<div class="flex items-center gap-2">
+				<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+				<span class="text-xs font-bold text-slate-300 font-['League_Spartan'] uppercase tracking-wider">System Live Platform Monitoring Terminal Connected</span>
+			</div>
+			<div class="flex items-center gap-6 text-xs text-slate-400 font-mono">
+				<div>Total DB: <span class="text-[#00E5FF] font-bold">{totalItemCount}</span></div>
+				<div>Monthly Add: <span class="text-[#FFDD00] font-bold">+{monthlyUpdatedCount}</span></div>
+				<div>Last Sync: <span class="text-slate-200 font-bold">{lastUpdateDate}</span></div>
 			</div>
 		</section>
 
-		<!-- MASTER CHANNEL STAGE (CONTENT SECTIONS LOAD DYNAMICALLY ON CLICK) -->
-		<section class="w-full px-5 py-6 flex flex-col gap-5 min-h-[40vh]">
+		<!-- DISNEY+ STYLE HORIZONTAL INDEX SLIDER COMPONENT -->
+		<section class="w-full py-8 flex flex-col gap-8">
 			
-			<!-- DEFAULT CORE DISPLAY CONTENT -->
-			<div id="coreDisplaySection" class="w-full py-12 flex flex-col items-center justify-center text-center border-2 border-dashed border-[#5B0E1B]/40 rounded-lg p-5 bg-[#071120]/30 animate-pulse">
-				<span class="text-4xl mb-3">🍔</span>
-				<h3 class="text-sm font-bold text-white font-['League_Spartan'] uppercase tracking-widest mb-1">Select Channel Lineup</h3>
-				<p class="text-xs text-slate-400 max-w-[280px]">Please open the top-left hamburger menu to inspect exclusive pipelines.</p>
-			</div>
-
-			<!-- CARD PIPELINES MATRIX CONTAINER -->
-			<div id="channelContentWrapper" class="hidden flex-col">
-				
-				<!-- DYNAMIC INJECTED CONTAINER CARD STRUCTURE -->
-				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col shadow-xl animate-fade-in" id="activeMasterCard">
-					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between" id="cardBrandHeader">
-						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#F16B24]" id="cardHeaderTitle">taerijay+ pipeline</span>
-						<span class="text-[10px] text-slate-500 font-bold uppercase" id="cardHeaderBadge">🌐 view</span>
-					</div>
-					<div class="h-44 bg-slate-900 relative overflow-hidden flex items-center justify-center">
-						<div class="absolute inset-0 bg-cover bg-center opacity-40" id="cardBannerBg"></div>
-						<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
-						<div class="absolute bottom-3 left-4">
-							<span class="px-2 py-0.5 bg-slate-800 text-white text-[9px] font-black uppercase rounded font-['League_Spartan']" id="cardBannerTag">active pass</span>
-						</div>
-					</div>
-					<div class="p-4 flex flex-col gap-3">
-						<div class="flex flex-col gap-1">
-							<span class="text-xs font-bold text-slate-400 uppercase font-['League_Spartan']" id="cardSubCategory">[CATEGORY] INDEX</span>
-							<h3 class="text-sm font-bold text-white tracking-tight" id="cardMainTitle">Master Blueprint Pipeline</h3>
-						</div>
-						<p class="text-xs text-slate-300 leading-relaxed" id="cardDescription">Curated destination asset flows and strict logic constraints layout mapping.</p>
-						
-						<!-- GATING EPISODES SCROLLER ZONE (ONLY APPEARS ON ENTERTAINMENT) -->
-						<div class="flex flex-col gap-1.5 mt-2 max-h-[180px] overflow-y-auto border border-[#5B0E1B]/50 rounded p-2 bg-[#071120]/60 hidden" id="gatingScrollerZone">
-							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-xs text-slate-300 font-medium truncate">EP 01. Origin of Heritage (Drama)</span>
-								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
-							</div>
-							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-xs text-slate-300 font-medium truncate">EP 02. Midnight Food Hunt (Show)</span>
-								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
-							</div>
-							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-black/40 transition-all opacity-60" data-preview="false">
-								<span class="text-xs text-slate-500 font-medium truncate">EP 13. Deep Forest Temple Tour (Movie)</span>
-								<span class="text-[9px] px-1.5 py-0.5 bg-[#5B0E1B] text-white rounded font-bold shrink-0">🔒 Lock</span>
-							</div>
-						</div>
-
-						<div class="pt-2 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2">
-							<div class="flex items-center gap-1.5 min-w-0">
-								<span class="text-sm">📍</span>
-								<span class="text-[11px] text-slate-300 font-mono truncate" id="cardAddressText">Master Location Roadmap Street</span>
-							</div>
-							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[10px] font-bold uppercase tracking-wider transition-all" id="cardCopyBtn">Copy</button>
-						</div>
-					</div>
+			<div class="w-full flex flex-col gap-3">
+				<div class="px-6 flex items-center justify-between">
+					<h3 class="text-sm font-black uppercase tracking-widest text-slate-300 font-['League_Spartan'] flex items-center gap-2">
+						<span class="w-2 h-2 bg-[#5B0E1B]"></span>
+						<span>Disney+ Hub Master Scroller Track</span>
+					</h3>
+					<span class="text-xs text-slate-500 font-mono">Horizontal Scroll Track Active</span>
 				</div>
 
+				<!-- 좌우로 시원하게 밀리는 무제한 가로 스크롤 트랙 구조 벨트 -->
+				<div class="w-full overflow-x-auto flex gap-6 px-6 py-2 no-scrollbar scroll-smooth" id="masterSliderTrack">
+					
+					<!-- CARD 0: [MAIN TAERIJAY] -->
+					<div class="min-w-[300px] md:min-w-[340px] rounded-lg border-2 border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-[#5B0E1B]/30 scroll-item" id="slider-card-0">
+						<div class="px-4 py-2.5 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
+							<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#5B0E1B]">taerijay+ main</span>
+							<span class="text-[10px] text-slate-500 font-bold uppercase">🇰🇷 core</span>
+						</div>
+						<div class="h-44 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+							<div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=500&q=80');"></div>
+							<div class="relative z-10 text-center px-4">
+								<span class="font-['Playfair_Display'] text-4xl font-black italic tracking-tight text-[#5B0E1B]/30 block mb-1">TAERIJAY</span>
+								<p class="text-[10px] text-[#5B0E1B]/50 font-black uppercase tracking-widest font-['League_Spartan']">heritage premium frame</p>
+							</div>
+						</div>
+						<div class="p-4 flex flex-col gap-3">
+							<h3 class="text-sm font-bold text-white tracking-tight">Ultimate K-Travel Master Blueprint</h3>
+							<p class="text-xs text-slate-400 leading-relaxed min-h-[40px]">
+								[TAERIJAY+] 대표 여행지 마스터 기획안 동선 수록함.<br />
+								국제 VIP 타겟 맞춤형 프리미엄 로컬 루트 배치 완료함.
+							</p>
+							<div class="pt-3 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2 mt-auto">
+								<div class="flex items-center gap-1.5 min-w-0">
+									<span class="text-sm">📍</span>
+									<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-0">Gyeonggi-do, Namyangju-si, Hwado-eup</span>
+								</div>
+								<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/50 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-0">Copy</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- CARD 1: [1. protocol] -->
+					<div class="min-w-[300px] md:min-w-[340px] rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-[#5B0E1B]/20 scroll-item" id="slider-card-1">
+						<div class="px-4 py-2.5 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
+							<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#F16B24]">taerijay+ protocol</span>
+							<span class="text-[10px] text-slate-500 font-bold uppercase">🌐 rule</span>
+						</div>
+						<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+							<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=80');"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
+							<div class="absolute bottom-3 left-4">
+								<span class="px-2 py-0.5 bg-[#F16B24] text-white text-[9px] font-black uppercase rounded font-['League_Spartan']">must action</span>
+							</div>
+						</div>
+						<div class="p-4 flex flex-col gap-3">
+							<h3 class="text-sm font-bold text-white tracking-tight">Global Traveler Code & Security Policy</h3>
+							<p class="text-xs text-slate-400 leading-relaxed min-h-[40px]">
+								[인천국제공항] 세관 규정 및 안전 입국 행동 규칙 락인함.<br />
+								클래식 오렌지 텍스트 인덱싱을 통한 규약 명확성 상시 확보함.
+							</p>
+							<div class="pt-3 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2 mt-auto">
+								<div class="flex items-center gap-1.5 min-w-0">
+									<span class="text-sm">📍</span>
+									<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-1">Incheon International Airport Terminal 1 & 2</span>
+								</div>
+								<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/50 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-1">Copy</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- CARD 2: [2. mini] -->
+					<div class="min-w-[300px] md:min-w-[340px] rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-[#5B0E1B]/20 scroll-item" id="slider-card-2">
+						<div class="px-4 py-2.5 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
+							<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#FBF9F4]">taerijay+ mini</span>
+							<span class="text-[10px] text-slate-500 font-bold uppercase">📍 route</span>
+						</div>
+						<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+							<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=500&q=80');"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
+							<div class="absolute bottom-3 left-4">
+								<span class="px-2 py-0.5 bg-[#FBF9F4] text-[#0A192F] text-[9px] font-black uppercase rounded font-['League_Spartan']">city guide</span>
+							</div>
+						</div>
+						<div class="p-4 flex flex-col gap-3">
+							<h3 class="text-sm font-bold text-white tracking-tight">Dense One-Day Travel Blueprints</h3>
+							<p class="text-xs text-slate-400 leading-relaxed min-h-[40px]">
+								[명동] 거점 도시 중심 초압축 24시간 동선 서킷 배치함.<br />
+								진주빛 새틴 아이보리 서체 대조 적용을 통해 시인성 극대화함.
+							</p>
+							<div class="pt-3 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2 mt-auto">
+								<div class="flex items-center gap-1.5 min-w-0">
+									<span class="text-sm">📍</span>
+									<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-2">Myeong-dong, Jung-gu, Seoul</span>
+								</div>
+								<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/50 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-2">Copy</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- CARD 3: [3. daiso] -->
+					<div class="min-w-[300px] md:min-w-[340px] rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-[#5B0E1B]/20 scroll-item" id="slider-card-3">
+						<div class="px-4 py-2.5 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
+							<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#E1261C]">taerijay+ daiso</span>
+							<span class="text-[10px] text-slate-500 font-bold uppercase">💡 beauty</span>
+						</div>
+						<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+							<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80');"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
+							<div class="absolute bottom-3 left-4">
+								<span class="px-2 py-0.5 bg-[#E1261C] text-white text-[9px] font-black uppercase rounded font-['League_Spartan']">hot items</span>
+							</div>
+						</div>
+						<div class="p-4 flex flex-col gap-3">
+							<h3 class="text-sm font-bold text-white tracking-tight">Viral K-Beauty Cosmetics & Gear under $5</h3>
+							<p class="text-xs text-slate-400 leading-relaxed min-h-[40px]">
+								[다이소 명동역점] 품절 대란 메가 히트 스킨케어 재고 좌표 추적함.<br />
+								비비드 네온 레드 피팅 처리를 통한 핵심 바잉 리스트 락인 완료함.
+							</p>
+							<div class="pt-3 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2 mt-auto">
+								<div class="flex items-center gap-1.5 min-w-0">
+									<span class="text-sm">📍</span>
+									<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-3">134-1 Myeongdong 2-ga, Jung-gu, Seoul</span>
+								</div>
+								<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/50 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-3">Copy</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- CARD 4: [4. oliveyoung] -->
+					<div class="min-w-[300px] md:min-w-[340px] rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-[#5B0E1B]/20 scroll-item" id="slider-card-4">
+						<div class="px-4 py-2.5 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
+							<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#6F8B2E]">taerijay+ oliveyoung</span>
+							<span class="text-[10px] text-slate-500 font-bold uppercase">💡 tax-free</span>
+						</div>
+						<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+							<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=500&q=80');"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
+							<div class="absolute bottom-3 left-4">
+								<span class="px-2 py-0.5 bg-[#6F8B2E] text-white text-[9px] font-black uppercase rounded font-['League_Spartan']">k-beauty</span>
+							</div>
+						</div>
+						<div class="p-4 flex flex-col gap-3">
+							<h3 class="text-sm font-bold text-white tracking-tight">Instant Tax Refund Guide & Best Skincare</h3>
+							<p class="text-xs text-slate-400 leading-relaxed min-h-[40px]">
+								[올리브영 명동타운] 외국인 즉시 면세 Tax-Free 환급 스펙 완전 적재함.<br />
+								청량한 올리브 그린 배색 명세를 통한 최상급 가이드라인 매핑 완료함.
+							</p>
+							<div class="pt-3 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2 mt-auto">
+								<div class="flex items-center gap-1.5 min-w-0">
+									<span class="text-sm">📍</span>
+									<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-4">53 Myeongdong-gil, Jung-gu, Seoul</span>
+								</div>
+								<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/50 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-4">Copy</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- CARD 5: [5. emart] -->
+					<div class="min-w-[300px] md:min-w-[340px] rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-[#5B0E1B]/20 scroll-item" id="slider-card-5">
+						<div class="px-4 py-2.5 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
+							<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#FFDD00]">taerijay+ emart</span>
+							<span class="text-[10px] text-red-500 font-bold uppercase">⚠️ warning</span>
+						</div>
+						<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+							<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=500&q=80');"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
+							<div class="absolute bottom-3 left-4">
+								<span class="px-2 py-0.5 bg-[#FFDD00] text-[#0A192F] text-[9px] font-black uppercase rounded font-['League_Spartan']">smart buy</span>
+							</div>
+						</div>
+						<div class="p-4 flex flex-col gap-3">
+							<h3 class="text-sm font-bold text-white tracking-tight">Big Box Store Forced Off-Days Index</h3>
+							<p class="text-xs text-slate-400 leading-relaxed min-h-[40px]">
+								[이마트 영등포점] 매월 둘째/넷째 일요일 의무휴업 ⚠️ 경고 리스트 탑재함.<br />
+								브라이트 옐로우 배색 튜닝 처리를 통한 오진입 확률 제로화 구현 완료함.
+							</p>
+							<div class="pt-3 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2 mt-auto">
+								<div class="flex items-center gap-1.5 min-w-0">
+									<span class="text-sm">📍</span>
+									<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-5">7-1 Yeongdeungpo-dong 4-ga, Yeongdeungpo-gu, Seoul</span>
+								</div>
+								<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/50 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-5">Copy</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- CARD 6: [6. convenience] -->
+					<div class="min-w-[300px] md:min-w-[340px] rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-[#5B0E1B]/20 scroll-item" id="slider-card-6">
+						<div class="px-4 py-2.5 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
+							<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#A14D7C]">taerijay+ convenience</span>
+							<span class="text-[10px] text-slate-500 font-bold uppercase">🇰🇷 snack hack</span>
+						</div>
+						<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+							<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=500&q=80');"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
+							<div class="absolute bottom-3 left-4">
+								<span class="px-2 py-0.5 bg-[#A14D7C] text-white text-[9px] font-black uppercase rounded font-['League_Spartan']">pb master</span>
+							</div>
+						</div>
+						<div class="p-4 flex flex-col gap-3">
+							<h3 class="text-sm font-bold text-white tracking-tight">Midnight Recipe Hacks & Exclusive PB Guide</h3>
+							<p class="text-xs text-slate-400 leading-relaxed min-h-[40px]">
+								[GS25 서울종합포스트타워점] 불닭/PB 야간 안주 레이아웃 최적 조합 탑재함.<br />
+								퍼플-핑크 대한민국 편의점 네온사인 무드 트렌디 컬러 전격 매핑함.
+							</p>
+							<div class="pt-3 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2 mt-auto">
+								<div class="flex items-center gap-1.5 min-w-0">
+									<span class="text-sm">📍</span>
+									<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-6">Central Post Office GS25, Chungmuro 1-ga, Seoul</span>
+								</div>
+								<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/50 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-6">Copy</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- CARD 7: [7. entertainment] -->
+					<div class="min-w-[300px] md:min-w-[340px] rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-[#5B0E1B]/30 scroll-item" id="slider-card-7">
+						<div class="px-4 py-2.5 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
+							<span class="text-xs font-black font-['League_Spartan'] text-[#00E5FF] lowercase">taerijay+ entertainment</span>
+							<span class="text-[10px] text-[#00E5FF] font-bold uppercase">🌐 ott bridge</span>
+						</div>
+						<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+							<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=500&q=80');"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
+							<div class="absolute bottom-3 left-4">
+								<span class="px-2 py-0.5 bg-[#00E5FF] text-[#0A192F] text-[9px] font-black uppercase rounded font-['League_Spartan']">bridge media</span>
+							</div>
+						</div>
+						<div class="p-4 flex flex-col gap-3">
+							<h3 class="text-sm font-bold text-white tracking-tight lowercase">[entertainment] video hub</h3>
+							<p class="text-xs text-slate-400 leading-relaxed min-h-[40px]">
+								[유튜브] 채널 트래픽 연동 전용 순환식 아웃링크 우회 브릿지 아키텍처 전개함.<br />
+								청량 네온 사이언 블루 글자색 적용을 통한 하이엔드 미디어 레이아웃 정착함.
+							</p>
+							
+							<div class="flex flex-col gap-1.5 mt-2 max-h-[140px] overflow-y-auto border border-[#5B0E1B]/50 rounded p-1.5 bg-[#071120]/80">
+								<div class="ep-row flex items-center justify-between p-1 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 text-[11px]" data-preview="true" data-url="https://youtube.com">
+									<span class="text-slate-300 truncate">EP 01. Origin of Heritage (Drama)</span>
+									<span class="text-[9px] px-1 bg-emerald-900 text-emerald-300 rounded font-bold uppercase">Free</span>
+								</div>
+								<div class="ep-row flex items-center justify-between p-1 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-black/40 text-[11px] opacity-60" data-preview="false">
+									<span class="text-slate-500 truncate">EP 13. Deep Forest Temple (Movie)</span>
+									<span class="text-[9px] px-1 bg-[#5B0E1B] text-white rounded font-bold">🔒 Lock</span>
+								</div>
+							</div>
+
+							<div class="pt-3 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2 mt-auto">
+								<div class="flex items-center gap-1.5 min-w-0">
+									<span class="text-sm">📍</span>
+									<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-7">Central Hub Master Outlink Stream Station</span>
+								</div>
+								<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/50 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-7">Copy</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
 			</div>
 		</section>
 
-		<!-- 24-MONTH PASS PLAN SPEC -->
-		<section class="w-full px-5 py-6 bg-gradient-to-b from-[#0A192F] to-[#040c17] border-t border-[#5B0E1B]">
-			<div class="text-center mb-5">
-				<h2 class="text-base font-['Playfair_Display'] italic font-bold mb-1.5 text-white">Unlocks 24 Months Unlimited Pass</h2>
-				<p class="text-xs text-slate-400">Simple automatic activation via Paddle without recurring fees.</p>
+		<!-- PREMIUM SUBSCRIPTION PIPELINE SECTION -->
+		<section class="w-full px-6 py-8 bg-gradient-to-b from-[#0A192F] to-[#050f1a] border-t border-[#5B0E1B] mt-auto">
+			<div class="text-center mb-6">
+				<h2 class="text-lg font-['Playfair_Display'] italic font-bold mb-1.5 text-white">24 Months Premium Activation Pass Architecture</h2>
+				<p class="text-xs text-slate-400">Paddle secure billing integration simulation platform. Immediate master activation schema layout mapping.</p>
 			</div>
-			<div class="rounded-lg border-2 border-[#5B0E1B] bg-[#0A192F] p-4 flex flex-col justify-between relative overflow-hidden shadow-lg shadow-[#5B0E1B]/40">
-				<div class="absolute top-0 right-0 px-2.5 py-0.5 bg-cyan-500 text-black text-[8px] font-black uppercase rounded-bl tracking-widest font-['League_Spartan']">best value</div>
-				<div class="mb-4">
-					<span class="text-[9px] font-black uppercase text-[#00E5FF] font-['League_Spartan'] tracking-widest block mb-1">Double Value Pass</span>
-					<div class="flex items-baseline gap-1.5 mb-2">
-						<span class="text-2xl font-black font-['League_Spartan'] text-[#00E5FF]">$34.99</span>
-						<span class="text-[10px] text-slate-500 font-medium">/ 2 Years</span>
+			
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+				<div class="rounded-lg border border-[#5B0E1B] bg-[#071120]/80 p-5 flex flex-col justify-between relative overflow-hidden">
+					<div>
+						<span class="text-[9px] font-black uppercase text-slate-400 tracking-widest font-['League_Spartan']">Basic Pass</span>
+						<div class="text-2xl font-black text-[#00E5FF] font-['League_Spartan'] mt-1 mb-3">$19.99 <span class="text-xs text-slate-500 font-normal">/ 2 Years</span></div>
+						<p class="text-xs text-slate-300 border-t border-[#5B0E1B]/30 pt-3">1 ID / 1 Registered Device limitation active framework setup.</p>
 					</div>
-					<ul class="text-xs text-slate-300 flex flex-col gap-1.5 list-none border-t border-[#5B0E1B]/30 pt-3 pl-0">
-						<li class="flex items-center gap-1.5">
-							<span class="text-[#00E5FF]">✔</span>
-							<span>1 ID / 1 Registered Device lock control execution.</span>
-						</li>
-						<li class="flex items-center gap-1.5">
-							<span class="text-[#00E5FF]">✔</span>
-							<span>2 Separate premium pipeline services whole access.</span>
-						</li>
-					</ul>
+					<button class="pay-btn w-full py-2 bg-[#5B0E1B]/20 hover:bg-[#5B0E1B]/80 border border-[#5B0E1B] text-slate-200 rounded text-xs font-bold uppercase tracking-wider transition-all mt-4">Activate Basic</button>
 				</div>
-				<button id="payBtn" class="w-full py-2 bg-[#5B0E1B] hover:bg-[#8b1328] text-white rounded text-xs font-bold uppercase tracking-wider transition-all shadow-md">Activate Pass</button>
+				<div class="rounded-lg border-2 border-[#5B0E1B] bg-[#0A192F] p-5 flex flex-col justify-between relative overflow-hidden shadow-xl shadow-[#5B0E1B]/20">
+					<div class="absolute top-0 right-0 px-2.5 py-0.5 bg-cyan-500 text-black text-[8px] font-black uppercase tracking-widest font-['League_Spartan']">best value</div>
+					<div>
+						<span class="text-[9px] font-black uppercase text-[#00E5FF] tracking-widest font-['League_Spartan']">Double Value Pass</span>
+						<div class="text-2xl font-black text-[#00E5FF] font-['League_Spartan'] mt-1 mb-3">$34.99 <span class="text-xs text-slate-500 font-normal">/ 2 Years</span></div>
+						<p class="text-xs text-slate-300 border-t border-[#5B0E1B]/30 pt-3">1 ID / 1 Registered Device constraint block. 2 Separate service pipelines unlimited view index.</p>
+					</div>
+					<button class="pay-btn w-full py-2 bg-[#5B0E1B] hover:bg-[#8b1328] text-white rounded text-xs font-bold uppercase tracking-wider transition-all mt-4 shadow-md">Activate Double</button>
+				</div>
+				<div class="rounded-lg border border-[#5B0E1B] bg-[#071120]/80 p-5 flex flex-col justify-between relative overflow-hidden">
+					<div>
+						<span class="text-[9px] font-black uppercase text-slate-400 tracking-widest font-['League_Spartan']">Integrated Pass</span>
+						<div class="text-2xl font-black text-[#00E5FF] font-['League_Spartan'] mt-1 mb-3">$99.99 <span class="text-xs text-slate-500 font-normal">/ 2 Years</span></div>
+						<p class="text-xs text-slate-300 border-t border-[#5B0E1B]/30 pt-3">1 ID / 1 Terminal concurrent global connection lock. 6 Core service metrics entirely unlocked map.</p>
+					</div>
+					<button class="pay-btn w-full py-2 bg-[#5B0E1B]/20 hover:bg-[#5B0E1B]/80 border border-[#5B0E1B] text-slate-200 rounded text-xs font-bold uppercase tracking-wider transition-all mt-4">Activate Integrated</button>
+				</div>
 			</div>
 		</section>
 
-		<!-- GLOBAL INTEGRATED FOOTER GRID -->
-		<footer class="w-full px-5 py-8 border-t border-[#5B0E1B] bg-[#040c17]">
-			<div class="grid grid-cols-2 gap-6 mb-8 text-left">
+		<!-- FOOTER INFRASTRUCTURE -->
+		<footer class="w-full px-6 py-8 border-t border-[#5B0E1B] bg-[#040c17]">
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 text-left text-xs text-slate-400">
 				<div>
-					<h4 class="text-xs font-black uppercase tracking-wider text-slate-400 font-['League_Spartan'] mb-2.5">Learn More</h4>
-					<div class="flex flex-col gap-1.5">
-						<button class="modal-trigger text-xs text-slate-300 hover:text-[#00E5FF] transition-all text-left" data-target="modal-terms">Terms of Service</button>
-						<button class="modal-trigger text-xs text-slate-300 hover:text-[#00E5FF] transition-all text-left" data-target="modal-business">Business Info</button>
+					<h4 class="font-black uppercase tracking-wider text-slate-300 font-['League_Spartan'] mb-3">Learn More</h4>
+					<div class="flex flex-col gap-2">
+						<button class="modal-trigger text-left hover:text-[#00E5FF] transition-colors" data-target="modal-terms">Terms of Service</button>
+						<button class="modal-trigger text-left hover:text-[#00E5FF] transition-colors" data-target="modal-business">Business Info</button>
 					</div>
 				</div>
 				<div>
-					<h4 class="text-xs font-black uppercase tracking-wider text-slate-400 font-['League_Spartan'] mb-2.5">Policies</h4>
-					<div class="flex flex-col gap-1.5">
-						<button class="modal-trigger text-xs text-slate-300 hover:text-[#00E5FF] transition-all text-left" data-target="modal-privacy">Privacy Policy</button>
-						<button class="modal-trigger text-xs text-slate-300 hover:text-[#00E5FF] transition-all text-left" data-target="modal-refund">Refund Policy</button>
+					<h4 class="font-black uppercase tracking-wider text-slate-300 font-['League_Spartan'] mb-3">Support</h4>
+					<div class="flex flex-col gap-2">
+						<button class="modal-trigger text-left hover:text-[#00E5FF] transition-colors" data-target="modal-privacy">Privacy Policy</button>
+						<button class="modal-trigger text-left hover:text-[#00E5FF] transition-colors" data-target="modal-refund">Refund Policy</button>
+					</div>
+				</div>
+				<div>
+					<h4 class="font-black uppercase tracking-wider text-slate-300 font-['League_Spartan'] mb-3">Brand Hub</h4>
+					<div class="flex flex-col gap-1">
+						<span>Protocol Metric</span>
+						<span>Mini Optimization</span>
+						<span>Daiso Viral Skincare</span>
+						<span>Oliveyoung Duty Free</span>
+					</div>
+				</div>
+				<div>
+					<h4 class="font-black uppercase tracking-wider text-slate-300 font-['League_Spartan'] mb-3">Collection</h4>
+					<div class="flex flex-col gap-1">
+						<span>Emart Indexing</span>
+						<span>Convenience PB Snack</span>
+						<span>Entertainment Hub</span>
+						<span class="text-[#00E5FF] font-bold">Made in Korea</span>
 					</div>
 				</div>
 			</div>
 
-			<div class="flex flex-col gap-4 border-t border-[#5B0E1B]/30 pt-6">
-				<div class="flex flex-wrap justify-center gap-2.5">
-					<a href="https://youtube.com" target="_blank" class="px-3 py-1.5 bg-red-950/40 hover:bg-red-950 border border-red-800 text-red-200 rounded text-xs font-black uppercase font-['League_Spartan'] transition-all">YouTube</a>
-					<a href="https://instagram.com" target="_blank" class="px-3 py-1.5 bg-fuchsia-950/40 hover:bg-fuchsia-950 border border-fuchsia-800 text-xs font-black uppercase font-['League_Spartan'] transition-all">Instagram</a>
-					<a href="https://google.com" target="_blank" class="px-3 py-1.5 bg-blue-950/40 hover:bg-blue-950 border border-blue-800 text-xs font-black uppercase font-['League_Spartan'] transition-all">Google Blog</a>
+			<div class="flex flex-col gap-4 border-t border-[#5B0E1B]/30 pt-6 items-center">
+				<div class="flex flex-wrap justify-center gap-3">
+					<a href="https://youtube.com" target="_blank" class="px-4 py-2 bg-red-950/40 hover:bg-red-950 border border-red-800 text-red-200 rounded text-xs font-black uppercase font-['League_Spartan'] transition-all">YouTube</a>
+					<a href="https://instagram.com" target="_blank" class="px-4 py-2 bg-fuchsia-950/40 hover:bg-fuchsia-950 border border-fuchsia-800 text-xs font-black uppercase font-['League_Spartan'] transition-all">Instagram</a>
+					<a href="https://tiktok.com" target="_blank" class="px-4 py-2 bg-slate-900 hover:bg-black border border-slate-700 text-xs font-black uppercase font-['League_Spartan'] transition-all">TikTok</a>
+					<a href="https://google.com" target="_blank" class="px-4 py-2 bg-blue-950/40 hover:bg-blue-950 border border-blue-800 text-xs font-black uppercase font-['League_Spartan'] transition-all">Google Blog</a>
+					<a href="https://naver.com" target="_blank" class="px-4 py-2 bg-emerald-950/40 hover:bg-emerald-950 border border-emerald-800 text-xs font-black uppercase font-['League_Spartan'] transition-all">Naver Blog</a>
 				</div>
-				<div class="bg-amber-950/30 border border-amber-900 rounded p-3 text-center mt-2">
+				<div class="bg-amber-950/30 border border-amber-900 rounded p-3 text-center w-full max-w-xl">
 					<p class="text-xs text-amber-200 leading-normal font-medium">
-						⚠️ We do not operate any channels other than these five! Beware of imitation websites!
+						We do not operate any channels other than these five! 🚨 Beware of imitation websites!
 					</p>
 				</div>
 			</div>
 
 			<div class="text-center mt-8 pt-4 border-t border-[#5B0E1B]/20">
 				<span class="font-['League_Spartan'] text-base font-black text-slate-400 uppercase tracking-widest block mb-1">taerijay+</span>
-				<p class="text-[9px] text-slate-500 font-mono">© 2026 TAERIJAY. MADE IN KOREA. ALL RIGHTS RESERVED.</p>
+				<p class="text-[10px] text-slate-500 font-mono">© 2026 TAERIJAY. ALL RIGHTS RESERVED.</p>
 			</div>
 		</footer>
 
-		<!-- MODALS PORTAL MATRIX -->
+		<!-- LEGAL MATRICES MODALS -->
 		<div id="modal-terms" class="modal-overlay fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-lg max-w-[400px] w-full p-5 flex flex-col gap-3 relative max-h-[85vh] overflow-y-auto">
 				<h3 class="text-sm font-bold text-white border-b border-[#5B0E1B] pb-2 uppercase tracking-wide flex items-center justify-between">
@@ -251,7 +460,7 @@ const monthlyUpdatedCount = 5;
 					<button class="modal-close text-xl text-slate-400 hover:text-white">&times;</button>
 				</h3>
 				<p class="text-xs text-slate-300 leading-relaxed">
-					TAERIJAY+ Privacy: We explicitly restrict profile logs to primary Google OAuth parameters and secure Paddle API pipeline payload tokens.
+					TAERIJAY+ Privacy: We explicitly restrict profile logs to primary Google OAuth parameters and secure Paddle API billing payload structures.
 				</p>
 			</div>
 		</div>
@@ -263,7 +472,7 @@ const monthlyUpdatedCount = 5;
 					<button class="modal-close text-xl text-slate-400 hover:text-white">&times;</button>
 				</h3>
 				<p class="text-xs text-slate-300 leading-relaxed">
-					TAERIJAY+ Charge Settlement: Given immediate digital credential routing and master node viewing capability initialization, all fee transactions remain binding and non-refundable.
+					TAERIJAY+ Settlement: Given immediate digital credential routing and master node viewing capability initialization, all transactions remain non-refundable.
 				</p>
 			</div>
 		</div>
@@ -271,9 +480,9 @@ const monthlyUpdatedCount = 5;
 		<div id="modal-checkout" class="modal-overlay fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-lg max-w-[400px] w-full p-5 flex flex-col gap-4 relative text-center">
 				<div class="text-4xl animate-bounce">💳</div>
-				<h3 class="text-sm font-bold text-white">Paddle Secure Checkout</h3>
-				<p class="text-xs text-slate-300 leading-relaxed px-2">Simulating 24-Month Premium Pass Double Value Tier access activation.</p>
-				<button class="modal-close w-full py-2 bg-emerald-600 text-white text-xs font-bold uppercase rounded">Complete Simulation</button>
+				<h3 class="text-sm font-bold text-white">Paddle Billing Framework</h3>
+				<p class="text-xs text-slate-300 leading-relaxed px-2">Simulating 24-Month Premium Membership activation call bundle structure via Paddle secure gateway nodes.</p>
+				<button class="modal-close w-full py-2 bg-emerald-600 text-white text-xs font-bold uppercase rounded">Complete Purchase</button>
 			</div>
 		</div>
 
@@ -288,54 +497,15 @@ const monthlyUpdatedCount = 5;
 
 	</main>
 
-	<!-- Master Orchestration Script Matrix -->
 	<script is:inline>
-		// Database routing table mapping for 1 to 7 Channels
-		const channelDatabase = {
-			'ch-protocol': {
-				title: 'taerijay+ protocol', badge: '🌐 rule', tag: 'must action', cat: '[PROTOCOL] BEHAVIOR',
-				mainTitle: 'Global Traveler Code & Security Policy', desc: 'Legal requirements, entry regulations, and secure travel guidelines.',
-				addr: 'Incheon International Airport Terminal 1 & 2', color: '#F16B24', img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=80', gating: false
-			},
-			'ch-mini': {
-				title: 'taerijay+ mini', badge: '📍 route', tag: 'city guide', cat: '[MINI] OPTIMIZATION',
-				mainTitle: 'Dense One-Day Travel Blueprints', desc: 'Detailed course timelines, step-by-step maps, and optimized transport flow.',
-				addr: 'Myeong-dong, Jung-gu, Seoul', color: '#FBF9F4', img: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=500&q=80', gating: false
-			},
-			'ch-daiso': {
-				title: 'taerijay+ daiso', badge: '💡 beauty', tag: 'hot items', cat: '[DAISO] MUST-BUY',
-				mainTitle: 'Viral K-Beauty Cosmetics & Gear under $5', desc: 'Real-time viral skincare, makeup, and practical travel supplies.',
-				addr: '134-1 Myeongdong 2-ga, Jung-gu, Seoul', color: '#E1261C', img: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80', gating: false
-			},
-			'ch-oliveyoung': {
-				title: 'taerijay+ oliveyoung', badge: '💡 tax-free', tag: 'k-beauty', cat: '[OLIVEYOUNG] SKINCARE',
-				mainTitle: 'Instant Tax Refund Guide & Best Skincare', desc: 'Top recommended brands, facial masks, and on-site duty-free checkout instructions.',
-				addr: '53 Myeongdong-gil, Jung-gu, Seoul', color: '#6F8B2E', img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=500&q=80', gating: false
-			},
-			'ch-emart': {
-				title: 'taerijay+ emart', badge: '⚠️ warning', tag: 'smart buy', cat: '[EMART] MEGA MART INFO',
-				mainTitle: 'Big Box Store Forced Off-Days Index', desc: 'Warning index to avoid closed doors on 2nd and 4th Sundays.',
-				addr: '7-1 Yeongdeungpo-dong 4-ga, Yeongdeungpo-gu, Seoul', color: '#FFDD00', img: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=500&q=80', gating: false
-			},
-			'ch-convenience': {
-				title: 'taerijay+ convenience', badge: '🇰🇷 snack hack', tag: 'pb master', cat: '[CONVENIENCE] GS25 / CU / SEVEN',
-				mainTitle: 'Midnight Recipe Hacks & Exclusive PB Guide', desc: 'Secret snack formulas, must-try instant ramen, and pocket money savings.',
-				addr: 'Central Post Office GS25, Chungmuro 1-ga, Seoul', color: '#A14D7C', img: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=500&q=80', gating: false
-			},
-			'ch-entertainment': {
-				title: 'taerijay+ entertainment', badge: '🌐 ott bridge', tag: 'bridge media', cat: '[ENTERTAINMENT] VIDEO HUB',
-				mainTitle: 'Official Drama, Show & YouTube Streaming Hub', desc: 'Explore K-content, films, reality shows, and official traffic loops.',
-				addr: 'Central Hub Video Stream Station', color: '#00E5FF', img: 'https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=500&q=80', gating: true
-			}
-		};
-
 		document.addEventListener('DOMContentLoaded', () => {
 			
-			// A. Hamburger Menu Layer Animation Control
+			// Navigation Scroller Anchors logic
 			const menuTrigger = document.getElementById('menuTrigger');
 			const sideDrawer = document.getElementById('sideDrawer');
 			const menuCloser = document.getElementById('menuCloser');
 			const navLinks = document.querySelectorAll('.channel-nav-link');
+			const sliderTrack = document.getElementById('masterSliderTrack');
 
 			menuTrigger.addEventListener('click', () => {
 				sideDrawer.classList.remove('hidden');
@@ -352,110 +522,74 @@ const monthlyUpdatedCount = 5;
 				if (e.target === sideDrawer) closeMenu();
 			});
 
-			// B. Dynamic Channel Injection Display Controller
-			const coreDisplaySection = document.getElementById('coreDisplaySection');
-			const channelContentWrapper = document.getElementById('channelContentWrapper');
-			
-			const cardBrandHeader = document.getElementById('cardBrandHeader');
-			const cardHeaderTitle = document.getElementById('cardHeaderTitle');
-			const cardHeaderBadge = document.getElementById('cardHeaderBadge');
-			const cardBannerBg = document.getElementById('cardBannerBg');
-			const cardBannerTag = document.getElementById('cardBannerTag');
-			const cardSubCategory = document.getElementById('cardSubCategory');
-			const cardMainTitle = document.getElementById('cardMainTitle');
-			const cardDescription = document.getElementById('cardDescription');
-			const cardAddressText = document.getElementById('cardAddressText');
-			const gatingScrollerZone = document.getElementById('gatingScrollerZone');
-
 			navLinks.forEach(link => {
 				link.addEventListener('click', () => {
-					const channelKey = link.dataset.target;
-					const data = channelDatabase[channelKey];
-					
-					if (data) {
-						coreDisplaySection.classList.add('hidden');
-						channelContentWrapper.classList.remove('hidden');
-						channelContentWrapper.classList.add('flex');
-
-						// Override dynamic colors, borders, titles text
-						cardHeaderTitle.textContent = data.title;
-						cardHeaderTitle.style.color = data.color;
-						cardHeaderBadge.textContent = data.badge;
-						cardBannerBg.style.backgroundImage = `url('${data.img}')`;
-						cardBannerTag.textContent = data.tag;
-						cardBannerTag.style.backgroundColor = data.color;
-						cardBannerTag.style.color = (data.color === '#FBF9F4' || data.color === '#FFDD00') ? '#0A192F' : '#FBF9F4';
-						
-						cardSubCategory.textContent = data.cat;
-						cardMainTitle.textContent = data.mainTitle;
-						cardDescription.textContent = data.desc;
-						cardAddressText.textContent = data.addr;
-
-						// Conditional activation for Episode Gating zone
-						if (data.gating) {
-							gatingScrollerZone.classList.remove('hidden');
-						} else {
-							gatingScrollerZone.classList.add('hidden');
-						}
-
+					const cardIdx = link.dataset.idx;
+					const targetCard = document.getElementById(`slider-card-${cardIdx}`);
+					if (targetCard && sliderTrack) {
+						sliderTrack.scrollTo({
+							left: targetCard.offsetLeft - 24,
+							behavior: 'smooth'
+						});
 						closeMenu();
 					}
 				});
 			});
 
-			// C. Master State Switcher Badge Interaction (Register / Login / Logout)
+			// Clipboard Copy Button
+			const copyButtons = document.querySelectorAll('.copy-btn');
+			copyButtons.forEach(btn => {
+				btn.addEventListener('click', () => {
+					const targetId = btn.dataset.target;
+					const targetElement = document.getElementById(targetId);
+					if (targetElement) {
+						navigator.clipboard.writeText(targetElement.textContent)
+							.then(() => {
+								const originalText = btn.textContent;
+								btn.textContent = 'COPIED!';
+								btn.classList.add('bg-emerald-900', 'border-emerald-600');
+								setTimeout(() => {
+									btn.textContent = originalText;
+									btn.classList.remove('bg-emerald-900', 'border-emerald-600');
+								}, 1500);
+							});
+					}
+				});
+			});
+
+			// Unified Authentication State Loop
 			const authBtn = document.getElementById('authBtn');
-			const userEmail = document.getElementById('userEmail');
 			const drawerUserBadge = document.getElementById('drawerUserBadge');
-			let authState = 0; // 0: Guest, 1: Registering, 2: LoggedIn
+			let authState = 0;
 
 			authBtn.addEventListener('click', () => {
 				if (authState === 0) {
-					// Switch to state 1: Registering/Signing Up process
 					authBtn.textContent = 'Registering';
-					authBtn.className = "px-2.5 py-1.5 border border-[#FFDD00] rounded bg-amber-500/20 text-[#FFDD00] text-[10px] font-bold uppercase tracking-wider transition-all shadow";
+					authBtn.className = "px-4 py-2 border border-[#FFDD00] rounded bg-amber-500/20 text-[#FFDD00] text-xs font-bold uppercase tracking-wider transition-all shadow-md";
 					authState = 1;
 				} else if (authState === 1) {
-					// Switch to state 2: Verified Active VIP Session Logged In
-					userEmail.textContent = 'active-vip@taerijay.com';
-					drawerUserBadge.textContent = 'Session: active-vip@taerijay.com';
 					authBtn.textContent = 'Logout';
-					authBtn.className = "px-2.5 py-1.5 border border-emerald-600 rounded bg-emerald-800 text-white text-[10px] font-bold uppercase tracking-wider transition-all shadow";
+					authBtn.className = "px-4 py-2 border border-emerald-600 rounded bg-emerald-800 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md";
+					drawerUserBadge.textContent = 'Session: active-vip@taerijay.com';
 					authState = 2;
 				} else {
-					// Return to default state 0: Guest Sign Out
-					userEmail.textContent = 'guest@taerijay.com';
-					drawerUserBadge.textContent = 'Session: guest@taerijay.com';
 					authBtn.textContent = 'Google Login';
-					authBtn.className = "px-2.5 py-1.5 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-slate-200 text-[10px] font-bold uppercase tracking-wider transition-all shadow";
+					authBtn.className = "px-4 py-2 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-slate-200 text-xs font-bold uppercase tracking-wider transition-all shadow-md";
+					drawerUserBadge.textContent = 'Session: guest@taerijay.com';
 					authState = 0;
 				}
 			});
 
-			// D. One-Touch Copy Engine
-			const cardCopyBtn = document.getElementById('cardCopyBtn');
-			cardCopyBtn.addEventListener('click', () => {
-				navigator.clipboard.writeText(cardAddressText.textContent)
-					.then(() => {
-						const originalText = cardCopyBtn.textContent;
-						cardCopyBtn.textContent = 'COPIED!';
-						cardCopyBtn.classList.add('bg-emerald-900', 'border-emerald-600');
-						setTimeout(() => {
-							cardCopyBtn.textContent = originalText;
-							cardCopyBtn.classList.remove('bg-emerald-900', 'border-emerald-600');
-						}, 1500);
-					});
-			});
-
-			// E. Paddle Trigger Simulation
-			const payBtn = document.getElementById('payBtn');
+			// Modals Matrix System Controls
+			const payBtns = document.querySelectorAll('.pay-btn');
 			const checkoutModal = document.getElementById('modal-checkout');
-			payBtn.addEventListener('click', () => {
-				checkoutModal.classList.remove('hidden');
-				checkoutModal.classList.add('flex');
+			payBtns.forEach(btn => {
+				btn.addEventListener('click', () => {
+					checkoutModal.classList.remove('hidden');
+					checkoutModal.classList.add('flex');
+				});
 			});
 
-			// F. Episode Locking Gating Trigger Matrix
 			const epRows = document.querySelectorAll('.ep-row');
 			const gatingModal = document.getElementById('modal-gating');
 			epRows.forEach(row => {
@@ -469,27 +603,26 @@ const monthlyUpdatedCount = 5;
 				});
 			});
 
-			// G. General Modals Closure System
-			const modalOverlays = document.querySelectorAll('.modal-overlay');
-			const modalTriggers = document.querySelectorAll('.modal-trigger');
-			const modalClosers = document.querySelectorAll('.modal-close');
+			const overlays = document.querySelectorAll('.modal-overlay');
+			const triggers = document.querySelectorAll('.modal-trigger');
+			const closers = document.querySelectorAll('.modal-close');
 
-			modalTriggers.forEach(trig => {
+			triggers.forEach(trig => {
 				trig.addEventListener('click', () => {
 					document.getElementById(trig.dataset.target).classList.remove('hidden');
 					document.getElementById(trig.dataset.target).classList.add('flex');
 				});
 			});
 
-			modalClosers.forEach(closer => {
+			closers.forEach(closer => {
 				closer.addEventListener('click', () => {
-					const overlay = closer.closest('.modal-overlay');
-					overlay.classList.add('hidden');
-					overlay.classList.remove('flex');
+					const targetOverlay = closer.closest('.modal-overlay');
+					targetOverlay.classList.add('hidden');
+					targetOverlay.classList.remove('flex');
 				});
 			});
 
-			modalOverlays.forEach(overlay => {
+			overlays.forEach(overlay => {
 				overlay.addEventListener('click', (e) => {
 					if (e.target === overlay) {
 						overlay.classList.add('hidden');
