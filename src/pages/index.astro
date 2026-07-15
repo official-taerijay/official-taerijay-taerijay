@@ -1,64 +1,64 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Astro 고유 빌드 변수
+// Dynamic Astro variables
 const lastUpdateDate = "2026.07.10";
 const totalItemCount = 613; 
 const monthlyUpdatedCount = 5;
 ---
 
 <Layout title="TAERIJAY (태리재이)+">
-	<!-- 모바일 최적화 컨테이너 벨트 (max-w-[480px]) -->
-	<main class="w-full max-w-[480px] min-h-screen bg-[#0A192F] border-x border-[#5B0E1B] flex flex-col relative pb-24">
+	<!-- 모바일 최적화 및 디즈니+ 고정형 컨테이너 벨트 (max-w-[480px]) -->
+	<main class="w-full max-w-[480px] min-h-screen bg-[#0A192F] border-x border-[#5B0E1B] flex flex-col relative pb-24 shadow-2xl">
 		
-		<!-- 헤더 영역 -->
-		<header class="w-full px-6 py-5 border-b border-[#5B0E1B] bg-[#0A192F]/90 backdrop-blur sticky top-0 z-40 flex items-center justify-between">
+		<!-- HEADER SECTION -->
+		<header class="w-full px-5 py-4 border-b border-[#5B0E1B] bg-[#0A192F]/90 backdrop-blur sticky top-0 z-40 flex items-center justify-between">
 			<div class="flex flex-col">
-				<span class="font-['League_Spartan'] text-[24pt] font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-[#00E5FF] leading-none uppercase">taerijay+</span>
-				<span class="text-[7.5pt] tracking-widest text-[#00E5FF] uppercase font-['League_Spartan'] mt-1">global k-travel platform</span>
+				<span class="font-['League_Spartan'] text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-[#00E5FF] leading-none uppercase">taerijay+</span>
+				<span class="text-[8px] tracking-[0.2em] text-[#00E5FF] uppercase font-['League_Spartan'] mt-1">global k-travel platform</span>
 			</div>
 			
-			<!-- 실시간 다국어 변환 언어 토글기 -->
+			<!-- Global Language Selector Toggle -->
 			<div class="flex items-center bg-[#071120] border border-[#5B0E1B] rounded-full p-0.5" id="langToggleWrapper">
-				<button data-lang="en" class="lang-btn px-2.5 py-1 rounded-full text-[8.5pt] font-bold uppercase transition-all duration-300 bg-[#5B0E1B] text-white">en</button>
-				<button data-lang="ko" class="lang-btn px-2.5 py-1 rounded-full text-[8.5pt] font-bold uppercase transition-all duration-300 text-slate-400">ko</button>
+				<button data-lang="en" class="lang-btn px-2.5 py-1 rounded-full text-[9px] font-bold uppercase transition-all duration-300 bg-[#5B0E1B] text-white">en</button>
+				<button data-lang="ko" class="lang-btn px-2.5 py-1 rounded-full text-[9px] font-bold uppercase transition-all duration-300 text-slate-400">ko</button>
 			</div>
 		</header>
 
-		<!-- 히어로 광고 판넬 -->
+		<!-- HERO BANNER -->
 		<section class="w-full relative overflow-hidden px-5 py-6 border-b border-[#5B0E1B] bg-gradient-to-b from-[#0e2544] to-[#0A192F]">
 			<div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80');"></div>
 			<div class="relative z-10">
-				<!-- 액티브 상태 배지 -->
+				<!-- Live Badge -->
 				<div class="inline-flex items-center gap-1.5 bg-[#5B0E1B]/80 border border-[#5B0E1B] px-2.5 py-0.5 rounded-full mb-3">
 					<span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-					<span class="text-[7pt] font-['League_Spartan'] tracking-widest text-slate-200 uppercase font-bold">active status</span>
+					<span class="text-[8px] font-['League_Spartan'] tracking-widest text-slate-200 uppercase font-bold">active status</span>
 				</div>
 				
-				<h1 class="text-[17pt] font-bold tracking-tight mb-2 leading-tight font-['Playfair_Display'] italic">
+				<h1 class="text-xl font-bold tracking-tight mb-2 leading-tight font-['Playfair_Display'] italic">
 					<span class="lang-el" data-en="Unlocking Premium K-Heritage">독점적 프리미엄 헤리티지</span>
 				</h1>
-				<p class="text-[9pt] text-slate-300 leading-relaxed font-light mb-4">
+				<p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
 					<span class="lang-el" data-en="Access restricted curated database representing prime destination flow blueprints.">엄선된 핵심 한국 관광 루트 가이드북 및 무제한 액션 플랜 제공함.</span>
 				</p>
 
-				<!-- 실시간 동적 현황 보드 -->
-				<div class="grid grid-cols-3 gap-2 bg-[#071120]/90 border border-[#5B0E1B] rounded p-2.5 text-center">
+				<!-- Real-time dynamic credentials bar -->
+				<div class="grid grid-cols-3 gap-2 bg-[#071120]/90 border border-[#5B0E1B] rounded p-2 text-center">
 					<div>
-						<div class="text-[12pt] font-black text-[#00E5FF] font-['League_Spartan']">{totalItemCount}</div>
-						<div class="text-[7pt] text-slate-400 font-semibold uppercase">
+						<div class="text-base font-black text-[#00E5FF] font-['League_Spartan']">{totalItemCount}</div>
+						<div class="text-[8px] text-slate-400 font-semibold uppercase">
 							<span class="lang-el" data-en="Total DB">총 데이터</span>
 						</div>
 					</div>
 					<div>
-						<div class="text-[12pt] font-black text-[#FFDD00] font-['League_Spartan']">+{monthlyUpdatedCount}</div>
-						<div class="text-[7pt] text-slate-400 font-semibold uppercase">
+						<div class="text-base font-black text-[#FFDD00] font-['League_Spartan']">+{monthlyUpdatedCount}</div>
+						<div class="text-[8px] text-slate-400 font-semibold uppercase">
 							<span class="lang-el" data-en="Monthly Add">매월 추가</span>
 						</div>
 					</div>
 					<div>
-						<div class="text-[11pt] font-bold text-slate-200 font-['League_Spartan']">{lastUpdateDate}</div>
-						<div class="text-[7pt] text-slate-400 font-semibold uppercase">
+						<div class="text-[13px] font-bold text-slate-200 font-['League_Spartan'] pt-0.5">{lastUpdateDate}</div>
+						<div class="text-[8px] text-slate-400 font-semibold uppercase">
 							<span class="lang-el" data-en="Last Sync">최근 동기화</span>
 						</div>
 					</div>
@@ -66,69 +66,69 @@ const monthlyUpdatedCount = 5;
 			</div>
 		</section>
 
-		<!-- 유저 간편 세션 패널 -->
+		<!-- AUTH & STATUS PANEL (Google OAuth Simulation) -->
 		<section class="w-full px-5 py-4 border-b border-[#5B0E1B] bg-[#071120]/50">
 			<div class="flex items-center justify-between bg-[#0A192F] border border-[#5B0E1B] rounded-lg p-3" id="authBox">
 				<div class="flex items-center gap-3">
 					<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-cyan-400 to-fuchsia-600 p-0.5">
-						<div class="w-full h-full bg-[#0A192F] rounded-full flex items-center justify-center text-[10pt] font-bold text-white">🌐</div>
+						<div class="w-full h-full bg-[#0A192F] rounded-full flex items-center justify-center text-sm font-bold text-white">🌐</div>
 					</div>
 					<div class="flex flex-col">
-						<span class="text-[9.5pt] font-bold text-white" id="userEmail">guest@taerijay.com</span>
-						<span class="text-[7.5pt] text-[#00E5FF] font-semibold tracking-wider uppercase flex items-center gap-1">
+						<span class="text-sm font-bold text-white" id="userEmail">guest@taerijay.com</span>
+						<span class="text-[9px] text-[#00E5FF] font-semibold tracking-wider uppercase flex items-center gap-1">
 							<span class="w-1.5 h-1.5 rounded-full bg-[#00E5FF]"></span>
 							<span class="lang-el" data-en="Verified Premium Session">인증된 프리미엄 세션</span>
 						</span>
 					</div>
 				</div>
-				<button id="logoutBtn" class="px-3 py-1.5 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-slate-200 text-[8pt] font-bold uppercase transition-all">
+				<button id="logoutBtn" class="px-3 py-1.5 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-slate-200 text-xs font-bold uppercase transition-all">
 					<span class="lang-el" data-en="Revoke">해제</span>
 				</button>
 			</div>
 		</section>
 
-		<!-- OTT GRID PLATFORM (8대 채널) -->
+		<!-- OTT GRID PLATFORM (8 CHANNELS) -->
 		<section class="w-full px-5 py-6 flex flex-col gap-5">
 			<div class="flex justify-between items-center mb-1">
-				<h2 class="text-[11.5pt] uppercase tracking-wider font-bold text-slate-300 font-['League_Spartan'] flex items-center gap-2">
+				<h2 class="text-xs uppercase tracking-wider font-bold text-slate-300 font-['League_Spartan'] flex items-center gap-2">
 					<span class="w-2 h-2 bg-[#5B0E1B]"></span>
 					<span class="lang-el" data-en="Active Premium Channels">8대 액티브 채널</span>
 				</h2>
-				<span class="text-[7.5pt] text-slate-500 font-mono tracking-tighter">max-w: 480px / locked</span>
+				<span class="text-[9px] text-slate-500 font-mono tracking-tighter">max-w: 480px / locked</span>
 			</div>
 
-			<!-- 채널 카드 리스트 시작 -->
+			<!-- channel list start -->
 			<div class="flex flex-col gap-6">
 
 				<!-- MAIN CARD -->
 				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-						<span class="text-[8.5pt] font-black uppercase font-['League_Spartan'] text-[#5B0E1B]">taerijay+ main</span>
-						<span class="text-[7.5pt] text-slate-500 font-bold uppercase">🇰🇷 core</span>
+						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#5B0E1B]">taerijay+ main</span>
+						<span class="text-[10px] text-slate-500 font-bold uppercase">🇰🇷 core</span>
 					</div>
 					<div class="h-44 bg-slate-900 relative overflow-hidden flex items-center justify-center">
 						<div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=500&q=80');"></div>
 						<div class="relative z-10 text-center px-4">
-							<span class="font-['Playfair_Display'] text-[26pt] font-black italic tracking-tight text-slate-300/60 block mb-1">TAERIJAY</span>
-							<p class="text-[8pt] text-[#5B0E1B] font-black uppercase tracking-widest font-['League_Spartan']">heritage premium frame</p>
+							<span class="font-['Playfair_Display'] text-3xl font-black italic tracking-tight text-slate-300/60 block mb-1">TAERIJAY</span>
+							<p class="text-xs text-[#5B0E1B] font-black uppercase tracking-widest font-['League_Spartan']">heritage premium frame</p>
 						</div>
 					</div>
 					<div class="p-4 flex flex-col gap-3">
 						<div class="flex flex-col gap-1">
-							<span class="text-[8.5pt] font-bold text-[#5B0E1B] uppercase font-['League_Spartan']">[MAIN] HERITAGE</span>
-							<h3 class="text-[11pt] font-bold text-white tracking-tight">
+							<span class="text-xs font-bold text-[#5B0E1B] uppercase font-['League_Spartan']">[MAIN] HERITAGE</span>
+							<h3 class="text-sm font-bold text-white tracking-tight">
 								<span class="lang-el" data-en="Ultimate K-Travel Master Blueprint">대한민국 대표 여행지 총 집합 마스터 기획안</span>
 							</h3>
 						</div>
-						<p class="text-[8.5pt] text-slate-400 leading-relaxed">
+						<p class="text-xs text-slate-400 leading-relaxed">
 							<span class="lang-el" data-en="Premium curated travel destinations optimized for international VIP travelers.">VIP 방문객 전용 로컬 동선 배치 및 유일무이한 가이드북 완전 탑재함.</span>
 						</p>
 						<div class="pt-2 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2">
 							<div class="flex items-center gap-1.5 min-w-0">
-								<span class="text-[10pt]">📍</span>
-								<span class="text-[8pt] text-slate-300 font-mono truncate" id="addr-main">Gyeonggi-do, Namyangju-si, Hwado-eup</span>
+								<span class="text-sm">📍</span>
+								<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-main">Gyeonggi-do, Namyangju-si, Hwado-eup</span>
 							</div>
-							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[7.5pt] font-bold uppercase tracking-wider transition-all" data-target="addr-main">
+							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-main">
 								<span class="lang-el" data-en="Copy">복사</span>
 							</button>
 						</div>
@@ -136,34 +136,34 @@ const monthlyUpdatedCount = 5;
 				</div>
 
 				<!-- CHANNEL 1: protocol -->
-				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all">
+				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-						<span class="text-[8.5pt] font-black uppercase font-['League_Spartan'] text-[#F16B24]">taerijay+ protocol</span>
-						<span class="text-[7.5pt] text-slate-500 font-bold uppercase">🌐 rule</span>
+						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#F16B24]">taerijay+ protocol</span>
+						<span class="text-[10px] text-slate-500 font-bold uppercase">🌐 rule</span>
 					</div>
 					<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
 						<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=80');"></div>
 						<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
 						<div class="absolute bottom-3 left-4">
-							<span class="px-2 py-0.5 bg-[#F16B24] text-white text-[7pt] font-black uppercase rounded font-['League_Spartan']">must action</span>
+							<span class="px-2 py-0.5 bg-[#F16B24] text-white text-[9px] font-black uppercase rounded font-['League_Spartan']">must action</span>
 						</div>
 					</div>
 					<div class="p-4 flex flex-col gap-3">
 						<div class="flex flex-col gap-1">
-							<span class="text-[8.5pt] font-bold text-[#F16B24] uppercase font-['League_Spartan']">[PROTOCOL] BEHAVIOR</span>
-							<h3 class="text-[11pt] font-bold text-white tracking-tight">
+							<span class="text-xs font-bold text-[#F16B24] uppercase font-['League_Spartan']">[PROTOCOL] BEHAVIOR</span>
+							<h3 class="text-sm font-bold text-white tracking-tight">
 								<span class="lang-el" data-en="Global Traveler Code & Security Policy">해외 입국객 행동 강령 및 10대 수칙 명시</span>
 							</h3>
 						</div>
-						<p class="text-[8.5pt] text-slate-400 leading-relaxed">
+						<p class="text-xs text-slate-400 leading-relaxed">
 							<span class="lang-el" data-en="Legal requirements, entry regulations, and secure travel guidelines.">공항 세관, 대중교통 탑승 룰, 도난 방지 가이드라인 및 필수 규칙만 선별함.</span>
 						</p>
 						<div class="pt-2 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2">
 							<div class="flex items-center gap-1.5 min-w-0">
-								<span class="text-[10pt]">📍</span>
-								<span class="text-[8pt] text-slate-300 font-mono truncate" id="addr-protocol">Incheon International Airport Terminal 1 & 2</span>
+								<span class="text-sm">📍</span>
+								<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-protocol">Incheon International Airport Terminal 1 & 2</span>
 							</div>
-							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[7.5pt] font-bold uppercase tracking-wider transition-all" data-target="addr-protocol">
+							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-protocol">
 								<span class="lang-el" data-en="Copy">복사</span>
 							</button>
 						</div>
@@ -171,34 +171,34 @@ const monthlyUpdatedCount = 5;
 				</div>
 
 				<!-- CHANNEL 2: mini -->
-				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all">
+				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-						<span class="text-[8.5pt] font-black uppercase font-['League_Spartan'] text-[#FBF9F4]">taerijay+ mini</span>
-						<span class="text-[7.5pt] text-slate-500 font-bold uppercase">📍 route</span>
+						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#FBF9F4]">taerijay+ mini</span>
+						<span class="text-[10px] text-slate-500 font-bold uppercase">📍 route</span>
 					</div>
 					<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
 						<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=500&q=80');"></div>
 						<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
 						<div class="absolute bottom-3 left-4">
-							<span class="px-2 py-0.5 bg-[#FBF9F4] text-[#0A192F] text-[7pt] font-black uppercase rounded font-['League_Spartan']">city guide</span>
+							<span class="px-2 py-0.5 bg-[#FBF9F4] text-[#0A192F] text-[9px] font-black uppercase rounded font-['League_Spartan']">city guide</span>
 						</div>
 					</div>
 					<div class="p-4 flex flex-col gap-3">
 						<div class="flex flex-col gap-1">
-							<span class="text-[8.5pt] font-bold text-[#FBF9F4] uppercase font-['League_Spartan']">[MINI] OPTIMIZATION</span>
-							<h3 class="text-[11pt] font-bold text-white tracking-tight">
+							<span class="text-xs font-bold text-[#FBF9F4] uppercase font-['League_Spartan']">[MINI] OPTIMIZATION</span>
+							<h3 class="text-sm font-bold text-white tracking-tight">
 								<span class="lang-el" data-en="Dense One-Day Travel Blueprints">거점 도시별 초압축 24시간 가성비 투어</span>
 							</h3>
 						</div>
-						<p class="text-[8.5pt] text-slate-400 leading-relaxed">
+						<p class="text-xs text-slate-400 leading-relaxed">
 							<span class="lang-el" data-en="Detailed course timelines, step-by-step maps, and optimized transport flow.">시간 낭비 없는 완벽한 원데이 서킷 및 환승 정보만 간결하게 안내함.</span>
 						</p>
 						<div class="pt-2 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2">
 							<div class="flex items-center gap-1.5 min-w-0">
-								<span class="text-[10pt]">📍</span>
-								<span class="text-[8pt] text-slate-300 font-mono truncate" id="addr-mini">Myeong-dong, Jung-gu, Seoul</span>
+								<span class="text-sm">📍</span>
+								<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-mini">Myeong-dong, Jung-gu, Seoul</span>
 							</div>
-							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[7.5pt] font-bold uppercase tracking-wider transition-all" data-target="addr-mini">
+							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-mini">
 								<span class="lang-el" data-en="Copy">복사</span>
 							</button>
 						</div>
@@ -206,34 +206,34 @@ const monthlyUpdatedCount = 5;
 				</div>
 
 				<!-- CHANNEL 3: daiso -->
-				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all">
+				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-						<span class="text-[8.5pt] font-black uppercase font-['League_Spartan'] text-[#E1261C]">taerijay+ daiso</span>
-						<span class="text-[7.5pt] text-slate-500 font-bold uppercase">💡 beauty</span>
+						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#E1261C]">taerijay+ daiso</span>
+						<span class="text-[10px] text-slate-500 font-bold uppercase">💡 beauty</span>
 					</div>
 					<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
 						<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80');"></div>
 						<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
 						<div class="absolute bottom-3 left-4">
-							<span class="px-2 py-0.5 bg-[#E1261C] text-white text-[7pt] font-black uppercase rounded font-['League_Spartan']">hot items</span>
+							<span class="px-2 py-0.5 bg-[#E1261C] text-white text-[9px] font-black uppercase rounded font-['League_Spartan']">hot items</span>
 						</div>
 					</div>
 					<div class="p-4 flex flex-col gap-3">
 						<div class="flex flex-col gap-1">
-							<span class="text-[8.5pt] font-bold text-[#E1261C] uppercase font-['League_Spartan']">[DAISO] MUST-BUY</span>
-							<h3 class="text-[11pt] font-bold text-white tracking-tight">
+							<span class="text-xs font-bold text-[#E1261C] uppercase font-['League_Spartan']">[DAISO] MUST-BUY</span>
+							<h3 class="text-sm font-bold text-white tracking-tight">
 								<span class="lang-el" data-en="Viral K-Beauty Cosmetics & Gear under $5">다이소 뷰티 품절 대란템 리스트 및 확보 매장</span>
 							</h3>
 						</div>
-						<p class="text-[8.5pt] text-slate-400 leading-relaxed">
+						<p class="text-xs text-slate-400 leading-relaxed">
 							<span class="lang-el" data-en="Real-time viral skincare, makeup, and practical travel supplies.">SNS 대란 스킨케어, 리들샷 솔직 후기 및 메가 스토어 재고 선점 꿀팁임.</span>
 						</p>
 						<div class="pt-2 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2">
 							<div class="flex items-center gap-1.5 min-w-0">
-								<span class="text-[10pt]">📍</span>
-								<span class="text-[8pt] text-slate-300 font-mono truncate" id="addr-daiso">134-1 Myeongdong 2-ga, Jung-gu, Seoul</span>
+								<span class="text-sm">📍</span>
+								<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-daiso">134-1 Myeongdong 2-ga, Jung-gu, Seoul</span>
 							</div>
-							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[7.5pt] font-bold uppercase tracking-wider transition-all" data-target="addr-daiso">
+							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-daiso">
 								<span class="lang-el" data-en="Copy">복사</span>
 							</button>
 						</div>
@@ -241,34 +241,34 @@ const monthlyUpdatedCount = 5;
 				</div>
 
 				<!-- CHANNEL 4: oliveyoung -->
-				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all">
+				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-						<span class="text-[8.5pt] font-black uppercase font-['League_Spartan'] text-[#6F8B2E]">taerijay+ oliveyoung</span>
-						<span class="text-[7.5pt] text-slate-500 font-bold uppercase">💡 tax-free</span>
+						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#6F8B2E]">taerijay+ oliveyoung</span>
+						<span class="text-[10px] text-slate-500 font-bold uppercase">💡 tax-free</span>
 					</div>
 					<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
 						<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=500&q=80');"></div>
 						<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
 						<div class="absolute bottom-3 left-4">
-							<span class="px-2 py-0.5 bg-[#6F8B2E] text-white text-[7pt] font-black uppercase rounded font-['League_Spartan']">k-beauty</span>
+							<span class="px-2 py-0.5 bg-[#6F8B2E] text-white text-[9px] font-black uppercase rounded font-['League_Spartan']">k-beauty</span>
 						</div>
 					</div>
 					<div class="p-4 flex flex-col gap-3">
 						<div class="flex flex-col gap-1">
-							<span class="text-[8.5pt] font-bold text-[#6F8B2E] uppercase font-['League_Spartan']">[OLIVEYOUNG] SKINCARE</span>
-							<h3 class="text-[11pt] font-bold text-white tracking-tight">
+							<span class="text-xs font-bold text-[#6F8B2E] uppercase font-['League_Spartan']">[OLIVEYOUNG] SKINCARE</span>
+							<h3 class="text-sm font-bold text-white tracking-tight">
 								<span class="lang-el" data-en="Instant Tax Refund Guide & Best Skincare">글로벌 1위 올리브영 화장품 및 즉시 면세 매장</span>
 							</h3>
 						</div>
-						<p class="text-[8.5pt] text-slate-400 leading-relaxed">
+						<p class="text-xs text-slate-400 leading-relaxed">
 							<span class="lang-el" data-en="Top recommended brands, facial masks, and on-site duty-free checkout instructions.">외국인 즉시 면세 환급 [Tax-Free] 조건 및 베스트셀러 마스크팩 수록함.</span>
 						</p>
 						<div class="pt-2 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2">
 							<div class="flex items-center gap-1.5 min-w-0">
-								<span class="text-[10pt]">📍</span>
-								<span class="text-[8pt] text-slate-300 font-mono truncate" id="addr-olive">53 Myeongdong-gil, Jung-gu, Seoul</span>
+								<span class="text-sm">📍</span>
+								<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-olive">53 Myeongdong-gil, Jung-gu, Seoul</span>
 							</div>
-							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[7.5pt] font-bold uppercase tracking-wider transition-all" data-target="addr-olive">
+							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-olive">
 								<span class="lang-el" data-en="Copy">복사</span>
 							</button>
 						</div>
@@ -276,34 +276,34 @@ const monthlyUpdatedCount = 5;
 				</div>
 
 				<!-- CHANNEL 5: emart -->
-				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all">
+				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-						<span class="text-[8.5pt] font-black uppercase font-['League_Spartan'] text-[#FFDD00]">taerijay+ emart</span>
-						<span class="text-[7.5pt] text-red-500 font-bold uppercase">⚠️ warning</span>
+						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#FFDD00]">taerijay+ emart</span>
+						<span class="text-[10px] text-red-500 font-bold uppercase">⚠️ warning</span>
 					</div>
 					<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
 						<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=500&q=80');"></div>
 						<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
 						<div class="absolute bottom-3 left-4">
-							<span class="px-2 py-0.5 bg-[#FFDD00] text-[#0A192F] text-[7pt] font-black uppercase rounded font-['League_Spartan']">smart buy</span>
+							<span class="px-2 py-0.5 bg-[#FFDD00] text-[#0A192F] text-[9px] font-black uppercase rounded font-['League_Spartan']">smart buy</span>
 						</div>
 					</div>
 					<div class="p-4 flex flex-col gap-3">
 						<div class="flex flex-col gap-1">
-							<span class="text-[8.5pt] font-bold text-[#FFDD00] uppercase font-['League_Spartan']">[EMART] MEGA MART INFO</span>
-							<h3 class="text-[11pt] font-bold text-white tracking-tight">
+							<span class="text-xs font-bold text-[#FFDD00] uppercase font-['League_Spartan']">[EMART] MEGA MART INFO</span>
+							<h3 class="text-sm font-bold text-white tracking-tight">
 								<span class="lang-el" data-en="Big Box Store Forced Off-Days Index">이마트/트레이더스 영업 일정 및 의무 휴업일 경고</span>
 							</h3>
 						</div>
-						<p class="text-[8.5pt] text-slate-400 leading-relaxed">
+						<p class="text-xs text-slate-400 leading-relaxed">
 							<span class="lang-el" data-en="Warning index to avoid closed doors on 2nd and 4th Sundays.">⚠️ 주의사항: 매월 둘째, 넷째 일요일 의무 휴업 상태 필독 및 우회 구매안 가이드함.</span>
 						</p>
 						<div class="pt-2 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2">
 							<div class="flex items-center gap-1.5 min-w-0">
-								<span class="text-[10pt]">📍</span>
-								<span class="text-[8pt] text-slate-300 font-mono truncate" id="addr-emart">7-1 Yeongdeungpo-dong 4-ga, Yeongdeungpo-gu, Seoul</span>
+								<span class="text-sm">📍</span>
+								<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-emart">7-1 Yeongdeungpo-dong 4-ga, Yeongdeungpo-gu, Seoul</span>
 							</div>
-							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[7.5pt] font-bold uppercase tracking-wider transition-all" data-target="addr-emart">
+							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-emart">
 								<span class="lang-el" data-en="Copy">복사</span>
 							</button>
 						</div>
@@ -311,34 +311,34 @@ const monthlyUpdatedCount = 5;
 				</div>
 
 				<!-- CHANNEL 6: convenience -->
-				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all">
+				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-						<span class="text-[8.5pt] font-black uppercase font-['League_Spartan'] text-[#A14D7C]">taerijay+ convenience</span>
-						<span class="text-[7.5pt] text-slate-500 font-bold uppercase">🇰🇷 snack hack</span>
+						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#A14D7C]">taerijay+ convenience</span>
+						<span class="text-[10px] text-slate-500 font-bold uppercase">🇰🇷 snack hack</span>
 					</div>
 					<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
 						<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=500&q=80');"></div>
 						<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
 						<div class="absolute bottom-3 left-4">
-							<span class="px-2 py-0.5 bg-[#A14D7C] text-white text-[7pt] font-black uppercase rounded font-['League_Spartan']">pb master</span>
+							<span class="px-2 py-0.5 bg-[#A14D7C] text-white text-[9px] font-black uppercase rounded font-['League_Spartan']">pb master</span>
 						</div>
 					</div>
 					<div class="p-4 flex flex-col gap-3">
 						<div class="flex flex-col gap-1">
-							<span class="text-[8.5pt] font-bold text-[#A14D7C] uppercase font-['League_Spartan']">[CONVENIENCE] GS25 / CU / SEVEN</span>
-							<h3 class="text-[11pt] font-bold text-white tracking-tight">
+							<span class="text-xs font-bold text-[#A14D7C] uppercase font-['League_Spartan']">[CONVENIENCE] GS25 / CU / SEVEN</span>
+							<h3 class="text-sm font-bold text-white tracking-tight">
 								<span class="lang-el" data-en="Midnight Recipe Hacks & Exclusive PB Guide">24시 편의점 독점 PB 상품 꿀조합 및 꿀팁</span>
 							</h3>
 						</div>
-						<p class="text-[8.5pt] text-slate-400 leading-relaxed">
+						<p class="text-xs text-slate-400 leading-relaxed">
 							<span class="lang-el" data-en="Secret snack formulas, must-try instant ramen, and pocket money savings.">💡 꿀팁: 불닭 납작당면 조합, 가성비 직수입 주류 및 야간 안주류 종결판 탑재함.</span>
 						</p>
 						<div class="pt-2 border-t border-[#5B0E1B]/30 flex items-center justify-between gap-2">
 							<div class="flex items-center gap-1.5 min-w-0">
-								<span class="text-[10pt]">📍</span>
-								<span class="text-[8pt] text-slate-300 font-mono truncate" id="addr-conv">Central Post Office GS25, Chungmuro 1-ga, Seoul</span>
+								<span class="text-sm">📍</span>
+								<span class="text-[11px] text-slate-300 font-mono truncate" id="addr-conv">Central Post Office GS25, Chungmuro 1-ga, Seoul</span>
 							</div>
-							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[7.5pt] font-bold uppercase tracking-wider transition-all" data-target="addr-conv">
+							<button class="copy-btn shrink-0 bg-[#5B0E1B]/20 border border-[#5B0E1B]/60 text-slate-200 px-2.5 py-1 rounded hover:bg-[#5B0E1B]/40 text-[10px] font-bold uppercase tracking-wider transition-all" data-target="addr-conv">
 								<span class="lang-el" data-en="Copy">복사</span>
 							</button>
 						</div>
@@ -346,133 +346,133 @@ const monthlyUpdatedCount = 5;
 				</div>
 
 				<!-- CHANNEL 7: entertainment (OTT BRIDGE SYSTEM WITH LOCKOUT) -->
-				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all">
+				<div class="w-full rounded-lg border border-[#5B0E1B] bg-[#0A192F] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-[#5B0E1B]/20">
 					<div class="px-4 py-2 bg-[#061224] border-b border-[#5B0E1B] flex items-center justify-between">
-						<span class="text-[8.5pt] font-black uppercase font-['League_Spartan'] text-[#00E5FF]">taerijay+ entertainment</span>
-						<span class="text-[7.5pt] text-[#00E5FF] font-bold uppercase">🌐 ott bridge</span>
+						<span class="text-xs font-black uppercase font-['League_Spartan'] text-[#00E5FF]">taerijay+ entertainment</span>
+						<span class="text-[10px] text-[#00E5FF] font-bold uppercase">🌐 ott bridge</span>
 					</div>
 					<div class="h-40 bg-slate-900 relative overflow-hidden flex items-center justify-center">
 						<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=500&q=80');"></div>
 						<div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
 						<div class="absolute bottom-3 left-4">
-							<span class="px-2 py-0.5 bg-[#00E5FF] text-[#0A192F] text-[7pt] font-black uppercase rounded font-['League_Spartan']">bridge media</span>
+							<span class="px-2 py-0.5 bg-[#00E5FF] text-[#0A192F] text-[9px] font-black uppercase rounded font-['League_Spartan']">bridge media</span>
 						</div>
 					</div>
 					<div class="p-4 flex flex-col gap-3">
 						<div class="flex flex-col gap-1">
-							<span class="text-[8.5pt] font-bold text-[#00E5FF] uppercase font-['League_Spartan']">[ENTERTAINMENT] VIDEO HUB</span>
-							<h3 class="text-[11pt] font-bold text-white tracking-tight">
+							<span class="text-xs font-bold text-[#00E5FF] uppercase font-['League_Spartan']">[ENTERTAINMENT] VIDEO HUB</span>
+							<h3 class="text-sm font-bold text-white tracking-tight">
 								<span class="lang-el" data-en="Official Drama, Show & YouTube Streaming Hub">K-콘텐츠 오리지널 유튜브 허브 및 실시간 우회</span>
 							</h3>
 						</div>
-						<p class="text-[8.5pt] text-slate-400 leading-relaxed">
+						<p class="text-xs text-slate-400 leading-relaxed">
 							<span class="lang-el" data-en="Explore 드라마, 영화, 예능, and official channels. Top 12 free. Click to access.">드라마, 영화, 예능, 대표님 유튜브를 포함한 순환 아웃링크 연계 플랫폼임.</span>
 						</p>
 
-						<!-- 미디어 카테고리 필터 구조 -->
+						<!-- Streaming Selector (Drama / Movie / Show / YouTube) -->
 						<div class="grid grid-cols-4 gap-1.5 pt-2">
-							<button data-cat="drama" class="cat-btn py-1.5 rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/70 border border-[#5B0E1B] text-[7.5pt] font-bold uppercase text-white transition-all text-center">Drama</button>
-							<button data-cat="movie" class="cat-btn py-1.5 rounded bg-[#071120] hover:bg-[#5B0E1B]/40 border border-[#5B0E1B]/30 text-[7.5pt] font-bold uppercase text-slate-400 transition-all text-center">Movie</button>
-							<button data-cat="show" class="cat-btn py-1.5 rounded bg-[#071120] hover:bg-[#5B0E1B]/40 border border-[#5B0E1B]/30 text-[7.5pt] font-bold uppercase text-slate-400 transition-all text-center">Show</button>
-							<button data-cat="youtube" class="cat-btn py-1.5 rounded bg-[#071120] hover:bg-[#5B0E1B]/40 border border-[#5B0E1B]/30 text-[7.5pt] font-bold uppercase text-slate-400 transition-all text-center">YT</button>
+							<button data-cat="drama" class="cat-btn py-1.5 rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/70 border border-[#5B0E1B] text-[10px] font-bold uppercase text-white transition-all text-center">Drama</button>
+							<button data-cat="movie" class="cat-btn py-1.5 rounded bg-[#071120] hover:bg-[#5B0E1B]/40 border border-[#5B0E1B]/30 text-[10px] font-bold uppercase text-slate-400 transition-all text-center">Movie</button>
+							<button data-cat="show" class="cat-btn py-1.5 rounded bg-[#071120] hover:bg-[#5B0E1B]/40 border border-[#5B0E1B]/30 text-[10px] font-bold uppercase text-slate-400 transition-all text-center">Show</button>
+							<button data-cat="youtube" class="cat-btn py-1.5 rounded bg-[#071120] hover:bg-[#5B0E1B]/40 border border-[#5B0E1B]/30 text-[10px] font-bold uppercase text-slate-400 transition-all text-center">YT</button>
 						</div>
 
-						<!-- 에피소드 리스트 판넬 (12개 게이트 락인 인터랙션 설계) -->
+						<!-- Episode list container -->
 						<div class="flex flex-col gap-1.5 mt-3 max-h-[220px] overflow-y-auto border border-[#5B0E1B]/50 rounded p-2 bg-[#071120]/60" id="episodeContainer">
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-[8pt] text-slate-300 font-medium truncate">EP 01. Origin of Heritage (Drama)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
+								<span class="text-xs text-slate-300 font-medium truncate">EP 01. Origin of Heritage (Drama)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 							</div>
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-[8pt] text-slate-300 font-medium truncate">EP 02. Midnight Food Hunt (Show)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
+								<span class="text-xs text-slate-300 font-medium truncate">EP 02. Midnight Food Hunt (Show)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 							</div>
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-[8pt] text-slate-300 font-medium truncate">EP 03. Seoul Skincare Walk (YT)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
+								<span class="text-xs text-slate-300 font-medium truncate">EP 03. Seoul Skincare Walk (YT)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 							</div>
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-[8pt] text-slate-300 font-medium truncate">EP 04. Han River Sunset (Movie)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
+								<span class="text-xs text-slate-300 font-medium truncate">EP 04. Han River Sunset (Movie)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 							</div>
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-[8pt] text-slate-300 font-medium truncate">EP 05. Daiso Conquest Live (YT)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
+								<span class="text-xs text-slate-300 font-medium truncate">EP 05. Daiso Conquest Live (YT)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 							</div>
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-[8pt] text-slate-300 font-medium truncate">EP 06. Mart Forced Off-Day VLOG (YT)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
+								<span class="text-xs text-slate-300 font-medium truncate">EP 06. Mart Forced Off-Day VLOG (YT)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 							</div>
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-[8pt] text-slate-300 font-medium truncate">EP 07. Gyeongbokgung Secrets (Drama)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
+								<span class="text-xs text-slate-300 font-medium truncate">EP 07. Gyeongbokgung Secrets (Drama)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 							</div>
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-[8pt] text-slate-300 font-medium truncate">EP 08. Jeju Island Escape (Movie)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
+								<span class="text-xs text-slate-300 font-medium truncate">EP 08. Jeju Island Escape (Movie)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 							</div>
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-[8pt] text-slate-300 font-medium truncate">EP 09. Busan Seafront Market (Show)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
+								<span class="text-xs text-slate-300 font-medium truncate">EP 09. Busan Seafront Market (Show)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 							</div>
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-[8pt] text-slate-300 font-medium truncate">EP 10. Gangnam Night Walk (Movie)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
+								<span class="text-xs text-slate-300 font-medium truncate">EP 10. Gangnam Night Walk (Movie)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 							</div>
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-[8pt] text-slate-300 font-medium truncate">EP 11. Korean Hotbar Combination (Show)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
+								<span class="text-xs text-slate-300 font-medium truncate">EP 11. Korean Hotbar Combination (Show)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 							</div>
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-[#5B0E1B]/20 transition-all" data-preview="true" data-url="https://youtube.com">
-								<span class="text-[8pt] text-slate-300 font-medium truncate">EP 12. Gyeongju Dynasty Walk (Drama)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
+								<span class="text-xs text-slate-300 font-medium truncate">EP 12. Gyeongju Dynasty Walk (Drama)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-emerald-900/80 text-emerald-300 rounded font-bold uppercase shrink-0">Free</span>
 							</div>
-							<!-- 유료 구독 분기점 (13번째 이상 🔒 표시) -->
+							<!-- Locked threshold items -->
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-black/40 transition-all opacity-60" data-preview="false">
-								<span class="text-[8pt] text-slate-500 font-medium truncate">EP 13. Deep Forest Temple Tour (Movie)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-[#5B0E1B] text-white rounded font-bold flex items-center gap-1 shrink-0">🔒 Lock</span>
+								<span class="text-xs text-slate-500 font-medium truncate">EP 13. Deep Forest Temple Tour (Movie)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-[#5B0E1B] text-white rounded font-bold flex items-center gap-1 shrink-0">🔒 Lock</span>
 							</div>
 							<div class="ep-row flex items-center justify-between p-1.5 rounded bg-[#0A192F] border border-[#5B0E1B]/30 cursor-pointer hover:bg-black/40 transition-all opacity-60" data-preview="false">
-								<span class="text-[8pt] text-slate-500 font-medium truncate">EP 14. Ultimate Korean BBQ (Show)</span>
-								<span class="text-[7pt] px-1.5 py-0.5 bg-[#5B0E1B] text-white rounded font-bold flex items-center gap-1 shrink-0">🔒 Lock</span>
+								<span class="text-xs text-slate-500 font-medium truncate">EP 14. Ultimate Korean BBQ (Show)</span>
+								<span class="text-[9px] px-1.5 py-0.5 bg-[#5B0E1B] text-white rounded font-bold flex items-center gap-1 shrink-0">🔒 Lock</span>
 							</div>
 						</div>
 					</div>
 				</div>
 
 			</div>
-			<!-- 채널 카드 리스트 끝 -->
+			<!-- channel list end -->
 		</section>
 
-		<!-- 기기 세션 차단 시뮬레이션 섹션 -->
+		<!-- DEVICE MANAGEMENT INTERACTION (Astro Client-Side Simulator) -->
 		<section class="w-full px-5 py-6 border-y border-[#5B0E1B] bg-[#071120]/40">
 			<div class="flex flex-col gap-3">
-				<h3 class="text-[11pt] font-black uppercase font-['League_Spartan'] text-[#00E5FF] tracking-wider">
+				<h3 class="text-xs font-black uppercase font-['League_Spartan'] text-[#00E5FF] tracking-wider">
 					<span class="lang-el" data-en="Device Management">마이페이지 기기 관리</span>
 				</h3>
-				<p class="text-[8.5pt] text-slate-400 leading-relaxed mb-1">
+				<p class="text-xs text-slate-400 leading-relaxed mb-1">
 					<span class="lang-el" data-en="Currently logged-in terminal sessions. Revoke access immediately when devices exceed 1 registered unit.">현재 동일 세션 ID로 접속 활성화된 기기 리스트 및 원격 강제 로그아웃 버튼을 통한 기기 수 제어 시뮬레이터임.</span>
 				</p>
 				<div class="flex flex-col gap-2" id="deviceList">
 					<div class="flex items-center justify-between p-2.5 rounded bg-[#0A192F] border border-[#5B0E1B]/60" id="dev-row-1">
 						<div class="flex items-center gap-2">
-							<span class="text-[12pt]">💻</span>
+							<span class="text-base">💻</span>
 							<div class="flex flex-col">
-								<span class="text-[8.5pt] font-bold text-white">Apple MacBook Pro (Current)</span>
-								<span class="text-[7pt] text-emerald-400 font-bold uppercase font-['League_Spartan']">active session</span>
+								<span class="text-xs font-bold text-white">Apple MacBook Pro (Current)</span>
+								<span class="text-[9px] text-emerald-400 font-bold uppercase font-['League_Spartan']">active session</span>
 							</div>
 						</div>
-						<span class="text-[7.5pt] px-2 py-0.5 bg-slate-800 text-slate-400 rounded border border-slate-700 font-bold uppercase">owner</span>
+						<span class="text-[9px] px-2 py-0.5 bg-slate-800 text-slate-400 rounded border border-slate-700 font-bold uppercase">owner</span>
 					</div>
 					<div class="flex items-center justify-between p-2.5 rounded bg-[#0A192F] border border-[#5B0E1B]/60" id="dev-row-2">
 						<div class="flex items-center gap-2">
-							<span class="text-[12pt]">📱</span>
+							<span class="text-base">📱</span>
 							<div class="flex flex-col">
-								<span class="text-[8.5pt] font-bold text-white">iPhone 16 Pro Max</span>
-								<span class="text-[7pt] text-amber-500 font-bold uppercase font-['League_Spartan']">waiting list</span>
+								<span class="text-xs font-bold text-white">iPhone 16 Pro Max</span>
+								<span class="text-[9px] text-amber-500 font-bold uppercase font-['League_Spartan']">waiting list</span>
 							</div>
 						</div>
-						<button class="revoke-dev-btn px-2.5 py-1 bg-[#5B0E1B]/40 hover:bg-[#5B0E1B]/90 border border-[#5B0E1B] rounded text-[7.5pt] font-bold uppercase text-white transition-all" data-target="dev-row-2">
+						<button class="revoke-dev-btn px-2.5 py-1 bg-[#5B0E1B]/40 hover:bg-[#5B0E1B]/90 border border-[#5B0E1B] rounded text-[10px] font-bold uppercase text-white transition-all" data-target="dev-row-2">
 							<span class="lang-el" data-en="Revoke">해제</span>
 						</button>
 					</div>
@@ -480,29 +480,29 @@ const monthlyUpdatedCount = 5;
 			</div>
 		</section>
 
-		<!-- 2개년 무제한 멤버십 요금제 (Paddle 시뮬레이션 연동) -->
+		<!-- 2-YEAR SUBSCRIPTION PRICING PLANS (PADDLE INTEGRATION SIMULATION) -->
 		<section class="w-full px-5 py-6 bg-gradient-to-b from-[#0A192F] to-[#040c17]">
 			<div class="text-center mb-5">
-				<h2 class="text-[14pt] font-['Playfair_Display'] italic font-bold mb-1.5 text-white">
+				<h2 class="text-base font-['Playfair_Display'] italic font-bold mb-1.5 text-white">
 					<span class="lang-el" data-en="Unlocks 24 Months Unlimited Pass">2개년 무제한 프리미엄 패스</span>
 				</h2>
-				<p class="text-[8.5pt] text-slate-400">
+				<p class="text-xs text-slate-400">
 					<span class="lang-el" data-en="Simple automatic activation via Paddle without recurring fees.">비밀번호 기입 불필요 및 일시 결제 모델 지원함 (환불 불가).</span>
 				</p>
 			</div>
 
-			<!-- 3 Pricing Cards Grid -->
+			<!-- 3 Pricing Cards Grid Balanced Layout -->
 			<div class="grid grid-cols-1 gap-4">
 				<!-- BASIC -->
 				<div class="rounded-lg border border-[#5B0E1B] bg-[#071120]/80 p-4 flex flex-col justify-between relative overflow-hidden">
-					<div class="absolute top-0 right-0 px-2.5 py-0.5 bg-[#5B0E1B] text-slate-200 text-[6.5pt] font-black uppercase rounded-bl tracking-widest font-['League_Spartan']">tier 1</div>
+					<div class="absolute top-0 right-0 px-2.5 py-0.5 bg-[#5B0E1B] text-slate-200 text-[8px] font-black uppercase rounded-bl tracking-widest font-['League_Spartan']">tier 1</div>
 					<div class="mb-4">
-						<span class="text-[8pt] font-black uppercase text-slate-400 font-['League_Spartan'] tracking-widest block mb-1">Basic Plan</span>
+						<span class="text-[9px] font-black uppercase text-slate-400 font-['League_Spartan'] tracking-widest block mb-1">Basic Plan</span>
 						<div class="flex items-baseline gap-1.5 mb-2">
-							<span class="text-[20pt] font-black font-['League_Spartan'] text-[#00E5FF]">$19.99</span>
-							<span class="text-[7.5pt] text-slate-500 font-medium">/ 2 Years</span>
+							<span class="text-2xl font-black font-['League_Spartan'] text-[#00E5FF]">$19.99</span>
+							<span class="text-[10px] text-slate-500 font-medium">/ 2 Years</span>
 						</div>
-						<ul class="text-[8pt] text-slate-300 flex flex-col gap-1.5 list-none border-t border-[#5B0E1B]/30 pt-3">
+						<ul class="text-xs text-slate-300 flex flex-col gap-1.5 list-none border-t border-[#5B0E1B]/30 pt-3 pl-0">
 							<li class="flex items-center gap-1.5">
 								<span class="text-[#00E5FF]">✔</span>
 								<span class="lang-el" data-en="1 ID / 1 Registered Device only">1 ID / 1 디바이스 등록 제한함</span>
@@ -513,21 +513,21 @@ const monthlyUpdatedCount = 5;
 							</li>
 						</ul>
 					</div>
-					<button class="pay-btn w-full py-2 bg-[#5B0E1B]/20 hover:bg-[#5B0E1B]/80 border border-[#5B0E1B] text-slate-200 rounded text-[8.5pt] font-bold uppercase tracking-wider transition-all" data-tier="Basic">
+					<button class="pay-btn w-full py-2 bg-[#5B0E1B]/20 hover:bg-[#5B0E1B]/80 border border-[#5B0E1B] text-slate-200 rounded text-xs font-bold uppercase tracking-wider transition-all" data-tier="Basic">
 						<span class="lang-el" data-en="Activate Pass">베이직 활성화</span>
 					</button>
 				</div>
 
 				<!-- DOUBLE -->
 				<div class="rounded-lg border-2 border-[#5B0E1B] bg-[#0A192F] p-4 flex flex-col justify-between relative overflow-hidden shadow-lg shadow-[#5B0E1B]/40">
-					<div class="absolute top-0 right-0 px-2.5 py-0.5 bg-cyan-500 text-black text-[6.5pt] font-black uppercase rounded-bl tracking-widest font-['League_Spartan']">best value</div>
+					<div class="absolute top-0 right-0 px-2.5 py-0.5 bg-cyan-500 text-black text-[8px] font-black uppercase rounded-bl tracking-widest font-['League_Spartan']">best value</div>
 					<div class="mb-4">
-						<span class="text-[8pt] font-black uppercase text-[#00E5FF] font-['League_Spartan'] tracking-widest block mb-1">Double Value Pass</span>
+						<span class="text-[9px] font-black uppercase text-[#00E5FF] font-['League_Spartan'] tracking-widest block mb-1">Double Value Pass</span>
 						<div class="flex items-baseline gap-1.5 mb-2">
-							<span class="text-[20pt] font-black font-['League_Spartan'] text-[#00E5FF]">$34.99</span>
-							<span class="text-[7.5pt] text-slate-500 font-medium">/ 2 Years</span>
+							<span class="text-2xl font-black font-['League_Spartan'] text-[#00E5FF]">$34.99</span>
+							<span class="text-[10px] text-slate-500 font-medium">/ 2 Years</span>
 						</div>
-						<ul class="text-[8pt] text-slate-300 flex flex-col gap-1.5 list-none border-t border-[#5B0E1B]/30 pt-3">
+						<ul class="text-xs text-slate-300 flex flex-col gap-1.5 list-none border-t border-[#5B0E1B]/30 pt-3 pl-0">
 							<li class="flex items-center gap-1.5">
 								<span class="text-[#00E5FF]">✔</span>
 								<span class="lang-el" data-en="1 ID / 1 Registered Device lock">1 ID / 1 디바이스 등록 제한함</span>
@@ -538,21 +538,21 @@ const monthlyUpdatedCount = 5;
 							</li>
 						</ul>
 					</div>
-					<button class="pay-btn w-full py-2 bg-[#5B0E1B] hover:bg-[#8b1328] text-white rounded text-[8.5pt] font-bold uppercase tracking-wider transition-all shadow-md" data-tier="Double">
+					<button class="pay-btn w-full py-2 bg-[#5B0E1B] hover:bg-[#8b1328] text-white rounded text-xs font-bold uppercase tracking-wider transition-all shadow-md" data-tier="Double">
 						<span class="lang-el" data-en="Activate Pass">더블 활성화</span>
 					</button>
 				</div>
 
 				<!-- FULL INTEGRATION -->
 				<div class="rounded-lg border border-[#5B0E1B] bg-[#071120]/80 p-4 flex flex-col justify-between relative overflow-hidden">
-					<div class="absolute top-0 right-0 px-2.5 py-0.5 bg-[#FFDD00] text-black text-[6.5pt] font-black uppercase rounded-bl tracking-widest font-['League_Spartan']">all-in-one</div>
+					<div class="absolute top-0 right-0 px-2.5 py-0.5 bg-[#FFDD00] text-black text-[8px] font-black uppercase rounded-bl tracking-widest font-['League_Spartan']">all-in-one</div>
 					<div class="mb-4">
-						<span class="text-[8pt] font-black uppercase text-slate-400 font-['League_Spartan'] tracking-widest block mb-1">Integrated Pass</span>
+						<span class="text-[9px] font-black uppercase text-slate-400 font-['League_Spartan'] tracking-widest block mb-1">Integrated Pass</span>
 						<div class="flex items-baseline gap-1.5 mb-2">
-							<span class="text-[20pt] font-black font-['League_Spartan'] text-[#00E5FF]">$99.99</span>
-							<span class="text-[7.5pt] text-slate-500 font-medium">/ 2 Years</span>
+							<span class="text-2xl font-black font-['League_Spartan'] text-[#00E5FF]">$99.99</span>
+							<span class="text-[10px] text-slate-500 font-medium">/ 2 Years</span>
 						</div>
-						<ul class="text-[8pt] text-slate-300 flex flex-col gap-1.5 list-none border-t border-[#5B0E1B]/30 pt-3">
+						<ul class="text-xs text-slate-300 flex flex-col gap-1.5 list-none border-t border-[#5B0E1B]/30 pt-3 pl-0">
 							<li class="flex items-center gap-1.5">
 								<span class="text-[#00E5FF]">✔</span>
 								<span class="lang-el" data-en="1 ID / 1 Active Concurrent terminal limit">1 ID / 1 동시접속 및 디바이스 동시 락</span>
@@ -563,29 +563,29 @@ const monthlyUpdatedCount = 5;
 							</li>
 						</ul>
 					</div>
-					<button class="pay-btn w-full py-2 bg-[#5B0E1B]/20 hover:bg-[#5B0E1B]/80 border border-[#5B0E1B] text-slate-200 rounded text-[8.5pt] font-bold uppercase tracking-wider transition-all" data-tier="Integrated">
+					<button class="pay-btn w-full py-2 bg-[#5B0E1B]/20 hover:bg-[#5B0E1B]/80 border border-[#5B0E1B] text-slate-200 rounded text-xs font-bold uppercase tracking-wider transition-all" data-tier="Integrated">
 						<span class="lang-el" data-en="Activate Pass">통합 활성화</span>
 					</button>
 				</div>
 			</div>
 		</section>
 
-		<!-- 법적 정책 모달 트리거 및 글로벌 미디어 아웃링크 푸터 -->
+		<!-- LEGAL INFORMATION & BRAND LINKS FOOTER -->
 		<footer class="w-full px-5 py-8 border-t border-[#5B0E1B] bg-[#040c17]">
-			<!-- 4개 그리드 시스템화 -->
+			<!-- Footer Grid Systems (4-Column Layout Simulation using blocks/grids) -->
 			<div class="grid grid-cols-2 gap-6 mb-8 text-left">
 				<div>
-					<h4 class="text-[8.5pt] font-black uppercase tracking-wider text-slate-400 font-['League_Spartan'] mb-2.5">Learn More</h4>
+					<h4 class="text-xs font-black uppercase tracking-wider text-slate-400 font-['League_Spartan'] mb-2.5">Learn More</h4>
 					<div class="flex flex-col gap-1.5">
-						<button class="modal-trigger text-[8pt] text-slate-300 hover:text-[#00E5FF] transition-all text-left" data-target="modal-terms">Terms of Service</button>
-						<button class="modal-trigger text-[8pt] text-slate-300 hover:text-[#00E5FF] transition-all text-left" data-target="modal-business">Business Info</button>
-						<button class="modal-trigger text-[8pt] text-slate-300 hover:text-[#00E5FF] transition-all text-left" data-target="modal-privacy">Privacy Policy</button>
-						<button class="modal-trigger text-[8pt] text-slate-300 hover:text-[#00E5FF] transition-all text-left" data-target="modal-refund">Refund Policy</button>
+						<button class="modal-trigger text-xs text-slate-300 hover:text-[#00E5FF] transition-all text-left" data-target="modal-terms">Terms of Service</button>
+						<button class="modal-trigger text-xs text-slate-300 hover:text-[#00E5FF] transition-all text-left" data-target="modal-business">Business Info</button>
+						<button class="modal-trigger text-xs text-slate-300 hover:text-[#00E5FF] transition-all text-left" data-target="modal-privacy">Privacy Policy</button>
+						<button class="modal-trigger text-xs text-slate-300 hover:text-[#00E5FF] transition-all text-left" data-target="modal-refund">Refund Policy</button>
 					</div>
 				</div>
 				<div>
-					<h4 class="text-[8.5pt] font-black uppercase tracking-wider text-slate-400 font-['League_Spartan'] mb-2.5">Support</h4>
-					<div class="flex flex-col gap-1.5 text-[8pt] text-slate-300">
+					<h4 class="text-xs font-black uppercase tracking-wider text-slate-400 font-['League_Spartan'] mb-2.5">Support</h4>
+					<div class="flex flex-col gap-1.5 text-xs text-slate-300">
 						<span>Customer Center</span>
 						<span>FAQ Desk</span>
 						<span>Secure Gateway</span>
@@ -593,125 +593,125 @@ const monthlyUpdatedCount = 5;
 				</div>
 			</div>
 
-			<!-- 트래픽 선순환 연결 고리 (공식 아웃링크) -->
+			<!-- Official Outlinks for Traffic Bridging -->
 			<div class="flex flex-col gap-4 border-t border-[#5B0E1B]/30 pt-6">
-				<h4 class="text-[8.5pt] font-black uppercase tracking-wider text-slate-400 font-['League_Spartan'] text-center">Official Media Links</h4>
+				<h4 class="text-xs font-black uppercase tracking-wider text-slate-400 font-['League_Spartan'] text-center">Official Media Links</h4>
 				<div class="flex flex-wrap justify-center gap-2.5">
-					<a href="https://youtube.com" target="_blank" class="px-3 py-1.5 bg-red-950/40 hover:bg-red-950 border border-red-800 text-red-200 rounded text-[7.5pt] font-black uppercase font-['League_Spartan'] transition-all">YouTube</a>
-					<a href="https://instagram.com" target="_blank" class="px-3 py-1.5 bg-fuchsia-950/40 hover:bg-fuchsia-950 border border-fuchsia-800 text-fuchsia-200 rounded text-[7.5pt] font-black uppercase font-['League_Spartan'] transition-all">Instagram</a>
-					<a href="https://tiktok.com" target="_blank" class="px-3 py-1.5 bg-slate-900 hover:bg-black border border-slate-700 text-slate-200 rounded text-[7.5pt] font-black uppercase font-['League_Spartan'] transition-all">TikTok</a>
-					<a href="https://google.com" target="_blank" class="px-3 py-1.5 bg-blue-950/40 hover:bg-blue-950 border border-blue-800 text-blue-200 rounded text-[7.5pt] font-black uppercase font-['League_Spartan'] transition-all">Google Blog</a>
-					<a href="https://naver.com" target="_blank" class="px-3 py-1.5 bg-emerald-950/40 hover:bg-emerald-950 border border-emerald-800 text-emerald-200 rounded text-[7.5pt] font-black uppercase font-['League_Spartan'] transition-all">Naver Blog</a>
+					<a href="https://youtube.com" target="_blank" class="px-3 py-1.5 bg-red-950/40 hover:bg-red-950 border border-red-800 text-red-200 rounded text-xs font-black uppercase font-['League_Spartan'] transition-all">YouTube</a>
+					<a href="https://instagram.com" target="_blank" class="px-3 py-1.5 bg-fuchsia-950/40 hover:bg-fuchsia-950 border border-fuchsia-800 text-xs font-black uppercase font-['League_Spartan'] transition-all">Instagram</a>
+					<a href="https://tiktok.com" target="_blank" class="px-3 py-1.5 bg-slate-900 hover:bg-black border border-slate-700 text-xs font-black uppercase font-['League_Spartan'] transition-all">TikTok</a>
+					<a href="https://google.com" target="_blank" class="px-3 py-1.5 bg-blue-950/40 hover:bg-blue-950 border border-blue-800 text-blue-200 rounded text-xs font-black uppercase font-['League_Spartan'] transition-all">Google Blog</a>
+					<a href="https://naver.com" target="_blank" class="px-3 py-1.5 bg-emerald-950/40 hover:bg-emerald-950 border border-emerald-800 text-emerald-200 rounded text-xs font-black uppercase font-['League_Spartan'] transition-all">Naver Blog</a>
 				</div>
-				<!-- 위조 사칭 방지 강력 경고 판넬 -->
+				<!-- Anti-scam Caution Alert Warning Box -->
 				<div class="bg-amber-950/30 border border-amber-900 rounded p-3 text-center mt-2">
-					<p class="text-[7.5pt] text-amber-200 leading-normal font-medium">
-						⚠️ We do not operate any channels other than these five! <br class="hidden sm:inline" />
+					<p class="text-xs text-amber-200 leading-normal font-medium">
+						⚠️ We do not operate any channels other than these five! <br />
 						<strong class="text-amber-400 font-black">Beware of imitation websites!</strong>
 					</p>
 				</div>
 			</div>
 
-			<!-- 카피라이트 배지 -->
+			<!-- Signature & Copy block -->
 			<div class="text-center mt-8 pt-4 border-t border-[#5B0E1B]/20">
-				<span class="font-['League_Spartan'] text-[13pt] font-black text-slate-400 uppercase tracking-widest block mb-1">taerijay+</span>
-				<p class="text-[7pt] text-slate-500 font-mono">© 2026 TAERIJAY. MADE IN KOREA. ALL RIGHTS RESERVED.</p>
+				<span class="font-['League_Spartan'] text-base font-black text-slate-400 uppercase tracking-widest block mb-1">taerijay+</span>
+				<p class="text-[9px] text-slate-500 font-mono">© 2026 TAERIJAY. MADE IN KOREA. ALL RIGHTS RESERVED.</p>
 			</div>
 		</footer>
 
-		<!-- 팝업 모달 법적 텍스트 명세 포탈 매트릭스 -->
+		<!-- MODALS PORTAL MATRIX -->
 		<!-- modal 1: terms -->
 		<div id="modal-terms" class="modal-overlay fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-lg max-w-[400px] w-full p-5 flex flex-col gap-3 relative max-h-[85vh] overflow-y-auto">
-				<h3 class="text-[11.5pt] font-bold text-white border-b border-[#5B0E1B] pb-2 uppercase tracking-wide flex items-center justify-between">
+				<h3 class="text-sm font-bold text-white border-b border-[#5B0E1B] pb-2 uppercase tracking-wide flex items-center justify-between">
 					<span>Terms of Service</span>
-					<button class="modal-close text-[14pt] text-slate-400 hover:text-white">&times;</button>
+					<button class="modal-close text-xl text-slate-400 hover:text-white">&times;</button>
 				</h3>
-				<p class="text-[8.5pt] text-slate-300 leading-relaxed">
+				<p class="text-xs text-slate-300 leading-relaxed">
 					[TAERIJAY+] 서비스 이용 약관: 본 서비스는 글로벌 고객에게 한국 여행 가이드 정보를 제공하는 2개년 패스 전용 구독형 서비스임. 디지털 서비스 특성상 결제 즉시 완전 무제한 데이터 열람 권한이 실시간 인가되므로, 환불이 원칙적으로 절대 불가능함. 계정 사칭 및 부정사용 발견 시 강제 즉각 차단 조치함.
 				</p>
-				<button class="modal-close w-full py-2 bg-[#5B0E1B] text-white text-[8.5pt] font-bold uppercase rounded mt-2">Close</button>
+				<button class="modal-close w-full py-2 bg-[#5B0E1B] text-white text-xs font-bold uppercase rounded mt-2">Close</button>
 			</div>
 		</div>
 
 		<!-- modal 2: business -->
 		<div id="modal-business" class="modal-overlay fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-lg max-w-[400px] w-full p-5 flex flex-col gap-3 relative max-h-[85vh] overflow-y-auto">
-				<h3 class="text-[11.5pt] font-bold text-white border-b border-[#5B0E1B] pb-2 uppercase tracking-wide flex items-center justify-between">
+				<h3 class="text-sm font-bold text-white border-b border-[#5B0E1B] pb-2 uppercase tracking-wide flex items-center justify-between">
 					<span>Business Info</span>
-					<button class="modal-close text-[14pt] text-slate-400 hover:text-white">&times;</button>
+					<button class="modal-close text-xl text-slate-400 hover:text-white">&times;</button>
 				</h3>
-				<p class="text-[8.5pt] text-slate-300 leading-relaxed flex flex-col gap-2">
+				<p class="text-xs text-slate-300 leading-relaxed flex flex-col gap-2">
 					<span><strong>상호명:</strong> [TAERIJAY] (태리재이)</span>
 					<span><strong>사업자등록번호:</strong> 673-51-01148</span>
 					<span><strong>통신판매업신고:</strong> 2026-Hwadosudo-0247</span>
 					<span><strong>소재지:</strong> 경기도 남양주시 화도읍</span>
 					<span><strong>비고:</strong> 본 웹서비스는 2026년 오피셜 마스터 규약을 완벽 준수함.</span>
 				</p>
-				<button class="modal-close w-full py-2 bg-[#5B0E1B] text-white text-[8.5pt] font-bold uppercase rounded mt-2">Close</button>
+				<button class="modal-close w-full py-2 bg-[#5B0E1B] text-white text-xs font-bold uppercase rounded mt-2">Close</button>
 			</div>
 		</div>
 
 		<!-- modal 3: privacy -->
 		<div id="modal-privacy" class="modal-overlay fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-lg max-w-[400px] w-full p-5 flex flex-col gap-3 relative max-h-[85vh] overflow-y-auto">
-				<h3 class="text-[11.5pt] font-bold text-white border-b border-[#5B0E1B] pb-2 uppercase tracking-wide flex items-center justify-between">
+				<h3 class="text-sm font-bold text-white border-b border-[#5B0E1B] pb-2 uppercase tracking-wide flex items-center justify-between">
 					<span>Privacy Policy</span>
-					<button class="modal-close text-[14pt] text-slate-400 hover:text-white">&times;</button>
+					<button class="modal-close text-xl text-slate-400 hover:text-white">&times;</button>
 				</h3>
-				<p class="text-[8.5pt] text-slate-300 leading-relaxed">
+				<p class="text-xs text-slate-300 leading-relaxed">
 					[TAERIJAY+] 개인정보처리방침: 당사는 글로벌 간편 인증(Google OAuth)을 통한 이메일 주소 및 결제 대행망(Paddle API)의 빌링 데이터 외에 어떠한 비밀번호나 불필요한 추가 개인 인적 사항 수집을 완전 거부하고 원천 배제함. 수집된 이메일 데이터는 오직 기기 세션 관리용으로만 안전 관리함.
 				</p>
-				<button class="modal-close w-full py-2 bg-[#5B0E1B] text-white text-[8.5pt] font-bold uppercase rounded mt-2">Close</button>
+				<button class="modal-close w-full py-2 bg-[#5B0E1B] text-white text-xs font-bold uppercase rounded mt-2">Close</button>
 			</div>
 		</div>
 
 		<!-- modal 4: refund -->
 		<div id="modal-refund" class="modal-overlay fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-lg max-w-[400px] w-full p-5 flex flex-col gap-3 relative max-h-[85vh] overflow-y-auto">
-				<h3 class="text-[11.5pt] font-bold text-white border-b border-[#5B0E1B] pb-2 uppercase tracking-wide flex items-center justify-between">
+				<h3 class="text-sm font-bold text-white border-b border-[#5B0E1B] pb-2 uppercase tracking-wide flex items-center justify-between">
 					<span>Refund Policy</span>
-					<button class="modal-close text-[14pt] text-slate-400 hover:text-white">&times;</button>
+					<button class="modal-close text-xl text-slate-400 hover:text-white">&times;</button>
 				</h3>
-				<p class="text-[8.5pt] text-slate-300 leading-relaxed">
+				<p class="text-xs text-slate-300 leading-relaxed">
 					[TAERIJAY+] 환불 및 보상 정책: 디지털 자산 및 웹 콘텐츠 특성상, 2개년 무제한 열람 권한이 이메일 연동 방식으로 실시간 인가된 이후에는 어떠한 사유로도 환불이 불가능함. 중복 결제 등 시스템 이중 청구 건에 한해 결제 내역 확인 후 7 영업일 이내 강제 부분 승인 취소 조치함.
 				</p>
-				<button class="modal-close w-full py-2 bg-[#5B0E1B] text-white text-[8.5pt] font-bold uppercase rounded mt-2">Close</button>
+				<button class="modal-close w-full py-2 bg-[#5B0E1B] text-white text-xs font-bold uppercase rounded mt-2">Close</button>
 			</div>
 		</div>
 
-		<!-- modal 5: Paddle 결제창 시뮬레이터 -->
+		<!-- modal 5: payout trigger simulator -->
 		<div id="modal-checkout" class="modal-overlay fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-lg max-w-[400px] w-full p-5 flex flex-col gap-4 relative text-center">
-				<div class="text-[32pt] animate-bounce">💳</div>
-				<h3 class="text-[13pt] font-bold text-white">
+				<div class="text-4xl animate-bounce">💳</div>
+				<h3 class="text-sm font-bold text-white">
 					<span class="lang-el" data-en="Paddle Secure Checkout">Paddle 글로벌 안전 결제</span>
 				</h3>
-				<p class="text-[9pt] text-slate-300 leading-relaxed px-2">
+				<p class="text-xs text-slate-300 leading-relaxed px-2">
 					<span class="lang-el" data-en="Simulating 24-Month Premium Pass API call. Real transactions require custom credentials.">선택하신 <span id="checkoutTier" class="text-[#00E5FF] font-bold"></span> 2개년 이용권의 실시간 결제 창을 동적으로 시뮬레이션 중임.</span>
 				</p>
 				<div class="flex flex-col gap-2">
-					<button class="modal-close w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-[9pt] font-bold uppercase rounded transition-all">
+					<button class="modal-close w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase rounded transition-all">
 						<span class="lang-el" data-en="Complete Purchase">시뮬레이션 결제 완료</span>
 					</button>
-					<button class="modal-close w-full py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-[9pt] font-bold uppercase rounded transition-all">
+					<button class="modal-close w-full py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold uppercase rounded transition-all">
 						<span class="lang-el" data-en="Cancel">취소</span>
 					</button>
 				</div>
 			</div>
 		</div>
 
-		<!-- modal 6: 13번째 에피소드 유료 게이팅 경고 모달 -->
+		<!-- modal 6: locked episode gating limit warning -->
 		<div id="modal-gating" class="modal-overlay fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
 			<div class="bg-[#0A192F] border-2 border-[#5B0E1B] rounded-lg max-w-[400px] w-full p-6 flex flex-col gap-4 relative text-center">
-				<div class="text-[36pt]">🔒</div>
-				<h3 class="text-[13pt] font-black text-white uppercase tracking-wider">
+				<div class="text-5xl">🔒</div>
+				<h3 class="text-sm font-black text-white uppercase tracking-wider">
 					<span class="lang-el" data-en="Premium Locked Episode">프리미엄 락인 인덱스</span>
 				</h3>
-				<p class="text-[9pt] text-slate-300 leading-relaxed px-1">
+				<p class="text-xs text-slate-300 leading-relaxed px-1">
 					<span class="lang-el" data-en="Non-paying guest credentials limited to 12 episodes. Subscribe to our 2-Year Premium Membership now!">비결제 게스트 계정은 최초 12개 에피소드만 무료 보기가 제공됨. 본 13번째 콘텐츠 열람을 위해 2년 멤버십 이용권을 즉시 구독하시기 바람!</span>
 				</p>
-				<button class="modal-close w-full py-2.5 bg-[#5B0E1B] hover:bg-[#8b1328] text-white text-[9pt] font-black uppercase rounded tracking-widest transition-all">
+				<button class="modal-close w-full py-2.5 bg-[#5B0E1B] hover:bg-[#8b1328] text-white text-xs font-black uppercase tracking-widest transition-all">
 					<span class="lang-el" data-en="Unlock Membership">멤버십 즉시 활성화</span>
 				</button>
 			</div>
@@ -719,7 +719,7 @@ const monthlyUpdatedCount = 5;
 
 	</main>
 
-	<!-- 아스트로 정적 페이지 전용 바닐라 스크립트 라이프사이클 통합 제어 -->
+	<!-- Script element using inline browser script without Next.js dependencies -->
 	<script is:inline>
 		document.addEventListener('DOMContentLoaded', () => {
 			// 1. Language Toggle System
