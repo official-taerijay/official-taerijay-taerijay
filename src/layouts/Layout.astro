@@ -1,0 +1,57 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="TAERIJAY+ - Global K-Travel Platform" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<!-- 글로벌 브랜딩 폰트 적용 -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=League+Spartan:wght@100..900&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+		<style is:global>
+			:root {
+				--base-bg: #0A192F;
+				--border-color: #5B0E1B;
+			}
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				background-color: #030a16; /* 외부 배경 최적 다크 스킨 */
+				font-family: 'Noto Sans KR', sans-serif;
+				color: #FBF9F4;
+				overflow-x: hidden;
+			}
+			/* 디즈니 플러스 전용 디자인 스크롤바 */
+			::-webkit-scrollbar {
+				width: 6px;
+			}
+			::-webkit-scrollbar-track {
+				background: #0A192F;
+			}
+			::-webkit-scrollbar-thumb {
+				background: #5B0E1B;
+				border-radius: 3px;
+			}
+			::-webkit-scrollbar-thumb:hover {
+				background: #8b1328;
+			}
+		</style>
+	</head>
+	<body class="flex justify-center items-start min-h-screen">
+		<slot />
+	</body>
+</html>
