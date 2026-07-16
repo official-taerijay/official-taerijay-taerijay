@@ -1,23 +1,38 @@
 ---
 // 01-Header.astro
 ---
-<header class="w-full px-6 md:px-12 py-4 border-b border-[#5B0E1B] bg-[#0A192F]/95 backdrop-blur sticky top-0 z-50 flex items-center justify-between">
-	<button id="menuTrigger" class="text-white hover:text-[#00F0FF] transition-colors p-2 -ml-2">
-		<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-			<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-		</svg>
-	</button>
+<header class="w-full px-4 md:px-12 py-4 border-b border-[#5B0E1B] bg-[#0A192F]/95 backdrop-blur sticky top-0 z-50">
+	<!-- 데스크톱 & 모바일 공통 상단 프레임 -->
+	<div class="flex items-center justify-between w-full relative">
+		<!-- 좌측 햄버거 메뉴 버튼 -->
+		<button id="menuTrigger" class="text-white hover:text-[#00F0FF] transition-colors p-2 z-10">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+			</svg>
+		</button>
 
-	<div class="flex flex-col items-center absolute left-1/2 transform -translate-x-1/2">
-		<a href="/" class="font-spartan text-2xl md:text-4xl font-black tracking-widest text-white leading-none uppercase select-none">TAERIJAY+</a>
+		<!-- 중앙 로고 (모바일에서도 겹치지 않게 절대좌표 제거 및 반응형 마진 확보) -->
+		<div class="flex flex-col items-center flex-1 text-center">
+			<a href="/" class="font-spartan text-xl md:text-3xl font-black tracking-widest text-white leading-none uppercase select-none">TAERIJAY+</a>
+		</div>
+
+		<!-- 데스크톱 전용 우측 상단 로그인 버튼 (모바일에서는 아래 레이아웃으로 격리하여 감춤) -->
+		<div class="hidden md:block z-10">
+			<button id="desktopAuthBtn" class="px-5 py-2 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-white text-xs font-black uppercase font-spartan tracking-wider transition-all shadow-md">
+				로그아웃 또는 회원가입
+			</button>
+		</div>
 	</div>
-	
-	<button id="authBtn" class="px-3 md:px-5 py-1.5 md:py-2 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-white text-xs font-black uppercase font-spartan tracking-wider transition-all shadow-md">
-		Google Login
-	</button>
+
+	<!-- 모바일 전용 하단 분리 레이어 (TAERIJAY 타이틀 아래 우측 하단에 완벽 배치) -->
+	<div class="flex justify-end w-full mt-2.5 md:hidden">
+		<button id="mobileAuthBtn" class="px-3.5 py-1.5 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-white text-[11px] font-bold uppercase tracking-wider transition-all shadow-md font-noto">
+			로그아웃 또는 회원가입
+		</button>
+	</div>
 </header>
 
-<!-- SIDEBAR DRAWER INTERFACE MAPPING -->
+<!-- SIDEBAR DRAWER INTERFACE -->
 <div id="sideDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden justify-start w-full transition-opacity duration-300">
 	<div class="w-[320px] h-full bg-[#071120] border-r border-[#5B0E1B] p-6 flex flex-col gap-6 relative shadow-2xl overflow-y-auto font-noto">
 		<div class="flex items-center justify-between border-b border-[#5B0E1B] pb-4">
@@ -46,7 +61,9 @@
 		const menuTrigger = document.getElementById('menuTrigger');
 		const sideDrawer = document.getElementById('sideDrawer');
 		const menuCloser = document.getElementById('menuCloser');
-		const authBtn = document.getElementById('authBtn');
+		
+		const desktopBtn = document.getElementById('desktopAuthBtn');
+		const mobileBtn = document.getElementById('mobileAuthBtn');
 		const drawerUserBadge = document.getElementById('drawerUserBadge');
 
 		if (menuTrigger) {
@@ -61,31 +78,44 @@
 		};
 		if (menuCloser) menuCloser.addEventListener('click', closeMenu);
 
-		const currentSession = localStorage.getItem('taerijay_auth_state');
-		if (currentSession === 'authorized') {
-			if (authBtn) {
-				authBtn.textContent = 'Google Logout';
-				authBtn.className = "px-3 md:px-5 py-1.5 md:py-2 border border-red-600 rounded bg-red-900 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md font-spartan";
-			}
-			if (drawerUserBadge) drawerUserBadge.textContent = 'STATUS: AUTHORIZED_VIP_USER';
-		} else {
-			if (authBtn) {
-				authBtn.textContent = '구글 간편로그인';
-				authBtn.className = "px-3 md:px-5 py-1.5 md:py-2 border border-cyan-400 rounded bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase transition-all shadow-md font-noto";
-			}
-			if (drawerUserBadge) drawerUserBadge.textContent = 'STATUS: GUEST_MODE';
-		}
-
-		if (authBtn) {
-			authBtn.addEventListener('click', () => {
-				if (localStorage.getItem('taerijay_auth_state') === 'authorized') {
-					localStorage.removeItem('taerijay_auth_state');
-					alert("구글 지메일 보안 세션이 정상적으로 로그아웃 소각 완료되었습니다.");
-					window.location.href = "/";
+		// 동기화 제어 루프 함수 (지시하신 로그인 / 로그아웃 또는 회원가입 텍스트 매핑 고정)
+		const updateAuthButtons = (isAuthorized) => {
+			const buttons = [desktopBtn, mobileBtn];
+			buttons.forEach(btn => {
+				if (!btn) return;
+				if (isAuthorized) {
+					btn.textContent = '로그인';
+					btn.className = "px-4 py-1.5 md:py-2 border border-emerald-500 rounded bg-emerald-950/60 text-emerald-400 text-xs font-bold transition-all shadow-md font-noto";
 				} else {
-					window.location.href = '/01-auth';
+					btn.textContent = '로그아웃 또는 회원가입';
+					btn.className = "px-3.5 py-1.5 md:py-2 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-white text-xs font-bold transition-all shadow-md font-noto";
 				}
 			});
-		}
+
+			if (drawerUserBadge) {
+				drawerUserBadge.textContent = isAuthorized ? 'STATUS: AUTHORIZED_VIP_USER' : 'STATUS: GUEST_MODE';
+			}
+		};
+
+		// 초기 세션 상태 감지
+		const currentSession = localStorage.getItem('taerijay_auth_state');
+		updateAuthButtons(currentSession === 'authorized');
+
+		// 클릭 리스너 공통 라우팅 바인딩
+		const handleAuthAction = () => {
+			const sessionCheck = localStorage.getItem('taerijay_auth_state');
+			if (sessionCheck === 'authorized') {
+				// 이미 로그인된 상태일 때 클릭하면 로그아웃 소각 처리함
+				localStorage.removeItem('taerijay_auth_state');
+				alert("정상적으로 로그아웃 소각 완료되었습니다.");
+				window.location.href = "/";
+			} else {
+				// 로그아웃 상태일 때 클릭하면 인증 전용 허브 페이지로 라우팅함
+				window.location.href = '/01-auth';
+			}
+		};
+
+		if (desktopBtn) desktopBtn.addEventListener('click', handleAuthAction);
+		if (mobileBtn) mobileBtn.addEventListener('click', handleAuthAction);
 	});
 </script>
