@@ -5,44 +5,177 @@ import Masthead from '@components/02-Masthead.astro';
 import PricingTable from '@components/03-PricingTable.astro';
 import LegalFooter from '@components/04-LegalFooter.astro';
 ---
-<Layout title="TAERIJAY+ MASTER COMPONENT OVERHAUL">
+
+<Layout title="TAERIJAY+ COMPACT PORTAL">
 	<Header />
 	<Masthead />
 
+	<!-- UTILITY BAR: 돋보기 검색 & 글자 크기 가변 제어 인프라 -->
+	<section class="w-full py-6 px-6 md:px-12 max-w-6xl mx-auto flex flex-col md:flex-row gap-4 justify-between items-center border-b border-[#5B0E1B]/30">
+		<!-- A. 돋보기 채널 실시간 검색 시스템 -->
+		<div class="relative w-full md:w-80">
+			<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400">
+				<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+				</svg>
+			</span>
+			<input 
+				type="text" 
+				id="channelSearch" 
+				placeholder="독립 채널 실시간 검색..." 
+				class="w-full pl-10 pr-4 py-2 bg-[#071120] border border-[#5B0E1B] rounded-lg text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#00F0FF] transition-all font-noto"
+			/>
+		</div>
+
+		<!-- B. 글자 크기 자유 조절 컨트롤러 (모바일 완벽 대응) -->
+		<div class="flex items-center gap-3 bg-[#071120] px-4 py-2 border border-[#5B0E1B] rounded-lg">
+			<span class="text-xs text-slate-400 font-bold uppercase font-spartan">Text Size</span>
+			<div class="flex gap-1">
+				<button id="sizeDown" class="px-3 py-1 bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-white text-xs font-bold rounded transition-all">-</button>
+				<button id="sizeReset" class="px-3 py-1 bg-[#0A192F] border border-[#5B0E1B] hover:bg-slate-800 text-slate-300 text-xs font-bold rounded transition-all">Reset</button>
+				<button id="sizeUp" class="px-3 py-1 bg-[#00F0FF]/20 hover:bg-[#00F0FF]/40 text-[#00F0FF] text-xs font-bold rounded transition-all">+</button>
+			</div>
+		</div>
+	</section>
+
 	<!-- PREMIUM DEPLOYED PIPELINES MODULE -->
-	<section class="w-full py-16 px-6 md:px-12 max-w-6xl mx-auto flex flex-col gap-6 font-spartan">
-		<h2 class="text-xl md:text-2xl font-black uppercase tracking-widest text-white border-l-4 border-[#00F0FF] pl-3">
+	<section class="w-full py-12 px-6 md:px-12 max-w-6xl mx-auto flex flex-col gap-6" id="textAdjustContainer">
+		<h2 class="text-xl md:text-2xl font-bold uppercase tracking-widest text-white border-l-4 border-[#00F0FF] pl-3 font-spartan transition-all">
 			독립 채널 인프라 진입 허브 (Premium Channels Deployment)
 		</h2>
 		
-		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-			<a href="/04-channels/01-entertainment" class="p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-[#00F0FF] hover:bg-[#00F0FF]/5 transition-all flex flex-col gap-2">
-				<div class="flex items-center justify-between"><span class="text-lg font-black text-[#00F0FF]">1. Entertainment</span><span class="text-2xl">🎬</span></div>
-				<p class="text-xs text-slate-400 font-noto">비디오 스트림 허브 및 공식 미디어 채널 라우팅 연계 제공함.</p>
-			</a>
-			<a href="/04-channels/02-protocol" class="p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-[#FF6B00] hover:bg-[#FF6B00]/5 transition-all flex flex-col gap-2">
-				<div class="flex items-center justify-between"><span class="text-lg font-black text-[#FF6B00]">2. Protocol</span><span class="text-2xl">🌐</span></div>
-				<p class="text-xs text-slate-400 font-noto">해외 입국객 필수 공항 세관 및 대중교통 이용 안전 규약 명시함.</p>
-			</a>
-			<a href="/04-channels/03-mini" class="p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-white hover:bg-white/5 transition-all flex flex-col gap-2">
-				<div class="flex items-center justify-between"><span class="text-lg font-black text-white">3. Mini Route</span><span class="text-2xl">📍</span></div>
-				<p class="text-xs text-slate-400 font-noto">거점 도시별 시간 낭비 없는 원데이 초압축 동선 블루프린트 수록함.</p>
-			</a>
-			<a href="/04-channels/04-daiso" class="p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-[#FF2E2E] hover:bg-[#FF2E2E]/5 transition-all flex flex-col gap-2">
-				<div class="flex items-center justify-between"><span class="text-lg font-black text-[#FF2E2E]">4. Daiso Beauty</span><span class="text-2xl">💡</span></div>
-				<p class="text-xs text-slate-400 font-noto">SNS 품절 대란 다이소 코스메틱 및 전국 매장 리스트 공유함.</p>
-			</a>
-			<a href="/04-channels/05-oliveyoung" class="p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-[#6F8B2E] hover:bg-[#6F8B2E]/5 transition-all flex flex-col gap-2">
-				<div class="flex items-center justify-between"><span class="text-lg font-black text-[#6F8B2E]">5. Oliveyoung</span><span class="text-2xl">🧴</span></div>
-				<p class="text-xs text-slate-400 font-noto">MZ 필수 스킨케어 정보 및 즉시 면세 Tax-Free 현장 환급 좌표 제공함.</p>
-			</a>
-			<a href="/04-channels/07-convenience" class="p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-[#A14D7C] hover:bg-[#A14D7C]/5 transition-all flex flex-col gap-2">
-				<div class="flex items-center justify-between"><span class="text-lg font-black text-[#A14D7C]">7. Convenience</span><span class="text-2xl">🇰🇷</span></div>
-				<p class="text-xs text-slate-400 font-noto">국내 24시 편의점 독점 PB 마켓 결합 야간 가이드 인덱스 명시함.</p>
-			</a>
+		<!-- 채널 그리드 (모바일 단어 줄바꿈keep-all & break-words 전격 적용) -->
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="channelGrid">
+			
+			<div class="channel-card p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-[#00F0FF] hover:bg-[#00F0FF]/5 transition-all flex flex-col justify-between gap-4" data-title="entertainment 🎬">
+				<div class="flex flex-col gap-2">
+					<div class="flex items-center justify-between"><span class="text-lg font-bold text-[#00F0FF] font-spartan tracking-wide">1. Entertainment</span><span class="text-xl">🎬</span></div>
+					<p class="text-sm text-slate-300 font-noto leading-relaxed break-keep break-words">
+						비디오 스트림 허브 및 공식 미디어 채널 라우팅 연계 제공함. 단어가 아무리 길어도 모바일 화면 밖으로 삐져나가지 않고 깔끔하게 자동 줄바꿈 처리함.
+					</p>
+				</div>
+				<a href="/04-channels/01-entertainment" class="inline-block text-center w-full py-2 bg-[#00F0FF]/10 hover:bg-[#00F0FF] text-[#00F0FF] hover:text-[#0A192F] font-bold text-xs rounded transition-all font-spartan uppercase">Enter Channel</a>
+			</div>
+
+			<div class="channel-card p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-[#FF6B00] hover:bg-[#FF6B00]/5 transition-all flex flex-col justify-between gap-4" data-title="protocol 🌐">
+				<div class="flex flex-col gap-2">
+					<div class="flex items-center justify-between"><span class="text-lg font-bold text-[#FF6B00] font-spartan tracking-wide">2. Protocol</span><span class="text-xl">🌐</span></div>
+					<p class="text-sm text-slate-300 font-noto leading-relaxed break-keep break-words">
+						해외 입국객 필수 공항 세관 및 대중교통 이용 안전 규약 명시함. 법률 표준 규약에 맞춰 정보의 누락이 없도록 전격 보정 조치함.
+					</p>
+				</div>
+				<a href="/04-channels/02-protocol" class="inline-block text-center w-full py-2 bg-[#FF6B00]/10 hover:bg-[#FF6B00] text-[#FF6B00] hover:text-[#0A192F] font-bold text-xs rounded transition-all font-spartan uppercase">Enter Channel</a>
+			</div>
+
+			<div class="channel-card p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-white hover:bg-white/5 transition-all flex flex-col justify-between gap-4" data-title="mini route 📍">
+				<div class="flex flex-col gap-2">
+					<div class="flex items-center justify-between"><span class="text-lg font-bold text-white font-spartan tracking-wide">3. Mini Route</span><span class="text-xl">📍</span></div>
+					<p class="text-sm text-slate-300 font-noto leading-relaxed break-keep break-words">
+						거점 도시별 시간 낭비 없는 원데이 초압축 동선 블루프린트 수록함. 단시간 내에 완벽하게 순회하는 최상위 노선 기획을 고정함.
+					</p>
+				</div>
+				<a href="/04-channels/03-mini" class="inline-block text-center w-full py-2 bg-white/10 hover:bg-white text-white hover:text-[#0A192F] font-bold text-xs rounded transition-all font-spartan uppercase">Enter Channel</a>
+			</div>
+
+			<div class="channel-card p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-[#FF2E2E] hover:bg-[#FF2E2E]/5 transition-all flex flex-col justify-between gap-4" data-title="daiso beauty 💡">
+				<div class="flex flex-col gap-2">
+					<div class="flex items-center justify-between"><span class="text-lg font-bold text-[#FF2E2E] font-spartan tracking-wide">4. Daiso Beauty</span><span class="text-xl">💡</span></div>
+					<p class="text-sm text-slate-300 font-noto leading-relaxed break-keep break-words">
+						SNS 품절 대란 다이소 코스메틱 및 전국 주요 거점 매장 실시간 재고 인덱스 공유함. 화장품 가성비 분석 데이터를 전면 갱신함.
+					</p>
+				</div>
+				<a href="/04-channels/04-daiso" class="inline-block text-center w-full py-2 bg-[#FF2E2E]/10 hover:bg-[#FF2E2E] text-[#FF2E2E] hover:text-[#0A192F] font-bold text-xs rounded transition-all font-spartan uppercase">Enter Channel</a>
+			</div>
+
+			<div class="channel-card p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-[#6F8B2E] hover:bg-[#6F8B2E]/5 transition-all flex flex-col justify-between gap-4" data-title="oliveyoung 🧴">
+				<div class="flex flex-col gap-2">
+					<div class="flex items-center justify-between"><span class="text-lg font-bold text-[#6F8B2E] font-spartan tracking-wide">5. Oliveyoung</span><span class="text-xl">🧴</span></div>
+					<p class="text-sm text-slate-300 font-noto leading-relaxed break-keep break-words">
+						MZ 필수 스킨케어 정보 및 즉시 면세 Tax-Free 현장 환급 좌표 제공함. 명동을 비롯한 외국인 우선 환급 스토어 가이드를 명시함.
+					</p>
+				</div>
+				<a href="/04-channels/05-oliveyoung" class="inline-block text-center w-full py-2 bg-[#6F8B2E]/10 hover:bg-[#6F8B2E] text-[#6F8B2E] hover:text-[#0A192F] font-bold text-xs rounded transition-all font-spartan uppercase">Enter Channel</a>
+			</div>
+
+			<div class="channel-card p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-[#A14D7C] hover:bg-[#A14D7C]/5 transition-all flex flex-col justify-between gap-4" data-title="convenience 🇰🇷">
+				<div class="flex flex-col gap-2">
+					<div class="flex items-center justify-between"><span class="text-lg font-bold text-[#A14D7C] font-spartan tracking-wide">7. Convenience</span><span class="text-xl">🇰🇷</span></div>
+					<p class="text-sm text-slate-300 font-noto leading-relaxed break-keep break-words">
+						국내 24시 편의점 독점 PB 마켓 결합 야간 가이드 인덱스 명시함. 외국인들이 가장 열광하는 컵라면 조합 비밀 공식을 포함함.
+					</p>
+				</div>
+				<a href="/04-channels/07-convenience" class="inline-block text-center w-full py-2 bg-[#A14D7C]/10 hover:bg-[#A14D7C] text-[#A14D7C] hover:text-[#0A192F] font-bold text-xs rounded transition-all font-spartan uppercase">Enter Channel</a>
+			</div>
+
 		</div>
 	</section>
 
 	<PricingTable />
 	<LegalFooter />
 </Layout>
+
+<!-- 실시간 검색 & 글자 크기 가변 조절 스크립트 엔진 -->
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+		// 1. 실시간 돋보기 검색 기능 구현
+		const searchInput = document.getElementById('channelSearch');
+		const cards = document.querySelectorAll('.channel-card');
+
+		if (searchInput) {
+			searchInput.addEventListener('input', (e) => {
+				const val = e.target.value.toLowerCase().trim();
+				cards.forEach(card => {
+					const title = card.dataset.title.toLowerCase();
+					if (title.includes(val)) {
+						card.classList.remove('hidden');
+					} else {
+						card.classList.add('hidden');
+					}
+				});
+			});
+		}
+
+		// 2. 글자 크기 실시간 조절 시스템 (Reset 기준 100%, 최대 130%, 최소 85%)
+		const container = document.getElementById('textAdjustContainer');
+		const btnUp = document.getElementById('sizeUp');
+		const btnDown = document.getElementById('sizeDown');
+		const btnReset = document.getElementById('sizeReset');
+
+		let scale = 100; // % 기준
+
+		const updateFontSize = () => {
+			if (container) {
+				container.style.fontSize = `${scale}%`;
+				// 내부 텍스트 노드들도 반응형 비례 확대
+				container.querySelectorAll('p, span, h2').forEach(el => {
+					el.style.fontSize = ''; // 인라인 오버라이딩 초기화로 컨테이너 비례 작동 유도
+				});
+			}
+		};
+
+		if (btnUp) {
+			btnUp.addEventListener('click', () => {
+				if (scale < 130) {
+					scale += 10;
+					updateFontSize();
+				}
+			});
+		}
+
+		if (btnDown) {
+			btnDown.addEventListener('click', () => {
+				if (scale > 85) {
+					scale -= 10;
+					updateFontSize();
+				}
+			});
+		}
+
+		if (btnReset) {
+			btnReset.addEventListener('click', () => {
+				scale = 100;
+				if (container) container.style.fontSize = '';
+			});
+		}
+	});
+</script>
