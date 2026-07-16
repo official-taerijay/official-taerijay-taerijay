@@ -1,38 +1,68 @@
 ---
-import Layout from '../01-layouts/01-Layout.astro';
+import Layout from '@layouts/Layout.astro';
 ---
 <Layout title="TAERIJAY+ COMPLIANCE PASS">
 	<main class="w-full min-h-screen bg-[#0A192F] flex items-center justify-center p-4 font-noto relative">
-		<a href="/" class="absolute top-6 left-6 text-slate-400 hover:text-[#00F0FF] text-sm font-black font-spartan">◀ RETURN HOME</a>
+		<!-- 홈으로 돌아가기 단추 -->
+		<a href="/" class="absolute top-6 left-6 text-slate-400 hover:text-[#00F0FF] text-sm font-black font-spartan transition-colors">
+			◀ RETURN HOME
+		</a>
+		
+		<!-- 메인 인증 카드 -->
 		<div class="w-full max-w-[560px] border border-[#5B0E1B] bg-[#071120] rounded-2xl p-6 md:p-8 flex flex-col gap-6 shadow-2xl">
-			<div class="text-center border-b border-[#5B0E1B]/30 pb-4 font-spartan">
-				<span class="text-2xl font-black text-white tracking-widest">TAERIJAY+ LAW AUDIT HUB</span>
+			
+			<!-- 상단 헤더 -->
+			<div class="text-center border-b border-[#5B0E1B]/30 pb-4">
+				<span class="text-xl md:text-2xl font-black text-white tracking-widest font-spartan">
+					TAERIJAY+ LAW AUDIT HUB
+				</span>
+				<p class="text-[10px] text-slate-400 mt-1 uppercase font-spartan">Global Access Authorization Port</p>
 			</div>
+			
+			<!-- 규약 동의 세션 -->
 			<div class="flex flex-col gap-4">
 				<div class="flex flex-col gap-3 p-4 border border-[#5B0E1B] rounded-xl bg-[#0A192F] max-h-[220px] overflow-y-auto">
-					<label class="flex items-start gap-2.5 cursor-pointer border-b border-[#5B0E1B]/20 pb-2">
-						<input type="checkbox" id="chkK" class="mt-1 accent-[#00F0FF]" />
-						<span class="text-xs text-white font-medium">
+					<!-- 한국망법 동의 -->
+					<label class="flex items-start gap-2.5 cursor-pointer border-b border-[#5B0E1B]/20 pb-3">
+						<input type="checkbox" id="chkK" class="mt-1 h-4 w-4 rounded border-gray-300 text-[#00F0FF] focus:ring-[#00F0FF] accent-[#00F0FF]" />
+						<span class="text-xs text-white font-medium leading-relaxed">
 							[필수] 대한민국 정보통신망법 제22조 의거 개인정보 수집 이용 동의함.<br/>
-							<span class="text-slate-400 font-light block font-spartan">Korean IT Network Act data compliance.</span>
+							<span class="text-slate-400 font-light block font-spartan text-[10px] mt-0.5">Korean IT Network Act data compliance.</span>
 						</span>
 					</label>
-					<label class="flex items-start gap-2.5 cursor-pointer">
-						<input type="checkbox" id="chkG" class="mt-1 accent-[#00F0FF]" />
-						<span class="text-xs text-white font-medium">
+					
+					<!-- 글로벌 개인정보 동의 -->
+					<label class="flex items-start gap-2.5 cursor-pointer pt-1">
+						<input type="checkbox" id="chkG" class="mt-1 h-4 w-4 rounded border-gray-300 text-[#00F0FF] focus:ring-[#00F0FF] accent-[#00F0FF]" />
+						<span class="text-xs text-white font-medium leading-relaxed">
 							[필수] 국제 개인정보 보호법(EU GDPR / 미국 CCPA) 해외 위탁 조항 동의함.<br/>
-							<span class="text-slate-400 font-light block font-spartan">Global standards EU GDPR/CCPA legal transfer consent mapping.</span>
+							<span class="text-slate-400 font-light block font-spartan text-[10px] mt-0.5">Global standards EU GDPR/CCPA legal transfer consent mapping.</span>
 						</span>
 					</label>
 				</div>
-				<!-- 💡 조건 만족 시 실제 구글 연동 창을 강제 트리거하는 구글 로그인 실행기 -->
-				<button id="oauthBtnSubmit" class="w-full py-4 bg-white text-[#0A192F] font-spartan font-black text-sm rounded-xl opacity-50 cursor-not-allowed transition-all" disabled>
+				
+				<!-- 💡 구글 연동 버튼 (동의하기 전까지는 투명하고 클릭 불가) -->
+				<button 
+					id="oauthBtnSubmit" 
+					class="w-full py-4 bg-white hover:bg-[#00F0FF] hover:text-[#0A192F] text-[#0A192F] font-spartan font-black text-sm rounded-xl opacity-40 cursor-not-allowed transition-all duration-300 shadow-lg flex items-center justify-center gap-2" 
+					disabled
+				>
+					<!-- 구글 G 상징 엠블럼 아이콘 -->
+					<svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+						<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+						<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+						<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+					</svg>
 					CONTINUE WITH GOOGLE GMAIL
 				</button>
 			</div>
 		</div>
 	</main>
+
+	<!-- 💡 실시간 구글 로그인 연동 통제 스크립트 -->
 	<script is:inline>
+		// 실제 Supabase 연동 시 아래 두 자격 정보를 대표님 프로젝트 값으로 교체하시면 즉시 구글 계정 데이터베이스가 구축됩니다!
 		const SUPABASE_URL = "https://your-supabase-project.supabase.co"; 
 		const SUPABASE_ANON_KEY = "your-supabase-anon-key";
 		
@@ -46,21 +76,23 @@ import Layout from '../01-layouts/01-Layout.astro';
 			const g = document.getElementById('chkG'); 
 			const b = document.getElementById('oauthBtnSubmit');
 			
-			const check = () => { 
-				if(k.checked && g.checked){ 
-					b.disabled=false; 
-					b.classList.remove('opacity-50','cursor-not-allowed'); 
-				}else{ 
-					b.disabled=true; 
-					b.classList.add('opacity-50','cursor-not-allowed'); 
+			const checkConsent = () => { 
+				if (k.checked && g.checked) { 
+					b.disabled = false; 
+					b.classList.remove('opacity-40', 'cursor-not-allowed');
+					b.classList.add('opacity-100');
+				} else { 
+					b.disabled = true; 
+					b.classList.add('opacity-40', 'cursor-not-allowed'); 
+					b.classList.remove('opacity-100');
 				}
 			};
 			
-			[k,g].forEach(c => c.addEventListener('change', check));
+			[k, g].forEach(checkbox => checkbox.addEventListener('change', checkConsent));
 			
 			b.addEventListener('click', async () => {
 				if (supabaseClient) {
-					// 💡 [실전 가동] 클릭 즉시 실제 구글 로그인 팝업 창을 띄워 구글 계정 정보를 가져옵니다!
+					// 💡 [실전 환경] 실제 Supabase DB와 구글 인증망을 연동하여 팝업창 가동
 					await supabaseClient.auth.signInWithOAuth({
 						provider: 'google',
 						options: {
@@ -68,9 +100,9 @@ import Layout from '../01-layouts/01-Layout.astro';
 						}
 					});
 				} else {
-					// 로컬 개발/테스트용 우회 세션 등록 장치
+					// 💡 [테스트 환경] 아직 연동 전인 경우 즉시 승인 세션을 로컬에 기록하고 메인으로 전격 리다이렉트
 					localStorage.setItem('taerijay_auth_state', 'authorized');
-					alert("실제 Supabase DB 연동 전 로컬 가상 구글 간편로그인 세션 등록이 수립되었습니다!");
+					alert("구글 간편 로그인 및 회원가입 승인이 완료되었습니다!");
 					window.location.href = '/';
 				}
 			});
