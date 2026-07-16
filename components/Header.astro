@@ -1,0 +1,90 @@
+---
+---
+<header class="w-full px-6 md:px-12 py-4 border-b border-[#5B0E1B] bg-[#0A192F]/95 backdrop-blur sticky top-0 z-50 flex items-center justify-between">
+	<button id="menuTrigger" class="text-white hover:text-[#00F0FF] transition-colors p-2 -ml-2">
+		<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+		</svg>
+	</button>
+
+	<div class="flex flex-col items-center absolute left-1/2 transform -translate-x-1/2">
+		<a href="/" class="font-spartan text-2xl md:text-4xl font-black tracking-widest text-white leading-none uppercase select-none">TAERIJAY+</a>
+	</div>
+	
+	<button id="authBtn" class="px-3 md:px-5 py-1.5 md:py-2 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-white text-xs font-black uppercase font-spartan tracking-wider transition-all shadow-md">
+		Google Login
+	</button>
+</header>
+
+<!-- SIDEBAR OVERLAY DRAWER -->
+<div id="sideDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden justify-start w-full transition-opacity duration-300">
+	<div class="w-[320px] h-full bg-[#071120] border-r border-[#5B0E1B] p-6 flex flex-col gap-6 relative shadow-2xl overflow-y-auto font-noto">
+		<div class="flex items-center justify-between border-b border-[#5B0E1B] pb-4">
+			<span class="font-spartan text-lg font-black tracking-widest text-[#00F0FF] uppercase">CHANNELS</span>
+			<button id="menuCloser" class="text-slate-400 hover:text-white text-3xl font-light leading-none">&times;</button>
+		</div>
+		
+		<nav class="flex flex-col gap-3 font-bold text-sm">
+			<a href="/" class="w-full text-left p-3.5 rounded border border-[#5B0E1B]/60 bg-[#0A192F] text-white hover:border-white transition-all font-playfair font-black tracking-wider uppercase text-base">0. TAERIJAY</a>
+			<a href="/channels/entertainment" class="w-full text-left p-3.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#00F0FF] hover:border-[#00F0FF] transition-all text-base lowercase">1. taerijay+entertainment</a>
+			<a href="/channels/protocol" class="w-full text-left p-3.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#FF6B00] hover:border-[#FF6B00] transition-all text-base lowercase">2. taerijay+protocol</a>
+			<a href="/channels/mini" class="w-full text-left p-3.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#FBF9F4] hover:border-white transition-all text-base lowercase">3. taerijay+mini</a>
+			<a href="/channels/daiso" class="w-full text-left p-3.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#FF2E2E] hover:border-[#FF2E2E] transition-all text-base lowercase">4. taerijay+daiso</a>
+			<a href="/channels/oliveyoung" class="w-full text-left p-3.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#6F8B2E] hover:border-[#6F8B2E] transition-all text-base lowercase">5. taerijay+oliveyoung</a>
+			<a href="/channels/emart" class="w-full text-left p-3.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#FFFB00] hover:border-[#FFFB00] transition-all text-base lowercase">6. taerijay+emart</a>
+			<a href="/channels/convenience" class="w-full text-left p-3.5 rounded border border-[#5B0E1B]/40 bg-[#0A192F] text-[#A14D7C] hover:border-[#A14D7C] transition-all text-base lowercase">7. taerijay+convenience</a>
+		</nav>
+		<div class="mt-auto border-t border-[#5B0E1B] pt-4 text-center">
+			<span class="text-xs text-slate-400 font-mono" id="drawerUserBadge">STATUS: GUEST_MODE</span>
+		</div>
+	</div>
+</div>
+
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+		const menuTrigger = document.getElementById('menuTrigger');
+		const sideDrawer = document.getElementById('sideDrawer');
+		const menuCloser = document.getElementById('menuCloser');
+		const authBtn = document.getElementById('authBtn');
+		const drawerUserBadge = document.getElementById('drawerUserBadge');
+
+		if (menuTrigger) {
+			menuTrigger.addEventListener('click', () => {
+				sideDrawer.classList.remove('hidden');
+				sideDrawer.classList.add('flex');
+			});
+		}
+		const closeMenu = () => {
+			sideDrawer.classList.add('hidden');
+			sideDrawer.classList.remove('flex');
+		};
+		if (menuCloser) menuCloser.addEventListener('click', closeMenu);
+
+		const currentSession = localStorage.getItem('taerijay_auth_state');
+		if (currentSession === 'authorized') {
+			if (authBtn) {
+				authBtn.textContent = 'Google Logout';
+				authBtn.className = "px-3 md:px-5 py-1.5 md:py-2 border border-red-600 rounded bg-red-900 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md font-spartan";
+			}
+			if (drawerUserBadge) drawerUserBadge.textContent = 'STATUS: AUTHORIZED_VIP_USER';
+		} else {
+			if (authBtn) {
+				authBtn.textContent = '구글 간편로그인';
+				authBtn.className = "px-3 md:px-5 py-1.5 md:py-2 border border-cyan-400 rounded bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase transition-all shadow-md font-noto";
+			}
+			if (drawerUserBadge) drawerUserBadge.textContent = 'STATUS: GUEST_MODE';
+		}
+
+		if (authBtn) {
+			authBtn.addEventListener('click', () => {
+				if (localStorage.getItem('taerijay_auth_state') === 'authorized') {
+					localStorage.removeItem('taerijay_auth_state');
+					alert("구글 지메일 보안 세션이 정상적으로 로그아웃 소각 완료되었습니다.");
+					window.location.href = "/";
+				} else {
+					window.location.href = '/auth';
+				}
+			});
+		}
+	});
+</script>

@@ -2,25 +2,17 @@
 interface Props {
 	title: string;
 }
-
 const { title } = Astro.props;
 ---
-
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="TAERIJAY+ - Global K-Travel Platform" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		
-		<!-- Google Fonts Global Noto Sans System + League Spartan Optimization -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Arabic:wght@100..900&family=Noto+Sans+Hebrew:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
-		
 		<script is:inline src="https://cdn.tailwindcss.com"></script>
 		<script is:inline>
 			tailwind.config = {
@@ -36,10 +28,6 @@ const { title } = Astro.props;
 							neonGreen: '#00FF66',
 							neonPurple: '#E000FF',
 							masterBurgundy: '#990011',
-							satinIvory: '#FBF9F4',
-							classicOrange: '#F16B24',
-							oliveGreen: '#6F8B2E',
-							purplePink: '#A14D7C',
 						},
 						fontFamily: {
 							'playfair': ['"Playfair Display"', 'serif'],
@@ -50,37 +38,8 @@ const { title } = Astro.props;
 				}
 			}
 		</script>
-		<style is:global>
-			body {
-				background-color: #0A192F;
-				font-family: 'League Spartan', 'Noto Sans', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans SC', 'Noto Sans TC', system-ui, sans-serif;
-				color: #FBF9F4;
-				overflow-x: hidden;
-				margin: 0;
-				padding: 0;
-			}
-			::-webkit-scrollbar {
-				width: 8px;
-				height: 8px;
-			}
-			::-webkit-scrollbar-track {
-				background: #0A192F;
-				border-radius: 4px;
-			}
-			::-webkit-scrollbar-thumb {
-				background: #5B0E1B;
-				border-radius: 4px;
-			}
-			.no-scrollbar::-webkit-scrollbar {
-				display: none;
-			}
-			.no-scrollbar {
-				-ms-overflow-style: none;
-				scrollbar-width: none;
-			}
-		</style>
 	</head>
-	<body class="bg-[#0A192F] min-h-screen w-full m-0 p-0 antialiased selection:bg-[#5B0E1B]">
+	<body class="bg-[#0A192F] text-[#FBF9F4] antialiased">
 		<slot />
 	</body>
 </html>
