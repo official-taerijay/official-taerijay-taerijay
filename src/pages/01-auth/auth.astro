@@ -1,96 +1,70 @@
 ---
-import Layout from '@layouts/Layout.astro';
+interface Props {
+	title: string;
+}
+const { title } = Astro.props;
 ---
-<Layout title="TAERIJAY+ COMPLIANCE PASS">
-	<main class="w-full min-h-screen bg-[#0A192F] flex items-center justify-center p-4 font-noto relative">
-		<!-- 홈으로 돌아가기 단추 -->
-		<a href="/" class="absolute top-6 left-6 text-slate-400 hover:text-[#00F0FF] text-sm font-black font-spartan transition-colors focus:outline-none">
-			◀ RETURN HOME
-		</a>
+<!doctype html>
+<!-- 💡 1. 한글 고정 기본값 설정 & 자동 번역기에 의한 폰트 깨짐 강제 방지 -->
+<html lang="ko" translate="no" class="h-full scroll-smooth select-none">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="google" content="notranslate" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+		<title>{title}</title>
 		
-		<!-- 메인 인증 카드 -->
-		<div class="w-full max-w-[560px] border border-[#5B0E1B] bg-[#071120] rounded-2xl p-6 md:p-8 flex flex-col gap-6 shadow-2xl">
-			
-			<!-- 상단 헤더 -->
-			<div class="text-center border-b border-[#5B0E1B]/30 pb-4">
-				<span class="text-xl md:text-2xl font-black text-white tracking-widest font-spartan">
-					TAERIJAY+ LAW AUDIT HUB
-				</span>
-				<p class="text-[10px] text-slate-400 mt-1 uppercase font-spartan">Global Access Authorization Port</p>
-			</div>
-			
-			<!-- 규약 동의 세션 -->
-			<div class="flex flex-col gap-4">
-				<div class="flex flex-col gap-3 p-4 border border-[#5B0E1B] rounded-xl bg-[#0A192F] max-h-[220px] overflow-y-auto">
-					<!-- 한국망법 동의 -->
-					<label class="flex items-start gap-2.5 cursor-pointer border-b border-[#5B0E1B]/20 pb-3">
-						<input type="checkbox" id="chkK" class="mt-1 h-4 w-4 rounded border-gray-300 text-[#00F0FF] focus:ring-[#00F0FF] accent-[#00F0FF]" />
-						<span class="text-xs text-white font-medium leading-relaxed">
-							[필수] 대한민국 정보통신망법 제22조 의거 개인정보 수집 이용 동의함.<br/>
-							<span class="text-slate-400 font-light block font-spartan text-[10px] mt-0.5">Korean IT Network Act data compliance.</span>
-						</span>
-					</label>
-					
-					<!-- 글로벌 개인정보 동의 -->
-					<label class="flex items-start gap-2.5 cursor-pointer pt-1">
-						<input type="checkbox" id="chkG" class="mt-1 h-4 w-4 rounded border-gray-300 text-[#00F0FF] focus:ring-[#00F0FF] accent-[#00F0FF]" />
-						<span class="text-xs text-white font-medium leading-relaxed">
-							[필수] 국제 개인정보 보호법(EU GDPR / 미국 CCPA) 해외 위탁 조항 동의함.<br/>
-							<span class="text-slate-400 font-light block font-spartan text-[10px] mt-0.5">Global standards EU GDPR/CCPA legal transfer consent mapping.</span>
-						</span>
-					</label>
-				</div>
-				
-				<!-- 💡 구글 간편로그인 연동 버튼 -->
-				<button 
-					id="oauthBtnSubmit" 
-					class="w-full py-4 bg-white hover:bg-[#00F0FF] hover:text-[#0A192F] text-[#0A192F] font-spartan font-black text-sm rounded-xl opacity-40 cursor-not-allowed transition-all duration-300 shadow-lg flex items-center justify-center gap-2 focus:outline-none" 
-					disabled
-				>
-					<!-- 구글 G 상징 로고 아이콘 -->
-					<svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-						<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-						<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-						<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
-						<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
-					</svg>
-					CONTINUE WITH GOOGLE GMAIL
-				</button>
-			</div>
-		</div>
-	</main>
-
-	<!-- 💡 구글 로그인 차단 에러 원천소각 스크립트 -->
-	<script is:inline>
-		document.addEventListener('DOMContentLoaded', () => {
-			const k = document.getElementById('chkK'); 
-			const g = document.getElementById('chkG'); 
-			const b = document.getElementById('oauthBtnSubmit');
-			
-			const checkConsent = () => { 
-				if (k.checked && g.checked) { 
-					b.disabled = false; 
-					b.classList.remove('opacity-40', 'cursor-not-allowed');
-					b.classList.add('opacity-100');
-				} else { 
-					b.disabled = true; 
-					b.classList.add('opacity-40', 'cursor-not-allowed'); 
-					b.classList.remove('opacity-100');
+		<!-- 💡 2. 대표님의 영문 오리지널 폰트(League Spartan) 및 Noto Sans 구글 웹폰트 완벽 재탑재 -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+		
+		<script is:inline src="https://cdn.tailwindcss.com"></script>
+		<script is:inline>
+			tailwind.config = {
+				theme: {
+					extend: {
+						colors: {
+							baseBg: '#0A192F',
+							brandBorder: '#5B0E1B',
+							neonCyan: '#00F0FF',
+							neonOrange: '#FF6B00',
+							neonYellow: '#FFFB00',
+							neonRed: '#FF2E2E',
+							neonGreen: '#00FF66',
+							neonPurple: '#E000FF',
+							masterBurgundy: '#990011',
+						},
+						// 💡 꼬였던 폰트 패밀리 매핑 복구 및 한/영 분리 설정
+						fontFamily: {
+							'spartan': ['"League Spartan"', 'sans-serif'],
+							'noto': ['"Noto Sans KR"', 'sans-serif']
+						}
+					}
 				}
-			};
-			
-			[k, g].forEach(checkbox => checkbox.addEventListener('change', checkConsent));
-			
-			b.addEventListener('click', () => {
-				// 💡 [해결책] 유효하지 않은 구글 클라이언트 ID에 의한 404 차단 에러를 막기 위해
-				// 브라우저 세션에 '구글 로그인 완료(authorized)' 플래그를 정교하고 안전하게 기록한 뒤,
-				// 에러 없이 100% 정상 가동되는 대표님 사이트의 메인 홈페이지(/) 관문으로 즉각 안전 복귀시킵니다!
-				localStorage.setItem('taerijay_auth_state', 'authorized');
-				
-				// 대표님의 연동 성공 확인을 위해 메시지 송출 후 즉시 로테이션
-				alert("Google Account가 TAERIJAY+ 글로벌 데이터베이스와 안전하게 바인딩되었습니다.");
-				window.location.href = '/';
-			});
-		});
-	</script>
-</Layout>
+			}
+		</script>
+		<style>
+			html, body {
+				height: 100%;
+				background-color: #0A192F;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				text-rendering: optimizeLegibility;
+			}
+			body {
+				/* 💡 한글은 Noto Sans KR로 고정해 맑고 가독성 있게 표현 */
+				font-family: "Noto Sans KR", sans-serif;
+				word-break: keep-all;
+				overflow-wrap: anywhere;
+			}
+			/* 💡 대표님이 극찬하셨던 그 웅장하고 세련된 시그니처 자간 세팅 복구 */
+			.font-spartan {
+				font-family: "League Spartan", sans-serif;
+				letter-spacing: 0.08em;
+			}
+		</style>
+	</head>
+	<body class="bg-[#0A192F] text-[#FBF9F4] flex flex-col min-h-screen">
+		<slot />
+	</body>
+</html>
