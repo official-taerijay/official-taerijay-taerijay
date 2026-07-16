@@ -5,31 +5,21 @@ interface Props {
 const { title } = Astro.props;
 ---
 <!doctype html>
-<!-- 
-  💡 [핵심] 번역 차단 및 다국어 표준화 
-  1. lang="ko"로 선언하여 네이버/구글이 외국어로 오인해 번역 팝업을 띄우는 행위를 사전 차단함.
-  2. translate="no" 속성을 주입해 파파고/구글번역 엔진의 임의 텍스트 오버라이딩을 강제 비활성화함.
--->
 <html lang="ko" translate="no" class="h-full scroll-smooth select-none">
 	<head>
 		<meta charset="UTF-8" />
-		<!-- 네이버 번역 및 구글 크롬 번역 툴바 강제 비활성화 메타 태그 -->
 		<meta name="google" content="notranslate" />
-		
-		<!-- 💡 모바일 화면 비율 자동 피팅 및 노치 디자인 대응 (S23 한 화면 꽉 차게 고정) -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-		<meta name="mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		
 		<title>{title}</title>
 		
-		<!-- 글로벌 초고해상도 렌더링용 구글 웹 서체 (한글/영문 가독성 가공) -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;600;800&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 		
 		<script is:inline src="https://cdn.tailwindcss.com"></script>
+		<!-- 💡 [추가] 실시간 구글 로그인 세션을 통제하는 수파베이스 글로벌 인증 라이브러리 탑재 -->
+		<script is:inline src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+		
 		<script is:inline>
 			tailwind.config = {
 				theme: {
@@ -54,26 +44,20 @@ const { title } = Astro.props;
 			}
 		</script>
 		<style>
-			/* 💡 전 세계 모든 모바일 브라우저 표준 렌더링 통제 */
 			html, body {
 				height: 100%;
 				background-color: #0A192F;
-				/* 사파리, 구글 크롬, 모바일 웹뷰 가독성 강제 향상 시스템 */
 				-webkit-font-smoothing: antialiased;
 				-moz-osx-font-smoothing: grayscale;
 				text-rendering: optimizeLegibility;
 				-webkit-text-size-adjust: 100%;
 				-ms-text-size-adjust: 100%;
 			}
-			
 			body {
 				font-family: "Noto Sans", sans-serif;
-				/* 어떤 모바일 환경에서도 글자가 찢어지거나 박스를 이탈하는 버그 원천 소각 */
-				word-break: keep-all;        /* 한글 단어 단위 보존 줄바꿈 */
-				overflow-wrap: anywhere;     /* 영어, 숫자, 긴 URL 주소 강제 분쇄 줄바꿈 */
+				word-break: keep-all;
+				overflow-wrap: anywhere;
 			}
-
-			/* 영문 폰트 자간 및 서체 얇고 세련되게 보정 */
 			.font-spartan {
 				font-family: "League Spartan", sans-serif;
 				letter-spacing: 0.06em;
