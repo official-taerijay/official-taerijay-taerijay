@@ -196,7 +196,7 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 			
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto mb-8 font-spartan">
-				<!-- TIER 1: BASIC -->
+				<!-- TIER 1: BASIC (글자색 흰색 고정 락인) -->
 				<div class="rounded-xl border border-white bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.03]">
 					<div>
 						<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Basic Pass (단일 요금제)</span>
@@ -211,7 +211,7 @@ import Layout from '../layouts/Layout.astro';
 					<button class="pay-btn w-full py-3 bg-white/10 hover:bg-white hover:text-black border border-white text-white rounded text-xs font-black uppercase tracking-wider transition-all mt-8">Activate Basic Plan</button>
 				</div>
 
-				<!-- TIER 2: STANDARD -->
+				<!-- TIER 2: STANDARD (디즈니 네온 그린 고정) -->
 				<div class="rounded-xl border border-[#00FF66] bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.03]">
 					<div>
 						<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Standard Pass (단일 요금제)</span>
@@ -226,7 +226,7 @@ import Layout from '../layouts/Layout.astro';
 					<button class="pay-btn w-full py-3 bg-[#00FF66]/10 hover:bg-[#00FF66] hover:text-black border border-[#00FF66] text-[#00FF66] rounded text-xs font-black uppercase tracking-wider transition-all mt-8">Activate Standard Plan</button>
 				</div>
 
-				<!-- TIER 3: PRO -->
+				<!-- TIER 3: PRO (브라이트 네온 오렌지) -->
 				<div class="rounded-xl border border-[#FF6B00] bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.03]">
 					<div>
 						<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Pro Pass (단일 요금제)</span>
@@ -244,7 +244,7 @@ import Layout from '../layouts/Layout.astro';
 
 			<!-- DOUBLE & MASTER SYSTEM ACCESS MATRIX SPLIT -->
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto font-spartan">
-				<!-- TIER 4: DOUBLE VALUE -->
+				<!-- TIER 4: DOUBLE VALUE (네온 일렉트릭 퍼플) -->
 				<div class="rounded-xl border border-[#E000FF] bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.03]">
 					<div>
 						<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Double Value Pass (더블 요금제)</span>
@@ -262,7 +262,7 @@ import Layout from '../layouts/Layout.astro';
 					<button class="pay-btn w-full py-3 bg-[#E000FF]/10 hover:bg-[#E000FF] hover:text-black border border-[#E000FF] text-[#E000FF] rounded text-xs font-black uppercase tracking-wider transition-all mt-8">Activate Double Plan</button>
 				</div>
 
-				<!-- TIER 5: TOTAL PASS -->
+				<!-- TIER 5: TOTAL PASS (하이엔드 시네마틱 버건디 마스터 피스) -->
 				<div class="rounded-xl border-2 border-[#990011] bg-[#0A192F] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden shadow-2xl shadow-[#990011]/50 transition-all duration-300 hover:scale-[1.03] z-10">
 					<div class="absolute top-0 right-0 px-3 py-1 bg-[#990011] text-white text-[9px] font-black uppercase tracking-widest rounded-bl-lg">ALL-IN MASTER</div>
 					<div>
@@ -316,43 +316,57 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 			</div>
 
-			<!-- 대표님 공식 라이브 운영 채널 파이프라인 링크 완전 패치 -->
+			<!-- 대표님 공식 라이브 운영 채널 파이프라인 링크 + 오피셜 벡터 아이콘 그래픽 완전 인젝션 -->
 			<div class="flex flex-col gap-6 border-t border-[#5B0E1B]/30 pt-8 items-center max-w-7xl mx-auto">
 				<div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 w-full">
 					
-					<!-- 1. YOUTUBE -->
-					<a href="https://www.youtube.com/@taerijay" target="_blank" class="w-16 h-16 md:w-20 md:h-20 border border-red-800 bg-[#140305] rounded-xl flex items-center justify-center hover:scale-110 hover:border-[#00F0FF] hover:shadow-lg hover:shadow-red-900/50 transition-all duration-300 text-3xl" title="YouTube">
-						🎬
+					<!-- 1. YOUTUBE CHIP -->
+					<a href="https://www.youtube.com/@taerijay" target="_blank" class="w-16 h-16 md:w-20 md:h-20 border border-red-600 bg-[#FF0000] rounded-2xl flex items-center justify-center hover:scale-110 hover:border-[#00F0FF] hover:shadow-xl hover:shadow-red-600/50 transition-all duration-300" title="YouTube">
+						<svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24">
+							<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.016 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+						</svg>
 					</a>
 					
 					<div class="w-1.5 h-1.5 rounded-full bg-slate-700 hidden md:block"></div>
 					
-					<!-- 2. INSTAGRAM -->
-					<a href="https://www.instagram.com/taerijay" target="_blank" class="w-16 h-16 md:w-20 md:h-20 border border-fuchsia-800 bg-[#120314] rounded-xl flex items-center justify-center hover:scale-110 hover:border-[#00F0FF] hover:shadow-lg hover:shadow-fuchsia-950/50 transition-all duration-300 text-3xl" title="Instagram">
-						📸
+					<!-- 2. INSTAGRAM CHIP -->
+					<a href="https://www.instagram.com/taerijay" target="_blank" class="w-16 h-16 md:w-20 md:h-20 border border-fuchsia-500 bg-gradient-to-tr from-[#FFB900] via-[#DP00C9] to-[#3600C9] rounded-2xl flex items-center justify-center hover:scale-110 hover:border-[#00F0FF] hover:shadow-xl hover:shadow-fuchsia-500/50 transition-all duration-300" title="Instagram">
+						<svg class="w-8 h-8 text-white fill-none stroke-current stroke-[2]" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+							<rect x="2" y="2" width="20" h="20" rx="5" ry="5"></rect>
+							<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+							<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+						</svg>
 					</a>
 					
 					<div class="w-1.5 h-1.5 rounded-full bg-slate-700 hidden md:block"></div>
 					
-					<!-- 3. TIKTOK -->
-					<a href="https://www.tiktok.com/@taerijay" target="_blank" class="w-16 h-16 md:w-20 md:h-20 border border-slate-700 bg-[#080d14] rounded-xl flex items-center justify-center hover:scale-110 hover:border-[#00F0FF] hover:shadow-lg hover:shadow-slate-800/50 transition-all duration-300 text-3xl" title="TikTok">
-						🎵
+					<!-- 3. TIKTOK CHIP -->
+					<a href="https://www.tiktok.com/@taerijay" target="_blank" class="w-16 h-16 md:w-20 md:h-20 border border-slate-600 bg-black rounded-2xl flex items-center justify-center hover:scale-110 hover:border-[#00F0FF] hover:shadow-xl hover:shadow-cyan-400/30 transition-all duration-300 relative overflow-hidden" title="TikTok">
+						<!-- 고해상도 벡터 일렉트릭 음표 마크 계 가동 -->
+						<svg class="w-8 h-8 text-white fill-current filter drop-shadow-[2px_0_0_#00F0FF] drop-shadow-[-2px_0_0_#FF2E2E]" viewBox="0 0 24 24">
+							<path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.06-2.89-.54-4.06-1.5-1.23-1-2.01-2.52-2.28-4.1-.02-.08-.05-.07-.05.02v10.15c0 1.25-.24 2.54-.87 3.6-1.11 1.91-3.32 3.19-5.55 3.11-2.88-.1-5.46-2.31-5.71-5.22-.36-4.14 2.87-7.66 7.01-7.53.07 0 .14.01.27.02v4.03c-1.24-.18-2.61.34-3.23 1.47-.63 1.15-.36 2.75.64 3.61 1.02.87 2.65.71 3.47-.41.42-.57.54-1.3.52-2V.02z"/>
+						</svg>
 					</a>
 					
 					<div class="w-1.5 h-1.5 rounded-full bg-slate-700 hidden md:block"></div>
 					
-					<!-- 4. GOOGLE BLOG CHIP -->
-					<a href="https://taerijay.blogspot.com" target="_blank" class="w-16 h-16 md:w-20 md:h-20 border border-blue-950 bg-[#030b1a] rounded-xl flex items-center justify-center hover:scale-110 hover:border-[#00F0FF] hover:shadow-lg hover:shadow-blue-900/50 transition-all duration-300 group" title="Google Blog">
-						<div class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center font-spartan text-lg md:text-xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-600 via-red-500 to-yellow-500 group-hover:scale-105 transition-transform">
-							G
+					<!-- 4. GOOGLE BLOG CHIP (구글 공식 화이트 둥근 엠블럼 원형 가동) -->
+					<a href="https://taerijay.blogspot.com" target="_blank" class="w-16 h-16 md:w-20 md:h-20 border border-blue-900 bg-[#030b1a] rounded-2xl flex items-center justify-center hover:scale-110 hover:border-[#00F0FF] hover:shadow-xl hover:shadow-blue-600/40 transition-all duration-300 group" title="Google Blog">
+						<div class="w-11 h-11 md:w-13 md:h-13 bg-white rounded-full flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform">
+							<svg class="w-6 h-6" viewBox="0 0 24 24">
+								<path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.61c-.29 1.53-1.11 2.83-2.4 3.87v3.2h3.86c2.26-2.09 3.67-5.17 3.67-8.92z"/>
+								<path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3.2c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.3C3.26 21.3 7.31 24 12 24z"/>
+								<path fill="#FBBC05" d="M5.27 14.09c-.25-.72-.39-1.5-.39-2.3 0-.79.14-1.57.39-2.3V6.19H1.29C.47 7.81 0 9.63 0 11.79c0 2.17.47 3.99 1.29 5.61l3.98-3.31z"/>
+								<path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.19l3.98 3.3c.95-2.85 3.6-4.96 6.73-4.96z"/>
+							</svg>
 						</div>
 					</a>
 					
 					<div class="w-1.5 h-1.5 rounded-full bg-slate-700 hidden md:block"></div>
 					
-					<!-- 5. NAVER BLOG CHIP -->
-					<a href="https://blog.naver.com/taerijay" target="_blank" class="w-16 h-16 md:w-20 md:h-20 border border-emerald-950 bg-[#02140b] rounded-xl flex items-center justify-center hover:scale-110 hover:border-[#00F0FF] hover:shadow-lg hover:shadow-emerald-900/50 transition-all duration-300 group" title="Naver Blog">
-						<div class="w-9 h-9 md:w-11 md:h-11 bg-[#03C75A] rounded flex items-center justify-center font-spartan text-lg md:text-2xl font-black text-white group-hover:scale-105 transition-transform">
+					<!-- 5. NAVER BLOG CHIP (네이버 오피셜 그린 사각 컴포넌트 마크 가동) -->
+					<a href="https://blog.naver.com/taerijay" target="_blank" class="w-16 h-16 md:w-20 md:h-20 border border-emerald-950 bg-[#02140b] rounded-2xl flex items-center justify-center hover:scale-110 hover:border-[#00F0FF] hover:shadow-xl hover:shadow-emerald-500/40 transition-all duration-300 group" title="Naver Blog">
+						<div class="w-11 h-11 md:w-13 md:h-13 bg-[#03C75A] rounded-xl flex items-center justify-center font-spartan text-xl md:text-3xl font-black text-white shadow-md group-hover:scale-105 transition-transform">
 							N
 						</div>
 					</a>
@@ -384,7 +398,7 @@ import Layout from '../layouts/Layout.astro';
 					<p><strong>제1조 (목적)</strong><br/>본 약관은 TAERIJAY(이하 '회사')가 제공하는 한국 여행 정보 서비스의 이용 조건 및 절차를 규정합니다.<br/><span class="text-slate-500 font-mono text-xs">These Terms govern the conditions and procedures for using the Korea travel information services provided by TAERIJAY ('the Company').</span></p>
 					<p><strong>제2조 (서비스 내용)</strong><br/>회사는 검증된 정보 데이터베이스 서비스를 제공합니다.<br/><span class="text-slate-500 font-mono text-xs">The Company provides a verified premium information database service matrix layout.</span></p>
 					<p><strong>제3조 (결제 및 이용권)</strong><br/>모든 서비스는 1회 결제 방식이며, 결제 완료 시점부터 1년간 이용 가능합니다. 자동 갱신은 없습니다.<br/><span class="text-slate-500 font-mono text-xs">All services use a one-time payment model with 1-year access from the date of purchase. There is no auto-renewal.</span></p>
-					<p><strong>제4조 (환불)</strong><br/>디지털 콘텐츠 특성상 원칙적으로 환불이 불가하며, 중복 결제 등 명백한 오류의 경우에만 예외적으로 처리됩니다.<br/><span class="text-slate-500 font-mono text-xs">Refunds are not available due to the nature of digital content, except in cases of clear errors such as duplicate charges.</span></p>
+					<p><strong>제4조 (환불)</strong><br/>디지털 콘텐츠 특성상 원칙적으로 환불이 불가하며, 중복 결제 등 명백한 오류의 경우에만 예외적으로 처리됩니다.<br/><span class="text-slate-500 font-mono text-xs">Reviews are not available due to the nature of digital content, except in cases of clear errors such as duplicate charges.</span></p>
 					<p><strong>제5조 (이용자의 의무)</strong><br/>이용자는 본 서비스를 통해 얻은 정보를 무단으로 복제, 배포, 상업적으로 이용할 수 없습니다.<br/><span class="text-slate-500 font-mono text-xs">Users may not reproduce, distribute, or commercially use information obtained through this service without authorization.</span></p>
 					<p><strong>제6조 (면책)</strong><br/>회사가 제공하는 정보는 직접 방문·수집을 기반으로 하나, 현지 상황 변화에 따라 실제와 차이가 있을 수 있으며 이에 대한 책임은 이용자 본인에게 있습니다.<br/><span class="text-slate-500 font-mono text-xs">Information provided is based on direct visits and research, but may differ from actual conditions due to local changes. Users bear responsibility for verifying current information.</span></p>
 				</div>
