@@ -1,15 +1,13 @@
-# Astro 빌드 산출물 및 임시 파일
-dist/
-.astro/
-node_modules/
+# Astro 컴파일 임시 파일 제외함
+node_modules
+dist
+.astro
 
-# 로그 및 실행 환경 캐시
-*.log
+# VS Code 및 OS 환경 파일 제외함
+.vscode/
+.DS_Store
+*.local
 npm-debug.log*
 yarn-debug.log*
+yarn-error.log*
 pnpm-debug.log*
-.DS_Store
-
-# 환경변수 파일
-.env
-.env.local
