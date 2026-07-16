@@ -1,54 +1,94 @@
 ---
 // 03-PricingTable.astro
 ---
-<section class="w-full px-6 md:px-12 py-16 bg-gradient-to-b from-[#0A192F] to-[#050f1a] border-t border-[#5B0E1B]">
-	<div class="text-center mb-12 font-spartan">
-		<h2 class="text-2xl md:text-5xl font-black mb-2 text-white uppercase">12개월 프리미엄 활성화 패스 수립함</h2>
-		<p class="text-xs md:text-base text-slate-400 max-w-2xl mx-auto font-light">12 Months Premium Activation Pass.</p>
-	</div>
+<section class="w-full py-16 px-4 md:px-12 max-w-6xl mx-auto flex flex-col gap-10">
 	
-	<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto mb-8 font-spartan">
-		<!-- TIER 1 -->
-		<div class="rounded-xl border border-white bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.03]">
+	<!-- 💡 [수정] 설레는 프리미엄 타이틀 문구 탑재 -->
+	<div class="text-center flex flex-col gap-2">
+		<h2 class="text-xl md:text-3xl font-black text-white leading-tight font-noto">
+			태리재이와 함께 떠나는 1년의 특별한 여정
+		</h2>
+		<p class="text-xs md:text-sm text-slate-400 font-spartan uppercase tracking-widest">
+			12 Months Premium Activation Pass & Combo Bundles
+		</p>
+	</div>
+
+	<!-- 요금제 카드 그리드 -->
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+		
+		<!-- 1. BASIC PASS -->
+		<div class="p-6 rounded-2xl border border-[#5B0E1B] bg-[#071120] flex flex-col justify-between gap-6 relative overflow-hidden">
 			<div>
-				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Basic Pass</span>
-				<div class="text-2xl lg:text-4xl font-black text-white mt-2 mb-4">$19.99</div>
-				<p class="text-xs text-slate-300">1개 구글 아이디 연동함. 1개 디바이스 등록 제한함.</p>
+				<span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider font-spartan">Single Access</span>
+				<h3 class="text-lg font-bold text-white mt-1">기본 독립 채널 패스</h3>
+				<p class="text-xs text-slate-400 mt-2">지정한 단일 전용 독립 채널의 모든 프리미엄 데이터를 12개월간 자유롭게 이용합니다.</p>
 			</div>
-			<button class="pay-redirect-btn w-full py-3 bg-white/10 hover:bg-white hover:text-black border border-white text-white rounded text-xs font-black uppercase tracking-wider transition-all mt-8" data-amount="19.99" data-tier="Basic Pass">Activate Basic Plan</button>
+			<div class="flex flex-col gap-3">
+				<div class="text-2xl font-black text-white">$19.99 <span class="text-xs font-normal text-slate-400">/ 12개월</span></div>
+				<a href="/02-payment/payment?price=19.99&tier=Basic%20Pass" class="w-full py-3 bg-[#5B0E1B]/40 hover:bg-[#5B0E1B] text-white text-center font-bold text-xs rounded-lg transition-all uppercase font-spartan">Select Pass</a>
+			</div>
 		</div>
 
-		<!-- TIER 2 -->
-		<div class="rounded-xl border border-[#00FF66] bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.03]">
+		<!-- 2. CO-CREATION DOUBLE PASS [데이터베이스 x 미니] -->
+		<div class="p-6 rounded-2xl border-2 border-[#00F0FF] bg-[#071120] flex flex-col justify-between gap-6 relative overflow-hidden">
+			<div class="absolute top-3 right-3 bg-[#00F0FF] text-[#0A192F] text-[8px] font-black px-2 py-0.5 rounded-full font-spartan">DOUBLE A</div>
 			<div>
-				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Standard Pass</span>
-				<div class="text-2xl lg:text-4xl font-black text-[#00FF66] mt-2 mb-4">$29.99</div>
-				<p class="text-xs text-slate-300">1개 구글 아이디 연동함. 2개 디바이스 등록 제공함.</p>
+				<span class="text-[10px] text-[#00F0FF] font-bold uppercase tracking-wider font-spartan">Best Combo A</span>
+				<!-- 💡 번들 결합 명확화 -->
+				<h3 class="text-lg font-black text-white mt-1">데이터베이스 × 미니 더블 패스</h3>
+				<p class="text-xs text-slate-300 mt-2">전체 로드맵 데이터베이스 허브와 실속형 미니 채널을 하나로 묶어 가장 스마트하게 정복합니다.</p>
 			</div>
-			<button class="pay-redirect-btn w-full py-3 bg-[#00FF66]/10 hover:bg-[#00FF66] hover:text-black border border-[#00FF66] text-[#00FF66] rounded text-xs font-black uppercase tracking-wider transition-all mt-8" data-amount="29.99" data-tier="Standard Pass">Activate Standard Plan</button>
+			<div class="flex flex-col gap-3">
+				<div class="text-2xl font-black text-[#00F0FF]">$29.99 <span class="text-xs font-normal text-slate-400">/ 12개월</span></div>
+				<a href="/02-payment/payment?price=29.99&tier=DB%20x%20Mini%20Double" class="w-full py-3 bg-[#00F0FF] text-[#0A192F] text-center font-black text-xs rounded-lg transition-all uppercase font-spartan">Get Double Pass</a>
+			</div>
 		</div>
 
-		<!-- TIER 3 -->
-		<div class="rounded-xl border border-[#FF6B00] bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.03]">
+		<!-- 3. SHOPPING DOUBLE PASS [다이소 x 올리브영] -->
+		<div class="p-6 rounded-2xl border border-[#FF6B00] bg-[#071120] flex flex-col justify-between gap-6 relative">
+			<div class="absolute top-3 right-3 bg-[#FF6B00] text-white text-[8px] font-black px-2 py-0.5 rounded-full font-spartan">DOUBLE B</div>
 			<div>
-				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Pro Pass</span>
-				<div class="text-2xl lg:text-4xl font-black text-[#FF6B00] mt-2 mb-4">$39.99</div>
-				<p class="text-xs text-slate-300">1개 구글 아이디 연동함. 3개 디바이스 등록 제공함.</p>
+				<span class="text-[10px] text-[#FF6B00] font-bold uppercase tracking-wider font-spartan">Best Combo B</span>
+				<!-- 💡 번들 결합 명확화 -->
+				<h3 class="text-lg font-black text-white mt-1">다이소 × 올리브영 더블 패스</h3>
+				<p class="text-xs text-slate-300 mt-2">초가성비 뷰티 템부터 트렌디한 잡화 품절 대란템까지 쇼핑 빅데이터 매치업을 완벽하게 즐기세요.</p>
 			</div>
-			<button class="pay-redirect-btn w-full py-3 bg-[#FF6B00]/10 hover:bg-[#FF6B00] hover:text-black border border-[#FF6B00] text-[#FF6B00] rounded text-xs font-black uppercase tracking-wider transition-all mt-8" data-amount="39.99" data-tier="Pro Pass">Activate Pro Plan</button>
+			<div class="flex flex-col gap-3">
+				<div class="text-2xl font-black text-[#FF6B00]">$34.99 <span class="text-xs font-normal text-slate-400">/ 12개월</span></div>
+				<a href="/02-payment/payment?price=34.99&tier=Daiso%20x%20Oliveyoung%20Double" class="w-full py-3 bg-[#FF6B00]/20 hover:bg-[#FF6B00] text-white text-center font-bold text-xs rounded-lg transition-all uppercase font-spartan">Get Double Pass</a>
+			</div>
 		</div>
+
+		<!-- 4. LIFESTYLE DOUBLE PASS [이마트 x 편의점] -->
+		<div class="p-6 rounded-2xl border border-[#FFFB00] bg-[#071120] flex flex-col justify-between gap-6 relative">
+			<div class="absolute top-3 right-3 bg-[#FFFB00] text-[#0A192F] text-[8px] font-black px-2 py-0.5 rounded-full font-spartan">DOUBLE C</div>
+			<div>
+				<span class="text-[10px] text-[#FFFB00] font-bold uppercase tracking-wider font-spartan">Best Combo C</span>
+				<!-- 💡 번들 결합 명확화 -->
+				<h3 class="text-lg font-black text-white mt-1">이마트 × 편의점 더블 패스</h3>
+				<p class="text-xs text-slate-300 mt-2">대형마트 시그니처와 매일 만나는 라이벌 편의점 꿀조합 빅매치 정보의 결론을 바로 획득합니다.</p>
+			</div>
+			<div class="flex flex-col gap-3">
+				<div class="text-2xl font-black text-[#FFFB00]">$39.99 <span class="text-xs font-normal text-slate-400">/ 12개월</span></div>
+				<a href="/02-payment/payment?price=39.99&tier=Emart%20x%20Convenience%20Double" class="w-full py-3 bg-[#FFFB00]/20 hover:bg-[#FFFB00] text-white text-center font-bold text-xs rounded-lg transition-all uppercase font-spartan">Get Double Pass</a>
+			</div>
+		</div>
+
+		<!-- 5. VIP ALL-IN PASS -->
+		<div class="p-6 rounded-2xl border border-[#FF2E2E] bg-[#071120] flex flex-col justify-between gap-6 relative lg:col-span-2">
+			<div class="absolute top-3 right-3 bg-[#FF2E2E] text-white text-[8px] font-black px-2 py-0.5 rounded-full font-spartan">VIP GOLD</div>
+			<div>
+				<span class="text-[10px] text-[#FF2E2E] font-bold uppercase tracking-wider font-spartan">Ultimate Access</span>
+				<h3 class="text-xl font-black text-white mt-1">TAERIJAY+ 올인원 골드 마스터 패스</h3>
+				<p class="text-sm text-slate-300 mt-2 leading-relaxed">
+					가성비 다이소 조합부터 성수동 루프탑 가이드, 유통가 빅데이터 매치업까지 현재 오픈된 채널과 향후 추가될 오리지널 전 독립 노선을 영구 제한 없이 무제한 패스로 자유 항해합니다.
+				</p>
+			</div>
+			<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-[#5B0E1B]/30 pt-4">
+				<div class="text-3xl font-black text-[#FF2E2E]">$99.99 <span class="text-xs font-normal text-slate-400">/ 12개월 프리미엄 풀패키지</span></div>
+				<a href="/02-payment/payment?price=99.99&tier=VIP%20All%20In%20Pass" class="w-full sm:w-auto px-8 py-3.5 bg-[#FF2E2E] hover:bg-red-700 text-white text-center font-black text-xs rounded-lg transition-all uppercase font-spartan">Deploy Master Pass</a>
+			</div>
+		</div>
+
 	</div>
 </section>
-
-<script is:inline>
-	document.addEventListener('DOMContentLoaded', () => {
-		document.querySelectorAll('.pay-redirect-btn').forEach(btn => {
-			btn.addEventListener('click', () => {
-				const price = btn.dataset.amount;
-				const tier = encodeURIComponent(btn.dataset.tier);
-				// 💡 대표님 주소창 인덱스 규격인 /02-payment 로 직격 전송 처리함
-				window.location.href = `/02-payment?price=${price}&tier=${tier}`;
-			});
-		});
-	});
-</script>
