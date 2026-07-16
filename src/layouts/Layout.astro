@@ -5,14 +5,24 @@ interface Props {
 const { title } = Astro.props;
 ---
 <!doctype html>
-<html lang="en">
+<!-- 전 세계 언어 및 기기 표준 렌더링 설정 -->
+<html lang="ko" class="h-full scroll-smooth select-none">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<!-- 💡 [모바일 통제 심장부] 아이폰 노치, 갤럭시 펀치홀, 중국폰, 저가형 기기 전용 비율 동기화 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
 		<title>{title}</title>
+		
+		<!-- 글로벌 초고해상도 렌더링용 구글 웹 서체 -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;600;800&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+		
 		<script is:inline src="https://cdn.tailwindcss.com"></script>
 		<script is:inline>
 			tailwind.config = {
@@ -38,22 +48,33 @@ const { title } = Astro.props;
 			}
 		</script>
 		<style>
-			/* 모바일 긴 영문 및 긴 한글 단어 강제 탈출 차단 장치 */
-			.break-keep {
-				word-break: keep-all;
+			/* 💡 전 세계 모든 모바일 브라우저 표준 렌더링 통제 */
+			html, body {
+				height: 100%;
+				background-color: #0A192F;
+				/* 사파리, 구글 크롬, 모바일 웹뷰 가독성 강제 향상 시스템 */
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				text-rendering: optimizeLegibility;
+				-webkit-text-size-adjust: 100%;
+				-ms-text-size-adjust: 100%;
 			}
-			.break-words {
-				word-wrap: break-word;
-				overflow-wrap: break-word;
+			
+			body {
+				font-family: "Noto Sans", sans-serif;
+				/* 어떤 모바일 환경에서도 글자가 찢어지거나 박스를 이탈하는 버그 원천 소각 */
+				word-break: keep-all;        /* 한글 단어 단위 보존 줄바꿈 */
+				overflow-wrap: anywhere;     /* 영어, 숫자, 긴 URL 주소 강제 분쇄 줄바꿈 */
 			}
-			/* 과도한 헤더 볼드 가공 완화 */
+
+			/* 영문 폰트 자간 및 서체 얇고 트렌디하게 보정 */
 			.font-spartan {
 				font-family: "League Spartan", sans-serif;
-				letter-spacing: 0.05em;
+				letter-spacing: 0.06em;
 			}
 		</style>
 	</head>
-	<body class="bg-[#0A192F] text-[#FBF9F4] antialiased">
+	<body class="bg-[#0A192F] text-[#FBF9F4] flex flex-col min-h-screen">
 		<slot />
 	</body>
 </html>

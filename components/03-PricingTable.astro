@@ -1,75 +1,41 @@
 ---
 // 03-PricingTable.astro
 ---
-<section class="w-full px-6 md:px-12 py-16 bg-gradient-to-b from-[#0A192F] to-[#050f1a] border-t border-[#5B0E1B] mt-auto">
+<section class="w-full px-6 md:px-12 py-16 bg-gradient-to-b from-[#0A192F] to-[#050f1a] border-t border-[#5B0E1B]">
 	<div class="text-center mb-12 font-spartan">
-		<h2 class="text-3xl md:text-5xl font-black mb-2 text-white uppercase">12개월 프리미엄 활성화 패스 수립함</h2>
-		<p class="text-base text-slate-400 max-w-2xl mx-auto font-light normal-case">12 Months Premium Activation Pass. Choose custom 1-year access parameters loop.</p>
+		<h2 class="text-2xl md:text-5xl font-black mb-2 text-white uppercase">12개월 프리미엄 활성화 패스 수립함</h2>
+		<p class="text-xs md:text-base text-slate-400 max-w-2xl mx-auto font-light">12 Months Premium Activation Pass.</p>
 	</div>
 	
 	<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto mb-8 font-spartan">
 		<!-- TIER 1 -->
-		<div class="rounded-xl border border-white bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.03]">
+		<div class="rounded-xl border border-white bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.03]">
 			<div>
-				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Basic Pass (단일 요금제)</span>
-				<div class="text-3xl lg:text-4xl font-black text-white mt-2 mb-4">$19.99 <span class="text-sm text-slate-500 font-normal">/ 1 Years</span></div>
-				<div class="border-t border-white/20 pt-4 flex flex-col gap-4 text-sm font-light text-slate-200">
-					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">1개 구글 아이디 연동함.</p><p class="text-slate-400 text-xs lowercase">1 google account integrated.</p></div>
-					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">1개 디바이스 등록 제한함.</p><p class="text-slate-400 text-xs lowercase">1 registered device limitation active.</p></div>
-				</div>
+				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Basic Pass</span>
+				<div class="text-2xl lg:text-4xl font-black text-white mt-2 mb-4">$19.99</div>
+				<p class="text-xs text-slate-300">1개 구글 아이디 연동함. 1개 디바이스 등록 제한함.</p>
 			</div>
 			<button class="pay-redirect-btn w-full py-3 bg-white/10 hover:bg-white hover:text-black border border-white text-white rounded text-xs font-black uppercase tracking-wider transition-all mt-8" data-amount="19.99" data-tier="Basic Pass">Activate Basic Plan</button>
 		</div>
 
 		<!-- TIER 2 -->
-		<div class="rounded-xl border border-[#00FF66] bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.03]">
+		<div class="rounded-xl border border-[#00FF66] bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.03]">
 			<div>
-				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Standard Pass (단일 요금제)</span>
-				<div class="text-3xl lg:text-4xl font-black text-[#00FF66] mt-2 mb-4">$29.99 <span class="text-sm text-slate-500 font-normal">/ 1 Years</span></div>
-				<div class="border-t border-[#00FF66]/20 pt-4 flex flex-col gap-4 text-sm font-light text-slate-200">
-					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">1개 구글 아이디 연동함.</p><p class="text-slate-400 text-xs lowercase">1 google account integrated.</p></div>
-					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">2개 디바이스 등록 제공함.</p><p class="text-slate-400 text-xs lowercase">2 registered devices tracking provided.</p></div>
-				</div>
+				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Standard Pass</span>
+				<div class="text-2xl lg:text-4xl font-black text-[#00FF66] mt-2 mb-4">$29.99</div>
+				<p class="text-xs text-slate-300">1개 구글 아이디 연동함. 2개 디바이스 등록 제공함.</p>
 			</div>
 			<button class="pay-redirect-btn w-full py-3 bg-[#00FF66]/10 hover:bg-[#00FF66] hover:text-black border border-[#00FF66] text-[#00FF66] rounded text-xs font-black uppercase tracking-wider transition-all mt-8" data-amount="29.99" data-tier="Standard Pass">Activate Standard Plan</button>
 		</div>
 
 		<!-- TIER 3 -->
-		<div class="rounded-xl border border-[#FF6B00] bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.03]">
+		<div class="rounded-xl border border-[#FF6B00] bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.03]">
 			<div>
-				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Pro Pass (단일 요금제)</span>
-				<div class="text-3xl lg:text-4xl font-black text-[#FF6B00] mt-2 mb-4">$39.99 <span class="text-sm text-slate-500 font-normal">/ 1 Years</span></div>
-				<div class="border-t border-[#FF6B00]/20 pt-4 flex flex-col gap-4 text-sm font-light text-slate-200">
-					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">1개 구글 아이디 연동함.</p><p class="text-slate-400 text-xs lowercase">1 google account integrated.</p></div>
-					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">3개 디바이스 등록 제공함.</p><p class="text-slate-400 text-xs lowercase">3 registered devices tracking provided.</p></div>
-				</div>
+				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Pro Pass</span>
+				<div class="text-2xl lg:text-4xl font-black text-[#FF6B00] mt-2 mb-4">$39.99</div>
+				<p class="text-xs text-slate-300">1개 구글 아이디 연동함. 3개 디바이스 등록 제공함.</p>
 			</div>
 			<button class="pay-redirect-btn w-full py-3 bg-[#FF6B00]/10 hover:bg-[#FF6B00] hover:text-black border border-[#FF6B00] text-[#FF6B00] rounded text-xs font-black uppercase tracking-wider transition-all mt-8" data-amount="39.99" data-tier="Pro Pass">Activate Pro Plan</button>
-		</div>
-	</div>
-
-	<!-- COMBINATION MODULES -->
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto font-spartan">
-		<div class="rounded-xl border border-[#E000FF] bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.03]">
-			<div>
-				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Double Value Pass (더블 요금제)</span>
-				<div class="text-3xl font-black text-[#E000FF] mt-2 mb-4">$34.99 <span class="text-sm text-slate-500 font-normal">/ 1 Years</span></div>
-				<div class="border-t border-[#E000FF]/20 pt-4 flex flex-col gap-4 text-sm font-light text-slate-200">
-					<div class="flex flex-col gap-2"><p class="text-white font-medium">6개 서비스 중 원하는 채널 2개 직접 커스텀 조합하여 인가함.</p><p class="text-slate-400 text-xs lowercase">select 2 premium channels freely from 6 core pipelines.</p></div>
-				</div>
-			</div>
-			<button class="pay-redirect-btn w-full py-3 bg-[#E000FF]/10 hover:bg-[#E000FF] hover:text-black border border-[#E000FF] text-[#E000FF] rounded text-xs font-black uppercase tracking-wider transition-all mt-8" data-amount="34.99" data-tier="Double Pass">Activate Double Plan</button>
-		</div>
-
-		<div class="rounded-xl border-2 border-[#990011] bg-[#0A192F] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden shadow-2xl transition-all duration-300 hover:scale-[1.03] z-10">
-			<div>
-				<span class="text-[11px] font-black uppercase text-[#990011] tracking-widest">Ultimate Access Pass (토탈 요금제)</span>
-				<div class="text-3xl font-black text-[#990011] mt-2 mb-4">$99.99 <span class="text-sm text-slate-500 font-normal">/ 1 Years</span></div>
-				<div class="border-t border-[#990011]/30 pt-4 flex flex-col gap-4 text-sm font-light text-slate-200">
-					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">망설임 없이 전체 파이프라인 마스터 인프라 100% 전격 개방함.</p><p class="text-slate-400 text-xs lowercase">unlock 100% core premium networks data block instantaneously.</p></div>
-				</div>
-			</div>
-			<button class="pay-redirect-btn w-full py-3 bg-[#990011] hover:bg-[#b30014] text-white rounded text-xs font-black uppercase tracking-wider transition-all mt-8 shadow-xl" data-amount="99.99" data-tier="Ultimate Pass">Activate Ultimate Plan</button>
 		</div>
 	</div>
 </section>
@@ -80,8 +46,8 @@
 			btn.addEventListener('click', () => {
 				const price = btn.dataset.amount;
 				const tier = encodeURIComponent(btn.dataset.tier);
-				// 02-payment/payment.astro 단독 물리 페이지 주소로 정확하게 하이잭 라우터 전송
-				window.location.href = `/02-payment/payment?price=${price}&tier=${tier}`;
+				// 💡 대표님 주소창 인덱스 규격인 /02-payment 로 직격 전송 처리함
+				window.location.href = `/02-payment?price=${price}&tier=${tier}`;
 			});
 		});
 	});
