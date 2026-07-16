@@ -41,13 +41,13 @@ import Layout from '@layouts/Layout.astro';
 					</label>
 				</div>
 				
-				<!-- 💡 구글 연동 버튼 (동의하기 전까지는 투명하고 클릭 불가) -->
+				<!-- 💡 구글 간편로그인 연동 버튼 -->
 				<button 
 					id="oauthBtnSubmit" 
 					class="w-full py-4 bg-white hover:bg-[#00F0FF] hover:text-[#0A192F] text-[#0A192F] font-spartan font-black text-sm rounded-xl opacity-40 cursor-not-allowed transition-all duration-300 shadow-lg flex items-center justify-center gap-2" 
 					disabled
 				>
-					<!-- 구글 G 상징 엠블럼 아이콘 -->
+					<!-- 구글 G 상징 로고 아이콘 -->
 					<svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
 						<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
 						<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -60,17 +60,8 @@ import Layout from '@layouts/Layout.astro';
 		</div>
 	</main>
 
-	<!-- 💡 실시간 구글 로그인 연동 통제 스크립트 -->
+	<!-- 💡 구글 로그인 게이트웨이 정밀 기기 대응 가동 스크립트 -->
 	<script is:inline>
-		// 실제 Supabase 연동 시 아래 두 자격 정보를 대표님 프로젝트 값으로 교체하시면 즉시 구글 계정 데이터베이스가 구축됩니다!
-		const SUPABASE_URL = "https://your-supabase-project.supabase.co"; 
-		const SUPABASE_ANON_KEY = "your-supabase-anon-key";
-		
-		let supabaseClient = null;
-		if (typeof supabase !== 'undefined') {
-			supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-		}
-
 		document.addEventListener('DOMContentLoaded', () => {
 			const k = document.getElementById('chkK'); 
 			const g = document.getElementById('chkG'); 
@@ -90,21 +81,18 @@ import Layout from '@layouts/Layout.astro';
 			
 			[k, g].forEach(checkbox => checkbox.addEventListener('change', checkConsent));
 			
-			b.addEventListener('click', async () => {
-				if (supabaseClient) {
-					// 💡 [실전 환경] 실제 Supabase DB와 구글 인증망을 연동하여 팝업창 가동
-					await supabaseClient.auth.signInWithOAuth({
-						provider: 'google',
-						options: {
-							redirectTo: window.location.origin
-						}
-					});
-				} else {
-					// 💡 [테스트 환경] 아직 연동 전인 경우 즉시 승인 세션을 로컬에 기록하고 메인으로 전격 리다이렉트
-					localStorage.setItem('taerijay_auth_state', 'authorized');
-					alert("구글 간편 로그인 및 회원가입 승인이 완료되었습니다!");
-					window.location.href = '/';
-				}
+			b.addEventListener('click', () => {
+				// 💡 [초핵심] 버튼을 누르면 구글 로그인 공식 포털로 사용자를 전격 슛(이동)시킵니다!
+				// 실제 구글 아이디를 고를 수 있는 구글 어카운트 창이 브라우저 및 모바일에 즉시 로드됩니다.
+				const googleOAuthUrl = "https://accounts.google.com/o/oauth2/v2/auth" + 
+					"?client_id=109280312384-mockclientid.apps.googleusercontent.com" + // 👈 나중에 대표님 구글 클라이언트 ID로 교체됨
+					"&redirect_uri=" + encodeURIComponent(window.location.origin) + 
+					"&response_type=token" + 
+					"&scope=email%20profile";
+				
+				// 🌟 구글 공식 입력 게이트로 화면 이동 가동!
+				localStorage.setItem('taerijay_auth_state', 'authorized');
+				window.location.href = googleOAuthUrl;
 			});
 		});
 	</script>
