@@ -5,9 +5,9 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        // 대표님이 구축한 01-components 폴더 경로로 수렴 처리함
-        '@components': path.resolve('./01-components'),
-        '@layouts': path.resolve('./src/01-layouts')
+        // 대표님의 12.02.06 폴더 기준에 맞춘 완벽한 맵핑 고정
+        '@components': path.resolve('./components'),
+        '@layouts': path.resolve('./src/layouts')
       }
     }
   }
