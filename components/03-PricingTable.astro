@@ -1,4 +1,5 @@
 ---
+// 03-PricingTable.astro
 ---
 <section class="w-full px-6 md:px-12 py-16 bg-gradient-to-b from-[#0A192F] to-[#050f1a] border-t border-[#5B0E1B] mt-auto">
 	<div class="text-center mb-12 font-spartan">
@@ -7,7 +8,7 @@
 	</div>
 	
 	<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto mb-8 font-spartan">
-		<!-- TIER 1: BASIC (화이트 라인) -->
+		<!-- TIER 1 -->
 		<div class="rounded-xl border border-white bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.03]">
 			<div>
 				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Basic Pass (단일 요금제)</span>
@@ -15,13 +16,12 @@
 				<div class="border-t border-white/20 pt-4 flex flex-col gap-4 text-sm font-light text-slate-200">
 					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">1개 구글 아이디 연동함.</p><p class="text-slate-400 text-xs lowercase">1 google account integrated.</p></div>
 					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">1개 디바이스 등록 제한함.</p><p class="text-slate-400 text-xs lowercase">1 registered device limitation active.</p></div>
-					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">동시접속 해당 없음 명시함.</p><p class="text-slate-400 text-xs lowercase">concurrent stream sessions not applicable.</p></div>
 				</div>
 			</div>
 			<button class="pay-redirect-btn w-full py-3 bg-white/10 hover:bg-white hover:text-black border border-white text-white rounded text-xs font-black uppercase tracking-wider transition-all mt-8" data-amount="19.99" data-tier="Basic Pass">Activate Basic Plan</button>
 		</div>
 
-		<!-- TIER 2: STANDARD (네온 그린) -->
+		<!-- TIER 2 -->
 		<div class="rounded-xl border border-[#00FF66] bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.03]">
 			<div>
 				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Standard Pass (단일 요금제)</span>
@@ -29,13 +29,12 @@
 				<div class="border-t border-[#00FF66]/20 pt-4 flex flex-col gap-4 text-sm font-light text-slate-200">
 					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">1개 구글 아이디 연동함.</p><p class="text-slate-400 text-xs lowercase">1 google account integrated.</p></div>
 					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">2개 디바이스 등록 제공함.</p><p class="text-slate-400 text-xs lowercase">2 registered devices tracking provided.</p></div>
-					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">동시접속 2개 디바이스 허용함.</p><p class="text-slate-400 text-xs lowercase">concurrent multi-terminal streaming permitted.</p></div>
 				</div>
 			</div>
 			<button class="pay-redirect-btn w-full py-3 bg-[#00FF66]/10 hover:bg-[#00FF66] hover:text-black border border-[#00FF66] text-[#00FF66] rounded text-xs font-black uppercase tracking-wider transition-all mt-8" data-amount="29.99" data-tier="Standard Pass">Activate Standard Plan</button>
 		</div>
 
-		<!-- TIER 3: PRO (네온 오렌지) -->
+		<!-- TIER 3 -->
 		<div class="rounded-xl border border-[#FF6B00] bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.03]">
 			<div>
 				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Pro Pass (단일 요금제)</span>
@@ -43,41 +42,31 @@
 				<div class="border-t border-[#FF6B00]/20 pt-4 flex flex-col gap-4 text-sm font-light text-slate-200">
 					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">1개 구글 아이디 연동함.</p><p class="text-slate-400 text-xs lowercase">1 google account integrated.</p></div>
 					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">3개 디바이스 등록 제공함.</p><p class="text-slate-400 text-xs lowercase">3 registered devices tracking provided.</p></div>
-					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">동시접속 3개 디바이스 허용함.</p><p class="text-slate-400 text-xs lowercase">concurrent multi-terminal streaming permitted.</p></div>
 				</div>
 			</div>
 			<button class="pay-redirect-btn w-full py-3 bg-[#FF6B00]/10 hover:bg-[#FF6B00] hover:text-black border border-[#FF6B00] text-[#FF6B00] rounded text-xs font-black uppercase tracking-wider transition-all mt-8" data-amount="39.99" data-tier="Pro Pass">Activate Pro Plan</button>
 		</div>
 	</div>
 
-	<!-- COMBO PLANS -->
+	<!-- COMBINATION MODULES -->
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto font-spartan">
-		<!-- TIER 4: DOUBLE (보라/핑크 네온) -->
 		<div class="rounded-xl border border-[#E000FF] bg-[#071120]/90 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-[1.03]">
 			<div>
 				<span class="text-[11px] font-black uppercase text-slate-400 tracking-widest">Double Value Pass (더블 요금제)</span>
 				<div class="text-3xl font-black text-[#E000FF] mt-2 mb-4">$34.99 <span class="text-sm text-slate-500 font-normal">/ 1 Years</span></div>
 				<div class="border-t border-[#E000FF]/20 pt-4 flex flex-col gap-4 text-sm font-light text-slate-200">
 					<div class="flex flex-col gap-2"><p class="text-white font-medium">6개 서비스 중 원하는 채널 2개 직접 커스텀 조합하여 인가함.</p><p class="text-slate-400 text-xs lowercase">select 2 premium channels freely from 6 core pipelines.</p></div>
-					<div class="flex flex-wrap gap-2 pt-2">
-						<span class="px-2 py-0.5 bg-[#071120] border border-[#E000FF]/40 rounded text-[10px] text-white">protocol × mini</span>
-						<span class="px-2 py-0.5 bg-[#071120] border border-[#E000FF]/40 rounded text-[10px] text-white">daiso x oliveyoung</span>
-						<span class="px-2 py-0.5 bg-[#071120] border border-[#E000FF]/40 rounded text-[10px] text-white">emart x convenience</span>
-					</div>
 				</div>
 			</div>
 			<button class="pay-redirect-btn w-full py-3 bg-[#E000FF]/10 hover:bg-[#E000FF] hover:text-black border border-[#E000FF] text-[#E000FF] rounded text-xs font-black uppercase tracking-wider transition-all mt-8" data-amount="34.99" data-tier="Double Pass">Activate Double Plan</button>
 		</div>
 
-		<!-- TIER 5: TOTAL (고급 버건디) -->
 		<div class="rounded-xl border-2 border-[#990011] bg-[#0A192F] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden shadow-2xl transition-all duration-300 hover:scale-[1.03] z-10">
-			<div class="absolute top-0 right-0 px-3 py-1 bg-[#990011] text-white text-[9px] font-black uppercase tracking-widest rounded-bl-lg">ALL-IN MASTER</div>
 			<div>
 				<span class="text-[11px] font-black uppercase text-[#990011] tracking-widest">Ultimate Access Pass (토탈 요금제)</span>
 				<div class="text-3xl font-black text-[#990011] mt-2 mb-4">$99.99 <span class="text-sm text-slate-500 font-normal">/ 1 Years</span></div>
 				<div class="border-t border-[#990011]/30 pt-4 flex flex-col gap-4 text-sm font-light text-slate-200">
 					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">망설임 없이 전체 파이프라인 마스터 인프라 100% 전격 개방함.</p><p class="text-slate-400 text-xs lowercase">unlock 100% core premium networks data block instantaneously.</p></div>
-					<div class="flex flex-col gap-0.5"><p class="text-white font-medium">베이직 기기 및 단일 스펙 구조 락킹 체계 유지함.</p><p class="text-slate-400 text-xs lowercase">basic single-terminal device restrictions apply identically.</p></div>
 				</div>
 			</div>
 			<button class="pay-redirect-btn w-full py-3 bg-[#990011] hover:bg-[#b30014] text-white rounded text-xs font-black uppercase tracking-wider transition-all mt-8 shadow-xl" data-amount="99.99" data-tier="Ultimate Pass">Activate Ultimate Plan</button>
@@ -91,8 +80,8 @@
 			btn.addEventListener('click', () => {
 				const price = btn.dataset.amount;
 				const tier = encodeURIComponent(btn.dataset.tier);
-				// 단독 격리 물리 결제 구동 페이지로 인자값 가속 전달
-				window.location.href = `/payment?price=${price}&tier=${tier}`;
+				// 02-payment/payment.astro 단독 물리 페이지 주소로 정확하게 하이잭 라우터 전송
+				window.location.href = `/02-payment/payment?price=${price}&tier=${tier}`;
 			});
 		});
 	});

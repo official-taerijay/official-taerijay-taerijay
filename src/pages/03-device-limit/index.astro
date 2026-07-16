@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '@components/01-Header.astro';
+import LegalFooter from '@components/04-LegalFooter.astro';
+---
+<Layout title="TAERIJAY+ SESSION TERMINATED">
+	<Header />
+	<main class="w-full min-h-screen bg-[#0A192F] flex items-center justify-center p-4 font-noto">
+		<div class="w-full max-w-[460px] border-2 border-[#990011] bg-[#071120] rounded-2xl p-8 text-center flex flex-col gap-6 shadow-2xl">
+			<div class="text-6xl">⚠️</div>
+			<h2 class="text-xl font-black text-white font-spartan uppercase tracking-wider">STREAM CAPACITY BREACHED</h2>
+			<div class="flex flex-col gap-2 text-sm leading-relaxed border-l-4 border-[#990011] pl-3 text-left bg-[#0A192F] p-4 rounded-r-xl">
+				<p class="text-white font-bold">인프라 보안 통제 규약 의거, 회원 계정의 동시 접속 허용 한도가 초과되었음.</p>
+				<p class="text-slate-400 font-light font-spartan">Too many devices using your account layout. Please log out from other active terminals or upgrade your plan bounds.</p>
+			</div>
+			<a href="/" class="w-full py-3.5 bg-[#5B0E1B] hover:bg-[#990011] text-white text-xs font-black tracking-widest font-spartan uppercase rounded-xl transition-colors shadow-lg">RETURN TO PORTAL</a>
+		</div>
+	</main>
+	<LegalFooter />
+</Layout>

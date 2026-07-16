@@ -1,17 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import LegalFooter from '../components/LegalFooter.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '@components/01-Header.astro';
+import LegalFooter from '@components/04-LegalFooter.astro';
 ---
-<Layout title="TAERIJAY+ PREMIUM CHECKOUT">
+<Layout title="TAERIJAY+ PREMIUM CHECKOUT ENGINE">
 	<Header />
 	<main class="w-full min-h-screen bg-[#0A192F] flex items-center justify-center p-4 font-noto">
 		<div class="w-full max-w-[500px] border-2 border-[#990011] bg-[#071120] rounded-2xl p-6 md:p-8 text-center flex flex-col gap-6 shadow-2xl">
 			<div class="text-5xl animate-bounce">💳</div>
-			<h1 class="text-xl font-black text-white font-spartan uppercase">Paddle Secure Active Matrix</h1>
-			<div class="p-4 border border-[#5B0E1B] rounded-xl bg-baseBg text-left flex flex-col gap-2 font-spartan text-sm">
+			<h1 class="text-xl font-black text-white font-spartan uppercase">Paddle Secure Activation Gate</h1>
+			<div class="p-4 border border-[#5B0E1B] rounded-xl bg-[#0A192F] text-left flex flex-col gap-2 font-spartan text-sm">
 				<div class="flex justify-between"><span class="text-white font-bold" id="pTier">Premium Activation Pass</span><span class="text-[#00FF66]">12 Months</span></div>
-				<div class="flex justify-between border-t border-[#5B0E1B]/30 pt-2 mt-1"><span class="text-slate-400 font-bold">TOTAL DUE</span><span class="text-[#FF6B00] font-black text-xl" id="pPrice">$19.99</span></div>
+				<div class="flex justify-between border-t border-[#5B0E1B]/30 pt-2 mt-1"><span class="text-slate-400 font-bold">TOTAL CHECKOUT DUE</span><span class="text-[#FF6B00] font-black text-xl" id="pPrice">$19.99</span></div>
 			</div>
 			<button id="checkoutTrigger" class="w-full py-4 bg-[#990011] text-white font-spartan font-black text-sm rounded-xl shadow-xl">PROCEED TO PURCHASE (결제 완료하기)</button>
 		</div>
