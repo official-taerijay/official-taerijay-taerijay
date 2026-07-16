@@ -1,37 +1,41 @@
 ---
 // 01-Header.astro
 ---
-<header class="w-full px-4 md:px-12 py-3 border-b border-[#5B0E1B] bg-[#0A192F]/95 backdrop-blur sticky top-0 z-50 flex flex-col gap-2">
+<!-- 
+  모든 기기(아이폰, 갤럭시, 중국폰 등)에서 절대 겹치지 않도록 설계된 2단 헤더 인프라
+  py-3.5: 상하 여백 확보 | flex-col: 상하로 강제 분리 
+-->
+<header class="w-full px-4 md:px-12 py-3.5 border-b border-[#5B0E1B] bg-[#0A192F]/95 backdrop-blur sticky top-0 z-50 flex flex-col gap-3">
 	
-	<!-- 💡 [1단] 좌측 햄버거 메뉴와 우측 회원가입/로그인/로그아웃 버튼의 완벽한 수평 균형 -->
+	<!-- 💡 [1단] 좌측 끝 '햄버거' 와 우측 끝 '회원가입/로그인/로그아웃' 버튼의 완벽한 수평 균형 -->
 	<div class="flex items-center justify-between w-full">
-		<!-- 좌측 햄버거 메뉴 -->
-		<button id="menuTrigger" class="text-white hover:text-[#00F0FF] transition-colors p-1.5 -ml-1">
+		<!-- 좌측 햄버거 메뉴 버튼 -->
+		<button id="menuTrigger" class="text-white hover:text-[#00F0FF] transition-colors p-1.5 -ml-1.5 focus:outline-none">
 			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
 			</svg>
 		</button>
 
-		<!-- 우측 회원가입/로그인/로그아웃 버튼 (모바일/데스크톱 통합) -->
-		<button id="globalAuthBtn" class="px-3 py-1.5 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-white text-[11px] md:text-xs font-bold uppercase tracking-wider transition-all shadow-md font-noto">
+		<!-- 우측 회원가입/로그인/로그아웃 버튼 (모바일/데스크톱 규격 대통합) -->
+		<button id="globalAuthBtn" class="px-3.5 py-1.5 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-white text-[11px] md:text-xs font-bold uppercase tracking-wider transition-all shadow-md font-noto focus:outline-none">
 			로그아웃 또는 회원가입
 		</button>
 	</div>
 
-	<!-- 💡 [2단] 한 칸 밑으로 내려와 한가운데에 웅장하고 깨끗하게 배치되는 TAERIJAY+ 로고 -->
-	<div class="flex justify-center w-full pb-1">
-		<a href="/" class="font-spartan text-xl md:text-3xl font-black tracking-[0.15em] text-white leading-none uppercase select-none">
+	<!-- 💡 [2단] 한 칸 밑으로 완벽히 내려와 한가운데에 단독으로 배치되는 웅장한 로고 -->
+	<div class="flex justify-center w-full pb-0.5">
+		<a href="/" class="font-spartan text-xl md:text-3xl font-black tracking-[0.18em] text-white leading-none uppercase select-none hover:text-[#00F0FF] transition-colors">
 			TAERIJAY+
 		</a>
 	</div>
 </header>
 
-<!-- SIDEBAR DRAWER -->
-<div id="sideDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden justify-start w-full transition-opacity duration-300">
+<!-- SIDEBAR DRAWER (햄버거 메뉴 클릭 시 왼쪽에서 열리는 내비게이션 바) -->
+<div id="sideDrawer" class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden justify-start w-full transition-opacity duration-300">
 	<div class="w-[320px] h-full bg-[#071120] border-r border-[#5B0E1B] p-6 flex flex-col gap-6 relative shadow-2xl overflow-y-auto font-noto">
 		<div class="flex items-center justify-between border-b border-[#5B0E1B] pb-4">
 			<span class="font-spartan text-lg font-black tracking-widest text-[#00F0FF] uppercase">CHANNELS</span>
-			<button id="menuCloser" class="text-slate-400 hover:text-white text-3xl font-light leading-none">&times;</button>
+			<button id="menuCloser" class="text-slate-400 hover:text-white text-3xl font-light leading-none focus:outline-none">&times;</button>
 		</div>
 		<nav class="flex flex-col gap-3 font-bold text-sm">
 			<a href="/" class="w-full text-left p-3.5 rounded border border-[#5B0E1B]/60 bg-[#0A192F] text-white hover:border-white transition-all font-playfair font-black tracking-wider uppercase text-base">0. TAERIJAY</a>
@@ -47,42 +51,46 @@
 </div>
 
 <script is:inline>
-	document.addEventListener('DOMContentLoaded', () => {
+	// DOM 로드가 완료되는 즉시 강제 세션 체크 및 UI 동기화 가동
+	const initHeader = () => {
 		const menuTrigger = document.getElementById('menuTrigger');
 		const sideDrawer = document.getElementById('sideDrawer');
 		const menuCloser = document.getElementById('menuCloser');
 		const authBtn = document.getElementById('globalAuthBtn');
 
-		if (menuTrigger) {
+		if (menuTrigger && sideDrawer) {
 			menuTrigger.addEventListener('click', () => {
 				sideDrawer.classList.remove('hidden');
 				sideDrawer.classList.add('flex');
 			});
 		}
-		if (menuCloser) {
+		if (menuCloser && sideDrawer) {
 			menuCloser.addEventListener('click', () => {
 				sideDrawer.classList.add('hidden');
 				sideDrawer.classList.remove('flex');
 			});
 		}
 
-		// 로그인 유무에 따른 정형화된 국문 어조 반영
+		// 로컬 스토리지의 인가 세션을 즉시 파악하여 대표님이 지정하신 텍스트로 오버라이딩함
 		const currentSession = localStorage.getItem('taerijay_auth_state');
-		if (currentSession === 'authorized') {
-			if (authBtn) {
-				authBtn.textContent = '로그인';
-				authBtn.className = "px-3 py-1.5 border border-emerald-500 rounded bg-emerald-950/60 text-emerald-400 text-[11px] md:text-xs font-bold transition-all shadow-md font-noto";
-			}
-		} else {
-			if (authBtn) {
-				authBtn.textContent = '로그아웃 또는 회원가입';
-				authBtn.className = "px-3.5 py-1.5 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-white text-[11px] md:text-xs font-bold transition-all shadow-md font-noto";
-			}
-		}
+		const isAuthorized = currentSession === 'authorized';
 
 		if (authBtn) {
-			authBtn.addEventListener('click', () => {
-				if (localStorage.getItem('taerijay_auth_state') === 'authorized') {
+			if (isAuthorized) {
+				authBtn.textContent = '로그인';
+				authBtn.className = "px-4 py-1.5 border border-emerald-500 rounded bg-emerald-950/60 text-emerald-400 text-[11px] md:text-xs font-bold transition-all shadow-md font-noto focus:outline-none";
+			} else {
+				authBtn.textContent = '로그아웃 또는 회원가입';
+				authBtn.className = "px-3.5 py-1.5 border border-[#5B0E1B] rounded bg-[#5B0E1B]/30 hover:bg-[#5B0E1B]/60 text-white text-[11px] md:text-xs font-bold transition-all shadow-md font-noto focus:outline-none";
+			}
+
+			// 클릭 리스너를 단 한 번만 등록하도록 이전 리스너 삭제 후 재등록 기법 적용
+			authBtn.replaceWith(authBtn.cloneNode(true));
+			const activeAuthBtn = document.getElementById('globalAuthBtn');
+
+			activeAuthBtn.addEventListener('click', () => {
+				const checkState = localStorage.getItem('taerijay_auth_state');
+				if (checkState === 'authorized') {
 					localStorage.removeItem('taerijay_auth_state');
 					alert("성공적으로 로그아웃 소각 완료되었습니다.");
 					window.location.href = "/";
@@ -90,6 +98,14 @@
 					window.location.href = '/01-auth';
 				}
 			});
+		}
+	};
+
+	// 문서가 로드될 때와 브라우저 히스토리 백으로 복귀할 때 강제 가동
+	document.addEventListener('DOMContentLoaded', initHeader);
+	window.addEventListener('pageshow', (event) => {
+		if (event.persisted) {
+			window.location.reload();
 		}
 	});
 </script>

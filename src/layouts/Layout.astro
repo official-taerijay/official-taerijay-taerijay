@@ -5,12 +5,18 @@ interface Props {
 const { title } = Astro.props;
 ---
 <!doctype html>
-<!-- 전 세계 언어 및 기기 표준 렌더링 설정 -->
-<html lang="ko" class="h-full scroll-smooth select-none">
+<!-- 
+  💡 [핵심] 번역 차단 및 다국어 표준화 
+  1. lang="ko"로 선언하여 네이버/구글이 외국어로 오인해 번역 팝업을 띄우는 행위를 사전 차단함.
+  2. translate="no" 속성을 주입해 파파고/구글번역 엔진의 임의 텍스트 오버라이딩을 강제 비활성화함.
+-->
+<html lang="ko" translate="no" class="h-full scroll-smooth select-none">
 	<head>
 		<meta charset="UTF-8" />
+		<!-- 네이버 번역 및 구글 크롬 번역 툴바 강제 비활성화 메타 태그 -->
+		<meta name="google" content="notranslate" />
 		
-		<!-- 💡 [모바일 통제 심장부] 아이폰 노치, 갤럭시 펀치홀, 중국폰, 저가형 기기 전용 비율 동기화 -->
+		<!-- 💡 모바일 화면 비율 자동 피팅 및 노치 디자인 대응 (S23 한 화면 꽉 차게 고정) -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -18,7 +24,7 @@ const { title } = Astro.props;
 		
 		<title>{title}</title>
 		
-		<!-- 글로벌 초고해상도 렌더링용 구글 웹 서체 -->
+		<!-- 글로벌 초고해상도 렌더링용 구글 웹 서체 (한글/영문 가독성 가공) -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;600;800&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -67,7 +73,7 @@ const { title } = Astro.props;
 				overflow-wrap: anywhere;     /* 영어, 숫자, 긴 URL 주소 강제 분쇄 줄바꿈 */
 			}
 
-			/* 영문 폰트 자간 및 서체 얇고 트렌디하게 보정 */
+			/* 영문 폰트 자간 및 서체 얇고 세련되게 보정 */
 			.font-spartan {
 				font-family: "League Spartan", sans-serif;
 				letter-spacing: 0.06em;
