@@ -1,24 +1,32 @@
 ---
 // 02-Masthead.astro
 ---
-<section class="w-full relative px-4 md:px-12 py-16 md:py-24 border-b border-[#5B0E1B] bg-[#0c1f36] overflow-hidden">
+<section class="w-full relative px-4 md:px-12 py-20 md:py-32 border-b border-[#5B0E1B] bg-[#0c1f36] overflow-hidden">
 	<div class="relative z-10 max-w-7xl mx-auto flex flex-col items-center text-center">
 		
-		<!-- 시스템 라이브 인디케이터 배지 -->
-		<div class="inline-flex items-center gap-1.5 bg-[#5B0E1B]/80 border border-[#5B0E1B] px-4 py-1.5 rounded-full mb-6 shadow-md">
+		<!-- 시스템 라이브 인디케이터 -->
+		<div class="inline-flex items-center gap-1.5 bg-[#5B0E1B]/80 border border-[#5B0E1B] px-4 py-1.5 rounded-full mb-8 shadow-md">
 			<span class="w-2 h-2 rounded-full bg-[#00FF66] animate-pulse"></span>
-			<span class="text-[10px] tracking-widest text-[#00FF66] uppercase font-black">SYSTEM LIVE ACTIVE</span>
+			<span class="text-[10px] tracking-widest text-[#00FF66] uppercase font-black font-spartan">SYSTEM LIVE ACTIVE</span>
 		</div>
 
-		<!-- 💡 [수정] 대표님 지정 시그니처 슬로건 한글/영문 고정 장착 -->
-		<h1 class="text-2xl md:text-5xl font-black tracking-tight mb-4 text-white leading-relaxed md:leading-snug font-noto">
-			태리재이와 함께하는 대한민국 <br/>
-			<span class="text-[#00F0FF] font-black block mt-2 text-base md:text-3xl font-spartan uppercase">TAERIJAY+ REPUBLIC OF KOREA</span>
-		</h1>
+		<!-- 💡 대왕 한글 고정 슬로건 (라인 하이트 간섭 완전 제거) -->
+		<div class="w-full mb-4">
+			<h1 class="text-3xl md:text-5xl font-black text-white leading-normal md:leading-relaxed font-noto tracking-wide block">
+				태리재이와 함께하는 대한민국
+			</h1>
+		</div>
+
+		<!-- 💡 대왕 영문 고정 슬로건 (한글과 분리하여 독립 렌더링) -->
+		<div class="w-full mb-6">
+			<span class="text-lg md:text-3xl font-black text-[#00F0FF] font-spartan tracking-[0.15em] block uppercase">
+				TAERIJAY+ REPUBLIC OF KOREA
+			</span>
+		</div>
 		
 		<p class="text-xs md:text-base text-slate-300 max-w-2xl leading-relaxed mt-4 font-light">
-			가장 트렌디한 대결형 매치업 정보부터 숨겨진 꿀조합 루트까지, <br class="hidden md:block"/>
-			오직 구독자에게만 열리는 실시간 데이터베이스 허브에 오신 것을 환영합니다.
+			가장 트렌디한 대결형 매치업 정보 수립.<br class="hidden md:block"/>
+			오직 구독자에게만 열리는 실시간 데이터베이스 허브 가동.
 		</p>
 	</div>
 </section>
