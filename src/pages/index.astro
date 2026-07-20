@@ -7,26 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>TAERIJAY</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=League+Spartan:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-    import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
-      from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
-    const app = initializeApp({
-      apiKey: 'AIzaSyExample',
-      authDomain: 'taerijay-platform.firebaseapp.com',
-      projectId: 'taerijay-platform',
-    });
-    const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
-    window._tjAuth = { auth, provider, signInWithPopup, signOut, onAuthStateChanged };
-    onAuthStateChanged(auth, (user) => {
-      const si = document.getElementById('btn-signin');
-      const so = document.getElementById('btn-signout');
-      if (user) { sessionStorage.setItem('user_email', user.email); if(si)si.hidden=true; if(so)so.hidden=false; }
-      else { sessionStorage.removeItem('user_email'); if(si)si.hidden=false; if(so)so.hidden=true; }
-    });
-  </script>
-  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 </head>
 <body>
   <div id="splash" class="splash"><span class="splash-brand">TAERIJAY</span></div>
@@ -39,8 +19,8 @@
           <button class="lang-btn">한</button>
           <button class="lang-btn">AUTO</button>
         </div>
-        <button id="btn-signin" class="btn-signin" onclick="openAuthModal()">SIGN IN</button>
-        <button id="btn-signout" class="btn-signin" hidden onclick="handleSignOut()">SIGN OUT</button>
+        <button id="btn-signin" class="btn-signin">SIGN IN</button>
+        <button id="btn-signout" class="btn-signin" hidden>SIGN OUT</button>
       </div>
     </header>
     <nav class="channel-nav">
@@ -101,27 +81,114 @@
       </div>
     </section>
   </div>
+
+  <!-- 로그인 모달 -->
   <div id="auth-modal" class="modal-bg" hidden>
     <div class="modal">
-      <button class="modal-x" onclick="closeAuthModal()">×</button>
+      <button class="modal-x" id="modal-close-btn">×</button>
       <div class="modal-brand">TAERIJAY<span style="color:#5B0E1B">+</span></div>
       <p class="modal-sub">구글 계정으로 로그인하고<br/>전 채널 콘텐츠를 확인하세요</p>
       <button class="btn-google" id="google-btn">
         <svg width="20" height="20" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.84.86-3.06.86-2.35 0-4.34-1.59-5.05-3.72H.95v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.7A5.4 5.4 0 0 1 3.66 9c0-.59.1-1.17.29-1.7V4.97H.95A9 9 0 0 0 0 9c0 1.45.35 2.83.95 4.03l3-2.33z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .95 4.97l3 2.33C4.66 5.17 6.65 3.58 9 3.58z"/></svg>
         Google로 로그인
       </button>
+      <div id="login-error" style="display:none;margin-top:12px;color:#F16B24;font-size:.82rem;text-align:center;">로그인 실패. 다시 시도해주세요.</div>
     </div>
   </div>
-  <script>
-    window.addEventListener('DOMContentLoaded',()=>{setTimeout(()=>{const s=document.getElementById('splash');s.style.opacity='0';setTimeout(()=>s.remove(),500);},900);});
-    function toggleChannelMenu(){const m=document.getElementById('channel-menu');const i=document.getElementById('ch-icon');m.hidden=!m.hidden;i.textContent=m.hidden?'▼':'×';}
-    document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');}));
-    function openAuthModal(){document.getElementById('auth-modal').hidden=false;}
-    function closeAuthModal(){document.getElementById('auth-modal').hidden=true;}
-    document.getElementById('google-btn').addEventListener('click',async()=>{try{const{auth,provider,signInWithPopup}=window._tjAuth;const r=await signInWithPopup(auth,provider);sessionStorage.setItem('user_email',r.user.email);closeAuthModal();}catch(e){console.error(e);}});
-    async function handleSignOut(){const{auth,signOut}=window._tjAuth;await signOut(auth);sessionStorage.removeItem('user_email');}
-    function openPay(ch){if(!sessionStorage.getItem('user_email')){openAuthModal();return;}alert(ch+' 결제 준비 중');}
+
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
+      from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+
+    const app = initializeApp({
+      apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
+      authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
+      projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
+    });
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    // 인증 상태 감지
+    onAuthStateChanged(auth, (user) => {
+      const si = document.getElementById('btn-signin');
+      const so = document.getElementById('btn-signout');
+      if (user) {
+        sessionStorage.setItem('user_email', user.email);
+        if (si) si.hidden = true;
+        if (so) so.hidden = false;
+      } else {
+        sessionStorage.removeItem('user_email');
+        if (si) si.hidden = false;
+        if (so) so.hidden = true;
+      }
+    });
+
+    // SIGN IN 버튼
+    document.getElementById('btn-signin').addEventListener('click', () => {
+      document.getElementById('auth-modal').hidden = false;
+    });
+
+    // SIGN OUT 버튼
+    document.getElementById('btn-signout').addEventListener('click', async () => {
+      await signOut(auth);
+      sessionStorage.removeItem('user_email');
+    });
+
+    // 모달 닫기
+    document.getElementById('modal-close-btn').addEventListener('click', () => {
+      document.getElementById('auth-modal').hidden = true;
+    });
+
+    // Google 로그인
+    document.getElementById('google-btn').addEventListener('click', async () => {
+      const err = document.getElementById('login-error');
+      err.style.display = 'none';
+      try {
+        const result = await signInWithPopup(auth, provider);
+        sessionStorage.setItem('user_email', result.user.email);
+        document.getElementById('auth-modal').hidden = true;
+      } catch(e) {
+        console.error(e);
+        err.style.display = 'block';
+      }
+    });
+
+    // 채널 메뉴
+    window.toggleChannelMenu = function() {
+      const m = document.getElementById('channel-menu');
+      const i = document.getElementById('ch-icon');
+      m.hidden = !m.hidden;
+      i.textContent = m.hidden ? '▼' : '×';
+    };
+
+    // 언어 버튼
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+      });
+    });
+
+    // 결제
+    window.openPay = function(ch) {
+      if (!sessionStorage.getItem('user_email')) {
+        document.getElementById('auth-modal').hidden = false;
+        return;
+      }
+      alert(ch + ' 결제 준비 중');
+    };
+
+    // 스플래시
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const s = document.getElementById('splash');
+        s.style.opacity = '0';
+        setTimeout(() => s.remove(), 500);
+      }, 900);
+    });
   </script>
+
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--bg:#0A192F;--border:#5B0E1B;--fg:#FBF9F4;--muted:#8b96a8;--dim:#6b7789;--f-display:'Playfair Display',serif;--f-body:'League Spartan',sans-serif}
@@ -165,7 +232,8 @@
     .btn-total{width:100%;margin-top:4px;padding:13px;border:1px solid #8B1A2A;border-radius:10px;background:transparent;color:var(--fg);font-family:var(--f-body);font-weight:700;font-size:.88rem;cursor:pointer}
     .modal-bg{position:fixed;inset:0;background:rgba(10,25,47,.88);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;z-index:999;padding:24px}
     .modal{position:relative;width:100%;max-width:400px;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:36px 28px 28px;text-align:center}
-    .modal-x{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--fg);font-size:1.4rem;cursor:pointer;opacity:.6}
+    .modal-x{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--fg);font-size:1.8rem;cursor:pointer;opacity:.8;line-height:1;z-index:10}
+    .modal-x:hover{opacity:1}
     .modal-brand{font-family:var(--f-display);font-weight:900;font-size:1.4rem;margin-bottom:12px}
     .modal-sub{font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:24px}
     .btn-google{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--fg);color:var(--bg);border:none;border-radius:10px;padding:13px;font-family:var(--f-body);font-weight:700;font-size:.92rem;cursor:pointer}
