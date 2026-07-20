@@ -1,77 +1,775 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import Header from '@components/01-Header.astro';
-import Masthead from '@components/02-Masthead.astro';
-import PricingTable from '@components/03-PricingTable.astro';
-import LegalFooter from '@components/04-LegalFooter.astro';
+// src/pages/index.astro
+// 메인 페이지 — 반응형(PC/태블릿/폰) + 한글/영문 토글
 ---
 
-<Layout title="TAERIJAY+ MASTER PORTAL">
-	<Header />
-	<Masthead />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>TAERIJAY+ MASTER PORTAL</title>
 
-	<!-- 💡 [수정] 두 번째 스샷 컨트롤러 완전 제외 및 자동 조율 최적화 검색 영역 단일 배치 -->
-	<section class="w-full py-6 px-4 md:px-12 max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center border-b border-[#5B0E1B]/30">
-		<div class="relative w-full max-w-md mx-auto md:mx-0">
-			<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400">
-				<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-				</svg>
-			</span>
-			<input 
-				type="text" 
-				id="channelSearch" 
-				placeholder="독립 채널 실시간 검색..." 
-				class="w-full pl-10 pr-4 py-3.5 bg-[#071120] border border-[#5B0E1B] rounded-xl text-xs text-white placeholder-slate-400 focus:outline-none focus:border-[#00F0FF] transition-all font-noto"
-			/>
-		</div>
-	</section>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-	<!-- CHANNELS -->
-	<section class="w-full py-12 px-4 md:px-12 max-w-6xl mx-auto flex flex-col gap-6" id="textAdjustContainer">
-		<h2 class="text-base md:text-xl font-bold uppercase tracking-widest text-white border-l-4 border-[#00F0FF] pl-3 font-spartan">
-			독립 채널 인프라 진입 허브 (Premium Channels Deployment)
-		</h2>
-		
-		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="channelGrid">
-			<div class="channel-card p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-[#00F0FF] hover:bg-[#00F0FF]/5 transition-all flex flex-col justify-between gap-4" data-title="entertainment 🎬">
-				<div class="flex flex-col gap-2">
-					<div class="flex items-center justify-between"><span class="text-base font-bold text-[#00F0FF] font-spartan tracking-wide">1. Entertainment</span><span class="text-lg">🎬</span></div>
-					<p class="text-xs text-slate-300 font-noto leading-relaxed break-keep break-words">
-						비디오 스트림 허브 및 공식 미디어 채널 라우팅 연계 제공함. 단어가 아무리 길어도 모바일 화면 밖으로 삐져나가지 않고 깔끔하게 자동 줄바꿈 처리함.
-					</p>
-				</div>
-				<a href="/04-channels/01-entertainment" class="inline-block text-center w-full py-2 bg-[#00F0FF]/10 hover:bg-[#00F0FF] text-[#00F0FF] hover:text-[#0A192F] font-bold text-xs rounded transition-all font-spartan uppercase">Enter Channel</a>
-			</div>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-			<div class="channel-card p-6 rounded-xl border border-[#5B0E1B] bg-[#071120]/60 hover:border-[#FF6B00] hover:bg-[#FF6B00]/5 transition-all flex flex-col justify-between gap-4" data-title="protocol 🌐">
-				<div class="flex flex-col gap-2">
-					<div class="flex items-center justify-between"><span class="text-base font-bold text-[#FF6B00] font-spartan tracking-wide">2. Protocol</span><span class="text-lg">🌐</span></div>
-					<p class="text-xs text-slate-300 font-noto leading-relaxed break-keep break-words">
-						해외 입국객 필수 공항 세관 및 대중교통 이용 안전 규약 명시함. 법률 표준 규약에 맞춰 정보의 누락이 없도록 전격 보정 조치함.
-					</p>
-				</div>
-				<a href="/04-channels/02-protocol" class="inline-block text-center w-full py-2 bg-[#FF6B00]/10 hover:bg-[#FF6B00] text-[#FF6B00] hover:text-[#0A192F] font-bold text-xs rounded transition-all font-spartan uppercase">Enter Channel</a>
-			</div>
-		</div>
-	</section>
+    :root {
+      --bg:       #0A192F;
+      --burgundy: #5B0E1B;
+      --ivory:    #FBF9F4;
+      --muted:    #7A9AB5;
+    }
 
-	<PricingTable />
-	<LegalFooter />
-</Layout>
+    html { scroll-behavior: smooth; }
 
-<script is:inline>
-	document.addEventListener('DOMContentLoaded', () => {
-		const searchInput = document.getElementById('channelSearch');
-		const cards = document.querySelectorAll('.channel-card');
-		if (searchInput) {
-			searchInput.addEventListener('input', (e) => {
-				const val = e.target.value.toLowerCase().trim();
-				cards.forEach(card => {
-					const title = card.dataset.title.toLowerCase();
-					card.classList.toggle('hidden', !title.includes(val));
-				});
-			});
-		}
-	});
-</script>
+    body {
+      background: var(--bg);
+      color: var(--ivory);
+      font-family: 'League Spartan', sans-serif;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ═════════════════════════════
+       NAV — 반응형
+    ═════════════════════════════ */
+    .nav {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(91,14,27,0.35);
+      position: sticky;
+      top: 0;
+      background: rgba(10,25,47,0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--ivory);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--burgundy); font-style: italic; }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(91,14,27,0.4);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .lang-btn {
+      padding: 5px 10px;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--burgundy);
+      color: var(--ivory);
+    }
+
+    .lang-btn:hover:not(.active) { color: var(--ivory); }
+
+    .nav-auth {
+      padding: 6px 14px;
+      border: 1px solid var(--burgundy);
+      border-radius: 2px;
+      background: rgba(91,14,27,0.2);
+      color: var(--ivory);
+      font-family: 'League Spartan', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-auth:hover { background: rgba(91,14,27,0.45); }
+
+    /* ═════════════════════════════
+       MAIN CONTENT
+    ═════════════════════════════ */
+    .main-content {
+      width: 100%;
+      max-width: 1200px;
+      padding: 40px 24px;
+    }
+
+    /* 모바일 */
+    @media (max-width: 480px) {
+      .main-content { padding: 24px 16px; }
+      .nav { padding: 14px 16px; }
+    }
+
+    /* 태블릿 */
+    @media (min-width: 481px) and (max-width: 1024px) {
+      .main-content { padding: 32px 24px; }
+    }
+
+    /* PC */
+    @media (min-width: 1025px) {
+      .main-content { padding: 48px 40px; }
+    }
+
+    /* ═════════════════════════════
+       HERO
+    ═════════════════════════════ */
+    .hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .hero-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      border: 1px solid rgba(0,201,122,0.3);
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #00C97A;
+      margin-bottom: 24px;
+    }
+
+    .live-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #00C97A;
+      box-shadow: 0 0 6px rgba(0,201,122,0.7);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title em { font-style: italic; color: var(--burgundy); }
+
+    .hero-sub {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .hero-desc {
+      font-size: 13px;
+      color: rgba(122,154,181,0.8);
+      line-height: 1.7;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 22px; }
+      .hero-desc { font-size: 12px; }
+    }
+
+    @media (min-width: 1025px) {
+      .hero-title { font-size: 32px; }
+      .hero-desc { max-width: 500px; font-size: 14px; }
+    }
+
+    /* ═════════════════════════════
+       SECTION LABEL
+    ═════════════════════════════ */
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(91,14,27,0.25);
+    }
+
+    /* ═════════════════════════════
+       CHANNELS GRID — 반응형
+    ═════════════════════════════ */
+    .channels-grid {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 480px) {
+      .channels-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 481px) and (max-width: 1024px) {
+      .channels-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1025px) {
+      .channels-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    }
+
+    .ch-card {
+      border: 1px solid var(--burgundy);
+      border-radius: 3px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      background: rgba(255,255,255,0.018);
+    }
+
+    .ch-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+
+    .ch-top { height: 3px; }
+
+    .ch-inner {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ch-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid currentColor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      opacity: 0.85;
+    }
+
+    .ch-brand {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .ch-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .ch-desc {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.5;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ═════════════════════════════
+       PRICING — 반응형
+    ═════════════════════════════ */
+    .pricing-section { margin-bottom: 48px; }
+
+    .plan-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .plan-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 481px) and (max-width: 1024px) {
+      .plan-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1025px) {
+      .plan-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    }
+
+    .plan-card {
+      border: 1px solid var(--burgundy);
+      border-radius: 3px;
+      padding: 18px 16px;
+      position: relative;
+      overflow: hidden;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .plan-card.featured { border-color: #D4AF37; }
+
+    .plan-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+    }
+
+    .plan-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .plan-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .plan-desc {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .plan-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+
+    .plan-currency { font-size: 13px; color: var(--muted); }
+    .plan-amount { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--ivory); }
+    .plan-period { font-size: 10px; color: var(--muted); letter-spacing: 0.04em; }
+
+    .plan-btn {
+      display: block;
+      width: 100%;
+      padding: 11px;
+      border-radius: 2px;
+      border: 1px solid;
+      text-align: center;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      margin-bottom: 6px;
+    }
+
+    .plan-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .plan-btn.solid {
+      background: var(--burgundy);
+      border-color: var(--burgundy);
+      color: var(--ivory);
+    }
+
+    .plan-btn.outline {
+      background: transparent;
+      border-color: rgba(91,14,27,0.5);
+      color: var(--muted);
+    }
+
+    .plan-btn.gold {
+      background: #D4AF37;
+      border-color: #D4AF37;
+      color: #0A192F;
+    }
+
+    /* ═════════════════════════════
+       FOOTER
+    ═════════════════════════════ */
+    .footer {
+      width: 100%;
+      border-top: 1px solid rgba(91,14,27,0.3);
+      padding: 28px 24px 40px;
+      margin-top: auto;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .social-link:hover { color: var(--ivory); }
+
+    .footer-biz {
+      font-size: 10px;
+      color: rgba(122,154,181,0.5);
+      line-height: 1.8;
+    }
+
+    .footer-biz strong { color: rgba(122,154,181,0.75); }
+
+    /* ═════════════════════════════
+       언어 표시 — 한글 기본, 영문 선택
+    ═════════════════════════════ */
+    .hero-en,
+    .ch-name-en,
+    .ch-desc-en,
+    .plan-name-en,
+    .plan-desc-en,
+    .plan-badge-en,
+    .plan-btn-en,
+    .section-label-en,
+    .social-en,
+    .footer-en {
+      opacity: 0.65;
+      font-size: 0.85em;
+      margin-top: 2px;
+    }
+
+    .plan-btn-en {
+      display: none;
+    }
+
+    /* 영문 모드는 언어 토글 JS에서 관리 */
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">TAERIJAY<span>+</span></a>
+    <div class="nav-controls">
+      <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="en" title="English">EN</button>
+        <button class="lang-btn" data-lang="ko" title="한국어">한</button>
+        <button class="lang-btn" data-lang="auto" title="Auto">AUTO</button>
+      </div>
+      <a href="/01-auth/auth" class="nav-auth" id="navAuthBtn">Sign In</a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="page-wrap">
+    <div class="main-content">
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-live">
+          <div class="live-dot"></div>
+          System Live Active
+        </div>
+        <h1 class="hero-title">
+          대한민국 🇰🇷<br/>
+          <span class="hero-en">Korea Intelligence Hub</span><br/>
+          <em>글로벌 여행자를 위한</em><br/>
+          <em class="hero-en">for Global Travelers</em>
+        </h1>
+        <div class="hero-sub">태리재이플러스 · 프리미엄 채널 네트워크</div>
+        <div class="hero-sub hero-en">TAERIJAY+ · Premium Channel Network</div>
+        <p class="hero-desc">검증된 한국 여행/라이프스타일 정보 — 글로벌 방문객을 위해 제작됨. 실제 주소. 번역 오류 0%. 🌐</p>
+        <p class="hero-desc hero-en">Verified travel &amp; lifestyle DB — built exclusively for global visitors to Korea. Real addresses. Zero translation errors. 🌐</p>
+      </section>
+
+      <!-- CHANNELS -->
+      <section>
+        <div class="section-label">프리미엄 채널 오픈</div>
+        <div class="section-label section-label-en">Premium Channels Deployment</div>
+
+        <div class="channels-grid">
+          <a href="/04-channels/01-entertainment" class="ch-card">
+            <div class="ch-top" style="background:#00E5FF;"></div>
+            <div class="ch-inner">
+              <div class="ch-icon" style="color:#00E5FF;">🎬</div>
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#00E5FF;">엔터테인먼트</div>
+              <div class="ch-name ch-name-en" style="color:#00E5FF;">entertainment</div>
+              <div class="ch-desc">드라마 · 영화 · 쇼 · 유튜브</div>
+              <div class="ch-desc ch-desc-en">Drama · Movie · Show · YouTube</div>
+            </div>
+          </a>
+
+          <a href="/04-channels/02-protocol" class="ch-card">
+            <div class="ch-top" style="background:#F16B24;"></div>
+            <div class="ch-inner">
+              <div class="ch-icon" style="color:#F16B24;">🌐</div>
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#F16B24;">프로토콜</div>
+              <div class="ch-name ch-name-en" style="color:#F16B24;">protocol</div>
+              <div class="ch-desc">공항 · 세관 · 입국 규약</div>
+              <div class="ch-desc ch-desc-en">Airport customs · transit · entry</div>
+            </div>
+          </a>
+
+          <a href="/04-channels/03-mini" class="ch-card">
+            <div class="ch-top" style="background:#FBF9F4;"></div>
+            <div class="ch-inner">
+              <div class="ch-icon" style="color:#FBF9F4;">📍</div>
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#FBF9F4;">미니</div>
+              <div class="ch-name ch-name-en" style="color:#FBF9F4;">mini</div>
+              <div class="ch-desc">여행 코스 · 도시 가이드</div>
+              <div class="ch-desc ch-desc-en">Travel courses · city guides</div>
+            </div>
+          </a>
+
+          <a href="/04-channels/04-daiso" class="ch-card">
+            <div class="ch-top" style="background:#E1261C;"></div>
+            <div class="ch-inner">
+              <div class="ch-icon" style="color:#E1261C;">🇰🇷</div>
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#E1261C;">다이소</div>
+              <div class="ch-name ch-name-en" style="color:#E1261C;">daiso</div>
+              <div class="ch-desc">뷰티템 · 재고 정보</div>
+              <div class="ch-desc ch-desc-en">Beauty items · stock info</div>
+            </div>
+          </a>
+
+          <a href="/04-channels/05-oliveyoung" class="ch-card">
+            <div class="ch-top" style="background:#6F8B2E;"></div>
+            <div class="ch-inner">
+              <div class="ch-icon" style="color:#6F8B2E;">💡</div>
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#6F8B2E;">올리브영</div>
+              <div class="ch-name ch-name-en" style="color:#6F8B2E;">oliveyoung</div>
+              <div class="ch-desc">스킨케어 · 면세 가이드</div>
+              <div class="ch-desc ch-desc-en">Skincare · Tax-Free guide</div>
+            </div>
+          </a>
+
+          <a href="/04-channels/06-emart" class="ch-card">
+            <div class="ch-top" style="background:#FFDD00;"></div>
+            <div class="ch-inner">
+              <div class="ch-icon" style="color:#FFDD00;">🛒</div>
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#FFDD00;">이마트</div>
+              <div class="ch-name ch-name-en" style="color:#FFDD00;">emart</div>
+              <div class="ch-desc">대형마트 · 휴업 경고</div>
+              <div class="ch-desc ch-desc-en">Hypermarket · closure alerts</div>
+            </div>
+          </a>
+
+          <a href="/04-channels/07-convenience" class="ch-card">
+            <div class="ch-top" style="background:#A14D7C;"></div>
+            <div class="ch-inner">
+              <div class="ch-icon" style="color:#A14D7C;">🌐</div>
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#A14D7C;">편의점</div>
+              <div class="ch-name ch-name-en" style="color:#A14D7C;">convenience</div>
+              <div class="ch-desc">24시 조합 · PB 상품</div>
+              <div class="ch-desc ch-desc-en">24h combos · PB products</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section class="pricing-section">
+        <div class="section-label">12개월 프리미엄 활성화 패스</div>
+        <div class="section-label section-label-en">12 Months Premium Activation Pass</div>
+
+        <div class="plan-grid">
+          <!-- SINGLE BASIC -->
+          <div class="plan-card" style="--plan-color:#F16B24;">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#F16B24;"></div>
+            <div class="plan-badge" style="background:rgba(241,107,36,0.12);color:#F16B24;border:1px solid rgba(241,107,36,0.3);">싱글</div>
+            <div class="plan-badge plan-badge-en" style="background:rgba(241,107,36,0.12);color:#F16B24;border:1px solid rgba(241,107,36,0.3);">Single</div>
+            <div class="plan-name">기본 티어</div>
+            <div class="plan-name plan-name-en">Basic Tier</div>
+            <div class="plan-desc">단일 채널 · 12개월 무제한 열람</div>
+            <div class="plan-desc plan-desc-en">Single channel · 12-month unlimited access</div>
+            <div class="plan-price-row">
+              <span class="plan-currency">$</span>
+              <span class="plan-amount">19.99</span>
+              <span class="plan-period">/ 12mo</span>
+            </div>
+            <a href="/02-payment/payment?key=protocol_basic" class="plan-btn solid">프로토콜 기본 구매</a>
+            <a href="/02-payment/payment?key=protocol_basic" class="plan-btn solid plan-btn-en">Get Protocol Basic</a>
+          </div>
+
+          <!-- DOUBLE A -->
+          <div class="plan-card">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#F16B24;"></div>
+            <div class="plan-badge" style="background:rgba(91,14,27,0.2);color:#FBF9F4;border:1px solid rgba(91,14,27,0.4);">더블 A</div>
+            <div class="plan-badge plan-badge-en" style="background:rgba(91,14,27,0.2);color:#FBF9F4;border:1px solid rgba(91,14,27,0.4);">Double A</div>
+            <div class="plan-name">프로토콜 × 미니</div>
+            <div class="plan-name plan-name-en">protocol × mini</div>
+            <div class="plan-desc">2개 채널 · 최고 조합</div>
+            <div class="plan-desc plan-desc-en">Two channels · Best combo</div>
+            <div class="plan-price-row">
+              <span class="plan-currency">$</span>
+              <span class="plan-amount">34.99</span>
+              <span class="plan-period">/ 12mo</span>
+            </div>
+            <a href="/02-payment/payment?key=protocol_mini" class="plan-btn solid">더블 패스 구매</a>
+            <a href="/02-payment/payment?key=protocol_mini" class="plan-btn solid plan-btn-en">Get Double Pass</a>
+          </div>
+
+          <!-- TOTAL -->
+          <div class="plan-card featured">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#D4AF37;"></div>
+            <div class="plan-badge" style="background:rgba(212,175,55,0.12);color:#D4AF37;border:1px solid rgba(212,175,55,0.35);">VIP 골드</div>
+            <div class="plan-badge plan-badge-en" style="background:rgba(212,175,55,0.12);color:#D4AF37;border:1px solid rgba(212,175,55,0.35);">VIP GOLD</div>
+            <div class="plan-name">태리재이 오리진</div>
+            <div class="plan-name plan-name-en">TAERIJAY ORIGINE</div>
+            <div class="plan-desc">전 6개 채널 · 완전 접근</div>
+            <div class="plan-desc plan-desc-en">All 6 channels · Complete access</div>
+            <div class="plan-price-row">
+              <span class="plan-currency">$</span>
+              <span class="plan-amount" style="color:#D4AF37;">99.99</span>
+              <span class="plan-period">/ 12mo</span>
+            </div>
+            <a href="/02-payment/payment?key=total" class="plan-btn gold">마스터 패스 배포</a>
+            <a href="/02-payment/payment?key=total" class="plan-btn gold plan-btn-en">Deploy Master Pass</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-social">
+      <a href="https://www.youtube.com/@taerijay" class="social-link" target="_blank" rel="noopener">유튜브</a>
+      <a href="https://www.youtube.com/@taerijay" class="social-link social-en" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/taerijay" class="social-link" target="_blank" rel="noopener">인스타그램</a>
+      <a href="https://www.instagram.com/taerijay" class="social-link social-en" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@taerijay" class="social-link" target="_blank" rel="noopener">TikTok</a>
+    </div>
+
+    <div class="footer-biz">
+      <strong>TAERIJAY (태리재이)</strong><br/>
+      <span>사업자등록번호: 673-51-01148 · 통신판매번호: 2026-Hwadosudo-0247</span>
+      <span class="footer-en">Business Registration: 673-51-01148 · Communication Sales: 2026-Hwadosudo-0247</span><br/>
+      <span>경기도 남양주시 화도읍 · official@taerijay.com</span>
+      <span class="footer-en">Namyangju, Gyeonggi-do · official@taerijay.com</span>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script is:inline>
+    (function () {
+      // 로그인 상태
+      const email = sessionStorage.getItem('user_email');
+      const btn   = document.getElementById('navAuthBtn');
+      if (email && btn) {
+        btn.textContent = 'My Account';
+        btn.href = '/01-auth/auth';
+      }
+
+      // 언어 토글 — 한글/영문 모두 표시, 강조만 변경
+      const LANG_KEY = 'tj_lang';
+      const toggle   = document.getElementById('langToggle');
+      const buttons  = toggle ? toggle.querySelectorAll('.lang-btn') : [];
+
+      function applyLang(showEn) {
+        // 영문 요소들 표시/숨김
+        document.querySelectorAll('.hero-en, .ch-name-en, .ch-desc-en, .plan-name-en, .plan-desc-en, .plan-badge-en, .plan-btn-en, .section-label-en, .social-en, .footer-en').forEach(el => {
+          el.style.display = showEn ? 'block' : 'none';
+        });
+
+        // 한글 버튼 활성화 토글
+        buttons.forEach(btn => {
+          btn.classList.toggle('active', (btn.dataset.lang === 'en') === showEn || btn.dataset.lang === 'auto');
+        });
+      }
+
+      // 초기 설정
+      const saved = localStorage.getItem(LANG_KEY) || 'ko';
+      const showEn = saved === 'en';
+      applyLang(showEn);
+
+      // 클릭 처리
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function () {
+          const chosen = this.dataset.lang;
+          if (chosen === 'auto') {
+            localStorage.setItem(LANG_KEY, 'auto');
+            applyLang(false); // Auto는 한글 표시
+          } else if (chosen === 'en') {
+            localStorage.setItem(LANG_KEY, 'en');
+            applyLang(true); // 영문 강조
+          } else {
+            localStorage.setItem(LANG_KEY, 'ko');
+            applyLang(false); // 한글 강조
+          }
+        });
+      });
+
+      // payment=success 배너
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('payment') === 'success') {
+        const banner = document.createElement('div');
+        banner.style.cssText = 'position:fixed;top:0;left:0;right:0;padding:12px;background:#00C97A;color:#0A192F;text-align:center;font-family:League Spartan,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.08em;z-index:999;';
+        banner.textContent = '✓ Payment complete — your access is now active!';
+        document.body.prepend(banner);
+        setTimeout(() => banner.remove(), 5000);
+        window.history.replaceState({}, '', '/');
+      }
+    })();
+  </script>
+
+</body>
+</html>
