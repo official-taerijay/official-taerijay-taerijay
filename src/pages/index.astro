@@ -1,6 +1,4 @@
-cat > src/pages/index.astro << 'EOF'
 ---
-// src/pages/index.astro
 ---
 <!doctype html>
 <html lang="ko">
@@ -14,7 +12,7 @@ cat > src/pages/index.astro << 'EOF'
     import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
       from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
     const app = initializeApp({
-      apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
+      apiKey: 'AIzaSyExample',
       authDomain: 'taerijay-platform.firebaseapp.com',
       projectId: 'taerijay-platform',
     });
@@ -24,26 +22,11 @@ cat > src/pages/index.astro << 'EOF'
     onAuthStateChanged(auth, (user) => {
       const si = document.getElementById('btn-signin');
       const so = document.getElementById('btn-signout');
-      if (user) {
-        sessionStorage.setItem('user_email', user.email);
-        if (si) si.hidden = true;
-        if (so) so.hidden = false;
-      } else {
-        sessionStorage.removeItem('user_email');
-        if (si) si.hidden = false;
-        if (so) so.hidden = true;
-      }
+      if (user) { sessionStorage.setItem('user_email', user.email); if(si)si.hidden=true; if(so)so.hidden=false; }
+      else { sessionStorage.removeItem('user_email'); if(si)si.hidden=false; if(so)so.hidden=true; }
     });
   </script>
   <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-  <script>
-    window.addEventListener('load', () => {
-      if (window.Paddle) {
-        Paddle.Environment.set('production');
-        Paddle.Initialize({ token: import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN });
-      }
-    });
-  </script>
 </head>
 <body>
   <div id="splash" class="splash"><span class="splash-brand">TAERIJAY</span></div>
@@ -52,9 +35,9 @@ cat > src/pages/index.astro << 'EOF'
       <a href="/" class="header-logo">TAERIJAY<span class="logo-plus">+</span></a>
       <div class="header-right">
         <div class="lang-group">
-          <button class="lang-btn active" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="ko">한</button>
-          <button class="lang-btn" data-lang="auto">AUTO</button>
+          <button class="lang-btn active">EN</button>
+          <button class="lang-btn">한</button>
+          <button class="lang-btn">AUTO</button>
         </div>
         <button id="btn-signin" class="btn-signin" onclick="openAuthModal()">SIGN IN</button>
         <button id="btn-signout" class="btn-signin" hidden onclick="handleSignOut()">SIGN OUT</button>
@@ -90,7 +73,7 @@ cat > src/pages/index.astro << 'EOF'
       <p class="pricing-note">1년 1회 결제 · 자동 갱신 없음</p>
       <div class="plan-list">
         <div class="plan-card">
-          <div class="plan-head"><span class="plan-title">SINGLE</span><span class="plan-price">$19.99<small>~</small></span></div>
+          <div class="plan-head"><span class="plan-title">SINGLE</span><span class="plan-price">$19.99~</span></div>
           <p class="plan-desc">채널 1개 선택 — Basic · Standard · Pro</p>
           <div class="plan-channels">
             <button class="ch-pill" style="--c:#F16B24" onclick="openPay('protocol')">protocol</button>
@@ -130,28 +113,14 @@ cat > src/pages/index.astro << 'EOF'
     </div>
   </div>
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => { const s=document.getElementById('splash'); s.style.opacity='0'; setTimeout(()=>s.remove(),500); }, 900);
-    });
-    function toggleChannelMenu() {
-      const m=document.getElementById('channel-menu'); const i=document.getElementById('ch-icon');
-      m.hidden=!m.hidden; i.textContent=m.hidden?'▼':'×';
-    }
-    document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{
-      document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active')); b.classList.add('active');
-    }));
-    function openAuthModal()  { document.getElementById('auth-modal').hidden=false; }
-    function closeAuthModal() { document.getElementById('auth-modal').hidden=true; }
-    document.getElementById('google-btn').addEventListener('click', async()=>{
-      try { const {auth,provider,signInWithPopup}=window._tjAuth; const r=await signInWithPopup(auth,provider);
-        sessionStorage.setItem('user_email',r.user.email); closeAuthModal();
-      } catch(e){console.error(e);}
-    });
-    async function handleSignOut() { const {auth,signOut}=window._tjAuth; await signOut(auth); sessionStorage.removeItem('user_email'); }
-    function openPay(ch) {
-      if(!sessionStorage.getItem('user_email')){openAuthModal();return;}
-      alert(ch+' 결제 준비 중');
-    }
+    window.addEventListener('DOMContentLoaded',()=>{setTimeout(()=>{const s=document.getElementById('splash');s.style.opacity='0';setTimeout(()=>s.remove(),500);},900);});
+    function toggleChannelMenu(){const m=document.getElementById('channel-menu');const i=document.getElementById('ch-icon');m.hidden=!m.hidden;i.textContent=m.hidden?'▼':'×';}
+    document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');}));
+    function openAuthModal(){document.getElementById('auth-modal').hidden=false;}
+    function closeAuthModal(){document.getElementById('auth-modal').hidden=true;}
+    document.getElementById('google-btn').addEventListener('click',async()=>{try{const{auth,provider,signInWithPopup}=window._tjAuth;const r=await signInWithPopup(auth,provider);sessionStorage.setItem('user_email',r.user.email);closeAuthModal();}catch(e){console.error(e);}});
+    async function handleSignOut(){const{auth,signOut}=window._tjAuth;await signOut(auth);sessionStorage.removeItem('user_email');}
+    function openPay(ch){if(!sessionStorage.getItem('user_email')){openAuthModal();return;}alert(ch+' 결제 준비 중');}
   </script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -165,7 +134,7 @@ cat > src/pages/index.astro << 'EOF'
     .logo-plus{color:var(--border)}
     .header-right{display:flex;align-items:center;gap:10px}
     .lang-group{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden}
-    .lang-btn{background:transparent;border:none;color:var(--muted);font-family:var(--f-body);font-size:.72rem;font-weight:600;padding:5px 9px;cursor:pointer;letter-spacing:.04em}
+    .lang-btn{background:transparent;border:none;color:var(--muted);font-family:var(--f-body);font-size:.72rem;font-weight:600;padding:5px 9px;cursor:pointer}
     .lang-btn.active{background:var(--fg);color:var(--bg)}
     .btn-signin{background:transparent;border:1px solid var(--fg);color:var(--fg);font-family:var(--f-body);font-size:.72rem;font-weight:700;letter-spacing:.06em;padding:6px 12px;border-radius:6px;cursor:pointer}
     .channel-nav{padding:12px 20px;border-bottom:1px solid var(--border)}
@@ -189,14 +158,11 @@ cat > src/pages/index.astro << 'EOF'
     .plan-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
     .plan-title{font-family:var(--f-display);font-weight:700;font-size:1rem}
     .plan-price{font-family:var(--f-display);font-weight:900;font-size:1.5rem}
-    .plan-price small{font-size:.9rem}
     .plan-desc{font-size:.78rem;color:var(--muted);margin-bottom:14px}
     .plan-channels{display:flex;flex-wrap:wrap;gap:8px}
-    .ch-pill{border:1px solid var(--c,var(--border));color:var(--c,var(--fg));background:transparent;border-radius:20px;font-family:var(--f-body);font-size:.74rem;font-weight:600;padding:5px 12px;cursor:pointer;transition:background .2s}
-    .ch-pill:hover{background:rgba(255,255,255,.06)}
+    .ch-pill{border:1px solid var(--c,var(--border));color:var(--c,var(--fg));background:transparent;border-radius:20px;font-family:var(--f-body);font-size:.74rem;font-weight:600;padding:5px 12px;cursor:pointer}
     .double-pill{color:var(--fg)!important;border-color:var(--border)!important}
-    .btn-total{width:100%;margin-top:4px;padding:13px;border:1px solid #8B1A2A;border-radius:10px;background:transparent;color:var(--fg);font-family:var(--f-body);font-weight:700;font-size:.88rem;cursor:pointer;transition:background .2s}
-    .btn-total:hover{background:rgba(139,26,42,.2)}
+    .btn-total{width:100%;margin-top:4px;padding:13px;border:1px solid #8B1A2A;border-radius:10px;background:transparent;color:var(--fg);font-family:var(--f-body);font-weight:700;font-size:.88rem;cursor:pointer}
     .modal-bg{position:fixed;inset:0;background:rgba(10,25,47,.88);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;z-index:999;padding:24px}
     .modal{position:relative;width:100%;max-width:400px;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:36px 28px 28px;text-align:center}
     .modal-x{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--fg);font-size:1.4rem;cursor:pointer;opacity:.6}
@@ -206,4 +172,3 @@ cat > src/pages/index.astro << 'EOF'
   </style>
 </body>
 </html>
-EOF
