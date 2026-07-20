@@ -1,70 +1,142 @@
 ---
-interface Props {
-	title: string;
-}
-const { title } = Astro.props;
+// src/pages/01-auth/auth.astro
+import Layout from '../../layouts/Layout.astro';
 ---
-<!doctype html>
-<!-- 💡 1. 한글 고정 기본값 설정 & 자동 번역기에 의한 폰트 깨짐 강제 방지 -->
-<html lang="ko" translate="no" class="h-full scroll-smooth select-none">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="google" content="notranslate" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-		<title>{title}</title>
-		
-		<!-- 💡 2. 대표님의 영문 오리지널 폰트(League Spartan) 및 Noto Sans 구글 웹폰트 완벽 재탑재 -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-		
-		<script is:inline src="https://cdn.tailwindcss.com"></script>
-		<script is:inline>
-			tailwind.config = {
-				theme: {
-					extend: {
-						colors: {
-							baseBg: '#0A192F',
-							brandBorder: '#5B0E1B',
-							neonCyan: '#00F0FF',
-							neonOrange: '#FF6B00',
-							neonYellow: '#FFFB00',
-							neonRed: '#FF2E2E',
-							neonGreen: '#00FF66',
-							neonPurple: '#E000FF',
-							masterBurgundy: '#990011',
-						},
-						// 💡 꼬였던 폰트 패밀리 매핑 복구 및 한/영 분리 설정
-						fontFamily: {
-							'spartan': ['"League Spartan"', 'sans-serif'],
-							'noto': ['"Noto Sans KR"', 'sans-serif']
-						}
-					}
-				}
-			}
-		</script>
-		<style>
-			html, body {
-				height: 100%;
-				background-color: #0A192F;
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-				text-rendering: optimizeLegibility;
-			}
-			body {
-				/* 💡 한글은 Noto Sans KR로 고정해 맑고 가독성 있게 표현 */
-				font-family: "Noto Sans KR", sans-serif;
-				word-break: keep-all;
-				overflow-wrap: anywhere;
-			}
-			/* 💡 대표님이 극찬하셨던 그 웅장하고 세련된 시그니처 자간 세팅 복구 */
-			.font-spartan {
-				font-family: "League Spartan", sans-serif;
-				letter-spacing: 0.08em;
-			}
-		</style>
-	</head>
-	<body class="bg-[#0A192F] text-[#FBF9F4] flex flex-col min-h-screen">
-		<slot />
-	</body>
-</html>
+
+<Layout title="TAERIJAY+ Auth 센터">
+  <main class="auth-container">
+    <div class="auth-box">
+      <h2>TAERIJAY+ AUTH GATE</h2>
+      <p class="auth-subtitle">글로벌 서비스 노선 진입을 위한 구글 인증 세션임.</p>
+      
+      <!-- 구글 로그인 버튼 -->
+      <button id="google-login-btn" class="btn-google">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_\"Circles\"_Sign-In_Logo.svg" alt="Google" width="20" />
+        <span>Google 계정으로 인증 가동</span>
+      </button>
+
+      <!-- 로그아웃 버튼 -->
+      <button id="logout-btn" class="btn-logout" style="display: none;">
+        인증 세션 종료 (로그아웃)
+      </button>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #0d1117;
+    color: #ffffff;
+    font-family: sans-serif;
+  }
+  .auth-box {
+    text-align: center;
+    padding: 2.5rem;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    background: #161b22;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  }
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: #58a6ff;
+  }
+  .auth-subtitle {
+    font-size: 0.9rem;
+    color: #8b949e;
+    margin-bottom: 2rem;
+  }
+  .btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-google:hover {
+    background-color: #f1f1f1;
+  }
+  .btn-logout {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    background-color: #da3633;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-logout:hover {
+    background-color: #b62b28;
+  }
+</style>
+
+<script>
+  import { initializeApp } from "firebase/app";
+  import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
+
+  // Vercel 및 로컬 환경변수 연동 선언
+  const firebaseConfig = {
+    apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
+    authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  const loginBtn = document.getElementById('google-login-btn');
+  const logoutBtn = document.getElementById('logout-btn');
+
+  // 실시간 유저 인증 트래킹 라이프사이클
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("인증 완료 세션 이메일:", user.email);
+      if (loginBtn) loginBtn.style.display = 'none';
+      if (logoutBtn) logoutBtn.style.display = 'block';
+      window.sessionStorage.setItem('user_email', user.email || '');
+    } else {
+      if (loginBtn) loginBtn.style.display = 'flex';
+      if (logoutBtn) logoutBtn.style.display = 'none';
+      window.sessionStorage.removeItem('user_email');
+    }
+  });
+
+  // 구글 로그인 팝업 활성화 트리거
+  loginBtn?.addEventListener('click', async () => {
+    try {
+      await signInWithPopup(auth, provider);
+      // 로그인 종결 즉시 다음 단계인 02-payment/payment 노선으로 슛
+      window.location.href = '/02-payment/payment';
+    } catch (error) {
+      console.error("구글 인증 오류 발생:", error);
+    }
+  });
+
+  // 로그아웃 트리거
+  logoutBtn?.addEventListener('click', async () => {
+    try {
+      await signOut(auth);
+      window.location.reload();
+    } catch (error) {
+      console.error("로그아웃 처리 오류 발생:", error);
+    }
+  });
+</script>
