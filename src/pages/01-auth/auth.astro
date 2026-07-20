@@ -1,4 +1,4 @@
-cat > ~/Desktop/taerijay-platform/src/pages/01-auth/auth.astro << 'ENDOFFILE'
+cat > ~/Desktop/taerijay-platform/src/pages/01-auth/auth.astro << 'EOF'
 ---
 ---
 <!doctype html>
@@ -8,27 +8,6 @@ cat > ~/Desktop/taerijay-platform/src/pages/01-auth/auth.astro << 'ENDOFFILE'
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Access Gate | TAERIJAY</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=League+Spartan:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-    import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged }
-      from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
-    const app = initializeApp({
-      apiKey: 'AIzaSyExample',
-      authDomain: 'taerijay-platform.firebaseapp.com',
-      projectId: 'taerijay-platform',
-    });
-    const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        sessionStorage.setItem('user_email', user.email);
-        const redirect = sessionStorage.getItem('auth_redirect') || '/';
-        sessionStorage.removeItem('auth_redirect');
-        window.location.href = redirect;
-      }
-    });
-    window._authPage = { auth, provider, signInWithPopup };
-  </script>
 </head>
 <body>
   <div class="page">
@@ -55,7 +34,35 @@ cat > ~/Desktop/taerijay-platform/src/pages/01-auth/auth.astro << 'ENDOFFILE'
     <a href="/" class="back-link">← Back to TAERIJAY</a>
   </div>
   <script>
-    document.getElementById('google-btn').addEventListener('click',async()=>{const err=document.getElementById('error-box');err.hidden=true;try{const{auth,provider,signInWithPopup}=window._authPage;const r=await signInWithPopup(auth,provider);sessionStorage.setItem('user_email',r.user.email);const redirect=sessionStorage.getItem('auth_redirect')||'/';sessionStorage.removeItem('auth_redirect');window.location.href=redirect;}catch(e){console.error(e);err.hidden=false;}});
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+    import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged }
+      from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+    const app = initializeApp({
+      apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
+      authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
+      projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
+    });
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        sessionStorage.setItem('user_email', user.email);
+        const redirect = sessionStorage.getItem('auth_redirect') || '/';
+        sessionStorage.removeItem('auth_redirect');
+        window.location.href = redirect;
+      }
+    });
+    document.getElementById('google-btn').addEventListener('click', async () => {
+      const err = document.getElementById('error-box');
+      err.hidden = true;
+      try {
+        const r = await signInWithPopup(auth, provider);
+        sessionStorage.setItem('user_email', r.user.email);
+        const redirect = sessionStorage.getItem('auth_redirect') || '/';
+        sessionStorage.removeItem('auth_redirect');
+        window.location.href = redirect;
+      } catch(e) { console.error(e); err.hidden = false; }
+    });
   </script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -82,4 +89,4 @@ cat > ~/Desktop/taerijay-platform/src/pages/01-auth/auth.astro << 'ENDOFFILE'
   </style>
 </body>
 </html>
-ENDOFFILE
+EOF
