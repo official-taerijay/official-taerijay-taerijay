@@ -1,20 +1,840 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Header from '@components/01-Header.astro';
-import LegalFooter from '@components/04-LegalFooter.astro';
+// src/pages/index.astro
 ---
-<Layout title="TAERIJAY+ SESSION TERMINATED">
-	<Header />
-	<main class="w-full min-h-screen bg-[#0A192F] flex items-center justify-center p-4 font-noto">
-		<div class="w-full max-w-[460px] border-2 border-[#990011] bg-[#071120] rounded-2xl p-8 text-center flex flex-col gap-6 shadow-2xl">
-			<div class="text-6xl">⚠️</div>
-			<h2 class="text-xl font-black text-white font-spartan uppercase tracking-wider">STREAM CAPACITY BREACHED</h2>
-			<div class="flex flex-col gap-2 text-sm leading-relaxed border-l-4 border-[#990011] pl-3 text-left bg-[#0A192F] p-4 rounded-r-xl">
-				<p class="text-white font-bold">인프라 보안 통제 규약 의거, 회원 계정의 동시 접속 허용 한도가 초과되었음.</p>
-				<p class="text-slate-400 font-light font-spartan">Too many devices using your account layout. Please log out from other active terminals or upgrade your plan bounds.</p>
-			</div>
-			<a href="/" class="w-full py-3.5 bg-[#5B0E1B] hover:bg-[#990011] text-white text-xs font-black tracking-widest font-spartan uppercase rounded-xl transition-colors shadow-lg">RETURN TO PORTAL</a>
-		</div>
-	</main>
-	<LegalFooter />
-</Layout>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>TAERIJAY+ MASTER PORTAL</title>
+  <meta name="description" content="Korea's premium travel & lifestyle intelligence platform. Exclusive DB for global visitors." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:       #0A192F;
+      --burgundy: #5B0E1B;
+      --ivory:    #FBF9F4;
+      --muted:    #7A9AB5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ivory);
+      font-family: 'League Spartan', sans-serif;
+      min-height: 100dvh;
+      /* 모바일 퍼스트 — 전체를 중앙 480px 벨트로 격리 */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-belt {
+      width: 100%;
+      max-width: 480px;
+      padding: 0 16px;
+    }
+
+    /* ══════════════════════
+       NAV
+    ══════════════════════ */
+    .nav {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 16px 14px;
+      border-bottom: 1px solid rgba(91,14,27,0.35);
+      position: sticky;
+      top: 0;
+      background: rgba(10,25,47,0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--ivory);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--burgundy); font-style: italic; }
+
+    .nav-auth-btn {
+      padding: 7px 16px;
+      border: 1px solid var(--burgundy);
+      border-radius: 2px;
+      background: rgba(91,14,27,0.25);
+      color: var(--ivory);
+      font-family: 'League Spartan', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-auth-btn:hover { background: rgba(91,14,27,0.5); }
+
+    /* ══════════════════════
+       HERO
+    ══════════════════════ */
+    .hero {
+      padding: 48px 0 40px;
+      text-align: center;
+    }
+
+    .hero-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 14px;
+      border: 1px solid rgba(0,201,122,0.3);
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #00C97A;
+      margin-bottom: 24px;
+    }
+
+    .live-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #00C97A;
+      box-shadow: 0 0 6px rgba(0,201,122,0.7);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--burgundy);
+    }
+
+    .hero-sub {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .hero-desc {
+      font-size: 13px;
+      color: rgba(122,154,181,0.8);
+      line-height: 1.7;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+
+    /* ══════════════════════
+       SECTION LABEL
+    ══════════════════════ */
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(91,14,27,0.25);
+    }
+
+    /* ══════════════════════
+       CHANNEL CARDS
+    ══════════════════════ */
+    .channels-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+
+    .ch-card {
+      border: 1px solid var(--burgundy);
+      border-radius: 3px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      display: block;
+      background: rgba(255,255,255,0.018);
+    }
+
+    .ch-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+
+    /* 상단 채널 컬러 바 */
+    .ch-top {
+      height: 2px;
+    }
+
+    .ch-inner {
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* 채널 아이콘 배지 */
+    .ch-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid currentColor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      opacity: 0.85;
+    }
+
+    .ch-meta { flex: 1; min-width: 0; }
+
+    .ch-brand {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .ch-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .ch-desc {
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.5;
+      /* 한 줄 자르기 */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ch-arrow {
+      font-size: 16px;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .ch-card:hover .ch-arrow {
+      color: var(--ivory);
+      transform: translateX(3px);
+    }
+
+    /* ══════════════════════
+       PRICING
+    ══════════════════════ */
+    .pricing-section { margin-bottom: 48px; }
+
+    .plan-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .plan-card {
+      border: 1px solid var(--burgundy);
+      border-radius: 3px;
+      padding: 20px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .plan-card.featured {
+      border-color: #D4AF37;
+    }
+
+    /* 좌측 컬러 바 */
+    .plan-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+    }
+
+    .plan-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .plan-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .plan-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .plan-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 14px;
+    }
+
+    .plan-currency { font-size: 14px; color: var(--muted); }
+
+    .plan-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--ivory);
+    }
+
+    .plan-period {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .plan-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border-radius: 2px;
+      border: 1px solid;
+      text-align: center;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .plan-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .plan-btn.solid {
+      background: var(--burgundy);
+      border-color: var(--burgundy);
+      color: var(--ivory);
+    }
+
+    .plan-btn.outline {
+      background: transparent;
+      border-color: rgba(91,14,27,0.5);
+      color: var(--muted);
+    }
+
+    .plan-btn.gold {
+      background: #D4AF37;
+      border-color: #D4AF37;
+      color: #0A192F;
+    }
+
+    /* 더블 레이블 */
+    .double-channels {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ch-tag {
+      padding: 3px 9px;
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      border: 1px solid;
+    }
+
+    /* ══════════════════════
+       FOOTER
+    ══════════════════════ */
+    .footer {
+      width: 100%;
+      max-width: 480px;
+      border-top: 1px solid rgba(91,14,27,0.3);
+      padding: 28px 16px 40px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .social-link:hover { color: var(--ivory); }
+
+    .footer-biz {
+      font-size: 10.5px;
+      color: rgba(122,154,181,0.5);
+      line-height: 1.8;
+    }
+
+    .footer-biz strong { color: rgba(122,154,181,0.75); }
+
+    .footer-warning {
+      margin-top: 14px;
+      font-size: 10px;
+      color: rgba(225,38,28,0.6);
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+    }
+
+    /* ══════════════════════
+       BUSINESS INFO MODAL
+    ══════════════════════ */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,25,47,0.92);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      width: 100%;
+      max-width: 420px;
+      border: 1px solid var(--burgundy);
+      border-radius: 3px;
+      background: #0D1A2E;
+      padding: 28px 24px;
+    }
+
+    .modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .modal-row {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      margin-bottom: 14px;
+    }
+
+    .modal-key {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .modal-val {
+      font-size: 13px;
+      color: var(--ivory);
+    }
+
+    .modal-close {
+      width: 100%;
+      margin-top: 6px;
+      padding: 12px;
+      background: transparent;
+      border: 1px solid rgba(91,14,27,0.4);
+      border-radius: 2px;
+      color: var(--muted);
+      font-family: 'League Spartan', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .modal-close:hover { border-color: var(--burgundy); color: var(--ivory); }
+  </style>
+</head>
+
+<body>
+
+  <!-- ① NAV -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">TAERIJAY<span>+</span></a>
+    <a href="/01-auth/auth" class="nav-auth-btn" id="navAuthBtn">Sign In</a>
+  </nav>
+
+  <div class="page-belt">
+
+    <!-- ② HERO -->
+    <section class="hero">
+      <div class="hero-live">
+        <div class="live-dot"></div>
+        System Live Active
+      </div>
+      <h1 class="hero-title">
+        대한민국 🇰🇷<br>
+        <em>Korea Intelligence Hub</em>
+      </h1>
+      <div class="hero-sub">TAERIJAY+ · Premium Channel Network</div>
+      <p class="hero-desc">
+        Verified travel &amp; lifestyle DB — built exclusively for global visitors to Korea.
+        Real addresses. Zero translation errors. 🌐
+      </p>
+    </section>
+
+    <!-- ③ 7 CHANNELS -->
+    <section style="margin-bottom:48px;">
+      <div class="section-label">Premium Channels Deployment</div>
+
+      <div class="channels-grid">
+
+        <!-- 1. entertainment -->
+        <a href="/04-channels/01-entertainment" class="ch-card">
+          <div class="ch-top" style="background:#00E5FF;"></div>
+          <div class="ch-inner">
+            <div class="ch-icon" style="color:#00E5FF;border-color:#00E5FF;">🎬</div>
+            <div class="ch-meta">
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#00E5FF;">entertainment</div>
+              <div class="ch-desc">Drama · Movie · Show · YouTube channel routing hub</div>
+            </div>
+            <div class="ch-arrow">›</div>
+          </div>
+        </a>
+
+        <!-- 2. protocol -->
+        <a href="/04-channels/02-protocol" class="ch-card">
+          <div class="ch-top" style="background:#F16B24;"></div>
+          <div class="ch-inner">
+            <div class="ch-icon" style="color:#F16B24;border-color:#F16B24;">🌐</div>
+            <div class="ch-meta">
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#F16B24;">protocol</div>
+              <div class="ch-desc">Airport customs · public transit · entry regulation DB</div>
+            </div>
+            <div class="ch-arrow">›</div>
+          </div>
+        </a>
+
+        <!-- 3. mini -->
+        <a href="/04-channels/03-mini" class="ch-card">
+          <div class="ch-top" style="background:#FBF9F4;"></div>
+          <div class="ch-inner">
+            <div class="ch-icon" style="color:#FBF9F4;border-color:#FBF9F4;">📍</div>
+            <div class="ch-meta">
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#FBF9F4;">mini</div>
+              <div class="ch-desc">Curated travel courses · optimal route guide per city</div>
+            </div>
+            <div class="ch-arrow">›</div>
+          </div>
+        </a>
+
+        <!-- 4. daiso -->
+        <a href="/04-channels/04-daiso" class="ch-card">
+          <div class="ch-top" style="background:#E1261C;"></div>
+          <div class="ch-inner">
+            <div class="ch-icon" style="color:#E1261C;border-color:#E1261C;">🇰🇷</div>
+            <div class="ch-meta">
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#E1261C;">daiso</div>
+              <div class="ch-desc">Beauty trend items · store location &amp; stock DB</div>
+            </div>
+            <div class="ch-arrow">›</div>
+          </div>
+        </a>
+
+        <!-- 5. oliveyoung -->
+        <a href="/04-channels/05-oliveyoung" class="ch-card">
+          <div class="ch-top" style="background:#6F8B2E;"></div>
+          <div class="ch-inner">
+            <div class="ch-icon" style="color:#6F8B2E;border-color:#6F8B2E;">💡</div>
+            <div class="ch-meta">
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#6F8B2E;">oliveyoung</div>
+              <div class="ch-desc">MZ skincare DB · Tax-Free refund status included</div>
+            </div>
+            <div class="ch-arrow">›</div>
+          </div>
+        </a>
+
+        <!-- 6. emart -->
+        <a href="/04-channels/06-emart" class="ch-card">
+          <div class="ch-top" style="background:#FFDD00;"></div>
+          <div class="ch-inner">
+            <div class="ch-icon" style="color:#FFDD00;border-color:#FFDD00;">🇰🇷</div>
+            <div class="ch-meta">
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#FFDD00;">emart</div>
+              <div class="ch-desc">Hypermarket DB · mandatory closure day ⚠️ alert index</div>
+            </div>
+            <div class="ch-arrow">›</div>
+          </div>
+        </a>
+
+        <!-- 7. convenience -->
+        <a href="/04-channels/07-convenience" class="ch-card">
+          <div class="ch-top" style="background:#A14D7C;"></div>
+          <div class="ch-inner">
+            <div class="ch-icon" style="color:#A14D7C;border-color:#A14D7C;">🌐</div>
+            <div class="ch-meta">
+              <div class="ch-brand">taerijay+</div>
+              <div class="ch-name" style="color:#A14D7C;">convenience</div>
+              <div class="ch-desc">24h CVS exclusive PB combo guide · brand matchup DB</div>
+            </div>
+            <div class="ch-arrow">›</div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ④ PRICING -->
+    <section class="pricing-section">
+      <div class="section-label">12 Months Premium Activation Pass</div>
+
+      <div class="plan-grid">
+
+        <!-- SINGLE BASIC -->
+        <div class="plan-card" style="--plan-color:#F16B24;">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#F16B24;"></div>
+          <div class="plan-badge" style="background:rgba(241,107,36,0.12);color:#F16B24;border:1px solid rgba(241,107,36,0.3);">Single Access</div>
+          <div class="plan-name">단일 채널 패스</div>
+          <div class="plan-desc">
+            단일 독립 채널 한정 이용.<br>
+            12개월 무제한 — 실시간 DB 상시 열람.
+          </div>
+          <div class="plan-price-row">
+            <span class="plan-currency">$</span>
+            <span class="plan-amount">19.99</span>
+            <span class="plan-period">/ 12 months · from</span>
+          </div>
+          <!-- 채널별 선택 -->
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <a href="/02-payment/payment?key=protocol_basic" class="plan-btn outline" style="font-size:11px;padding:9px;">protocol Basic →</a>
+            <a href="/02-payment/payment?key=mini_basic" class="plan-btn outline" style="font-size:11px;padding:9px;">mini Basic →</a>
+            <a href="/02-payment/payment?key=daiso_basic" class="plan-btn outline" style="font-size:11px;padding:9px;">daiso Basic →</a>
+            <a href="/02-payment/payment?key=olive_basic" class="plan-btn outline" style="font-size:11px;padding:9px;">oliveyoung Basic →</a>
+            <a href="/02-payment/payment?key=emart_basic" class="plan-btn outline" style="font-size:11px;padding:9px;">emart Basic →</a>
+            <a href="/02-payment/payment?key=cvs_basic" class="plan-btn outline" style="font-size:11px;padding:9px;">convenience Basic →</a>
+          </div>
+        </div>
+
+        <!-- DOUBLE A: protocol × mini -->
+        <div class="plan-card">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#F16B24;"></div>
+          <div class="plan-badge" style="background:rgba(91,14,27,0.2);color:#FBF9F4;border:1px solid rgba(91,14,27,0.4);">Double A · Best Combo</div>
+          <div class="double-channels">
+            <span class="ch-tag" style="color:#F16B24;border-color:#F16B24;">protocol</span>
+            <span style="align-self:center;color:var(--muted);font-size:12px;">×</span>
+            <span class="ch-tag" style="color:#FBF9F4;border-color:rgba(251,249,244,0.4);">mini</span>
+          </div>
+          <div class="plan-name">데이터베이스 × 미니 더블 패스</div>
+          <div class="plan-desc">전체 입국 규약 DB + 최적 여행 동선 가이드 결합.</div>
+          <div class="plan-price-row">
+            <span class="plan-currency">$</span>
+            <span class="plan-amount">34.99</span>
+            <span class="plan-period">/ 12 months</span>
+          </div>
+          <a href="/02-payment/payment?key=protocol_mini" class="plan-btn solid">Get Double Pass →</a>
+        </div>
+
+        <!-- DOUBLE B: daiso × olive -->
+        <div class="plan-card">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#E1261C;"></div>
+          <div class="plan-badge" style="background:rgba(91,14,27,0.2);color:#FBF9F4;border:1px solid rgba(91,14,27,0.4);">Double B · Best Combo</div>
+          <div class="double-channels">
+            <span class="ch-tag" style="color:#E1261C;border-color:#E1261C;">daiso</span>
+            <span style="align-self:center;color:var(--muted);font-size:12px;">×</span>
+            <span class="ch-tag" style="color:#6F8B2E;border-color:#6F8B2E;">oliveyoung</span>
+          </div>
+          <div class="plan-name">다이소 × 올리브영 더블 패스</div>
+          <div class="plan-desc">뷰티 대란템 + 스킨케어 독점 세일 — 트렌디 잡화 최강 조합.</div>
+          <div class="plan-price-row">
+            <span class="plan-currency">$</span>
+            <span class="plan-amount">34.99</span>
+            <span class="plan-period">/ 12 months</span>
+          </div>
+          <a href="/02-payment/payment?key=daiso_olive" class="plan-btn solid">Get Double Pass →</a>
+        </div>
+
+        <!-- DOUBLE C: emart × cvs -->
+        <div class="plan-card">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#FFDD00;"></div>
+          <div class="plan-badge" style="background:rgba(91,14,27,0.2);color:#FBF9F4;border:1px solid rgba(91,14,27,0.4);">Double C · Best Combo</div>
+          <div class="double-channels">
+            <span class="ch-tag" style="color:#FFDD00;border-color:#FFDD00;">emart</span>
+            <span style="align-self:center;color:var(--muted);font-size:12px;">×</span>
+            <span class="ch-tag" style="color:#A14D7C;border-color:#A14D7C;">convenience</span>
+          </div>
+          <div class="plan-name">이마트 × 편의점 더블 패스</div>
+          <div class="plan-desc">대형마트 PB 분석 + 라이벌 편의점 꿀조합 빅매치 상시 가동.</div>
+          <div class="plan-price-row">
+            <span class="plan-currency">$</span>
+            <span class="plan-amount">34.99</span>
+            <span class="plan-period">/ 12 months</span>
+          </div>
+          <a href="/02-payment/payment?key=emart_cvs" class="plan-btn solid">Get Double Pass →</a>
+        </div>
+
+        <!-- TOTAL PASS -->
+        <div class="plan-card featured">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:#D4AF37;"></div>
+          <div class="plan-badge" style="background:rgba(212,175,55,0.12);color:#D4AF37;border:1px solid rgba(212,175,55,0.35);">VIP GOLD · Ultimate Access</div>
+          <div class="plan-name">TAERIJAY+ 올인원 골드 마스터 패스</div>
+          <div class="plan-desc">
+            전 독립 채널 (6개) 완전 개방.<br>
+            12개월간 모든 오리지널 콘텐츠 우선 열람 권한 확보.
+          </div>
+          <div class="plan-price-row">
+            <span class="plan-currency">$</span>
+            <span class="plan-amount" style="color:#D4AF37;">99.99</span>
+            <span class="plan-period">/ 12 months · full package</span>
+          </div>
+          <a href="/02-payment/payment?key=total" class="plan-btn gold">Deploy Master Pass →</a>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /page-belt -->
+
+  <!-- ⑤ FOOTER -->
+  <footer class="footer">
+    <div class="footer-social">
+      <a href="https://www.youtube.com/@taerijay" class="social-link" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/taerijay" class="social-link" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@taerijay" class="social-link" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://taerijay.blogspot.com" class="social-link" target="_blank" rel="noopener">Google Blog</a>
+      <a href="https://blog.naver.com/taerijay" class="social-link" target="_blank" rel="noopener">Naver Blog</a>
+    </div>
+
+    <div class="footer-biz">
+      <strong>TAERIJAY (태리재이)</strong><br>
+      사업자등록번호 · 673-51-01148<br>
+      통신판매번호 · 2026-Hwadosudo-0247<br>
+      소재지 · 경기도 남양주시 화도읍<br>
+      이메일 · official@taerijay.com
+      &nbsp;&nbsp;
+      <button onclick="document.getElementById('bizModal').classList.add('open')"
+        style="background:none;border:1px solid rgba(91,14,27,0.4);border-radius:2px;padding:3px 10px;color:var(--muted);font-family:'League Spartan',sans-serif;font-size:10px;letter-spacing:0.08em;cursor:pointer;margin-top:8px;display:inline-block;">
+        사업자정보 확인
+      </button>
+    </div>
+
+    <div class="footer-warning">
+      🚨 We do not operate any channels other than these five official platforms.<br>
+      Beware of imitation websites!
+    </div>
+  </footer>
+
+  <!-- ⑥ 사업자 정보 모달 -->
+  <div class="modal-overlay" id="bizModal" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal-box">
+      <div class="modal-title">Business Information</div>
+      <div class="modal-row">
+        <span class="modal-key">상호명 · Company</span>
+        <span class="modal-val">TAERIJAY (태리재이)</span>
+      </div>
+      <div class="modal-row">
+        <span class="modal-key">사업자등록번호 · Registration No</span>
+        <span class="modal-val">673-51-01148</span>
+      </div>
+      <div class="modal-row">
+        <span class="modal-key">통신판매업신고번호</span>
+        <span class="modal-val">2026-Hwadosudo-0247</span>
+      </div>
+      <div class="modal-row">
+        <span class="modal-key">소재지 · Address</span>
+        <span class="modal-val">경기도 남양주시 화도읍</span>
+      </div>
+      <div class="modal-row">
+        <span class="modal-key">이메일 · Email</span>
+        <span class="modal-val">official@taerijay.com</span>
+      </div>
+      <button class="modal-close" onclick="document.getElementById('bizModal').classList.remove('open')">Close</button>
+    </div>
+  </div>
+
+
+  <!-- ── 로그인 상태 → 네비 버튼 동적 업데이트 ── -->
+  <script is:inline>
+    (function () {
+      const email = sessionStorage.getItem('user_email');
+      const btn   = document.getElementById('navAuthBtn');
+      if (email && btn) {
+        btn.textContent = 'My Account';
+        btn.href = '/01-auth/auth';
+      }
+
+      // payment=success 파라미터 처리
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('payment') === 'success') {
+        const banner = document.createElement('div');
+        banner.style.cssText = 'position:fixed;top:0;left:0;right:0;padding:12px;background:#00C97A;color:#0A192F;text-align:center;font-family:League Spartan,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.08em;z-index:999;';
+        banner.textContent = '✓ Payment complete — your access is now active!';
+        document.body.prepend(banner);
+        setTimeout(() => banner.remove(), 5000);
+        // URL 클린업
+        window.history.replaceState({}, '', '/');
+      }
+    })();
+  </script>
+
+</body>
+</html>

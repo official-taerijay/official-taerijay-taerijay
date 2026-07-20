@@ -1,20 +1,159 @@
+<!-- =====================================================
+  파일 1: src/pages/04-channels/01-entertainment.astro
+===================================================== -->
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '@components/01-Header.astro';
-import LegalFooter from '@components/04-LegalFooter.astro';
 ---
-<Layout title="taerijay+entertainment">
-	<Header />
-	<main class="w-full min-h-screen px-6 md:px-12 py-12 max-w-5xl mx-auto flex flex-col gap-6 font-noto">
-		<div class="border-b border-[#5B0E1B] pb-4 flex justify-between items-center font-spartan"><h1 class="text-2xl font-black text-[#00F0FF] lowercase">taerijay+entertainment</h1><span class="text-xs px-3 py-1 border border-[#00F0FF] text-[#00F0FF] font-black rounded-full">🎬 STREAM</span></div>
-		<div class="p-6 rounded-xl border-2 border-[#00F0FF] flex flex-col gap-4">
-			<h3 class="text-lg font-bold text-white">🎬 official video bridge hub</h3>
-			<p class="text-white border-l-2 border-[#00F0FF] pl-2">드라마, 영화, 예능, 대표님 유튜브 채널 트래픽 허브 연계함.<br/><span class="text-slate-400 font-spartan text-xs block mt-0.5">Explore K-content parameters loop.</span></p>
-			<div class="flex items-center justify-between border-t border-[#5B0E1B]/20 pt-4 mt-2 font-spartan text-sm">
-				<span class="text-slate-200" id="ad1">Central Hub Video Stream Station</span>
-				<button class="copy-btn bg-[#5B0E1B]/40 text-white px-3 py-1 rounded border border-[#5B0E1B] text-xs font-bold" data-target="ad1">COPY</button>
-			</div>
-		</div>
-	</main>
-	<LegalFooter />
+<Layout title="entertainment" channelName="entertainment" channelColor="#00E5FF">
+
+  <style>
+    :root { --ch: #00E5FF; }
+    .ch-header { padding: 28px 0 20px; border-bottom: 1px solid rgba(0,229,255,0.2); margin-bottom: 24px; }
+    .ch-label { font-size: 9.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(0,229,255,0.6); margin-bottom: 6px; }
+    .ch-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #00E5FF; line-height: 1.2; }
+    .ch-desc  { font-size: 12.5px; color: var(--muted, #7A9AB5); margin-top: 8px; line-height: 1.6; }
+    .cat-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+    .cat-tab  { padding: 6px 14px; border: 1px solid rgba(0,229,255,0.3); border-radius: 100px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: rgba(0,229,255,0.7); background: transparent; cursor: pointer; transition: all 0.2s; }
+    .cat-tab.active, .cat-tab:hover { background: rgba(0,229,255,0.12); border-color: #00E5FF; color: #00E5FF; }
+    .card-grid { display: flex; flex-direction: column; gap: 10px; }
+    .media-card { border: 1px solid rgba(0,229,255,0.2); border-radius: 3px; padding: 16px; background: rgba(0,229,255,0.03); cursor: pointer; transition: transform 0.2s, border-color 0.2s; display: flex; gap: 14px; align-items: center; text-decoration: none; }
+    .media-card:hover { transform: translateY(-1px); border-color: rgba(0,229,255,0.5); }
+    .media-thumb { width: 56px; height: 56px; border-radius: 3px; background: rgba(0,229,255,0.1); border: 1px solid rgba(0,229,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .media-meta { flex: 1; min-width: 0; }
+    .media-cat  { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(0,229,255,0.6); margin-bottom: 4px; }
+    .media-name { font-size: 14px; font-weight: 600; color: #FBF9F4; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .media-sub  { font-size: 11px; color: var(--muted, #7A9AB5); }
+    .lock-card  { opacity: 0.4; pointer-events: none; position: relative; }
+    .lock-icon  { font-size: 18px; }
+    /* 잠금 모달 */
+    .lock-modal { display: none; position: fixed; inset: 0; background: rgba(10,25,47,0.94); backdrop-filter: blur(10px); z-index: 200; align-items: center; justify-content: center; padding: 24px 16px; }
+    .lock-modal.open { display: flex; }
+    .lock-box   { width: 100%; max-width: 380px; border: 1px solid #5B0E1B; border-radius: 3px; background: #0D1A2E; padding: 32px 24px; text-align: center; }
+    .lock-emoji { font-size: 36px; margin-bottom: 14px; }
+    .lock-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+    .lock-desc  { font-size: 12.5px; color: var(--muted, #7A9AB5); line-height: 1.7; margin-bottom: 22px; }
+    .lock-btn   { display: block; width: 100%; padding: 14px; background: #5B0E1B; border: none; border-radius: 2px; color: #FBF9F4; font-family: 'League Spartan', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; margin-bottom: 10px; }
+    .lock-cancel { font-size: 11px; color: var(--muted, #7A9AB5); cursor: pointer; background: none; border: none; letter-spacing: 0.06em; }
+  </style>
+
+  <!-- 채널 헤더 -->
+  <div class="ch-header">
+    <div class="ch-label">taerijay+ · media hub</div>
+    <div class="ch-title">entertainment</div>
+    <div class="ch-desc">Drama · Movie · Show · YouTube — 🎬 글로벌 K-콘텐츠 공식 미디어 라우팅 허브</div>
+  </div>
+
+  <!-- 카테고리 탭 -->
+  <div class="cat-tabs">
+    <button class="cat-tab active" onclick="filterCat('ALL')">ALL</button>
+    <button class="cat-tab" onclick="filterCat('DRAMA')">DRAMA</button>
+    <button class="cat-tab" onclick="filterCat('MOVIE')">MOVIE</button>
+    <button class="cat-tab" onclick="filterCat('SHOW')">SHOW</button>
+    <button class="cat-tab" onclick="filterCat('YOUTUBE')">YOUTUBE</button>
+  </div>
+
+  <!-- 미디어 카드 12개 (무료 프리뷰) -->
+  <div class="card-grid" id="cardGrid">
+    <!-- 무료 12개 -->
+    <a class="media-card" href="https://www.youtube.com/@taerijay" target="_blank" rel="noopener" data-cat="YOUTUBE">
+      <div class="media-thumb">🎥</div>
+      <div class="media-meta"><div class="media-cat">YOUTUBE</div><div class="media-name">TAERIJAY Official Channel</div><div class="media-sub">Korea travel · lifestyle · tips</div></div>
+    </a>
+    <div class="media-card" data-cat="DRAMA" onclick="openLockAt(2)">
+      <div class="media-thumb">🎭</div>
+      <div class="media-meta"><div class="media-cat">DRAMA</div><div class="media-name">Preview: K-Drama Hub</div><div class="media-sub">Filming locations · OST · Cast info</div></div>
+    </div>
+    <div class="media-card" data-cat="MOVIE" onclick="openLockAt(3)">
+      <div class="media-thumb">🎬</div>
+      <div class="media-meta"><div class="media-cat">MOVIE</div><div class="media-name">Preview: K-Movie Hub</div><div class="media-sub">Box office · Screening venues</div></div>
+    </div>
+    <div class="media-card" data-cat="SHOW" onclick="openLockAt(4)">
+      <div class="media-thumb">🌟</div>
+      <div class="media-meta"><div class="media-cat">SHOW</div><div class="media-name">Preview: Variety Show Guide</div><div class="media-sub">Broadcast schedule · On-site info</div></div>
+    </div>
+    <div class="media-card" data-cat="DRAMA" onclick="openLockAt(5)">
+      <div class="media-thumb">🎭</div>
+      <div class="media-meta"><div class="media-cat">DRAMA</div><div class="media-name">Preview: Netflix K-Originals</div><div class="media-sub">Exclusive streaming · Viewing guide</div></div>
+    </div>
+    <div class="media-card" data-cat="SHOW" onclick="openLockAt(6)">
+      <div class="media-thumb">🌟</div>
+      <div class="media-meta"><div class="media-cat">SHOW</div><div class="media-name">Preview: Running Man DB</div><div class="media-sub">Location guide · Fan meeting info</div></div>
+    </div>
+    <div class="media-card" data-cat="MOVIE" onclick="openLockAt(7)">
+      <div class="media-thumb">🎬</div>
+      <div class="media-meta"><div class="media-cat">MOVIE</div><div class="media-name">Preview: CGV · Megabox Guide</div><div class="media-sub">Cinema locations · Ticket purchase</div></div>
+    </div>
+    <div class="media-card" data-cat="DRAMA" onclick="openLockAt(8)">
+      <div class="media-thumb">🎭</div>
+      <div class="media-meta"><div class="media-cat">DRAMA</div><div class="media-name">Preview: Filming Location Map</div><div class="media-sub">Seoul · Busan · Jeju real locations</div></div>
+    </div>
+    <div class="media-card" data-cat="YOUTUBE" onclick="openLockAt(9)">
+      <div class="media-thumb">🎥</div>
+      <div class="media-meta"><div class="media-cat">YOUTUBE</div><div class="media-name">Preview: K-Creator Directory</div><div class="media-sub">Top creators · Collab info</div></div>
+    </div>
+    <div class="media-card" data-cat="SHOW" onclick="openLockAt(10)">
+      <div class="media-thumb">🌟</div>
+      <div class="media-meta"><div class="media-cat">SHOW</div><div class="media-name">Preview: Idol Fan Meeting DB</div><div class="media-sub">Venue · Ticket · Access guide</div></div>
+    </div>
+    <div class="media-card" data-cat="DRAMA" onclick="openLockAt(11)">
+      <div class="media-thumb">🎭</div>
+      <div class="media-meta"><div class="media-cat">DRAMA</div><div class="media-name">Preview: OTT Subscription Guide</div><div class="media-sub">Netflix · Disney+ · Wavve KR setup</div></div>
+    </div>
+    <div class="media-card" data-cat="MOVIE" onclick="openLockAt(12)">
+      <div class="media-thumb">🎬</div>
+      <div class="media-meta"><div class="media-cat">MOVIE</div><div class="media-name">Preview: Busan Film Festival</div><div class="media-sub">BIFF venue · Schedule · Access</div></div>
+    </div>
+    <!-- 13번째~ 잠금 카드 -->
+    <div class="media-card lock-card" data-cat="DRAMA">
+      <div class="media-thumb"><span class="lock-icon">🔒</span></div>
+      <div class="media-meta"><div class="media-cat">DRAMA</div><div class="media-name">Premium Content Locked</div><div class="media-sub">Subscribe to unlock</div></div>
+    </div>
+    <div class="media-card lock-card" data-cat="SHOW">
+      <div class="media-thumb"><span class="lock-icon">🔒</span></div>
+      <div class="media-meta"><div class="media-cat">SHOW</div><div class="media-name">Premium Content Locked</div><div class="media-sub">Subscribe to unlock</div></div>
+    </div>
+    <div class="media-card lock-card" data-cat="MOVIE">
+      <div class="media-thumb"><span class="lock-icon">🔒</span></div>
+      <div class="media-meta"><div class="media-cat">MOVIE</div><div class="media-name">Premium Content Locked</div><div class="media-sub">Subscribe to unlock</div></div>
+    </div>
+  </div>
+
+  <!-- 🔒 유료 모달 -->
+  <div class="lock-modal" id="lockModal">
+    <div class="lock-box">
+      <div class="lock-emoji">🔒</div>
+      <div class="lock-title">Premium Access Required</div>
+      <div class="lock-desc">
+        이 콘텐츠는 구독자 전용임.<br>
+        TAERIJAY+ entertainment 채널을 구독하여 전체 콘텐츠를 무제한 열람하기 바람.
+      </div>
+      <a href="/02-payment/payment?key=total" class="lock-btn">구독하기 — $99.99 / 12개월</a>
+      <button class="lock-cancel" onclick="document.getElementById('lockModal').classList.remove('open')">나중에 하기</button>
+    </div>
+  </div>
+
+  <script is:inline>
+    // ── 가드: 로그인 체크 ──
+    if (!sessionStorage.getItem('user_email')) {
+      window.location.href = '/01-auth/auth?redirect=' + encodeURIComponent(window.location.href);
+    }
+
+    // ── 카테고리 필터 ──
+    function filterCat(cat) {
+      document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+      document.querySelectorAll('.media-card').forEach(c => {
+        c.style.display = (cat === 'ALL' || c.dataset.cat === cat) ? 'flex' : 'none';
+      });
+    }
+
+    // ── 잠금 모달 ──
+    function openLockAt(n) {
+      document.getElementById('lockModal').classList.add('open');
+    }
+
+    window.filterCat = filterCat;
+    window.openLockAt = openLockAt;
+  </script>
+
 </Layout>
