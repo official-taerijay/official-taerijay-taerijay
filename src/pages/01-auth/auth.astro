@@ -1,6 +1,6 @@
 ---
 // src/pages/01-auth/auth.astro
-// Firebase Google OAuth 인증 페이지 (수정 버전)
+// Firebase Google OAuth 인증 페이지
 // 환경변수: PUBLIC_FIREBASE_API_KEY / PUBLIC_FIREBASE_AUTH_DOMAIN / PUBLIC_FIREBASE_PROJECT_ID
 
 const firebaseConfig = {
@@ -49,9 +49,13 @@ const firebaseConfig = {
       align-items: center;
       justify-content: center;
       padding: 32px 16px;
+      /* 미묘한 방사형 그라데이션 - 중앙에 약한 빛 */
       background-image: radial-gradient(ellipse 70% 50% at 50% 30%, rgba(91,14,27,0.12) 0%, transparent 70%);
     }
 
+    /* ══════════════════════════════════
+       CONTAINER
+    ══════════════════════════════════ */
     .auth-wrap {
       width: 100%;
       max-width: 440px;
@@ -61,7 +65,9 @@ const firebaseConfig = {
       gap: 0;
     }
 
-    /* 브랜드 헤더 */
+    /* ══════════════════════════════════
+       BRAND HEADER
+    ══════════════════════════════════ */
     .brand-header {
       text-align: center;
       margin-bottom: 36px;
@@ -90,7 +96,9 @@ const firebaseConfig = {
       color: var(--muted);
     }
 
-    /* 인증 카드 */
+    /* ══════════════════════════════════
+       AUTH CARD
+    ══════════════════════════════════ */
     .auth-card {
       width: 100%;
       border: 1px solid var(--burgundy);
@@ -102,6 +110,7 @@ const firebaseConfig = {
       overflow: hidden;
     }
 
+    /* 상단 코너 장식 라인 */
     .auth-card::before {
       content: '';
       position: absolute;
@@ -111,7 +120,9 @@ const firebaseConfig = {
       opacity: 0.6;
     }
 
-    /* 상태 배지 */
+    /* ══════════════════════════════════
+       STATUS BADGE
+    ══════════════════════════════════ */
     .status-badge {
       display: inline-flex;
       align-items: center;
@@ -152,6 +163,9 @@ const firebaseConfig = {
       50%       { opacity: 0.25; }
     }
 
+    /* ══════════════════════════════════
+       HEADING AREA
+    ══════════════════════════════════ */
     .auth-heading {
       font-family: 'Playfair Display', serif;
       font-size: 21px;
@@ -169,10 +183,13 @@ const firebaseConfig = {
       transition: opacity 0.3s;
     }
 
-    /* 로그인 패널 */
+    /* ══════════════════════════════════
+       LOGIN PANEL
+    ══════════════════════════════════ */
     .login-panel { }
     .login-panel.hidden { display: none; }
 
+    /* Google Sign-In Button */
     .google-btn {
       width: 100%;
       display: flex;
@@ -215,6 +232,7 @@ const firebaseConfig = {
       flex-shrink: 0;
     }
 
+    /* 버튼 로딩 스피너 */
     .btn-spinner {
       width: 18px; height: 18px;
       border: 2px solid rgba(251,249,244,0.25);
@@ -225,6 +243,7 @@ const firebaseConfig = {
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
+    /* 에러 메시지 */
     .err-box {
       display: none;
       margin-top: 14px;
@@ -240,6 +259,7 @@ const firebaseConfig = {
 
     .err-box.visible { display: block; }
 
+    /* 약관 안내 */
     .legal-note {
       margin-top: 22px;
       font-size: 10.5px;
@@ -249,7 +269,9 @@ const firebaseConfig = {
       letter-spacing: 0.02em;
     }
 
-    /* 로그인 후 패널 */
+    /* ══════════════════════════════════
+       USER PANEL (로그인 후)
+    ══════════════════════════════════ */
     .user-panel { display: none; }
     .user-panel.visible { display: block; }
 
@@ -302,6 +324,7 @@ const firebaseConfig = {
       color: var(--green);
     }
 
+    /* 액션 버튼들 */
     .action-stack { display: flex; flex-direction: column; gap: 10px; }
 
     .action-btn {
@@ -334,6 +357,9 @@ const firebaseConfig = {
       color: var(--muted);
     }
 
+    /* ══════════════════════════════════
+       BACK LINK
+    ══════════════════════════════════ */
     .back-link {
       display: block;
       text-align: center;
@@ -346,19 +372,43 @@ const firebaseConfig = {
     }
 
     .back-link:hover { color: var(--ivory); }
+
+    /* ══════════════════════════════════
+       DIVIDER
+    ══════════════════════════════════ */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 24px 0;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(91,14,27,0.28);
+    }
+
+    .divider span {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: rgba(122,154,181,0.5);
+      text-transform: uppercase;
+    }
   </style>
 </head>
 
 <body>
   <div class="auth-wrap">
 
-    <!-- 브랜드 헤더 -->
+    <!-- ① 브랜드 헤더 -->
     <div class="brand-header">
       <div class="brand-wordmark">TAERIJAY<span class="brand-plus">+</span></div>
       <div class="brand-tagline">Republic of Korea · Premium Access</div>
     </div>
 
-    <!-- 인증 카드 -->
+    <!-- ② 인증 카드 -->
     <div class="auth-card">
 
       <!-- 상태 배지 -->
@@ -373,10 +423,11 @@ const firebaseConfig = {
         Sign in with your Google account to unlock exclusive Korea travel intelligence.
       </div>
 
-      <!-- 로그인 전 패널 -->
+      <!-- ─ 로그인 전 패널 ─ -->
       <div class="login-panel" id="loginPanel">
 
         <button class="google-btn" id="googleBtn">
+          <!-- Google 로고 SVG -->
           <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
             <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -393,9 +444,9 @@ const firebaseConfig = {
           No password required · Google account only · 🇰🇷
         </div>
 
-      </div>
+      </div><!-- /login-panel -->
 
-      <!-- 로그인 후 패널 -->
+      <!-- ─ 로그인 후 패널 ─ -->
       <div class="user-panel" id="userPanel">
 
         <div class="user-ident">
@@ -416,15 +467,16 @@ const firebaseConfig = {
           </button>
         </div>
 
-      </div>
+      </div><!-- /user-panel -->
 
-    </div>
+    </div><!-- /auth-card -->
 
     <a href="/" class="back-link">← Back to TAERIJAY+</a>
 
-  </div>
+  </div><!-- /auth-wrap -->
 
-  <!-- Firebase SDK -->
+
+  <!-- ══ Firebase SDK (CDN compat v10) ══ -->
   <script is:inline define:vars={{ firebaseConfig }}>
     window.__TJ_FC__ = firebaseConfig;
   </script>
@@ -433,9 +485,10 @@ const firebaseConfig = {
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js" defer></script>
 
   <script is:inline>
-    document.addEventListener('DOMContentLoaded', async function () {
+    // defer 속성 때문에 DOMContentLoaded 이후 실행됨
+    document.addEventListener('DOMContentLoaded', function () {
 
-      // Firebase 초기화
+      // ── Firebase 초기화 ──
       if (!firebase.apps.length) {
         firebase.initializeApp(window.__TJ_FC__);
       }
@@ -443,7 +496,7 @@ const firebaseConfig = {
       const provider = new firebase.auth.GoogleAuthProvider();
       provider.setCustomParameters({ prompt: 'select_account' });
 
-      // DOM 참조
+      // ── DOM 참조 ──
       const statusBadge  = document.getElementById('statusBadge');
       const statusDot    = document.getElementById('statusDot');
       const statusText   = document.getElementById('statusText');
@@ -459,27 +512,32 @@ const firebaseConfig = {
       const enterBtn     = document.getElementById('enterBtn');
       const signOutBtn   = document.getElementById('signOutBtn');
 
+      // 리다이렉트 대상 파라미터
       const redirectTo = new URLSearchParams(window.location.search).get('redirect') || '/';
 
-      // 인증 상태 감지
+      // ── 인증 상태 감지 ──
       auth.onAuthStateChanged(function (user) {
         if (user) {
-          // 로그인 완료
+          // ▶ 로그인 완료
           sessionStorage.setItem('user_email', user.email || '');
           sessionStorage.setItem('user_name',  user.displayName || '');
           sessionStorage.setItem('user_photo', user.photoURL || '');
           sessionStorage.setItem('user_uid',   user.uid || '');
 
+          // 상태 배지 업데이트
           statusDot.className = 'status-dot ok';
           statusBadge.className = 'status-badge active';
           statusText.textContent = 'Session verified · Access granted';
 
+          // 헤딩 변경
           authHeading.textContent = 'Welcome back';
           authBody.textContent = 'Your TAERIJAY+ access is active.';
 
+          // 패널 토글
           loginPanel.classList.add('hidden');
           userPanel.classList.add('visible');
 
+          // 유저 정보 표시
           if (user.photoURL) {
             userAvatar.src = user.photoURL;
             userAvatar.style.display = 'block';
@@ -488,7 +546,7 @@ const firebaseConfig = {
           userEmailDisplay.textContent = user.email || 'Unknown';
 
         } else {
-          // 비로그인
+          // ▶ 비로그인
           sessionStorage.removeItem('user_email');
           sessionStorage.removeItem('user_name');
           sessionStorage.removeItem('user_photo');
@@ -506,7 +564,7 @@ const firebaseConfig = {
         }
       });
 
-      // Google 로그인 버튼
+      // ── Google 로그인 버튼 ──
       googleBtn.addEventListener('click', async function () {
         googleBtn.disabled = true;
         googleBtn.innerHTML = '<div class="btn-spinner"></div>';
@@ -514,18 +572,20 @@ const firebaseConfig = {
 
         try {
           await auth.signInWithPopup(provider);
+          // onAuthStateChanged가 상태 처리
         } catch (err) {
           let msg = 'Sign-in failed. Please try again.';
           if (err.code === 'auth/popup-closed-by-user')
             msg = 'Sign-in cancelled. Please try again.';
           if (err.code === 'auth/popup-blocked')
-            msg = '⚠️ Pop-up blocked by your browser. Please allow pop-ups.';
+            msg = '⚠️ Pop-up blocked by your browser. Please allow pop-ups for this site.';
           if (err.code === 'auth/network-request-failed')
             msg = '⚠️ Network error. Please check your connection.';
 
           errBox.textContent = msg;
           errBox.classList.add('visible');
 
+          // 버튼 복원
           googleBtn.disabled = false;
           googleBtn.innerHTML = `
             <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -539,12 +599,12 @@ const firebaseConfig = {
         }
       });
 
-      // 채널 허브 진입
+      // ── 채널 허브 진입 ──
       enterBtn.addEventListener('click', function () {
         window.location.href = redirectTo;
       });
 
-      // 로그아웃
+      // ── 로그아웃 ──
       signOutBtn.addEventListener('click', async function () {
         signOutBtn.textContent = 'Signing out...';
         signOutBtn.disabled = true;
@@ -557,7 +617,7 @@ const firebaseConfig = {
         }
       });
 
-    });
+    }); // DOMContentLoaded
   </script>
 
 </body>
