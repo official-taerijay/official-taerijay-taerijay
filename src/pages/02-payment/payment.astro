@@ -39,7 +39,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       --muted:    #7A9AB5;
       --green:    #00C97A;
       --red:      #E1261C;
-      /* 채널 컬러 — JS로 동적 설정 */
       --accent:   #F16B24;
     }
 
@@ -61,7 +60,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       max-width: 440px;
     }
 
-    /* ── 브랜드 ── */
     .brand-header {
       text-align: center;
       margin-bottom: 32px;
@@ -74,7 +72,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       letter-spacing: 0.1em;
     }
 
-    .brand-plus { color: var(--burgundy); font-style: italic; }
+    .brand-plus { color: #ff3344; font-style: italic; }
 
     .brand-tagline {
       margin-top: 6px;
@@ -85,7 +83,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       color: var(--muted);
     }
 
-    /* ── 결제 카드 ── */
     .pay-card {
       border: 1px solid var(--burgundy);
       border-radius: 3px;
@@ -93,7 +90,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       background: linear-gradient(160deg, rgba(255,255,255,0.025) 0%, rgba(255,255,255,0.005) 100%);
     }
 
-    /* 채널 컬러 상단 바 */
     .channel-bar {
       height: 3px;
       background: var(--accent);
@@ -102,7 +98,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 
     .pay-body { padding: 28px 24px 24px; }
 
-    /* Paddle 뱃지 */
     .secure-badge {
       display: inline-flex;
       align-items: center;
@@ -126,7 +121,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       box-shadow: 0 0 6px rgba(0,201,122,0.7);
     }
 
-    /* 상품 정보 */
     .product-name {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
@@ -146,7 +140,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       margin-bottom: 20px;
     }
 
-    /* 가격 표시 */
     .price-row {
       display: flex;
       align-items: baseline;
@@ -177,14 +170,12 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       letter-spacing: 0.05em;
     }
 
-    /* 구분선 */
     .divider {
       height: 1px;
       background: rgba(91,14,27,0.3);
       margin: 20px 0;
     }
 
-    /* 혜택 리스트 */
     .benefit-list {
       list-style: none;
       display: flex;
@@ -205,7 +196,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
     .benefit-icon {
       width: 16px; height: 16px;
       border-radius: 50%;
-      background: rgba(var(--accent-rgb, 241,107,36), 0.15);
+      background: rgba(241,107,36, 0.15);
       border: 1px solid var(--accent);
       display: flex;
       align-items: center;
@@ -216,7 +207,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       font-weight: 700;
     }
 
-    /* 사용자 정보 행 */
     .user-row {
       display: flex;
       align-items: center;
@@ -232,7 +222,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 
     .user-row span { color: var(--ivory); font-weight: 500; }
 
-    /* ── 결제 버튼 ── */
     .pay-btn {
       width: 100%;
       padding: 16px;
@@ -263,7 +252,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
     .pay-btn:active:not(:disabled) { transform: translateY(0); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
     .pay-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
-    /* 보안 안내 */
     .security-note {
       display: flex;
       align-items: center;
@@ -275,7 +263,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       letter-spacing: 0.04em;
     }
 
-    /* ── 에러/성공 상태 ── */
     .status-box {
       display: none;
       padding: 13px 16px;
@@ -300,7 +287,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       color: var(--green);
     }
 
-    /* ── 잘못된 key 에러 화면 ── */
     .invalid-screen {
       display: none;
       text-align: center;
@@ -310,7 +296,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
     .invalid-screen.visible { display: block; }
     .pay-card.invalid .pay-body { display: none; }
 
-    /* ── 스피너 ── */
     .btn-spinner {
       width: 18px; height: 18px;
       border: 2px solid rgba(255,255,255,0.3);
@@ -321,7 +306,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ── 하단 링크 ── */
     .back-link {
       display: block;
       text-align: center;
@@ -335,7 +319,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 
     .back-link:hover { color: var(--ivory); }
 
-    /* ── 환불 정책 안내 ── */
     .refund-note {
       margin-top: 18px;
       padding: 12px 14px;
@@ -353,28 +336,23 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 <body>
   <div class="pay-wrap">
 
-    <!-- 브랜드 헤더 -->
     <div class="brand-header">
       <div class="brand-wordmark">TAERIJAY<span class="brand-plus">+</span></div>
       <div class="brand-tagline">Secure Checkout · Powered by Paddle</div>
     </div>
 
-    <!-- 결제 카드 -->
     <div class="pay-card" id="payCard">
       <div class="channel-bar" id="channelBar"></div>
       <div class="pay-body">
 
-        <!-- 보안 뱃지 -->
         <div class="secure-badge">
           <div class="secure-dot"></div>
           Paddle Secure Partner
         </div>
 
-        <!-- 상품 정보 -->
         <div class="product-name" id="productName">Loading...</div>
         <div class="product-tier" id="productTier">Verifying...</div>
 
-        <!-- 가격 -->
         <div class="price-row">
           <span class="price-currency">$</span>
           <span class="price-amount" id="priceAmount">—</span>
@@ -383,41 +361,34 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 
         <div class="divider"></div>
 
-        <!-- 혜택 -->
         <ul class="benefit-list" id="benefitList">
           <li><div class="benefit-icon">✓</div>Loading product details...</li>
         </ul>
 
-        <!-- 로그인 사용자 표시 -->
         <div class="user-row" id="userRow" style="display:none">
           🇰🇷 &nbsp;Billing to: <span id="userEmailShow">—</span>
         </div>
 
-        <!-- 결제 버튼 -->
         <button class="pay-btn" id="payBtn" disabled>
           Proceed to Purchase
         </button>
 
-        <!-- 보안 안내 -->
         <div class="security-note">
           🔒 &nbsp;256-bit SSL · Paddle handles all payment processing
         </div>
 
-        <!-- 상태 메시지 -->
         <div class="status-box" id="statusBox"></div>
 
-      </div><!-- /pay-body -->
+      </div>
 
-      <!-- 잘못된 key -->
       <div class="invalid-screen" id="invalidScreen">
         <div style="font-size:32px;margin-bottom:12px;">⚠️</div>
         <div style="font-family:'Playfair Display',serif;font-size:18px;margin-bottom:8px;">Invalid Product</div>
         <div style="font-size:13px;color:var(--muted);margin-bottom:20px;">The selected product could not be found.</div>
         <a href="/" style="color:var(--accent);font-size:13px;text-decoration:none;letter-spacing:0.05em;">← Return to TAERIJAY+</a>
       </div>
-    </div><!-- /pay-card -->
+    </div>
 
-    <!-- 환불 정책 -->
     <div class="refund-note">
       ⚠️ Digital content — no refunds after purchase, except duplicate payments.<br>
       By purchasing you agree to our Terms of Service &amp; Refund Policy.
@@ -425,38 +396,26 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 
     <a href="/" class="back-link">← Back to TAERIJAY+</a>
 
-  </div><!-- /pay-wrap -->
+  </div>
 
-
-  <!-- ── Paddle.js v2 ── -->
+  <!-- ── Paddle.js v2 CDN 로드 ── -->
   <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 
-  <!-- ── 환경변수 주입 ── -->
-  <script is:inline define:vars={{ paddleToken }}>
+  <!-- ── 빌드 컴파일 환경변수 동기화 주입 (is:inline 버그 완전 격리소각) ── -->
+  <script define:vars={{ paddleToken }}>
     window.__TJ_PADDLE__ = paddleToken;
   </script>
 
-  <!-- ── 메인 로직 ── -->
+  <!-- ── 메인 런타임 엔진 로직 ── -->
   <script is:inline>
-
-    // ══════════════════════════════════════════════
-    // PRICE MAP — Paddle Price ID 전체 매핑
-    // ══════════════════════════════════════════════
     const PRICE_MAP = {
-
-      // ── Single · Basic ($19.99) ──
       protocol_basic: {
         priceId:  'pri_01kqxyx1fecx184qt7q4dbr3a3',
         label:    'taerijay+ protocol',
         tier:     'Basic Tier',
         price:    19.99,
         accent:   '#F16B24',
-        benefits: [
-          '1년 무제한 protocol 채널 열람',
-          '공항·세관·대중교통 핵심 규약 데이터베이스',
-          '실시간 업데이트 정보 상시 열람',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 protocol 채널 열람', '공항·세관·대중교통 핵심 규약 데이터베이스', '실시간 업데이트 정보 상시 열람', '1 ID · 1 디바이스 전용']
       },
       mini_basic: {
         priceId:  'pri_01kqxz3fghe6qsj5kh0vvjw24w',
@@ -464,12 +423,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Basic Tier',
         price:    19.99,
         accent:   '#FBF9F4',
-        benefits: [
-          '1년 무제한 mini 채널 열람',
-          '거점 도시별 최적 동선 가이드',
-          '큐레이션 여행 코스 전체 공개',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 mini 채널 열람', '거점 도시별 최적 동선 가이드', '큐레이션 여행 코스 전체 공개', '1 ID · 1 디바이스 전용']
       },
       daiso_basic: {
         priceId:  'pri_01kqxz5yjv0w5pcyt2wwft4gar',
@@ -477,12 +431,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Basic Tier',
         price:    19.99,
         accent:   '#E1261C',
-        benefits: [
-          '1년 무제한 daiso 채널 열람',
-          '다이소 뷰티 대란템 실시간 DB',
-          '매장별 재고·위치 정보 제공',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 daiso 채널 열람', '다이소 뷰티 대란템 실시간 DB', '매장별 재고·위치 정보 제공', '1 ID · 1 디바이스 전용']
       },
       olive_basic: {
         priceId:  'pri_01kxv7ba8msb3j7h7rtsj1hx59',
@@ -490,12 +439,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Basic Tier',
         price:    19.99,
         accent:   '#6F8B2E',
-        benefits: [
-          '1년 무제한 oliveyoung 채널 열람',
-          'MZ 스킨케어 트렌드 DB 전체 열람',
-          'Tax-Free 환급 가능 여부 표시',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 oliveyoung 채널 열람', 'MZ 스킨케어 트렌드 DB 전체 열람', 'Tax-Free 환급 가능 여부 표시', '1 ID · 1 디바이스 전용']
       },
       emart_basic: {
         priceId:  'pri_01kxv7je3cb9s8pj31yyxwfeme',
@@ -503,12 +447,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Basic Tier',
         price:    19.99,
         accent:   '#FFDD00',
-        benefits: [
-          '1년 무제한 emart 채널 열람',
-          '이마트/트레이더스 쇼핑 스펙 DB',
-          '대형마트 의무휴업일 ⚠️ 경고 인덱스',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 emart 채널 열람', '이마트/트레이더스 쇼핑 스펙 DB', '대형마트 의무휴업일 ⚠️ 경고 인덱스', '1 ID · 1 디바이스 전용']
       },
       cvs_basic: {
         priceId:  'pri_01kxv7pmea213szg7ejdnvx23t',
@@ -516,27 +455,15 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Basic Tier',
         price:    19.99,
         accent:   '#A14D7C',
-        benefits: [
-          '1년 무제한 convenience 채널 열람',
-          '24시 편의점 독점 PB 상품 조합 가이드',
-          '편의점별 꿀조합 최적 동선 제공',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 convenience 채널 열람', '24시 편의점 독점 PB 상품 조합 가이드', '편의점별 꿀조합 최적 동선 제공', '1 ID · 1 디바이스 전용']
       },
-
-      // ── Single · Standard ($29.99) ──
       protocol_standard: {
         priceId:  'pri_01kxyjw7rxvbgm5pfcx2bqt6a0',
         label:    'taerijay+ protocol',
         tier:     'Standard Tier',
         price:    29.99,
         accent:   '#F16B24',
-        benefits: [
-          '1년 무제한 protocol 채널 열람',
-          'Basic 포함 + 심화 규약 데이터 전체 공개',
-          '신규 규약 업데이트 우선 열람 권한',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 protocol 채널 열람', 'Basic 포함 + 심화 규약 데이터 전체 공개', '신규 규약 업데이트 우선 열람 권한', '1 ID · 1 디바이스 전용']
       },
       mini_standard: {
         priceId:  'pri_01kxyk2mnc25zknae2wnm31bcw',
@@ -544,12 +471,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Standard Tier',
         price:    29.99,
         accent:   '#FBF9F4',
-        benefits: [
-          '1년 무제한 mini 채널 열람',
-          'Basic 포함 + 심화 코스 전체 공개',
-          '숨겨진 로컬 스팟 우선 열람',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 mini 채널 열람', 'Basic 포함 + 심화 코스 전체 공개', '숨겨진 로컬 스팟 우선 열람', '1 ID · 1 디바이스 전용']
       },
       daiso_standard: {
         priceId:  'pri_01kxyk6rmhden7tw7k8qj4464d',
@@ -557,12 +479,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Standard Tier',
         price:    29.99,
         accent:   '#E1261C',
-        benefits: [
-          '1년 무제한 daiso 채널 열람',
-          'Basic 포함 + 전국 주요 매장 전체 DB',
-          '신상품 알림 우선 열람',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 daiso 채널 열람', 'Basic 포함 + 전국 주요 매장 전체 DB', '신상품 알림 우선 열람', '1 ID · 1 디바이스 전용']
       },
       olive_standard: {
         priceId:  'pri_01kxykabv1mvtr31pjahgxsct5',
@@ -570,12 +487,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Standard Tier',
         price:    29.99,
         accent:   '#6F8B2E',
-        benefits: [
-          '1년 무제한 oliveyoung 채널 열람',
-          'Basic 포함 + 할인/프로모션 전략 가이드',
-          '세일 캘린더 우선 열람',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 oliveyoung 채널 열람', 'Basic 포함 + 할인/프로모션 전략 가이드', '세일 캘린더 우선 열람', '1 ID · 1 디바이스 전용']
       },
       emart_standard: {
         priceId:  'pri_01kxykf9p29z6w15fecgk642dy',
@@ -583,12 +495,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Standard Tier',
         price:    29.99,
         accent:   '#FFDD00',
-        benefits: [
-          '1년 무제한 emart 채널 열람',
-          'Basic 포함 + 전국 지점 전체 DB',
-          '특가 이벤트 우선 열람',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 emart 채널 열람', 'Basic 포함 + 전국 지점 전체 DB', '특가 이벤트 우선 열람', '1 ID · 1 디바이스 전용']
       },
       cvs_standard: {
         priceId:  'pri_01kxykjvzjsbqe7gsq74hf7tbc',
@@ -596,27 +503,15 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Standard Tier',
         price:    29.99,
         accent:   '#A14D7C',
-        benefits: [
-          '1년 무제한 convenience 채널 열람',
-          'Basic 포함 + 브랜드 비교 가이드 전체 공개',
-          '신상 PB 우선 열람',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 convenience 채널 열람', 'Basic 포함 + 브랜드 비교 가이드 전체 공개', '신상 PB 우선 열람', '1 ID · 1 디바이스 전용']
       },
-
-      // ── Single · Pro ($39.99) ──
       protocol_pro: {
         priceId:  'pri_01kxykpqktg5a5q7sz6e9wbxxk',
         label:    'taerijay+ protocol',
         tier:     'Pro Tier',
         price:    39.99,
         accent:   '#F16B24',
-        benefits: [
-          '1년 무제한 protocol 채널 전체 열람',
-          'Standard 포함 + 긴급 입국 규약 전용 데이터',
-          '정책 변경 실시간 알림 최우선 적용',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 protocol 채널 전체 열람', 'Standard 포함 + 긴급 입국 규약 전용 데이터', '정책 변경 실시간 알림 최우선 적용', '1 ID · 1 디바이스 전용']
       },
       mini_pro: {
         priceId:  'pri_01kxyktf615tcbce2h84q549yv',
@@ -624,12 +519,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Pro Tier',
         price:    39.99,
         accent:   '#FBF9F4',
-        benefits: [
-          '1년 무제한 mini 채널 전체 열람',
-          'Standard 포함 + 시즌별 특급 코스 전체 공개',
-          '월 10일·20일 신규 콘텐츠 우선 열람',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 mini 채널 전체 열람', 'Standard 포함 + 시즌별 특급 코스 전체 공개', '월 10일·20일 신규 콘텐츠 우선 열람', '1 ID · 1 디바이스 전용']
       },
       daiso_pro: {
         priceId:  'pri_01kxykytqx419t9hnknspte9kv',
@@ -637,12 +527,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Pro Tier',
         price:    39.99,
         accent:   '#E1261C',
-        benefits: [
-          '1년 무제한 daiso 채널 전체 열람',
-          'Standard 포함 + 전 SKU 오리지널 DB 공개',
-          '재고 소진 예측 인사이트 우선 제공',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 daiso 채널 전체 열람', 'Standard 포함 + 전 SKU 오리지널 DB 공개', '재고 소진 예측 인사이트 우선 제공', '1 ID · 1 디바이스 전용']
       },
       olive_pro: {
         priceId:  'pri_01kxym3cvmg277ew60m55jpgpf',
@@ -650,12 +535,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Pro Tier',
         price:    39.99,
         accent:   '#6F8B2E',
-        benefits: [
-          '1년 무제한 oliveyoung 채널 전체 열람',
-          'Standard 포함 + 브랜드별 전략 심층 가이드',
-          '멤버십 혜택 극대화 전략 공개',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 oliveyoung 채널 전체 열람', 'Standard 포함 + 브랜드별 전략 심층 가이드', '멤버십 혜택 극대화 전략 공개', '1 ID · 1 디바이스 전용']
       },
       emart_pro: {
         priceId:  'pri_01kxym74jbacx434ft1gp1h67h',
@@ -663,12 +543,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Pro Tier',
         price:    39.99,
         accent:   '#FFDD00',
-        benefits: [
-          '1년 무제한 emart 채널 전체 열람',
-          'Standard 포함 + 트레이더스 전용 심층 DB',
-          '대용량 가성비 분석 리포트 우선 제공',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 emart 채널 전체 열람', 'Standard 포함 + 트레이더스 전용 심층 DB', '대용량 가성비 분석 리포트 우선 제공', '1 ID · 1 디바이스 전용']
       },
       cvs_pro: {
         priceId:  'pri_01kxymc3g9hjq1rv28mb7nx0bb',
@@ -676,27 +551,15 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Pro Tier',
         price:    39.99,
         accent:   '#A14D7C',
-        benefits: [
-          '1년 무제한 convenience 채널 전체 열람',
-          'Standard 포함 + 야간 특화 꿀조합 전체 공개',
-          '지역별 한정 PB 독점 가이드 제공',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['1년 무제한 convenience 채널 전체 열람', 'Standard 포함 + 야간 특화 꿀조합 전체 공개', '지역별 한정 PB 독점 가이드 제공', '1 ID · 1 디바이스 전용']
       },
-
-      // ── Double ($34.99) ──
       protocol_mini: {
         priceId:  'pri_01kxyn9m5pv8rvk484z9b5gsdm',
         label:    'protocol × mini Double',
         tier:     'Double Pass',
         price:    34.99,
         accent:   '#F16B24',
-        benefits: [
-          'protocol + mini 두 채널 동시 이용',
-          '1년 무제한 — 두 채널 전체 DB 열람',
-          '공항 입국부터 여행 동선까지 통합 제공',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['protocol + mini 두 채널 동시 이용', '1년 무제한 — 두 채널 전체 DB 열람', '공항 입국부터 여행 동선까지 통합 제공', '1 ID · 1 디바이스 전용']
       },
       daiso_olive: {
         priceId:  'pri_01kxyndffbjb7h3wzq78hgzydr',
@@ -704,12 +567,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Double Pass',
         price:    34.99,
         accent:   '#E1261C',
-        benefits: [
-          'daiso + oliveyoung 두 채널 동시 이용',
-          '1년 무제한 — 뷰티·잡화 통합 DB 열람',
-          '품절 대란템 + 스킨케어 최강 조합 제공',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['daiso + oliveyoung 두 채널 동시 이용', '1년 무제한 — 뷰티·잡화 통합 DB 열람', '품절 대란템 + 스킨케어 최강 조합 제공', '1 ID · 1 디바이스 전용']
       },
       emart_cvs: {
         priceId:  'pri_01kxynk4awnhbc5b6x0p8mr28w',
@@ -717,33 +575,18 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Double Pass',
         price:    34.99,
         accent:   '#FFDD00',
-        benefits: [
-          'emart + convenience 두 채널 동시 이용',
-          '1년 무제한 — 대형마트·편의점 통합 DB 열람',
-          '실용 쇼핑 올인원 솔루션 제공',
-          '1 ID · 1 디바이스 전용',
-        ],
+        benefits: ['emart + convenience 두 채널 동시 이용', '1년 무제한 — 대형마트·편의점 통합 DB 열람', '실용 쇼핑 올인원 솔루션 제공', '1 ID · 1 디바이스 전용']
       },
-
-      // ── Total ($99.99) ──
       total: {
         priceId:  'pri_01kxynrmxggfrzymtp4721xyat',
         label:    'TAERIJAY ORIGINE TOTAL PASS',
         tier:     'Supreme Master',
         price:    99.99,
         accent:   '#D4AF37',
-        benefits: [
-          '전 독립 채널 (6개) 1년 무제한 완전 개방',
-          'protocol · mini · daiso · oliveyoung · emart · convenience',
-          '매월 신규 콘텐츠 최우선 열람 권한',
-          '1 ID · 1 디바이스 전용',
-        ],
-      },
+        benefits: ['전 독립 채널 (6개) 1년 무제한 완전 개방', 'protocol · mini · daiso · oliveyoung · emart · convenience', '매월 신규 콘텐츠 최우선 열람 권한', '1 ID · 1 디바이스 전용']
+      }
     };
 
-    // ══════════════════════════════════════════════
-    // DOM 초기화
-    // ══════════════════════════════════════════════
     const params    = new URLSearchParams(window.location.search);
     const key       = params.get('key') || '';
     const product   = PRICE_MAP[key];
@@ -760,88 +603,90 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
     const statusBox     = document.getElementById('statusBox');
     const invalidScreen = document.getElementById('invalidScreen');
 
-    // ── 잘못된 key 처리 ──
     if (!product) {
-      invalidScreen.classList.add('visible');
-      payCard.classList.add('invalid');
-
+      if (invalidScreen) invalidScreen.classList.add('visible');
+      if (payCard) payCard.classList.add('invalid');
     } else {
-      // ── 상품 정보 렌더링 ──
       document.documentElement.style.setProperty('--accent', product.accent);
-      channelBar.style.background = product.accent;
+      if (channelBar) channelBar.style.background = product.accent;
 
-      productName.textContent  = product.label;
-      productTier.textContent  = product.tier;
-      priceAmount.textContent  = product.price.toFixed(2).replace('.00', '').replace(/(\.\d{2})$/, '$1');
+      if (productName) productName.textContent = product.label;
+      if (productTier) productTier.textContent = product.tier;
 
-      // 가격 소수점 처리
-      priceAmount.textContent = product.price % 1 === 0
-        ? product.price.toString()
-        : product.price.toFixed(2);
+      if (priceAmount) {
+        priceAmount.textContent = product.price % 1 === 0
+          ? product.price.toString()
+          : product.price.toFixed(2);
+      }
 
-      // 혜택 리스트 렌더링
-      benefitList.innerHTML = product.benefits
-        .map(b => `<li><div class="benefit-icon">✓</div>${b}</li>`)
-        .join('');
+      if (benefitList) {
+        benefitList.innerHTML = product.benefits
+          .map(b => `<li><div class="benefit-icon">✓</div>${b}</li>`)
+          .join('');
+      }
 
-      // ── 로그인 상태 확인 ──
       const userEmail = sessionStorage.getItem('user_email');
 
       if (!userEmail) {
-        // 비로그인 → 인증 페이지로 리다이렉트
         const returnUrl = encodeURIComponent(window.location.href);
         window.location.href = `/01-auth/auth?redirect=${returnUrl}`;
-
       } else {
-        // 로그인 완료 → 사용자 정보 표시 및 버튼 활성화
-        userRow.style.display = 'flex';
-        userEmailShow.textContent = userEmail;
-        payBtn.disabled = false;
-        payBtn.textContent = `Activate · $${product.price.toFixed(2)} USD`;
+        if (userRow) userRow.style.display = 'flex';
+        if (userEmailShow) userEmailShow.textContent = userEmail;
+        if (payBtn) {
+          payBtn.disabled = false;
+          payBtn.textContent = `Activate · $${product.price.toFixed(2)} USD`;
+        }
       }
 
-      // ── Paddle 초기화 ──
-      Paddle.Initialize({ token: window.__TJ_PADDLE__ });
+      // Paddle Billing v2 스펙 동기화 초기화 (소문자 initialize 필수 사양)
+      if (typeof Paddle !== 'undefined') {
+        Paddle.initialize({ token: window.__TJ_PADDLE__ });
+      }
 
-      // ── 결제 버튼 ──
-      payBtn.addEventListener('click', function () {
+      payBtn?.addEventListener('click', function () {
         payBtn.disabled = true;
         payBtn.innerHTML = '<div class="btn-spinner"></div>&nbsp; Opening checkout...';
-        statusBox.className = 'status-box';
+        if (statusBox) statusBox.className = 'status-box';
 
-        const userEmail = sessionStorage.getItem('user_email');
+        const activeUserEmail = sessionStorage.getItem('user_email');
 
         Paddle.Checkout.open({
           items: [{ priceId: product.priceId, quantity: 1 }],
-          customer: { email: userEmail || undefined },
+          customer: { email: activeUserEmail || undefined },
           settings: {
             displayMode: 'overlay',
             theme: 'dark',
             locale: 'en',
             successUrl: '/?payment=success',
-            frameTarget: 'self',
+            frameTarget: 'self'
           },
           eventCallback: function (data) {
             if (data.name === 'checkout.completed') {
-              statusBox.className = 'status-box ok';
-              statusBox.textContent = '✓ Payment complete! Activating your access...';
+              if (statusBox) {
+                statusBox.className = 'status-box ok';
+                statusBox.textContent = '✓ Payment complete! Activating your access...';
+              }
               setTimeout(() => { window.location.href = '/'; }, 2000);
-
             } else if (data.name === 'checkout.closed') {
-              payBtn.disabled = false;
-              payBtn.textContent = `Activate · $${product.price.toFixed(2)} USD`;
-
+              if (payBtn) {
+                payBtn.disabled = false;
+                payBtn.textContent = `Activate · $${product.price.toFixed(2)} USD`;
+              }
             } else if (data.name === 'checkout.error') {
-              statusBox.className = 'status-box err';
-              statusBox.textContent = '⚠️ Checkout error. Please try again or contact support.';
-              payBtn.disabled = false;
-              payBtn.textContent = `Activate · $${product.price.toFixed(2)} USD`;
+              if (statusBox) {
+                statusBox.className = 'status-box err';
+                statusBox.textContent = '⚠️ Checkout error. Please try again or contact support.';
+              }
+              if (payBtn) {
+                payBtn.disabled = false;
+                payBtn.textContent = `Activate · $${product.price.toFixed(2)} USD`;
+              }
             }
-          },
+          }
         });
       });
     }
-
   </script>
 </body>
 </html>

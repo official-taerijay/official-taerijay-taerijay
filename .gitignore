@@ -1,13 +1,41 @@
-# Astro 컴파일 임시 파일 제외함
-node_modules
-dist
-.astro
+# ====================================================================
+# TAERIJAY+ PREMIUM SECURITY FILTER (.gitignore)
+# ====================================================================
 
-# VS Code 및 OS 환경 파일 제외함
+# ── 1. 핵심 보안 파일 및 환경 변수 차단 (절대 유출 금지) ──
+.env
+.env.local
+.env.production
+.env.development
+.env.*.local
+*.env
+
+# ── 2. Astro 및 빌드 파이프라인 임시 에셋 제외 ──
+node_modules/
+dist/
+.astro/
+.vercel/
+
+# ── 3. 시스템 및 에디터 (OS/VS Code) 찌꺼기 파일 차단 ──
 .vscode/
+.idea/
 .DS_Store
+Thumbs.db
 *.local
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# ── 4. 패키지 매니저 및 로그/디버그 리포트 차단 ──
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
+
+# ── 5. 로컬 의존성 잠금 파일 제외 (선택 사항: 협업 환경 빌드 꼬임 방지) ──
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

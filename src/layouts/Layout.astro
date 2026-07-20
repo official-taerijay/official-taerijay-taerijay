@@ -37,7 +37,7 @@ const {
       --burgundy:  #5B0E1B;
       --ivory:     #FBF9F4;
       --muted:     #7A9AB5;
-      --accent:    #F16B24; /* JS로 채널별 덮어씀 */
+      --accent:    #F16B24; /* 스크립트로 채널별 덮어씀 */
     }
 
     body {
@@ -58,8 +58,8 @@ const {
     }
 
     /* ══════════════
-       NAV
-    ══════════════ */
+        NAV
+     ══════════════ */
     .layout-nav {
       width: 100%;
       max-width: 480px;
@@ -87,7 +87,7 @@ const {
       flex-shrink: 0;
     }
 
-    .nav-logo-plus { color: var(--burgundy); font-style: italic; }
+    .nav-logo-plus { color: #ff3344; font-style: italic; }
 
     /* 채널 이름 뱃지 */
     .nav-channel-badge {
@@ -162,8 +162,8 @@ const {
     .nav-auth:hover { background: rgba(91,14,27,0.45); }
 
     /* ══════════════
-       MAIN SLOT
-    ══════════════ */
+        MAIN SLOT
+     ══════════════ */
     .layout-main {
       width: 100%;
       max-width: 480px;
@@ -172,8 +172,8 @@ const {
     }
 
     /* ══════════════
-       FOOTER
-    ══════════════ */
+        FOOTER
+     ══════════════ */
     .layout-footer {
       width: 100%;
       max-width: 480px;
@@ -226,12 +226,12 @@ const {
       line-height: 1.6;
     }
 
-    /* ── 언어 토글 대상 요소 ── */
-    [data-en] { }
+    /* ── 언어 토글 대상 엔진 스타일 규격 ── */
+    [data-en] { display: inline-block; }
     [data-ko] { display: none; }
 
     body.lang-ko [data-en] { display: none; }
-    body.lang-ko [data-ko] { display: revert; }
+    body.lang-ko [data-ko] { display: inline-block; }
   </style>
 </head>
 
@@ -277,31 +277,31 @@ const {
       <a href="/" class="footer-link" data-ko>홈</a>
 
       <button onclick="document.getElementById('modalTerms').classList.add('open')"
-        class="footer-link" style="background:none;border:none;cursor:pointer;"
+        class="footer-link" style="background:none;border:none;cursor:pointer;padding:0;"
         data-en>Terms of Service</button>
       <button onclick="document.getElementById('modalTerms').classList.add('open')"
-        class="footer-link" style="background:none;border:none;cursor:pointer;"
+        class="footer-link" style="background:none;border:none;cursor:pointer;padding:0;"
         data-ko>이용약관</button>
 
       <button onclick="document.getElementById('modalPrivacy').classList.add('open')"
-        class="footer-link" style="background:none;border:none;cursor:pointer;"
+        class="footer-link" style="background:none;border:none;cursor:pointer;padding:0;"
         data-en>Privacy Policy</button>
       <button onclick="document.getElementById('modalPrivacy').classList.add('open')"
-        class="footer-link" style="background:none;border:none;cursor:pointer;"
+        class="footer-link" style="background:none;border:none;cursor:pointer;padding:0;"
         data-ko>개인정보처리방침</button>
 
       <button onclick="document.getElementById('modalRefund').classList.add('open')"
-        class="footer-link" style="background:none;border:none;cursor:pointer;"
+        class="footer-link" style="background:none;border:none;cursor:pointer;padding:0;"
         data-en>Refund Policy</button>
       <button onclick="document.getElementById('modalRefund').classList.add('open')"
-        class="footer-link" style="background:none;border:none;cursor:pointer;"
+        class="footer-link" style="background:none;border:none;cursor:pointer;padding:0;"
         data-ko>환불정책</button>
 
       <button onclick="document.getElementById('modalBiz').classList.add('open')"
-        class="footer-link" style="background:none;border:none;cursor:pointer;"
+        class="footer-link" style="background:none;border:none;cursor:pointer;padding:0;"
         data-en>Business Info</button>
       <button onclick="document.getElementById('modalBiz').classList.add('open')"
-        class="footer-link" style="background:none;border:none;cursor:pointer;"
+        class="footer-link" style="background:none;border:none;cursor:pointer;padding:0;"
         data-ko>사업자정보</button>
     </div>
 
@@ -328,8 +328,8 @@ const {
 
 
   <!-- ════════════════════════
-       MODALS
-  ════════════════════════ -->
+        MODALS
+   ════════════════════════ -->
   <style>
     .modal-ov {
       display: none; position: fixed; inset: 0;
@@ -447,16 +447,15 @@ const {
 
 
   <!-- ════════════════════════
-       SCRIPTS
-  ════════════════════════ -->
-  <script is:inline define:vars={{ channelColor }}>
-    // 채널 accent 컬러 적용
+        SCRIPTS
+   ════════════════════════ -->
+  <script define:vars={{ channelColor }}>
+    // Astro 전용 CSS 환경변수 연동 아키텍처 (is:inline 버그 완전 소각)
     document.documentElement.style.setProperty('--accent', channelColor);
   </script>
 
   <script is:inline>
     (function () {
-
       // ── 로그인 상태 → 네비 버튼 ──
       const email  = sessionStorage.getItem('user_email');
       const authBtn = document.getElementById('navAuthBtn');
@@ -464,51 +463,41 @@ const {
         authBtn.textContent = 'My Account';
       }
 
-      // ── 언어 토글 ──
+      // ── 언어 토글 로직 엔진 ──
       const LANG_KEY = 'tj_lang';
       const toggle   = document.getElementById('langToggle');
       const buttons  = toggle ? toggle.querySelectorAll('.lang-btn') : [];
 
-      // 저장된 언어 or 자동 감지
-      function detectLang() {
-        const saved = localStorage.getItem(LANG_KEY);
-        if (saved === 'ko') return 'ko';
-        if (saved === 'en') return 'en';
-        // Auto: 브라우저 언어
+      function getBrowserLang() {
         const nav = (navigator.language || 'en').toLowerCase();
         return nav.startsWith('ko') ? 'ko' : 'en';
       }
 
-      function applyLang(lang) {
-        document.body.classList.toggle('lang-ko', lang === 'ko');
+      function applyLang(selectedOption) {
+        // 1. 실제 화면에 적용될 언어 계산 (auto면 브라우저 언어 추적)
+        const targetLang = selectedOption === 'auto' ? getBrowserLang() : selectedOption;
+        
+        // 2. body class 토글을 통해 언어에 맞는 텍스트 온오프 가동
+        document.body.classList.toggle('lang-ko', targetLang === 'ko');
+        
+        // 3. 버튼 활성화(active) UI 상태 동기화
         buttons.forEach(btn => {
-          btn.classList.toggle('active',
-            btn.dataset.lang === lang ||
-            (btn.dataset.lang === 'auto' && localStorage.getItem(LANG_KEY) === 'auto')
-          );
+          btn.classList.toggle('active', btn.dataset.lang === selectedOption);
         });
       }
 
-      // 초기 적용
-      const initLang = localStorage.getItem(LANG_KEY) === 'auto'
-        ? detectLang()
-        : (localStorage.getItem(LANG_KEY) || 'en');
-      applyLang(initLang);
+      // 초기 실행 구조 세팅
+      const savedSetting = localStorage.getItem(LANG_KEY) || 'en';
+      applyLang(savedSetting);
 
-      // 버튼 클릭
+      // 토글 버튼 이벤트 슛
       buttons.forEach(btn => {
         btn.addEventListener('click', function () {
           const chosen = this.dataset.lang;
           localStorage.setItem(LANG_KEY, chosen);
-          const effective = chosen === 'auto' ? detectLang() : chosen;
-          applyLang(effective);
-          // auto 버튼은 active 강제 표시
-          if (chosen === 'auto') {
-            buttons.forEach(b => b.classList.toggle('active', b.dataset.lang === 'auto'));
-          }
+          applyLang(chosen);
         });
       });
-
     })();
   </script>
 
