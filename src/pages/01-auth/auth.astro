@@ -1,92 +1,235 @@
-cat > ~/Desktop/taerijay-platform/src/pages/01-auth/auth.astro << 'EOF'
 ---
+const FIREBASE_API_KEY = "AIzaSyDohULKEyCcSi30UpbLJSwPwHJ0Vad8J5M";
+const FIREBASE_AUTH_DOMAIN = "taerijay-official.firebaseapp.com";
+const FIREBASE_PROJECT_ID = "taerijay-official";
 ---
 <!doctype html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>Access Gate | TAERIJAY</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=League+Spartan:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <title>TAERIJAY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=League+Spartan:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="page">
-    <div class="top-logo">
-      <span class="logo-text">TAERIJAY</span><span class="logo-plus">+</span>
-      <p class="logo-sub">REPUBLIC OF KOREA · PREMIUM ACCESS</p>
-    </div>
-    <div class="gate-card">
-      <div class="status-badge"><span class="status-dot"></span>NOT SIGNED IN</div>
-      <h1 class="gate-title">Access Gate</h1>
-      <p class="gate-desc">Sign in with your Google account to unlock exclusive Korea travel intelligence.</p>
-      <button id="google-btn" class="btn-google">
-        <svg class="g-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#EA4335" d="M24 9.5c3.14 0 5.95 1.08 8.17 2.84l6.1-6.1C34.46 3.05 29.52 1 24 1 14.82 1 7.07 6.55 3.96 14.36l7.09 5.51C12.79 14.04 17.99 9.5 24 9.5z"/>
-          <path fill="#4285F4" d="M46.53 24.5c0-1.55-.14-3.06-.4-4.5H24v8.52h12.69c-.56 2.96-2.22 5.47-4.72 7.15l7.27 5.64C43.42 37.51 46.53 31.44 46.53 24.5z"/>
-          <path fill="#FBBC05" d="M11.05 28.13A14.55 14.55 0 0 1 9.5 24c0-1.43.25-2.82.55-4.13l-7.09-5.51A23.97 23.97 0 0 0 0 24c0 3.88.93 7.55 2.55 10.82l8.5-6.69z"/>
-          <path fill="#34A853" d="M24 47c5.52 0 10.16-1.83 13.54-4.97l-7.27-5.64c-1.81 1.22-4.13 1.93-6.27 1.93-5.99 0-11.08-4.04-12.95-9.47l-8.5 6.69C7.25 42.04 15.06 47 24 47z"/>
+  <div id="splash" class="splash"><span class="splash-brand">TAERIJAY</span></div>
+  <div class="app">
+    <header class="header">
+      <a href="/" class="header-logo">TAERIJAY<span class="logo-plus">+</span></a>
+      <div class="header-right">
+        <div class="lang-group">
+          <button class="lang-btn active">EN</button>
+          <button class="lang-btn">한</button>
+          <button class="lang-btn">AUTO</button>
+        </div>
+        <button id="btn-signin" class="btn-signin">SIGN IN</button>
+        <button id="btn-signout" class="btn-signin" hidden>SIGN OUT</button>
+      </div>
+    </header>
+    <nav class="channel-nav">
+      <button class="channel-nav-toggle" onclick="toggleChannelMenu()">CHANNELS <span id="ch-icon">▼</span></button>
+      <div id="channel-menu" class="channel-menu" hidden>
+        <a href="/" class="ch-link ch-main">0. TAERIJAY</a>
+        <a href="/04-channels/01-entertainment" class="ch-link" style="color:#00E5FF">1. taerijay+entertainment</a>
+        <a href="/04-channels/02-protocol"      class="ch-link" style="color:#F16B24">2. taerijay+protocol</a>
+        <a href="/04-channels/03-mini"          class="ch-link" style="color:#e8e4dc">3. taerijay+mini</a>
+        <a href="/04-channels/04-daiso"         class="ch-link" style="color:#E1261C">4. taerijay+daiso</a>
+        <a href="/04-channels/05-oliveyoung"    class="ch-link" style="color:#6F8B2E">5. taerijay+oliveyoung</a>
+        <a href="/04-channels/06-emart"         class="ch-link" style="color:#FFDD00">6. taerijay+emart</a>
+        <a href="/04-channels/07-convenience"   class="ch-link" style="color:#A14D7C">7. taerijay+convenience</a>
+        <span class="ch-system">SYSTEM LIVE ACTIVE</span>
+      </div>
+    </nav>
+    <section class="hero">
+      <h1 class="hero-headline">태리재이와 함께하는 대한민국</h1>
+      <p class="hero-sub">TAERIJAY REPUBLIC OF KOREA</p>
+      <p class="hero-body">가장 트렌디한 대결형 매치업 정보 수립.<br/>오직 구독자에게만 열리는 실시간 데이터베이스 허브 가동.</p>
+      <div class="hero-icon-wrap">
+        <svg class="hero-icon" viewBox="0 0 320 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="140" cy="140" r="110" stroke="#FBF9F4" stroke-width="18"/>
+          <line x1="225" y1="225" x2="310" y2="355" stroke="#FBF9F4" stroke-width="22" stroke-linecap="round"/>
         </svg>
-        <span class="g-label">CONTINUE<br/>WITH GOOGLE</span>
-      </button>
-      <div id="error-box" class="error-box" hidden>Sign-in failed. Please try again.</div>
-      <p class="legal">By signing in, you agree to our Terms of Service &amp; Privacy Policy.<br/>No password required · Google account only</p>
-    </div>
-    <a href="/" class="back-link">← Back to TAERIJAY</a>
+      </div>
+    </section>
+    <section class="pricing">
+      <h2 class="section-label">PLANS</h2>
+      <p class="pricing-note">1년 1회 결제 · 자동 갱신 없음</p>
+      <div class="plan-list">
+        <div class="plan-card">
+          <div class="plan-head"><span class="plan-title">SINGLE</span><span class="plan-price">$19.99~</span></div>
+          <p class="plan-desc">채널 1개 선택 — Basic · Standard · Pro</p>
+          <div class="plan-channels">
+            <button class="ch-pill" style="--c:#F16B24" onclick="openPay('protocol')">protocol</button>
+            <button class="ch-pill" style="--c:#e8e4dc" onclick="openPay('mini')">mini</button>
+            <button class="ch-pill" style="--c:#E1261C" onclick="openPay('daiso')">daiso</button>
+            <button class="ch-pill" style="--c:#6F8B2E" onclick="openPay('oliveyoung')">oliveyoung</button>
+            <button class="ch-pill" style="--c:#FFDD00" onclick="openPay('emart')">emart</button>
+            <button class="ch-pill" style="--c:#A14D7C" onclick="openPay('convenience')">convenience</button>
+          </div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-head"><span class="plan-title">DOUBLE</span><span class="plan-price">$34.99</span></div>
+          <p class="plan-desc">채널 2개 묶음</p>
+          <div class="plan-channels">
+            <button class="ch-pill double-pill" onclick="openPay('protocol-mini')">protocol × mini</button>
+            <button class="ch-pill double-pill" onclick="openPay('daiso-olive')">daiso × oliveyoung</button>
+            <button class="ch-pill double-pill" onclick="openPay('emart-cvs')">emart × convenience</button>
+          </div>
+        </div>
+        <div class="plan-card plan-total">
+          <div class="plan-head"><span class="plan-title">ORIGINE TOTAL PASS</span><span class="plan-price">$99.99</span></div>
+          <p class="plan-desc">7개 채널 전체 + 신규 채널 자동 포함</p>
+          <button class="btn-total" onclick="openPay('total')">전체 패스 선택하기</button>
+        </div>
+      </div>
+    </section>
   </div>
-  <script>
+
+  <div id="auth-modal" class="modal-bg" hidden>
+    <div class="modal">
+      <button class="modal-x" id="modal-close-btn">×</button>
+      <div class="modal-brand">TAERIJAY<span style="color:#5B0E1B">+</span></div>
+      <p class="modal-sub">구글 계정으로 로그인하고<br/>전 채널 콘텐츠를 확인하세요</p>
+      <button class="btn-google" id="google-btn">
+        <svg width="20" height="20" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.84.86-3.06.86-2.35 0-4.34-1.59-5.05-3.72H.95v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.7A5.4 5.4 0 0 1 3.66 9c0-.59.1-1.17.29-1.7V4.97H.95A9 9 0 0 0 0 9c0 1.45.35 2.83.95 4.03l3-2.33z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .95 4.97l3 2.33C4.66 5.17 6.65 3.58 9 3.58z"/></svg>
+        Google로 로그인
+      </button>
+      <div id="login-error" style="display:none;margin-top:12px;color:#F16B24;font-size:.82rem;text-align:center;">로그인 실패. 다시 시도해주세요.</div>
+    </div>
+  </div>
+
+  <script type="module" define:vars={{ FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID }}>
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-    import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged }
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
       from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+
     const app = initializeApp({
-      apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
-      authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
-      projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
+      apiKey: FIREBASE_API_KEY,
+      authDomain: FIREBASE_AUTH_DOMAIN,
+      projectId: FIREBASE_PROJECT_ID,
     });
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
+
     onAuthStateChanged(auth, (user) => {
+      const si = document.getElementById('btn-signin');
+      const so = document.getElementById('btn-signout');
       if (user) {
         sessionStorage.setItem('user_email', user.email);
-        const redirect = sessionStorage.getItem('auth_redirect') || '/';
-        sessionStorage.removeItem('auth_redirect');
-        window.location.href = redirect;
+        if (si) si.hidden = true;
+        if (so) so.hidden = false;
+      } else {
+        sessionStorage.removeItem('user_email');
+        if (si) si.hidden = false;
+        if (so) so.hidden = true;
       }
     });
+
+    document.getElementById('btn-signin').addEventListener('click', () => {
+      document.getElementById('auth-modal').hidden = false;
+    });
+
+    document.getElementById('btn-signout').addEventListener('click', async () => {
+      await signOut(auth);
+      sessionStorage.removeItem('user_email');
+    });
+
+    document.getElementById('modal-close-btn').addEventListener('click', () => {
+      document.getElementById('auth-modal').hidden = true;
+    });
+
     document.getElementById('google-btn').addEventListener('click', async () => {
-      const err = document.getElementById('error-box');
-      err.hidden = true;
+      const err = document.getElementById('login-error');
+      err.style.display = 'none';
       try {
-        const r = await signInWithPopup(auth, provider);
-        sessionStorage.setItem('user_email', r.user.email);
-        const redirect = sessionStorage.getItem('auth_redirect') || '/';
-        sessionStorage.removeItem('auth_redirect');
-        window.location.href = redirect;
-      } catch(e) { console.error(e); err.hidden = false; }
+        const result = await signInWithPopup(auth, provider);
+        sessionStorage.setItem('user_email', result.user.email);
+        document.getElementById('auth-modal').hidden = true;
+      } catch(e) {
+        console.error(e);
+        err.style.display = 'block';
+      }
+    });
+
+    window.toggleChannelMenu = function() {
+      const m = document.getElementById('channel-menu');
+      const i = document.getElementById('ch-icon');
+      m.hidden = !m.hidden;
+      i.textContent = m.hidden ? '▼' : '×';
+    };
+
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+      });
+    });
+
+    window.openPay = function(ch) {
+      if (!sessionStorage.getItem('user_email')) {
+        document.getElementById('auth-modal').hidden = false;
+        return;
+      }
+      alert(ch + ' 결제 준비 중');
+    };
+
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const s = document.getElementById('splash');
+        s.style.opacity = '0';
+        setTimeout(() => s.remove(), 500);
+      }, 900);
     });
   </script>
+
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:#0A192F;--border:#5B0E1B;--fg:#FBF9F4;--f-display:'Playfair Display',serif;--f-body:'League Spartan',sans-serif}
+    :root{--bg:#0A192F;--border:#5B0E1B;--fg:#FBF9F4;--muted:#8b96a8;--dim:#6b7789;--f-display:'Playfair Display',serif;--f-body:'League Spartan',sans-serif}
     html,body{background:var(--bg);color:var(--fg);font-family:var(--f-body);min-height:100vh}
-    .page{max-width:480px;margin:0 auto;min-height:100vh;border-left:1px solid var(--border);border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:40px 24px 48px}
-    .top-logo{text-align:center;margin-bottom:36px}
-    .logo-text{font-family:var(--f-display);font-weight:900;font-size:2rem;letter-spacing:.06em}
-    .logo-plus{color:var(--border);font-size:2rem;font-weight:900}
-    .logo-sub{margin-top:8px;font-size:.7rem;letter-spacing:.14em;font-weight:600;color:#8b96a8}
-    .gate-card{width:100%;border:1px solid var(--border);border-radius:18px;padding:28px 24px 32px;background:#0f2240}
-    .status-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:.72rem;font-weight:700;letter-spacing:.08em;margin-bottom:24px}
-    .status-dot{width:7px;height:7px;border-radius:50%;background:var(--border)}
-    .gate-title{font-family:var(--f-display);font-weight:700;font-size:1.7rem;margin-bottom:12px}
-    .gate-desc{font-size:.88rem;line-height:1.65;color:#9aa5b5;margin-bottom:28px}
-    .btn-google{width:100%;display:flex;align-items:center;gap:20px;background:#3a0d1a;border:1px solid var(--border);border-radius:14px;padding:20px 24px;cursor:pointer;transition:background .2s}
-    .btn-google:hover{background:#4a1222}
-    .g-logo{width:64px;height:64px;flex-shrink:0}
-    .g-label{font-family:var(--f-body);font-weight:800;font-size:1.05rem;letter-spacing:.08em;color:var(--fg);line-height:1.3;text-align:left}
-    .error-box{margin-top:14px;padding:14px 18px;border:1px solid var(--border);border-radius:10px;color:#F16B24;font-size:.84rem;font-weight:600;text-align:center}
-    .legal{margin-top:20px;font-size:.72rem;color:#6b7789;line-height:1.7;text-align:center}
-    .back-link{margin-top:28px;font-size:.8rem;font-weight:600;color:#8b96a8;text-decoration:none}
-    .back-link:hover{color:var(--fg)}
+    .splash{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s ease}
+    .splash-brand{font-family:var(--f-display);font-weight:900;font-size:2.6rem;letter-spacing:.06em}
+    .app{max-width:480px;margin:0 auto;min-height:100vh;border-left:1px solid var(--border);border-right:1px solid var(--border)}
+    .header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100}
+    .header-logo{font-family:var(--f-display);font-weight:900;font-size:1.15rem;letter-spacing:.04em;color:var(--fg);text-decoration:none}
+    .logo-plus{color:var(--border)}
+    .header-right{display:flex;align-items:center;gap:10px}
+    .lang-group{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+    .lang-btn{background:transparent;border:none;color:var(--muted);font-family:var(--f-body);font-size:.72rem;font-weight:600;padding:5px 9px;cursor:pointer}
+    .lang-btn.active{background:var(--fg);color:var(--bg)}
+    .btn-signin{background:transparent;border:1px solid var(--fg);color:var(--fg);font-family:var(--f-body);font-size:.72rem;font-weight:700;letter-spacing:.06em;padding:6px 12px;border-radius:6px;cursor:pointer}
+    .channel-nav{padding:12px 20px;border-bottom:1px solid var(--border)}
+    .channel-nav-toggle{background:none;border:none;color:var(--fg);font-family:var(--f-body);font-weight:700;font-size:.8rem;letter-spacing:.1em;cursor:pointer}
+    .channel-menu{padding-top:10px;display:flex;flex-direction:column;gap:4px}
+    .ch-link{font-family:var(--f-body);font-size:.82rem;font-weight:500;text-decoration:none;padding:2px 0}
+    .ch-main{color:var(--fg)!important;font-weight:700}
+    .ch-system{margin-top:8px;font-size:.7rem;letter-spacing:.1em;color:var(--dim);font-weight:600}
+    .hero{padding:32px 20px 0}
+    .hero-headline{font-family:var(--f-display);font-weight:900;font-size:clamp(1.8rem,7vw,2.4rem);line-height:1.2;margin-bottom:16px}
+    .hero-sub{font-size:.8rem;letter-spacing:.12em;font-weight:600;color:var(--muted);margin-bottom:12px}
+    .hero-body{font-size:.9rem;line-height:1.7;color:var(--muted)}
+    .hero-icon-wrap{display:flex;justify-content:center;padding:24px 0 8px}
+    .hero-icon{width:min(280px,70vw);opacity:.15}
+    .pricing{padding:28px 20px 60px}
+    .section-label{font-size:.72rem;letter-spacing:.14em;font-weight:700;color:var(--dim);margin-bottom:4px}
+    .pricing-note{font-size:.74rem;color:var(--dim);margin-bottom:20px}
+    .plan-list{display:flex;flex-direction:column;gap:14px}
+    .plan-card{border:1px solid var(--border);border-radius:14px;padding:20px 18px;background:rgba(255,255,255,.02)}
+    .plan-total{border-color:#8B1A2A;background:rgba(91,14,27,.12)}
+    .plan-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+    .plan-title{font-family:var(--f-display);font-weight:700;font-size:1rem}
+    .plan-price{font-family:var(--f-display);font-weight:900;font-size:1.5rem}
+    .plan-desc{font-size:.78rem;color:var(--muted);margin-bottom:14px}
+    .plan-channels{display:flex;flex-wrap:wrap;gap:8px}
+    .ch-pill{border:1px solid var(--c,var(--border));color:var(--c,var(--fg));background:transparent;border-radius:20px;font-family:var(--f-body);font-size:.74rem;font-weight:600;padding:5px 12px;cursor:pointer}
+    .double-pill{color:var(--fg)!important;border-color:var(--border)!important}
+    .btn-total{width:100%;margin-top:4px;padding:13px;border:1px solid #8B1A2A;border-radius:10px;background:transparent;color:var(--fg);font-family:var(--f-body);font-weight:700;font-size:.88rem;cursor:pointer}
+    .modal-bg{position:fixed;inset:0;background:rgba(10,25,47,.88);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;z-index:999;padding:24px}
+    .modal{position:relative;width:100%;max-width:400px;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:36px 28px 28px;text-align:center}
+    .modal-x{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--fg);font-size:1.8rem;cursor:pointer;opacity:.8;line-height:1;z-index:10}
+    .modal-x:hover{opacity:1}
+    .modal-brand{font-family:var(--f-display);font-weight:900;font-size:1.4rem;margin-bottom:12px}
+    .modal-sub{font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:24px}
+    .btn-google{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--fg);color:var(--bg);border:none;border-radius:10px;padding:13px;font-family:var(--f-body);font-weight:700;font-size:.92rem;cursor:pointer}
   </style>
 </body>
 </html>
-EOF
