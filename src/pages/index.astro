@@ -1,4 +1,7 @@
 ---
+const FIREBASE_API_KEY = import.meta.env.PUBLIC_FIREBASE_API_KEY;
+const FIREBASE_AUTH_DOMAIN = import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN;
+const FIREBASE_PROJECT_ID = import.meta.env.PUBLIC_FIREBASE_PROJECT_ID;
 ---
 <!doctype html>
 <html lang="ko">
@@ -96,15 +99,16 @@
     </div>
   </div>
 
-  <script type="module">
+  <!-- 환경변수 → 클라이언트 전달 (frontmatter에서 읽어서 define:vars로 주입) -->
+  <script type="module" define:vars={{ FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID }}>
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
     import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
       from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
 
     const app = initializeApp({
-      apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
-      authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
-      projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
+      apiKey: FIREBASE_API_KEY,
+      authDomain: FIREBASE_AUTH_DOMAIN,
+      projectId: FIREBASE_PROJECT_ID,
     });
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
@@ -124,38 +128,50 @@
       }
     });
 
-    // SIGN IN 버튼
-    document.getElementById('btn-signin').addEventListener('click', () => {
-      document.getElementById('auth-modal').hidden = false;
-    });
+    // SIGN IN 버튼 (자동 오픈 없음, 클릭 시에만)
+    const signinBtn = document.getElementById('btn-signin');
+    if (signinBtn) {
+      signinBtn.addEventListener('click', () => {
+        document.getElementById('auth-modal').hidden = false;
+      });
+    }
 
     // SIGN OUT 버튼
-    document.getElementById('btn-signout').addEventListener('click', async () => {
-      await signOut(auth);
-      sessionStorage.removeItem('user_email');
-    });
+    const signoutBtn = document.getElementById('btn-signout');
+    if (signoutBtn) {
+      signoutBtn.addEventListener('click', async () => {
+        await signOut(auth);
+        sessionStorage.removeItem('user_email');
+      });
+    }
 
-    // 모달 닫기
-    document.getElementById('modal-close-btn').addEventListener('click', () => {
-      document.getElementById('auth-modal').hidden = true;
-    });
+    // 모달 닫기 (X 버튼)
+    const closeBtn = document.getElementById('modal-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        document.getElementById('auth-modal').hidden = true;
+      });
+    }
 
     // Google 로그인
-    document.getElementById('google-btn').addEventListener('click', async () => {
-      const err = document.getElementById('login-error');
-      err.style.display = 'none';
-      try {
-        const result = await signInWithPopup(auth, provider);
-        sessionStorage.setItem('user_email', result.user.email);
-        document.getElementById('auth-modal').hidden = true;
-      } catch(e) {
-        console.error(e);
-        err.style.display = 'block';
-      }
-    });
+    const googleBtn = document.getElementById('google-btn');
+    if (googleBtn) {
+      googleBtn.addEventListener('click', async () => {
+        const err = document.getElementById('login-error');
+        err.style.display = 'none';
+        try {
+          const result = await signInWithPopup(auth, provider);
+          sessionStorage.setItem('user_email', result.user.email);
+          document.getElementById('auth-modal').hidden = true;
+        } catch (e) {
+          console.error(e);
+          err.style.display = 'block';
+        }
+      });
+    }
 
-    // 채널 메뉴
-    window.toggleChannelMenu = function() {
+    // 채널 메뉴 토글
+    window.toggleChannelMenu = function () {
       const m = document.getElementById('channel-menu');
       const i = document.getElementById('ch-icon');
       m.hidden = !m.hidden;
@@ -163,28 +179,30 @@
     };
 
     // 언어 버튼
-    document.querySelectorAll('.lang-btn').forEach(b => {
+    document.querySelectorAll('.lang-btn').forEach((b) => {
       b.addEventListener('click', () => {
-        document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('active'));
+        document.querySelectorAll('.lang-btn').forEach((x) => x.classList.remove('active'));
         b.classList.add('active');
       });
     });
 
-    // 결제
-    window.openPay = function(ch) {
+    // 결제 진입 (로그인 안 되어 있으면 모달만 띄움 — 자동 오픈 아님)
+    window.openPay = function (ch) {
       if (!sessionStorage.getItem('user_email')) {
         document.getElementById('auth-modal').hidden = false;
         return;
       }
-      alert(ch + ' 결제 준비 중');
+      window.location.href = `/02-payment/payment?key=${ch}`;
     };
 
-    // 스플래시
+    // 스플래시 (DOM 로드 후 900ms 유지 → fade out)
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         const s = document.getElementById('splash');
-        s.style.opacity = '0';
-        setTimeout(() => s.remove(), 500);
+        if (s) {
+          s.style.opacity = '0';
+          setTimeout(() => s.remove(), 500);
+        }
       }, 900);
     });
   </script>
