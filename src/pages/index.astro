@@ -4,20 +4,75 @@ const FIREBASE_AUTH_DOMAIN = import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN;
 const FIREBASE_PROJECT_ID = import.meta.env.PUBLIC_FIREBASE_PROJECT_ID;
 
 const channels = [
-  { slug: 'entertainment', label: 'entertainment', color: '#00E5FF', icon: '01', desc: '엔터테인먼트 매치업 정보' },
-  { slug: 'protocol',      label: 'protocol',      color: '#F16B24', icon: '02', desc: '공항·세관·대중교통 규약' },
-  { slug: 'mini',          label: 'mini',          color: '#e8e4dc', icon: '03', desc: '큐레이션 여행 코스' },
-  { slug: 'daiso',         label: 'daiso',         color: '#E1261C', icon: '04', desc: '다이소 뷰티 대란템 DB' },
-  { slug: 'oliveyoung',    label: 'oliveyoung',    color: '#6F8B2E', icon: '05', desc: 'MZ 스킨케어 트렌드' },
-  { slug: 'emart',         label: 'emart',         color: '#FFDD00', icon: '06', desc: '이마트 쇼핑 스펙 DB' },
-  { slug: 'convenience',   label: 'convenience',   color: '#A14D7C', icon: '07', desc: '편의점 PB 꿀조합 가이드' },
+  { slug: 'entertainment', label: 'entertainment', color: '#00E5FF', desc: '엔터테인먼트 매치업 정보', free: true },
+  { slug: 'protocol',      label: 'protocol',      color: '#F16B24', desc: '공항·세관·대중교통 규약', free: false },
+  { slug: 'mini',          label: 'mini',          color: '#e8e4dc', desc: '큐레이션 여행 코스', free: false },
+  { slug: 'daiso',         label: 'daiso',         color: '#E1261C', desc: '다이소 뷰티 대란템 DB', free: false },
+  { slug: 'oliveyoung',    label: 'oliveyoung',    color: '#6F8B2E', desc: 'MZ 스킨케어 트렌드', free: false },
+  { slug: 'emart',         label: 'emart',         color: '#FFDD00', desc: '이마트 쇼핑 스펙 DB', free: false },
+  { slug: 'convenience',   label: 'convenience',   color: '#A14D7C', desc: '편의점 PB 꿀조합 가이드', free: false },
+];
+
+const languages = [
+  { code: 'ko', name: '한국어' },
+  { code: 'en', name: 'English' },
+  { code: 'ja', name: '日本語' },
+  { code: 'zh-CN', name: '简体中文' },
+  { code: 'zh-TW', name: '繁體中文' },
+  { code: 'zh-HK', name: '中文（香港）' },
+  { code: 'es', name: 'Español' },
+  { code: 'fr', name: 'Français' },
+  { code: 'de', name: 'Deutsch' },
+  { code: 'it', name: 'Italiano' },
+  { code: 'pt', name: 'Português' },
+  { code: 'pt-BR', name: 'Português (Brasil)' },
+  { code: 'ru', name: 'Русский' },
+  { code: 'ar', name: 'العربية' },
+  { code: 'hi', name: 'हिन्दी' },
+  { code: 'th', name: 'ไทย' },
+  { code: 'vi', name: 'Tiếng Việt' },
+  { code: 'id', name: 'Bahasa Indonesia' },
+  { code: 'ms', name: 'Bahasa Melayu' },
+  { code: 'tl', name: 'Filipino' },
+  { code: 'tr', name: 'Türkçe' },
+  { code: 'nl', name: 'Nederlands' },
+  { code: 'pl', name: 'Polski' },
+  { code: 'sv', name: 'Svenska' },
+  { code: 'nb', name: 'Norsk bokmål' },
+  { code: 'da', name: 'Dansk' },
+  { code: 'fi', name: 'Suomi' },
+  { code: 'el', name: 'Ελληνικά' },
+  { code: 'he', name: 'עברית' },
+  { code: 'cs', name: 'Čeština' },
+  { code: 'ro', name: 'Română' },
+  { code: 'hu', name: 'Magyar' },
+  { code: 'uk', name: 'Українська' },
+  { code: 'bg', name: 'Български' },
+  { code: 'sk', name: 'Slovenčina' },
+  { code: 'hr', name: 'Hrvatski' },
+  { code: 'sr', name: 'Српски' },
+  { code: 'sl', name: 'Slovenščina' },
+  { code: 'lt', name: 'Lietuvių' },
+  { code: 'lv', name: 'Latviešu' },
+  { code: 'et', name: 'Eesti' },
+  { code: 'ca', name: 'Català' },
+  { code: 'af', name: 'Afrikaans' },
+  { code: 'sw', name: 'Kiswahili' },
+  { code: 'bn', name: 'বাংলা' },
+  { code: 'ta', name: 'தமிழ்' },
+  { code: 'te', name: 'తెలుగు' },
+  { code: 'ur', name: 'اردو' },
+  { code: 'fa', name: 'فارسی' },
+  { code: 'az', name: 'azərbaycan' },
+  { code: 'bs', name: 'bosanski' },
+  { code: 'cy', name: 'Cymraeg' },
 ];
 ---
 <!doctype html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>TAERIJAY</title>
   <meta name="description" content="TAERIJAY — 검증된 한국 여행/라이프스타일 정보 스트리밍" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,14 +82,20 @@ const channels = [
 <body>
   <div id="splash" class="splash"><span class="splash-brand">TAERIJAY</span></div>
 
-  <!-- ══════════ 고정 헤더 ══════════ -->
   <header class="nav" id="nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo">TAERIJAY<span class="nav-plus">+</span></a>
       <div class="nav-right">
-        <div class="lang-group">
-          <button class="lang-btn active">EN</button>
-          <button class="lang-btn">한</button>
+        <div class="lang-dropdown">
+          <button class="lang-trigger" id="lang-trigger">
+            <span id="lang-current">한국어</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="lang-menu" id="lang-menu" hidden>
+            {languages.map((l) => (
+              <button class="lang-option" data-code={l.code} data-name={l.name}>{l.name}</button>
+            ))}
+          </div>
         </div>
         <button id="btn-signin" class="btn-pill">로그인</button>
         <button id="btn-signout" class="btn-pill" hidden>로그아웃</button>
@@ -43,69 +104,63 @@ const channels = [
   </header>
 
   <main>
-    <!-- ══════════ 히어로 — 풀블리드, 이미지 자리 ══════════ -->
     <section class="hero">
-      <div class="hero-bg" id="hero-bg"><!-- 히어로 배경 이미지 자리: 여기에 img 또는 background-image 교체 --></div>
+      <div class="hero-bg" id="hero-bg"></div>
       <div class="hero-scrim"></div>
       <div class="hero-content">
         <p class="hero-eyebrow">TAERIJAY REPUBLIC OF KOREA</p>
         <h1 class="hero-title">태리재이와<br/>함께하는 대한민국</h1>
         <p class="hero-sub">7개 채널, 하나의 구독.<br/>한국 여행·라이프스타일의 모든 순간을 한곳에서.</p>
         <div class="hero-cta-row">
-          <button class="btn-primary" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">지금 시작하기</button>
+          <button class="btn-primary" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">요금제 보기</button>
           <button class="btn-ghost" onclick="document.getElementById('channels').scrollIntoView({behavior:'smooth'})">채널 둘러보기</button>
         </div>
       </div>
     </section>
 
-    <!-- ══════════ 채널 = 시리즈 캐러셀 ══════════ -->
     <section class="rail-section" id="channels">
       <div class="rail-head">
         <h2 class="rail-title">채널 전체보기</h2>
-        <p class="rail-sub">시리즈처럼 골라보는 7개의 전문 채널</p>
+        <p class="rail-sub">목적에 맞춘 전문 채널, 필요한 것만 골라서 구독하세요</p>
       </div>
-      <div class="rail">
+      <div class="grid">
         {channels.map((ch) => (
-          <a href={`/04-channels/${ch.icon}-${ch.slug}`} class="poster" style={`--c:${ch.color}`}>
+          <a href={`/04-channels/${ch.slug}`} class="poster" style={`--c:${ch.color}`}>
             <div class="poster-art">
-              <span class="poster-num">{ch.icon}</span>
+              {ch.free && <span class="poster-badge">무료</span>}
               <span class="poster-mono">taerijay+</span>
               <span class="poster-name">{ch.label}</span>
             </div>
             <div class="poster-meta">
               <span class="poster-title">taerijay+{ch.label}</span>
               <span class="poster-desc">{ch.desc}</span>
+              <span class="poster-tag">{ch.free ? '전체 무료 이용' : '맛보기 무료 · 이후 요금제 이용'}</span>
             </div>
           </a>
         ))}
       </div>
     </section>
 
-    <!-- ══════════ 왜 TAERIJAY ══════════ -->
     <section class="feature-row">
       <div class="feature">
-        <span class="feature-num">01</span>
         <h3 class="feature-title">실시간 검증 DB</h3>
         <p class="feature-desc">현지 최신 정보만. 유효기간이 지난 정보는 즉시 삭제됩니다.</p>
       </div>
       <div class="feature">
-        <span class="feature-num">02</span>
-        <h3 class="feature-title">1회 결제, 2년 이용</h3>
-        <p class="feature-desc">구독 갱신 스트레스 없이, 결제 한 번으로 오래 씁니다.</p>
+        <h3 class="feature-title">필요한 채널만 구독</h3>
+        <p class="feature-desc">전체 결제 없이, 원하는 채널만 골라서 이용할 수 있습니다.</p>
       </div>
       <div class="feature">
-        <span class="feature-num">03</span>
         <h3 class="feature-title">채널별 전문화</h3>
         <p class="feature-desc">범용 정보가 아닌, 목적에 맞춘 채널별 심층 데이터.</p>
       </div>
     </section>
 
-    <!-- ══════════ 요금제 — 디즈니+식 3열 비교 ══════════ -->
     <section class="plans" id="plans">
       <div class="plans-head">
         <p class="plans-eyebrow">PRICING</p>
         <h2 class="plans-title">요금제 선택</h2>
-        <p class="plans-sub">1회 결제 · 자동 갱신 없음 · 2년 이용권</p>
+        <p class="plans-sub">entertainment 채널은 무료 · 나머지 채널은 맛보기 12개 무료 열람 후 요금제 결제</p>
       </div>
 
       <div class="plan-grid">
@@ -116,13 +171,14 @@ const channels = [
             <span class="plan-col-note">채널 1개 선택</span>
           </div>
           <ul class="plan-col-list">
-            <li>Basic · Standard · Pro 티어 선택</li>
-            <li>선택 채널 무제한 열람</li>
-            <li>1 ID · 1 디바이스</li>
+            <li>베이직 $19.99 — 1 ID · 1 디바이스 · 동시접속 1</li>
+            <li>스탠다드 $29.99 — 1 ID · 2 디바이스 · 동시접속 2</li>
+            <li>프로 $39.99 — 1 ID · 4 디바이스 · 동시접속 4</li>
+            <li class="plan-col-warn">기기·동시접속 초과 시 경고 후 접속 제한</li>
           </ul>
-          <div class="plan-col-pick" id="single-pick">
-            {channels.map((ch) => (
-              <button class="ch-pill" style={`--c:${ch.color}`} data-ch={ch.slug} onclick={`openPay('${ch.slug}_basic')`}>{ch.label}</button>
+          <div class="plan-col-pick">
+            {channels.filter(ch => !ch.free).map((ch) => (
+              <button class="ch-pill" style={`--c:${ch.color}`} onclick={`openPay('${ch.slug}_basic')`}>{ch.label}</button>
             ))}
           </div>
         </div>
@@ -136,8 +192,8 @@ const channels = [
           </div>
           <ul class="plan-col-list">
             <li>연관 채널 2개 동시 이용</li>
-            <li>단품 대비 약 12% 절약</li>
-            <li>1 ID · 1 디바이스</li>
+            <li>단품 대비 절약된 가격</li>
+            <li>1 ID · 1 디바이스 · 동시접속 1</li>
           </ul>
           <div class="plan-col-pick">
             <button class="ch-pill double-pill" onclick="openPay('protocol_mini')">protocol × mini</button>
@@ -149,12 +205,12 @@ const channels = [
         <div class="plan-col plan-col-gold">
           <span class="plan-col-badge plan-col-badge-gold">최대 혜택</span>
           <div class="plan-col-head">
-            <span class="plan-col-name">ORIGINE TOTAL</span>
+            <span class="plan-col-name">TOTAL</span>
             <span class="plan-col-price">$99.99</span>
-            <span class="plan-col-note">7개 채널 전체 + 신규 채널 자동 포함</span>
+            <span class="plan-col-note">유료 채널 6개 전체 + 신규 채널 자동 포함</span>
           </div>
           <ul class="plan-col-list">
-            <li>모든 채널 무제한 열람</li>
+            <li>모든 유료 채널 무제한 열람</li>
             <li>향후 출시 채널 자동 포함</li>
             <li>매월 신규 콘텐츠 최우선 열람</li>
           </ul>
@@ -164,7 +220,7 @@ const channels = [
     </section>
   </main>
 
-  <!-- ══════════ 로그인 모달 ══════════ -->
+  <!-- 로그인 모달 -->
   <div id="auth-modal" class="modal-bg" hidden>
     <div class="modal">
       <button class="modal-x" id="modal-close-btn">×</button>
@@ -174,7 +230,7 @@ const channels = [
         <svg width="20" height="20" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.84.86-3.06.86-2.35 0-4.34-1.59-5.05-3.72H.95v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.7A5.4 5.4 0 0 1 3.66 9c0-.59.1-1.17.29-1.7V4.97H.95A9 9 0 0 0 0 9c0 1.45.35 2.83.95 4.03l3-2.33z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .95 4.97l3 2.33C4.66 5.17 6.65 3.58 9 3.58z"/></svg>
         Google로 로그인
       </button>
-      <div id="login-error" style="display:none;margin-top:12px;color:#F16B24;font-size:.82rem;text-align:center;">로그인 실패. 다시 시도해주세요.</div>
+      <div id="login-error" class="login-error" hidden></div>
     </div>
   </div>
 
@@ -190,6 +246,8 @@ const channels = [
     });
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
+    // 항상 계정 선택 화면을 띄워 특정 세션 캐시 문제를 회피
+    provider.setCustomParameters({ prompt: 'select_account' });
 
     onAuthStateChanged(auth, (user) => {
       const si = document.getElementById('btn-signin');
@@ -206,7 +264,9 @@ const channels = [
     });
 
     const signinBtn = document.getElementById('btn-signin');
-    if (signinBtn) signinBtn.addEventListener('click', () => { document.getElementById('auth-modal').hidden = false; });
+    if (signinBtn) signinBtn.addEventListener('click', () => {
+      document.getElementById('auth-modal').hidden = false;
+    });
 
     const signoutBtn = document.getElementById('btn-signout');
     if (signoutBtn) signoutBtn.addEventListener('click', async () => {
@@ -215,19 +275,34 @@ const channels = [
     });
 
     const closeBtn = document.getElementById('modal-close-btn');
-    if (closeBtn) closeBtn.addEventListener('click', () => { document.getElementById('auth-modal').hidden = true; });
+    if (closeBtn) closeBtn.addEventListener('click', () => {
+      document.getElementById('auth-modal').hidden = true;
+      document.getElementById('login-error').hidden = true;
+    });
 
     const googleBtn = document.getElementById('google-btn');
     if (googleBtn) googleBtn.addEventListener('click', async () => {
       const err = document.getElementById('login-error');
-      err.style.display = 'none';
+      err.hidden = true;
+      googleBtn.disabled = true;
       try {
         const result = await signInWithPopup(auth, provider);
         sessionStorage.setItem('user_email', result.user.email);
         document.getElementById('auth-modal').hidden = true;
       } catch (e) {
-        console.error(e);
-        err.style.display = 'block';
+        console.error('Firebase Auth Error:', e.code, e.message);
+        err.hidden = false;
+        if (e.code === 'auth/unauthorized-domain') {
+          err.textContent = '이 도메인은 아직 로그인 허용 목록에 없습니다. (auth/unauthorized-domain)';
+        } else if (e.code === 'auth/popup-blocked') {
+          err.textContent = '팝업이 차단되었습니다. 브라우저의 팝업 차단을 해제해주세요.';
+        } else if (e.code === 'auth/popup-closed-by-user') {
+          err.textContent = '로그인 창이 닫혔습니다. 다시 시도해주세요.';
+        } else {
+          err.textContent = `로그인 실패: ${e.code || e.message}`;
+        }
+      } finally {
+        googleBtn.disabled = false;
       }
     });
 
@@ -245,7 +320,35 @@ const channels = [
       else nav.classList.remove('nav-scrolled');
     });
 
+    const langTrigger = document.getElementById('lang-trigger');
+    const langMenu = document.getElementById('lang-menu');
+    const langCurrent = document.getElementById('lang-current');
+
+    langTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langMenu.hidden = !langMenu.hidden;
+    });
+
+    document.querySelectorAll('.lang-option').forEach((opt) => {
+      opt.addEventListener('click', () => {
+        langCurrent.textContent = opt.dataset.name;
+        localStorage.setItem('taerijay_lang', opt.dataset.code);
+        langMenu.hidden = true;
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!langMenu.hidden && !e.target.closest('.lang-dropdown')) {
+        langMenu.hidden = true;
+      }
+    });
+
     window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('taerijay_lang');
+      if (saved) {
+        const opt = document.querySelector(`.lang-option[data-code="${saved}"]`);
+        if (opt) langCurrent.textContent = opt.dataset.name;
+      }
       setTimeout(() => {
         const s = document.getElementById('splash');
         if (s) { s.style.opacity = '0'; setTimeout(() => s.remove(), 500); }
@@ -256,126 +359,147 @@ const channels = [
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --bg:#0A192F;
-      --surface:#0F2240;
-      --border:#5B0E1B;
-      --ivory:#FBF9F4;
-      --muted:#8b96a8;
-      --dim:#5d6c82;
-      --gold:#D4AF37;
-      --f-display:'Playfair Display',serif;
-      --f-body:'League Spartan',sans-serif;
+      --bg:#0A192F;--border:#5B0E1B;--ivory:#FBF9F4;--muted:#8b96a8;--dim:#5d6c82;--gold:#D4AF37;
+      --f-display:'Playfair Display',serif;--f-body:'League Spartan',sans-serif;
+      --container: min(1200px, 92vw);
     }
+    html{-webkit-text-size-adjust:100%}
     html,body{background:var(--bg);color:var(--ivory);font-family:var(--f-body);min-height:100vh;overflow-x:hidden;scroll-behavior:smooth}
+    button{font:inherit}
 
     .splash{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s ease}
-    .splash-brand{font-family:var(--f-display);font-weight:900;font-size:2.6rem;letter-spacing:.06em}
+    .splash-brand{font-family:var(--f-display);font-weight:900;font-size:clamp(1.8rem,6vw,2.6rem);letter-spacing:.06em}
 
     .nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s ease,border-color .3s ease}
     .nav-scrolled{background:rgba(10,25,47,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(91,14,27,.4)}
-    .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:18px 28px}
-    .nav-logo{font-family:var(--f-display);font-weight:900;font-size:1.2rem;letter-spacing:.05em;color:var(--ivory);text-decoration:none}
+    .nav-inner{width:var(--container);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .nav-logo{font-family:var(--f-display);font-weight:900;font-size:clamp(1rem,3vw,1.2rem);letter-spacing:.05em;color:var(--ivory);text-decoration:none}
     .nav-plus{color:var(--gold)}
-    .nav-right{display:flex;align-items:center;gap:12px}
-    .lang-group{display:flex;border:1px solid rgba(255,255,255,.18);border-radius:6px;overflow:hidden}
-    .lang-btn{background:transparent;border:none;color:var(--muted);font-family:var(--f-body);font-size:.72rem;font-weight:600;padding:6px 10px;cursor:pointer}
-    .lang-btn.active{background:var(--ivory);color:var(--bg)}
-    .btn-pill{background:transparent;border:1px solid var(--ivory);color:var(--ivory);font-family:var(--f-body);font-size:.76rem;font-weight:700;letter-spacing:.03em;padding:8px 18px;border-radius:100px;cursor:pointer;transition:background .2s,color .2s}
+    .nav-right{display:flex;align-items:center;gap:10px}
+
+    .lang-dropdown{position:relative}
+    .lang-trigger{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--ivory);font-size:.76rem;font-weight:600;padding:7px 12px;border-radius:6px;cursor:pointer}
+    .lang-menu{position:absolute;top:calc(100% + 8px);right:0;background:#151f33;border:1px solid rgba(255,255,255,.12);border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,.5);max-height:320px;overflow-y:auto;min-width:180px;z-index:300}
+    .lang-option{display:block;width:100%;text-align:left;background:transparent;border:none;color:var(--ivory);font-size:.82rem;padding:10px 16px;cursor:pointer;transition:background .15s}
+    .lang-option:hover{background:rgba(255,255,255,.08)}
+
+    .btn-pill{background:transparent;border:1px solid var(--ivory);color:var(--ivory);font-family:var(--f-body);font-size:.76rem;font-weight:700;padding:8px 16px;border-radius:100px;cursor:pointer;transition:background .2s,color .2s}
     .btn-pill:hover{background:var(--ivory);color:var(--bg)}
 
-    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+    .hero{position:relative;min-height:92vh;min-height:92dvh;display:flex;align-items:center;overflow:hidden}
     .hero-bg{
       position:absolute;inset:0;
       background:
         radial-gradient(ellipse 90% 60% at 15% 20%, rgba(91,14,27,.55) 0%, transparent 60%),
         radial-gradient(ellipse 70% 50% at 85% 80%, rgba(212,175,55,.12) 0%, transparent 55%),
         linear-gradient(160deg, #0d1f3d 0%, #0A192F 55%, #060f1e 100%);
-      /* 실사 이미지로 교체시: background-image: url('/hero.jpg'); background-size: cover; background-position: center; */
     }
     .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,25,47,.2) 0%, rgba(10,25,47,.4) 55%, var(--bg) 100%)}
-    .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 28px;width:100%}
-    .hero-eyebrow{font-size:.8rem;letter-spacing:.22em;font-weight:700;color:var(--gold);margin-bottom:18px}
-    .hero-title{font-family:var(--f-display);font-weight:900;font-size:clamp(2.4rem,7vw,4.6rem);line-height:1.08;margin-bottom:22px;max-width:720px}
-    .hero-sub{font-size:1.02rem;line-height:1.7;color:var(--muted);max-width:480px;margin-bottom:36px}
-    .hero-cta-row{display:flex;gap:14px;flex-wrap:wrap}
-    .btn-primary{background:var(--ivory);color:var(--bg);border:none;border-radius:8px;padding:15px 32px;font-family:var(--f-body);font-weight:700;font-size:.95rem;cursor:pointer;transition:transform .15s,box-shadow .2s}
+    .hero-content{position:relative;z-index:2;width:var(--container);margin:0 auto}
+    .hero-eyebrow{font-size:clamp(.68rem,1.6vw,.8rem);letter-spacing:.2em;font-weight:700;color:var(--gold);margin-bottom:16px}
+    .hero-title{font-family:var(--f-display);font-weight:900;font-size:clamp(2rem,8vw,4.6rem);line-height:1.1;margin-bottom:20px;max-width:22ch}
+    .hero-sub{font-size:clamp(.88rem,2.2vw,1.02rem);line-height:1.7;color:var(--muted);max-width:38ch;margin-bottom:30px}
+    .hero-cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-primary{background:var(--ivory);color:var(--bg);border:none;border-radius:8px;padding:14px 28px;font-weight:700;font-size:.92rem;cursor:pointer;transition:transform .15s,box-shadow .2s}
     .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
-    .btn-ghost{background:rgba(255,255,255,.08);color:var(--ivory);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:15px 32px;font-family:var(--f-body);font-weight:700;font-size:.95rem;cursor:pointer;transition:background .2s}
+    .btn-ghost{background:rgba(255,255,255,.08);color:var(--ivory);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:14px 28px;font-weight:700;font-size:.92rem;cursor:pointer;transition:background .2s}
     .btn-ghost:hover{background:rgba(255,255,255,.16)}
 
-    .rail-section{padding:72px 0 20px;max-width:1200px;margin:0 auto}
-    .rail-head{padding:0 28px;margin-bottom:24px}
-    .rail-title{font-family:var(--f-display);font-weight:700;font-size:1.7rem;margin-bottom:6px}
+    .rail-section{padding:64px 0 20px;width:var(--container);margin:0 auto}
+    .rail-head{margin-bottom:24px}
+    .rail-title{font-family:var(--f-display);font-weight:700;font-size:clamp(1.3rem,3.6vw,1.7rem);margin-bottom:6px}
     .rail-sub{font-size:.85rem;color:var(--muted)}
-    .rail{display:flex;gap:16px;overflow-x:auto;padding:4px 28px 20px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
-    .rail::-webkit-scrollbar{height:6px}
-    .rail::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:10px}
-    .poster{flex:0 0 220px;scroll-snap-align:start;text-decoration:none;color:var(--ivory);display:block;transition:transform .25s ease}
-    .poster:hover{transform:translateY(-6px)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+    .poster{text-decoration:none;color:var(--ivory);display:block;transition:transform .25s ease}
+    .poster:hover{transform:translateY(-4px)}
     .poster-art{
-      position:relative;height:300px;border-radius:12px;overflow:hidden;
+      position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;
       background:linear-gradient(160deg, color-mix(in srgb, var(--c) 30%, var(--bg)) 0%, var(--bg) 75%);
       border:1px solid color-mix(in srgb, var(--c) 40%, transparent);
-      display:flex;flex-direction:column;justify-content:flex-end;padding:18px;
+      display:flex;flex-direction:column;justify-content:flex-end;padding:16px;
     }
-    .poster-num{position:absolute;top:14px;left:14px;font-family:var(--f-display);font-weight:900;font-size:1.3rem;color:color-mix(in srgb, var(--c) 70%, var(--ivory));opacity:.55}
-    .poster-mono{font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:2px}
-    .poster-name{font-family:var(--f-display);font-weight:700;font-size:1.35rem;color:var(--c)}
-    .poster-meta{padding-top:12px}
-    .poster-title{display:block;font-size:.86rem;font-weight:600;margin-bottom:3px}
-    .poster-desc{display:block;font-size:.76rem;color:var(--dim);line-height:1.5}
+    .poster-badge{position:absolute;top:12px;left:12px;background:var(--gold);color:var(--bg);font-size:.62rem;font-weight:800;letter-spacing:.04em;padding:4px 10px;border-radius:100px}
+    .poster-mono{font-size:.66rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:2px}
+    .poster-name{font-family:var(--f-display);font-weight:700;font-size:clamp(1.05rem,3vw,1.3rem);color:var(--c);word-break:break-word}
+    .poster-meta{padding-top:10px}
+    .poster-title{display:block;font-size:.84rem;font-weight:600;margin-bottom:3px}
+    .poster-desc{display:block;font-size:.74rem;color:var(--dim);line-height:1.5;margin-bottom:4px}
+    .poster-tag{display:block;font-size:.68rem;color:var(--gold);font-weight:600}
 
-    .feature-row{max-width:1200px;margin:60px auto 0;padding:40px 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;border-top:1px solid rgba(91,14,27,.35);border-bottom:1px solid rgba(91,14,27,.35)}
-    .feature-num{font-family:var(--f-display);font-weight:900;font-size:1rem;color:var(--gold);display:block;margin-bottom:10px}
-    .feature-title{font-family:var(--f-display);font-weight:700;font-size:1.1rem;margin-bottom:8px}
-    .feature-desc{font-size:.82rem;color:var(--muted);line-height:1.6}
+    .feature-row{width:var(--container);margin:56px auto 0;padding:36px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;border-top:1px solid rgba(91,14,27,.35);border-bottom:1px solid rgba(91,14,27,.35)}
+    .feature-title{font-family:var(--f-display);font-weight:700;font-size:clamp(1rem,2.6vw,1.1rem);margin-bottom:8px}
+    .feature-desc{font-size:.8rem;color:var(--muted);line-height:1.6}
 
-    .plans{max-width:1200px;margin:0 auto;padding:80px 28px 100px}
-    .plans-head{text-align:center;margin-bottom:44px}
-    .plans-eyebrow{font-size:.72rem;letter-spacing:.2em;font-weight:700;color:var(--gold);margin-bottom:10px}
-    .plans-title{font-family:var(--f-display);font-weight:900;font-size:2.1rem;margin-bottom:10px}
-    .plans-sub{font-size:.85rem;color:var(--muted)}
+    .plans{width:var(--container);margin:0 auto;padding:72px 0 90px}
+    .plans-head{text-align:center;margin-bottom:40px}
+    .plans-eyebrow{font-size:.7rem;letter-spacing:.2em;font-weight:700;color:var(--gold);margin-bottom:10px}
+    .plans-title{font-family:var(--f-display);font-weight:900;font-size:clamp(1.6rem,4.6vw,2.1rem);margin-bottom:10px}
+    .plans-sub{font-size:.82rem;color:var(--muted);max-width:52ch;margin:0 auto;line-height:1.6}
 
-    .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .plan-col{position:relative;border:1px solid rgba(91,14,27,.4);border-radius:16px;padding:28px 24px;background:rgba(255,255,255,.015);display:flex;flex-direction:column}
+    .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .plan-col{position:relative;border:1px solid rgba(91,14,27,.4);border-radius:16px;padding:26px 22px;background:rgba(255,255,255,.015);display:flex;flex-direction:column}
     .plan-col-highlight{border-color:rgba(212,175,55,.3);background:rgba(212,175,55,.04)}
     .plan-col-gold{border-color:var(--gold);background:linear-gradient(160deg, rgba(212,175,55,.1) 0%, rgba(212,175,55,.02) 100%)}
-    .plan-col-badge{position:absolute;top:-11px;left:24px;background:var(--border);color:var(--ivory);font-size:.66rem;font-weight:700;letter-spacing:.08em;padding:4px 12px;border-radius:100px}
+    .plan-col-badge{position:absolute;top:-11px;left:22px;background:var(--border);color:var(--ivory);font-size:.64rem;font-weight:700;letter-spacing:.06em;padding:4px 12px;border-radius:100px}
     .plan-col-badge-gold{background:var(--gold);color:var(--bg)}
-    .plan-col-head{margin-bottom:18px}
-    .plan-col-name{display:block;font-family:var(--f-display);font-weight:700;font-size:.95rem;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
-    .plan-col-price{display:block;font-family:var(--f-display);font-weight:900;font-size:2.1rem;margin-bottom:6px}
-    .plan-col-price small{font-size:1.1rem;color:var(--muted)}
-    .plan-col-note{display:block;font-size:.78rem;color:var(--dim)}
-    .plan-col-list{list-style:none;margin-bottom:20px;flex:1}
-    .plan-col-list li{font-size:.82rem;color:var(--muted);padding:7px 0;padding-left:18px;position:relative;line-height:1.5}
-    .plan-col-list li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700;font-size:.75rem}
+    .plan-col-head{margin-bottom:16px}
+    .plan-col-name{display:block;font-family:var(--f-display);font-weight:700;font-size:.92rem;letter-spacing:.05em;color:var(--muted);margin-bottom:8px}
+    .plan-col-price{display:block;font-family:var(--f-display);font-weight:900;font-size:clamp(1.6rem,4vw,2.1rem);margin-bottom:6px}
+    .plan-col-price small{font-size:1rem;color:var(--muted)}
+    .plan-col-note{display:block;font-size:.76rem;color:var(--dim);line-height:1.5}
+    .plan-col-list{list-style:none;margin-bottom:18px;flex:1}
+    .plan-col-list li{font-size:.78rem;color:var(--muted);padding:6px 0;padding-left:18px;position:relative;line-height:1.5}
+    .plan-col-list li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700;font-size:.72rem}
+    .plan-col-list li.plan-col-warn{color:#e08a5f}
+    .plan-col-list li.plan-col-warn::before{content:'!';color:#e08a5f}
     .plan-col-pick{display:flex;flex-wrap:wrap;gap:8px}
-    .ch-pill{border:1px solid var(--c,rgba(91,14,27,.5));color:var(--c,var(--ivory));background:transparent;border-radius:20px;font-family:var(--f-body);font-size:.72rem;font-weight:600;padding:6px 13px;cursor:pointer;transition:background .2s}
+    .ch-pill{border:1px solid var(--c,rgba(91,14,27,.5));color:var(--c,var(--ivory));background:transparent;border-radius:20px;font-size:.7rem;font-weight:600;padding:6px 12px;cursor:pointer;transition:background .2s}
+    .ch-pill:hover{background:color-mix(in srgb, var(--c,var(--border)) 16%, transparent)}
     .double-pill{color:var(--ivory)!important;border-color:rgba(91,14,27,.5)!important}
-    .btn-total{width:100%;margin-top:auto;padding:15px;border:1px solid var(--gold);border-radius:10px;background:var(--gold);color:var(--bg);font-family:var(--f-body);font-weight:800;font-size:.92rem;cursor:pointer;transition:transform .15s}
+    .btn-total{width:100%;margin-top:auto;padding:14px;border:1px solid var(--gold);border-radius:10px;background:var(--gold);color:var(--bg);font-weight:800;font-size:.9rem;cursor:pointer;transition:transform .15s}
     .btn-total:hover{transform:translateY(-2px)}
 
     .modal-bg{position:fixed;inset:0;background:rgba(10,25,47,.88);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;z-index:999;padding:24px}
-    .modal{position:relative;width:100%;max-width:400px;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:36px 28px 28px;text-align:center}
-    .modal-x{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--ivory);font-size:1.8rem;cursor:pointer;opacity:.8;line-height:1;z-index:10}
-    .modal-x:hover{opacity:1}
-    .modal-brand{font-family:var(--f-display);font-weight:900;font-size:1.4rem;margin-bottom:12px}
-    .modal-sub{font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:24px}
-    .btn-google{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--ivory);color:var(--bg);border:none;border-radius:10px;padding:13px;font-family:var(--f-body);font-weight:700;font-size:.92rem;cursor:pointer}
+    .modal{position:relative;width:100%;max-width:380px;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px 24px;text-align:center}
+    .modal-x{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--ivory);font-size:1.6rem;cursor:pointer;opacity:.8;line-height:1}
+    .modal-brand{font-family:var(--f-display);font-weight:900;font-size:1.3rem;margin-bottom:12px}
+    .modal-sub{font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:22px}
+    .btn-google{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--ivory);color:var(--bg);border:none;border-radius:10px;padding:13px;font-weight:700;font-size:.92rem;cursor:pointer}
+    .btn-google:disabled{opacity:.6;cursor:not-allowed}
+    .login-error{margin-top:14px;padding:10px 12px;background:rgba(241,107,36,.12);border:1px solid rgba(241,107,36,.35);border-radius:8px;color:#F16B24;font-size:.78rem;line-height:1.5;text-align:left}
 
-    @media (max-width: 860px){
-      .feature-row{grid-template-columns:1fr;gap:24px}
+    @media (max-width: 900px){
+      .feature-row{grid-template-columns:1fr;gap:20px;padding:32px 0}
       .plan-grid{grid-template-columns:1fr}
+      .plan-col{padding:24px 20px}
     }
+
     @media (max-width: 560px){
-      .hero{min-height:88vh}
-      .nav-inner{padding:14px 18px}
-      .hero-content{padding:0 20px}
-      .rail-head,.rail{padding-left:20px;padding-right:20px}
-      .feature-row,.plans{padding-left:20px;padding-right:20px}
-      .poster{flex:0 0 180px}
-      .poster-art{height:250px}
+      .hero{min-height:88vh;min-height:88dvh}
+      .hero-title{max-width:none}
+      .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+      .nav-right{gap:8px}
+      .lang-trigger{padding:6px 9px;font-size:.7rem}
+      .lang-menu{right:-40px;max-width:calc(100vw - 24px)}
+    }
+
+    @media (max-width: 340px){
+      .grid{grid-template-columns:1fr}
+      .hero-cta-row{flex-direction:column}
+      .btn-primary,.btn-ghost{width:100%;text-align:center}
+    }
+
+    @media (min-width: 1400px){
+      :root{--container: min(1320px, 88vw)}
+      .grid{grid-template-columns:repeat(7,1fr)}
+    }
+
+    @media (max-height: 480px) and (orientation: landscape){
+      .hero{min-height:auto;padding:100px 0 40px}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}
     }
   </style>
 </body>
