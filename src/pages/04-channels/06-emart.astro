@@ -1,61 +1,92 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+const subs = [
+  { slug: 'emart',     label: '이마트', labelEn: 'E-Mart' },
+  { slug: 'traders',   label: '트레이더스', labelEn: 'Traders' },
+  { slug: 'nobrand',   label: '노브랜드', labelEn: 'No Brand' },
+  { slug: 'emart24',   label: '이마트24', labelEn: 'emart24' },
+];
+const color = '#FFDD00';
 ---
-<Layout title="emart" channelName="emart" channelColor="#FFDD00">
-<style>
-.ch-header{padding:28px 0 20px;border-bottom:1px solid rgba(255,221,0,.15);margin-bottom:24px}
-.ch-label{font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,221,0,.5);margin-bottom:6px}
-.ch-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#FFDD00;line-height:1.2}
-.ch-desc{font-size:12.5px;color:#7A9AB5;margin-top:8px;line-height:1.6}
-.warn-box{border:1px solid rgba(255,221,0,.3);border-radius:3px;padding:14px 16px;margin-bottom:16px;background:rgba(255,221,0,.05);display:flex;gap:10px;align-items:flex-start}
-.warn-icon{font-size:16px;flex-shrink:0;margin-top:1px}
-.warn-text{font-size:12px;color:#FBF9F4;line-height:1.6}
-.store-card{border:1px solid rgba(255,221,0,.15);border-radius:3px;padding:16px;margin-bottom:10px;background:rgba(255,221,0,.02)}
-.store-type{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,221,0,.5);margin-bottom:5px}
-.store-name{font-size:15px;font-weight:600;color:#FBF9F4;margin-bottom:4px}
-.store-info{font-size:12px;color:#7A9AB5;line-height:1.6}
-.cta-box{border:1px solid #5B0E1B;border-radius:3px;padding:20px 16px;margin-top:28px;text-align:center;background:rgba(91,14,27,.08)}
-.cta-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;margin-bottom:8px}
-.cta-desc{font-size:12px;color:#7A9AB5;margin-bottom:16px;line-height:1.6}
-.cta-btn{display:block;padding:13px;background:#5B0E1B;border-radius:2px;color:#FBF9F4;font-family:'League Spartan',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
-</style>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>taerijay+emart | TAERIJAY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,600&family=League+Spartan:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <button class="back-btn" onclick="history.back()">← 뒤로가기</button>
+      <div class="nav-brand"><span class="nav-brand-main">taerijay</span><span style={`color:${color}`}>+emart</span></div>
+    </div>
+  </header>
 
-<div class="ch-header">
-  <div class="ch-label">taerijay+ · hypermarket</div>
-  <div class="ch-title">emart</div>
-  <div class="ch-desc">이마트 · 트레이더스 쇼핑 스펙 DB — ⚠️ 의무휴업일 경고 인덱스 포함</div>
-</div>
+  <main>
+    <section class="channel-hero" style={`--c:${color}`}>
+      <span class="channel-badge channel-badge-lock">맛보기 12개 무료 · 이후 요금제 필요</span>
+      <span class="channel-category">SHOPPING</span>
+      <h1 class="channel-title">taerijay<span style={`color:${color}`}>+emart</span></h1>
+      <p class="channel-sub">이마트/트레이더스 쇼핑 스펙 DB, 의무휴업일 경고 인덱스</p>
+    </section>
 
-<div class="warn-box">
-  <div class="warn-icon">⚠️</div>
-  <div class="warn-text"><strong>대형마트 의무휴업일 주의</strong><br>매월 2·4번째 일요일 전국 이마트 의무 휴점 적용됨.<br>방문 전 반드시 해당 월 휴업일 확인 요망.</div>
-</div>
+    <section class="cat-grid-section">
+      {subs.map((sub) => (
+        <a href={`/04-channels/emart/${sub.slug}`} class="cat-card" style={`--c:${color}`}>
+          <div class="cat-card-art">
+            <span class="cat-card-name">{sub.label}</span>
+            <span class="cat-card-name-en">{sub.labelEn}</span>
+          </div>
+        </a>
+      ))}
+    </section>
 
-<div class="store-card">
-  <div class="store-type">EMART · 일반형</div>
-  <div class="store-name">이마트 성수점</div>
-  <div class="store-info">📍 서울특별시 성동구 왕십리로 83<br>2호선 성수역 4번 출구 → 도보 5분<br>영업시간: 10:00-23:00 (의무휴업일 제외)</div>
-</div>
-<div class="store-card">
-  <div class="store-type">TRADERS · 창고형</div>
-  <div class="store-name">이마트 트레이더스 월계점</div>
-  <div class="store-info">📍 서울특별시 노원구 월계로 383<br>1호선 광운대역 1번 출구 → 도보 8분<br>💡 대용량 PB 상품 · 수입 식품 전문관 운영함.</div>
-</div>
-<div class="store-card">
-  <div class="store-type">EMART · 도심형</div>
-  <div class="store-name">이마트 명동점</div>
-  <div class="store-info">📍 서울특별시 중구 남대문로 67<br>4호선 명동역 6번 출구 → 도보 3분<br>🌐 외국어 안내 데스크 상시 운영 — 여행자 편의 특화됨.</div>
-</div>
+    <section class="empty-note">
+      <p>콘텐츠 준비 중입니다. 곧 채워질 예정입니다.</p>
+      <p class="empty-note-en">Content coming soon.</p>
+    </section>
+  </main>
 
-<div class="cta-box">
-  <div class="cta-title">전국 이마트 DB + 휴업일 캘린더</div>
-  <div class="cta-desc">전국 이마트·트레이더스 전점 DB + 월별 의무휴업일 캘린더는 구독자 전용임.</div>
-  <a href="/02-payment/payment?key=emart_basic" class="cta-btn">emart Basic 구독 — $19.99 →</a>
-</div>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#0A192F;--border:#5B0E1B;--ivory:#FBF9F4;--muted:#8b96a8;--dim:#5d6c82;--gold:#D4AF37;
+      --f-display:'Playfair Display',serif;--f-body:'League Spartan',sans-serif;
+      --container: min(1200px, 92vw);
+    }
+    html,body{background:var(--bg);color:var(--ivory);font-family:var(--f-body);min-height:100vh;overflow-x:hidden}
 
-<script is:inline>
-  if (!sessionStorage.getItem('user_email')) {
-    window.location.href = '/01-auth/auth?redirect=' + encodeURIComponent(window.location.href);
-  }
-</script>
-</Layout>
+    .nav{position:sticky;top:0;z-index:100;background:rgba(10,25,47,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(91,14,27,.4)}
+    .nav-inner{width:var(--container);margin:0 auto;display:flex;align-items:center;gap:20px;padding:16px 0}
+    .back-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--ivory);font-family:var(--f-body);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer;transition:background .2s}
+    .back-btn:hover{background:rgba(255,255,255,.1)}
+    .nav-brand{font-family:var(--f-display);font-weight:700;font-size:clamp(.9rem,2.6vw,1.05rem)}
+    .nav-brand-main{color:var(--ivory)}
+
+    .channel-hero{width:var(--container);margin:36px auto 0;padding-bottom:28px;border-bottom:1px solid color-mix(in srgb, var(--c) 30%, transparent)}
+    .channel-badge{display:inline-block;background:var(--gold);color:var(--bg);font-size:.68rem;font-weight:800;letter-spacing:.04em;padding:5px 14px;border-radius:100px;margin-bottom:12px;margin-right:8px}
+    .channel-badge-lock{background:color-mix(in srgb, var(--c) 16%, transparent);color:var(--c);border:1px solid color-mix(in srgb, var(--c) 40%, transparent)}
+    .channel-category{display:inline-block;font-size:.68rem;letter-spacing:.14em;color:var(--dim);font-weight:700;margin-bottom:16px;text-transform:uppercase}
+    .channel-title{font-family:var(--f-display);font-weight:900;font-size:clamp(1.6rem,5vw,2.6rem);margin-bottom:10px}
+    .channel-sub{font-size:.88rem;color:var(--muted);max-width:48ch;line-height:1.6}
+
+    .cat-grid-section{width:var(--container);margin:36px auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+    .cat-card{text-decoration:none;color:var(--ivory);display:block;border:1px solid color-mix(in srgb, var(--c) 40%, transparent);border-radius:14px;overflow:hidden;transition:transform .2s ease}
+    .cat-card:hover{transform:translateY(-4px)}
+    .cat-card-art{aspect-ratio:16/9;background:linear-gradient(160deg, color-mix(in srgb, var(--c) 18%, var(--bg)) 0%, var(--bg) 80%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:12px}
+    .cat-card-name{font-family:var(--f-display);font-weight:900;font-size:clamp(1.1rem,3.4vw,1.4rem);color:var(--c);text-align:center}
+    .cat-card-name-en{font-size:.7rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+
+    .empty-note{width:var(--container);margin:24px auto 100px;text-align:center;padding:40px 20px;border:1px dashed rgba(255,255,255,.15);border-radius:14px}
+    .empty-note p{font-size:.88rem;color:var(--muted);margin-bottom:6px}
+    .empty-note-en{font-size:.76rem;color:var(--dim)}
+
+    @media (max-width: 560px){
+      .cat-grid-section{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</body>
+</html>

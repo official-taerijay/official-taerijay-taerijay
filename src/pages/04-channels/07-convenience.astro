@@ -1,68 +1,91 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+const subs = [
+  { slug: 'cu',        label: 'CU', labelEn: 'CU' },
+  { slug: 'gs25',      label: 'GS25', labelEn: 'GS25' },
+  { slug: 'seveneleven', label: '세븐일레븐', labelEn: '7-Eleven' },
+];
+const color = '#A14D7C';
 ---
-<Layout title="convenience" channelName="convenience" channelColor="#A14D7C">
-<style>
-.ch-header{padding:28px 0 20px;border-bottom:1px solid rgba(161,77,124,.2);margin-bottom:24px}
-.ch-label{font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(161,77,124,.7);margin-bottom:6px}
-.ch-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#A14D7C;line-height:1.2}
-.ch-desc{font-size:12.5px;color:#7A9AB5;margin-top:8px;line-height:1.6}
-.brand-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
-.brand-tab{padding:5px 12px;border:1px solid rgba(161,77,124,.3);border-radius:100px;font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(161,77,124,.7);background:transparent;cursor:pointer;transition:all .2s}
-.brand-tab.active,.brand-tab:hover{background:rgba(161,77,124,.15);border-color:#A14D7C;color:#A14D7C}
-.combo-card{border:1px solid rgba(161,77,124,.2);border-radius:3px;padding:16px;margin-bottom:10px;background:rgba(161,77,124,.03)}
-.combo-brand{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(161,77,124,.6);margin-bottom:5px}
-.combo-name{font-size:14px;font-weight:600;color:#FBF9F4;margin-bottom:5px}
-.combo-items{font-size:12px;color:#7A9AB5;line-height:1.7}
-.cta-box{border:1px solid #5B0E1B;border-radius:3px;padding:20px 16px;margin-top:28px;text-align:center;background:rgba(91,14,27,.08)}
-.cta-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;margin-bottom:8px}
-.cta-desc{font-size:12px;color:#7A9AB5;margin-bottom:16px;line-height:1.6}
-.cta-btn{display:block;padding:13px;background:#5B0E1B;border-radius:2px;color:#FBF9F4;font-family:'League Spartan',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
-</style>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>taerijay+convenience | TAERIJAY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,600&family=League+Spartan:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <button class="back-btn" onclick="history.back()">← 뒤로가기</button>
+      <div class="nav-brand"><span class="nav-brand-main">taerijay</span><span style={`color:${color}`}>+convenience</span></div>
+    </div>
+  </header>
 
-<div class="ch-header">
-  <div class="ch-label">taerijay+ · 24h convenience</div>
-  <div class="ch-title">convenience</div>
-  <div class="ch-desc">24시 편의점 PB 꿀조합 가이드 — 🌐 GS25 · CU · 세븐일레븐 브랜드별 비교 DB</div>
-</div>
+  <main>
+    <section class="channel-hero" style={`--c:${color}`}>
+      <span class="channel-badge channel-badge-lock">맛보기 12개 무료 · 이후 요금제 필요</span>
+      <span class="channel-category">SHOPPING</span>
+      <h1 class="channel-title">taerijay<span style={`color:${color}`}>+convenience</span></h1>
+      <p class="channel-sub">편의점 PB 상품 꿀조합 가이드, 브랜드별 비교 정보</p>
+    </section>
 
-<div class="brand-tabs">
-  <button class="brand-tab active">ALL</button>
-  <button class="brand-tab">GS25</button>
-  <button class="brand-tab">CU</button>
-  <button class="brand-tab">7-ELEVEN</button>
-</div>
+    <section class="cat-grid-section">
+      {subs.map((sub) => (
+        <a href={`/04-channels/emart/${sub.slug}`} class="cat-card" style={`--c:${color}`}>
+          <div class="cat-card-art">
+            <span class="cat-card-name">{sub.label}</span>
+            <span class="cat-card-name-en">{sub.labelEn}</span>
+          </div>
+        </a>
+      ))}
+    </section>
 
-<div class="combo-card">
-  <div class="combo-brand">GS25 · 편의점 꿀조합</div>
-  <div class="combo-name">GS25 혜자로운 한 끼 조합</div>
-  <div class="combo-items">혜자로운 도시락 + 오징어땅콩 + 레쓰비<br>💡 총 4,200원 · 한국 직장인 점심 대표 조합 확인됨.</div>
-</div>
-<div class="combo-card">
-  <div class="combo-brand">CU · 편의점 꿀조합</div>
-  <div class="combo-name">CU HEYROO 인기 야식 조합</div>
-  <div class="combo-items">즉석 라면 (컵라면) + 삼각김밥 2개 + 바나나우유<br>💡 총 3,800원 · 야간 편의점 1위 조합 인증됨.</div>
-</div>
-<div class="combo-card">
-  <div class="combo-brand">7-ELEVEN · 편의점 꿀조합</div>
-  <div class="combo-name">세븐일레븐 도보여행자 조합</div>
-  <div class="combo-items">샌드위치 + 아메리카노 (500ml) + 에너지바<br>💡 총 4,500원 · 장거리 이동 여행자 추천 조합임.</div>
-</div>
-<div class="combo-card">
-  <div class="combo-brand">GS25 · PB 단독 추천</div>
-  <div class="combo-name">유어스 PB 뷰티 편의점 세트</div>
-  <div class="combo-items">유어스 선크림 SPF50+ + 리무버 패드<br>💡 다이소 대비 접근성 1위 · 24시 구매 가능함.</div>
-</div>
+    <section class="empty-note">
+      <p>콘텐츠 준비 중입니다. 곧 채워질 예정입니다.</p>
+      <p class="empty-note-en">Content coming soon.</p>
+    </section>
+  </main>
 
-<div class="cta-box">
-  <div class="cta-title">전체 편의점 꿀조합 DB</div>
-  <div class="cta-desc">GS25·CU·세븐일레븐·이마트24 전 브랜드 PB 비교 + 지역별 야경 편의점 위치 DB는 구독자 전용임.</div>
-  <a href="/02-payment/payment?key=cvs_basic" class="cta-btn">convenience Basic 구독 — $19.99 →</a>
-</div>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#0A192F;--border:#5B0E1B;--ivory:#FBF9F4;--muted:#8b96a8;--dim:#5d6c82;--gold:#D4AF37;
+      --f-display:'Playfair Display',serif;--f-body:'League Spartan',sans-serif;
+      --container: min(1200px, 92vw);
+    }
+    html,body{background:var(--bg);color:var(--ivory);font-family:var(--f-body);min-height:100vh;overflow-x:hidden}
 
-<script is:inline>
-  if (!sessionStorage.getItem('user_email')) {
-    window.location.href = '/01-auth/auth?redirect=' + encodeURIComponent(window.location.href);
-  }
-</script>
-</Layout>
+    .nav{position:sticky;top:0;z-index:100;background:rgba(10,25,47,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(91,14,27,.4)}
+    .nav-inner{width:var(--container);margin:0 auto;display:flex;align-items:center;gap:20px;padding:16px 0}
+    .back-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--ivory);font-family:var(--f-body);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer;transition:background .2s}
+    .back-btn:hover{background:rgba(255,255,255,.1)}
+    .nav-brand{font-family:var(--f-display);font-weight:700;font-size:clamp(.9rem,2.6vw,1.05rem)}
+    .nav-brand-main{color:var(--ivory)}
+
+    .channel-hero{width:var(--container);margin:36px auto 0;padding-bottom:28px;border-bottom:1px solid color-mix(in srgb, var(--c) 30%, transparent)}
+    .channel-badge{display:inline-block;background:var(--gold);color:var(--bg);font-size:.68rem;font-weight:800;letter-spacing:.04em;padding:5px 14px;border-radius:100px;margin-bottom:12px;margin-right:8px}
+    .channel-badge-lock{background:color-mix(in srgb, var(--c) 16%, transparent);color:var(--c);border:1px solid color-mix(in srgb, var(--c) 40%, transparent)}
+    .channel-category{display:inline-block;font-size:.68rem;letter-spacing:.14em;color:var(--dim);font-weight:700;margin-bottom:16px;text-transform:uppercase}
+    .channel-title{font-family:var(--f-display);font-weight:900;font-size:clamp(1.6rem,5vw,2.6rem);margin-bottom:10px}
+    .channel-sub{font-size:.88rem;color:var(--muted);max-width:48ch;line-height:1.6}
+
+    .cat-grid-section{width:var(--container);margin:36px auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+    .cat-card{text-decoration:none;color:var(--ivory);display:block;border:1px solid color-mix(in srgb, var(--c) 40%, transparent);border-radius:14px;overflow:hidden;transition:transform .2s ease}
+    .cat-card:hover{transform:translateY(-4px)}
+    .cat-card-art{aspect-ratio:16/9;background:linear-gradient(160deg, color-mix(in srgb, var(--c) 18%, var(--bg)) 0%, var(--bg) 80%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:12px}
+    .cat-card-name{font-family:var(--f-display);font-weight:900;font-size:clamp(1.1rem,3.4vw,1.4rem);color:var(--c);text-align:center}
+    .cat-card-name-en{font-size:.7rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+
+    .empty-note{width:var(--container);margin:24px auto 100px;text-align:center;padding:40px 20px;border:1px dashed rgba(255,255,255,.15);border-radius:14px}
+    .empty-note p{font-size:.88rem;color:var(--muted);margin-bottom:6px}
+    .empty-note-en{font-size:.76rem;color:var(--dim)}
+
+    @media (max-width: 560px){
+      .cat-grid-section{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</body>
+</html>

@@ -1,71 +1,94 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+const tabs = [
+  { slug: 'region',        label: '지역별로', labelEn: 'By Region' },
+  { slug: '3hour',         label: '3시간 코스', labelEn: '3-Hour Course' },
+  { slug: '1day',          label: '1일 코스', labelEn: '1-Day Course' },
+  { slug: '2day',          label: '2일 코스', labelEn: '2-Day Course' },
+  { slug: '3day',          label: '3일 코스', labelEn: '3-Day Course' },
+  { slug: 'recommend',     label: '추천코스', labelEn: 'Recommended', sub: '지역 × 카테고리' },
+];
+const color = '#e8e4dc';
 ---
-<Layout title="mini" channelName="mini" channelColor="#FBF9F4">
-<style>
-.ch-header{padding:28px 0 20px;border-bottom:1px solid rgba(251,249,244,.15);margin-bottom:24px}
-.ch-label{font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(251,249,244,.4);margin-bottom:6px}
-.ch-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#FBF9F4;line-height:1.2}
-.ch-desc{font-size:12.5px;color:#7A9AB5;margin-top:8px;line-height:1.6}
-.course-card{border:1px solid rgba(251,249,244,.12);border-radius:3px;padding:18px 16px;margin-bottom:10px;background:rgba(251,249,244,.02)}
-.course-city{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(251,249,244,.4);margin-bottom:6px}
-.course-name{font-size:15px;font-weight:600;color:#FBF9F4;margin-bottom:8px}
-.course-stops{display:flex;flex-direction:column;gap:5px}
-.stop{font-size:11.5px;color:#7A9AB5;display:flex;align-items:flex-start;gap:6px;line-height:1.5}
-.stop::before{content:'→';color:rgba(251,249,244,.3);flex-shrink:0;margin-top:1px}
-.cta-box{border:1px solid #5B0E1B;border-radius:3px;padding:20px 16px;margin-top:28px;text-align:center;background:rgba(91,14,27,.08)}
-.cta-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;margin-bottom:8px}
-.cta-desc{font-size:12px;color:#7A9AB5;margin-bottom:16px;line-height:1.6}
-.cta-btn{display:block;padding:13px;background:#5B0E1B;border-radius:2px;color:#FBF9F4;font-family:'League Spartan',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
-</style>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>taerijay+mini | TAERIJAY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,600&family=League+Spartan:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <button class="back-btn" onclick="history.back()">← 뒤로가기</button>
+      <div class="nav-brand"><span class="nav-brand-main">taerijay</span><span style={`color:${color}`}>+mini</span></div>
+    </div>
+  </header>
 
-<div class="ch-header">
-  <div class="ch-label">taerijay+ · travel course</div>
-  <div class="ch-title">mini</div>
-  <div class="ch-desc">거점 도시별 최적 동선 큐레이션 — 📍 외국인을 위한 정밀 여행 코스 가이드</div>
-</div>
+  <main>
+    <section class="channel-hero" style={`--c:${color}`}>
+      <span class="channel-badge channel-badge-lock">맛보기 12개 무료 · 이후 요금제 필요</span>
+      <h1 class="channel-title">taerijay<span style={`color:${color}`}>+mini</span></h1>
+      <p class="channel-sub">거점 도시별 최적 동선, 시간대별 큐레이션 코스로 여행을 계획하세요</p>
+    </section>
 
-<div class="course-card">
-  <div class="course-city">SEOUL · 서울</div>
-  <div class="course-name">경복궁 → 인사동 → 광장시장 코스</div>
-  <div class="course-stops">
-    <div class="stop">3호선 경복궁역 5번 출구 → 도보 3분</div>
-    <div class="stop">경복궁 관람 (09:00-18:00) · 입장료 3,000원</div>
-    <div class="stop">인사동길 도보 이동 약 10분</div>
-    <div class="stop">광장시장 → 지하철 1호선 종로5가역 인접함</div>
-  </div>
-</div>
+    <section class="cat-grid-section">
+      {tabs.map((tab) => (
+        <a href={`/04-channels/mini/${tab.slug}`} class="cat-card" style={`--c:${color}`}>
+          <div class="cat-card-art">
+            <span class="cat-card-name">{tab.label}</span>
+            <span class="cat-card-name-en">{tab.labelEn}</span>
+            {tab.sub && <span class="cat-card-sub">{tab.sub}</span>}
+          </div>
+        </a>
+      ))}
+    </section>
 
-<div class="course-card">
-  <div class="course-city">SEOUL · 서울</div>
-  <div class="course-name">성수동 → 건대 → 뚝섬 코스</div>
-  <div class="course-stops">
-    <div class="stop">2호선 성수역 3번 출구 → 도보 5분</div>
-    <div class="stop">성수 카페거리 · 팝업 스토어 집중 구역임</div>
-    <div class="stop">건대입구역 연결 → 먹자골목 야경 코스</div>
-    <div class="stop">뚝섬한강공원 → 2호선 뚝섬역 1번 출구 인접함</div>
-  </div>
-</div>
+    <section class="empty-note">
+      <p>콘텐츠 준비 중입니다. 곧 채워질 예정입니다.</p>
+      <p class="empty-note-en">Content coming soon.</p>
+    </section>
+  </main>
 
-<div class="course-card">
-  <div class="course-city">BUSAN · 부산</div>
-  <div class="course-name">해운대 → 광안리 → 남포동 코스</div>
-  <div class="course-stops">
-    <div class="stop">2호선 해운대역 3·5번 출구 → 해수욕장 도보 5분</div>
-    <div class="stop">광안리해수욕장 → 2호선 광안역 3번 출구 → 도보 8분</div>
-    <div class="stop">남포동 BIFF광장 → 1호선 남포역 5번 출구 인접함</div>
-  </div>
-</div>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#0A192F;--border:#5B0E1B;--ivory:#FBF9F4;--muted:#8b96a8;--dim:#5d6c82;--gold:#D4AF37;
+      --f-display:'Playfair Display',serif;--f-body:'League Spartan',sans-serif;
+      --container: min(1200px, 92vw);
+    }
+    html,body{background:var(--bg);color:var(--ivory);font-family:var(--f-body);min-height:100vh;overflow-x:hidden}
 
-<div class="cta-box">
-  <div class="cta-title">전국 코스 DB 열람</div>
-  <div class="cta-desc">서울·부산·제주·경주 전 거점 도시 최적 동선 전체는 구독자 전용임.</div>
-  <a href="/02-payment/payment?key=mini_basic" class="cta-btn">mini Basic 구독 — $19.99 →</a>
-</div>
+    .nav{position:sticky;top:0;z-index:100;background:rgba(10,25,47,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(91,14,27,.4)}
+    .nav-inner{width:var(--container);margin:0 auto;display:flex;align-items:center;gap:20px;padding:16px 0}
+    .back-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--ivory);font-family:var(--f-body);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer;transition:background .2s}
+    .back-btn:hover{background:rgba(255,255,255,.1)}
+    .nav-brand{font-family:var(--f-display);font-weight:700;font-size:clamp(.9rem,2.6vw,1.05rem)}
+    .nav-brand-main{color:var(--ivory)}
 
-<script is:inline>
-  if (!sessionStorage.getItem('user_email')) {
-    window.location.href = '/01-auth/auth?redirect=' + encodeURIComponent(window.location.href);
-  }
-</script>
-</Layout>
+    .channel-hero{width:var(--container);margin:36px auto 0;padding-bottom:28px;border-bottom:1px solid color-mix(in srgb, var(--c) 30%, transparent)}
+    .channel-badge{display:inline-block;background:var(--gold);color:var(--bg);font-size:.68rem;font-weight:800;letter-spacing:.04em;padding:5px 14px;border-radius:100px;margin-bottom:16px}
+    .channel-badge-lock{background:rgba(232,228,220,.12);color:#e8e4dc;border:1px solid rgba(232,228,220,.3)}
+    .channel-title{font-family:var(--f-display);font-weight:900;font-size:clamp(1.6rem,5vw,2.6rem);margin-bottom:10px}
+    .channel-sub{font-size:.88rem;color:var(--muted);max-width:48ch;line-height:1.6}
+
+    .cat-grid-section{width:var(--container);margin:36px auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+    .cat-card{text-decoration:none;color:var(--ivory);display:block;border:1px solid color-mix(in srgb, var(--c) 35%, transparent);border-radius:14px;overflow:hidden;transition:transform .2s ease}
+    .cat-card:hover{transform:translateY(-4px)}
+    .cat-card-art{aspect-ratio:16/9;background:linear-gradient(160deg, color-mix(in srgb, var(--c) 20%, var(--bg)) 0%, var(--bg) 80%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:12px}
+    .cat-card-name{font-family:var(--f-display);font-weight:900;font-size:clamp(1.1rem,3.4vw,1.5rem);color:var(--c);text-align:center}
+    .cat-card-name-en{font-size:.7rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+    .cat-card-sub{font-size:.68rem;color:var(--dim);margin-top:4px}
+
+    .empty-note{width:var(--container);margin:60px auto 100px;text-align:center;padding:40px 20px;border:1px dashed rgba(255,255,255,.15);border-radius:14px}
+    .empty-note p{font-size:.88rem;color:var(--muted);margin-bottom:6px}
+    .empty-note-en{font-size:.76rem;color:var(--dim)}
+
+    @media (max-width: 560px){
+      .cat-grid-section{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</body>
+</html>
