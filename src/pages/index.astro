@@ -76,8 +76,10 @@ const channels = {
   </section>
 
   <section class="plans-section" id="plans">
-    <p class="plans-eyebrow-kr">요금 선택</p>
-    <p class="plans-eyebrow-en" data-i18n="en">SELECT TIER</p>
+    <a href="/pricing" class="plans-eyebrow-link">
+      <p class="plans-eyebrow-kr">요금 선택</p>
+      <p class="plans-eyebrow-en" data-i18n="en">SELECT TIER</p>
+    </a>
 
     <div class="plan-row">
       <span class="plan-row-label">
@@ -163,6 +165,13 @@ const channels = {
         </div>
       </div>
     </div>
+
+    <div class="plans-more">
+      <a href="/pricing" class="btn-plans-more">
+        <span class="btn-plans-more-kr">요금제 자세히 보기</span>
+        <span class="btn-plans-more-en" data-i18n="en">View Full Pricing →</span>
+      </a>
+    </div>
   </section>
 
   <style>
@@ -181,7 +190,7 @@ const channels = {
       font-family:var(--f-display);font-weight:900;
       font-size:clamp(3rem,14vw,9rem);
       letter-spacing:.02em;line-height:1;
-      background:linear-gradient(120deg, var(--ivory) 0%, var(--ivory) 55%, var(--gold) 100%);
+      background:linear-gradient(120deg, var(--ivory) 0%, var(--ivory) 55%, #B33A52 100%);
       -webkit-background-clip:text;background-clip:text;color:transparent;
       margin-bottom:36px;
     }
@@ -213,6 +222,13 @@ const channels = {
     .plans-section{width:var(--container);margin:0 auto;padding:60px 0 90px}
     .plans-eyebrow-kr{font-size:.78rem;font-weight:700;color:var(--muted);margin-bottom:2px}
     .plans-eyebrow-en{font-size:.82rem;letter-spacing:.1em;font-weight:700;color:var(--muted);margin-bottom:28px;text-transform:uppercase}
+    .plans-eyebrow-link{text-decoration:none;display:inline-block;cursor:pointer}
+    .plans-eyebrow-link:hover .plans-eyebrow-en{color:var(--gold)}
+    .plans-more{text-align:center;margin-top:32px}
+    .btn-plans-more{display:inline-flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;border:1px solid rgba(212,175,55,.4);border-radius:100px;padding:12px 28px;transition:background .2s}
+    .btn-plans-more:hover{background:rgba(212,175,55,.1)}
+    .btn-plans-more-kr{font-size:.86rem;font-weight:700;color:var(--ivory)}
+    .btn-plans-more-en{font-size:.72rem;font-weight:600;color:var(--gold)}
 
     .plan-row{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
     .plan-row-total{border-bottom:none}
