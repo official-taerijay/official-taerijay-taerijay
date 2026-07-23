@@ -1,5 +1,4 @@
 ---
-// 채널 묶음 (요청 순서 그대로)
 const channelRows = [
   [{ slug: 'entertainment', label: 'entertainment', color: '#00E5FF', free: true }],
   [
@@ -38,7 +37,6 @@ const socialLinks = [
 <body>
   <div id="splash" class="splash"><span class="splash-brand">TAERIJAY</span></div>
 
-  <!-- ══════════ 헤더: 좌측 햄버거 / 우측 회원가입·로그인·로그아웃 ══════════ -->
   <header class="nav" id="nav">
     <div class="nav-inner">
       <button class="hamburger" id="hamburger-btn" aria-label="메뉴">
@@ -52,7 +50,6 @@ const socialLinks = [
     </div>
   </header>
 
-  <!-- 사이드 메뉴 (햄버거) -->
   <div class="side-menu" id="side-menu" hidden>
     <div class="side-menu-inner">
       <button class="side-close" id="side-close">×</button>
@@ -70,14 +67,12 @@ const socialLinks = [
   </div>
 
   <main>
-    <!-- ══════════ 히어로 ══════════ -->
+    <!-- 히어로: TAERIJAY REPUBLIC OF KOREA만 -->
     <section class="hero">
       <div class="hero-bg"></div>
       <div class="hero-scrim"></div>
       <div class="hero-content">
         <p class="hero-eyebrow">TAERIJAY REPUBLIC OF KOREA</p>
-        <h1 class="hero-title">태리재이와<br/>함께하는 대한민국</h1>
-        <p class="hero-sub">7개 채널, 하나의 구독.<br/>한국 여행·라이프스타일의 모든 순간을 한곳에서.</p>
         <div class="hero-cta-row">
           <button class="btn-primary" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">PRICING</button>
           <button class="btn-ghost" onclick="document.getElementById('channels').scrollIntoView({behavior:'smooth'})">CHANNELS</button>
@@ -85,13 +80,8 @@ const socialLinks = [
       </div>
     </section>
 
-    <!-- ══════════ 채널 섹션: 4줄 구성 ══════════ -->
+    <!-- 채널 섹션 -->
     <section class="channels-section" id="channels">
-      <div class="section-head">
-        <h2 class="section-title">채널 전체보기</h2>
-        <p class="section-sub">목적에 맞춘 전문 채널, 필요한 것만 골라서 구독하세요</p>
-      </div>
-
       {channelRows.map((row) => (
         <div class="channel-row" data-count={row.length}>
           {row.map((ch) => (
@@ -104,43 +94,31 @@ const socialLinks = [
       ))}
     </section>
 
-    <!-- ══════════ 요금제 섹션: 6줄 구성 ══════════ -->
+    <!-- 요금제 섹션 -->
     <section class="plans-section" id="plans">
-      <div class="section-head">
-        <p class="plans-eyebrow">PRICING</p>
-        <h2 class="section-title">요금제 선택</h2>
-      </div>
+      <p class="plans-eyebrow">요금 선택 · SELECT TIER</p>
 
-      <!-- 싱글: 베이직 x 스탠다드 -->
-      <div class="plan-row">
-        <span class="plan-row-label">싱글 요금제</span>
-        <div class="plan-row-items">
-          <div class="plan-chip">
-            <span class="plan-chip-name">베이직</span>
-            <span class="plan-chip-price">$19.99</span>
-            <span class="plan-chip-note">1 ID · 1 디바이스 · 동접 1</span>
-          </div>
-          <div class="plan-chip">
-            <span class="plan-chip-name">스탠다드</span>
-            <span class="plan-chip-price">$29.99</span>
-            <span class="plan-chip-note">1 ID · 2 디바이스 · 동접 2</span>
-          </div>
+      <div class="tier-grid">
+        <div class="tier-card">
+          <span class="tier-price">$19.99</span>
+          <span class="tier-name-kr">베이직</span>
+          <span class="tier-name-en">Basic</span>
+          <span class="tier-note">1 ID · 1 디바이스 · 동접 1</span>
+        </div>
+        <div class="tier-card">
+          <span class="tier-price">$29.99</span>
+          <span class="tier-name-kr">스탠다드</span>
+          <span class="tier-name-en">Standard</span>
+          <span class="tier-note">1 ID · 2 디바이스 · 동접 2</span>
+        </div>
+        <div class="tier-card">
+          <span class="tier-price">$39.99</span>
+          <span class="tier-name-kr">프로</span>
+          <span class="tier-name-en">Pro</span>
+          <span class="tier-note">1 ID · 4 디바이스 · 동접 4</span>
         </div>
       </div>
 
-      <!-- 싱글: 프로 -->
-      <div class="plan-row">
-        <span class="plan-row-label">싱글 요금제</span>
-        <div class="plan-row-items">
-          <div class="plan-chip plan-chip-wide">
-            <span class="plan-chip-name">프로</span>
-            <span class="plan-chip-price">$39.99</span>
-            <span class="plan-chip-note">1 ID · 4 디바이스 · 동접 4</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 더블: protocol x mini -->
       <div class="plan-row">
         <span class="plan-row-label">더블 요금제</span>
         <div class="plan-row-items">
@@ -151,7 +129,6 @@ const socialLinks = [
         </div>
       </div>
 
-      <!-- 더블: daiso x oliveyoung -->
       <div class="plan-row">
         <span class="plan-row-label">더블 요금제</span>
         <div class="plan-row-items">
@@ -162,7 +139,6 @@ const socialLinks = [
         </div>
       </div>
 
-      <!-- 더블: emart x convenience -->
       <div class="plan-row">
         <span class="plan-row-label">더블 요금제</span>
         <div class="plan-row-items">
@@ -173,7 +149,6 @@ const socialLinks = [
         </div>
       </div>
 
-      <!-- 토탈 -->
       <div class="plan-row plan-row-total">
         <span class="plan-row-label plan-row-label-gold">토탈 요금제</span>
         <div class="plan-row-items">
@@ -185,7 +160,6 @@ const socialLinks = [
       </div>
     </section>
 
-    <!-- ══════════ SNS 링크 ══════════ -->
     <section class="social-section">
       {socialLinks.map((s) => (
         <a href={s.href} class="social-icon" title={s.name} aria-label={s.name}>{s.icon}</a>
@@ -193,7 +167,6 @@ const socialLinks = [
     </section>
   </main>
 
-  <!-- ══════════ 푸터 ══════════ -->
   <footer class="footer">
     <div class="footer-links">
       <a href="#">이용약관<br/><span class="footer-en">Terms</span></a>
@@ -229,7 +202,7 @@ const socialLinks = [
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --bg:#0A192F;--border:#5B0E1B;--ivory:#FBF9F4;--muted:#8b96a8;--dim:#5d6c82;--gold:#D4AF37;
+      --bg:#0A192F;--border:#5B0E1B;--ivory:#FBF9F4;--muted:#8b96a8;--dim:#5d6c82;--gold:#D4AF37;--accent:#F16B24;
       --f-display:'Playfair Display',serif;--f-body:'League Spartan',sans-serif;
       --container: min(1200px, 92vw);
     }
@@ -240,7 +213,6 @@ const socialLinks = [
     .splash{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s ease}
     .splash-brand{font-family:var(--f-display);font-weight:900;font-size:clamp(1.8rem,6vw,2.6rem);letter-spacing:.06em}
 
-    /* 헤더 */
     .nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s ease,border-color .3s ease}
     .nav-scrolled{background:rgba(10,25,47,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(91,14,27,.4)}
     .nav-inner{width:var(--container);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 0}
@@ -249,7 +221,6 @@ const socialLinks = [
     .nav-right{display:flex;align-items:center;gap:16px}
     .btn-text{background:none;border:none;color:var(--ivory);font-size:.8rem;font-weight:600;letter-spacing:.03em;cursor:not-allowed;opacity:.5}
 
-    /* 사이드 메뉴 */
     .side-menu{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300}
     .side-menu-inner{position:absolute;top:0;left:0;height:100%;width:min(320px,80vw);background:#0d1f3d;padding:24px;display:flex;flex-direction:column}
     .side-close{align-self:flex-end;background:none;border:none;color:var(--ivory);font-size:1.8rem;cursor:pointer;margin-bottom:20px}
@@ -257,8 +228,7 @@ const socialLinks = [
     .side-links{display:flex;flex-direction:column;gap:18px}
     .side-links a{text-decoration:none;font-size:.9rem;color:var(--muted)}
 
-    /* 히어로 */
-    .hero{position:relative;min-height:92vh;min-height:92dvh;display:flex;align-items:center;overflow:hidden}
+    .hero{position:relative;min-height:70vh;min-height:70dvh;display:flex;align-items:center;overflow:hidden}
     .hero-bg{
       position:absolute;inset:0;
       background:
@@ -268,23 +238,14 @@ const socialLinks = [
     }
     .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,25,47,.2) 0%, rgba(10,25,47,.4) 55%, var(--bg) 100%)}
     .hero-content{position:relative;z-index:2;width:var(--container);margin:0 auto;text-align:left}
-    .hero-eyebrow{font-size:clamp(.68rem,1.6vw,.8rem);letter-spacing:.2em;font-weight:700;color:var(--gold);margin-bottom:16px}
-    .hero-title{font-family:var(--f-display);font-weight:900;font-size:clamp(2rem,8vw,4.6rem);line-height:1.1;margin-bottom:20px;max-width:22ch}
-    .hero-sub{font-size:clamp(.88rem,2.2vw,1.02rem);line-height:1.7;color:var(--muted);max-width:38ch;margin-bottom:30px}
+    .hero-eyebrow{font-size:clamp(.8rem,2vw,1rem);letter-spacing:.22em;font-weight:700;color:var(--gold);margin-bottom:34px}
     .hero-cta-row{display:flex;gap:12px;flex-wrap:wrap}
     .btn-primary{background:var(--ivory);color:var(--bg);border:none;border-radius:8px;padding:14px 28px;font-weight:700;font-size:.85rem;letter-spacing:.05em;cursor:pointer;transition:transform .15s,box-shadow .2s}
     .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
     .btn-ghost{background:rgba(255,255,255,.08);color:var(--ivory);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:14px 28px;font-weight:700;font-size:.85rem;letter-spacing:.05em;cursor:pointer;transition:background .2s}
     .btn-ghost:hover{background:rgba(255,255,255,.16)}
 
-    /* 공통 섹션 헤드 */
-    .section-head{margin-bottom:28px}
-    .section-title{font-family:var(--f-display);font-weight:700;font-size:clamp(1.3rem,3.6vw,1.7rem);margin-bottom:6px}
-    .section-sub{font-size:.85rem;color:var(--muted)}
-    .plans-eyebrow{font-size:.7rem;letter-spacing:.2em;font-weight:700;color:var(--gold);margin-bottom:10px}
-
-    /* 채널 섹션 */
-    .channels-section{width:var(--container);margin:0 auto;padding:64px 0 20px}
+    .channels-section{width:var(--container);margin:0 auto;padding:56px 0 20px}
     .channel-row{display:grid;gap:16px;margin-bottom:16px}
     .channel-row[data-count="1"]{grid-template-columns:1fr}
     .channel-row[data-count="2"]{grid-template-columns:1fr 1fr}
@@ -299,27 +260,32 @@ const socialLinks = [
     .channel-badge{position:absolute;top:10px;left:14px;background:var(--gold);color:var(--bg);font-size:.6rem;font-weight:800;letter-spacing:.05em;padding:3px 10px;border-radius:100px}
     .channel-name{font-family:var(--f-display);font-weight:700;font-size:clamp(.95rem,2.8vw,1.2rem);color:var(--c)}
 
-    /* 요금제 섹션 */
     .plans-section{width:var(--container);margin:0 auto;padding:60px 0 90px}
+    .plans-eyebrow{font-size:.82rem;letter-spacing:.1em;font-weight:700;color:var(--muted);margin-bottom:28px}
+
+    /* 요금 티어 카드 (스크린샷 3번 스타일) */
+    .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px}
+    .tier-card{border:1px solid var(--accent);border-radius:14px;padding:24px 22px;background:rgba(241,107,36,.05);display:flex;flex-direction:column;gap:6px}
+    .tier-price{font-family:var(--f-display);font-weight:900;font-size:clamp(1.6rem,4vw,2rem);color:var(--accent);margin-bottom:6px}
+    .tier-name-kr{font-size:1rem;font-weight:700;color:var(--ivory)}
+    .tier-name-en{font-size:.85rem;font-weight:700;color:var(--accent)}
+    .tier-note{font-size:.72rem;color:var(--dim);margin-top:8px}
+
     .plan-row{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
     .plan-row-total{border-bottom:none}
     .plan-row-label{flex:0 0 110px;font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
     .plan-row-label-gold{color:var(--gold)}
     .plan-row-items{display:flex;gap:12px;flex-wrap:wrap;flex:1}
     .plan-chip{border:1px solid rgba(91,14,27,.4);border-radius:10px;padding:12px 18px;display:flex;flex-direction:column;gap:2px;min-width:150px;flex:1}
-    .plan-chip-wide{flex:1 1 100%;max-width:320px}
     .plan-chip-double{flex-direction:row;align-items:center;justify-content:space-between;gap:16px;flex:1 1 100%}
     .plan-chip-gold{border-color:var(--gold);background:rgba(212,175,55,.08);flex-direction:row;align-items:center;justify-content:space-between;flex:1 1 100%}
     .plan-chip-name{font-family:var(--f-display);font-weight:700;font-size:.88rem}
     .plan-chip-price{font-family:var(--f-display);font-weight:900;font-size:1.1rem;color:var(--gold)}
-    .plan-chip-note{font-size:.7rem;color:var(--dim)}
 
-    /* SNS */
     .social-section{width:var(--container);margin:0 auto;padding:20px 0 60px;display:flex;gap:14px;justify-content:center}
     .social-icon{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1rem;font-weight:700;transition:background .2s}
     .social-icon:hover{background:rgba(255,255,255,.1)}
 
-    /* 푸터 */
     .footer{width:var(--container);margin:0 auto;padding:32px 0 48px;border-top:1px solid rgba(255,255,255,.08);text-align:center}
     .footer-links{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:16px}
     .footer-links a{text-decoration:none;font-size:.82rem;color:var(--muted);text-align:center;line-height:1.6}
@@ -327,9 +293,8 @@ const socialLinks = [
     .footer-copy{font-size:.74rem;color:var(--dim)}
 
     @media (max-width: 560px){
-      .hero{min-height:88vh;min-height:88dvh}
-      .hero-title{max-width:none}
       .channel-row[data-count="2"]{grid-template-columns:1fr}
+      .tier-grid{grid-template-columns:1fr}
       .plan-row{flex-direction:column;align-items:flex-start}
       .plan-row-label{flex:none}
     }
