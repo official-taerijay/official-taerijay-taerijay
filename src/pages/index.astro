@@ -1,4 +1,8 @@
 ---
+const FIREBASE_API_KEY = import.meta.env.PUBLIC_FIREBASE_API_KEY;
+const FIREBASE_AUTH_DOMAIN = import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN;
+const FIREBASE_PROJECT_ID = import.meta.env.PUBLIC_FIREBASE_PROJECT_ID;
+
 const channels = {
   entertainment: { slug: 'entertainment', color: '#00E5FF', free: true,  tag: 'K-엔터' },
   protocol:      { slug: 'protocol',      color: '#F16B24', free: false, tag: 'K-생존' },
@@ -37,8 +41,14 @@ const socialLinks = [
         <span></span><span></span><span></span>
       </button>
       <div class="nav-right">
-        <button class="btn-text" disabled title="준비 중입니다">Sign Up</button>
-        <button class="btn-text" disabled title="준비 중입니다">Log In</button>
+        <button class="btn-login" id="btn-signin">
+          <span class="btn-login-kr">Google 로그인</span>
+          <span class="btn-login-en">Login with Google →</span>
+        </button>
+        <button class="btn-login" id="btn-signout" hidden>
+          <span class="btn-login-kr">로그아웃</span>
+          <span class="btn-login-en">Log Out</span>
+        </button>
       </div>
     </div>
   </header>
@@ -52,6 +62,20 @@ const socialLinks = [
           <a href={`/04-channels/${ch.slug}`} style={`--c:${ch.color}`}>taerijay+{ch.slug}</a>
         ))}
       </nav>
+    </div>
+  </div>
+
+  <!-- 로그인 모달 -->
+  <div id="auth-modal" class="modal-bg" hidden>
+    <div class="modal">
+      <button class="modal-x" id="modal-close-btn">×</button>
+      <div class="modal-brand">TAERIJAY</div>
+      <p class="modal-sub">구글 계정으로 로그인하고<br/>전 채널 콘텐츠를 확인하세요</p>
+      <button class="btn-google" id="google-btn">
+        <svg width="20" height="20" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.84.86-3.06.86-2.35 0-4.34-1.59-5.05-3.72H.95v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.7A5.4 5.4 0 0 1 3.66 9c0-.59.1-1.17.29-1.7V4.97H.95A9 9 0 0 0 0 9c0 1.45.35 2.83.95 4.03l3-2.33z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .95 4.97l3 2.33C4.66 5.17 6.65 3.58 9 3.58z"/></svg>
+        Google로 로그인
+      </button>
+      <div id="login-error" class="login-error" hidden></div>
     </div>
   </div>
 
@@ -121,9 +145,8 @@ const socialLinks = [
     <section class="plans-section" id="plans">
       <p class="plans-eyebrow">요금 선택 · SELECT TIER</p>
 
-      <!-- 싱글: 베이직(흰) x 스탠다드(초록) -->
       <div class="plan-row">
-        <span class="plan-row-label">싱글 요금제</span>
+        <span class="plan-row-label">싱글 요금제<span class="plan-row-label-en">SINGLE</span></span>
         <div class="plan-row-items">
           <div class="tier-chip" style="--tc:#FBF9F4">
             <span class="tier-chip-price">$19.99</span>
@@ -138,9 +161,8 @@ const socialLinks = [
         </div>
       </div>
 
-      <!-- 싱글: 프로(주황) -->
       <div class="plan-row">
-        <span class="plan-row-label">싱글 요금제</span>
+        <span class="plan-row-label">싱글 요금제<span class="plan-row-label-en">SINGLE</span></span>
         <div class="plan-row-items">
           <div class="tier-chip tier-chip-wide" style="--tc:#F16B24">
             <span class="tier-chip-price">$39.99</span>
@@ -150,9 +172,8 @@ const socialLinks = [
         </div>
       </div>
 
-      <!-- 더블 3종 — 서로 다른 톤으로 구분 -->
       <div class="plan-row">
-        <span class="plan-row-label">더블 요금제</span>
+        <span class="plan-row-label">더블 요금제<span class="plan-row-label-en">DOUBLE</span></span>
         <div class="plan-row-items">
           <div class="plan-chip plan-chip-double" style="--tc:#2DD4BF">
             <span class="plan-chip-name">taerijay+protocol × taerijay+mini</span>
@@ -162,7 +183,7 @@ const socialLinks = [
       </div>
 
       <div class="plan-row">
-        <span class="plan-row-label">더블 요금제</span>
+        <span class="plan-row-label">더블 요금제<span class="plan-row-label-en">DOUBLE</span></span>
         <div class="plan-row-items">
           <div class="plan-chip plan-chip-double" style="--tc:#818CF8">
             <span class="plan-chip-name">taerijay+daiso × taerijay+oliveyoung</span>
@@ -172,7 +193,7 @@ const socialLinks = [
       </div>
 
       <div class="plan-row">
-        <span class="plan-row-label">더블 요금제</span>
+        <span class="plan-row-label">더블 요금제<span class="plan-row-label-en">DOUBLE</span></span>
         <div class="plan-row-items">
           <div class="plan-chip plan-chip-double" style="--tc:#FB923C">
             <span class="plan-chip-name">taerijay+emart × taerijay+convenience</span>
@@ -181,9 +202,8 @@ const socialLinks = [
         </div>
       </div>
 
-      <!-- 토탈: 버건디 -->
       <div class="plan-row plan-row-total">
-        <span class="plan-row-label" style="color:#B33A52">토탈 요금제</span>
+        <span class="plan-row-label" style="color:#B33A52">토탈 요금제<span class="plan-row-label-en" style="color:#B33A52">TOTAL</span></span>
         <div class="plan-row-items">
           <div class="plan-chip plan-chip-gold" style="--tc:#B33A52">
             <span class="plan-chip-name">6개 서비스 전부</span>
@@ -210,7 +230,77 @@ const socialLinks = [
     <p class="footer-copy">© 2026 TAERIJAY · 사업자등록번호 673-51-01148 · taerijay.com</p>
   </footer>
 
-  <script>
+  <script type="module" define:vars={{ FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID }}>
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
+      from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+
+    const app = initializeApp({
+      apiKey: FIREBASE_API_KEY,
+      authDomain: FIREBASE_AUTH_DOMAIN,
+      projectId: FIREBASE_PROJECT_ID,
+    });
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: 'select_account' });
+
+    onAuthStateChanged(auth, (user) => {
+      const si = document.getElementById('btn-signin');
+      const so = document.getElementById('btn-signout');
+      if (user) {
+        sessionStorage.setItem('user_email', user.email);
+        if (si) si.hidden = true;
+        if (so) so.hidden = false;
+      } else {
+        sessionStorage.removeItem('user_email');
+        if (si) si.hidden = false;
+        if (so) so.hidden = true;
+      }
+    });
+
+    const signinBtn = document.getElementById('btn-signin');
+    if (signinBtn) signinBtn.addEventListener('click', () => {
+      document.getElementById('auth-modal').hidden = false;
+    });
+
+    const signoutBtn = document.getElementById('btn-signout');
+    if (signoutBtn) signoutBtn.addEventListener('click', async () => {
+      await signOut(auth);
+      sessionStorage.removeItem('user_email');
+    });
+
+    const closeBtn = document.getElementById('modal-close-btn');
+    if (closeBtn) closeBtn.addEventListener('click', () => {
+      document.getElementById('auth-modal').hidden = true;
+      document.getElementById('login-error').hidden = true;
+    });
+
+    const googleBtn = document.getElementById('google-btn');
+    if (googleBtn) googleBtn.addEventListener('click', async () => {
+      const err = document.getElementById('login-error');
+      err.hidden = true;
+      googleBtn.disabled = true;
+      try {
+        const result = await signInWithPopup(auth, provider);
+        sessionStorage.setItem('user_email', result.user.email);
+        document.getElementById('auth-modal').hidden = true;
+      } catch (e) {
+        console.error('Firebase Auth Error:', e.code, e.message);
+        err.hidden = false;
+        if (e.code === 'auth/unauthorized-domain') {
+          err.textContent = '이 도메인은 아직 로그인 허용 목록에 없습니다. (auth/unauthorized-domain)';
+        } else if (e.code === 'auth/popup-blocked') {
+          err.textContent = '팝업이 차단되었습니다. 브라우저의 팝업 차단을 해제해주세요.';
+        } else if (e.code === 'auth/popup-closed-by-user') {
+          err.textContent = '로그인 창이 닫혔습니다. 다시 시도해주세요.';
+        } else {
+          err.textContent = `로그인 실패: ${e.code || e.message}`;
+        }
+      } finally {
+        googleBtn.disabled = false;
+      }
+    });
+
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 40) nav.classList.add('nav-scrolled');
@@ -252,7 +342,17 @@ const socialLinks = [
     .hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
     .hamburger span{display:block;width:22px;height:2px;background:var(--ivory)}
     .nav-right{display:flex;align-items:center;gap:16px}
-    .btn-text{background:none;border:none;color:var(--ivory);font-size:.8rem;font-weight:600;letter-spacing:.03em;cursor:not-allowed;opacity:.5}
+
+    /* 로그인 필 버튼 — 버건디 */
+    .btn-login{
+      background:rgba(91,14,27,.35);border:1px solid rgba(91,14,27,.7);
+      border-radius:100px;padding:9px 22px;cursor:pointer;
+      display:flex;flex-direction:column;align-items:center;gap:1px;
+      transition:background .2s;
+    }
+    .btn-login:hover{background:rgba(91,14,27,.55)}
+    .btn-login-kr{color:var(--ivory);font-size:.82rem;font-weight:700}
+    .btn-login-en{color:var(--ivory);font-size:.68rem;font-weight:600;opacity:.85}
 
     .side-menu{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300}
     .side-menu-inner{position:absolute;top:0;left:0;height:100%;width:min(320px,80vw);background:#0d1f3d;padding:24px;display:flex;flex-direction:column}
@@ -260,6 +360,16 @@ const socialLinks = [
     .side-logo{font-family:var(--f-display);font-weight:900;font-size:1.3rem;margin-bottom:32px;text-decoration:none}
     .side-links{display:flex;flex-direction:column;gap:18px}
     .side-links a{text-decoration:none;font-size:.9rem;color:var(--c,var(--muted));font-weight:600}
+
+    /* 로그인 모달 */
+    .modal-bg{position:fixed;inset:0;background:rgba(10,25,47,.88);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;z-index:999;padding:24px}
+    .modal{position:relative;width:100%;max-width:380px;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px 24px;text-align:center}
+    .modal-x{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--ivory);font-size:1.6rem;cursor:pointer;opacity:.8;line-height:1}
+    .modal-brand{font-family:var(--f-display);font-weight:900;font-size:1.3rem;margin-bottom:12px}
+    .modal-sub{font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:22px}
+    .btn-google{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--ivory);color:var(--bg);border:none;border-radius:10px;padding:13px;font-weight:700;font-size:.92rem;cursor:pointer}
+    .btn-google:disabled{opacity:.6;cursor:not-allowed}
+    .login-error{margin-top:14px;padding:10px 12px;background:rgba(241,107,36,.12);border:1px solid rgba(241,107,36,.35);border-radius:8px;color:#F16B24;font-size:.78rem;line-height:1.5;text-align:left}
 
     .hero{position:relative;min-height:64vh;min-height:64dvh;display:flex;align-items:center;overflow:hidden}
     .hero-bg{
@@ -278,7 +388,6 @@ const socialLinks = [
     .btn-ghost{background:rgba(255,255,255,.08);color:var(--ivory);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:14px 28px;font-weight:700;font-size:.85rem;letter-spacing:.05em;cursor:pointer;transition:background .2s}
     .btn-ghost:hover{background:rgba(255,255,255,.16)}
 
-    /* 채널 카드 — 제목:태그 = 2:1 비율 */
     .channels-section{width:var(--container);margin:0 auto;padding:56px 0 20px}
     .channel-row{display:grid;gap:16px;margin-bottom:16px}
     .channel-row[data-count="1"]{grid-template-columns:1fr}
@@ -298,13 +407,13 @@ const socialLinks = [
     .service-name{font-family:var(--f-display);font-weight:700;font-size:clamp(1.7rem,5vw,2.5rem);line-height:1.1;color:var(--c)}
     .service-tag{font-size:.85rem;font-weight:700;color:var(--muted);letter-spacing:.02em}
 
-    /* 요금제 */
     .plans-section{width:var(--container);margin:0 auto;padding:60px 0 90px}
     .plans-eyebrow{font-size:.82rem;letter-spacing:.1em;font-weight:700;color:var(--muted);margin-bottom:28px}
 
     .plan-row{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
     .plan-row-total{border-bottom:none}
-    .plan-row-label{flex:0 0 110px;font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
+    .plan-row-label{flex:0 0 110px;display:flex;flex-direction:column;gap:2px;font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--muted)}
+    .plan-row-label-en{font-size:.64rem;font-weight:600;letter-spacing:.08em;color:var(--dim);text-transform:uppercase}
     .plan-row-items{display:flex;gap:12px;flex-wrap:wrap;flex:1}
 
     .tier-chip{border:2px solid var(--tc, var(--gold));border-radius:10px;padding:12px 18px;display:flex;flex-direction:column;gap:2px;min-width:140px;flex:1;background:color-mix(in srgb, var(--tc, var(--gold)) 10%, transparent)}
@@ -319,7 +428,6 @@ const socialLinks = [
     .plan-chip-name{font-family:var(--f-display);font-weight:700;font-size:.88rem;color:var(--ivory)}
     .plan-chip-price{font-family:var(--f-display);font-weight:900;font-size:1.1rem;color:var(--tc, var(--gold))}
 
-    /* SNS 아이콘 — 시그니처 컬러 */
     .social-section{width:var(--container);margin:0 auto;padding:20px 0 60px;display:flex;gap:14px;justify-content:center}
     .social-icon{
       width:44px;height:44px;border-radius:50%;
@@ -341,6 +449,9 @@ const socialLinks = [
       .channel-row[data-count="2"]{grid-template-columns:1fr}
       .plan-row{flex-direction:column;align-items:flex-start}
       .plan-row-label{flex:none}
+      .btn-login{padding:7px 16px}
+      .btn-login-kr{font-size:.74rem}
+      .btn-login-en{font-size:.6rem}
     }
 
     @media (prefers-reduced-motion: reduce){
