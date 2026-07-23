@@ -1,82 +1,60 @@
 ---
-const categories = [
-  { slug: 'drama', label: '드라마', labelEn: 'Drama', color: '#00E5FF', desc: 'K-드라마 촬영지 & OTT 명소' },
-  { slug: 'movie', label: '영화', labelEn: 'Movie', color: '#00E5FF', desc: 'K-무비 촬영지 & 팬 성지' },
-];
----
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>taerijay+entertainment | TAERIJAY</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,600&family=League+Spartan:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-</head>
-<body>
-  <header class="nav">
-    <div class="nav-inner">
-      <button class="back-btn" onclick="history.back()">← 뒤로가기</button>
-      <div class="nav-brand"><span class="nav-brand-main">taerijay</span><span class="nav-brand-plus" style="color:#00E5FF">+entertainment</span></div>
-    </div>
-  </header>
+import Layout from '../../layouts/Layout.astro';
 
-  <main>
-    <section class="channel-hero" style="--c:#00E5FF">
+const categories = [
+  { slug: 'drama', label: '드라마', labelEn: 'Drama' },
+  { slug: 'movie', label: '영화', labelEn: 'Movie' },
+];
+const color = '#00E5FF';
+---
+<Layout title="taerijay+entertainment | TAERIJAY">
+  <div class="channel-page" style={`--c:${color}`}>
+    <div class="channel-topbar">
+      <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
+    </div>
+
+    <section class="channel-hero">
       <span class="channel-badge">무료 이용</span>
-      <h1 class="channel-title">taerijay<span style="color:#00E5FF">+entertainment</span></h1>
+      <h1 class="channel-title">taerijay<span style={`color:${color}`}>+entertainment</span></h1>
       <p class="channel-sub">K-콘텐츠 촬영지와 팬 성지를 한눈에 — 전체 무료로 이용하세요</p>
     </section>
 
     <section class="cat-grid-section">
       {categories.map((cat) => (
-        <a href={`/04-channels/entertainment/${cat.slug}`} class="cat-card" style={`--c:${cat.color}`}>
+        <a href={`/04-channels/entertainment/${cat.slug}`} class="cat-card">
           <div class="cat-card-art">
             <span class="cat-card-name">{cat.label}</span>
             <span class="cat-card-name-en">{cat.labelEn}</span>
           </div>
-          <p class="cat-card-desc">{cat.desc}</p>
         </a>
       ))}
     </section>
 
     <section class="empty-note">
-      <p>콘텐츠 준비 중입니다. 곧 채워질 예정입니다.</p>
+      <p>콘텐츠 준비 중입니다.</p>
       <p class="empty-note-en">Content coming soon.</p>
     </section>
-  </main>
+  </div>
 
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --bg:#0A192F;--border:#5B0E1B;--ivory:#FBF9F4;--muted:#8b96a8;--dim:#5d6c82;--gold:#D4AF37;
-      --f-display:'Playfair Display',serif;--f-body:'League Spartan',sans-serif;
-      --container: min(1200px, 92vw);
-    }
-    html,body{background:var(--bg);color:var(--ivory);font-family:var(--f-body);min-height:100vh;overflow-x:hidden}
-
-    .nav{position:sticky;top:0;z-index:100;background:rgba(10,25,47,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(91,14,27,.4)}
-    .nav-inner{width:var(--container);margin:0 auto;display:flex;align-items:center;gap:20px;padding:16px 0}
-    .back-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--ivory);font-family:var(--f-body);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer;transition:background .2s}
+    .channel-page{width:var(--container);margin:0 auto;padding:24px 0 60px}
+    .channel-topbar{margin-bottom:20px}
+    .back-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--ivory);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer;transition:background .2s}
     .back-btn:hover{background:rgba(255,255,255,.1)}
-    .nav-brand{font-family:var(--f-display);font-weight:700;font-size:clamp(.9rem,2.6vw,1.05rem)}
-    .nav-brand-main{color:var(--ivory)}
 
-    .channel-hero{width:var(--container);margin:36px auto 0;padding-bottom:28px;border-bottom:1px solid color-mix(in srgb, var(--c) 30%, transparent)}
+    .channel-hero{padding-bottom:28px;border-bottom:1px solid color-mix(in srgb, var(--c) 30%, transparent);margin-bottom:36px}
     .channel-badge{display:inline-block;background:var(--gold);color:var(--bg);font-size:.68rem;font-weight:800;letter-spacing:.04em;padding:5px 14px;border-radius:100px;margin-bottom:16px}
     .channel-title{font-family:var(--f-display);font-weight:900;font-size:clamp(1.6rem,5vw,2.6rem);margin-bottom:10px}
     .channel-sub{font-size:.88rem;color:var(--muted);max-width:48ch;line-height:1.6}
 
-    .cat-grid-section{width:var(--container);margin:36px auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+    .cat-grid-section{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin-bottom:40px}
     .cat-card{text-decoration:none;color:var(--ivory);display:block;border:1px solid color-mix(in srgb, var(--c) 35%, transparent);border-radius:14px;overflow:hidden;transition:transform .2s ease}
     .cat-card:hover{transform:translateY(-4px)}
     .cat-card-art{aspect-ratio:16/10;background:linear-gradient(160deg, color-mix(in srgb, var(--c) 26%, var(--bg)) 0%, var(--bg) 80%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
     .cat-card-name{font-family:var(--f-display);font-weight:900;font-size:clamp(1.3rem,4vw,1.7rem);color:var(--c)}
     .cat-card-name-en{font-size:.72rem;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
-    .cat-card-desc{padding:14px 16px;font-size:.8rem;color:var(--dim);line-height:1.5}
 
-    .empty-note{width:var(--container);margin:60px auto 100px;text-align:center;padding:40px 20px;border:1px dashed rgba(255,255,255,.15);border-radius:14px}
+    .empty-note{text-align:center;padding:40px 20px;border:1px dashed rgba(255,255,255,.15);border-radius:14px}
     .empty-note p{font-size:.88rem;color:var(--muted);margin-bottom:6px}
     .empty-note-en{font-size:.76rem;color:var(--dim)}
 
@@ -84,5 +62,4 @@ const categories = [
       .cat-grid-section{grid-template-columns:repeat(2,1fr)}
     }
   </style>
-</body>
-</html>
+</Layout>
