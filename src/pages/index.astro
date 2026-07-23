@@ -1,8 +1,4 @@
 ---
-const FIREBASE_API_KEY = import.meta.env.PUBLIC_FIREBASE_API_KEY;
-const FIREBASE_AUTH_DOMAIN = import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN;
-const FIREBASE_PROJECT_ID = import.meta.env.PUBLIC_FIREBASE_PROJECT_ID;
-
 const channels = {
   entertainment: { slug: 'entertainment', color: '#00E5FF', free: true,  tag: 'K-엔터' },
   protocol:      { slug: 'protocol',      color: '#F16B24', free: false, tag: 'K-생존' },
@@ -21,7 +17,6 @@ const socialLinks = [
   { name: 'Naver Blog',  icon: 'N', color: '#03C75A' },
 ];
 
-// Google 계정 언어 선택 목록과 동일 범위
 const languages = [
   { code: 'en', name: 'English' },
   { code: 'ko', name: '한국어' },
@@ -91,6 +86,7 @@ const languages = [
 <body>
   <div id="splash" class="splash"><span class="splash-brand">TAERIJAY</span></div>
 
+  <!-- 헤더: 로그인 없음 — 회원가입/로그인은 결제 시점에만 등장 -->
   <header class="nav" id="nav">
     <div class="nav-inner">
       <button type="button" class="hamburger" id="hamburger-btn" aria-label="메뉴">
@@ -108,14 +104,6 @@ const languages = [
             ))}
           </div>
         </div>
-        <button type="button" class="btn-login" id="btn-signin">
-          <span class="btn-login-kr">Google 로그인</span>
-          <span class="btn-login-en">Login with Google →</span>
-        </button>
-        <button type="button" class="btn-login" id="btn-signout" hidden>
-          <span class="btn-login-kr">로그아웃</span>
-          <span class="btn-login-en">Log Out</span>
-        </button>
       </div>
     </div>
   </header>
@@ -129,20 +117,6 @@ const languages = [
           <a href={`/04-channels/${ch.slug}`} style={`--c:${ch.color}`}>taerijay+{ch.slug}</a>
         ))}
       </nav>
-    </div>
-  </div>
-
-  <div id="auth-modal" class="modal-bg" hidden>
-    <div class="modal">
-      <button type="button" class="modal-x" id="modal-close-btn">×</button>
-      <div class="modal-brand">TAERIJAY</div>
-      <p class="modal-sub-kr">구글 계정으로 로그인하고 전 채널 콘텐츠를 확인하세요</p>
-      <p class="modal-sub-en">Sign in with Google to access all channels</p>
-      <button type="button" class="btn-google" id="google-btn">
-        <svg width="20" height="20" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.84.86-3.06.86-2.35 0-4.34-1.59-5.05-3.72H.95v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.95 10.7A5.4 5.4 0 0 1 3.66 9c0-.59.1-1.17.29-1.7V4.97H.95A9 9 0 0 0 0 9c0 1.45.35 2.83.95 4.03l3-2.33z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .95 4.97l3 2.33C4.66 5.17 6.65 3.58 9 3.58z"/></svg>
-        <span class="btn-google-kr">Google로 로그인</span>
-      </button>
-      <div id="login-error" class="login-error" hidden></div>
     </div>
   </div>
 
@@ -210,7 +184,6 @@ const languages = [
       </div>
     </section>
 
-    <!-- 요금제 라벨: 1행 한글(고정) / 2행 영문(기본, 번역 대상) -->
     <section class="plans-section" id="plans">
       <p class="plans-eyebrow-kr">요금 선택</p>
       <p class="plans-eyebrow-en" data-i18n="en">SELECT TIER</p>
@@ -318,85 +291,8 @@ const languages = [
     <p class="footer-copy">© 2026 TAERIJAY · 사업자등록번호 673-51-01148 · taerijay.com</p>
   </footer>
 
-  <script type="module" define:vars={{ FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID }}>
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-    import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
-      from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
-
-    const app = initializeApp({
-      apiKey: FIREBASE_API_KEY,
-      authDomain: FIREBASE_AUTH_DOMAIN,
-      projectId: FIREBASE_PROJECT_ID,
-    });
-    const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
-    provider.setCustomParameters({ prompt: 'select_account' });
-
-    onAuthStateChanged(auth, (user) => {
-      const si = document.getElementById('btn-signin');
-      const so = document.getElementById('btn-signout');
-      if (user) {
-        sessionStorage.setItem('user_email', user.email);
-        if (si) si.hidden = true;
-        if (so) so.hidden = false;
-      } else {
-        sessionStorage.removeItem('user_email');
-        if (si) si.hidden = false;
-        if (so) so.hidden = true;
-      }
-    });
-
-    const signinBtn = document.getElementById('btn-signin');
-    if (signinBtn) {
-      signinBtn.addEventListener('click', function onSigninClick() {
-        document.getElementById('auth-modal').hidden = false;
-      });
-    }
-
-    const signoutBtn = document.getElementById('btn-signout');
-    if (signoutBtn) {
-      signoutBtn.addEventListener('click', async function onSignoutClick() {
-        await signOut(auth);
-        sessionStorage.removeItem('user_email');
-      });
-    }
-
-    const closeBtn = document.getElementById('modal-close-btn');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function onCloseClick() {
-        document.getElementById('auth-modal').hidden = true;
-        document.getElementById('login-error').hidden = true;
-      });
-    }
-
-    const googleBtn = document.getElementById('google-btn');
-    if (googleBtn) {
-      googleBtn.addEventListener('click', async function onGoogleClick() {
-        const err = document.getElementById('login-error');
-        err.hidden = true;
-        googleBtn.disabled = true;
-        try {
-          const result = await signInWithPopup(auth, provider);
-          sessionStorage.setItem('user_email', result.user.email);
-          document.getElementById('auth-modal').hidden = true;
-        } catch (e) {
-          console.error('Firebase Auth Error:', e.code, e.message);
-          err.hidden = false;
-          if (e.code === 'auth/unauthorized-domain') {
-            err.textContent = '이 도메인은 아직 로그인 허용 목록에 없습니다. (auth/unauthorized-domain)';
-          } else if (e.code === 'auth/popup-blocked') {
-            err.textContent = '팝업이 차단되었습니다. 브라우저의 팝업 차단을 해제해주세요.';
-          } else if (e.code === 'auth/popup-closed-by-user') {
-            err.textContent = '로그인 창이 닫혔습니다. 다시 시도해주세요.';
-          } else {
-            err.textContent = `로그인 실패: ${e.code || e.message}`;
-          }
-        } finally {
-          googleBtn.disabled = false;
-        }
-      });
-    }
-
+  <script>
+    // 로그인 없음 — 스크롤, 사이드메뉴, 언어드롭다운, 스플래시만 처리
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 40) nav.classList.add('nav-scrolled');
@@ -410,7 +306,6 @@ const languages = [
     sideClose.addEventListener('click', () => { sideMenu.hidden = true; });
     sideMenu.addEventListener('click', (e) => { if (e.target === sideMenu) sideMenu.hidden = true; });
 
-    // 언어 드롭다운 — data-i18n="en" 마킹된 요소만 향후 번역 대상
     const langTrigger = document.getElementById('lang-trigger');
     const langMenu = document.getElementById('lang-menu');
     const langCurrent = document.getElementById('lang-current');
@@ -425,7 +320,6 @@ const languages = [
         langCurrent.textContent = opt.dataset.name;
         localStorage.setItem('taerijay_lang', opt.dataset.code);
         langMenu.hidden = true;
-        // TODO: 여기서 data-i18n="en" 요소들을 선택된 언어로 교체하는 번역 API 연동
       });
     });
 
@@ -475,32 +369,12 @@ const languages = [
     .lang-option{display:block;width:100%;text-align:left;background:transparent;border:none;color:var(--ivory);font-size:.82rem;padding:10px 16px;cursor:pointer;transition:background .15s}
     .lang-option:hover{background:rgba(255,255,255,.08)}
 
-    .btn-login{
-      background:rgba(91,14,27,.35);border:1px solid rgba(91,14,27,.7);
-      border-radius:100px;padding:9px 20px;cursor:pointer;
-      display:flex;flex-direction:column;align-items:center;gap:1px;
-      transition:background .2s;
-    }
-    .btn-login:hover{background:rgba(91,14,27,.55)}
-    .btn-login-kr{color:var(--ivory);font-size:.8rem;font-weight:700}
-    .btn-login-en{color:var(--ivory);font-size:.66rem;font-weight:600;opacity:.85}
-
     .side-menu{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300}
     .side-menu-inner{position:absolute;top:0;left:0;height:100%;width:min(320px,80vw);background:#0d1f3d;padding:24px;display:flex;flex-direction:column}
     .side-close{align-self:flex-end;background:none;border:none;color:var(--ivory);font-size:1.8rem;cursor:pointer;margin-bottom:20px}
     .side-logo{font-family:var(--f-display);font-weight:900;font-size:1.3rem;margin-bottom:32px;text-decoration:none}
     .side-links{display:flex;flex-direction:column;gap:18px}
     .side-links a{text-decoration:none;font-size:.9rem;color:var(--c,var(--muted));font-weight:600}
-
-    .modal-bg{position:fixed;inset:0;background:rgba(10,25,47,.88);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;z-index:999;padding:24px}
-    .modal{position:relative;width:100%;max-width:380px;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px 24px;text-align:center}
-    .modal-x{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--ivory);font-size:1.6rem;cursor:pointer;opacity:.8;line-height:1}
-    .modal-brand{font-family:var(--f-display);font-weight:900;font-size:1.3rem;margin-bottom:12px}
-    .modal-sub-kr{font-size:.85rem;color:var(--ivory);line-height:1.6;margin-bottom:2px}
-    .modal-sub-en{font-size:.74rem;color:var(--muted);line-height:1.5;margin-bottom:22px}
-    .btn-google{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--ivory);color:var(--bg);border:none;border-radius:10px;padding:13px;font-weight:700;font-size:.92rem;cursor:pointer}
-    .btn-google:disabled{opacity:.6;cursor:not-allowed}
-    .login-error{margin-top:14px;padding:10px 12px;background:rgba(241,107,36,.12);border:1px solid rgba(241,107,36,.35);border-radius:8px;color:#F16B24;font-size:.78rem;line-height:1.5;text-align:left}
 
     .hero{position:relative;min-height:78vh;min-height:78dvh;display:flex;align-items:center;overflow:hidden}
     .hero-bg{
@@ -593,9 +467,6 @@ const languages = [
       .channel-row[data-count="2"]{grid-template-columns:1fr}
       .plan-row{flex-direction:column;align-items:flex-start}
       .plan-row-label{flex:none}
-      .btn-login{padding:7px 14px}
-      .btn-login-kr{font-size:.72rem}
-      .btn-login-en{font-size:.58rem}
       .lang-trigger{padding:6px 9px;font-size:.7rem}
       .lang-menu{right:-40px;max-width:calc(100vw - 24px)}
       .hero{min-height:70vh;min-height:70dvh}
