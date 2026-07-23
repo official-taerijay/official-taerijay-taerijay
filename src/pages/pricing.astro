@@ -12,9 +12,9 @@ const channels = {
 };
 
 const singleTiers = [
-  { color: '#FBF9F4', price: '19.99', kr: '베이직', en: 'Basic', id: 1, device: 1, concurrent: 1 },
-  { color: '#22C55E', price: '29.99', kr: '스탠다드', en: 'Standard', id: 1, device: 2, concurrent: 2 },
-  { color: '#F16B24', price: '39.99', kr: '프로', en: 'Pro', id: 1, device: 4, concurrent: 4 },
+  { color: '#FBF9F4', price: '19.99', en: 'BASIC',    id: 1, device: 1, concurrent: 1 },
+  { color: '#22C55E', price: '29.99', en: 'STANDARD', id: 1, device: 2, concurrent: 2 },
+  { color: '#F16B24', price: '39.99', en: 'PRO',      id: 1, device: 4, concurrent: 4 },
 ];
 
 const doublePlans = [
@@ -32,8 +32,8 @@ const doublePlans = [
     <section class="pricing-hero">
       <p class="pricing-eyebrow-kr">요금제</p>
       <p class="pricing-eyebrow-en" data-i18n="en">PRICING</p>
-      <p class="pricing-sub-kr">필요한 채널만 골라서, 원하는 만큼만 결제하세요.</p>
-      <p class="pricing-sub-en" data-i18n="en">Pay only for the channels you need — nothing more.</p>
+      <p class="pricing-sub-kr">필요한 채널 선택, 필요한 만큼만 결제</p>
+      <p class="pricing-sub-en" data-i18n="en">Select only the channels you need</p>
     </section>
 
     <!-- 싱글 요금제 상세 -->
@@ -42,19 +42,18 @@ const doublePlans = [
         <span class="pricing-block-title-kr">싱글 요금제</span>
         <span class="pricing-block-title-en" data-i18n="en">SINGLE PLAN</span>
       </h2>
-      <p class="pricing-block-desc-kr">유료 채널 1개를 선택해서 이용하는 요금제입니다. 3가지 등급 중 필요에 맞는 것을 선택하세요.</p>
-      <p class="pricing-block-desc-en" data-i18n="en">Choose 1 paid channel. Pick the tier that matches your usage.</p>
+      <p class="pricing-block-desc-kr">유료 채널 1개 선택, 3가지 등급 중 필요에 맞게 선택</p>
+      <p class="pricing-block-desc-en" data-i18n="en">1 paid channel · 3 tiers to choose from</p>
 
       <div class="tier-detail-grid">
         {singleTiers.map((t) => (
           <div class="tier-detail-card" style={`--tc:${t.color}`}>
-            <span class="tier-detail-price">${t.price}</span>
-            <span class="tier-detail-name-kr">{t.kr}</span>
+            <span class="tier-detail-price">USD {t.price}</span>
             <span class="tier-detail-name-en" data-i18n="en">{t.en}</span>
             <ul class="tier-detail-specs">
               <li>
-                <span class="spec-kr">{t.id}개 아이디 × {t.device}개 디바이스 × 동시접속 {t.concurrent}개</span>
-                <span class="spec-en" data-i18n="en">{t.id} ID × {t.device} Device{t.device > 1 ? 's' : ''} × {t.concurrent} Concurrent</span>
+                <span class="spec-kr">아이디 {t.id} · 디바이스 {t.device} · 동시접속 {t.concurrent}</span>
+                <span class="spec-en" data-i18n="en">{t.id} ID · {t.device} Device{t.device > 1 ? 's' : ''} · {t.concurrent} Concurrent</span>
               </li>
             </ul>
           </div>
@@ -62,8 +61,8 @@ const doublePlans = [
       </div>
 
       <div class="pricing-warning">
-        <p class="pricing-warning-kr">⚠️ 요금제별로 등록된 디바이스 수 또는 동시접속 수를 초과할 경우, 경고 메시지가 표시되며 초과분은 접속이 제한됩니다.</p>
-        <p class="pricing-warning-en" data-i18n="en">⚠️ Exceeding the registered device or concurrent session limit will trigger a warning and restrict further access.</p>
+        <p class="pricing-warning-kr">⚠️ 디바이스·동시접속 초과 시 경고 표시, 초과분 접속 제한</p>
+        <p class="pricing-warning-en" data-i18n="en">⚠️ Exceeding device or concurrent limit triggers a warning and access restriction</p>
       </div>
 
       <div class="pricing-channel-pick">
@@ -79,8 +78,10 @@ const doublePlans = [
         <span class="pricing-block-title-kr">더블 요금제</span>
         <span class="pricing-block-title-en" data-i18n="en">DOUBLE PLAN</span>
       </h2>
-      <p class="pricing-block-desc-kr">연관된 채널 2개를 묶어서 저렴하게 이용하는 요금제입니다. (1 ID · 1 디바이스 · 동시접속 1)</p>
-      <p class="pricing-block-desc-en" data-i18n="en">Bundle 2 related channels at a discounted price. (1 ID · 1 Device · 1 Concurrent)</p>
+      <p class="pricing-block-desc-kr">연관 채널 2개 묶음, 할인 가격 적용</p>
+      <p class="pricing-block-desc-en" data-i18n="en">2 related channels bundled at a discount</p>
+      <p class="pricing-block-desc-kr">아이디 1 · 디바이스 1 · 동시접속 1</p>
+      <p class="pricing-block-desc-en" data-i18n="en">1 ID · 1 Device · 1 Concurrent</p>
 
       <div class="double-detail-list">
         {doublePlans.map((dp) => (
@@ -90,7 +91,7 @@ const doublePlans = [
               <span class="double-x">×</span>
               <span style={`color:${channels[dp.b].color}`}>taerijay+{dp.b}</span>
             </div>
-            <span class="double-detail-price">$34.99</span>
+            <span class="double-detail-price">USD 34.99</span>
           </div>
         ))}
       </div>
@@ -102,8 +103,8 @@ const doublePlans = [
         <span class="pricing-block-title-kr" style="color:#B33A52">토탈 요금제</span>
         <span class="pricing-block-title-en" style="color:#B33A52" data-i18n="en">TOTAL PLAN</span>
       </h2>
-      <p class="pricing-block-desc-kr">유료 채널 6개 전부를 이용할 수 있는 요금제입니다. 향후 새로 출시되는 채널도 자동으로 포함됩니다.</p>
-      <p class="pricing-block-desc-en" data-i18n="en">Unlocks all 6 paid channels, including any new channels launched in the future.</p>
+      <p class="pricing-block-desc-kr">유료 채널 6개 전체 이용, 신규 채널 자동 포함</p>
+      <p class="pricing-block-desc-en" data-i18n="en">All 6 paid channels, new channels included automatically</p>
 
       <div class="total-detail-card">
         <div class="total-detail-names">
@@ -111,7 +112,7 @@ const doublePlans = [
             <span class="total-chip" style={`--c:${ch.color}`}>{slug}</span>
           ))}
         </div>
-        <span class="total-detail-price">$99.99</span>
+        <span class="total-detail-price">USD 99.99</span>
       </div>
     </section>
   </div>
@@ -133,13 +134,12 @@ const doublePlans = [
     .pricing-block-title-kr{font-family:var(--f-display);font-weight:900;font-size:1.4rem}
     .pricing-block-title-en{font-size:.74rem;letter-spacing:.1em;font-weight:700;color:var(--dim);text-transform:uppercase}
     .pricing-block-desc-kr{font-size:.88rem;color:var(--ivory);line-height:1.6;margin-bottom:2px}
-    .pricing-block-desc-en{font-size:.78rem;color:var(--muted);line-height:1.5;margin-bottom:26px}
+    .pricing-block-desc-en{font-size:.78rem;color:var(--muted);line-height:1.5;margin-bottom:8px}
 
-    .tier-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:22px}
+    .tier-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0 22px}
     .tier-detail-card{border:2px solid var(--tc);border-radius:14px;padding:20px;background:color-mix(in srgb, var(--tc) 8%, transparent);display:flex;flex-direction:column;gap:4px}
-    .tier-detail-price{font-family:var(--f-display);font-weight:900;font-size:1.5rem;color:var(--tc)}
-    .tier-detail-name-kr{font-size:.95rem;font-weight:700;color:var(--ivory)}
-    .tier-detail-name-en{font-size:.76rem;font-weight:600;color:var(--tc);margin-bottom:10px}
+    .tier-detail-price{font-family:var(--f-display);font-weight:900;font-size:1.4rem;color:var(--tc)}
+    .tier-detail-name-en{font-size:.86rem;font-weight:700;color:var(--ivory);letter-spacing:.04em;margin-bottom:10px}
     .tier-detail-specs{list-style:none}
     .tier-detail-specs li{margin-bottom:4px}
     .spec-kr{display:block;font-size:.78rem;color:var(--ivory)}
@@ -153,13 +153,13 @@ const doublePlans = [
     .ch-pill{text-decoration:none;border:1px solid var(--c);color:var(--c);border-radius:20px;font-size:.76rem;font-weight:600;padding:7px 14px;transition:background .2s}
     .ch-pill:hover{background:color-mix(in srgb, var(--c) 16%, transparent)}
 
-    .double-detail-list{display:flex;flex-direction:column;gap:12px}
-    .double-detail-card{display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid rgba(91,14,27,.4);border-radius:12px;padding:16px 20px;flex-wrap:wrap}
+    .double-detail-list{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+    .double-detail-card{display:flex;flex-direction:column;gap:10px;border:1px solid rgba(91,14,27,.4);border-radius:12px;padding:16px 20px}
     .double-detail-names{font-family:var(--f-display);font-weight:700;font-size:.95rem}
     .double-x{color:var(--dim);margin:0 8px}
     .double-detail-price{font-family:var(--f-display);font-weight:900;font-size:1.2rem;color:var(--gold)}
 
-    .total-detail-card{border:1px solid #B33A52;border-radius:14px;padding:24px;background:linear-gradient(160deg, rgba(179,58,82,.12) 0%, rgba(179,58,82,.02) 100%)}
+    .total-detail-card{border:1px solid #B33A52;border-radius:14px;padding:24px;background:linear-gradient(160deg, rgba(179,58,82,.12) 0%, rgba(179,58,82,.02) 100%);margin-top:20px}
     .total-detail-names{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
     .total-chip{font-size:.78rem;font-weight:700;color:var(--c);border:1px solid var(--c);border-radius:100px;padding:5px 14px}
     .total-detail-price{font-family:var(--f-display);font-weight:900;font-size:1.8rem;color:#B33A52}
