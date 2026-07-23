@@ -1,13 +1,12 @@
 ---
-// 채널 데이터 — 각 항목 kr(고정) / en(기본 영문, 다국어 전환 대상)
 const channels = {
-  entertainment: { slug: 'entertainment', color: '#00E5FF', free: true,  descKr: '엔터테인먼트 매치업 정보', descEn: 'K-content spot guide' },
-  protocol:      { slug: 'protocol',      color: '#F16B24', free: false, descKr: '공항·세관·대중교통 규약',   descEn: 'Airport & transit rules' },
-  mini:          { slug: 'mini',          color: '#e8e4dc', free: false, descKr: '큐레이션 여행 코스',        descEn: 'Curated travel courses' },
-  daiso:         { slug: 'daiso',         color: '#E1261C', free: false, descKr: '다이소 뷰티 대란템 DB',     descEn: 'Daiso beauty best-sellers' },
-  oliveyoung:    { slug: 'oliveyoung',    color: '#6F8B2E', free: false, descKr: 'MZ 스킨케어 트렌드',        descEn: 'Skincare trend DB' },
-  emart:         { slug: 'emart',         color: '#FFDD00', free: false, descKr: '이마트 쇼핑 스펙 DB',       descEn: 'E-Mart shopping specs' },
-  convenience:   { slug: 'convenience',   color: '#A14D7C', free: false, descKr: '편의점 PB 꿀조합 가이드',   descEn: 'CVS combo guide' },
+  entertainment: { slug: 'entertainment', color: '#00E5FF', free: true,  tag: 'K-엔터' },
+  protocol:      { slug: 'protocol',      color: '#F16B24', free: false, tag: 'K-생존' },
+  mini:          { slug: 'mini',          color: '#e8e4dc', free: false, tag: 'K-여행' },
+  daiso:         { slug: 'daiso',         color: '#E1261C', free: false, tag: 'K-Beauty' },
+  oliveyoung:    { slug: 'oliveyoung',    color: '#6F8B2E', free: false, tag: 'K-Beauty' },
+  emart:         { slug: 'emart',         color: '#FFDD00', free: false, tag: 'E-Mart × Traders × emart24' },
+  convenience:   { slug: 'convenience',   color: '#A14D7C', free: false, tag: 'GS25 × CU × 7-Eleven' },
 };
 
 const socialLinks = [
@@ -76,8 +75,7 @@ const socialLinks = [
         <a href={`/04-channels/${channels.entertainment.slug}`} class="service-card" style={`--c:${channels.entertainment.color}`}>
           <span class="service-status status-free">FREE</span>
           <span class="service-name">taerijay+entertainment</span>
-          <span class="service-desc-kr">{channels.entertainment.descKr}</span>
-          <span class="service-desc-en" data-i18n="en">{channels.entertainment.descEn}</span>
+          <span class="service-tag">{channels.entertainment.tag}</span>
         </a>
       </div>
 
@@ -86,14 +84,12 @@ const socialLinks = [
         <a href={`/04-channels/${channels.protocol.slug}`} class="service-card" style={`--c:${channels.protocol.color}`}>
           <span class="service-status status-soon">SOON</span>
           <span class="service-name">taerijay+protocol</span>
-          <span class="service-desc-kr">{channels.protocol.descKr}</span>
-          <span class="service-desc-en" data-i18n="en">{channels.protocol.descEn}</span>
+          <span class="service-tag">{channels.protocol.tag}</span>
         </a>
         <a href={`/04-channels/${channels.mini.slug}`} class="service-card" style={`--c:${channels.mini.color}`}>
           <span class="service-status status-soon">SOON</span>
           <span class="service-name">taerijay+mini</span>
-          <span class="service-desc-kr">{channels.mini.descKr}</span>
-          <span class="service-desc-en" data-i18n="en">{channels.mini.descEn}</span>
+          <span class="service-tag">{channels.mini.tag}</span>
         </a>
       </div>
 
@@ -102,14 +98,12 @@ const socialLinks = [
         <a href={`/04-channels/${channels.daiso.slug}`} class="service-card" style={`--c:${channels.daiso.color}`}>
           <span class="service-status status-soon">SOON</span>
           <span class="service-name">taerijay+daiso</span>
-          <span class="service-desc-kr">{channels.daiso.descKr}</span>
-          <span class="service-desc-en" data-i18n="en">{channels.daiso.descEn}</span>
+          <span class="service-tag">{channels.daiso.tag}</span>
         </a>
         <a href={`/04-channels/${channels.oliveyoung.slug}`} class="service-card" style={`--c:${channels.oliveyoung.color}`}>
           <span class="service-status status-soon">SOON</span>
           <span class="service-name">taerijay+oliveyoung</span>
-          <span class="service-desc-kr">{channels.oliveyoung.descKr}</span>
-          <span class="service-desc-en" data-i18n="en">{channels.oliveyoung.descEn}</span>
+          <span class="service-tag">{channels.oliveyoung.tag}</span>
         </a>
       </div>
 
@@ -118,14 +112,12 @@ const socialLinks = [
         <a href={`/04-channels/${channels.emart.slug}`} class="service-card" style={`--c:${channels.emart.color}`}>
           <span class="service-status status-soon">SOON</span>
           <span class="service-name">taerijay+emart</span>
-          <span class="service-desc-kr">{channels.emart.descKr}</span>
-          <span class="service-desc-en" data-i18n="en">{channels.emart.descEn}</span>
+          <span class="service-tag">{channels.emart.tag}</span>
         </a>
         <a href={`/04-channels/${channels.convenience.slug}`} class="service-card" style={`--c:${channels.convenience.color}`}>
           <span class="service-status status-soon">SOON</span>
           <span class="service-name">taerijay+convenience</span>
-          <span class="service-desc-kr">{channels.convenience.descKr}</span>
-          <span class="service-desc-en" data-i18n="en">{channels.convenience.descEn}</span>
+          <span class="service-tag">{channels.convenience.tag}</span>
         </a>
       </div>
     </section>
@@ -133,85 +125,73 @@ const socialLinks = [
     <section class="plans-section" id="plans">
       <p class="plans-eyebrow">요금 선택 · SELECT TIER</p>
 
-      <!-- 5줄: 싱글 - 베이직 x 스탠다드 -->
+      <!-- 5줄: 싱글 - 베이직(흰) x 스탠다드(초록) -->
       <div class="plan-row">
         <span class="plan-row-label">싱글 요금제</span>
         <div class="plan-row-items">
-          <div class="tier-chip">
+          <div class="tier-chip" style="--tc:#FBF9F4">
             <span class="tier-chip-price">$19.99</span>
             <span class="tier-chip-kr">베이직</span>
-            <span class="tier-chip-en" data-i18n="en">Basic</span>
+            <span class="tier-chip-en">Basic</span>
           </div>
-          <div class="tier-chip">
+          <div class="tier-chip" style="--tc:#4CAF50">
             <span class="tier-chip-price">$29.99</span>
             <span class="tier-chip-kr">스탠다드</span>
-            <span class="tier-chip-en" data-i18n="en">Standard</span>
+            <span class="tier-chip-en">Standard</span>
           </div>
         </div>
       </div>
 
-      <!-- 6줄: 싱글 - 프로 -->
+      <!-- 6줄: 싱글 - 프로(주황) -->
       <div class="plan-row">
         <span class="plan-row-label">싱글 요금제</span>
         <div class="plan-row-items">
-          <div class="tier-chip tier-chip-wide">
+          <div class="tier-chip tier-chip-wide" style="--tc:#F16B24">
             <span class="tier-chip-price">$39.99</span>
             <span class="tier-chip-kr">프로</span>
-            <span class="tier-chip-en" data-i18n="en">Pro</span>
+            <span class="tier-chip-en">Pro</span>
           </div>
         </div>
       </div>
 
-      <!-- 7줄: 더블 - protocol x mini -->
+      <!-- 7줄: 더블 - protocol x mini (민트) -->
       <div class="plan-row">
         <span class="plan-row-label">더블 요금제</span>
         <div class="plan-row-items">
-          <div class="plan-chip plan-chip-double">
-            <span class="plan-chip-name">
-              <span style={`color:${channels.protocol.color}`}>taerijay+protocol</span>
-              <span class="plan-chip-x">×</span>
-              <span style={`color:${channels.mini.color}`}>taerijay+mini</span>
-            </span>
+          <div class="plan-chip plan-chip-double" style="--tc:#2DD4BF">
+            <span class="plan-chip-name">taerijay+protocol × taerijay+mini</span>
             <span class="plan-chip-price">$34.99</span>
           </div>
         </div>
       </div>
 
-      <!-- 8줄: 더블 - daiso x oliveyoung -->
+      <!-- 8줄: 더블 - daiso x oliveyoung (민트) -->
       <div class="plan-row">
         <span class="plan-row-label">더블 요금제</span>
         <div class="plan-row-items">
-          <div class="plan-chip plan-chip-double">
-            <span class="plan-chip-name">
-              <span style={`color:${channels.daiso.color}`}>taerijay+daiso</span>
-              <span class="plan-chip-x">×</span>
-              <span style={`color:${channels.oliveyoung.color}`}>taerijay+oliveyoung</span>
-            </span>
+          <div class="plan-chip plan-chip-double" style="--tc:#2DD4BF">
+            <span class="plan-chip-name">taerijay+daiso × taerijay+oliveyoung</span>
             <span class="plan-chip-price">$34.99</span>
           </div>
         </div>
       </div>
 
-      <!-- 9줄: 더블 - emart x convenience -->
+      <!-- 9줄: 더블 - emart x convenience (민트) -->
       <div class="plan-row">
         <span class="plan-row-label">더블 요금제</span>
         <div class="plan-row-items">
-          <div class="plan-chip plan-chip-double">
-            <span class="plan-chip-name">
-              <span style={`color:${channels.emart.color}`}>taerijay+emart</span>
-              <span class="plan-chip-x">×</span>
-              <span style={`color:${channels.convenience.color}`}>taerijay+convenience</span>
-            </span>
+          <div class="plan-chip plan-chip-double" style="--tc:#2DD4BF">
+            <span class="plan-chip-name">taerijay+emart × taerijay+convenience</span>
             <span class="plan-chip-price">$34.99</span>
           </div>
         </div>
       </div>
 
-      <!-- 10줄: 토탈 -->
+      <!-- 10줄: 토탈 (버건디) -->
       <div class="plan-row plan-row-total">
-        <span class="plan-row-label plan-row-label-gold">토탈 요금제</span>
+        <span class="plan-row-label" style="color:#8B1A2A">토탈 요금제</span>
         <div class="plan-row-items">
-          <div class="plan-chip plan-chip-gold">
+          <div class="plan-chip plan-chip-gold" style="--tc:#8B1A2A">
             <span class="plan-chip-name">6개 서비스 전부</span>
             <span class="plan-chip-price">$99.99</span>
           </div>
@@ -219,7 +199,6 @@ const socialLinks = [
       </div>
     </section>
 
-    <!-- 11줄: SNS -->
     <section class="social-section">
       {socialLinks.map((s) => (
         <a href="#" class="social-icon" title={s.name} aria-label={s.name}>{s.icon}</a>
@@ -227,13 +206,12 @@ const socialLinks = [
     </section>
   </main>
 
-  <!-- 12줄: 하단 푸터 -->
   <footer class="footer">
     <div class="footer-links">
-      <a href="#"><span class="footer-kr">이용약관</span><br/><span class="footer-en" data-i18n="en">Terms</span></a>
-      <a href="#"><span class="footer-kr">개인정보</span><br/><span class="footer-en" data-i18n="en">Privacy</span></a>
-      <a href="#"><span class="footer-kr">환불정책</span><br/><span class="footer-en" data-i18n="en">Refund</span></a>
-      <a href="#"><span class="footer-kr">사업자정보</span><br/><span class="footer-en" data-i18n="en">Business</span></a>
+      <a href="#">이용약관<br/><span class="footer-en">Terms</span></a>
+      <a href="#">개인정보<br/><span class="footer-en">Privacy</span></a>
+      <a href="#">환불정책<br/><span class="footer-en">Refund</span></a>
+      <a href="#">사업자정보<br/><span class="footer-en">Business</span></a>
     </div>
     <p class="footer-copy">© 2026 TAERIJAY · 사업자등록번호 673-51-01148 · taerijay.com</p>
   </footer>
@@ -263,7 +241,7 @@ const socialLinks = [
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --bg:#0A192F;--border:#5B0E1B;--ivory:#FBF9F4;--muted:#8b96a8;--dim:#5d6c82;--gold:#D4AF37;--accent:#F16B24;
+      --bg:#0A192F;--border:#5B0E1B;--ivory:#FBF9F4;--muted:#8b96a8;--dim:#5d6c82;--gold:#D4AF37;
       --f-display:'Playfair Display',serif;--f-body:'League Spartan',sans-serif;
       --container: min(1200px, 92vw);
     }
@@ -306,26 +284,25 @@ const socialLinks = [
     .btn-ghost{background:rgba(255,255,255,.08);color:var(--ivory);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:14px 28px;font-weight:700;font-size:.85rem;letter-spacing:.05em;cursor:pointer;transition:background .2s}
     .btn-ghost:hover{background:rgba(255,255,255,.16)}
 
-    /* 채널 줄 구조 (1개/2개) */
+    /* 채널 카드 — 타이틀(영문) 3배 비율, 아래 짧은 태그 */
     .channels-section{width:var(--container);margin:0 auto;padding:56px 0 20px}
     .channel-row{display:grid;gap:16px;margin-bottom:16px}
     .channel-row[data-count="1"]{grid-template-columns:1fr}
     .channel-row[data-count="2"]{grid-template-columns:1fr 1fr}
 
     .service-card{
-      position:relative;display:flex;flex-direction:column;gap:4px;text-decoration:none;
-      padding:22px 20px;border-radius:14px;
+      position:relative;display:flex;flex-direction:column;gap:10px;text-decoration:none;
+      padding:30px 24px;border-radius:14px;
       border:1px solid color-mix(in srgb, var(--c) 45%, transparent);
       background:linear-gradient(160deg, color-mix(in srgb, var(--c) 14%, var(--bg)) 0%, var(--bg) 88%);
       transition:transform .2s ease;
     }
     .service-card:hover{transform:translateY(-3px)}
-    .service-status{position:absolute;top:12px;right:14px;font-size:.6rem;font-weight:800;letter-spacing:.06em;padding:3px 9px;border-radius:100px}
+    .service-status{position:absolute;top:14px;right:16px;font-size:.62rem;font-weight:800;letter-spacing:.06em;padding:4px 10px;border-radius:100px}
     .status-free{background:var(--gold);color:var(--bg)}
     .status-soon{background:rgba(255,255,255,.12);color:var(--muted)}
-    .service-name{font-family:var(--f-display);font-weight:700;font-size:clamp(.95rem,2.6vw,1.1rem);color:var(--c);margin-top:4px}
-    .service-desc-kr{font-size:.8rem;color:var(--ivory)}
-    .service-desc-en{font-size:.7rem;color:var(--dim)}
+    .service-name{font-family:var(--f-display);font-weight:700;font-size:clamp(1.6rem,4.6vw,2.3rem);line-height:1.15;color:var(--c)}
+    .service-tag{font-size:.82rem;font-weight:600;color:var(--dim);letter-spacing:.02em}
 
     /* 요금제 */
     .plans-section{width:var(--container);margin:0 auto;padding:60px 0 90px}
@@ -334,21 +311,19 @@ const socialLinks = [
     .plan-row{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
     .plan-row-total{border-bottom:none}
     .plan-row-label{flex:0 0 110px;font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
-    .plan-row-label-gold{color:var(--gold)}
     .plan-row-items{display:flex;gap:12px;flex-wrap:wrap;flex:1}
 
-    .tier-chip{border:1px solid var(--accent);border-radius:10px;padding:12px 18px;display:flex;flex-direction:column;gap:2px;min-width:140px;flex:1;background:rgba(241,107,36,.05)}
+    .tier-chip{border:1px solid var(--tc, var(--gold));border-radius:10px;padding:12px 18px;display:flex;flex-direction:column;gap:2px;min-width:140px;flex:1;background:color-mix(in srgb, var(--tc, var(--gold)) 8%, transparent)}
     .tier-chip-wide{flex:1 1 100%;max-width:280px}
-    .tier-chip-price{font-family:var(--f-display);font-weight:900;font-size:1.15rem;color:var(--accent)}
+    .tier-chip-price{font-family:var(--f-display);font-weight:900;font-size:1.15rem;color:var(--tc, var(--gold))}
     .tier-chip-kr{font-size:.86rem;font-weight:700;color:var(--ivory)}
-    .tier-chip-en{font-size:.7rem;font-weight:600;color:var(--accent)}
+    .tier-chip-en{font-size:.7rem;font-weight:600;color:var(--tc, var(--gold))}
 
-    .plan-chip{border:1px solid rgba(91,14,27,.4);border-radius:10px;padding:12px 18px;display:flex;flex-direction:column;gap:2px;min-width:150px;flex:1}
+    .plan-chip{border:1px solid var(--tc, rgba(91,14,27,.4));border-radius:10px;padding:12px 18px;display:flex;flex-direction:column;gap:2px;min-width:150px;flex:1;background:color-mix(in srgb, var(--tc, transparent) 6%, transparent)}
     .plan-chip-double{flex-direction:row;align-items:center;justify-content:space-between;gap:16px;flex:1 1 100%}
-    .plan-chip-gold{border-color:var(--gold);background:rgba(212,175,55,.08);flex-direction:row;align-items:center;justify-content:space-between;flex:1 1 100%}
-    .plan-chip-name{font-family:var(--f-display);font-weight:700;font-size:.88rem}
-    .plan-chip-x{color:var(--dim);margin:0 8px;font-weight:400}
-    .plan-chip-price{font-family:var(--f-display);font-weight:900;font-size:1.1rem;color:var(--gold)}
+    .plan-chip-gold{flex-direction:row;align-items:center;justify-content:space-between;flex:1 1 100%}
+    .plan-chip-name{font-family:var(--f-display);font-weight:700;font-size:.88rem;color:var(--ivory)}
+    .plan-chip-price{font-family:var(--f-display);font-weight:900;font-size:1.1rem;color:var(--tc, var(--gold))}
 
     .social-section{width:var(--container);margin:0 auto;padding:20px 0 60px;display:flex;gap:14px;justify-content:center}
     .social-icon{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1rem;font-weight:700;transition:background .2s}
