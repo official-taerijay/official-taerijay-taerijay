@@ -1,0 +1,92 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  const map = {
+    entertainment: { subs: ['drama', 'movie'] },
+    protocol: { subs: ['restaurant', 'cafe'] },
+    mini: { subs: ['region', '3hour', '1day', '2day', '3day', 'recommend'] },
+    emart: { subs: ['emart', 'traders', 'nobrand', 'emart24'] },
+    convenience: { subs: ['cu', 'gs25', 'seveneleven'] },
+  };
+  const paths = [];
+  for (const [channel, data] of Object.entries(map)) {
+    for (const sub of data.subs) {
+      paths.push({ params: { channel, sub } });
+    }
+  }
+  return paths;
+}
+
+const CHANNEL_MAP = {
+  entertainment: { color: '#00E5FF', subs: {
+    drama: { kr: '드라마', en: 'Drama' },
+    movie: { kr: '영화', en: 'Movie' },
+  }},
+  protocol: { color: '#F16B24', subs: {
+    restaurant: { kr: '맛집', en: 'Restaurant' },
+    cafe: { kr: '카페', en: 'Cafe' },
+  }},
+  mini: { color: '#e8e4dc', subs: {
+    region: { kr: '지역별로', en: 'By Region' },
+    '3hour': { kr: '3시간 코스', en: '3-Hour Course' },
+    '1day': { kr: '1일 코스', en: '1-Day Course' },
+    '2day': { kr: '2일 코스', en: '2-Day Course' },
+    '3day': { kr: '3일 코스', en: '3-Day Course' },
+    recommend: { kr: '추천코스', en: 'Recommended' },
+  }},
+  emart: { color: '#FFDD00', subs: {
+    emart: { kr: '이마트', en: 'E-Mart' },
+    traders: { kr: '트레이더스', en: 'Traders' },
+    nobrand: { kr: '노브랜드', en: 'No Brand' },
+    emart24: { kr: '이마트24', en: 'emart24' },
+  }},
+  convenience: { color: '#A14D7C', subs: {
+    cu: { kr: 'CU', en: 'CU' },
+    gs25: { kr: 'GS25', en: 'GS25' },
+    seveneleven: { kr: '세븐일레븐', en: '7-Eleven' },
+  }},
+};
+
+const { channel, sub } = Astro.params;
+const channelData = CHANNEL_MAP[channel];
+const subData = channelData.subs[sub];
+const color = channelData.color;
+---
+<Layout title={`taerijay+${channel} · ${subData.kr} | TAERIJAY`}>
+  <div class="sub-page" style={`--c:${color}`}>
+    <div class="sub-topbar">
+      <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
+    </div>
+
+    <section class="sub-hero">
+      <a href={`/04-channels/${channel}`} class="sub-parent-link">taerijay+{channel}</a>
+      <h1 class="sub-title">
+        <span class="sub-title-kr">{subData.kr}</span>
+        <span class="sub-title-en" data-i18n="en">{subData.en}</span>
+      </h1>
+    </section>
+
+    <section class="empty-note">
+      <p>콘텐츠 준비 중입니다.</p>
+      <p class="empty-note-en">Content coming soon.</p>
+    </section>
+  </div>
+
+  <style>
+    .sub-page{width:var(--container);margin:0 auto;padding:24px 0 60px}
+    .sub-topbar{margin-bottom:20px;padding-top:88px}
+    .back-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--ivory);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer;transition:background .2s}
+    .back-btn:hover{background:rgba(255,255,255,.1)}
+
+    .sub-hero{padding-bottom:28px;border-bottom:1px solid color-mix(in srgb, var(--c) 30%, transparent);margin-bottom:36px}
+    .sub-parent-link{display:inline-block;text-decoration:none;font-size:.78rem;font-weight:700;color:var(--c);margin-bottom:12px}
+    .sub-title{display:flex;align-items:baseline;gap:10px}
+    .sub-title-kr{font-family:var(--f-display);font-weight:900;font-size:clamp(1.5rem,4.5vw,2.2rem)}
+    .sub-title-en{font-size:.8rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+
+    .empty-note{text-align:center;padding:40px 20px;border:1px dashed rgba(255,255,255,.15);border-radius:14px}
+    .empty-note p{font-size:.88rem;color:var(--muted);margin-bottom:6px}
+    .empty-note-en{font-size:.76rem;color:var(--dim)}
+  </style>
+</Layout>
