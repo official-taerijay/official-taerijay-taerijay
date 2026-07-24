@@ -2,13 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 
 const channels = {
-  entertainment: { slug: 'entertainment', color: '#00E5FF', free: true,  tag: 'K-엔터' },
-  protocol:      { slug: 'protocol',      color: '#F16B24', free: false, tag: 'K-생존' },
-  mini:          { slug: 'mini',          color: '#e8e4dc', free: false, tag: 'K-여행' },
-  daiso:         { slug: 'daiso',         color: '#E1261C', free: false, tag: 'K-Beauty' },
-  oliveyoung:    { slug: 'oliveyoung',    color: '#6F8B2E', free: false, tag: 'K-Beauty' },
-  emart:         { slug: 'emart',         color: '#FFDD00', free: false, tag: 'E-Mart × Traders × emart24' },
-  convenience:   { slug: 'convenience',   color: '#A14D7C', free: false, tag: 'GS25 × CU × 7-Eleven' },
+  entertainment: { slug: 'entertainment', color: '#00E5FF', free: true,  tag: 'K-ENTERTAINMENT' },
+  protocol:      { slug: 'protocol',      color: '#F16B24', free: false, tag: 'K-SURVIVAL' },
+  mini:          { slug: 'mini',          color: '#e8e4dc', free: false, tag: 'K-TRAVEL' },
+  daiso:         { slug: 'daiso',         color: '#E1261C', free: false, tag: 'K-BEAUTY' },
+  oliveyoung:    { slug: 'oliveyoung',    color: '#6F8B2E', free: false, tag: 'K-BEAUTY' },
+  emart:         { slug: 'emart',         color: '#FFDD00', free: false, tag: 'E-MART × TRADERS × EMART24' },
+  convenience:   { slug: 'convenience',   color: '#A14D7C', free: false, tag: 'GS25 × CU × 7-ELEVEN' },
 };
 ---
 <Layout title="TAERIJAY">
@@ -29,7 +29,7 @@ const channels = {
 
     <div class="channel-row" data-count="1">
       <a href={`/04-channels/${channels.entertainment.slug}`} class="service-card" style={`--c:${channels.entertainment.color}`}>
-        <span class="service-status status-free">FREE</span>
+        <span class="service-status status-click">CLICK</span>
         <span class="service-name">taerijay+entertainment</span>
         <span class="service-tag">{channels.entertainment.tag}</span>
       </a>
@@ -37,12 +37,12 @@ const channels = {
 
     <div class="channel-row" data-count="2">
       <a href={`/04-channels/${channels.protocol.slug}`} class="service-card" style={`--c:${channels.protocol.color}`}>
-        <span class="service-status status-soon">SOON</span>
+        <span class="service-status status-click">CLICK</span>
         <span class="service-name">taerijay+protocol</span>
         <span class="service-tag">{channels.protocol.tag}</span>
       </a>
       <a href={`/04-channels/${channels.mini.slug}`} class="service-card" style={`--c:${channels.mini.color}`}>
-        <span class="service-status status-soon">SOON</span>
+        <span class="service-status status-click">CLICK</span>
         <span class="service-name">taerijay+mini</span>
         <span class="service-tag">{channels.mini.tag}</span>
       </a>
@@ -50,12 +50,12 @@ const channels = {
 
     <div class="channel-row" data-count="2">
       <a href={`/04-channels/${channels.daiso.slug}`} class="service-card" style={`--c:${channels.daiso.color}`}>
-        <span class="service-status status-soon">SOON</span>
+        <span class="service-status status-click">CLICK</span>
         <span class="service-name">taerijay+daiso</span>
         <span class="service-tag">{channels.daiso.tag}</span>
       </a>
       <a href={`/04-channels/${channels.oliveyoung.slug}`} class="service-card" style={`--c:${channels.oliveyoung.color}`}>
-        <span class="service-status status-soon">SOON</span>
+        <span class="service-status status-click">CLICK</span>
         <span class="service-name">taerijay+oliveyoung</span>
         <span class="service-tag">{channels.oliveyoung.tag}</span>
       </a>
@@ -63,12 +63,12 @@ const channels = {
 
     <div class="channel-row" data-count="2">
       <a href={`/04-channels/${channels.emart.slug}`} class="service-card" style={`--c:${channels.emart.color}`}>
-        <span class="service-status status-soon">SOON</span>
+        <span class="service-status status-click">CLICK</span>
         <span class="service-name">taerijay+emart</span>
         <span class="service-tag">{channels.emart.tag}</span>
       </a>
       <a href={`/04-channels/${channels.convenience.slug}`} class="service-card" style={`--c:${channels.convenience.color}`}>
-        <span class="service-status status-soon">SOON</span>
+        <span class="service-status status-click">CLICK</span>
         <span class="service-name">taerijay+convenience</span>
         <span class="service-tag">{channels.convenience.tag}</span>
       </a>
@@ -86,30 +86,18 @@ const channels = {
         <span class="plan-row-label-kr">싱글 요금제</span>
         <span class="plan-row-label-en" data-i18n="en">SINGLE</span>
       </span>
-      <div class="plan-row-items">
+      <div class="plan-row-items plan-row-items-stack">
         <div class="tier-chip" style="--tc:#FBF9F4">
-          <span class="tier-chip-price">$19.99</span>
-          <span class="tier-chip-kr">베이직</span>
-          <span class="tier-chip-en" data-i18n="en">Basic</span>
+          <span class="tier-chip-price">USD 19.99</span>
+          <span class="tier-chip-en" data-i18n="en">BASIC</span>
         </div>
         <div class="tier-chip" style="--tc:#22C55E">
-          <span class="tier-chip-price">$29.99</span>
-          <span class="tier-chip-kr">스탠다드</span>
-          <span class="tier-chip-en" data-i18n="en">Standard</span>
+          <span class="tier-chip-price">USD 29.99</span>
+          <span class="tier-chip-en" data-i18n="en">STANDARD</span>
         </div>
-      </div>
-    </div>
-
-    <div class="plan-row">
-      <span class="plan-row-label">
-        <span class="plan-row-label-kr">싱글 요금제</span>
-        <span class="plan-row-label-en" data-i18n="en">SINGLE</span>
-      </span>
-      <div class="plan-row-items">
-        <div class="tier-chip tier-chip-wide" style="--tc:#F16B24">
-          <span class="tier-chip-price">$39.99</span>
-          <span class="tier-chip-kr">프로</span>
-          <span class="tier-chip-en" data-i18n="en">Pro</span>
+        <div class="tier-chip" style="--tc:#F16B24">
+          <span class="tier-chip-price">USD 39.99</span>
+          <span class="tier-chip-en" data-i18n="en">PRO</span>
         </div>
       </div>
     </div>
@@ -122,7 +110,7 @@ const channels = {
       <div class="plan-row-items">
         <div class="plan-chip plan-chip-double" style="--tc:#2DD4BF">
           <span class="plan-chip-name">taerijay+protocol × taerijay+mini</span>
-          <span class="plan-chip-price">$34.99</span>
+          <span class="plan-chip-price">USD 34.99</span>
         </div>
       </div>
     </div>
@@ -135,7 +123,7 @@ const channels = {
       <div class="plan-row-items">
         <div class="plan-chip plan-chip-double" style="--tc:#818CF8">
           <span class="plan-chip-name">taerijay+daiso × taerijay+oliveyoung</span>
-          <span class="plan-chip-price">$34.99</span>
+          <span class="plan-chip-price">USD 34.99</span>
         </div>
       </div>
     </div>
@@ -148,7 +136,7 @@ const channels = {
       <div class="plan-row-items">
         <div class="plan-chip plan-chip-double" style="--tc:#FB923C">
           <span class="plan-chip-name">taerijay+emart × taerijay+convenience</span>
-          <span class="plan-chip-price">$34.99</span>
+          <span class="plan-chip-price">USD 34.99</span>
         </div>
       </div>
     </div>
@@ -160,8 +148,16 @@ const channels = {
       </span>
       <div class="plan-row-items">
         <div class="plan-chip plan-chip-gold" style="--tc:#B33A52">
-          <span class="plan-chip-name">6개 서비스 전부</span>
-          <span class="plan-chip-price">$99.99</span>
+          <div class="plan-chip-total-list">
+            <span class="plan-chip-name">ALL SERVICES</span>
+            <span class="plan-chip-total-item">taerijay+protocol</span>
+            <span class="plan-chip-total-item">taerijay+mini</span>
+            <span class="plan-chip-total-item">taerijay+daiso</span>
+            <span class="plan-chip-total-item">taerijay+oliveyoung</span>
+            <span class="plan-chip-total-item">taerijay+emart</span>
+            <span class="plan-chip-total-item">taerijay+convenience</span>
+          </div>
+          <span class="plan-chip-price">USD 99.99</span>
         </div>
       </div>
     </div>
@@ -213,11 +209,10 @@ const channels = {
       transition:transform .2s ease;
     }
     .service-card:hover{transform:translateY(-3px)}
-    .service-status{position:absolute;top:12px;right:14px;font-size:.6rem;font-weight:800;letter-spacing:.06em;padding:3px 9px;border-radius:100px}
-    .status-free{background:var(--gold);color:var(--bg)}
-    .status-soon{background:rgba(255,255,255,.12);color:var(--muted)}
-    .service-name{font-family:var(--f-display);font-weight:700;font-size:clamp(1.1rem,3vw,1.5rem);line-height:1.15;color:var(--c)}
-    .service-tag{font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:.02em}
+    .service-status{position:absolute;top:12px;right:14px;font-size:.62rem;font-weight:800;letter-spacing:.08em;padding:3px 10px;border-radius:100px}
+    .status-click{background:var(--gold);color:var(--bg)}
+    .service-name{font-family:var(--f-display);font-weight:700;font-size:clamp(1.5rem,4.2vw,2.1rem);line-height:1.15;color:var(--c)}
+    .service-tag{font-size:.92rem;font-weight:700;color:var(--muted);letter-spacing:.02em}
 
     .plans-section{width:var(--container);margin:0 auto;padding:60px 0 90px}
     .plans-eyebrow-kr{font-size:.78rem;font-weight:700;color:var(--muted);margin-bottom:2px}
@@ -237,17 +232,18 @@ const channels = {
     .plan-row-label-en{font-size:.64rem;font-weight:600;letter-spacing:.08em;color:var(--dim);text-transform:uppercase}
     .plan-row-items{display:flex;gap:12px;flex-wrap:wrap;flex:1}
 
-    .tier-chip{border:2px solid var(--tc, var(--gold));border-radius:10px;padding:12px 18px;display:flex;flex-direction:column;gap:2px;min-width:140px;flex:1;background:color-mix(in srgb, var(--tc, var(--gold)) 10%, transparent)}
-    .tier-chip-wide{flex:1 1 100%;max-width:280px}
+    .plan-row-items-stack{flex-direction:column;gap:10px}
+    .tier-chip{border:2px solid var(--tc, var(--gold));border-radius:10px;padding:12px 18px;display:flex;flex-direction:column;gap:2px;width:100%;background:color-mix(in srgb, var(--tc, var(--gold)) 10%, transparent)}
     .tier-chip-price{font-family:var(--f-display);font-weight:900;font-size:1.15rem;color:var(--tc, var(--gold))}
-    .tier-chip-kr{font-size:.86rem;font-weight:700;color:var(--ivory)}
-    .tier-chip-en{font-size:.7rem;font-weight:600;color:var(--tc, var(--gold))}
+    .tier-chip-en{font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--tc, var(--gold));text-transform:uppercase}
 
     .plan-chip{border:2px solid var(--tc, rgba(91,14,27,.4));border-radius:10px;padding:12px 18px;display:flex;flex-direction:column;gap:2px;min-width:150px;flex:1;background:color-mix(in srgb, var(--tc, transparent) 10%, transparent)}
     .plan-chip-double{flex-direction:row;align-items:center;justify-content:space-between;gap:16px;flex:1 1 100%}
-    .plan-chip-gold{flex-direction:row;align-items:center;justify-content:space-between;flex:1 1 100%}
+    .plan-chip-gold{flex-direction:column;align-items:flex-start;gap:14px;flex:1 1 100%;padding:18px}
     .plan-chip-name{font-family:var(--f-display);font-weight:700;font-size:.88rem;color:var(--ivory)}
-    .plan-chip-price{font-family:var(--f-display);font-weight:900;font-size:1.1rem;color:var(--tc, var(--gold))}
+    .plan-chip-price{font-family:var(--f-display);font-weight:900;font-size:1.3rem;color:var(--tc, var(--gold))}
+    .plan-chip-total-list{display:flex;flex-direction:column;gap:5px}
+    .plan-chip-total-item{font-family:var(--f-body);font-weight:600;font-size:.8rem;letter-spacing:.02em;color:var(--muted)}
 
     @media (max-width: 900px){
       .hero-wordmark{font-size:clamp(2.6rem,13vw,5rem)}

@@ -110,6 +110,7 @@ const languages = [
             ))}
           </div>
         </div>
+        <a href="/01-auth/auth" class="nav-account-link">Sign Up / Log In / Log Out</a>
       </div>
     </div>
   </header>
@@ -118,7 +119,7 @@ const languages = [
     <div class="side-menu-inner">
       <button type="button" class="side-close" id="side-close">×</button>
 
-      <a href="/" class="side-logo">TAERIJAY<span class="side-logo-plus">+</span></a>
+      <a href="/" class="side-logo">TAERIJAY</a>
 
       <nav class="side-links side-links-channels">
         {Object.values(channels).map((ch) => (
@@ -129,9 +130,7 @@ const languages = [
       <div class="side-divider"></div>
 
       <nav class="side-links side-links-account">
-        <button type="button" class="side-account-btn" disabled title="준비 중입니다">Sign Up</button>
-        <button type="button" class="side-account-btn" disabled title="준비 중입니다">Log In</button>
-        <button type="button" class="side-account-btn" disabled title="준비 중입니다">Log Out</button>
+        <a href="/01-auth/auth" class="side-account-link">Sign Up / Log In / Log Out</a>
       </nav>
 
       <div class="side-divider"></div>
@@ -306,7 +305,9 @@ const languages = [
     .nav-logo{font-family:var(--f-display);font-weight:900;font-size:clamp(1rem,3vw,1.15rem);letter-spacing:.05em;color:#B33A52;text-decoration:none}
     .hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
     .hamburger span{display:block;width:22px;height:2px;background:var(--ivory)}
-    .nav-right{display:flex;align-items:center;gap:12px}
+    .nav-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+    .nav-account-link{text-decoration:none;font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:.02em;white-space:nowrap}
+    .nav-account-link:hover{color:var(--ivory)}
 
     .lang-dropdown{position:relative}
     .lang-trigger{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--ivory);font-size:.76rem;font-weight:600;padding:8px 12px;border-radius:6px;cursor:pointer}
@@ -318,12 +319,10 @@ const languages = [
     .side-menu-inner{position:absolute;top:0;left:0;height:100%;width:min(320px,80vw);background:#0d1f3d;padding:24px;display:flex;flex-direction:column;overflow-y:auto}
     .side-close{align-self:flex-end;background:none;border:none;color:var(--ivory);font-size:1.8rem;cursor:pointer;margin-bottom:20px}
     .side-logo{font-family:var(--f-display);font-weight:900;font-size:1.3rem;margin-bottom:28px;text-decoration:none;color:#B33A52}
-    .side-logo-plus{color:var(--gold)}
     .side-links{display:flex;flex-direction:column;gap:16px}
     .side-links a{text-decoration:none;font-size:.9rem;color:var(--c,var(--muted));font-weight:600}
     .side-divider{height:1px;background:rgba(255,255,255,.08);margin:20px 0}
-    .side-links-account{gap:14px}
-    .side-account-btn{background:none;border:none;color:var(--muted);font-size:.86rem;font-weight:600;text-align:left;padding:0;cursor:not-allowed;opacity:.55}
+    .side-account-link{color:var(--ivory)!important;font-weight:700!important}
     .side-links-plain a{color:var(--ivory);font-weight:700;letter-spacing:.04em}
     .side-links-legal{flex-direction:row;flex-wrap:wrap;gap:14px}
     .side-links-legal a{font-size:.78rem;color:var(--muted);font-weight:500}
