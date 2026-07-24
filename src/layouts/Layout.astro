@@ -108,7 +108,10 @@ const languages = [
             ))}
           </div>
         </div>
-        <a href="/01-auth/auth" class="nav-account-link">Sign Up / Log In / Log Out</a>
+        <a href="/01-auth/auth" class="nav-account-btn" id="nav-account-btn">
+          <span class="nav-account-kr" id="nav-account-kr">회원가입/로그인</span>
+          <span class="nav-account-en" id="nav-account-en" data-i18n="en">Sign Up / Log In</span>
+        </a>
       </div>
     </div>
   </header>
@@ -128,7 +131,7 @@ const languages = [
       <div class="side-divider"></div>
 
       <nav class="side-links side-links-account">
-        <a href="/01-auth/auth" class="side-account-link">Sign Up / Log In / Log Out</a>
+        <a href="/01-auth/auth" class="side-account-link" id="side-account-link">회원가입/로그인</a>
       </nav>
 
       <div class="side-divider"></div>
@@ -280,6 +283,21 @@ const languages = [
         const s = document.getElementById('splash');
         if (s) { s.style.opacity = '0'; setTimeout(() => s.remove(), 500); }
       }, 700);
+
+      const kr = document.getElementById('nav-account-kr');
+      const en = document.getElementById('nav-account-en');
+      const sideLink = document.getElementById('side-account-link');
+      const loggedIn = !!sessionStorage.getItem('user_email');
+      if (kr && en) {
+        if (loggedIn) {
+          kr.textContent = '로그아웃';
+          en.textContent = 'Log Out';
+        } else {
+          kr.textContent = '회원가입/로그인';
+          en.textContent = 'Sign Up / Log In';
+        }
+      }
+      if (sideLink) sideLink.textContent = loggedIn ? '로그아웃' : '회원가입/로그인';
     });
   </script>
 
@@ -304,8 +322,10 @@ const languages = [
     .hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
     .hamburger span{display:block;width:22px;height:2px;background:var(--ivory)}
     .nav-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
-    .nav-account-link{text-decoration:none;font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:.02em;white-space:nowrap}
-    .nav-account-link:hover{color:var(--ivory)}
+    .nav-account-btn{display:flex;flex-direction:column;align-items:center;gap:1px;text-decoration:none;background:rgba(91,14,27,.55);border:1px solid #8B1A2A;border-radius:8px;padding:6px 14px}
+    .nav-account-btn:hover{background:rgba(91,14,27,.8)}
+    .nav-account-kr{font-size:.78rem;font-weight:700;color:var(--ivory)}
+    .nav-account-en{font-size:.62rem;font-weight:600;color:var(--muted)}
 
     .lang-dropdown{position:relative}
     .lang-trigger{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--ivory);font-size:.76rem;font-weight:600;padding:8px 12px;border-radius:6px;cursor:pointer}
@@ -334,15 +354,15 @@ const languages = [
     .footer-en{font-size:.7rem;color:var(--dim)}
     .footer-social{display:flex;gap:14px;justify-content:center;margin-bottom:20px}
     .social-icon{
-      width:38px;height:38px;border-radius:50%;
+      width:40px;height:40px;
       display:flex;align-items:center;justify-content:center;
-      text-decoration:none;overflow:hidden;
-      transition:transform .15s,box-shadow .2s;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
+      text-decoration:none;
+      transition:transform .15s;
+      background:none;
+      border:none;
     }
-    .social-icon svg{width:20px;height:20px;display:block}
-    .social-icon:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.35)}
+    .social-icon svg{width:36px;height:36px;display:block}
+    .social-icon:hover{transform:translateY(-2px)}
     .footer-copy{font-size:.74rem;color:var(--dim)}
 
     @media (max-width: 560px){

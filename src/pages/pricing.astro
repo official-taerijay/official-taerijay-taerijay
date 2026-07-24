@@ -85,13 +85,19 @@ const doublePlans = [
 
       <div class="double-detail-list">
         {doublePlans.map((dp) => (
-          <div class="double-detail-card">
-            <div class="double-detail-names">
-              <span style={`color:${channels[dp.a].color}`}>taerijay+{dp.a}</span>
-              <span class="double-x">×</span>
-              <span style={`color:${channels[dp.b].color}`}>taerijay+{dp.b}</span>
+          <div class="double-detail-row">
+            <span class="double-detail-label">
+              <span class="double-detail-label-kr">더블 요금제</span>
+              <span class="double-detail-label-en" data-i18n="en">DOUBLE</span>
+            </span>
+            <div class="double-detail-box" style={`--tc:${dp.color}`}>
+              <span class="double-detail-names">
+                <span style={`color:${channels[dp.a].color}`}>taerijay+{dp.a}</span>
+                <span class="double-x">×</span>
+                <span style={`color:${channels[dp.b].color}`}>taerijay+{dp.b}</span>
+              </span>
+              <span class="double-detail-price">USD 34.99</span>
             </div>
-            <span class="double-detail-price">USD 34.99</span>
           </div>
         ))}
       </div>
@@ -106,13 +112,20 @@ const doublePlans = [
       <p class="pricing-block-desc-kr">유료 채널 6개 전체 이용, 신규 채널 자동 포함</p>
       <p class="pricing-block-desc-en" data-i18n="en">All 6 paid channels, new channels included automatically</p>
 
-      <div class="total-detail-card">
-        <div class="total-detail-names">
-          {Object.entries(channels).filter(([slug]) => slug !== 'entertainment').map(([slug, ch]) => (
-            <span class="total-chip" style={`--c:${ch.color}`}>{slug}</span>
-          ))}
+      <div class="total-detail-row">
+        <span class="total-detail-label">
+          <span class="total-detail-label-kr" style="color:#B33A52">토탈 요금제</span>
+          <span class="total-detail-label-en" style="color:#B33A52" data-i18n="en">TOTAL</span>
+        </span>
+        <div class="total-detail-card">
+          <span class="total-detail-heading" data-i18n="en">ALL SERVICES</span>
+          <div class="total-detail-names">
+            {Object.entries(channels).filter(([slug]) => slug !== 'entertainment').map(([slug, ch]) => (
+              <span class="total-chip-line" style={`color:${ch.color}`}>taerijay+{slug}</span>
+            ))}
+          </div>
+          <span class="total-detail-price">USD 99.99</span>
         </div>
-        <span class="total-detail-price">USD 99.99</span>
       </div>
     </section>
   </div>
@@ -153,16 +166,25 @@ const doublePlans = [
     .ch-pill{text-decoration:none;border:1px solid var(--c);color:var(--c);border-radius:20px;font-size:.76rem;font-weight:600;padding:7px 14px;transition:background .2s}
     .ch-pill:hover{background:color-mix(in srgb, var(--c) 16%, transparent)}
 
-    .double-detail-list{display:flex;flex-direction:column;gap:12px;margin-top:20px}
-    .double-detail-card{display:flex;flex-direction:column;gap:10px;border:1px solid rgba(91,14,27,.4);border-radius:12px;padding:16px 20px}
-    .double-detail-names{font-family:var(--f-display);font-weight:700;font-size:.95rem}
+    .double-detail-list{display:flex;flex-direction:column;gap:0;margin-top:20px}
+    .double-detail-row{display:flex;align-items:center;gap:18px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
+    .double-detail-label{flex:0 0 110px;display:flex;flex-direction:column;gap:2px}
+    .double-detail-label-kr{font-size:.78rem;font-weight:700;color:var(--muted)}
+    .double-detail-label-en{font-size:.64rem;font-weight:600;letter-spacing:.08em;color:var(--dim);text-transform:uppercase}
+    .double-detail-box{border:2px solid var(--tc);border-radius:10px;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex:1;background:color-mix(in srgb, var(--tc) 8%, transparent)}
+    .double-detail-names{font-weight:700;font-size:.95rem}
     .double-x{color:var(--dim);margin:0 8px}
-    .double-detail-price{font-family:var(--f-display);font-weight:900;font-size:1.2rem;color:var(--gold)}
+    .double-detail-price{font-weight:900;font-size:1.2rem;color:var(--tc)}
 
-    .total-detail-card{border:1px solid #B33A52;border-radius:14px;padding:24px;background:linear-gradient(160deg, rgba(179,58,82,.12) 0%, rgba(179,58,82,.02) 100%);margin-top:20px}
-    .total-detail-names{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
-    .total-chip{font-size:.78rem;font-weight:700;color:var(--c);border:1px solid var(--c);border-radius:100px;padding:5px 14px}
-    .total-detail-price{font-family:var(--f-display);font-weight:900;font-size:1.8rem;color:#B33A52}
+    .total-detail-row{display:flex;align-items:center;gap:18px;padding-top:14px;flex-wrap:wrap}
+    .total-detail-label{flex:0 0 110px;display:flex;flex-direction:column;gap:2px}
+    .total-detail-label-kr{font-size:.78rem;font-weight:700}
+    .total-detail-label-en{font-size:.64rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+    .total-detail-card{border:1px solid #B33A52;border-radius:14px;padding:24px;background:linear-gradient(160deg, rgba(179,58,82,.12) 0%, rgba(179,58,82,.02) 100%);flex:1;min-width:260px}
+    .total-detail-heading{display:block;font-weight:800;font-size:.95rem;color:var(--ivory);margin-bottom:14px}
+    .total-detail-names{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+    .total-chip-line{font-size:.82rem;font-weight:700}
+    .total-detail-price{font-weight:900;font-size:1.8rem;color:#B33A52}
 
     @media (max-width: 700px){
       .tier-detail-grid{grid-template-columns:1fr}
