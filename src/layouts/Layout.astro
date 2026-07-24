@@ -87,6 +87,7 @@ const languages = [
   <link rel="preconnect" href="https://fonts.googleapis.com" />
 </head>
 <body>
+  <div id="google_translate_element" style="display:none"></div>
   <div id="splash" class="splash"><span class="splash-brand">TAERIJAY</span></div>
 
   <!-- 헤더: 로그인 없음 — 로그인은 결제 시점에만 등장 -->
@@ -264,8 +265,36 @@ const languages = [
         langCurrent.textContent = opt.dataset.name;
         localStorage.setItem('taerijay_lang', opt.dataset.code);
         langMenu.hidden = true;
+        translatePage(opt.dataset.code);
       });
     });
+
+    // 구글 번역 엔진 연동 — 선택한 언어로 페이지 전체 실시간 번역
+    function translatePage(code) {
+      if (code === 'ko') {
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) { combo.value = ''; combo.dispatchEvent(new Event('change')); }
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        return;
+      }
+      const gCode = code === 'zh-HK' ? 'zh-TW' : code;
+      const trySetCombo = (attempt) => {
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+          combo.value = gCode;
+          combo.dispatchEvent(new Event('change'));
+        } else if (attempt < 20) {
+          setTimeout(() => trySetCombo(attempt + 1), 250);
+        }
+      };
+      trySetCombo(0);
+    }
+
+    window.googleTranslateElementInit = function () {
+      new google.translate.TranslateElement({ pageLanguage: 'ko', autoDisplay: false }, 'google_translate_element');
+      const saved = localStorage.getItem('taerijay_lang');
+      if (saved && saved !== 'ko') translatePage(saved);
+    };
 
     document.addEventListener('click', (e) => {
       if (!langMenu.hidden && !e.target.closest('.lang-dropdown')) {
@@ -300,6 +329,8 @@ const languages = [
       if (sideLink) sideLink.textContent = loggedIn ? '로그아웃' : '회원가입/로그인';
     });
   </script>
+
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 
   <style is:global>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -369,6 +400,11 @@ const languages = [
       .lang-trigger{padding:6px 9px;font-size:.7rem}
       .lang-menu{right:-40px;max-width:calc(100vw - 24px)}
     }
+
+    .goog-te-banner-frame, .skiptranslate iframe { display:none!important; }
+    body{top:0!important; position:static!important;}
+    .goog-text-highlight{background:none!important; box-shadow:none!important;}
+    #google_translate_element{display:none!important;}
 
     @media (prefers-reduced-motion: reduce){
       *{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}

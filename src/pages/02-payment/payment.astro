@@ -177,12 +177,14 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 
     .benefit-list li {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 10px;
-      font-size: 13px;
-      color: rgba(251,249,244,0.8);
       line-height: 1.4;
     }
+
+    .benefit-text { display: flex; flex-direction: column; gap: 1px; }
+    .benefit-kr { font-size: 13px; color: rgba(251,249,244,0.9); }
+    .benefit-en { font-size: 11px; color: rgba(251,249,244,0.55); }
 
     .benefit-icon {
       width: 16px; height: 16px;
@@ -193,6 +195,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      margin-top: 1px;
       font-size: 8px;
       color: var(--accent);
       font-weight: 700;
@@ -409,7 +412,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Basic Tier',
         price:    19.99,
         accent:   '#F16B24',
-        benefits: ['1년 무제한 protocol 채널 열람', '공항·세관·대중교통 핵심 규약 DB', '실시간 업데이트 정보 상시 열람', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 protocol 채널 열람', en: 'protocol channel — 1yr unlimited' }, { kr: '공항·세관·대중교통 핵심 규약 DB', en: 'Airport / customs / transit rules DB' }, { kr: '실시간 업데이트 정보 상시 열람', en: 'Real-time updates, always on' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       mini_basic: {
         priceId:  'pri_01kqxz3fghe6qsj5kh0vvjw24w',
@@ -417,7 +420,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Basic Tier',
         price:    19.99,
         accent:   '#FBF9F4',
-        benefits: ['1년 무제한 mini 채널 열람', '거점 도시별 최적 동선 가이드', '큐레이션 여행 코스 전체 공개', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 mini 채널 열람', en: 'mini channel — 1yr unlimited' }, { kr: '거점 도시별 최적 동선 가이드', en: 'Optimal routes by hub city' }, { kr: '큐레이션 여행 코스 전체 공개', en: 'Full curated travel courses' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       daiso_basic: {
         priceId:  'pri_01kqxz5yjv0w5pcyt2wwft4gar',
@@ -425,7 +428,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Basic Tier',
         price:    19.99,
         accent:   '#E1261C',
-        benefits: ['1년 무제한 daiso 채널 열람', '다이소 뷰티 대란템 실시간 DB', '매장별 재고·위치 정보 제공', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 daiso 채널 열람', en: 'daiso channel — 1yr unlimited' }, { kr: '다이소 뷰티 대란템 실시간 DB', en: 'Daiso beauty best-seller DB, live' }, { kr: '매장별 재고·위치 정보 제공', en: 'Store stock & location info' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       olive_basic: {
         priceId:  'pri_01kxv7ba8msb3j7h7rtsj1hx59',
@@ -433,7 +436,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Basic Tier',
         price:    19.99,
         accent:   '#6F8B2E',
-        benefits: ['1년 무제한 oliveyoung 채널 열람', 'MZ 스킨케어 트렌드 DB 전체 열람', 'Tax-Free 환급 가능 여부 표시', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 oliveyoung 채널 열람', en: 'oliveyoung channel — 1yr unlimited' }, { kr: 'MZ 스킨케어 트렌드 DB 전체 열람', en: 'Gen-Z skincare trend DB, full access' }, { kr: 'Tax-Free 환급 가능 여부 표시', en: 'Tax-free refund eligibility mark' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       emart_basic: {
         priceId:  'pri_01kxv7je3cb9s8pj31yyxwfeme',
@@ -441,7 +444,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Basic Tier',
         price:    19.99,
         accent:   '#FFDD00',
-        benefits: ['1년 무제한 emart 채널 열람', '이마트/트레이더스 쇼핑 스펙 DB', '대형마트 의무휴업일 경고 인덱스', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 emart 채널 열람', en: 'emart channel — 1yr unlimited' }, { kr: '이마트/트레이더스 쇼핑 스펙 DB', en: 'E-Mart / Traders shopping specs DB' }, { kr: '대형마트 의무휴업일 경고 인덱스', en: 'Mandatory closing-day warning index' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       cvs_basic: {
         priceId:  'pri_01kxv7pmea213szg7ejdnvx23t',
@@ -449,7 +452,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Basic Tier',
         price:    19.99,
         accent:   '#A14D7C',
-        benefits: ['1년 무제한 convenience 채널 열람', '24시 편의점 독점 PB 상품 조합 가이드', '편의점별 꿀조합 최적 동선 제공', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 convenience 채널 열람', en: 'convenience channel — 1yr unlimited' }, { kr: '24시 편의점 독점 PB 상품 조합 가이드', en: '24hr CVS exclusive PB combo guide' }, { kr: '편의점별 꿀조합 최적 동선 제공', en: 'Best combo routes, by chain' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       protocol_standard: {
         priceId:  'pri_01kxyjw7rxvbgm5pfcx2bqt6a0',
@@ -457,7 +460,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Standard Tier',
         price:    29.99,
         accent:   '#F16B24',
-        benefits: ['1년 무제한 protocol 채널 열람', 'Basic 포함 + 심화 규약 데이터 전체 공개', '신규 규약 업데이트 우선 열람 권한', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 protocol 채널 열람', en: 'protocol channel — 1yr unlimited' }, { kr: 'Basic 포함 + 심화 규약 데이터 전체 공개', en: 'Basic + full in-depth regulation data' }, { kr: '신규 규약 업데이트 우선 열람 권한', en: 'Priority on new regulation updates' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       mini_standard: {
         priceId:  'pri_01kxyk2mnc25zknae2wnm31bcw',
@@ -465,7 +468,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Standard Tier',
         price:    29.99,
         accent:   '#FBF9F4',
-        benefits: ['1년 무제한 mini 채널 열람', 'Basic 포함 + 심화 코스 전체 공개', '숨겨진 로컬 스팟 우선 열람', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 mini 채널 열람', en: 'mini channel — 1yr unlimited' }, { kr: 'Basic 포함 + 심화 코스 전체 공개', en: 'Basic + full advanced course access' }, { kr: '숨겨진 로컬 스팟 우선 열람', en: 'Priority on hidden local spots' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       daiso_standard: {
         priceId:  'pri_01kxyk6rmhden7tw7k8qj4464d',
@@ -473,7 +476,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Standard Tier',
         price:    29.99,
         accent:   '#E1261C',
-        benefits: ['1년 무제한 daiso 채널 열람', 'Basic 포함 + 전국 주요 매장 전체 DB', '신상품 알림 우선 열람', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 daiso 채널 열람', en: 'daiso channel — 1yr unlimited' }, { kr: 'Basic 포함 + 전국 주요 매장 전체 DB', en: 'Basic + full nationwide store DB' }, { kr: '신상품 알림 우선 열람', en: 'Priority new-product alerts' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       olive_standard: {
         priceId:  'pri_01kxykabv1mvtr31pjahgxsct5',
@@ -481,7 +484,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Standard Tier',
         price:    29.99,
         accent:   '#6F8B2E',
-        benefits: ['1년 무제한 oliveyoung 채널 열람', 'Basic 포함 + 할인/프로모션 전략 가이드', '세일 캘린더 우선 열람', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 oliveyoung 채널 열람', en: 'oliveyoung channel — 1yr unlimited' }, { kr: 'Basic 포함 + 할인/프로모션 전략 가이드', en: 'Basic + discount/promo strategy guide' }, { kr: '세일 캘린더 우선 열람', en: 'Priority on sale calendar' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       emart_standard: {
         priceId:  'pri_01kxykf9p29z6w15fecgk642dy',
@@ -489,7 +492,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Standard Tier',
         price:    29.99,
         accent:   '#FFDD00',
-        benefits: ['1년 무제한 emart 채널 열람', 'Basic 포함 + 전국 지점 전체 DB', '특가 이벤트 우선 열람', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 emart 채널 열람', en: 'emart channel — 1yr unlimited' }, { kr: 'Basic 포함 + 전국 지점 전체 DB', en: 'Basic + full nationwide branch DB' }, { kr: '특가 이벤트 우선 열람', en: 'Priority on special deal events' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       cvs_standard: {
         priceId:  'pri_01kxykjvzjsbqe7gsq74hf7tbc',
@@ -497,7 +500,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Standard Tier',
         price:    29.99,
         accent:   '#A14D7C',
-        benefits: ['1년 무제한 convenience 채널 열람', 'Basic 포함 + 브랜드 비교 가이드 전체 공개', '신상 PB 우선 열람', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 convenience 채널 열람', en: 'convenience channel — 1yr unlimited' }, { kr: 'Basic 포함 + 브랜드 비교 가이드 전체 공개', en: 'Basic + full brand comparison guide' }, { kr: '신상 PB 우선 열람', en: 'Priority on new PB items' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       protocol_pro: {
         priceId:  'pri_01kxykpqktg5a5q7sz6e9wbxxk',
@@ -505,7 +508,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Pro Tier',
         price:    39.99,
         accent:   '#F16B24',
-        benefits: ['1년 무제한 protocol 채널 전체 열람', 'Standard 포함 + 긴급 입국 규약 전용 데이터', '정책 변경 실시간 알림 최우선 적용', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 protocol 채널 전체 열람', en: 'protocol channel — full, 1yr unlimited' }, { kr: 'Standard 포함 + 긴급 입국 규약 전용 데이터', en: 'Standard + emergency entry regulation data' }, { kr: '정책 변경 실시간 알림 최우선 적용', en: 'Top-priority real-time policy alerts' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       mini_pro: {
         priceId:  'pri_01kxyktf615tcbce2h84q549yv',
@@ -513,7 +516,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Pro Tier',
         price:    39.99,
         accent:   '#FBF9F4',
-        benefits: ['1년 무제한 mini 채널 전체 열람', 'Standard 포함 + 시즌별 특급 코스 전체 공개', '월 10일·20일 신규 콘텐츠 우선 열람', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 mini 채널 전체 열람', en: 'mini channel — full, 1yr unlimited' }, { kr: 'Standard 포함 + 시즌별 특급 코스 전체 공개', en: 'Standard + full seasonal express courses' }, { kr: '월 10일·20일 신규 콘텐츠 우선 열람', en: 'Priority new content, 10th & 20th monthly' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       daiso_pro: {
         priceId:  'pri_01kxykytqx419t9hnknspte9kv',
@@ -521,7 +524,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Pro Tier',
         price:    39.99,
         accent:   '#E1261C',
-        benefits: ['1년 무제한 daiso 채널 전체 열람', 'Standard 포함 + 전 SKU 오리지널 DB 공개', '재고 소진 예측 인사이트 우선 제공', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 daiso 채널 전체 열람', en: 'daiso channel — full, 1yr unlimited' }, { kr: 'Standard 포함 + 전 SKU 오리지널 DB 공개', en: 'Standard + full original SKU DB' }, { kr: '재고 소진 예측 인사이트 우선 제공', en: 'Priority stock-out prediction insights' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       olive_pro: {
         priceId:  'pri_01kxym3cvmg277ew60m55jpgpf',
@@ -529,7 +532,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Pro Tier',
         price:    39.99,
         accent:   '#6F8B2E',
-        benefits: ['1년 무제한 oliveyoung 채널 전체 열람', 'Standard 포함 + 브랜드별 전략 심층 가이드', '멤버십 혜택 극대화 전략 공개', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 oliveyoung 채널 전체 열람', en: 'oliveyoung channel — full, 1yr unlimited' }, { kr: 'Standard 포함 + 브랜드별 전략 심층 가이드', en: 'Standard + in-depth brand strategy guide' }, { kr: '멤버십 혜택 극대화 전략 공개', en: 'Membership benefit maximization strategy' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       emart_pro: {
         priceId:  'pri_01kxym74jbacx434ft1gp1h67h',
@@ -537,7 +540,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Pro Tier',
         price:    39.99,
         accent:   '#FFDD00',
-        benefits: ['1년 무제한 emart 채널 전체 열람', 'Standard 포함 + 트레이더스 전용 심층 DB', '대용량 가성비 분석 리포트 우선 제공', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 emart 채널 전체 열람', en: 'emart channel — full, 1yr unlimited' }, { kr: 'Standard 포함 + 트레이더스 전용 심층 DB', en: 'Standard + exclusive Traders deep-dive DB' }, { kr: '대용량 가성비 분석 리포트 우선 제공', en: 'Priority bulk-value analysis reports' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       cvs_pro: {
         priceId:  'pri_01kxymc3g9hjq1rv28mb7nx0bb',
@@ -545,7 +548,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Pro Tier',
         price:    39.99,
         accent:   '#A14D7C',
-        benefits: ['1년 무제한 convenience 채널 전체 열람', 'Standard 포함 + 야간 특화 꿀조합 전체 공개', '지역별 한정 PB 독점 가이드 제공', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '1년 무제한 convenience 채널 전체 열람', en: 'convenience channel — full, 1yr unlimited' }, { kr: 'Standard 포함 + 야간 특화 꿀조합 전체 공개', en: 'Standard + full late-night combo guide' }, { kr: '지역별 한정 PB 독점 가이드 제공', en: 'Region-exclusive PB product guide' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       protocol_mini: {
         priceId:  'pri_01kxyn9m5pv8rvk484z9b5gsdm',
@@ -553,7 +556,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Double Pass',
         price:    34.99,
         accent:   '#F16B24',
-        benefits: ['protocol + mini 두 채널 동시 이용', '1년 무제한 — 두 채널 전체 DB 열람', '공항 입국부터 여행 동선까지 통합 제공', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: 'protocol + mini 두 채널 동시 이용', en: 'protocol + mini, simultaneous access' }, { kr: '1년 무제한 — 두 채널 전체 DB 열람', en: '1yr unlimited — both channels\' full DB' }, { kr: '공항 입국부터 여행 동선까지 통합 제공', en: 'Airport entry to travel routes, integrated' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       daiso_olive: {
         priceId:  'pri_01kxyndffbjb7h3wzq78hgzydr',
@@ -561,7 +564,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Double Pass',
         price:    34.99,
         accent:   '#E1261C',
-        benefits: ['daiso + oliveyoung 두 채널 동시 이용', '1년 무제한 — 뷰티·잡화 통합 DB 열람', '품절 대란템 + 스킨케어 최강 조합 제공', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: 'daiso + oliveyoung 두 채널 동시 이용', en: 'daiso + oliveyoung, simultaneous access' }, { kr: '1년 무제한 — 뷰티·잡화 통합 DB 열람', en: '1yr unlimited — combined beauty/goods DB' }, { kr: '품절 대란템 + 스킨케어 최강 조합 제공', en: 'Sold-out best-sellers + top skincare combos' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       emart_cvs: {
         priceId:  'pri_01kxynk4awnhbc5b6x0p8mr28w',
@@ -569,7 +572,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Double Pass',
         price:    34.99,
         accent:   '#FFDD00',
-        benefits: ['emart + convenience 두 채널 동시 이용', '1년 무제한 — 대형마트·편의점 통합 DB 열람', '실용 쇼핑 올인원 솔루션 제공', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: 'emart + convenience 두 채널 동시 이용', en: 'emart + convenience, simultaneous access' }, { kr: '1년 무제한 — 대형마트·편의점 통합 DB 열람', en: '1yr unlimited — combined mart/CVS DB' }, { kr: '실용 쇼핑 올인원 솔루션 제공', en: 'All-in-one practical shopping solution' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
       total: {
         priceId:  'pri_01kxynrmxggfrzymtp4721xyat',
@@ -577,7 +580,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         tier:     'Supreme Master',
         price:    99.99,
         accent:   '#D4AF37',
-        benefits: ['전 독립 채널 (6개) 1년 무제한 완전 개방', 'protocol · mini · daiso · oliveyoung · emart · convenience', '매월 신규 콘텐츠 최우선 열람 권한', '1 ID · 1 디바이스 전용'],
+        benefits: [{ kr: '전 독립 채널 (6개) 1년 무제한 완전 개방', en: 'All 6 channels — full, 1yr unlimited' }, { kr: 'protocol · mini · daiso · oliveyoung · emart · convenience', en: 'protocol · mini · daiso · oliveyoung · emart · convenience' }, { kr: '매월 신규 콘텐츠 최우선 열람 권한', en: 'Top priority, new content every month' }, { kr: '1 ID · 1 디바이스 전용', en: '1 ID · 1 device only' }],
       },
     };
 
@@ -612,7 +615,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       priceAmount.textContent  = product.price % 1 === 0 ? product.price.toString() : product.price.toFixed(2);
 
       benefitList.innerHTML = product.benefits
-        .map(b => `<li><div class="benefit-icon">✓</div>${b}</li>`)
+        .map(b => `<li><div class="benefit-icon">✓</div><div class="benefit-text"><span class="benefit-kr">${b.kr}</span><span class="benefit-en">${b.en}</span></div></li>`)
         .join('');
 
       // 로그인 상태 확인
@@ -666,7 +669,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
             displayMode: 'overlay',
             theme: 'dark',
             locale: 'en',
-            successUrl: '/?payment=success',
+            successUrl: `${window.location.origin}/?payment=success`,
             frameTarget: 'self',
           },
           eventCallback: function (data) {
