@@ -628,8 +628,27 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         payBtn.textContent = `Activate · $${product.price.toFixed(2)} USD`;
       }
 
-      // Paddle 초기화
-      Paddle.Initialize({ token: window.__TJ_PADDLE__ });
+      // Paddle 초기화 (SDK 로드 실패, 토큰 누락 등 방어)
+      if (typeof Paddle === 'undefined') {
+        statusBox.className = 'status-box err';
+        statusBox.textContent = '⚠️ Paddle SDK failed to load. Check network/ad-blocker and refresh.';
+        payBtn.disabled = true;
+        return;
+      }
+      if (!window.__TJ_PADDLE__) {
+        statusBox.className = 'status-box err';
+        statusBox.textContent = '⚠️ Payment config missing (PUBLIC_PADDLE_VENDOR_TOKEN not set).';
+        payBtn.disabled = true;
+        return;
+      }
+      try {
+        Paddle.Initialize({ token: window.__TJ_PADDLE__ });
+      } catch (e) {
+        statusBox.className = 'status-box err';
+        statusBox.textContent = `⚠️ Paddle init error: ${e.message || e}`;
+        payBtn.disabled = true;
+        return;
+      }
 
       // 결제 버튼
       payBtn.addEventListener('click', function () {
@@ -639,6 +658,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 
         const userEmail = sessionStorage.getItem('user_email');
 
+        try {
         Paddle.Checkout.open({
           items: [{ priceId: product.priceId, quantity: 1 }],
           customer: { email: userEmail || undefined },
@@ -667,6 +687,13 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
             }
           },
         });
+        } catch (e) {
+          console.error(e);
+          statusBox.className = 'status-box err';
+          statusBox.textContent = `⚠️ Checkout failed to open: ${e.message || e}`;
+          payBtn.disabled = false;
+          payBtn.textContent = `Activate · $${product.price.toFixed(2)} USD`;
+        }
       });
     }
 

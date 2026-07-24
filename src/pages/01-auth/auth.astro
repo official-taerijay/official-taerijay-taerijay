@@ -50,6 +50,7 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
       <div id="login-error" style="display:none;margin-top:12px;color:#F16B24;font-size:.82rem;text-align:center;">
         <span class="err-kr">로그인 실패. 다시 시도해주세요.</span>
         <span class="err-en">Sign-in failed. Please try again.</span>
+        <div id="login-error-detail" style="margin-top:6px;font-size:.7rem;color:var(--dim);word-break:break-all;"></div>
       </div>
     </div>
   </div>
@@ -133,7 +134,11 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
     getRedirectResult(auth).catch((e) => {
       console.error('redirect result error', e);
       const err = document.getElementById('login-error');
+      const detail = document.getElementById('login-error-detail');
       if (err) err.style.display = 'block';
+      if (detail) detail.textContent = `[${e.code || 'unknown'}] ${e.message || e}`;
+      const modal = document.getElementById('auth-modal');
+      if (modal) modal.hidden = false;
     });
 
     document.getElementById('btn-signin')?.addEventListener('click', () => {
@@ -151,12 +156,14 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
 
     document.getElementById('google-btn')?.addEventListener('click', async () => {
       const err = document.getElementById('login-error');
+      const detail = document.getElementById('login-error-detail');
       err.style.display = 'none';
       try {
         await signInWithRedirect(auth, provider);
       } catch(e) {
         console.error(e);
         err.style.display = 'block';
+        if (detail) detail.textContent = `[${e.code || 'unknown'}] ${e.message || e}`;
       }
     });
 
