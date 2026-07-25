@@ -232,5 +232,34 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
       if (s) { s.style.opacity = '0'; setTimeout(() => s.remove(), 500); }
     }, 500);
   </script>
+
+  <!-- 다른 페이지에서 선택한 언어를 이 페이지에서도 즉시 이어서 적용 -->
+  <div id="google_translate_element" style="display:none"></div>
+  <script>
+    window.googleTranslateElementInit = function () {
+      new google.translate.TranslateElement({ pageLanguage: 'ko', autoDisplay: false }, 'google_translate_element');
+      const saved = localStorage.getItem('taerijay_lang');
+      if (saved && saved !== 'ko') {
+        const gCode = saved === 'zh-HK' ? 'zh-TW' : saved;
+        const trySetCombo = (attempt) => {
+          const combo = document.querySelector('.goog-te-combo');
+          if (combo) {
+            combo.value = gCode;
+            combo.dispatchEvent(new Event('change'));
+          } else if (attempt < 20) {
+            setTimeout(() => trySetCombo(attempt + 1), 250);
+          }
+        };
+        trySetCombo(0);
+      }
+    };
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+  <style is:global>
+    .goog-te-banner-frame, .skiptranslate iframe { display:none!important; }
+    body{top:0!important; position:static!important;}
+    .goog-text-highlight{background:none!important; box-shadow:none!important;}
+    #google_translate_element{display:none!important;}
+  </style>
 </body>
 </html>
