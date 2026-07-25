@@ -1,8 +1,8 @@
 ---
-// src/pages/02-payment/payment.astro
+// src/pages/02-payment/index.astro
 // Paddle Billing v2 체크아웃 — Price ID 전체 매핑
 // 환경변수: PUBLIC_PADDLE_VENDOR_TOKEN
-// URL: /02-payment/payment?key=protocol_basic
+// URL: /02-payment?key=protocol_basic
 
 const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 ---
@@ -623,7 +623,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 
       if (!userEmail) {
         const returnUrl = encodeURIComponent(window.location.href);
-        window.location.href = `/01-auth/auth?redirect=${returnUrl}`;
+        window.location.href = `/01-auth?redirect=${returnUrl}`;
       } else {
         userRow.style.display = 'flex';
         userEmailShow.textContent = userEmail;

@@ -93,7 +93,7 @@ const doublePlans = [
               <span class="double-detail-label-kr">더블 요금제</span>
               <span class="double-detail-label-en" data-i18n="en">DOUBLE</span>
             </span>
-            <a href={`/02-payment/payment?key=${dp.payKey}`} class="double-detail-box" style={`--tc:${dp.color}`}>
+            <a href={`/02-payment?key=${dp.payKey}`} class="double-detail-box" style={`--tc:${dp.color}`}>
               <span class="double-detail-names">
                 <span style={`color:${channels[dp.a].color}`}>taerijay+{dp.a}</span>
                 <span class="double-x">×</span>
@@ -120,7 +120,7 @@ const doublePlans = [
           <span class="total-detail-label-kr" style="color:#B33A52">토탈 요금제</span>
           <span class="total-detail-label-en" style="color:#B33A52" data-i18n="en">TOTAL</span>
         </span>
-        <a href="/02-payment/payment?key=total" class="total-detail-card">
+        <a href="/02-payment?key=total" class="total-detail-card">
           <span class="total-detail-heading" data-i18n="en">ALL SERVICES</span>
           <div class="total-detail-names">
             {Object.entries(channels).filter(([slug]) => slug !== 'entertainment').map(([slug, ch]) => (
@@ -223,7 +223,7 @@ const doublePlans = [
     channelPick?.addEventListener('click', (e) => {
       const btn = e.target.closest('.ch-pill');
       if (!btn) return;
-      window.location.href = `/02-payment/payment?key=${btn.dataset.key}_${selectedTier}`;
+      window.location.href = `/02-payment?key=${btn.dataset.key}_${selectedTier}`;
     });
   </script>
 </Layout>

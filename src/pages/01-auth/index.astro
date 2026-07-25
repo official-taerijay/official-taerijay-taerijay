@@ -94,7 +94,7 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
 
   <script type="module" define:vars={{ FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID }}>
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-    import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged }
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged }
       from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
 
     const app = initializeApp({
@@ -110,7 +110,11 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
       return params.get('redirect');
     }
 
-    onAuthStateChanged(auth, (user) => {
+    // 리다이렉트로 돌아온 직후인지 여부 — onAuthStateChanged가 아직 처리 중일 때
+    // 잘못된 "로그아웃" 상태를 화면에 잠깐 그렸다가 다시 뒤집는 깜빡임(=반복되는 것처럼 보임)을 막기 위한 플래그
+    let redirectPending = sessionStorage.getItem('tj_redirect_pending') === '1';
+
+    function renderAuthUI(user) {
       const signinBtn = document.getElementById('btn-signin');
       const statusPanel = document.getElementById('statusPanel');
       const signoutBtn = document.getElementById('btn-signout');
@@ -118,6 +122,8 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
 
       if (user) {
         sessionStorage.setItem('user_email', user.email);
+        sessionStorage.removeItem('tj_redirect_pending');
+        redirectPending = false;
         if (signinBtn) signinBtn.hidden = true;
         if (statusPanel) statusPanel.hidden = false;
         if (signoutBtn) signoutBtn.hidden = false;
@@ -130,23 +136,37 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
         if (target) {
           window.location.href = target;
         }
-      } else {
+      } else if (!redirectPending) {
+        // 리다이렉트 처리 대기 중이 아닐 때만 로그아웃 상태로 확정
         sessionStorage.removeItem('user_email');
         if (signinBtn) signinBtn.hidden = false;
         if (statusPanel) statusPanel.hidden = true;
       }
-    });
+    }
+
+    onAuthStateChanged(auth, renderAuthUI);
 
     // 리다이렉트 로그인 후 돌아왔을 때 결과 처리 (팝업 방식의 COOP/서드파티쿠키 차단 문제 회피)
-    getRedirectResult(auth).catch((e) => {
-      console.error('redirect result error', e);
-      const err = document.getElementById('login-error');
-      const detail = document.getElementById('login-error-detail');
-      if (err) err.style.display = 'block';
-      if (detail) detail.textContent = `[${e.code || 'unknown'}] ${e.message || e}`;
-      const modal = document.getElementById('auth-modal');
-      if (modal) modal.hidden = false;
-    });
+    getRedirectResult(auth)
+      .then((result) => {
+        sessionStorage.removeItem('tj_redirect_pending');
+        redirectPending = false;
+        if (result && result.user) {
+          // onAuthStateChanged를 기다리지 않고 즉시 확정 — 반복 현상의 핵심 수정 지점
+          renderAuthUI(result.user);
+        }
+      })
+      .catch((e) => {
+        sessionStorage.removeItem('tj_redirect_pending');
+        redirectPending = false;
+        console.error('redirect result error', e);
+        const err = document.getElementById('login-error');
+        const detail = document.getElementById('login-error-detail');
+        if (err) err.style.display = 'block';
+        if (detail) detail.textContent = `[${e.code || 'unknown'}] ${e.message || e}`;
+        const modal = document.getElementById('auth-modal');
+        if (modal) modal.hidden = false;
+      });
 
     document.getElementById('btn-signin')?.addEventListener('click', () => {
       document.getElementById('auth-modal').hidden = false;
@@ -164,13 +184,46 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
     document.getElementById('google-btn')?.addEventListener('click', async () => {
       const err = document.getElementById('login-error');
       const detail = document.getElementById('login-error-detail');
+      const googleBtn = document.getElementById('google-btn');
       err.style.display = 'none';
+      if (googleBtn) googleBtn.disabled = true;
+
+      // 팝업 방식 우선 시도 — 같은 창에서 즉시 로그인 상태를 받아오므로
+      // 리다이렉트 방식에서 발생하던 세션 유실/반복 문제를 원천적으로 피함
       try {
-        await signInWithRedirect(auth, provider);
-      } catch(e) {
-        console.error(e);
-        err.style.display = 'block';
-        if (detail) detail.textContent = `[${e.code || 'unknown'}] ${e.message || e}`;
+        const result = await signInWithPopup(auth, provider);
+        if (result && result.user) {
+          renderAuthUI(result.user);
+        }
+      } catch (popupError) {
+        console.error('popup sign-in error', popupError);
+
+        // 팝업이 차단되었거나 사용자가 닫은 경우 등에는 리다이렉트 방식으로 폴백
+        const fallbackCodes = [
+          'auth/popup-blocked',
+          'auth/popup-closed-by-user',
+          'auth/cancelled-popup-request',
+          'auth/operation-not-supported-in-this-environment',
+        ];
+        if (fallbackCodes.includes(popupError.code)) {
+          try {
+            sessionStorage.setItem('tj_redirect_pending', '1');
+            redirectPending = true;
+            await signInWithRedirect(auth, provider);
+            return;
+          } catch (redirectError) {
+            sessionStorage.removeItem('tj_redirect_pending');
+            redirectPending = false;
+            console.error('redirect sign-in error', redirectError);
+            err.style.display = 'block';
+            if (detail) detail.textContent = `[${redirectError.code || 'unknown'}] ${redirectError.message || redirectError}`;
+          }
+        } else {
+          err.style.display = 'block';
+          if (detail) detail.textContent = `[${popupError.code || 'unknown'}] ${popupError.message || popupError}`;
+        }
+      } finally {
+        if (googleBtn) googleBtn.disabled = false;
       }
     });
 
