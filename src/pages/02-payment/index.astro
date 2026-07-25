@@ -683,6 +683,16 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 
         const userEmail = sessionStorage.getItem('user_email');
 
+        // 사이트에서 선택한 언어를 Paddle이 지원하는 결제창 언어코드로 변환
+        const PADDLE_LOCALE_MAP = {
+          ko: 'ko', en: 'en', ja: 'ja', de: 'de', es: 'es', fr: 'fr',
+          it: 'it', nl: 'nl', sv: 'sv', no: 'no', da: 'da', pl: 'pl',
+          pt: 'pt', ru: 'ru', ar: 'ar', tr: 'tr',
+          'zh-CN': 'zh-Hans', zh: 'zh-Hans', 'zh-TW': 'zh-Hant', 'zh-HK': 'zh-Hant',
+        };
+        const savedLang = localStorage.getItem('taerijay_lang') || 'ko';
+        const paddleLocale = PADDLE_LOCALE_MAP[savedLang] || 'en';
+
         try {
         Paddle.Checkout.open({
           items: [{ priceId: product.priceId, quantity: 1 }],
@@ -690,7 +700,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
           settings: {
             displayMode: 'overlay',
             theme: 'dark',
-            locale: 'en',
+            locale: paddleLocale,
             successUrl: `${window.location.origin}/?payment=success`,
             frameTarget: 'self',
           },
