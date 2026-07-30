@@ -13,6 +13,13 @@ const color = '#F16B24';
       <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
     </div>
 
+    <section class="channel-hero-banner" style={`--hero-img:url('/images/channels/protocol.jpg');--c:${color}`}>
+      <span class="channel-hero-region">
+        <span class="channel-hero-region-kr">설악</span>
+        <span class="channel-hero-region-en" data-i18n="en">SEORAK</span>
+      </span>
+    </section>
+
     <section class="channel-hero">
       <span class="channel-badge channel-badge-lock">맛보기 12개 무료 · 이후 요금제 필요</span>
       <h1 class="channel-title">taerijay<span style={`color:${color}`}>+protocol</span></h1>
@@ -43,6 +50,13 @@ const color = '#F16B24';
     .back-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--ivory);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer;transition:background .2s}
     .back-btn:hover{background:rgba(255,255,255,.1)}
 
+    .channel-hero-banner{position:relative;width:100%;aspect-ratio:21/9;border-radius:18px;overflow:hidden;margin-bottom:28px;background-image:var(--hero-img, none), linear-gradient(160deg, color-mix(in srgb, var(--c) 30%, var(--bg)) 0%, var(--bg) 100%);background-size:cover;background-position:center;border:1px solid color-mix(in srgb, var(--c) 30%, transparent)}
+    .channel-hero-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(6,10,18,.85) 100%)}
+    .channel-hero-region{position:absolute;left:20px;bottom:16px;z-index:1;display:flex;flex-direction:column;gap:1px}
+    .channel-hero-region-kr{font-family:var(--f-display);font-weight:900;font-size:1.1rem;color:var(--ivory)}
+    .channel-hero-region-en{font-size:.86rem;letter-spacing:.12em;font-weight:700;color:var(--c);text-transform:uppercase}
+    @media (max-width:560px){.channel-hero-banner{aspect-ratio:16/9}}
+
     .channel-hero{padding-bottom:28px;border-bottom:1px solid color-mix(in srgb, var(--c) 30%, transparent);margin-bottom:36px}
     .channel-badge{display:inline-block;background:var(--gold);color:var(--bg);font-size:.68rem;font-weight:800;letter-spacing:.04em;padding:5px 14px;border-radius:100px;margin-bottom:16px}
     .channel-badge-lock{background:color-mix(in srgb, var(--c) 14%, transparent);color:var(--c);border:1px solid color-mix(in srgb, var(--c) 35%, transparent)}
@@ -55,11 +69,11 @@ const color = '#F16B24';
     .cat-card:hover{transform:translateY(-4px)}
     .cat-card-art{aspect-ratio:16/10;background:linear-gradient(160deg, color-mix(in srgb, var(--c) 26%, var(--bg)) 0%, var(--bg) 80%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
     .cat-card-name{font-family:var(--f-display);font-weight:900;font-size:clamp(1.3rem,4vw,1.7rem);color:var(--c)}
-    .cat-card-name-en{font-size:.72rem;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+    .cat-card-name-en{font-size:.9rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
 
     .empty-note{text-align:center;padding:40px 20px;border:1px dashed rgba(255,255,255,.15);border-radius:14px}
     .empty-note p{font-size:.88rem;color:var(--muted);margin-bottom:6px}
-    .empty-note-en{font-size:.76rem;color:var(--dim)}
+    .empty-note-en{font-size:.94rem;color:var(--dim)}
 
     @media (max-width: 560px){
       .cat-grid-section{grid-template-columns:repeat(2,1fr)}

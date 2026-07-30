@@ -2,13 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 
 const channels = {
-  entertainment: { slug: 'entertainment', color: '#00E5FF', free: true,  tag: 'K-ENTERTAINMENT' },
-  protocol:      { slug: 'protocol',      color: '#F16B24', free: false, tag: 'K-SURVIVAL' },
-  mini:          { slug: 'mini',          color: '#e8e4dc', free: false, tag: 'K-TRAVEL' },
-  daiso:         { slug: 'daiso',         color: '#E1261C', free: false, tag: 'K-BEAUTY' },
-  oliveyoung:    { slug: 'oliveyoung',    color: '#6F8B2E', free: false, tag: 'K-BEAUTY' },
-  emart:         { slug: 'emart',         color: '#FFDD00', free: false, tag: 'E-MART × TRADERS × EMART24' },
-  convenience:   { slug: 'convenience',   color: '#A14D7C', free: false, tag: 'GS25 × CU × 7-ELEVEN' },
+  entertainment: { slug: 'entertainment', color: '#00E5FF', free: true,  tag: 'K-ENTERTAINMENT', region: 'Seoul',    regionKr: '서울' },
+  protocol:      { slug: 'protocol',      color: '#F16B24', free: false, tag: 'K-SURVIVAL',      region: 'Seorak',   regionKr: '설악' },
+  mini:          { slug: 'mini',          color: '#e8e4dc', free: false, tag: 'K-TRAVEL',        region: 'Jeonju',   regionKr: '전주' },
+  daiso:         { slug: 'daiso',         color: '#E1261C', free: false, tag: 'K-BEAUTY',        region: 'Gyeongju', regionKr: '경주' },
+  oliveyoung:    { slug: 'oliveyoung',    color: '#6F8B2E', free: false, tag: 'K-BEAUTY',        region: 'Busan',    regionKr: '부산' },
+  emart:         { slug: 'emart',         color: '#FFDD00', free: false, tag: 'E-MART × TRADERS × EMART24', region: 'Jeju',    regionKr: '제주' },
+  convenience:   { slug: 'convenience',   color: '#A14D7C', free: false, tag: 'GS25 × CU × 7-ELEVEN',       region: 'Incheon', regionKr: '인천' },
 };
 ---
 <Layout title="TAERIJAY">
@@ -28,47 +28,54 @@ const channels = {
   <section class="channels-section" id="channels">
 
     <div class="channel-row" data-count="1">
-      <a href={`/04-channels/${channels.entertainment.slug}`} class="service-card" style={`--c:${channels.entertainment.color}`}>
+      <a href={`/04-channels/${channels.entertainment.slug}`} class="service-card" style={`--c:${channels.entertainment.color};--hero-img:url('/images/channels/${channels.entertainment.slug}.jpg')`}>
         <span class="service-status status-click">CLICK</span>
+        <span class="service-region">{channels.entertainment.regionKr} · {channels.entertainment.region}</span>
         <span class="service-name">taerijay+entertainment</span>
         <span class="service-tag">{channels.entertainment.tag}</span>
       </a>
     </div>
 
     <div class="channel-row" data-count="2">
-      <a href={`/04-channels/${channels.protocol.slug}`} class="service-card" style={`--c:${channels.protocol.color}`}>
+      <a href={`/04-channels/${channels.protocol.slug}`} class="service-card" style={`--c:${channels.protocol.color};--hero-img:url('/images/channels/${channels.protocol.slug}.jpg')`}>
         <span class="service-status status-click">CLICK</span>
+        <span class="service-region">{channels.protocol.regionKr} · {channels.protocol.region}</span>
         <span class="service-name">taerijay+protocol</span>
         <span class="service-tag">{channels.protocol.tag}</span>
       </a>
-      <a href={`/04-channels/${channels.mini.slug}`} class="service-card" style={`--c:${channels.mini.color}`}>
+      <a href={`/04-channels/${channels.mini.slug}`} class="service-card" style={`--c:${channels.mini.color};--hero-img:url('/images/channels/${channels.mini.slug}.jpg')`}>
         <span class="service-status status-click">CLICK</span>
+        <span class="service-region">{channels.mini.regionKr} · {channels.mini.region}</span>
         <span class="service-name">taerijay+mini</span>
         <span class="service-tag">{channels.mini.tag}</span>
       </a>
     </div>
 
     <div class="channel-row" data-count="2">
-      <a href={`/04-channels/${channels.daiso.slug}`} class="service-card" style={`--c:${channels.daiso.color}`}>
+      <a href={`/04-channels/${channels.daiso.slug}`} class="service-card" style={`--c:${channels.daiso.color};--hero-img:url('/images/channels/${channels.daiso.slug}.jpg')`}>
         <span class="service-status status-click">CLICK</span>
+        <span class="service-region">{channels.daiso.regionKr} · {channels.daiso.region}</span>
         <span class="service-name">taerijay+daiso</span>
         <span class="service-tag">{channels.daiso.tag}</span>
       </a>
-      <a href={`/04-channels/${channels.oliveyoung.slug}`} class="service-card" style={`--c:${channels.oliveyoung.color}`}>
+      <a href={`/04-channels/${channels.oliveyoung.slug}`} class="service-card" style={`--c:${channels.oliveyoung.color};--hero-img:url('/images/channels/${channels.oliveyoung.slug}.jpg')`}>
         <span class="service-status status-click">CLICK</span>
+        <span class="service-region">{channels.oliveyoung.regionKr} · {channels.oliveyoung.region}</span>
         <span class="service-name">taerijay+oliveyoung</span>
         <span class="service-tag">{channels.oliveyoung.tag}</span>
       </a>
     </div>
 
     <div class="channel-row" data-count="2">
-      <a href={`/04-channels/${channels.emart.slug}`} class="service-card" style={`--c:${channels.emart.color}`}>
+      <a href={`/04-channels/${channels.emart.slug}`} class="service-card" style={`--c:${channels.emart.color};--hero-img:url('/images/channels/${channels.emart.slug}.jpg')`}>
         <span class="service-status status-click">CLICK</span>
+        <span class="service-region">{channels.emart.regionKr} · {channels.emart.region}</span>
         <span class="service-name">taerijay+emart</span>
         <span class="service-tag">{channels.emart.tag}</span>
       </a>
-      <a href={`/04-channels/${channels.convenience.slug}`} class="service-card" style={`--c:${channels.convenience.color}`}>
+      <a href={`/04-channels/${channels.convenience.slug}`} class="service-card" style={`--c:${channels.convenience.color};--hero-img:url('/images/channels/${channels.convenience.slug}.jpg')`}>
         <span class="service-status status-click">CLICK</span>
+        <span class="service-region">{channels.convenience.regionKr} · {channels.convenience.region}</span>
         <span class="service-name">taerijay+convenience</span>
         <span class="service-tag">{channels.convenience.tag}</span>
       </a>
@@ -203,33 +210,37 @@ const channels = {
 
     .service-card{
       position:relative;display:flex;flex-direction:column;gap:6px;text-decoration:none;
-      padding:24px 22px;border-radius:14px;
+      padding:24px 22px;border-radius:14px;overflow:hidden;min-height:150px;justify-content:flex-end;
       border:1px solid color-mix(in srgb, var(--c) 45%, transparent);
-      background:linear-gradient(160deg, color-mix(in srgb, var(--c) 14%, var(--bg)) 0%, var(--bg) 88%);
+      background-image:var(--hero-img, none), linear-gradient(160deg, color-mix(in srgb, var(--c) 14%, var(--bg)) 0%, var(--bg) 88%);
+      background-size:cover;background-position:center;
       transition:transform .2s ease;
     }
+    .service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(6,10,18,.15) 0%, rgba(6,10,18,.88) 100%);z-index:0}
     .service-card:hover{transform:translateY(-3px)}
-    .service-status{position:absolute;top:12px;right:14px;font-size:.62rem;font-weight:800;letter-spacing:.08em;padding:3px 10px;border-radius:100px}
+    .service-card > *{position:relative;z-index:1}
+    .service-status{position:absolute;top:12px;right:14px;font-size:.62rem;font-weight:800;letter-spacing:.08em;padding:3px 10px;border-radius:100px;z-index:1}
     .status-click{background:var(--gold);color:var(--bg)}
+    .service-region{font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--c);text-transform:uppercase}
     .service-name{font-family:var(--f-display);font-weight:700;font-size:clamp(1.5rem,4.2vw,2.1rem);line-height:1.15;color:var(--c)}
     .service-tag{font-size:.92rem;font-weight:700;color:var(--muted);letter-spacing:.02em}
 
     .plans-section{width:var(--container);margin:0 auto;padding:60px 0 90px}
     .plans-eyebrow-kr{font-size:.78rem;font-weight:700;color:var(--muted);margin-bottom:2px}
-    .plans-eyebrow-en{font-size:.82rem;letter-spacing:.1em;font-weight:700;color:var(--muted);margin-bottom:28px;text-transform:uppercase}
+    .plans-eyebrow-en{font-size:.94rem;letter-spacing:.06em;font-weight:700;color:var(--muted);margin-bottom:28px;text-transform:uppercase}
     .plans-eyebrow-link{text-decoration:none;display:inline-block;cursor:pointer}
     .plans-eyebrow-link:hover .plans-eyebrow-en{color:var(--gold)}
     .plans-more{text-align:center;margin-top:32px}
     .btn-plans-more{display:inline-flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;border:1px solid rgba(212,175,55,.4);border-radius:100px;padding:12px 28px;transition:background .2s}
     .btn-plans-more:hover{background:rgba(212,175,55,.1)}
     .btn-plans-more-kr{font-size:.86rem;font-weight:700;color:var(--ivory)}
-    .btn-plans-more-en{font-size:.72rem;font-weight:600;color:var(--gold)}
+    .btn-plans-more-en{font-size:.92rem;font-weight:600;color:var(--gold)}
 
     .plan-row{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
     .plan-row-total{border-bottom:none}
     .plan-row-label{flex:0 0 110px;display:flex;flex-direction:column;gap:2px}
     .plan-row-label-kr{font-size:.78rem;font-weight:700;color:var(--muted)}
-    .plan-row-label-en{font-size:.64rem;font-weight:600;letter-spacing:.08em;color:var(--dim);text-transform:uppercase}
+    .plan-row-label-en{font-size:.86rem;font-weight:600;letter-spacing:.05em;color:var(--dim);text-transform:uppercase}
     .plan-row-items{display:flex;gap:12px;flex-wrap:wrap;flex:1}
 
     .plan-row-items-stack{flex-direction:column;gap:10px}

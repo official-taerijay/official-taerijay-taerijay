@@ -2,13 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 
 const channels = {
-  entertainment: { slug: 'entertainment', color: '#00E5FF' },
-  protocol:      { slug: 'protocol',      color: '#F16B24', payKey: 'protocol' },
-  mini:          { slug: 'mini',          color: '#e8e4dc', payKey: 'mini' },
-  daiso:         { slug: 'daiso',         color: '#E1261C', payKey: 'daiso' },
-  oliveyoung:    { slug: 'oliveyoung',    color: '#6F8B2E', payKey: 'olive' },
-  emart:         { slug: 'emart',         color: '#FFDD00', payKey: 'emart' },
-  convenience:   { slug: 'convenience',   color: '#A14D7C', payKey: 'cvs' },
+  entertainment: { slug: 'entertainment', color: '#00E5FF', region: 'Seoul' },
+  protocol:      { slug: 'protocol',      color: '#F16B24', payKey: 'protocol', region: 'Seorak' },
+  mini:          { slug: 'mini',          color: '#e8e4dc', payKey: 'mini', region: 'Jeonju' },
+  daiso:         { slug: 'daiso',         color: '#E1261C', payKey: 'daiso', region: 'Gyeongju' },
+  oliveyoung:    { slug: 'oliveyoung',    color: '#6F8B2E', payKey: 'olive', region: 'Busan' },
+  emart:         { slug: 'emart',         color: '#FFDD00', payKey: 'emart', region: 'Jeju' },
+  convenience:   { slug: 'convenience',   color: '#A14D7C', payKey: 'cvs', region: 'Incheon' },
 };
 
 const singleTiers = [
@@ -68,7 +68,7 @@ const doublePlans = [
                   <span class="plan-detail-label-kr">싱글 요금제</span>
                   <span class="plan-detail-label-en" data-i18n="en">SINGLE</span>
                 </span>
-                <a href={`/02-payment?key=${ch.payKey}_${t.key}`} class="plan-detail-box" style={`--tc:${ch.color}`}>
+                <a href={`/02-payment?key=${ch.payKey}_${t.key}`} class="plan-detail-box plan-detail-box-media" style={`--tc:${ch.color};--hero-img:url('/images/channels/${slug}.jpg')`}>
                   <span class="plan-detail-names" style={`color:${ch.color}`}>taerijay+{slug}</span>
                   <span class="plan-detail-price">USD {t.price}</span>
                 </a>
@@ -193,6 +193,10 @@ const doublePlans = [
     .plan-detail-label-en{font-size:.84rem;font-weight:600;letter-spacing:.05em;color:var(--dim);text-transform:uppercase}
     .plan-detail-box{font:inherit;width:100%;text-decoration:none;cursor:pointer;border:2px solid var(--tc);border-radius:10px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex:1;background:color-mix(in srgb, var(--tc) 8%, transparent);transition:background .2s,transform .15s;color:inherit}
     .plan-detail-box:hover{background:color-mix(in srgb, var(--tc) 18%, transparent);transform:translateY(-1px)}
+    .plan-detail-box-media{position:relative;overflow:hidden;background-image:var(--hero-img, none), color-mix(in srgb, var(--tc) 8%, transparent);background-size:cover;background-position:center}
+    .plan-detail-box-media::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(6,10,18,.82) 0%, rgba(6,10,18,.55) 60%, rgba(6,10,18,.3) 100%);z-index:0}
+    .plan-detail-box-media:hover{background-image:var(--hero-img, none), color-mix(in srgb, var(--tc) 18%, transparent)}
+    .plan-detail-box-media > *{position:relative;z-index:1}
     .plan-detail-names{font-weight:700;font-size:1rem}
     .plan-detail-x{color:var(--dim);margin:0 8px}
     .plan-detail-price{font-weight:900;font-size:1.2rem;color:var(--tc);white-space:nowrap}

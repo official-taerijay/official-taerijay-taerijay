@@ -1,12 +1,32 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 const color = '#6F8B2E';
+
+const maskPacks = [
+  { ko: '메디힐', en: 'Mediheal', line: '에센셜 마스크 시리즈', price: '1매 1,500~3,000원대', site: 'https://medihealshop.com/', note: '국내 시트마스크 판매량 1위권' },
+  { ko: '아비브', en: 'Abib', line: '콜라겐/시카 시트 마스크', price: '1매 2,500~4,000원대', site: 'https://abib.co.kr/', note: '민감성 피부 대상 밀착력 높은 시트로 재구매율 상위권' },
+  { ko: '토리든', en: 'Torriden', line: '다이브인 저분자 히알루론산 라인', price: '1매 2,500~4,500원대', site: 'https://www.torriden.com/', note: '수분 공급 특화, 2026년 올영 스킨케어 랭킹 상위' },
+  { ko: '닥터자르트', en: 'Dr.Jart+', line: '시카페어 리커버 마스크', price: '1매 4,000~6,000원대', site: 'https://www.drjart.co.kr/', note: '에스티로더 그룹 편입 이후 글로벌 유통 확대' },
+  { ko: '이니스프리', en: 'Innisfree', line: 'my real squeeze 마스크', price: '1매 1,500~2,500원대', site: 'https://www.innisfree.com/kr/ko/', note: '저가형 데일리 마스크로 다이소 일부 매대에도 입점' },
+  { ko: 'JM솔루션', en: 'JMsolution', line: '글로우 럭셔리 마스크', price: '1매 1,000~2,000원대', site: 'https://jmsolutioncm.cafe24.com/', note: '다이소 마스크팩 매대 대표 브랜드 중 하나' },
+  { ko: '파파레서피', en: 'Papa Recipe', line: '꿀광 마스크 (Bombee Honey)', price: '1매 1,800~3,000원대', site: 'https://paparecipe.com/', note: '보습 특화, 스테디셀러 라인' },
+  { ko: '셀퓨전씨', en: 'Cell Fusion C', line: '더마 진정 마스크', price: '1매 3,000~5,000원대', site: 'https://cellfusionc.co.kr/', note: '더마 코스메틱 라인, 민감/트러블 피부 대상' },
+  { ko: '넘버즈인', en: 'numbuzin', line: '토너패드/마스크 라인', price: '1매 2,000~3,500원대', site: 'https://us.numbuzin.com/', note: 'SNS 화제성 높은 신흥 브랜드' },
+  { ko: '홀리카홀리카', en: 'Holika Holika', line: '알로에 수딩 마스크', price: '1매 1,000~2,500원대', site: 'https://holikaholika.com/', note: '저가형 라인으로 다이소 상시 입점' },
+];
 ---
 <Layout title="taerijay+oliveyoung | TAERIJAY" requireChannel="oliveyoung">
   <div class="channel-page" style={`--c:${color}`}>
     <div class="channel-topbar">
       <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
     </div>
+
+    <section class="channel-hero-banner" style={`--hero-img:url('/images/channels/oliveyoung.jpg');--c:${color}`}>
+      <span class="channel-hero-region">
+        <span class="channel-hero-region-kr">부산</span>
+        <span class="channel-hero-region-en" data-i18n="en">BUSAN</span>
+      </span>
+    </section>
 
     <section class="channel-hero">
       <span class="channel-badge channel-badge-lock">맛보기 12개 무료 · 이후 요금제 필요</span>
@@ -16,11 +36,29 @@ const color = '#6F8B2E';
       <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
     </section>
 
-    <section class="item-grid-section"></section>
+    <section class="product-grid-section">
+      <h2 class="product-grid-title">
+        <span class="product-grid-title-kr">마스크팩 라인 TOP 10</span>
+        <span class="product-grid-title-en" data-i18n="en">Mask Pack Top 10</span>
+      </h2>
+      <div class="product-grid">
+        {maskPacks.map((p) => (
+          <a href={p.site} target="_blank" rel="noopener noreferrer" class="product-card">
+            <div class="product-card-head">
+              <span class="product-card-brand-kr">{p.ko}</span>
+              <span class="product-card-brand-en">{p.en}</span>
+            </div>
+            <span class="product-card-line">{p.line}</span>
+            <span class="product-card-price">{p.price}</span>
+            <span class="product-card-note">{p.note}</span>
+          </a>
+        ))}
+      </div>
+    </section>
 
     <section class="empty-note">
-      <p>콘텐츠 준비 중입니다.</p>
-      <p class="empty-note-en">Content coming soon.</p>
+      <p>스킨케어·클렌징·선케어·메이크업 등 카테고리는 순차 업데이트 예정입니다.</p>
+      <p class="empty-note-en">More categories (skincare, cleansing, sun care, makeup) coming soon.</p>
     </section>
   </div>
 
@@ -29,6 +67,13 @@ const color = '#6F8B2E';
     .channel-topbar{margin-bottom:20px;padding-top:88px}
     .back-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--ivory);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer;transition:background .2s}
     .back-btn:hover{background:rgba(255,255,255,.1)}
+
+    .channel-hero-banner{position:relative;width:100%;aspect-ratio:21/9;border-radius:18px;overflow:hidden;margin-bottom:28px;background-image:var(--hero-img, none), linear-gradient(160deg, color-mix(in srgb, var(--c) 30%, var(--bg)) 0%, var(--bg) 100%);background-size:cover;background-position:center;border:1px solid color-mix(in srgb, var(--c) 30%, transparent)}
+    .channel-hero-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(6,10,18,.85) 100%)}
+    .channel-hero-region{position:absolute;left:20px;bottom:16px;z-index:1;display:flex;flex-direction:column;gap:1px}
+    .channel-hero-region-kr{font-family:var(--f-display);font-weight:900;font-size:1.1rem;color:var(--ivory)}
+    .channel-hero-region-en{font-size:.86rem;letter-spacing:.12em;font-weight:700;color:var(--c);text-transform:uppercase}
+    @media (max-width:560px){.channel-hero-banner{aspect-ratio:16/9}}
 
     .channel-hero{padding-bottom:28px;border-bottom:1px solid color-mix(in srgb, var(--c) 30%, transparent);margin-bottom:36px}
     .channel-badge{display:inline-block;background:var(--gold);color:var(--bg);font-size:.68rem;font-weight:800;letter-spacing:.04em;padding:5px 14px;border-radius:100px;margin-bottom:12px;margin-right:8px}
@@ -40,8 +85,22 @@ const color = '#6F8B2E';
 
     .item-grid-section{min-height:60px;margin-bottom:24px}
 
+    .product-grid-section{margin-bottom:40px}
+    .product-grid-title{display:flex;align-items:baseline;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+    .product-grid-title-kr{font-family:var(--f-display);font-weight:900;font-size:1.2rem}
+    .product-grid-title-en{font-size:.9rem;letter-spacing:.08em;color:var(--dim);text-transform:uppercase}
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+    .product-card{display:flex;flex-direction:column;gap:5px;text-decoration:none;color:var(--ivory);padding:16px;border:1px solid color-mix(in srgb, var(--c) 35%, transparent);border-radius:12px;background:linear-gradient(160deg, color-mix(in srgb, var(--c) 10%, var(--bg)) 0%, var(--bg) 85%);transition:transform .2s ease}
+    .product-card:hover{transform:translateY(-3px)}
+    .product-card-head{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+    .product-card-brand-kr{font-family:var(--f-display);font-weight:800;font-size:1rem;color:var(--c)}
+    .product-card-brand-en{font-size:.78rem;color:var(--muted);text-transform:uppercase}
+    .product-card-line{font-size:.82rem;color:var(--ivory)}
+    .product-card-price{font-size:.88rem;font-weight:700;color:var(--c)}
+    .product-card-note{font-size:.76rem;color:var(--dim);line-height:1.4}
+
     .empty-note{text-align:center;padding:40px 20px;border:1px dashed rgba(255,255,255,.15);border-radius:14px}
     .empty-note p{font-size:.88rem;color:var(--muted);margin-bottom:6px}
-    .empty-note-en{font-size:.76rem;color:var(--dim)}
+    .empty-note-en{font-size:.94rem;color:var(--dim)}
   </style>
 </Layout>
