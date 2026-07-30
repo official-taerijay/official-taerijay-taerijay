@@ -4,6 +4,9 @@
 
 export const prerender = false;
 
+// 관리자 계정 — 모든 채널 무제한 접근
+const ADMIN_EMAILS = ['official@taerijay.com', 'taerijay@gmail.com'];
+
 import { getAuth } from 'firebase-admin/auth';
 import { getApps, initializeApp, cert } from 'firebase-admin/app';
 import { getAdminDb } from '../../lib/firebaseAdmin.js';
@@ -32,6 +35,8 @@ export async function GET({ request }) {
       return new Response(JSON.stringify({ error: 'no email on token' }), { status: 400 });
     }
 
+    const isAdmin = ADMIN_EMAILS.includes(email);
+
     const db = getAdminDb();
     const snap = await db.collection('users').doc(email).collection('entitlements').get();
 
@@ -40,7 +45,7 @@ export async function GET({ request }) {
       entitlements[doc.id] = doc.data();
     });
 
-    return new Response(JSON.stringify({ email, entitlements }), {
+    return new Response(JSON.stringify({ email, entitlements, isAdmin }), {
       status: 200,
       headers: { 'content-type': 'application/json' },
     });

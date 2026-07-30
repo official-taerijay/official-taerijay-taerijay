@@ -437,6 +437,14 @@ const languages = [
           return;
         }
         const data = await res.json();
+
+        if (data.isAdmin) {
+          bar.hidden = false;
+          barInner.innerHTML = '<span class="entitlement-chip entitlement-admin">ADMIN · 전체 채널 무제한</span>';
+          if (requireChannel) unlockChannelPage();
+          return;
+        }
+
         renderBar(data.entitlements);
 
         if (requireChannel) {
@@ -486,6 +494,7 @@ const languages = [
     .entitlement-chip{flex:0 0 auto;text-decoration:none;font-size:.72rem;font-weight:700;color:var(--gold);border:1px solid rgba(212,175,55,.4);border-radius:100px;padding:4px 12px;white-space:nowrap;transition:background .2s}
     .entitlement-chip:hover{background:rgba(212,175,55,.12)}
     .entitlement-chip.entitlement-urgent{color:#F16B24;border-color:rgba(241,107,36,.5)}
+    .entitlement-chip.entitlement-admin{color:var(--gold);border-color:var(--gold);font-weight:800;cursor:default}
 
     main[data-require-channel]:not([data-unlocked]){visibility:hidden}
     .channel-gate-loading{position:fixed;inset:0;z-index:150;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:var(--bg)}
