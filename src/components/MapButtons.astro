@@ -1,0 +1,47 @@
+---
+// 주소 하나로 구글맵/네이버맵/카카오맵 "기본 검색 페이지"를 새 탭으로 여는 버튼 3개.
+// API 키 불필요 — 각 서비스가 공식 제공하는 검색 URL 스킴만 사용.
+export interface Props {
+  address: string;
+  compact?: boolean;
+}
+const { address, compact = false } = Astro.props;
+const q = encodeURIComponent(address);
+const googleUrl = `https://www.google.com/maps/search/?api=1&query=${q}`;
+const naverUrl = `https://map.naver.com/p/search/${q}`;
+const kakaoUrl = `https://map.kakao.com/?q=${q}`;
+---
+<div class:list={['map-buttons', { 'map-buttons-compact': compact }]}>
+  <a href={googleUrl} target="_blank" rel="noopener noreferrer" class="map-btn map-btn-google">
+    <span class="map-btn-kr">구글맵</span>
+    <span class="map-btn-en" data-i18n="en">Google Maps</span>
+  </a>
+  <a href={naverUrl} target="_blank" rel="noopener noreferrer" class="map-btn map-btn-naver">
+    <span class="map-btn-kr">네이버맵</span>
+    <span class="map-btn-en" data-i18n="en">Naver Map</span>
+  </a>
+  <a href={kakaoUrl} target="_blank" rel="noopener noreferrer" class="map-btn map-btn-kakao">
+    <span class="map-btn-kr">카카오맵</span>
+    <span class="map-btn-en" data-i18n="en">Kakao Map</span>
+  </a>
+</div>
+
+<style is:global>
+  .map-buttons{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+  .map-btn{
+    display:flex;flex-direction:column;align-items:center;gap:0;
+    text-decoration:none;flex:1;min-width:64px;
+    padding:6px 8px;border-radius:8px;
+    font-weight:700;text-align:center;
+    border:1px solid transparent;
+    transition:transform .15s ease,opacity .15s ease;
+  }
+  .map-btn:hover{transform:translateY(-2px);opacity:.9}
+  .map-btn-kr{font-size:.68rem}
+  .map-btn-en{font-size:.6rem;opacity:.8;text-transform:uppercase;letter-spacing:.02em}
+  .map-btn-google{background:rgba(66,133,244,.12);border-color:rgba(66,133,244,.4);color:#7fa9f7}
+  .map-btn-naver{background:rgba(3,199,90,.12);border-color:rgba(3,199,90,.4);color:#4fdc8c}
+  .map-btn-kakao{background:rgba(254,229,0,.14);border-color:rgba(254,229,0,.45);color:#FEE500}
+  .map-buttons-compact .map-btn{min-width:0;padding:4px 6px}
+  .map-buttons-compact .map-btn-en{display:none}
+</style>
