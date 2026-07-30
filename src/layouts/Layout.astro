@@ -1,8 +1,22 @@
 ---
 export interface Props {
   title?: string;
+  requireChannel?: string; // 이 값이 있으면 해당 채널 이용권이 유효할 때만 콘텐츠 접근 허용
 }
-const { title = 'TAERIJAY' } = Astro.props;
+const { title = 'TAERIJAY', requireChannel = '' } = Astro.props;
+
+const FIREBASE_API_KEY = "AIzaSyDohULKEyCcSi30UpbLJSwPwHJ0Vad8J5M";
+const FIREBASE_AUTH_DOMAIN = "taerijay-official.firebaseapp.com";
+const FIREBASE_PROJECT_ID = "taerijay-official";
+
+const CHANNEL_LABELS = {
+  protocol: 'protocol',
+  mini: 'mini',
+  daiso: 'daiso',
+  oliveyoung: 'oliveyoung',
+  emart: 'emart',
+  convenience: 'convenience',
+};
 
 const channels = {
   entertainment: { slug: 'entertainment', color: '#00E5FF' },
@@ -117,6 +131,11 @@ const languages = [
     </div>
   </header>
 
+  <!-- 이용권 만료 카운트다운 배너 — 로그인 + 유효 이용권 있을 때만 표시 -->
+  <div class="entitlement-bar" id="entitlement-bar" hidden>
+    <div class="entitlement-bar-inner" id="entitlement-bar-inner"></div>
+  </div>
+
   <div class="side-menu" id="side-menu" hidden>
     <div class="side-menu-inner">
       <button type="button" class="side-close" id="side-close">×</button>
@@ -189,9 +208,17 @@ const languages = [
     </div>
   </div>
 
-  <main>
+  <main data-require-channel={requireChannel || undefined} id="main-content">
     <slot />
   </main>
+
+  {requireChannel && (
+    <div class="channel-gate-loading" id="channel-gate-loading">
+      <div class="channel-gate-spinner"></div>
+      <p class="channel-gate-kr">이용권 확인 중...</p>
+      <p class="channel-gate-en">Checking your access...</p>
+    </div>
+  )}
 
   <footer class="footer">
     <div class="footer-links">
@@ -327,10 +354,106 @@ const languages = [
         }
       }
       if (sideLink) sideLink.textContent = loggedIn ? '로그아웃' : '회원가입/로그인';
+
+      // 한글 원문 라인은 구글 번역이 건드리지 않도록 고정 (첫 줄 = 한글 절대값)
+      document.querySelectorAll('[class*="-kr"]').forEach((el) => {
+        el.classList.add('notranslate');
+        el.setAttribute('translate', 'no');
+      });
     });
   </script>
 
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+
+  <!-- 이용권 만료 카운트다운 — 로그인 상태 확인 후 /api/entitlements 조회 -->
+  <script type="module" define:vars={{ FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID, CHANNEL_LABELS, requireChannel }}>
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+    import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+
+    const app = initializeApp({
+      apiKey: FIREBASE_API_KEY,
+      authDomain: FIREBASE_AUTH_DOMAIN,
+      projectId: FIREBASE_PROJECT_ID,
+    });
+    const auth = getAuth(app);
+
+    const bar = document.getElementById('entitlement-bar');
+    const barInner = document.getElementById('entitlement-bar-inner');
+
+    function daysLeft(expiresAt) {
+      return Math.max(0, Math.ceil((expiresAt - Date.now()) / (24 * 60 * 60 * 1000)));
+    }
+
+    function renderBar(entitlements) {
+      const entries = Object.values(entitlements || {}).filter((e) => e.expiresAt > Date.now());
+      if (!entries.length) {
+        bar.hidden = true;
+        return;
+      }
+      entries.sort((a, b) => a.expiresAt - b.expiresAt);
+      barInner.innerHTML = entries
+        .map((e) => {
+          const label = CHANNEL_LABELS[e.channel] || e.channel;
+          const d = daysLeft(e.expiresAt);
+          const urgent = d <= 7 ? ' entitlement-urgent' : '';
+          return `<a href="/pricing" class="entitlement-chip${urgent}">${label} · D-${d}</a>`;
+        })
+        .join('');
+      bar.hidden = false;
+    }
+
+    // 채널 접근권한 게이팅 — requireChannel이 지정된 페이지에서만 동작
+    const mainEl = document.getElementById('main-content');
+    const gateLoading = document.getElementById('channel-gate-loading');
+
+    function unlockChannelPage() {
+      if (gateLoading) gateLoading.remove();
+      if (mainEl) mainEl.setAttribute('data-unlocked', '1');
+    }
+
+    function redirectToLogin() {
+      const redirect = encodeURIComponent(window.location.pathname);
+      window.location.href = `/01-auth?redirect=${redirect}`;
+    }
+
+    function redirectToPricing() {
+      window.location.href = '/pricing';
+    }
+
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        bar.hidden = true;
+        if (requireChannel) redirectToLogin();
+        return;
+      }
+      try {
+        const token = await user.getIdToken();
+        const res = await fetch('/api/entitlements', {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (!res.ok) {
+          bar.hidden = true;
+          if (requireChannel) redirectToPricing();
+          return;
+        }
+        const data = await res.json();
+        renderBar(data.entitlements);
+
+        if (requireChannel) {
+          const ent = (data.entitlements || {})[requireChannel];
+          if (ent && ent.expiresAt > Date.now()) {
+            unlockChannelPage();
+          } else {
+            redirectToPricing();
+          }
+        }
+      } catch (e) {
+        console.error('[entitlement-bar]', e);
+        bar.hidden = true;
+        if (requireChannel) redirectToPricing();
+      }
+    });
+  </script>
 
   <style is:global>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -357,6 +480,19 @@ const languages = [
     .nav-account-btn:hover{background:rgba(91,14,27,.8)}
     .nav-account-kr{font-size:.78rem;font-weight:700;color:var(--ivory)}
     .nav-account-en{font-size:.62rem;font-weight:600;color:var(--muted)}
+
+    .entitlement-bar{position:fixed;top:64px;left:0;right:0;z-index:190;background:rgba(212,175,55,.1);border-bottom:1px solid rgba(212,175,55,.28);backdrop-filter:blur(6px)}
+    .entitlement-bar-inner{width:var(--container);margin:0 auto;padding:6px 0;display:flex;gap:8px;flex-wrap:wrap;overflow-x:auto}
+    .entitlement-chip{flex:0 0 auto;text-decoration:none;font-size:.72rem;font-weight:700;color:var(--gold);border:1px solid rgba(212,175,55,.4);border-radius:100px;padding:4px 12px;white-space:nowrap;transition:background .2s}
+    .entitlement-chip:hover{background:rgba(212,175,55,.12)}
+    .entitlement-chip.entitlement-urgent{color:#F16B24;border-color:rgba(241,107,36,.5)}
+
+    main[data-require-channel]:not([data-unlocked]){visibility:hidden}
+    .channel-gate-loading{position:fixed;inset:0;z-index:150;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:var(--bg)}
+    .channel-gate-spinner{width:28px;height:28px;border:3px solid rgba(212,175,55,.25);border-top-color:var(--gold);border-radius:50%;animation:tj-spin .8s linear infinite}
+    .channel-gate-kr{font-size:.9rem;color:var(--ivory)}
+    .channel-gate-en{font-size:.76rem;color:var(--muted)}
+    @keyframes tj-spin{to{transform:rotate(360deg)}}
 
     .lang-dropdown{position:relative}
     .lang-trigger{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--ivory);font-size:.76rem;font-weight:600;padding:8px 12px;border-radius:6px;cursor:pointer}

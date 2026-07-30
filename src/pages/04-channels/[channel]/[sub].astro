@@ -52,8 +52,9 @@ const { channel, sub } = Astro.params;
 const channelData = CHANNEL_MAP[channel];
 const subData = channelData.subs[sub];
 const color = channelData.color;
+const requireChannel = channel === 'entertainment' ? '' : channel; // entertainment는 무료 채널
 ---
-<Layout title={`taerijay+${channel} · ${subData.kr} | TAERIJAY`}>
+<Layout title={`taerijay+${channel} · ${subData.kr} | TAERIJAY`} requireChannel={requireChannel}>
   <div class="sub-page" style={`--c:${color}`}>
     <div class="sub-topbar">
       <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>

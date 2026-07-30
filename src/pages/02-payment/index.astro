@@ -184,7 +184,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 
     .benefit-text { display: flex; flex-direction: column; gap: 3px; }
     .benefit-kr { display: block; font-size: 13px; font-weight: 600; color: rgba(251,249,244,0.95); }
-    .benefit-en { display: block; font-size: 11.5px; color: rgba(251,249,244,0.5); letter-spacing: .01em; }
+    .benefit-en { display: block; font-size: 14.5px; color: rgba(251,249,244,0.6); letter-spacing: .01em; margin-top: 2px; }
 
     .benefit-icon {
       width: 16px; height: 16px;
@@ -738,6 +738,11 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
   <!-- 다른 페이지에서 선택한 언어를 결제 페이지에서도 즉시 이어서 적용 -->
   <div id="google_translate_element" style="display:none"></div>
   <script>
+    document.querySelectorAll('[class*="-kr"]').forEach((el) => {
+      el.classList.add('notranslate');
+      el.setAttribute('translate', 'no');
+    });
+
     window.googleTranslateElementInit = function () {
       new google.translate.TranslateElement({ pageLanguage: 'ko', autoDisplay: false }, 'google_translate_element');
       const saved = localStorage.getItem('taerijay_lang');

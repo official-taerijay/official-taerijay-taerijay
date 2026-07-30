@@ -236,6 +236,11 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
   <!-- 다른 페이지에서 선택한 언어를 이 페이지에서도 즉시 이어서 적용 -->
   <div id="google_translate_element" style="display:none"></div>
   <script>
+    document.querySelectorAll('[class*="-kr"]').forEach((el) => {
+      el.classList.add('notranslate');
+      el.setAttribute('translate', 'no');
+    });
+
     window.googleTranslateElementInit = function () {
       new google.translate.TranslateElement({ pageLanguage: 'ko', autoDisplay: false }, 'google_translate_element');
       const saved = localStorage.getItem('taerijay_lang');

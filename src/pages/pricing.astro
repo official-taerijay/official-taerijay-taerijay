@@ -45,34 +45,38 @@ const doublePlans = [
       <p class="pricing-block-desc-kr">유료 채널 1개 선택, 3가지 등급 중 필요에 맞게 선택</p>
       <p class="pricing-block-desc-en" data-i18n="en">1 paid channel · 3 tiers to choose from</p>
 
-      <div class="tier-detail-grid" id="tierGrid">
-        {singleTiers.map((t, i) => (
-          <button type="button" class:list={['tier-detail-card', { 'tier-active': i === 0 }]} data-tier={t.key} style={`--tc:${t.color}`}>
-            <span class="tier-detail-price">USD {t.price}</span>
-            <span class="tier-detail-name-en" data-i18n="en">{t.en}</span>
-            <ul class="tier-detail-specs">
-              <li>
-                <span class="spec-kr">아이디 {t.id} · 디바이스 {t.device} · 동시접속 {t.concurrent}</span>
-                <span class="spec-en" data-i18n="en">{t.id} ID · {t.device} Device{t.device > 1 ? 's' : ''} · {t.concurrent} Concurrent</span>
-              </li>
-            </ul>
-          </button>
-        ))}
-      </div>
-
-      <p class="pricing-pick-hint-kr">등급 선택 → 채널 선택 → 결제 이동</p>
-      <p class="pricing-pick-hint-en" data-i18n="en">Tier → channel → payment</p>
-
       <div class="pricing-warning">
         <p class="pricing-warning-kr">⚠️ 디바이스·동시접속 초과 시 경고 표시, 초과분 접속 제한</p>
         <p class="pricing-warning-en" data-i18n="en">⚠️ Over limit → warning + access restricted</p>
       </div>
 
-      <div class="pricing-channel-pick" id="channelPick">
-        {Object.entries(channels).filter(([slug]) => slug !== 'entertainment').map(([slug, ch]) => (
-          <button type="button" class="ch-pill" data-key={ch.payKey} style={`--c:${ch.color}`}>taerijay+{slug}</button>
-        ))}
-      </div>
+      {singleTiers.map((t) => (
+        <div class="tier-group">
+          <div class="tier-group-header" style={`--tc:${t.color}`}>
+            <span class="tier-group-price">USD {t.price}</span>
+            <span class="tier-group-en" data-i18n="en">{t.en}</span>
+            <ul class="plan-specs plan-specs-inline">
+              <li><span class="spec-kr">아이디 {t.id}</span><span class="spec-en" data-i18n="en">{t.id} ID</span></li>
+              <li><span class="spec-kr">디바이스 {t.device}</span><span class="spec-en" data-i18n="en">{t.device} Device{t.device > 1 ? 's' : ''}</span></li>
+              <li><span class="spec-kr">동시접속 {t.concurrent}</span><span class="spec-en" data-i18n="en">{t.concurrent} Concurrent</span></li>
+            </ul>
+          </div>
+          <div class="plan-detail-list">
+            {Object.entries(channels).filter(([slug]) => slug !== 'entertainment').map(([slug, ch]) => (
+              <div class="plan-detail-row">
+                <span class="plan-detail-label">
+                  <span class="plan-detail-label-kr">싱글 요금제</span>
+                  <span class="plan-detail-label-en" data-i18n="en">SINGLE</span>
+                </span>
+                <a href={`/02-payment?key=${ch.payKey}_${t.key}`} class="plan-detail-box" style={`--tc:${ch.color}`}>
+                  <span class="plan-detail-names" style={`color:${ch.color}`}>taerijay+{slug}</span>
+                  <span class="plan-detail-price">USD {t.price}</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </section>
 
     <!-- 더블 요금제 상세 -->
@@ -83,23 +87,27 @@ const doublePlans = [
       </h2>
       <p class="pricing-block-desc-kr">연관 채널 2개 묶음, 할인 가격 적용</p>
       <p class="pricing-block-desc-en" data-i18n="en">2 related channels bundled at a discount</p>
-      <p class="pricing-block-desc-kr">아이디 1 · 디바이스 1 · 동시접속 1</p>
-      <p class="pricing-block-desc-en" data-i18n="en">1 ID · 1 Device · 1 Concurrent</p>
 
-      <div class="double-detail-list">
+      <ul class="plan-specs plan-specs-inline">
+        <li><span class="spec-kr">아이디 1</span><span class="spec-en" data-i18n="en">1 ID</span></li>
+        <li><span class="spec-kr">디바이스 1</span><span class="spec-en" data-i18n="en">1 Device</span></li>
+        <li><span class="spec-kr">동시접속 1</span><span class="spec-en" data-i18n="en">1 Concurrent</span></li>
+      </ul>
+
+      <div class="plan-detail-list">
         {doublePlans.map((dp) => (
-          <div class="double-detail-row">
-            <span class="double-detail-label">
-              <span class="double-detail-label-kr">더블 요금제</span>
-              <span class="double-detail-label-en" data-i18n="en">DOUBLE</span>
+          <div class="plan-detail-row">
+            <span class="plan-detail-label">
+              <span class="plan-detail-label-kr">더블 요금제</span>
+              <span class="plan-detail-label-en" data-i18n="en">DOUBLE</span>
             </span>
-            <a href={`/02-payment?key=${dp.payKey}`} class="double-detail-box" style={`--tc:${dp.color}`}>
-              <span class="double-detail-names">
+            <a href={`/02-payment?key=${dp.payKey}`} class="plan-detail-box" style={`--tc:${dp.color}`}>
+              <span class="plan-detail-names">
                 <span style={`color:${channels[dp.a].color}`}>taerijay+{dp.a}</span>
-                <span class="double-x">×</span>
+                <span class="plan-detail-x">×</span>
                 <span style={`color:${channels[dp.b].color}`}>taerijay+{dp.b}</span>
               </span>
-              <span class="double-detail-price">USD 34.99</span>
+              <span class="plan-detail-price">USD 34.99</span>
             </a>
           </div>
         ))}
@@ -115,19 +123,25 @@ const doublePlans = [
       <p class="pricing-block-desc-kr">유료 채널 6개 전체 이용, 신규 채널 자동 포함</p>
       <p class="pricing-block-desc-en" data-i18n="en">All 6 paid channels, new channels included automatically</p>
 
-      <div class="total-detail-row">
-        <span class="total-detail-label">
-          <span class="total-detail-label-kr" style="color:#B33A52">토탈 요금제</span>
-          <span class="total-detail-label-en" style="color:#B33A52" data-i18n="en">TOTAL</span>
+      <ul class="plan-specs plan-specs-inline">
+        <li><span class="spec-kr">아이디 1</span><span class="spec-en" data-i18n="en">1 ID</span></li>
+        <li><span class="spec-kr">디바이스 1</span><span class="spec-en" data-i18n="en">1 Device</span></li>
+        <li><span class="spec-kr">동시접속 1</span><span class="spec-en" data-i18n="en">1 Concurrent</span></li>
+      </ul>
+
+      <div class="plan-detail-row plan-detail-row-total">
+        <span class="plan-detail-label">
+          <span class="plan-detail-label-kr" style="color:#B33A52">토탈 요금제</span>
+          <span class="plan-detail-label-en" style="color:#B33A52" data-i18n="en">TOTAL</span>
         </span>
-        <a href="/02-payment?key=total" class="total-detail-card">
+        <a href="/02-payment?key=total" class="plan-detail-box plan-detail-box-total">
           <span class="total-detail-heading" data-i18n="en">ALL SERVICES</span>
           <div class="total-detail-names">
             {Object.entries(channels).filter(([slug]) => slug !== 'entertainment').map(([slug, ch]) => (
               <span class="total-chip-line" style={`color:${ch.color}`}>taerijay+{slug}</span>
             ))}
           </div>
-          <span class="total-detail-price">USD 99.99</span>
+          <span class="plan-detail-price">USD 99.99</span>
         </a>
       </div>
     </section>
@@ -141,89 +155,61 @@ const doublePlans = [
 
     .pricing-hero{padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:44px}
     .pricing-eyebrow-kr{font-size:.82rem;font-weight:700;color:var(--muted);margin-bottom:2px}
-    .pricing-eyebrow-en{font-size:.78rem;letter-spacing:.14em;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+    .pricing-eyebrow-en{font-size:.98rem;letter-spacing:.08em;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
     .pricing-sub-kr{font-size:.95rem;color:var(--ivory);margin-bottom:2px}
-    .pricing-sub-en{font-size:.82rem;color:var(--muted)}
+    .pricing-sub-en{font-size:1.05rem;color:var(--muted)}
 
     .pricing-block{margin-bottom:56px}
-    .pricing-block-title{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+    .pricing-block-title{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:10px}
     .pricing-block-title-kr{font-family:var(--f-display);font-weight:900;font-size:1.4rem}
-    .pricing-block-title-en{font-size:.74rem;letter-spacing:.1em;font-weight:700;color:var(--dim);text-transform:uppercase}
+    .pricing-block-title-en{font-size:1.02rem;letter-spacing:.06em;font-weight:700;color:var(--dim);text-transform:uppercase}
     .pricing-block-desc-kr{font-size:.88rem;color:var(--ivory);line-height:1.6;margin-bottom:2px}
-    .pricing-block-desc-en{font-size:.78rem;color:var(--muted);line-height:1.5;margin-bottom:8px}
+    .pricing-block-desc-en{font-size:1rem;color:var(--muted);line-height:1.5;margin-bottom:8px}
 
-    .tier-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0 22px}
-    .tier-detail-card{font:inherit;cursor:pointer;text-align:left;border:2px solid var(--tc);border-radius:14px;padding:20px;background:color-mix(in srgb, var(--tc) 8%, transparent);display:flex;flex-direction:column;gap:4px;opacity:.55;transition:opacity .2s,transform .15s}
-    .tier-detail-card:hover{opacity:.8}
-    .tier-active{opacity:1;transform:translateY(-2px)}
-    .tier-detail-price{font-family:var(--f-display);font-weight:900;font-size:1.4rem;color:var(--tc)}
-    .tier-detail-name-en{font-size:.86rem;font-weight:700;color:var(--ivory);letter-spacing:.04em;margin-bottom:10px}
-    .tier-detail-specs{list-style:none}
-    .tier-detail-specs li{margin-bottom:4px}
-    .spec-kr{display:block;font-size:.78rem;color:var(--ivory)}
-    .spec-en{display:block;font-size:.68rem;color:var(--dim)}
+    .tier-group{margin:22px 0 30px;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px;background:rgba(255,255,255,.015)}
+    .tier-group-header{border-left:4px solid var(--tc);padding-left:16px;margin-bottom:14px}
+    .tier-group-price{font-family:var(--f-display);font-weight:900;font-size:1.5rem;color:var(--tc);margin-right:10px}
+    .tier-group-en{font-size:1.05rem;font-weight:700;color:var(--ivory);letter-spacing:.03em}
+
+    .plan-specs{list-style:none;margin:6px 0}
+    .plan-specs li{margin-bottom:6px}
+    .plan-specs-inline{display:flex;flex-direction:column;gap:2px;margin-bottom:18px}
+    .spec-kr{display:block;font-size:.82rem;color:var(--ivory)}
+    .spec-en{display:block;font-size:.86rem;color:var(--dim)}
 
     .pricing-warning{border:1px solid rgba(241,107,36,.35);background:rgba(241,107,36,.08);border-radius:10px;padding:14px 18px;margin-bottom:26px}
     .pricing-warning-kr{font-size:.82rem;color:#F16B24;line-height:1.6;margin-bottom:2px}
-    .pricing-warning-en{font-size:.72rem;color:#F16B24;opacity:.8;line-height:1.5}
+    .pricing-warning-en{font-size:.9rem;color:#F16B24;opacity:.85;line-height:1.5}
 
     .pricing-pick-hint-kr{font-size:.8rem;color:var(--ivory);margin-bottom:1px}
-    .pricing-pick-hint-en{font-size:.72rem;color:var(--dim);margin-bottom:18px}
+    .pricing-pick-hint-en{font-size:.86rem;color:var(--dim);margin-bottom:18px}
 
-    .pricing-channel-pick{display:flex;flex-wrap:wrap;gap:8px}
-    .ch-pill{font:inherit;cursor:pointer;text-decoration:none;border:1px solid var(--c);color:var(--c);background:transparent;border-radius:20px;font-size:.76rem;font-weight:600;padding:7px 14px;transition:background .2s}
-    .ch-pill:hover{background:color-mix(in srgb, var(--c) 16%, transparent)}
+    /* 싱글/더블/토탈 공통 행(row) 레이아웃 — 통일된 카드 스타일 */
+    .plan-detail-list{display:flex;flex-direction:column;gap:0;margin-top:12px}
+    .plan-detail-row{display:flex;align-items:center;gap:18px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
+    .plan-detail-row-total{border-bottom:none;padding-top:6px}
+    .plan-detail-label{flex:0 0 110px;display:flex;flex-direction:column;gap:2px}
+    .plan-detail-label-kr{font-size:.78rem;font-weight:700;color:var(--muted)}
+    .plan-detail-label-en{font-size:.84rem;font-weight:600;letter-spacing:.05em;color:var(--dim);text-transform:uppercase}
+    .plan-detail-box{font:inherit;width:100%;text-decoration:none;cursor:pointer;border:2px solid var(--tc);border-radius:10px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex:1;background:color-mix(in srgb, var(--tc) 8%, transparent);transition:background .2s,transform .15s;color:inherit}
+    .plan-detail-box:hover{background:color-mix(in srgb, var(--tc) 18%, transparent);transform:translateY(-1px)}
+    .plan-detail-names{font-weight:700;font-size:1rem}
+    .plan-detail-x{color:var(--dim);margin:0 8px}
+    .plan-detail-price{font-weight:900;font-size:1.2rem;color:var(--tc);white-space:nowrap}
 
-    .double-detail-list{display:flex;flex-direction:column;gap:0;margin-top:20px}
-    .double-detail-row{display:flex;align-items:center;gap:18px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
-    .double-detail-label{flex:0 0 110px;display:flex;flex-direction:column;gap:2px}
-    .double-detail-label-kr{font-size:.78rem;font-weight:700;color:var(--muted)}
-    .double-detail-label-en{font-size:.64rem;font-weight:600;letter-spacing:.08em;color:var(--dim);text-transform:uppercase}
-    .double-detail-box{text-decoration:none;cursor:pointer;border:2px solid var(--tc);border-radius:10px;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex:1;background:color-mix(in srgb, var(--tc) 8%, transparent);transition:background .2s}
-    .double-detail-box:hover{background:color-mix(in srgb, var(--tc) 18%, transparent)}
-    .double-detail-names{font-weight:700;font-size:.95rem}
-    .double-x{color:var(--dim);margin:0 8px}
-    .double-detail-price{font-weight:900;font-size:1.2rem;color:var(--tc)}
-
-    .total-detail-row{display:flex;align-items:center;gap:18px;padding-top:14px;flex-wrap:wrap}
-    .total-detail-label{flex:0 0 110px;display:flex;flex-direction:column;gap:2px}
-    .total-detail-label-kr{font-size:.78rem;font-weight:700}
-    .total-detail-label-en{font-size:.64rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-    .total-detail-card{text-decoration:none;cursor:pointer;display:block;border:1px solid #B33A52;border-radius:14px;padding:24px;background:linear-gradient(160deg, rgba(179,58,82,.12) 0%, rgba(179,58,82,.02) 100%);flex:1;min-width:260px;transition:background .2s}
-    .total-detail-card:hover{background:linear-gradient(160deg, rgba(179,58,82,.22) 0%, rgba(179,58,82,.05) 100%)}
-    .total-detail-heading{display:block;font-weight:800;font-size:.95rem;color:var(--ivory);margin-bottom:14px}
+    .plan-detail-box-total{display:block;border:1px solid #B33A52;background:linear-gradient(160deg, rgba(179,58,82,.12) 0%, rgba(179,58,82,.02) 100%);min-width:260px}
+    .plan-detail-box-total:hover{background:linear-gradient(160deg, rgba(179,58,82,.22) 0%, rgba(179,58,82,.05) 100%)}
+    .total-detail-heading{display:block;font-weight:800;font-size:1rem;color:var(--ivory);margin-bottom:14px}
     .total-detail-names{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
-    .total-chip-line{font-size:.82rem;font-weight:700}
-    .total-detail-price{font-weight:900;font-size:1.8rem;color:#B33A52}
+    .total-chip-line{font-size:.9rem;font-weight:700}
+    .plan-detail-box-total .plan-detail-price{font-size:1.8rem}
 
-    @media (max-width: 700px){
-      .tier-detail-grid{grid-template-columns:1fr}
-    }
     @media (max-width: 560px){
-      .double-detail-row{flex-direction:column;align-items:flex-start;gap:8px}
-      .double-detail-label{flex:none}
-      .total-detail-row{flex-direction:column;align-items:flex-start;gap:8px}
-      .total-detail-label{flex:none}
+      .plan-detail-row{flex-direction:column;align-items:flex-start;gap:8px}
+      .plan-detail-label{flex:none}
+      .plan-detail-box{flex-direction:column;align-items:flex-start;gap:8px}
+      .plan-detail-price{font-size:1.05rem}
+      .tier-group{padding:16px}
     }
   </style>
-
-  <script>
-    let selectedTier = 'basic';
-    const tierGrid = document.getElementById('tierGrid');
-    const channelPick = document.getElementById('channelPick');
-
-    tierGrid?.addEventListener('click', (e) => {
-      const btn = e.target.closest('.tier-detail-card');
-      if (!btn) return;
-      selectedTier = btn.dataset.tier;
-      tierGrid.querySelectorAll('.tier-detail-card').forEach((c) => c.classList.remove('tier-active'));
-      btn.classList.add('tier-active');
-    });
-
-    channelPick?.addEventListener('click', (e) => {
-      const btn = e.target.closest('.ch-pill');
-      if (!btn) return;
-      window.location.href = `/02-payment?key=${btn.dataset.key}_${selectedTier}`;
-    });
-  </script>
 </Layout>

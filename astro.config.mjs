@@ -1,11 +1,15 @@
 import { defineConfig } from 'astro/config';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import vercel from '@astrojs/vercel/serverless';
 
 // ESM 빌드 환경에서 현재 루트 디렉토리의 절대 경로를 완벽하게 수급
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  // 기본은 정적 페이지, /api/* 라우트만 서버리스 함수로 동작 (Paddle 웹훅 수신용)
+  output: 'hybrid',
+  adapter: vercel(),
   vite: {
     resolve: {
       alias: {
