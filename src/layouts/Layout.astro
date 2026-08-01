@@ -92,12 +92,14 @@ const languages = [
 ];
 ---
 <!doctype html>
-<html lang="ko">
+<html lang="ko" translate="no">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>{title}</title>
   <meta name="description" content="TAERIJAY — 검증된 한국 여행/라이프스타일 정보 스트리밍" />
+  <!-- 브라우저 자체 자동번역 팝업 차단 — 언어 전환은 오직 사이트 자체 언어 드롭다운(구글 위젯 수동 호출)으로만 -->
+  <meta name="google" content="notranslate" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
 </head>
 <body>
@@ -163,7 +165,7 @@ const languages = [
       <div class="side-divider"></div>
 
       <nav class="side-links side-links-legal">
-        <a href="#">Business</a>
+        <button type="button" class="legal-trigger" data-target="modal-business">Business</button>
         <a href="#">Terms</a>
         <a href="#">Privacy</a>
         <a href="#">Refund</a>
@@ -225,7 +227,7 @@ const languages = [
       <a href="#"><span class="footer-en">Terms</span></a>
       <a href="#"><span class="footer-en">Privacy</span></a>
       <a href="#"><span class="footer-en">Refund</span></a>
-      <a href="#"><span class="footer-en">Business</span></a>
+      <button type="button" class="legal-trigger footer-legal-trigger" data-target="modal-business"><span class="footer-en">Business</span></button>
     </div>
     <div class="footer-social">
       <a href="#" class="social-icon social-yt" title="YouTube" aria-label="YouTube">
@@ -264,6 +266,22 @@ const languages = [
     <p class="footer-copy">© 2026 TAERIJAY · 사업자등록번호 673-51-01148 · taerijay.com</p>
   </footer>
 
+  <!-- 사업자 정보 모달 (실제 정보) -->
+  <div id="modal-business" class="legal-modal-overlay" hidden>
+    <div class="legal-modal">
+      <div class="legal-modal-head">
+        <span class="legal-modal-title">Business Info · 사업자 정보</span>
+        <button type="button" class="legal-modal-close" id="modal-business-close">×</button>
+      </div>
+      <div class="legal-modal-body">
+        <div class="legal-row"><span class="legal-label">상호명 (Business Name)</span><span class="legal-value">TAERIJAY (태리재이)</span></div>
+        <div class="legal-row"><span class="legal-label">사업자등록번호 (Registration No.)</span><span class="legal-value">673-51-01148</span></div>
+        <div class="legal-row"><span class="legal-label">사업장 소재지 (Address)</span><span class="legal-value">경기도 남양주시 화도읍</span></div>
+        <div class="legal-row"><span class="legal-label">이메일 (Email)</span><span class="legal-value">official@taerijay.com</span></div>
+      </div>
+    </div>
+  </div>
+
   <script>
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
@@ -277,6 +295,18 @@ const languages = [
     hamburgerBtn.addEventListener('click', () => { sideMenu.hidden = false; });
     sideClose.addEventListener('click', () => { sideMenu.hidden = true; });
     sideMenu.addEventListener('click', (e) => { if (e.target === sideMenu) sideMenu.hidden = true; });
+
+    // 사업자 정보 모달
+    document.querySelectorAll('.legal-trigger').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const modal = document.getElementById(btn.dataset.target);
+        if (modal) modal.hidden = false;
+      });
+    });
+    const businessModal = document.getElementById('modal-business');
+    const businessModalClose = document.getElementById('modal-business-close');
+    if (businessModalClose) businessModalClose.addEventListener('click', () => { businessModal.hidden = true; });
+    if (businessModal) businessModal.addEventListener('click', (e) => { if (e.target === businessModal) businessModal.hidden = true; });
 
     const langTrigger = document.getElementById('lang-trigger');
     const langMenu = document.getElementById('lang-menu');
@@ -540,6 +570,18 @@ const languages = [
     .social-icon svg{width:36px;height:36px;display:block}
     .social-icon:hover{transform:translateY(-2px)}
     .footer-copy{font-size:.74rem;color:var(--dim)}
+
+    .legal-trigger{background:none;border:none;color:inherit;cursor:pointer;font:inherit;padding:0}
+    .footer-legal-trigger{text-decoration:none}
+    .legal-modal-overlay{position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:20px}
+    .legal-modal{background:#0d1f3d;border:1px solid rgba(212,175,55,.3);border-radius:14px;max-width:480px;width:100%;padding:22px;max-height:80vh;overflow-y:auto}
+    .legal-modal-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:12px;margin-bottom:16px}
+    .legal-modal-title{font-family:var(--f-display);font-weight:800;font-size:.98rem;color:var(--ivory)}
+    .legal-modal-close{background:none;border:none;color:var(--muted);font-size:1.6rem;line-height:1;cursor:pointer}
+    .legal-modal-body{display:flex;flex-direction:column;gap:10px}
+    .legal-row{display:flex;flex-direction:column;gap:2px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .legal-label{font-size:.72rem;color:var(--dim)}
+    .legal-value{font-size:.9rem;color:var(--gold);font-weight:700}
 
     @media (max-width: 768px){
       .nav-inner{padding:12px 0}

@@ -1,11 +1,14 @@
 ---
+export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
 import MapButtons from '../../components/MapButtons.astro';
+import { fetchSheetRows } from '../../lib/sheetsCms.js';
 const color = '#6F8B2E';
 
 const OY_ADDR = '서울특별시 중구 명동길 53 (올리브영 명동 플래그십)';
 
-const maskPacks = [
+// 기본값(시트 연동 실패 시 폴백) — 시트가 "링크가 있는 모든 사용자" 뷰어로 공유되면 실시간 데이터로 자동 대체됨
+const FALLBACK_MASK_PACKS = [
   { ko: '메디힐', en: 'Mediheal', line: '에센셜 마스크 시리즈', price: '1매 1,500~3,000원대', site: 'https://medihealshop.com/', addr: OY_ADDR, note: '국내 시트마스크 판매량 1위권' },
   { ko: '아비브', en: 'Abib', line: '콜라겐/시카 시트 마스크', price: '1매 2,500~4,000원대', site: 'https://abib.co.kr/', addr: OY_ADDR, note: '민감성 피부 대상 밀착력 높은 시트로 재구매율 상위권' },
   { ko: '토리든', en: 'Torriden', line: '다이브인 저분자 히알루론산 라인', price: '1매 2,500~4,500원대', site: 'https://www.torriden.com/', addr: OY_ADDR, note: '수분 공급 특화, 2026년 올영 스킨케어 랭킹 상위' },
@@ -17,6 +20,20 @@ const maskPacks = [
   { ko: '넘버즈인', en: 'numbuzin', line: '토너패드/마스크 라인', price: '1매 2,000~3,500원대', site: 'https://us.numbuzin.com/', addr: OY_ADDR, note: 'SNS 화제성 높은 신흥 브랜드' },
   { ko: '홀리카홀리카', en: 'Holika Holika', line: '알로에 수딩 마스크', price: '1매 1,000~2,500원대', site: 'https://holikaholika.com/', addr: '서울특별시 중구 퇴계로 134-1 (다이소 명동역점)', note: '저가형 라인으로 다이소 상시 입점' },
 ];
+
+let maskPacks = FALLBACK_MASK_PACKS;
+try {
+  const rows = await fetchSheetRows('maskpack10');
+  if (rows.length) {
+    maskPacks = rows.map((r) => ({
+      ko: r.brand_ko, en: r.brand_en, line: r.representative_line,
+      price: r.price_range_krw, site: r.official_website,
+      addr: r.reference_store_address || OY_ADDR, note: r.note,
+    }));
+  }
+} catch (e) {
+  console.error('[oliveyoung] sheet fetch failed, using fallback', e);
+}
 ---
 <Layout title="taerijay+oliveyoung | TAERIJAY" requireChannel="oliveyoung">
   <div class="channel-page" style={`--c:${color}`}>

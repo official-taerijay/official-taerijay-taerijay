@@ -1,17 +1,35 @@
 ---
+export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
 import MapButtons from '../../components/MapButtons.astro';
+import { fetchSheetRows } from '../../lib/sheetsCms.js';
 const color = '#E1261C';
 
 const DAISO_MYEONGDONG = '서울특별시 중구 명동길 43 (다이소 명동 본점)';
 const DAISO_MYEONGDONG_STATION = '서울특별시 중구 퇴계로 134-1 (다이소 명동역점)';
 
-const maskPacks = [
+// 기본값(시트 연동 실패 시 폴백)
+const FALLBACK_MASK_PACKS = [
   { ko: '메디힐', en: 'Mediheal', line: '에센셜 마스크 (소용량 라인)', price: '1매 1,000~2,000원대 (다이소 기준)', site: 'https://medihealshop.com/', addr: DAISO_MYEONGDONG, note: '다이소 입점 소용량 라인, 올리브영은 정가 라인' },
   { ko: 'JM솔루션', en: 'JMsolution', line: '글로우 럭셔리 마스크', price: '1매 1,000~2,000원대', site: 'https://jmsolutioncm.cafe24.com/', addr: DAISO_MYEONGDONG, note: '다이소 마스크팩 매대 대표 브랜드' },
   { ko: '이니스프리', en: 'Innisfree', line: 'my real squeeze 마스크 (미니)', price: '1매 1,000~1,800원대 (다이소 기준)', site: 'https://www.innisfree.com/kr/ko/', addr: DAISO_MYEONGDONG_STATION, note: '저가형 데일리 라인 일부 입점' },
   { ko: '홀리카홀리카', en: 'Holika Holika', line: '알로에 수딩 마스크', price: '1매 1,000~2,500원대', site: 'https://holikaholika.com/', addr: DAISO_MYEONGDONG_STATION, note: '저가형 라인으로 다이소 상시 입점' },
 ];
+
+let maskPacks = FALLBACK_MASK_PACKS;
+try {
+  const rows = await fetchSheetRows('maskpack10');
+  const daisoRows = rows.filter((r) => (r.sold_at || '').includes('다이소'));
+  if (daisoRows.length) {
+    maskPacks = daisoRows.map((r) => ({
+      ko: r.brand_ko, en: r.brand_en, line: r.representative_line,
+      price: r.price_range_krw, site: r.official_website,
+      addr: r.reference_store_address || DAISO_MYEONGDONG, note: r.note,
+    }));
+  }
+} catch (e) {
+  console.error('[daiso] sheet fetch failed, using fallback', e);
+}
 ---
 <Layout title="taerijay+daiso | TAERIJAY" requireChannel="daiso">
   <div class="channel-page" style={`--c:${color}`}>

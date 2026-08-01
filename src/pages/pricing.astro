@@ -102,10 +102,13 @@ const doublePlans = [
               <span class="plan-detail-label-en" data-i18n="en">DOUBLE</span>
             </span>
             <a href={`/02-payment?key=${dp.payKey}`} class="plan-detail-box" style={`--tc:${dp.color}`}>
-              <span class="plan-detail-names">
-                <span style={`color:${channels[dp.a].color}`}>taerijay+{dp.a}</span>
-                <span class="plan-detail-x">×</span>
-                <span style={`color:${channels[dp.b].color}`}>taerijay+{dp.b}</span>
+              <span class="plan-detail-names-wrap">
+                <span class="plan-detail-prefix">taerijay+</span>
+                <span class="plan-detail-combo">
+                  <span style={`color:${channels[dp.a].color}`}>{dp.a}</span>
+                  <span class="plan-detail-x">×</span>
+                  <span style={`color:${channels[dp.b].color}`}>{dp.b}</span>
+                </span>
               </span>
               <span class="plan-detail-price">USD 34.99</span>
             </a>
@@ -198,6 +201,9 @@ const doublePlans = [
     .plan-detail-box-media:hover{background-image:var(--hero-img, none), color-mix(in srgb, var(--tc) 18%, transparent)}
     .plan-detail-box-media > *{position:relative;z-index:1}
     .plan-detail-names{font-weight:700;font-size:1rem}
+    .plan-detail-names-wrap{display:flex;flex-direction:column;gap:2px}
+    .plan-detail-prefix{font-size:.72rem;font-weight:700;color:var(--dim);letter-spacing:.03em}
+    .plan-detail-combo{font-family:var(--f-display);font-weight:700;font-size:1.05rem}
     .plan-detail-x{color:var(--dim);margin:0 8px}
     .plan-detail-price{font-weight:900;font-size:1.2rem;color:var(--tc);white-space:nowrap}
 
