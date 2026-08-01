@@ -701,7 +701,7 @@ const languages = [
       priceAmount.textContent  = product.price % 1 === 0 ? product.price.toString() : product.price.toFixed(2);
 
       benefitList.innerHTML = product.benefits
-        .map(b => `<li><div class="benefit-icon">✓</div><div class="benefit-text"><span class="benefit-kr">${b.kr}</span><span class="benefit-en">${b.en}</span></div></li>`)
+        .map(b => `<li><div class="benefit-icon">✓</div><div class="benefit-text"><span class="benefit-kr notranslate" translate="no">${b.kr}</span><span class="benefit-en">${b.en}</span></div></li>`)
         .join('');
 
       // 로그인 상태 확인
