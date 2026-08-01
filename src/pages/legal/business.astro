@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Business Info | TAERIJAY">
+  <div class="legal-page">
+    <div class="legal-topbar">
+      <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
+    </div>
+    <h1 class="legal-title">
+      <span class="legal-title-kr">사업자 정보</span>
+      <span class="legal-title-en" data-i18n="en">Business Info</span>
+    </h1>
+
+    <div class="legal-table">
+      <div class="legal-row"><span class="legal-label">상호명 <span class="legal-label-en">Business Name</span></span><span class="legal-value">TAERIJAY (태리재이)</span></div>
+      <div class="legal-row"><span class="legal-label">사업자등록번호 <span class="legal-label-en">Registration No.</span></span><span class="legal-value">673-51-01148</span></div>
+      <div class="legal-row"><span class="legal-label">사업장 소재지 <span class="legal-label-en">Address</span></span><span class="legal-value">경기도 남양주시 화도읍</span></div>
+      <div class="legal-row"><span class="legal-label">이메일 <span class="legal-label-en">Email</span></span><span class="legal-value">official@taerijay.com</span></div>
+      <div class="legal-row"><span class="legal-label">결제 대행 <span class="legal-label-en">Payment Processor</span></span><span class="legal-value">Paddle.com Market Ltd. (Merchant of Record)</span></div>
+    </div>
+  </div>
+
+  <style>
+    .legal-page{width:min(720px,92vw);margin:0 auto;padding:24px 0 90px}
+    .legal-topbar{margin-bottom:24px;padding-top:88px}
+    .back-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--ivory);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer}
+    .back-btn:hover{background:rgba(255,255,255,.1)}
+    .legal-title{margin-bottom:28px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+    .legal-title-kr{font-family:var(--f-display);font-weight:900;font-size:1.5rem}
+    .legal-title-en{font-size:1rem;letter-spacing:.06em;font-weight:700;color:var(--dim);text-transform:uppercase}
+    .legal-table{display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden}
+    .legal-row{display:flex;justify-content:space-between;gap:14px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+    .legal-row:last-child{border-bottom:none}
+    .legal-label{font-size:.84rem;color:var(--muted);flex:0 0 auto}
+    .legal-label-en{display:block;font-size:.72rem;color:var(--dim)}
+    .legal-value{font-size:.88rem;color:var(--gold);font-weight:700;text-align:right}
+  </style>
+</Layout>

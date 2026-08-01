@@ -5,6 +5,25 @@
 // URL: /02-payment?key=protocol_basic
 
 const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
+
+const languages = [
+  { code: 'en', name: 'English' },
+  { code: 'ko', name: '한국어' },
+  { code: 'ja', name: '日本語' },
+  { code: 'zh-CN', name: '简体中文' },
+  { code: 'zh-TW', name: '繁體中文' },
+  { code: 'zh-HK', name: '中文（香港）' },
+  { code: 'es', name: 'Español' },
+  { code: 'fr', name: 'Français' },
+  { code: 'de', name: 'Deutsch' },
+  { code: 'it', name: 'Italiano' },
+  { code: 'pt', name: 'Português' },
+  { code: 'ru', name: 'Русский' },
+  { code: 'ar', name: 'العربية' },
+  { code: 'th', name: 'ไทย' },
+  { code: 'vi', name: 'Tiếng Việt' },
+  { code: 'id', name: 'Bahasa Indonesia' },
+];
 ---
 
 <!DOCTYPE html>
@@ -64,6 +83,16 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
     }
 
     .brand-plus { color: var(--burgundy); font-style: italic; }
+
+    .pay-topbar { position: fixed; top: 16px; right: 16px; z-index: 500; display: flex; align-items: center; gap: 8px; }
+    .pay-back-btn { background: transparent; border: 1px solid rgba(251,249,244,0.22); color: var(--ivory); font-size: 13px; line-height: 1; padding: 8px 11px; border-radius: 6px; cursor: pointer; }
+    .pay-back-btn:hover { background: rgba(251,249,244,0.08); }
+    .pay-lang-dropdown { position: relative; }
+    .pay-lang-trigger { display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(251,249,244,0.22);color:var(--ivory);font-size:.72rem;font-weight:600;padding:8px 11px;border-radius:6px;cursor:pointer; }
+    .pay-lang-menu { position:absolute;top:calc(100% + 8px);right:0;background:#151f33;border:1px solid rgba(255,255,255,.12);border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,.5);max-height:280px;overflow-y:auto;min-width:160px;z-index:501; }
+    .pay-lang-option { display:block;width:100%;text-align:left;background:transparent;border:none;color:var(--ivory);font-size:.78rem;padding:9px 14px;cursor:pointer; }
+    .pay-lang-option:hover { background:rgba(255,255,255,.08); }
+    @media (max-width: 480px){ .pay-topbar{ top:10px; right:10px; } }
 
     .brand-tagline {
       margin-top: 6px;
@@ -355,10 +384,25 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 </head>
 
 <body>
+  <div class="pay-topbar">
+    <button type="button" class="pay-back-btn" id="pay-back-btn" aria-label="뒤로가기">←</button>
+    <div class="pay-lang-dropdown">
+      <button type="button" class="pay-lang-trigger" id="pay-lang-trigger">
+        <span id="pay-lang-current">English</span>
+        <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="pay-lang-menu" id="pay-lang-menu" hidden>
+        {languages.map((l) => (
+          <button type="button" class="pay-lang-option" data-code={l.code} data-name={l.name}>{l.name}</button>
+        ))}
+      </div>
+    </div>
+  </div>
+
   <div class="pay-wrap">
 
     <div class="brand-header">
-      <div class="brand-wordmark">TAERIJAY<span class="brand-plus">+</span></div>
+      <div class="brand-wordmark">TAERIJAY</div>
       <div class="brand-tagline">Secure Checkout · Powered by Paddle</div>
     </div>
 
@@ -763,23 +807,65 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       el.setAttribute('translate', 'no');
     });
 
+    function payTranslatePage(code) {
+      if (code === 'ko') {
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) { combo.value = ''; combo.dispatchEvent(new Event('change')); }
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        return;
+      }
+      const gCode = code === 'zh-HK' ? 'zh-TW' : code;
+      const trySetCombo = (attempt) => {
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+          combo.value = gCode;
+          combo.dispatchEvent(new Event('change'));
+        } else if (attempt < 20) {
+          setTimeout(() => trySetCombo(attempt + 1), 250);
+        }
+      };
+      trySetCombo(0);
+    }
+
     window.googleTranslateElementInit = function () {
       new google.translate.TranslateElement({ pageLanguage: 'ko', autoDisplay: false }, 'google_translate_element');
       const saved = localStorage.getItem('taerijay_lang');
-      if (saved && saved !== 'ko') {
-        const gCode = saved === 'zh-HK' ? 'zh-TW' : saved;
-        const trySetCombo = (attempt) => {
-          const combo = document.querySelector('.goog-te-combo');
-          if (combo) {
-            combo.value = gCode;
-            combo.dispatchEvent(new Event('change'));
-          } else if (attempt < 20) {
-            setTimeout(() => trySetCombo(attempt + 1), 250);
-          }
-        };
-        trySetCombo(0);
-      }
+      if (saved && saved !== 'ko') payTranslatePage(saved);
     };
+
+    const payBackBtn = document.getElementById('pay-back-btn');
+    if (payBackBtn) {
+      payBackBtn.addEventListener('click', () => {
+        if (window.history.length > 1) history.back();
+        else window.location.href = '/';
+      });
+    }
+
+    const payLangTrigger = document.getElementById('pay-lang-trigger');
+    const payLangMenu = document.getElementById('pay-lang-menu');
+    const payLangCurrent = document.getElementById('pay-lang-current');
+    if (payLangTrigger) {
+      payLangTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        payLangMenu.hidden = !payLangMenu.hidden;
+      });
+      document.querySelectorAll('.pay-lang-option').forEach((opt) => {
+        opt.addEventListener('click', () => {
+          payLangCurrent.textContent = opt.dataset.name;
+          localStorage.setItem('taerijay_lang', opt.dataset.code);
+          payLangMenu.hidden = true;
+          payTranslatePage(opt.dataset.code);
+        });
+      });
+      document.addEventListener('click', (e) => {
+        if (!payLangMenu.hidden && !e.target.closest('.pay-lang-dropdown')) payLangMenu.hidden = true;
+      });
+      const saved = localStorage.getItem('taerijay_lang');
+      if (saved) {
+        const opt = document.querySelector(`.pay-lang-option[data-code="${saved}"]`);
+        if (opt) payLangCurrent.textContent = opt.dataset.name;
+      }
+    }
   </script>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
   <style is:global>

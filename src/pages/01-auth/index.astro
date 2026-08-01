@@ -2,6 +2,25 @@
 const FIREBASE_API_KEY = "AIzaSyDohULKEyCcSi30UpbLJSwPwHJ0Vad8J5M";
 const FIREBASE_AUTH_DOMAIN = "taerijay-official.firebaseapp.com";
 const FIREBASE_PROJECT_ID = "taerijay-official";
+
+const languages = [
+  { code: 'en', name: 'English' },
+  { code: 'ko', name: '한국어' },
+  { code: 'ja', name: '日本語' },
+  { code: 'zh-CN', name: '简体中文' },
+  { code: 'zh-TW', name: '繁體中文' },
+  { code: 'zh-HK', name: '中文（香港）' },
+  { code: 'es', name: 'Español' },
+  { code: 'fr', name: 'Français' },
+  { code: 'de', name: 'Deutsch' },
+  { code: 'it', name: 'Italiano' },
+  { code: 'pt', name: 'Português' },
+  { code: 'ru', name: 'Русский' },
+  { code: 'ar', name: 'العربية' },
+  { code: 'th', name: 'ไทย' },
+  { code: 'vi', name: 'Tiếng Việt' },
+  { code: 'id', name: 'Bahasa Indonesia' },
+];
 ---
 <!doctype html>
 <html lang="ko">
@@ -15,11 +34,23 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
   <div class="app">
     <header class="header">
       <a href="/" class="header-logo">TAERIJAY</a>
+      <div class="header-right">
+        <button type="button" class="header-back-btn" id="auth-back-btn" aria-label="뒤로가기">←</button>
+        <div class="header-lang-dropdown">
+          <button type="button" class="header-lang-trigger" id="auth-lang-trigger">
+            <span id="auth-lang-current">English</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="header-lang-menu" id="auth-lang-menu" hidden>
+            {languages.map((l) => (
+              <button type="button" class="header-lang-option" data-code={l.code} data-name={l.name}>{l.name}</button>
+            ))}
+          </div>
+        </div>
+      </div>
     </header>
 
     <main class="main">
-      <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
-
       <div class="status-panel" id="statusPanel" hidden>
         <p class="status-kr">로그인 완료</p>
         <p class="status-en">You're signed in</p>
@@ -61,11 +92,17 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
     html,body{background:var(--bg);color:var(--fg);font-family:var(--f-body);min-height:100vh}
     .splash{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:999;transition:opacity .5s}
     .splash-brand{font-family:var(--f-display);font-weight:900;font-size:2rem;color:#B33A52}
-    .header{padding:20px 24px}
+    .header{padding:20px 24px;display:flex;align-items:center;justify-content:space-between}
     .header-logo{font-family:var(--f-display);font-weight:900;font-size:1.15rem;color:#B33A52;text-decoration:none}
+    .header-right{display:flex;align-items:center;gap:8px}
+    .header-back-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--fg);font-size:.9rem;line-height:1;padding:8px 11px;border-radius:6px;cursor:pointer}
+    .header-back-btn:hover{background:rgba(255,255,255,.1)}
+    .header-lang-dropdown{position:relative}
+    .header-lang-trigger{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--fg);font-size:.72rem;font-weight:600;padding:8px 11px;border-radius:6px;cursor:pointer}
+    .header-lang-menu{position:absolute;top:calc(100% + 8px);right:0;background:#151f33;border:1px solid rgba(255,255,255,.12);border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,.5);max-height:280px;overflow-y:auto;min-width:160px;z-index:501}
+    .header-lang-option{display:block;width:100%;text-align:left;background:transparent;border:none;color:var(--fg);font-size:.78rem;padding:9px 14px;cursor:pointer}
+    .header-lang-option:hover{background:rgba(255,255,255,.08)}
     .main{max-width:480px;margin:0 auto;padding:20px 24px 80px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
-    .back-btn{align-self:flex-start;background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--fg);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer}
-    .back-btn:hover{background:rgba(255,255,255,.1)}
 
     .btn-open-modal{width:100%;background:#B33A52;color:var(--fg);border:none;border-radius:10px;padding:16px;cursor:pointer;display:flex;flex-direction:column;gap:2px;margin-top:40px}
     .btn-open-modal[hidden]{display:none!important}
@@ -241,23 +278,65 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
       el.setAttribute('translate', 'no');
     });
 
+    function authTranslatePage(code) {
+      if (code === 'ko') {
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) { combo.value = ''; combo.dispatchEvent(new Event('change')); }
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        return;
+      }
+      const gCode = code === 'zh-HK' ? 'zh-TW' : code;
+      const trySetCombo = (attempt) => {
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+          combo.value = gCode;
+          combo.dispatchEvent(new Event('change'));
+        } else if (attempt < 20) {
+          setTimeout(() => trySetCombo(attempt + 1), 250);
+        }
+      };
+      trySetCombo(0);
+    }
+
     window.googleTranslateElementInit = function () {
       new google.translate.TranslateElement({ pageLanguage: 'ko', autoDisplay: false }, 'google_translate_element');
       const saved = localStorage.getItem('taerijay_lang');
-      if (saved && saved !== 'ko') {
-        const gCode = saved === 'zh-HK' ? 'zh-TW' : saved;
-        const trySetCombo = (attempt) => {
-          const combo = document.querySelector('.goog-te-combo');
-          if (combo) {
-            combo.value = gCode;
-            combo.dispatchEvent(new Event('change'));
-          } else if (attempt < 20) {
-            setTimeout(() => trySetCombo(attempt + 1), 250);
-          }
-        };
-        trySetCombo(0);
-      }
+      if (saved && saved !== 'ko') authTranslatePage(saved);
     };
+
+    const authBackBtn = document.getElementById('auth-back-btn');
+    if (authBackBtn) {
+      authBackBtn.addEventListener('click', () => {
+        if (window.history.length > 1) history.back();
+        else window.location.href = '/';
+      });
+    }
+
+    const authLangTrigger = document.getElementById('auth-lang-trigger');
+    const authLangMenu = document.getElementById('auth-lang-menu');
+    const authLangCurrent = document.getElementById('auth-lang-current');
+    if (authLangTrigger) {
+      authLangTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        authLangMenu.hidden = !authLangMenu.hidden;
+      });
+      document.querySelectorAll('.header-lang-option').forEach((opt) => {
+        opt.addEventListener('click', () => {
+          authLangCurrent.textContent = opt.dataset.name;
+          localStorage.setItem('taerijay_lang', opt.dataset.code);
+          authLangMenu.hidden = true;
+          authTranslatePage(opt.dataset.code);
+        });
+      });
+      document.addEventListener('click', (e) => {
+        if (!authLangMenu.hidden && !e.target.closest('.header-lang-dropdown')) authLangMenu.hidden = true;
+      });
+      const saved = localStorage.getItem('taerijay_lang');
+      if (saved) {
+        const opt = document.querySelector(`.header-lang-option[data-code="${saved}"]`);
+        if (opt) authLangCurrent.textContent = opt.dataset.name;
+      }
+    }
   </script>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
   <style is:global>

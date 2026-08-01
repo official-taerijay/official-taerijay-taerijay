@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="환불정책 | TAERIJAY">
+  <div class="legal-page">
+    <div class="legal-topbar">
+      <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
+    </div>
+    <h1 class="legal-title">
+      <span class="legal-title-kr">환불정책</span>
+      <span class="legal-title-en" data-i18n="en">Refund Policy</span>
+    </h1>
+    <p class="legal-updated">최종 개정일 2026.08.02 · TAERIJAY (사업자등록번호 673-51-01148)</p>
+
+    <article class="legal-article">
+      <section>
+        <h2>1. 결제 처리</h2>
+        <p>모든 결제는 Paddle(Merchant of Record)을 통해 처리되며, 결제 영수증은 Paddle 명의로 발행됩니다. 환불 처리 역시 Paddle 시스템을 통해 진행됩니다.</p>
+      </section>
+      <section>
+        <h2>2. 환불 가능 조건</h2>
+        <p>결제 완료일로부터 7일 이내이고, 해당 채널 콘텐츠를 실질적으로 이용하지 않은 경우(로그인 후 유료 콘텐츠 열람 이력이 없는 경우) 전액 환불을 요청할 수 있습니다.</p>
+      </section>
+      <section>
+        <h2>3. 환불 제한</h2>
+        <p>다음의 경우 환불이 제한되거나 이용 기간에 비례하여 부분 환불될 수 있습니다: 결제 후 7일이 경과한 경우, 유료 콘텐츠를 상당 부분 열람한 경우, 이용약관을 위반하여 이용이 제한된 경우.</p>
+      </section>
+      <section>
+        <h2>4. 환불 신청 방법</h2>
+        <p>official@taerijay.com으로 결제 이메일, 결제일, 채널명을 포함하여 환불을 요청하시면 영업일 기준 5일 이내 처리 결과를 안내드립니다.</p>
+      </section>
+      <section>
+        <h2>5. 자동 갱신 없음</h2>
+        <p>모든 요금제는 1회성 결제(12개월 단위)로, 자동 갱신되지 않습니다. 이용 기간 종료 시 재결제가 필요합니다.</p>
+      </section>
+    </article>
+  </div>
+
+  <style>
+    .legal-page{width:min(720px,92vw);margin:0 auto;padding:24px 0 90px}
+    .legal-topbar{margin-bottom:24px;padding-top:88px}
+    .back-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--ivory);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer}
+    .back-btn:hover{background:rgba(255,255,255,.1)}
+    .legal-title{margin-bottom:6px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+    .legal-title-kr{font-family:var(--f-display);font-weight:900;font-size:1.5rem}
+    .legal-title-en{font-size:1rem;letter-spacing:.06em;font-weight:700;color:var(--dim);text-transform:uppercase}
+    .legal-updated{font-size:.78rem;color:var(--dim);margin-bottom:32px}
+    .legal-article section{margin-bottom:24px}
+    .legal-article h2{font-family:var(--f-display);font-weight:800;font-size:.98rem;color:var(--gold);margin-bottom:8px}
+    .legal-article p{font-size:.86rem;color:var(--muted);line-height:1.75}
+  </style>
+</Layout>

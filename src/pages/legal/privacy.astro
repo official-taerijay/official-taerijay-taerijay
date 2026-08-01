@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="개인정보처리방침 | TAERIJAY">
+  <div class="legal-page">
+    <div class="legal-topbar">
+      <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
+    </div>
+    <h1 class="legal-title">
+      <span class="legal-title-kr">개인정보처리방침</span>
+      <span class="legal-title-en" data-i18n="en">Privacy Policy</span>
+    </h1>
+    <p class="legal-updated">최종 개정일 2026.08.02 · TAERIJAY (사업자등록번호 673-51-01148)</p>
+
+    <article class="legal-article">
+      <section>
+        <h2>1. 수집하는 개인정보 항목</h2>
+        <p>회사는 구글 로그인(Firebase Authentication)을 통해 이메일 주소, 이름, 프로필 이미지를 수집합니다. 결제 시 필요한 카드정보 등 결제 관련 정보는 회사가 직접 수집·저장하지 않으며, 결제대행사 Paddle이 처리합니다.</p>
+      </section>
+      <section>
+        <h2>2. 수집 목적</h2>
+        <p>회원 식별 및 로그인 유지, 채널별 이용권(구독) 관리, 결제 확인 및 고객 문의 응대, 서비스 개선을 위한 통계 분석에 이용합니다.</p>
+      </section>
+      <section>
+        <h2>3. 보유 및 이용 기간</h2>
+        <p>회원 탈퇴 시 또는 목적 달성 시 지체 없이 파기합니다. 단, 전자상거래법 등 관계 법령에 따라 보존이 필요한 거래 기록은 해당 법령이 정한 기간 동안 보관합니다.</p>
+      </section>
+      <section>
+        <h2>4. 제3자 제공 및 처리위탁</h2>
+        <p>회사는 서비스 운영을 위해 다음 업체에 개인정보 처리를 위탁합니다: Google Firebase(인증·데이터베이스), Paddle.com Market Ltd.(결제 처리), Vercel Inc.(호스팅). 각 업체는 자체 개인정보처리방침에 따라 정보를 처리합니다.</p>
+      </section>
+      <section>
+        <h2>5. 이용자의 권리</h2>
+        <p>이용자는 언제든지 자신의 개인정보 열람, 정정, 삭제, 처리정지를 요청할 수 있으며, 회원 탈퇴를 통해 수집 동의를 철회할 수 있습니다. 요청은 official@taerijay.com으로 접수합니다.</p>
+      </section>
+      <section>
+        <h2>6. 개인정보 보호책임자</h2>
+        <p>담당: TAERIJAY 운영팀 · 이메일: official@taerijay.com</p>
+      </section>
+    </article>
+  </div>
+
+  <style>
+    .legal-page{width:min(720px,92vw);margin:0 auto;padding:24px 0 90px}
+    .legal-topbar{margin-bottom:24px;padding-top:88px}
+    .back-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--ivory);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer}
+    .back-btn:hover{background:rgba(255,255,255,.1)}
+    .legal-title{margin-bottom:6px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+    .legal-title-kr{font-family:var(--f-display);font-weight:900;font-size:1.5rem}
+    .legal-title-en{font-size:1rem;letter-spacing:.06em;font-weight:700;color:var(--dim);text-transform:uppercase}
+    .legal-updated{font-size:.78rem;color:var(--dim);margin-bottom:32px}
+    .legal-article section{margin-bottom:24px}
+    .legal-article h2{font-family:var(--f-display);font-weight:800;font-size:.98rem;color:var(--gold);margin-bottom:8px}
+    .legal-article p{font-size:.86rem;color:var(--muted);line-height:1.75}
+  </style>
+</Layout>
