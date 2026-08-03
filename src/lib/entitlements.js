@@ -9,27 +9,26 @@ export const PRICE_TO_CHANNELS = {
   'pri_01kqxz3fghe6qsj5kh0vvjw24w': ['mini'],       // mini_basic
   'pri_01kqxz5yjv0w5pcyt2wwft4gar': ['daiso'],      // daiso_basic
   'pri_01kxv7ba8msb3j7h7rtsj1hx59': ['oliveyoung'], // olive_basic
-  'pri_01kxv7je3cb9s8pj31yyxwfeme': ['emart'],      // emart_basic
-  'pri_01kxv7pmea213szg7ejdnvx23t': ['convenience'],// cvs_basic
+  'pri_01kxv7pmea213szg7ejdnvx23t': ['emart', 'convenience'],// emart_cvs_basic (구 cvs_basic 가격 재사용)
 
   'pri_01kxyjw7rxvbgm5pfcx2bqt6a0': ['protocol'],   // protocol_standard
   'pri_01kxyk2mnc25zknae2wnm31bcw': ['mini'],       // mini_standard
   'pri_01kxyk6rmhden7tw7k8qj4464d': ['daiso'],      // daiso_standard
   'pri_01kxykabv1mvtr31pjahgxsct5': ['oliveyoung'], // olive_standard
-  'pri_01kxykf9p29z6w15fecgk642dy': ['emart'],      // emart_standard
-  'pri_01kxykjvzjsbqe7gsq74hf7tbc': ['convenience'],// cvs_standard
+  'pri_01kxykjvzjsbqe7gsq74hf7tbc': ['emart', 'convenience'],// emart_cvs_standard (구 cvs_standard 가격 재사용)
 
   'pri_01kxykpqktg5a5q7sz6e9wbxxk': ['protocol'],   // protocol_pro
   'pri_01kxyktf615tcbce2h84q549yv': ['mini'],       // mini_pro
   'pri_01kxykytqx419t9hnknspte9kv': ['daiso'],      // daiso_pro
   'pri_01kxym3cvmg277ew60m55jpgpf': ['oliveyoung'], // olive_pro
-  'pri_01kxym74jbacx434ft1gp1h67h': ['emart'],      // emart_pro
-  'pri_01kxymc3g9hjq1rv28mb7nx0bb': ['convenience'],// cvs_pro
+  'pri_01kxymc3g9hjq1rv28mb7nx0bb': ['emart', 'convenience'],// emart_cvs_pro (구 cvs_pro 가격 재사용)
 
-  // 더블 (두 채널 동시 오픈, 1년)
+  // 무료 코트시 패스
+  'pri_01kxyq3era020h6719fc161hzv': ['emart', 'convenience'],// emart_cvs Free Pass (구 cvs Free Pass 가격 재사용)
+
+  // 더블 (두 채널 동시 오픈, 1년) — protocol/mini, daiso/olive만 유지. emart×cvs Double은 Archive됨
   'pri_01kxyn9m5pv8rvk484z9b5gsdm': ['protocol', 'mini'],       // protocol_mini
   'pri_01kxyndffbjb7h3wzq78hgzydr': ['daiso', 'oliveyoung'],    // daiso_olive
-  'pri_01kxynk4awnhbc5b6x0p8mr28w': ['emart', 'convenience'],   // emart_cvs
 
   // 토탈 (전 채널, 1년)
   'pri_01kxynrmxggfrzymtp4721xyat': ['protocol', 'mini', 'daiso', 'oliveyoung', 'emart', 'convenience'], // total

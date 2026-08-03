@@ -60,14 +60,14 @@ const doublePlans = [
             </ul>
           </div>
           <div class="plan-detail-list">
-            {Object.entries(channels).filter(([slug]) => slug !== 'entertainment' && slug !== 'emartCvs').map(([slug, ch]) => (
+            {Object.entries(channels).filter(([slug]) => slug !== 'entertainment').map(([slug, ch]) => (
               <div class="plan-detail-row">
                 <span class="plan-detail-label">
                   <span class="plan-detail-label-kr">싱글 요금제</span>
                   <span class="plan-detail-label-en" data-i18n="en">SINGLE</span>
                 </span>
-                <a href={`/02-payment?key=${ch.payKey}_${t.key}`} class="plan-detail-box plan-detail-box-media" style={`--tc:${ch.color};--hero-img:url('/images/channels/${slug}.jpg')`}>
-                  <span class="plan-detail-names" style={`color:${ch.color}`}>taerijay+{slug}</span>
+                <a href={`/02-payment?key=${ch.payKey}_${t.key}`} class="plan-detail-box plan-detail-box-media" style={`--tc:${ch.color};--hero-img:url('/images/channels/${ch.slug === 'emart-convenience' ? 'emart' : slug}.jpg')`}>
+                  <span class="plan-detail-names" style={`color:${ch.color}`}>taerijay+{slug === 'emartCvs' ? 'emart+convenience' : slug}</span>
                   <span class="plan-detail-price">USD {t.price}</span>
                 </a>
               </div>
@@ -75,27 +75,6 @@ const doublePlans = [
           </div>
         </div>
       ))}
-
-      <div class="tier-group">
-        <div class="tier-group-header" style="--tc:#FFDD00">
-          <span class="tier-group-price">USD 34.99</span>
-          <span class="tier-group-en">EMART+CONVENIENCE</span>
-        </div>
-        <p class="plan-specs-note-kr">7개 브랜드 통합 채널은 현재 단일가로 판매됩니다. 등급별(베이직/스탠다드/프로) 세분화는 준비 중입니다.</p>
-        <p class="plan-specs-note-en" data-i18n="en">This bundled channel is currently sold at one flat price. Basic/Standard/Pro tiers are coming soon.</p>
-        <div class="plan-detail-list">
-          <div class="plan-detail-row">
-            <span class="plan-detail-label">
-              <span class="plan-detail-label-kr">싱글 요금제</span>
-              <span class="plan-detail-label-en" data-i18n="en">SINGLE</span>
-            </span>
-            <a href="/02-payment?key=emart_cvs" class="plan-detail-box plan-detail-box-media" style={`--tc:${channels.emartCvs.color};--hero-img:url('/images/channels/emart.jpg')`}>
-              <span class="plan-detail-names" style={`color:${channels.emartCvs.color}`}>taerijay+emart+convenience</span>
-              <span class="plan-detail-price">USD 34.99</span>
-            </a>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- 더블 요금제 상세 -->
