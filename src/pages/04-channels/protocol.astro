@@ -2,8 +2,18 @@
 import Layout from '../../layouts/Layout.astro';
 
 const categories = [
-  { slug: 'restaurant', label: '맛집', labelEn: 'Restaurant' },
-  { slug: 'cafe',       label: '카페', labelEn: 'Cafe' },
+  { slug: 'legal-info',       label: '입국 법적 정보',     labelEn: 'Entry & Legal Info',   free: true },
+  { slug: 'emergency-help',   label: '응급·긴급 통역',     labelEn: 'Emergency Help',        free: true },
+  { slug: 'incheon-airport',  label: '인천공항',          labelEn: 'Incheon Airport',       free: true },
+  { slug: 'gimpo-airport',    label: '김포공항',          labelEn: 'Gimpo Airport',         free: true },
+  { slug: 'jeju-airport',     label: '제주공항',          labelEn: 'Jeju Airport',          free: true },
+  { slug: 'transit',          label: '대중교통',          labelEn: 'Public Transit' },
+  { slug: 'mobile-number-wifi', label: '번호 발급·와이파이', labelEn: 'Phone Number & WiFi' },
+  { slug: 'essential-apps',   label: '필수 앱·웹사이트',   labelEn: 'Essential Apps' },
+  { slug: 'restaurant',       label: '맛집',              labelEn: 'Restaurant' },
+  { slug: 'cafe',             label: '카페',              labelEn: 'Cafe' },
+  { slug: 'kent',             label: 'K-엔터 회사 위치',   labelEn: 'K-Entertainment' },
+  { slug: 'hotspot',          label: '그 외 핫템·핫플',    labelEn: 'Hot Items & Spots' },
 ];
 const color = '#F16B24';
 ---
@@ -21,9 +31,9 @@ const color = '#F16B24';
     </section>
 
     <section class="channel-hero">
-      <span class="channel-badge channel-badge-lock">맛보기 12개 무료 · 이후 요금제 필요</span>
+      <span class="channel-badge channel-badge-lock">무료 5개 + 유료 7개 · 총 12개 카테고리</span>
       <h1 class="channel-title">taerijay<span style={`color:${color}`}>+protocol</span></h1>
-      <p class="channel-sub">공항·세관·대중교통 규약부터 맛집·카페까지, 검증된 현지 정보</p>
+      <p class="channel-sub">공항·세관·대중교통 규약부터 맛집·카페까지, 검증된 현지 정보. 월 2회(10일·20일) 업데이트</p>
       <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
     </section>
 
@@ -31,6 +41,7 @@ const color = '#F16B24';
       {categories.map((cat) => (
         <a href={`/04-channels/protocol/${cat.slug}`} class="cat-card">
           <div class="cat-card-art">
+            <span class={`cat-card-tier ${cat.free ? 'is-free' : 'is-paid'}`}>{cat.free ? '무료' : '유료'}</span>
             <span class="cat-card-name">{cat.label}</span>
             <span class="cat-card-name-en">{cat.labelEn}</span>
           </div>
@@ -70,6 +81,10 @@ const color = '#F16B24';
     .cat-card-art{aspect-ratio:16/10;background:linear-gradient(160deg, color-mix(in srgb, var(--c) 26%, var(--bg)) 0%, var(--bg) 80%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
     .cat-card-name{font-family:var(--f-display);font-weight:900;font-size:clamp(1.3rem,4vw,1.7rem);color:var(--c)}
     .cat-card-name-en{font-size:.9rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+    .cat-card-tier{position:absolute;top:10px;right:10px;font-size:.62rem;font-weight:800;letter-spacing:.04em;padding:3px 9px;border-radius:100px}
+    .cat-card-tier.is-free{background:rgba(120,220,140,.16);color:#7ee0a0;border:1px solid rgba(120,220,140,.4)}
+    .cat-card-tier.is-paid{background:color-mix(in srgb, var(--c) 18%, transparent);color:var(--c);border:1px solid color-mix(in srgb, var(--c) 40%, transparent)}
+    .cat-card-art{position:relative}
 
     .empty-note{text-align:center;padding:40px 20px;border:1px dashed rgba(255,255,255,.15);border-radius:14px}
     .empty-note p{font-size:.88rem;color:var(--muted);margin-bottom:6px}

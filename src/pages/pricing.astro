@@ -93,6 +93,8 @@ const doublePlans = [
         <li><span class="spec-kr">디바이스 1</span><span class="spec-en" data-i18n="en">1 Device</span></li>
         <li><span class="spec-kr">동시접속 1</span><span class="spec-en" data-i18n="en">1 Concurrent</span></li>
       </ul>
+      <p class="plan-specs-note-kr">번들 상품은 계정 공유 방지를 위해 1기기로 제한됩니다.</p>
+      <p class="plan-specs-note-en" data-i18n="en">Bundle plans are limited to 1 device to prevent account sharing.</p>
 
       <div class="plan-detail-list">
         {doublePlans.map((dp) => (
@@ -131,6 +133,8 @@ const doublePlans = [
         <li><span class="spec-kr">디바이스 1</span><span class="spec-en" data-i18n="en">1 Device</span></li>
         <li><span class="spec-kr">동시접속 1</span><span class="spec-en" data-i18n="en">1 Concurrent</span></li>
       </ul>
+      <p class="plan-specs-note-kr">번들 상품은 계정 공유 방지를 위해 1기기로 제한됩니다.</p>
+      <p class="plan-specs-note-en" data-i18n="en">Bundle plans are limited to 1 device to prevent account sharing.</p>
 
       <div class="plan-detail-row plan-detail-row-total">
         <span class="plan-detail-label">
@@ -177,6 +181,8 @@ const doublePlans = [
     .plan-specs{list-style:none;margin:6px 0}
     .plan-specs li{margin-bottom:6px}
     .plan-specs-inline{display:flex;flex-direction:column;gap:2px;margin-bottom:18px}
+    .plan-specs-note-kr{font-size:.76rem;color:var(--dim);margin-bottom:1px}
+    .plan-specs-note-en{font-size:.8rem;color:var(--dim);opacity:.8;margin-bottom:18px}
     .spec-kr{display:block;font-size:.82rem;color:var(--ivory)}
     .spec-en{display:block;font-size:.86rem;color:var(--dim)}
 

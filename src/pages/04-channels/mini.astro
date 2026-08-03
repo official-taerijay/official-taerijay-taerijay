@@ -2,12 +2,18 @@
 import Layout from '../../layouts/Layout.astro';
 
 const tabs = [
-  { slug: 'region',    label: '지역별로',   labelEn: 'By Region' },
-  { slug: '3hour',     label: '3시간 코스', labelEn: '3-Hour Course' },
-  { slug: '1day',      label: '1일 코스',   labelEn: '1-Day Course' },
-  { slug: '2day',      label: '2일 코스',   labelEn: '2-Day Course' },
-  { slug: '3day',      label: '3일 코스',   labelEn: '3-Day Course' },
-  { slug: 'recommend', label: '추천코스',   labelEn: 'Recommended', sub: '지역 × 카테고리' },
+  { slug: 'booking-tips', label: '예약·결제 서비스 안내', labelEn: 'Booking & Payment Tips', free: true },
+  { slug: 'emergency-help', label: '응급·긴급 통역',       labelEn: 'Emergency Help',          free: true },
+  { slug: '3hour',       label: '3시간 코스 (서울 12개)', labelEn: '3-Hour Course',           free: true },
+  { slug: '1day',        label: '1일 코스',   labelEn: '1-Day Course', sub: '지역 내부' },
+  { slug: '2day',        label: '2일 코스',   labelEn: '2-Day Course', sub: '타 지역 포함' },
+  { slug: '3day',        label: '3일 코스',   labelEn: '3-Day Course', sub: '타 지역 포함' },
+  { slug: 'region',      label: '지역별로',   labelEn: 'By Region', sub: '타 지역 포함' },
+  { slug: 'recommend',   label: '추천코스',   labelEn: 'Recommended', sub: '지역 × 카테고리' },
+  { slug: 'kdrama',      label: 'K-드라마 촬영지', labelEn: 'K-Drama Locations', sub: '단독 목록' },
+  { slug: 'nightview',   label: '야경 명소 코스', labelEn: 'Night View Course', sub: '지역 × 카테고리' },
+  { slug: 'photo',       label: '사진맛집 코스', labelEn: 'Photo Spot Course', sub: '지역 × 카테고리' },
+  { slug: 'indoor',      label: '실내 코스 (우천 대비)', labelEn: 'Indoor Course', sub: '지역 × 카테고리' },
 ];
 const color = '#e8e4dc';
 ---
@@ -25,9 +31,9 @@ const color = '#e8e4dc';
     </section>
 
     <section class="channel-hero">
-      <span class="channel-badge channel-badge-lock">맛보기 12개 무료 · 이후 요금제 필요</span>
+      <span class="channel-badge channel-badge-lock">무료 3개 + 유료 9개 · 총 12개 카테고리</span>
       <h1 class="channel-title">taerijay<span style={`color:${color}`}>+mini</span></h1>
-      <p class="channel-sub">거점 도시별 최적 동선, 시간대별 큐레이션 코스</p>
+      <p class="channel-sub">거점 도시별 최적 동선, 시간대별 큐레이션 코스. 100→1,000개 누적, 월 2회(10일·20일) 업데이트</p>
       <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
     </section>
 
@@ -35,6 +41,7 @@ const color = '#e8e4dc';
       {tabs.map((tab) => (
         <a href={`/04-channels/mini/${tab.slug}`} class="cat-card">
           <div class="cat-card-art">
+            <span class={`cat-card-tier ${tab.free ? 'is-free' : 'is-paid'}`}>{tab.free ? '무료' : '유료'}</span>
             <span class="cat-card-name">{tab.label}</span>
             <span class="cat-card-name-en">{tab.labelEn}</span>
             {tab.sub && <span class="cat-card-sub">{tab.sub}</span>}
@@ -76,6 +83,10 @@ const color = '#e8e4dc';
     .cat-card-name{font-family:var(--f-display);font-weight:900;font-size:clamp(1.1rem,3.4vw,1.5rem);color:var(--c);text-align:center}
     .cat-card-name-en{font-size:.9rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
     .cat-card-sub{font-size:.68rem;color:var(--dim);margin-top:4px}
+    .cat-card-tier{position:absolute;top:10px;right:10px;font-size:.62rem;font-weight:800;letter-spacing:.04em;padding:3px 9px;border-radius:100px}
+    .cat-card-tier.is-free{background:rgba(120,220,140,.16);color:#7ee0a0;border:1px solid rgba(120,220,140,.4)}
+    .cat-card-tier.is-paid{background:color-mix(in srgb, var(--c) 18%, transparent);color:var(--c);border:1px solid color-mix(in srgb, var(--c) 40%, transparent)}
+    .cat-card-art{position:relative}
 
     .empty-note{text-align:center;padding:40px 20px;border:1px dashed rgba(255,255,255,.15);border-radius:14px}
     .empty-note p{font-size:.88rem;color:var(--muted);margin-bottom:6px}

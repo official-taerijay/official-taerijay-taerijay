@@ -1,35 +1,21 @@
 ---
-export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
-import MapButtons from '../../components/MapButtons.astro';
-import { fetchSheetRows } from '../../lib/sheetsCms.js';
-const color = '#E1261C';
 
-const DAISO_MYEONGDONG = '서울특별시 중구 명동길 43 (다이소 명동 본점)';
-const DAISO_MYEONGDONG_STATION = '서울특별시 중구 퇴계로 134-1 (다이소 명동역점)';
-
-// 기본값(시트 연동 실패 시 폴백)
-const FALLBACK_MASK_PACKS = [
-  { ko: '메디힐', en: 'Mediheal', line: '에센셜 마스크 (소용량 라인)', price: '1매 1,000~2,000원대 (다이소 기준)', site: 'https://medihealshop.com/', addr: DAISO_MYEONGDONG, note: '다이소 입점 소용량 라인, 올리브영은 정가 라인' },
-  { ko: 'JM솔루션', en: 'JMsolution', line: '글로우 럭셔리 마스크', price: '1매 1,000~2,000원대', site: 'https://jmsolutioncm.cafe24.com/', addr: DAISO_MYEONGDONG, note: '다이소 마스크팩 매대 대표 브랜드' },
-  { ko: '이니스프리', en: 'Innisfree', line: 'my real squeeze 마스크 (미니)', price: '1매 1,000~1,800원대 (다이소 기준)', site: 'https://www.innisfree.com/kr/ko/', addr: DAISO_MYEONGDONG_STATION, note: '저가형 데일리 라인 일부 입점' },
-  { ko: '홀리카홀리카', en: 'Holika Holika', line: '알로에 수딩 마스크', price: '1매 1,000~2,500원대', site: 'https://holikaholika.com/', addr: DAISO_MYEONGDONG_STATION, note: '저가형 라인으로 다이소 상시 입점' },
+const categories = [
+  { slug: 'taxfree-instant', label: '매장 즉시 세금환급',   labelEn: 'Instant Tax Refund',  free: true },
+  { slug: 'mask-pack',       label: '마스크팩',            labelEn: 'Mask Pack',           free: true },
+  { slug: 'trouble-care',    label: '트러블·진정 케어',      labelEn: 'Trouble & Calming',   free: true },
+  { slug: 'skincare',        label: '스킨케어',             labelEn: 'Skincare' },
+  { slug: 'cleanser',        label: '클렌저 케어',          labelEn: 'Cleanser' },
+  { slug: 'color-cosmetics', label: '색조',                labelEn: 'Color Cosmetics' },
+  { slug: 'haircare',        label: '헤어케어',             labelEn: 'Hair Care' },
+  { slug: 'bodycare',        label: '바디케어',             labelEn: 'Body Care' },
+  { slug: 'perfume',         label: '향수',                labelEn: 'Perfume' },
+  { slug: 'beauty-tools',    label: '뷰티 소품',            labelEn: 'Beauty Tools' },
+  { slug: 'gender-care',     label: '남성용품·여성용품',      labelEn: 'Men & Women Care' },
+  { slug: 'soldout-items',   label: '품절 대란템·시즌 한정판', labelEn: 'Viral & Seasonal' },
 ];
-
-let maskPacks = FALLBACK_MASK_PACKS;
-try {
-  const rows = await fetchSheetRows('maskpack10');
-  const daisoRows = rows.filter((r) => (r.sold_at || '').includes('다이소'));
-  if (daisoRows.length) {
-    maskPacks = daisoRows.map((r) => ({
-      ko: r.brand_ko, en: r.brand_en, line: r.representative_line,
-      price: r.price_range_krw, site: r.official_website,
-      addr: r.reference_store_address || DAISO_MYEONGDONG, note: r.note,
-    }));
-  }
-} catch (e) {
-  console.error('[daiso] sheet fetch failed, using fallback', e);
-}
+const color = '#E1261C';
 ---
 <Layout title="taerijay+daiso | TAERIJAY" requireChannel="daiso">
   <div class="channel-page" style={`--c:${color}`}>
@@ -45,39 +31,28 @@ try {
     </section>
 
     <section class="channel-hero">
-      <span class="channel-badge channel-badge-lock">맛보기 12개 무료 · 이후 요금제 필요</span>
+      <span class="channel-badge channel-badge-lock">무료 3개 + 유료 9개 · 총 12개 카테고리</span>
       <span class="channel-category">BEAUTY</span>
       <h1 class="channel-title">taerijay<span style={`color:${color}`}>+daiso</span></h1>
-      <p class="channel-sub">다이소 뷰티 대란템 실시간 DB, 매장별 재고·위치 정보</p>
+      <p class="channel-sub">다이소 뷰티 대란템 실시간 DB, 매장별 재고·위치 정보. 100개 고정, 월 2회(10일·20일) 리뉴얼</p>
       <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
     </section>
 
-    <section class="product-grid-section">
-      <h2 class="product-grid-title">
-        <span class="product-grid-title-kr">마스크팩 입점 라인</span>
-        <span class="product-grid-title-en" data-i18n="en">Mask Pack Lineup</span>
-      </h2>
-      <div class="product-grid">
-        {maskPacks.map((p) => (
-          <div class="product-card">
-            <div class="product-card-head">
-              <span class="product-card-brand-kr">{p.ko}</span>
-              <span class="product-card-brand-en">{p.en}</span>
-            </div>
-            <span class="product-card-line">{p.line}</span>
-            <span class="product-card-price">{p.price}</span>
-            <span class="product-card-note">{p.note}</span>
-            <span class="product-card-addr">{p.addr}</span>
-            <a href={p.site} target="_blank" rel="noopener noreferrer" class="product-card-site">공식 홈페이지 · Official Site</a>
-            <MapButtons address={p.addr} compact />
+    <section class="cat-grid-section">
+      {categories.map((cat) => (
+        <a href={`/04-channels/daiso/${cat.slug}`} class="cat-card">
+          <div class="cat-card-art">
+            <span class={`cat-card-tier ${cat.free ? 'is-free' : 'is-paid'}`}>{cat.free ? '무료' : '유료'}</span>
+            <span class="cat-card-name">{cat.label}</span>
+            <span class="cat-card-name-en">{cat.labelEn}</span>
           </div>
-        ))}
-      </div>
+        </a>
+      ))}
     </section>
 
     <section class="empty-note">
-      <p>그 외 대란템 카테고리는 순차 업데이트 예정입니다.</p>
-      <p class="empty-note-en">More viral-item categories coming soon.</p>
+      <p>콘텐츠 준비 중입니다.</p>
+      <p class="empty-note-en">Content coming soon.</p>
     </section>
   </div>
 
@@ -102,27 +77,22 @@ try {
     .channel-sub{font-size:.88rem;color:var(--muted);max-width:48ch;line-height:1.6}
     .channel-subscribe-btn{display:inline-block;margin-top:16px;text-decoration:none;background:var(--c);color:var(--bg);font-weight:800;font-size:.82rem;letter-spacing:.02em;padding:11px 22px;border-radius:8px}
 
-    .item-grid-section{min-height:60px;margin-bottom:24px}
-
-    .product-grid-section{margin-bottom:40px}
-    .product-grid-title{display:flex;align-items:baseline;gap:10px;margin-bottom:16px;flex-wrap:wrap}
-    .product-grid-title-kr{font-family:var(--f-display);font-weight:900;font-size:1.2rem}
-    .product-grid-title-en{font-size:.9rem;letter-spacing:.08em;color:var(--dim);text-transform:uppercase}
-    .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-    .product-card{display:flex;flex-direction:column;gap:5px;color:var(--ivory);padding:16px;border:1px solid color-mix(in srgb, var(--c) 35%, transparent);border-radius:12px;background:linear-gradient(160deg, color-mix(in srgb, var(--c) 10%, var(--bg)) 0%, var(--bg) 85%);transition:transform .2s ease}
-    .product-card:hover{transform:translateY(-3px)}
-    .product-card-head{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
-    .product-card-brand-kr{font-family:var(--f-display);font-weight:800;font-size:1rem;color:var(--c)}
-    .product-card-brand-en{font-size:.78rem;color:var(--muted);text-transform:uppercase}
-    .product-card-line{font-size:.82rem;color:var(--ivory)}
-    .product-card-price{font-size:.88rem;font-weight:700;color:var(--c)}
-    .product-card-note{font-size:.76rem;color:var(--dim);line-height:1.4}
-    .product-card-addr{font-size:.7rem;color:var(--muted);line-height:1.4;margin-top:2px}
-    .product-card-site{display:inline-block;margin-top:6px;text-decoration:none;font-size:.74rem;font-weight:700;color:var(--c)}
-    .product-card-site:hover{text-decoration:underline}
+    .cat-grid-section{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+    .cat-card{text-decoration:none;color:var(--ivory);display:block;border:1px solid color-mix(in srgb, var(--c) 35%, transparent);border-radius:14px;overflow:hidden;transition:transform .2s ease}
+    .cat-card:hover{transform:translateY(-4px)}
+    .cat-card-art{position:relative;aspect-ratio:16/9;background:linear-gradient(160deg, color-mix(in srgb, var(--c) 20%, var(--bg)) 0%, var(--bg) 80%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:12px}
+    .cat-card-name{font-family:var(--f-display);font-weight:900;font-size:clamp(1.1rem,3.4vw,1.5rem);color:var(--c);text-align:center}
+    .cat-card-name-en{font-size:.9rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+    .cat-card-tier{position:absolute;top:10px;right:10px;font-size:.62rem;font-weight:800;letter-spacing:.04em;padding:3px 9px;border-radius:100px}
+    .cat-card-tier.is-free{background:rgba(120,220,140,.16);color:#7ee0a0;border:1px solid rgba(120,220,140,.4)}
+    .cat-card-tier.is-paid{background:color-mix(in srgb, var(--c) 18%, transparent);color:var(--c);border:1px solid color-mix(in srgb, var(--c) 40%, transparent)}
 
     .empty-note{text-align:center;padding:40px 20px;border:1px dashed rgba(255,255,255,.15);border-radius:14px}
     .empty-note p{font-size:.88rem;color:var(--muted);margin-bottom:6px}
     .empty-note-en{font-size:.94rem;color:var(--dim)}
+
+    @media (max-width: 560px){
+      .cat-grid-section{grid-template-columns:repeat(2,1fr)}
+    }
   </style>
 </Layout>
