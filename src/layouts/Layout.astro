@@ -14,8 +14,9 @@ const CHANNEL_LABELS = {
   mini: 'mini',
   daiso: 'daiso',
   oliveyoung: 'oliveyoung',
-  emart: 'emart',
-  convenience: 'convenience',
+  emart: 'emart+convenience',
+  convenience: 'emart+convenience',
+  emart_cvs: 'emart+convenience',
 };
 
 const channels = {
@@ -24,8 +25,7 @@ const channels = {
   mini:          { slug: 'mini',          color: '#e8e4dc' },
   daiso:         { slug: 'daiso',         color: '#E1261C' },
   oliveyoung:    { slug: 'oliveyoung',    color: '#6F8B2E' },
-  emart:         { slug: 'emart',         color: '#FFDD00' },
-  convenience:   { slug: 'convenience',   color: '#A14D7C' },
+  emartCvs:      { slug: 'emart-convenience', color: '#FFDD00' },
 };
 
 const socialLinks = [
@@ -94,7 +94,7 @@ import { languages } from '../lib/languages.js';
 
       <nav class="side-links side-links-channels">
         {Object.values(channels).map((ch) => (
-          <a href={`/04-channels/${ch.slug}`} style={`--c:${ch.color}`}>taerijay+{ch.slug}</a>
+          <a href={`/04-channels/${ch.slug}`} style={`--c:${ch.color}`}>taerijay+{ch.slug === 'emart-convenience' ? 'emart+convenience' : ch.slug}</a>
         ))}
       </nav>
 
