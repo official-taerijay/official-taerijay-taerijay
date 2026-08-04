@@ -51,6 +51,7 @@ export async function GET({ request }) {
     });
   } catch (e) {
     console.error('[entitlements] error', e);
-    return new Response(JSON.stringify({ error: 'invalid token' }), { status: 401 });
+    // 임시 디버그: 401의 정확한 원인을 응답에 노출 (원인 파악 후 제거 예정)
+    return new Response(JSON.stringify({ error: 'invalid token', debug: String(e && e.message || e), code: e && e.code }), { status: 401 });
   }
 }
