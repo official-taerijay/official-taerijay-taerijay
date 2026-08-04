@@ -5,17 +5,17 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
 import { languages } from '../../lib/languages.js';
 ---
 <!doctype html>
-<html lang="ko" translate="no">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>TAERIJAY</title>
 </head>
 <body>
-  <div id="splash" class="splash"><span class="splash-brand">TAERIJAY</span></div>
+  <div id="splash" class="splash"><span class="splash-brand notranslate" translate="no">TAERIJAY</span></div>
   <div class="app">
     <header class="header">
-      <a href="/" class="header-logo">TAERIJAY</a>
+      <a href="/" class="header-logo notranslate" translate="no">TAERIJAY</a>
       <div class="header-right">
         <button type="button" class="header-back-btn" id="auth-back-btn" aria-label="뒤로가기">←</button>
         <div class="header-lang-dropdown">
@@ -53,7 +53,7 @@ import { languages } from '../../lib/languages.js';
   <div class="modal" id="auth-modal" hidden>
     <div class="modal-card">
       <button type="button" class="modal-close" id="modal-close-btn">×</button>
-      <h1 class="modal-brand">TAERIJAY</h1>
+      <h1 class="modal-brand notranslate" translate="no">TAERIJAY</h1>
       <p class="modal-sub-kr">구글 계정 로그인, 전 채널 콘텐츠 확인</p>
       <p class="modal-sub-en" data-i18n="en">Sign in with Google — unlock all channels</p>
       <button class="btn-google" id="google-btn">
