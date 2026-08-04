@@ -1,58 +1,23 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import { CHANNEL_MAP } from '../../../lib/channelCategories.js';
 
 export function getStaticPaths() {
-  const map = {
-    entertainment: { subs: ['drama', 'movie'] },
-    protocol: { subs: ['restaurant', 'cafe'] },
-    mini: { subs: ['region', '3hour', '1day', '2day', '3day', 'recommend'] },
-    emart: { subs: ['emart', 'traders', 'nobrand', 'emart24'] },
-    convenience: { subs: ['cu', 'gs25', 'seveneleven'] },
-  };
   const paths = [];
-  for (const [channel, data] of Object.entries(map)) {
-    for (const sub of data.subs) {
+  for (const [channel, data] of Object.entries(CHANNEL_MAP)) {
+    for (const sub of Object.keys(data.subs)) {
       paths.push({ params: { channel, sub } });
     }
   }
   return paths;
 }
 
-const CHANNEL_MAP = {
-  entertainment: { color: '#00E5FF', subs: {
-    drama: { kr: '드라마', en: 'Drama' },
-    movie: { kr: '영화', en: 'Movie' },
-  }},
-  protocol: { color: '#F16B24', subs: {
-    restaurant: { kr: '맛집', en: 'Restaurant' },
-    cafe: { kr: '카페', en: 'Cafe' },
-  }},
-  mini: { color: '#e8e4dc', subs: {
-    region: { kr: '지역별로', en: 'By Region' },
-    '3hour': { kr: '3시간 코스', en: '3-Hour Course' },
-    '1day': { kr: '1일 코스', en: '1-Day Course' },
-    '2day': { kr: '2일 코스', en: '2-Day Course' },
-    '3day': { kr: '3일 코스', en: '3-Day Course' },
-    recommend: { kr: '추천코스', en: 'Recommended' },
-  }},
-  emart: { color: '#FFDD00', subs: {
-    emart: { kr: '이마트', en: 'E-Mart' },
-    traders: { kr: '트레이더스', en: 'Traders' },
-    nobrand: { kr: '노브랜드', en: 'No Brand' },
-    emart24: { kr: '이마트24', en: 'emart24' },
-  }},
-  convenience: { color: '#A14D7C', subs: {
-    cu: { kr: 'CU', en: 'CU' },
-    gs25: { kr: 'GS25', en: 'GS25' },
-    seveneleven: { kr: '세븐일레븐', en: '7-Eleven' },
-  }},
-};
-
 const { channel, sub } = Astro.params;
 const channelData = CHANNEL_MAP[channel];
 const subData = channelData.subs[sub];
 const color = channelData.color;
-const requireChannel = channel === 'entertainment' ? '' : channel; // entertainment는 무료 채널
+// entertainment 채널 전체 + 각 채널의 free:true 카테고리는 로그인/이용권 확인 없이 열람 가능
+const requireChannel = (channel === 'entertainment' || subData.free) ? '' : channel;
 ---
 <Layout title={`taerijay+${channel} · ${subData.kr} | TAERIJAY`} requireChannel={requireChannel}>
   <div class="sub-page" style={`--c:${color}`}>
