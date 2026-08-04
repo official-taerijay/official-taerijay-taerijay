@@ -16,5 +16,8 @@
     "firebase-admin": "^14.2.0",
     "path": "^0.12.7",
     "typescript": "^5.4.3"
+  },
+  "overrides": {
+    "jose": "^5.9.6"
   }
 }

@@ -197,8 +197,8 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
     }
 
     .benefit-text { display: flex; flex-direction: column; gap: 3px; }
-    .benefit-kr { display: block; font-size: 13px; font-weight: 600; color: rgba(251,249,244,0.95); }
-    .benefit-en { display: block; font-size: 14.5px; color: rgba(251,249,244,0.6); letter-spacing: .01em; margin-top: 2px; }
+    .benefit-kr { display: block; font-size: 13px; font-weight: 600; color: rgba(251,249,244,0.95); word-break: keep-all; overflow-wrap: break-word; line-height: 1.5; }
+    .benefit-en { display: block; font-size: 14.5px; color: rgba(251,249,244,0.6); letter-spacing: .01em; margin-top: 2px; word-break: keep-all; overflow-wrap: break-word; line-height: 1.5; }
 
     .benefit-icon {
       width: 16px; height: 16px;
@@ -623,10 +623,33 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       },
     };
 
+    // 결제 완료 후 이동시킬 채널 페이지 매핑 (key 접두사 기준)
+    const KEY_TO_CHANNEL_PATH = {
+      protocol_basic: '/04-channels/protocol',
+      protocol_standard: '/04-channels/protocol',
+      protocol_pro: '/04-channels/protocol',
+      mini_basic: '/04-channels/mini',
+      mini_standard: '/04-channels/mini',
+      mini_pro: '/04-channels/mini',
+      daiso_basic: '/04-channels/daiso',
+      daiso_standard: '/04-channels/daiso',
+      daiso_pro: '/04-channels/daiso',
+      olive_basic: '/04-channels/oliveyoung',
+      olive_standard: '/04-channels/oliveyoung',
+      olive_pro: '/04-channels/oliveyoung',
+      emart_cvs_basic: '/04-channels/emart-convenience',
+      emart_cvs_standard: '/04-channels/emart-convenience',
+      emart_cvs_pro: '/04-channels/emart-convenience',
+      protocol_mini: '/04-channels/protocol',
+      daiso_olive: '/04-channels/daiso',
+      total: '/',
+    };
+
     // DOM 참조
     const params    = new URLSearchParams(window.location.search);
     const key       = params.get('key') || '';
     const product   = PRICE_MAP[key];
+    const successRedirectPath = KEY_TO_CHANNEL_PATH[key] || '/';
 
     const payCard       = document.getElementById('payCard');
     const channelBar    = document.getElementById('channelBar');
@@ -656,6 +679,10 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       benefitList.innerHTML = product.benefits
         .map(b => `<li><div class="benefit-icon">✓</div><div class="benefit-text"><span class="benefit-kr notranslate" translate="no">${b.kr}</span><span class="benefit-en">${b.en}</span></div></li>`)
         .join('');
+
+      // 상품 정보(혜택 목록 등)가 나중에 JS로 삽입되므로, 이미 다른 언어가 선택된 상태라면
+      // 구글 번역 위젯이 이 새 콘텐츠를 놓치지 않도록 다시 한번 재적용
+      if (window.__tjRetranslate) window.__tjRetranslate();
 
       // 로그인 상태 확인
       const userEmail = sessionStorage.getItem('user_email');
@@ -718,14 +745,14 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
             displayMode: 'overlay',
             theme: 'dark',
             locale: paddleLocale,
-            successUrl: `${window.location.origin}/?payment=success`,
+            successUrl: `${window.location.origin}${successRedirectPath}?payment=success`,
             frameTarget: 'self',
           },
           eventCallback: function (data) {
             if (data.name === 'checkout.completed') {
               statusBox.className = 'status-box ok';
               statusBox.textContent = '✓ Payment complete! Activating your access...';
-              setTimeout(() => { window.location.href = '/'; }, 2000);
+              setTimeout(() => { window.location.href = successRedirectPath; }, 2000);
 
             } else if (data.name === 'checkout.closed') {
               payBtn.disabled = false;
@@ -771,8 +798,19 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       const trySetCombo = (attempt) => {
         const combo = document.querySelector('.goog-te-combo');
         if (combo) {
-          combo.value = gCode;
-          combo.dispatchEvent(new Event('change'));
+          // 이미 같은 언어로 설정돼 있으면 change 이벤트가 안 붙을 수 있어,
+          // 새로 삽입된 노드(혜택 목록 등)까지 다시 스캔하도록 한번 초기화 후 재적용
+          if (combo.value === gCode) {
+            combo.value = '';
+            combo.dispatchEvent(new Event('change'));
+            setTimeout(() => {
+              combo.value = gCode;
+              combo.dispatchEvent(new Event('change'));
+            }, 60);
+          } else {
+            combo.value = gCode;
+            combo.dispatchEvent(new Event('change'));
+          }
         } else if (attempt < 20) {
           setTimeout(() => trySetCombo(attempt + 1), 250);
         }
@@ -780,10 +818,16 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       trySetCombo(0);
     }
 
-    window.googleTranslateElementInit = function () {
-      new google.translate.TranslateElement({ pageLanguage: 'ko', autoDisplay: false }, 'google_translate_element');
+    // 결제 상품 정보(혜택 목록 등)가 JS로 늦게 삽입된 뒤에도 현재 선택된 언어를
+    // 다시 적용해주는 헬퍼 — main 스크립트에서 benefitList 렌더링 직후 호출됨
+    window.__tjRetranslate = function () {
       const saved = localStorage.getItem('taerijay_lang');
       if (saved && saved !== 'ko') payTranslatePage(saved);
+    };
+
+    window.googleTranslateElementInit = function () {
+      new google.translate.TranslateElement({ pageLanguage: 'ko', autoDisplay: false }, 'google_translate_element');
+      window.__tjRetranslate();
     };
 
     const payBackBtn = document.getElementById('pay-back-btn');
