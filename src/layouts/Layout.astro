@@ -386,11 +386,19 @@ import { languages } from '../lib/languages.js';
       }
       try {
         const token = await user.getIdToken();
+        // 임시 디버그: 토큰 상태를 화면에 직접 표시 (원인 파악 후 제거 예정)
+        if (window.__TJ_DEBUG_GATE__) {
+          alert('user: ' + user.email + '\ntoken length: ' + (token ? token.length : 'NULL/EMPTY'));
+        }
         const res = await fetch('/api/entitlements', {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!res.ok) {
           bar.hidden = true;
+          if (window.__TJ_DEBUG_GATE__) {
+            const errBody = await res.text();
+            alert('entitlements API failed\nstatus: ' + res.status + '\nbody: ' + errBody);
+          }
           if (requireChannel) redirectToPricing();
           return;
         }
