@@ -386,15 +386,11 @@ import { languages } from '../lib/languages.js';
       }
       try {
         const token = await user.getIdToken();
-        // 임시 디버그: 토큰 상태를 항상 화면에 표시 (원인 파악 후 제거 예정)
-        alert('[DEBUG] user: ' + user.email + '\ntoken length: ' + (token ? token.length : 'NULL/EMPTY'));
         const res = await fetch('/api/entitlements', {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!res.ok) {
           bar.hidden = true;
-          const errBody = await res.text();
-          alert('[DEBUG] entitlements API failed\nstatus: ' + res.status + '\nbody: ' + errBody);
           if (requireChannel) redirectToPricing();
           return;
         }
