@@ -1,25 +1,27 @@
 // src/pages/api/sheet-data.js
 // 구글 시트를 실시간 CMS 데이터소스로 노출하는 API.
-// 사용: /api/sheet-data?sheet=maskpack10
+// 사용: /api/sheet-data?sheet=protocol  (또는 entertainment / mini / daiso / oliveyoung / emart-convenience)
 // 시트가 "링크가 있는 모든 사용자 - 뷰어"로 공유되어 있어야 동작함.
 
 export const prerender = false;
 
-import { fetchSheetRows, SHEET_IDS } from '../../lib/sheetsCms.js';
+import { fetchSheetRows } from '../../lib/sheetsCms.js';
+
+const AVAILABLE_CHANNELS = ['entertainment', 'protocol', 'mini', 'daiso', 'oliveyoung', 'emart-convenience'];
 
 export async function GET({ url }) {
   const sheetKey = url.searchParams.get('sheet');
 
   if (!sheetKey) {
     return new Response(
-      JSON.stringify({ error: 'missing ?sheet= param', available: Object.keys(SHEET_IDS) }),
+      JSON.stringify({ error: 'missing ?sheet= param', available: AVAILABLE_CHANNELS }),
       { status: 400, headers: { 'content-type': 'application/json' } }
     );
   }
 
-  if (!SHEET_IDS[sheetKey]) {
+  if (!AVAILABLE_CHANNELS.includes(sheetKey)) {
     return new Response(
-      JSON.stringify({ error: `unknown sheet: ${sheetKey}`, available: Object.keys(SHEET_IDS) }),
+      JSON.stringify({ error: `unknown sheet: ${sheetKey}`, available: AVAILABLE_CHANNELS }),
       { status: 404, headers: { 'content-type': 'application/json' } }
     );
   }

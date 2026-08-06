@@ -433,7 +433,9 @@ import { languages } from '../lib/languages.js';
     a{color:inherit}
 
     .splash{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s ease}
-    .splash-brand{font-family:var(--f-display);font-weight:900;font-size:clamp(1.8rem,6vw,2.6rem);letter-spacing:.06em}
+    .splash-brand{font-family:var(--f-display);font-weight:900;font-size:clamp(1.8rem,6vw,2.6rem);letter-spacing:.06em;animation:tj-splash-pulse 1.4s ease-in-out infinite}
+    @keyframes tj-splash-pulse{0%,100%{opacity:1}50%{opacity:.55}}
+    @media (prefers-reduced-motion: reduce){.splash-brand{animation:none}}
 
     .nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s ease,border-color .3s ease}
     .nav-scrolled{background:rgba(10,25,47,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(91,14,27,.4)}
@@ -455,11 +457,13 @@ import { languages } from '../lib/languages.js';
     .entitlement-chip.entitlement-admin{color:var(--gold);border-color:var(--gold);font-weight:800;cursor:default}
 
     main[data-require-channel]:not([data-unlocked]){visibility:hidden}
-    .channel-gate-loading{position:fixed;inset:0;z-index:150;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:var(--bg)}
-    .channel-gate-spinner{width:28px;height:28px;border:3px solid rgba(212,175,55,.25);border-top-color:var(--gold);border-radius:50%;animation:tj-spin .8s linear infinite}
-    .channel-gate-kr{font-size:.9rem;color:var(--ivory)}
+    .channel-gate-loading{position:fixed;inset:0;z-index:150;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:var(--bg);animation:tj-fade-in .3s ease}
+    .channel-gate-spinner{width:32px;height:32px;border:3px solid rgba(212,175,55,.2);border-top-color:var(--gold);border-right-color:var(--gold);border-radius:50%;animation:tj-spin .7s cubic-bezier(.5,0,.5,1) infinite}
+    .channel-gate-kr{font-size:.9rem;color:var(--ivory);font-weight:600}
     .channel-gate-en{font-size:.76rem;color:var(--muted)}
     @keyframes tj-spin{to{transform:rotate(360deg)}}
+    @keyframes tj-fade-in{from{opacity:0}to{opacity:1}}
+    @media (prefers-reduced-motion: reduce){.channel-gate-spinner{animation-duration:1.4s}}
 
     .nav-right-top{display:flex;align-items:center;gap:8px}
     .nav-back-btn{background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--ivory);font-size:.9rem;line-height:1;padding:8px 11px;border-radius:6px;cursor:pointer;transition:background .2s}

@@ -64,7 +64,7 @@ const channels = {
       <a href={`/04-channels/${channels.emartCvs.slug}`} class="service-card" style={`--c:${channels.emartCvs.color};--hero-img:url('/images/channels/emart.jpg')`}>
         <span class="service-status status-click">CLICK</span>
         <span class="service-name">taerijay+emart+convenience</span>
-        <span class="service-tag">{channels.emartCvs.tag}</span>
+        <span class="service-tag notranslate" translate="no">{channels.emartCvs.tag}</span>
       </a>
     </div>
   </section>
@@ -191,13 +191,26 @@ const channels = {
       position:relative;display:flex;flex-direction:column;gap:6px;text-decoration:none;
       padding:24px 22px;border-radius:14px;overflow:hidden;min-height:150px;
       border:1px solid color-mix(in srgb, var(--c) 45%, transparent);
-      background-image:var(--hero-img, none), linear-gradient(160deg, color-mix(in srgb, var(--c) 14%, var(--bg)) 0%, var(--bg) 88%);
+      background-image:var(--hero-img, none),
+        radial-gradient(ellipse 90% 100% at 15% 0%, color-mix(in srgb, var(--c) 20%, transparent) 0%, transparent 55%),
+        linear-gradient(160deg, color-mix(in srgb, var(--c) 14%, var(--bg)) 0%, var(--bg) 88%);
       background-size:cover;background-position:center;
-      transition:transform .2s ease;
+      transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease, border-color .28s ease;
+      will-change:transform;
     }
-    .service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(6,10,18,.15) 0%, rgba(6,10,18,.88) 100%);z-index:0}
-    .service-card:hover{transform:translateY(-3px)}
+    .service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(6,10,18,.15) 0%, rgba(6,10,18,.88) 100%);z-index:0;transition:background .28s ease}
+    .service-card:hover{
+      transform:translateY(-5px) scale(1.015);
+      border-color:color-mix(in srgb, var(--c) 70%, transparent);
+      box-shadow:0 22px 48px -18px color-mix(in srgb, var(--c) 50%, transparent), 0 6px 16px rgba(0,0,0,.4);
+      z-index:2;
+    }
+    .service-card:focus-visible{outline:2px solid var(--c);outline-offset:2px}
     .service-card > *{position:relative;z-index:1}
+    @media (prefers-reduced-motion: reduce){
+      .service-card{transition:none}
+      .service-card:hover{transform:none}
+    }
     .service-status{align-self:flex-end;flex:0 0 auto;margin-bottom:auto;font-size:.62rem;font-weight:800;letter-spacing:.08em;padding:3px 10px;border-radius:100px}
     .status-click{background:var(--gold);color:var(--bg)}
     .service-region{font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--c);text-transform:uppercase;margin-top:12px}
