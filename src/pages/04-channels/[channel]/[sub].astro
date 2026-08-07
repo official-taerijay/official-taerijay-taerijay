@@ -121,7 +121,7 @@ function extractSido(item) {
               {item.addr_kr && (
                 <div class="item-meta-row item-meta-row-addr">
                   <span class="item-meta-label">주소</span>
-                  <span class="item-meta-value item-addr-value notranslate" translate="no">{item.addr_kr}</span>
+                  <span class="item-meta-value item-addr-value">{item.addr_kr}</span>
                   <button
                     type="button"
                     class="addr-copy-btn"
@@ -140,7 +140,7 @@ function extractSido(item) {
               {item.phone_kr && (
                 <div class="item-meta-row item-meta-row-phone">
                   <span class="item-meta-label">연락처</span>
-                  <span class="item-meta-value item-phone-value notranslate" translate="no">{item.phone_kr}</span>
+                  <span class="item-meta-value item-phone-value">{item.phone_kr}</span>
                   <a
                     href={`tel:${item.phone_kr.replace(/[^0-9+]/g, '')}`}
                     class="phone-call-btn"
@@ -157,37 +157,37 @@ function extractSido(item) {
               {item.hours_kr && (
                 <div class="item-meta-row">
                   <span class="item-meta-label">시간</span>
-                  <span class="item-meta-value notranslate" translate="no">{item.hours_kr}</span>
+                  <span class="item-meta-value">{item.hours_kr}</span>
                 </div>
               )}
               {item.route_kr && (
                 <div class="item-meta-row">
                   <span class="item-meta-label">동선</span>
-                  <span class="item-meta-value notranslate" translate="no">{item.route_kr}</span>
+                  <span class="item-meta-value">{item.route_kr}</span>
                 </div>
               )}
               {item.duration && (
                 <div class="item-meta-row">
                   <span class="item-meta-label">소요시간</span>
-                  <span class="item-meta-value notranslate" translate="no">{item.duration}</span>
+                  <span class="item-meta-value">{item.duration}</span>
                 </div>
               )}
               {item.budget_kr && (
                 <div class="item-meta-row">
                   <span class="item-meta-label">예산</span>
-                  <span class="item-meta-value notranslate" translate="no">{item.budget_kr}</span>
+                  <span class="item-meta-value">{item.budget_kr}</span>
                 </div>
               )}
               {item.price_kr && (
                 <div class="item-meta-row">
                   <span class="item-meta-label">가격대</span>
-                  <span class="item-meta-value notranslate" translate="no">{item.price_kr}</span>
+                  <span class="item-meta-value">{item.price_kr}</span>
                 </div>
               )}
               {item.genre && (
                 <div class="item-meta-row">
                   <span class="item-meta-label">장르</span>
-                  <span class="item-meta-value notranslate" translate="no">{item.genre}{item.year ? ` · ${item.year}` : ''}</span>
+                  <span class="item-meta-value">{item.genre}{item.year ? ` · ${item.year}` : ''}</span>
                 </div>
               )}
               {item.cast_kr && (
@@ -340,12 +340,22 @@ function extractSido(item) {
     .item-tag{display:inline-block;font-size:.68rem;font-weight:700;color:var(--c);background:color-mix(in srgb, var(--c) 16%, transparent);border:1px solid color-mix(in srgb, var(--c) 40%, transparent);border-radius:100px;padding:3px 10px;margin-bottom:10px}
     .item-desc-kr{font-size:.86rem;color:var(--ivory);line-height:1.65;margin-top:8px;white-space:pre-line;word-break:keep-all}
     .item-desc-en{font-size:.8rem;color:var(--muted);line-height:1.6;margin-top:4px;white-space:pre-line}
-    .item-meta{display:flex;flex-direction:column;gap:6px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)}
-    .item-meta-row{display:flex;gap:10px;font-size:.82rem}
-    .item-meta-row-addr{align-items:flex-start}
+    .item-meta{display:flex;flex-direction:column;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)}
+    .item-meta-row{display:flex;gap:10px;font-size:.82rem;flex-wrap:wrap}
     .item-meta-label{flex:0 0 56px;color:var(--dim);font-weight:700;padding-top:2px}
     .item-meta-value{color:var(--muted);word-break:keep-all}
-    .item-addr-value{flex:1}
+
+    /* 주소/연락처처럼 값이 길어질 수 있는 행: 라벨을 한 줄로 두고 값+버튼은 그 아래 줄로 내려서
+       값이 길어져도 라벨과 겹치거나 어색하게 꺾이지 않도록 함 */
+    .item-meta-row-addr,.item-meta-row-phone{
+      display:grid;
+      grid-template-columns:1fr auto;
+      grid-template-rows:auto auto;
+      row-gap:6px;
+    }
+    .item-meta-row-addr .item-meta-label,.item-meta-row-phone .item-meta-label{grid-column:1 / -1;grid-row:1;flex:none;padding-top:0}
+    .item-addr-value,.item-phone-value{grid-column:1;grid-row:2;min-width:0;word-break:break-word;align-self:center}
+    .item-meta-row-addr .addr-copy-btn,.item-meta-row-phone .phone-call-btn{grid-column:2;grid-row:2;align-self:center}
     .addr-copy-btn{
       flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;
       background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:100px;
