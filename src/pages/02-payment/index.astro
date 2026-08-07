@@ -149,7 +149,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       display: flex;
       align-items: baseline;
       gap: 6px;
-      margin-bottom: 20px;
+      margin-bottom: 4px;
     }
 
     .price-amount {
@@ -173,6 +173,13 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       font-weight: 500;
       color: var(--muted);
       letter-spacing: 0.05em;
+    }
+
+    .price-krw-row {
+      margin-bottom: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dim);
     }
 
     .divider {
@@ -408,6 +415,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
           <span class="price-amount" id="priceAmount">—</span>
           <span class="price-period">/ 12 months · one-time</span>
         </div>
+        <div class="price-krw-row" id="priceKrwRow"></div>
 
         <div class="divider"></div>
 
@@ -675,6 +683,13 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       productName.textContent  = product.label;
       productTier.textContent  = product.tier;
       priceAmount.textContent  = product.price % 1 === 0 ? product.price.toString() : product.price.toFixed(2);
+
+      const USD_KRW = 1400;
+      const priceKrwRow = document.getElementById('priceKrwRow');
+      if (priceKrwRow) {
+        const krwAmount = Math.round(product.price * USD_KRW).toLocaleString('ko-KR');
+        priceKrwRow.textContent = `약 ₩${krwAmount} (환율 변동에 따라 실제 청구 금액과 다를 수 있음)`;
+      }
 
       benefitList.innerHTML = product.benefits
         .map(b => `<li><div class="benefit-icon">✓</div><div class="benefit-text"><span class="benefit-kr notranslate" translate="no">${b.kr}</span><span class="benefit-en">${b.en}</span></div></li>`)

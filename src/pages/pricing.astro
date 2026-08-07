@@ -20,6 +20,9 @@ const doublePlans = [
   { color: '#2DD4BF', a: 'protocol', b: 'mini', payKey: 'protocol_mini' },
   { color: '#818CF8', a: 'daiso', b: 'oliveyoung', payKey: 'daiso_olive' },
 ];
+
+const USD_KRW = 1400;
+const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
 ---
 <Layout title="요금제 | TAERIJAY">
   <div class="pricing-page">
@@ -52,6 +55,7 @@ const doublePlans = [
         <div class="tier-group">
           <div class="tier-group-header" style={`--tc:${t.color}`}>
             <span class="tier-group-price">USD {t.price}</span>
+            <span class="tier-group-krw">₩{krw(parseFloat(t.price))}</span>
             <span class="tier-group-en" data-i18n="en">{t.en}</span>
             <ul class="plan-specs plan-specs-inline">
               <li><span class="spec-kr">아이디 {t.id}</span><span class="spec-en" data-i18n="en">{t.id} ID</span></li>
@@ -68,7 +72,10 @@ const doublePlans = [
                 </span>
                 <a href={`/02-payment?key=${ch.payKey}_${t.key}`} class="plan-detail-box plan-detail-box-media" style={`--tc:${ch.color};--hero-img:url('/images/channels/${ch.slug === 'emart-convenience' ? 'emart' : slug}.jpg')`}>
                   <span class="plan-detail-names" style={`color:${ch.color}`}>taerijay+{slug === 'emartCvs' ? 'emart+convenience' : slug}</span>
-                  <span class="plan-detail-price">USD {t.price}</span>
+                  <span class="plan-detail-price-wrap">
+                    <span class="plan-detail-price">USD {t.price}</span>
+                    <span class="plan-detail-krw">₩{krw(parseFloat(t.price))}</span>
+                  </span>
                 </a>
               </div>
             ))}
@@ -110,7 +117,10 @@ const doublePlans = [
                   <span style={`color:${channels[dp.b].color}`}>{dp.b}</span>
                 </span>
               </span>
-              <span class="plan-detail-price">USD 34.99</span>
+              <span class="plan-detail-price-wrap">
+                <span class="plan-detail-price">USD 34.99</span>
+                <span class="plan-detail-krw">₩{krw(34.99)}</span>
+              </span>
             </a>
           </div>
         ))}
@@ -146,7 +156,10 @@ const doublePlans = [
               <span class="total-chip-line" style={`color:${ch.color}`}>taerijay+{slug === 'emartCvs' ? 'emart+convenience' : slug}</span>
             ))}
           </div>
-          <span class="plan-detail-price">USD 99.99</span>
+          <span class="plan-detail-price-wrap">
+            <span class="plan-detail-price">USD 99.99</span>
+            <span class="plan-detail-krw">₩{krw(99.99)}</span>
+          </span>
         </a>
       </div>
     </section>
@@ -174,6 +187,7 @@ const doublePlans = [
     .tier-group{margin:22px 0 30px;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px;background:rgba(255,255,255,.015)}
     .tier-group-header{border-left:4px solid var(--tc);padding-left:16px;margin-bottom:14px}
     .tier-group-price{font-family:var(--f-display);font-weight:900;font-size:1.5rem;color:var(--tc);margin-right:10px}
+    .tier-group-krw{font-size:.82rem;font-weight:600;color:var(--dim);margin-right:10px}
     .tier-group-en{font-size:1.05rem;font-weight:700;color:var(--ivory);letter-spacing:.03em}
 
     .plan-specs{list-style:none;margin:6px 0}
@@ -209,7 +223,9 @@ const doublePlans = [
     .plan-detail-prefix{font-size:.72rem;font-weight:700;color:var(--dim);letter-spacing:.03em}
     .plan-detail-combo{font-family:var(--f-display);font-weight:700;font-size:1.05rem}
     .plan-detail-x{color:var(--dim);margin:0 8px}
+    .plan-detail-price-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:0}
     .plan-detail-price{font-weight:900;font-size:1.2rem;color:var(--tc);white-space:nowrap}
+    .plan-detail-krw{font-size:.78rem;font-weight:600;color:var(--dim);white-space:nowrap}
 
     .plan-detail-box-total{display:block;border:1px solid #B33A52;background:linear-gradient(160deg, rgba(179,58,82,.12) 0%, rgba(179,58,82,.02) 100%);min-width:260px}
     .plan-detail-box-total:hover{background:linear-gradient(160deg, rgba(179,58,82,.22) 0%, rgba(179,58,82,.05) 100%)}
@@ -217,6 +233,7 @@ const doublePlans = [
     .total-detail-names{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
     .total-chip-line{font-size:.9rem;font-weight:700}
     .plan-detail-box-total .plan-detail-price{font-size:1.8rem}
+    .plan-detail-box-total .plan-detail-krw{font-size:.9rem}
 
     @media (max-width: 560px){
       .plan-detail-row{flex-direction:column;align-items:flex-start;gap:8px}
