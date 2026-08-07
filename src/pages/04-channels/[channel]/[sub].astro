@@ -18,7 +18,9 @@ if (!channelData || !subData) {
 
 const color = channelData.color;
 // entertainment 채널 전체 + 각 채널의 free:true 카테고리는 로그인/이용권 확인 없이 열람 가능
-const requireChannel = (channel === 'entertainment' || subData.free) ? '' : channel;
+// freeCount가 있는 카테고리(예: 브랜드별 TOP 30)는 페이지 자체는 열려있고, 앞쪽 N개만 무료로 노출
+const requireChannel = (channel === 'entertainment' || subData.free || subData.freeCount) ? '' : channel;
+const freeCount = subData.freeCount || 0;
 
 let items = [];
 let loadError = false;
@@ -29,6 +31,10 @@ try {
   console.error('[sub-page] sheet fetch failed', e);
   loadError = true;
 }
+
+const lockedCount = freeCount > 0 ? Math.max(items.length - freeCount, 0) : 0;
+const visibleItems = freeCount > 0 ? items.slice(0, freeCount) : items;
+const lockedItems = freeCount > 0 ? items.slice(freeCount) : [];
 ---
 <Layout title={`taerijay+${channel} · ${subData.kr} | TAERIJAY`} requireChannel={requireChannel}>
   <div class="sub-page" style={`--c:${color}`}>
@@ -64,7 +70,7 @@ try {
           💡 본 콘텐츠는 AI 도구를 활용해 정리되었으며, 순차적으로 웹검색 팩트체크를 진행 중입니다. 실제 방문 전 최신 정보를 별도로 확인해 주세요.
           <span class="content-notice-en">Some content is AI-assisted and undergoing fact-check verification. Please confirm details before visiting.</span>
         </p>
-        {items.map((item) => (
+        {visibleItems.map((item) => (
           <article class="item-card">
             <div class="item-card-head">
               <h2 class="item-title-kr notranslate" translate="no">{item.title_kr}</h2>
@@ -151,6 +157,21 @@ try {
             </div>
           </article>
         ))}
+
+        {lockedCount > 0 && (
+          <div class="locked-teaser">
+            <div class="locked-teaser-inner">
+              <p class="locked-teaser-title">🔒 나머지 {lockedCount}개는 구독 후 확인 가능</p>
+              <p class="locked-teaser-title-en">{lockedCount} more items available with a subscription</p>
+              <a href="/pricing" class="channel-subscribe-btn locked-teaser-btn">구독하기 · Subscribe</a>
+            </div>
+            <ul class="locked-teaser-list" aria-hidden="true">
+              {lockedItems.slice(0, 6).map((item) => (
+                <li class="locked-teaser-item notranslate" translate="no">{item.title_kr}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </section>
     )}
   </div>
@@ -182,5 +203,12 @@ try {
     .item-link-btn{text-decoration:none;font-size:.76rem;font-weight:700;color:var(--ivory);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:6px 14px;transition:background .2s ease}
     .item-link-btn:hover{background:rgba(255,255,255,.14)}
     .item-link-btn-web{border-color:color-mix(in srgb, var(--c) 45%, transparent);color:var(--c)}
+    .locked-teaser{position:relative;border:1px dashed color-mix(in srgb, var(--c) 45%, transparent);border-radius:16px;padding:26px 24px;overflow:hidden;background:linear-gradient(160deg, color-mix(in srgb, var(--c) 5%, var(--bg)) 0%, var(--bg) 70%)}
+    .locked-teaser-inner{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px}
+    .locked-teaser-title{font-weight:800;font-size:.95rem;color:var(--ivory)}
+    .locked-teaser-title-en{font-size:.76rem;color:var(--dim)}
+    .locked-teaser-btn{margin-top:10px}
+    .locked-teaser-list{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;filter:blur(5px);opacity:.5;user-select:none;pointer-events:none}
+    .locked-teaser-item{font-size:.84rem;color:var(--muted);padding:10px 14px;border:1px solid rgba(255,255,255,.08);border-radius:10px}
   </style>
 </Layout>
