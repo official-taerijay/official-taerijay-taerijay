@@ -88,8 +88,10 @@ function extractSido(item) {
           💡 본 콘텐츠는 AI 도구를 활용해 정리되었으며, 순차적으로 웹검색 팩트체크를 진행 중입니다. 실제 방문 전 최신 정보를 별도로 확인해 주세요.
           <span class="content-notice-en">Some content is AI-assisted and undergoing fact-check verification. Please confirm details before visiting.</span>
         </p>
-        {visibleItems.map((item) => (
-          <article class="item-card">
+        {items.map((item, idx) => {
+          const isLocked = freeCount > 0 && idx >= freeCount;
+          return (
+          <article class={`item-card${isLocked ? ' item-card-locked' : ''}`} data-locked-item={isLocked ? '1' : undefined} hidden={isLocked || undefined}>
             <div class="item-card-head">
               <p class="item-locname notranslate" translate="no">
                 {extractSido(item) && <span class="item-locname-region">[{extractSido(item)}]</span>}
@@ -218,10 +220,11 @@ function extractSido(item) {
               {item.web && <a href={item.web} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web">공식 웹사이트</a>}
             </div>
           </article>
-        ))}
+          );
+        })}
 
         {lockedCount > 0 && (
-          <div class="locked-teaser">
+          <div class="locked-teaser" id="locked-teaser" data-require-channel={channel}>
             <div class="locked-teaser-inner">
               <p class="locked-teaser-title">🔒 나머지 {lockedCount}개는 구독 후 확인 가능</p>
               <p class="locked-teaser-title-en">{lockedCount} more items available with a subscription</p>
@@ -267,6 +270,55 @@ function extractSido(item) {
         if (label) label.textContent = originalText;
       }, 1500);
     });
+  </script>
+
+  <script type="module">
+    // freeCount 기반 부분 잠금 페이지 전용: ADMIN 또는 해당 채널 이용권 보유자라면
+    // 서버가 hidden 처리해둔 잠긴 카드를 노출하고 구독 유도 배너를 숨긴다.
+    const teaser = document.getElementById('locked-teaser');
+    if (teaser) {
+      const requireChannel = teaser.getAttribute('data-require-channel') || '';
+      // entitlements 문서는 emart-convenience를 'emart'/'convenience' 두 키로 나눠 저장하므로 매핑 필요
+      const ENTITLEMENT_KEY_MAP = { 'emart-convenience': 'emart' };
+      const entKey = ENTITLEMENT_KEY_MAP[requireChannel] || requireChannel;
+
+      const unlockLockedItems = () => {
+        document.querySelectorAll('[data-locked-item="1"]').forEach((el) => {
+          el.hidden = false;
+        });
+        teaser.hidden = true;
+      };
+
+      import('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js').then(({ initializeApp }) => {
+        import('https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js').then(async ({ getAuth, onAuthStateChanged }) => {
+          const app = initializeApp({
+            apiKey: 'AIzaSyDohULKEyCcSi30UpbLJSwPwHJ0Vad8J5M',
+            authDomain: 'taerijay-official.firebaseapp.com',
+            projectId: 'taerijay-official',
+          });
+          const auth = getAuth(app);
+          onAuthStateChanged(auth, async (user) => {
+            if (!user) return;
+            try {
+              const token = await user.getIdToken();
+              const res = await fetch('/api/entitlements', { headers: { Authorization: `Bearer ${token}` } });
+              if (!res.ok) return;
+              const data = await res.json();
+              if (data.isAdmin) {
+                unlockLockedItems();
+                return;
+              }
+              const ent = (data.entitlements || {})[entKey];
+              if (ent && ent.expiresAt > Date.now()) {
+                unlockLockedItems();
+              }
+            } catch (e) {
+              console.error('[locked-teaser] entitlement check failed', e);
+            }
+          });
+        });
+      });
+    }
   </script>
 
   <style>

@@ -84,18 +84,18 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
       </span>
       <div class="plan-row-items plan-row-items-stack">
         <a href="/pricing" class="tier-chip" style="--tc:#FBF9F4">
-          <span class="tier-chip-price">USD 19.99</span>
           <span class="tier-chip-krw">₩{krw(19.99)}</span>
+          <span class="tier-chip-price">USD 19.99</span>
           <span class="tier-chip-en" data-i18n="en">BASIC</span>
         </a>
         <a href="/pricing" class="tier-chip" style="--tc:#22C55E">
-          <span class="tier-chip-price">USD 29.99</span>
           <span class="tier-chip-krw">₩{krw(29.99)}</span>
+          <span class="tier-chip-price">USD 29.99</span>
           <span class="tier-chip-en" data-i18n="en">STANDARD</span>
         </a>
         <a href="/pricing" class="tier-chip" style="--tc:#F16B24">
-          <span class="tier-chip-price">USD 39.99</span>
           <span class="tier-chip-krw">₩{krw(39.99)}</span>
+          <span class="tier-chip-price">USD 39.99</span>
           <span class="tier-chip-en" data-i18n="en">PRO</span>
         </a>
       </div>
@@ -113,8 +113,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
             <span class="plan-chip-combo">protocol × mini</span>
           </span>
           <span class="plan-chip-price-wrap">
-            <span class="plan-chip-price">USD 34.99</span>
             <span class="plan-chip-krw">₩{krw(34.99)}</span>
+            <span class="plan-chip-price">USD 34.99</span>
           </span>
         </a>
       </div>
@@ -132,8 +132,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
             <span class="plan-chip-combo">daiso × oliveyoung</span>
           </span>
           <span class="plan-chip-price-wrap">
-            <span class="plan-chip-price">USD 34.99</span>
             <span class="plan-chip-krw">₩{krw(34.99)}</span>
+            <span class="plan-chip-price">USD 34.99</span>
           </span>
         </a>
       </div>
@@ -155,8 +155,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
             <span class="plan-chip-total-item">taerijay+emart+convenience</span>
           </div>
           <span class="plan-chip-price-wrap">
-            <span class="plan-chip-price">USD 99.99</span>
             <span class="plan-chip-krw">₩{krw(99.99)}</span>
+            <span class="plan-chip-price">USD 99.99</span>
           </span>
         </a>
       </div>
@@ -252,8 +252,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     .plan-row-items-stack{flex-direction:column;gap:10px}
     .tier-chip{text-decoration:none;cursor:pointer;border:2px solid var(--tc, var(--gold));border-radius:10px;padding:12px 18px;display:flex;flex-direction:column;gap:2px;width:100%;background:color-mix(in srgb, var(--tc, var(--gold)) 10%, transparent);transition:background .2s,transform .15s}
     .tier-chip:hover{background:color-mix(in srgb, var(--tc, var(--gold)) 20%, transparent);transform:translateY(-1px)}
-    .tier-chip-price{font-family:var(--f-display);font-weight:900;font-size:1.15rem;color:var(--tc, var(--gold))}
-    .tier-chip-krw{display:block;font-size:.74rem;font-weight:600;color:var(--dim);margin-top:1px}
+    .tier-chip-krw{font-family:var(--f-display);font-weight:900;font-size:1.15rem;color:var(--tc, var(--gold));display:block}
+    .tier-chip-price{display:block;font-size:.74rem;font-weight:600;color:var(--dim);margin-top:1px}
     .tier-chip-en{font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--tc, var(--gold));text-transform:uppercase}
 
     .plan-chip{text-decoration:none;cursor:pointer;color:inherit;border:2px solid var(--tc, rgba(91,14,27,.4));border-radius:10px;padding:12px 18px;display:flex;flex-direction:column;gap:2px;width:100%;min-width:150px;flex:1;background:color-mix(in srgb, var(--tc, transparent) 10%, transparent);transition:background .2s,transform .15s}
@@ -265,8 +265,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     .plan-chip-prefix{font-size:.7rem;font-weight:700;color:var(--dim);letter-spacing:.03em}
     .plan-chip-combo{font-family:var(--f-display);font-weight:700;font-size:1.05rem;color:var(--ivory)}
     .plan-chip-price-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:0}
-    .plan-chip-price{font-family:var(--f-display);font-weight:900;font-size:1.3rem;color:var(--tc, var(--gold))}
-    .plan-chip-krw{font-size:.76rem;font-weight:600;color:var(--dim)}
+    .plan-chip-krw{font-family:var(--f-display);font-weight:900;font-size:1.3rem;color:var(--tc, var(--gold))}
+    .plan-chip-price{font-size:.76rem;font-weight:600;color:var(--dim)}
     .plan-chip-total-list{display:flex;flex-direction:column;gap:5px}
     .plan-chip-total-item{font-family:var(--f-body);font-weight:600;font-size:.8rem;letter-spacing:.02em;color:var(--muted)}
 

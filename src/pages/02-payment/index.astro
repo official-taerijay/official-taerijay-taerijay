@@ -160,14 +160,6 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       line-height: 1;
     }
 
-    .price-currency {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--muted);
-      align-self: flex-start;
-      margin-top: 6px;
-    }
-
     .price-period {
       font-size: 12px;
       font-weight: 500;
@@ -175,7 +167,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       letter-spacing: 0.05em;
     }
 
-    .price-krw-row {
+    .price-usd-row {
       margin-bottom: 20px;
       font-size: 13px;
       font-weight: 600;
@@ -411,11 +403,10 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
         <div class="product-tier" id="productTier">Verifying...</div>
 
         <div class="price-row">
-          <span class="price-currency">$</span>
-          <span class="price-amount" id="priceAmount">—</span>
+          <span class="price-amount" id="priceAmountKrw">—</span>
           <span class="price-period">/ 12 months · one-time</span>
         </div>
-        <div class="price-krw-row" id="priceKrwRow"></div>
+        <div class="price-usd-row" id="priceUsdRow"></div>
 
         <div class="divider"></div>
 
@@ -663,7 +654,7 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
     const channelBar    = document.getElementById('channelBar');
     const productName   = document.getElementById('productName');
     const productTier   = document.getElementById('productTier');
-    const priceAmount   = document.getElementById('priceAmount');
+    const priceAmountKrw = document.getElementById('priceAmountKrw');
     const benefitList   = document.getElementById('benefitList');
     const userRow       = document.getElementById('userRow');
     const userEmailShow = document.getElementById('userEmailShow');
@@ -682,13 +673,15 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
 
       productName.textContent  = product.label;
       productTier.textContent  = product.tier;
-      priceAmount.textContent  = product.price % 1 === 0 ? product.price.toString() : product.price.toFixed(2);
 
       const USD_KRW = 1400;
-      const priceKrwRow = document.getElementById('priceKrwRow');
-      if (priceKrwRow) {
-        const krwAmount = Math.round(product.price * USD_KRW).toLocaleString('ko-KR');
-        priceKrwRow.textContent = `약 ₩${krwAmount} (환율 변동에 따라 실제 청구 금액과 다를 수 있음)`;
+      const krwAmount = Math.round(product.price * USD_KRW).toLocaleString('ko-KR');
+      priceAmountKrw.textContent = `₩${krwAmount}`;
+
+      const priceUsdRow = document.getElementById('priceUsdRow');
+      if (priceUsdRow) {
+        const usdText = product.price % 1 === 0 ? product.price.toString() : product.price.toFixed(2);
+        priceUsdRow.textContent = `USD $${usdText} (환율 변동에 따라 실제 청구 금액과 다를 수 있음)`;
       }
 
       benefitList.innerHTML = product.benefits
