@@ -35,6 +35,14 @@ try {
 const lockedCount = freeCount > 0 ? Math.max(items.length - freeCount, 0) : 0;
 const visibleItems = freeCount > 0 ? items.slice(0, freeCount) : items;
 const lockedItems = freeCount > 0 ? items.slice(freeCount) : [];
+
+// tips_kr/tips_en처럼 "▪ 항목1 ▪ 항목2 ▪ 항목3" 형태로 한 줄에 이어진 텍스트를
+// 항목별로 쪼개서 각각 줄바꿈해 보여주기 위한 헬퍼. ▪ 구분자가 없으면 원문 한 줄 그대로 반환.
+function splitBullets(text) {
+  if (!text) return [];
+  const parts = text.split('▪').map((s) => s.trim()).filter(Boolean);
+  return parts.length > 1 ? parts : [text.trim()];
+}
 ---
 <Layout title={`taerijay+${channel} · ${subData.kr} | TAERIJAY`} requireChannel={requireChannel}>
   <div class="sub-page" style={`--c:${color}`}>
@@ -144,10 +152,19 @@ const lockedItems = freeCount > 0 ? items.slice(freeCount) : [];
             </div>
 
             {item.tips_kr && (
-              <p class="item-tips">
-                <span class="item-tips-kr notranslate" translate="no">💡 {item.tips_kr}</span>
-                {item.tips_en && <span class="item-tips-en">{item.tips_en}</span>}
-              </p>
+              <div class="item-tips">
+                <p class="item-tips-label">💡 팁 <span class="item-tips-label-en">Tips</span></p>
+                <ul class="item-tips-list">
+                  {splitBullets(item.tips_kr).map((line, i) => (
+                    <li class="item-tips-line">
+                      <span class="item-tips-kr notranslate" translate="no">{line}</span>
+                      {splitBullets(item.tips_en)[i] && (
+                        <span class="item-tips-en">{splitBullets(item.tips_en)[i]}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
 
             <div class="item-links">
@@ -196,9 +213,13 @@ const lockedItems = freeCount > 0 ? items.slice(freeCount) : [];
     .item-meta-row{display:flex;gap:10px;font-size:.82rem}
     .item-meta-label{flex:0 0 56px;color:var(--dim);font-weight:700}
     .item-meta-value{color:var(--muted);word-break:keep-all}
-    .item-tips{margin-top:14px;font-size:.82rem;line-height:1.6;display:flex;flex-direction:column;gap:2px}
-    .item-tips-kr{color:var(--gold);word-break:keep-all}
-    .item-tips-en{color:var(--dim);font-size:.78rem}
+    .item-tips{margin-top:14px}
+    .item-tips-label{font-size:.72rem;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+    .item-tips-label-en{font-weight:600;color:var(--dim);text-transform:none;letter-spacing:0}
+    .item-tips-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+    .item-tips-line{display:flex;flex-direction:column;gap:2px;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+    .item-tips-kr{font-size:.84rem;line-height:1.6;color:var(--gold);word-break:keep-all}
+    .item-tips-en{font-size:.78rem;line-height:1.55;color:var(--dim);word-break:break-word}
     .item-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
     .item-link-btn{text-decoration:none;font-size:.76rem;font-weight:700;color:var(--ivory);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:6px 14px;transition:background .2s ease}
     .item-link-btn:hover{background:rgba(255,255,255,.14)}
