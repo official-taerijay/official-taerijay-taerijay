@@ -43,6 +43,16 @@ function splitBullets(text) {
   const parts = text.split('▪').map((s) => s.trim()).filter(Boolean);
   return parts.length > 1 ? parts : [text.trim()];
 }
+
+// addr_kr에서 "서울/부산/제주 ..." 같은 시/도 단위를 최대한 추출.
+// item.region이 있으면 그걸 우선 쓰고, 없으면 주소 앞부분에서 시/도명을 뽑아온다.
+const SIDO_LIST = ['서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종', '경기', '강원', '충북', '충남', '전북', '전남', '경북', '경남', '제주'];
+function extractSido(item) {
+  if (item.region) return item.region.split(/[·,\s]/)[0];
+  const addr = item.addr_kr || '';
+  const found = SIDO_LIST.find((s) => addr.startsWith(s) || addr.includes(s));
+  return found || '';
+}
 ---
 <Layout title={`taerijay+${channel} · ${subData.kr} | TAERIJAY`} requireChannel={requireChannel}>
   <div class="sub-page" style={`--c:${color}`}>
@@ -81,6 +91,11 @@ function splitBullets(text) {
         {visibleItems.map((item) => (
           <article class="item-card">
             <div class="item-card-head">
+              <p class="item-locname notranslate" translate="no">
+                {extractSido(item) && <span class="item-locname-region">[{extractSido(item)}]</span>}
+                <span class="item-locname-sep">|</span>
+                <span class="item-locname-title">[{item.title_kr}]</span>
+              </p>
               <h2 class="item-title-kr notranslate" translate="no">{item.title_kr}</h2>
               {item.title_en && <p class="item-title-en">{item.title_en}</p>}
             </div>
@@ -102,9 +117,22 @@ function splitBullets(text) {
 
             <div class="item-meta">
               {item.addr_kr && (
-                <div class="item-meta-row">
+                <div class="item-meta-row item-meta-row-addr">
                   <span class="item-meta-label">주소</span>
-                  <span class="item-meta-value notranslate" translate="no">{item.addr_kr}</span>
+                  <span class="item-meta-value item-addr-value notranslate" translate="no">{item.addr_kr}</span>
+                  <button
+                    type="button"
+                    class="addr-copy-btn"
+                    data-copy-text={item.addr_kr}
+                    aria-label="주소 복사"
+                    title="주소 복사 Copy address"
+                  >
+                    <svg class="addr-copy-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="7" y="7" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                      <path d="M13 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    <span class="addr-copy-label">복사</span>
+                  </button>
                 </div>
               )}
               {item.hours_kr && (
@@ -193,6 +221,37 @@ function splitBullets(text) {
     )}
   </div>
 
+  <script>
+    // 주소 복사 버튼: 클릭 시 클립보드에 주소 텍스트를 복사하고 잠깐 "복사됨" 피드백 표시
+    document.addEventListener('click', async (e) => {
+      const btn = e.target.closest('.addr-copy-btn');
+      if (!btn) return;
+      const text = btn.getAttribute('data-copy-text') || '';
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (err) {
+        // 클립보드 API가 막힌 환경(비-https 등) 대비 폴백
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      const label = btn.querySelector('.addr-copy-label');
+      const originalText = label ? label.textContent : '';
+      btn.classList.add('addr-copy-btn-done');
+      if (label) label.textContent = '복사됨';
+      setTimeout(() => {
+        btn.classList.remove('addr-copy-btn-done');
+        if (label) label.textContent = originalText;
+      }, 1500);
+    });
+  </script>
+
   <style>
     .item-list{display:flex;flex-direction:column;gap:20px;margin-bottom:40px}
     .content-notice{font-size:.76rem;color:var(--dim);line-height:1.6;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 14px;margin-bottom:4px}
@@ -204,6 +263,9 @@ function splitBullets(text) {
     }
     .item-card:hover{border-color:color-mix(in srgb, var(--c) 55%, transparent);box-shadow:0 12px 30px -14px color-mix(in srgb, var(--c) 40%, transparent)}
     .item-card-head{margin-bottom:8px}
+    .item-locname{display:flex;align-items:center;gap:8px;font-size:.76rem;font-weight:700;color:var(--c);margin-bottom:6px;word-break:keep-all}
+    .item-locname-sep{color:var(--dim);opacity:.5}
+    .item-locname-title{color:var(--gold)}
     .item-title-kr{font-family:var(--f-display);font-weight:800;font-size:clamp(1.05rem,3vw,1.3rem);color:var(--ivory);word-break:keep-all}
     .item-title-en{font-size:.78rem;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin-top:2px}
     .item-tag{display:inline-block;font-size:.68rem;font-weight:700;color:var(--c);background:color-mix(in srgb, var(--c) 16%, transparent);border:1px solid color-mix(in srgb, var(--c) 40%, transparent);border-radius:100px;padding:3px 10px;margin-bottom:10px}
@@ -211,8 +273,19 @@ function splitBullets(text) {
     .item-desc-en{font-size:.8rem;color:var(--muted);line-height:1.6;margin-top:4px;white-space:pre-line}
     .item-meta{display:flex;flex-direction:column;gap:6px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)}
     .item-meta-row{display:flex;gap:10px;font-size:.82rem}
-    .item-meta-label{flex:0 0 56px;color:var(--dim);font-weight:700}
+    .item-meta-row-addr{align-items:flex-start}
+    .item-meta-label{flex:0 0 56px;color:var(--dim);font-weight:700;padding-top:2px}
     .item-meta-value{color:var(--muted);word-break:keep-all}
+    .item-addr-value{flex:1}
+    .addr-copy-btn{
+      flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:100px;
+      padding:3px 10px;font-size:.7rem;font-weight:700;color:var(--ivory);cursor:pointer;
+      transition:background .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .addr-copy-btn:hover{background:rgba(255,255,255,.14)}
+    .addr-copy-icon{width:12px;height:12px;flex:0 0 auto}
+    .addr-copy-btn-done{background:color-mix(in srgb, var(--c) 30%, transparent);border-color:var(--c);color:var(--c)}
     .item-tips{margin-top:14px}
     .item-tips-label{font-size:.72rem;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
     .item-tips-label-en{font-weight:600;color:var(--dim);text-transform:none;letter-spacing:0}
