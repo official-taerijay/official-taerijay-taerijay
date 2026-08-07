@@ -18,7 +18,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     <div class="hero-scrim"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">TAERIJAY REPUBLIC OF KOREA</p>
-      <h1 class="hero-wordmark">TAERIJAY</h1>
+      <h1 class="hero-wordmark notranslate" translate="no">TAERIJAY</h1>
       <div class="hero-cta-row">
         <button class="btn-primary" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">PRICING</button>
         <button class="btn-ghost" onclick="document.getElementById('channels').scrollIntoView({behavior:'smooth'})">CHANNELS</button>
@@ -31,7 +31,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     <div class="channel-row" data-count="1">
       <a href={`/04-channels/${channels.entertainment.slug}`} class="service-card" style={`--c:${channels.entertainment.color};--hero-img:url('/images/channels/${channels.entertainment.slug}.jpg')`}>
         <span class="service-status status-click">CLICK</span>
-        <span class="service-name">taerijay+entertainment</span>
+        <span class="service-name notranslate" translate="no">taerijay+entertainment</span>
         <span class="service-tag">{channels.entertainment.tag}</span>
       </a>
     </div>
@@ -39,12 +39,12 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     <div class="channel-row" data-count="2">
       <a href={`/04-channels/${channels.protocol.slug}`} class="service-card" style={`--c:${channels.protocol.color};--hero-img:url('/images/channels/${channels.protocol.slug}.jpg')`}>
         <span class="service-status status-click">CLICK</span>
-        <span class="service-name">taerijay+protocol</span>
+        <span class="service-name notranslate" translate="no">taerijay+protocol</span>
         <span class="service-tag">{channels.protocol.tag}</span>
       </a>
       <a href={`/04-channels/${channels.mini.slug}`} class="service-card" style={`--c:${channels.mini.color};--hero-img:url('/images/channels/${channels.mini.slug}.jpg')`}>
         <span class="service-status status-click">CLICK</span>
-        <span class="service-name">taerijay+mini</span>
+        <span class="service-name notranslate" translate="no">taerijay+mini</span>
         <span class="service-tag">{channels.mini.tag}</span>
       </a>
     </div>
@@ -52,12 +52,12 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     <div class="channel-row" data-count="2">
       <a href={`/04-channels/${channels.daiso.slug}`} class="service-card" style={`--c:${channels.daiso.color};--hero-img:url('/images/channels/${channels.daiso.slug}.jpg')`}>
         <span class="service-status status-click">CLICK</span>
-        <span class="service-name">taerijay+daiso</span>
+        <span class="service-name notranslate" translate="no">taerijay+daiso</span>
         <span class="service-tag">{channels.daiso.tag}</span>
       </a>
       <a href={`/04-channels/${channels.oliveyoung.slug}`} class="service-card" style={`--c:${channels.oliveyoung.color};--hero-img:url('/images/channels/${channels.oliveyoung.slug}.jpg')`}>
         <span class="service-status status-click">CLICK</span>
-        <span class="service-name">taerijay+oliveyoung</span>
+        <span class="service-name notranslate" translate="no">taerijay+oliveyoung</span>
         <span class="service-tag">{channels.oliveyoung.tag}</span>
       </a>
     </div>
@@ -65,7 +65,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     <div class="channel-row" data-count="1">
       <a href={`/04-channels/${channels.emartCvs.slug}`} class="service-card" style={`--c:${channels.emartCvs.color};--hero-img:url('/images/channels/emart.jpg')`}>
         <span class="service-status status-click">CLICK</span>
-        <span class="service-name">taerijay+emart+convenience</span>
+        <span class="service-name notranslate" translate="no">taerijay+emart+convenience</span>
         <span class="service-tag notranslate" translate="no">{channels.emartCvs.tag}</span>
       </a>
     </div>
@@ -109,7 +109,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
       <div class="plan-row-items">
         <a href="/02-payment?key=protocol_mini" class="plan-chip plan-chip-double" style="--tc:#2DD4BF">
           <span class="plan-chip-name-wrap">
-            <span class="plan-chip-prefix">taerijay+</span>
+            <span class="plan-chip-prefix notranslate" translate="no">taerijay+</span>
             <span class="plan-chip-combo">protocol × mini</span>
           </span>
           <span class="plan-chip-price-wrap">
@@ -128,7 +128,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
       <div class="plan-row-items">
         <a href="/02-payment?key=daiso_olive" class="plan-chip plan-chip-double" style="--tc:#818CF8">
           <span class="plan-chip-name-wrap">
-            <span class="plan-chip-prefix">taerijay+</span>
+            <span class="plan-chip-prefix notranslate" translate="no">taerijay+</span>
             <span class="plan-chip-combo">daiso × oliveyoung</span>
           </span>
           <span class="plan-chip-price-wrap">
@@ -148,11 +148,11 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
         <a href="/02-payment?key=total" class="plan-chip plan-chip-gold" style="--tc:#B33A52">
           <div class="plan-chip-total-list">
             <span class="plan-chip-name">ALL SERVICES</span>
-            <span class="plan-chip-total-item">taerijay+protocol</span>
-            <span class="plan-chip-total-item">taerijay+mini</span>
-            <span class="plan-chip-total-item">taerijay+daiso</span>
-            <span class="plan-chip-total-item">taerijay+oliveyoung</span>
-            <span class="plan-chip-total-item">taerijay+emart+convenience</span>
+            <span class="plan-chip-total-item notranslate" translate="no">taerijay+protocol</span>
+            <span class="plan-chip-total-item notranslate" translate="no">taerijay+mini</span>
+            <span class="plan-chip-total-item notranslate" translate="no">taerijay+daiso</span>
+            <span class="plan-chip-total-item notranslate" translate="no">taerijay+oliveyoung</span>
+            <span class="plan-chip-total-item notranslate" translate="no">taerijay+emart+convenience</span>
           </div>
           <span class="plan-chip-price-wrap">
             <span class="plan-chip-krw">₩{krw(99.99)}</span>

@@ -1,0 +1,270 @@
+---
+// 넷플릭스 스타일 3단 구조의 마지막 단계 — 항목 하나의 진짜 상세페이지.
+// 6개 섹션으로 구성: 1)주제소개 2)하차가이드 3)도착상세 4)위치정보 5)검색키워드/해시태그 6)꿀팁
+export const prerender = false;
+
+import Layout from '../../../../layouts/Layout.astro';
+import { CHANNEL_MAP } from '../../../../lib/channelCategories.js';
+import { fetchChannelRows } from '../../../../lib/sheetsCms.js';
+import { withItemSlugs, splitBullets, extractSido } from '../../../../lib/itemHelpers.js';
+import '../../../../styles/channel-page.css';
+import '../../../../styles/item-detail.css';
+
+const { channel, sub, item: itemSlugParam } = Astro.params;
+const channelData = CHANNEL_MAP[channel];
+const subData = channelData?.subs?.[sub];
+
+if (!channelData || !subData) {
+  return Astro.redirect('/04-channels', 302);
+}
+
+const color = channelData.color;
+const freeCount = subData.freeCount || 0;
+
+let rawItems = [];
+let loadError = false;
+try {
+  const allRows = await fetchChannelRows(channel);
+  rawItems = allRows.filter((r) => (r.sub || '').trim() === sub);
+} catch (e) {
+  console.error('[item-detail] sheet fetch failed', e);
+  loadError = true;
+}
+
+const items = withItemSlugs(rawItems);
+const itemIdx = items.findIndex((it) => it.itemSlug === itemSlugParam);
+
+if (!loadError && itemIdx === -1) {
+  return Astro.redirect(`/04-channels/${channel}/${sub}`, 302);
+}
+
+const item = items[itemIdx];
+// entertainment 채널 전체 + free:true 카테고리는 로그인/이용권 확인 없이 열람 가능.
+// freeCount가 있는 카테고리는 인덱스가 freeCount 미만인 항목만 무료.
+const isFreeItem = channel === 'entertainment' || subData.free || (freeCount > 0 && itemIdx < freeCount);
+const requireChannel = isFreeItem ? '' : channel;
+
+const sido = item ? extractSido(item) : '';
+const prevItem = itemIdx > 0 ? items[itemIdx - 1] : null;
+const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
+---
+<Layout title={item ? `${item.title_kr} | taerijay+${channel} | TAERIJAY` : `taerijay+${channel} | TAERIJAY`} requireChannel={requireChannel}>
+  <div class="item-detail-page" style={`--c:${color}`}>
+    <div class="sub-topbar">
+      <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
+    </div>
+
+    {loadError && (
+      <section class="empty-note">
+        <p>콘텐츠를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.</p>
+        <p class="empty-note-en">Failed to load content. Please try again shortly.</p>
+      </section>
+    )}
+
+    {!loadError && item && (
+      <article class="item-detail">
+        <a href={`/04-channels/${channel}/${sub}`} class="sub-parent-link notranslate" translate="no">taerijay+{channel} · {subData.kr}</a>
+
+        <header class="item-detail-head">
+          {sido && <span class="item-detail-region notranslate" translate="no">[{sido}]</span>}
+          <h1 class="item-detail-title notranslate" translate="no">{item.title_kr}</h1>
+          {item.title_en && <p class="item-detail-title-en">{item.title_en}</p>}
+
+          <div class="item-detail-tags">
+            {item.region && <span class="item-tag notranslate" translate="no">{item.region}</span>}
+            {item.platform && <span class="item-tag notranslate" translate="no">{item.platform}</span>}
+            {item.brand_kr && <span class="item-tag notranslate" translate="no">{item.brand_kr}</span>}
+          </div>
+        </header>
+
+        <p class="content-notice notranslate" translate="no">
+          💡 본 콘텐츠는 AI 도구를 활용해 정리되었으며, 순차적으로 웹검색 팩트체크를 진행 중입니다. 실제 방문 전 최신 정보를 별도로 확인해 주세요.
+          <span class="content-notice-en">Some content is AI-assisted and undergoing fact-check verification. Please confirm details before visiting.</span>
+        </p>
+
+        <!-- 1) 주제소개 -->
+        {item.desc_kr && (
+          <section class="detail-section">
+            <h2 class="detail-section-title"><span class="detail-section-num">1️⃣</span> 주제 소개 <span class="detail-section-title-en">Overview</span></h2>
+            <p class="item-desc-kr notranslate" translate="no">{item.desc_kr}</p>
+            {item.desc_en && <p class="item-desc-en">{item.desc_en}</p>}
+          </section>
+        )}
+
+        <!-- 2) 하차가이드 -->
+        {item.getoff_kr && (
+          <section class="detail-section">
+            <h2 class="detail-section-title"><span class="detail-section-num">2️⃣</span> 하차 가이드 <span class="detail-section-title-en">Get Off Here</span></h2>
+            <ul class="detail-line-list">
+              {splitBullets(item.getoff_kr).map((line, i) => (
+                <li class="detail-line">
+                  <span class="detail-line-kr notranslate" translate="no">{line}</span>
+                  {splitBullets(item.getoff_en)[i] && <span class="detail-line-en">{splitBullets(item.getoff_en)[i]}</span>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <!-- 3) 도착상세 (route_kr 재활용) -->
+        {(item.direction_kr || item.route_kr) && (
+          <section class="detail-section">
+            <h2 class="detail-section-title"><span class="detail-section-num">3️⃣</span> 도착 상세 <span class="detail-section-title-en">Direction Detail</span></h2>
+            <ul class="detail-line-list">
+              {splitBullets(item.direction_kr || item.route_kr).map((line, i) => (
+                <li class="detail-line">
+                  <span class="detail-line-kr notranslate" translate="no">📍 {line}</span>
+                  {splitBullets(item.direction_en || item.route_en)[i] && <span class="detail-line-en">📍{splitBullets(item.direction_en || item.route_en)[i]}</span>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <!-- 4) 위치정보 (매장형 상품 채널은 buy_kr로 대체) -->
+        {(item.addr_kr || item.phone_kr || item.hours_kr || item.web || item.buy_kr) && (
+          <section class="detail-section">
+            <h2 class="detail-section-title"><span class="detail-section-num">4️⃣</span> {item.buy_kr && !item.addr_kr ? '구매 가이드' : '위치 정보'} <span class="detail-section-title-en">{item.buy_kr && !item.addr_kr ? 'Where to Buy' : 'Location Info'}</span></h2>
+            {item.buy_kr && (
+              <ul class="detail-line-list">
+                {splitBullets(item.buy_kr).map((line, i) => (
+                  <li class="detail-line">
+                    <span class="detail-line-kr notranslate" translate="no">{line}</span>
+                    {splitBullets(item.buy_en)[i] && <span class="detail-line-en">{splitBullets(item.buy_en)[i]}</span>}
+                  </li>
+                ))}
+              </ul>
+            )}
+            <div class="item-meta">
+              {item.addr_kr && (
+                <div class="item-meta-row item-meta-row-addr">
+                  <span class="item-meta-label">🏠 주소</span>
+                  <span class="item-meta-value item-addr-value">{item.addr_kr}</span>
+                  <button type="button" class="addr-copy-btn" data-copy-text={item.addr_kr} aria-label="주소 복사" title="주소 복사 Copy address">
+                    <svg class="addr-copy-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="7" y="7" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                      <path d="M13 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    <span class="addr-copy-label">복사</span>
+                  </button>
+                </div>
+              )}
+              {item.addr_kr && <p class="item-detail-copy-hint">📝 복사해서 네이버/카카오 맵에 붙여넣으세요.</p>}
+              {item.phone_kr && (
+                <div class="item-meta-row item-meta-row-phone">
+                  <span class="item-meta-label">연락처</span>
+                  <span class="item-meta-value item-phone-value">{item.phone_kr}</span>
+                  <a href={`tel:${item.phone_kr.replace(/[^0-9+]/g, '')}`} class="phone-call-btn" aria-label="전화 걸기" title="전화 걸기 Call">
+                    <svg class="phone-call-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6 2.5c.5 0 .9.3 1 .8l.6 2.4c.1.4 0 .9-.3 1.2l-1 1c.8 1.7 2.2 3.1 3.9 3.9l1-1c.3-.3.8-.4 1.2-.3l2.4.6c.5.1.8.5.8 1v2c0 .6-.4 1-1 1C8.9 15.1 4.9 11.1 4.5 5c0-.6.4-1 1-1H6Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="phone-call-label">전화</span>
+                  </a>
+                </div>
+              )}
+              {item.hours_kr && (
+                <div class="item-meta-row"><span class="item-meta-label">시간</span><span class="item-meta-value">{item.hours_kr}</span></div>
+              )}
+              {item.duration && (
+                <div class="item-meta-row"><span class="item-meta-label">소요시간</span><span class="item-meta-value">{item.duration}</span></div>
+              )}
+              {item.budget_kr && (
+                <div class="item-meta-row"><span class="item-meta-label">예산</span><span class="item-meta-value">{item.budget_kr}</span></div>
+              )}
+              {item.price_kr && (
+                <div class="item-meta-row"><span class="item-meta-label">가격대</span><span class="item-meta-value">{item.price_kr}</span></div>
+              )}
+              {item.genre && (
+                <div class="item-meta-row"><span class="item-meta-label">장르</span><span class="item-meta-value">{item.genre}{item.year ? ` · ${item.year}` : ''}</span></div>
+              )}
+              {item.cast_kr && (
+                <div class="item-meta-row"><span class="item-meta-label">출연</span><span class="item-meta-value notranslate" translate="no">{item.cast_kr}</span></div>
+              )}
+            </div>
+            <div class="item-links">
+              {item.naver_map && <a href={item.naver_map} target="_blank" rel="noopener noreferrer" class="item-link-btn">네이버지도</a>}
+              {item.kakao_map && <a href={item.kakao_map} target="_blank" rel="noopener noreferrer" class="item-link-btn">카카오맵</a>}
+              {item.web && <a href={item.web} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web notranslate" translate="no">🌐 공식 웹사이트</a>}
+            </div>
+          </section>
+        )}
+
+        <!-- 5) 검색키워드 / 해시태그 -->
+        {(item.keywords_kr || item.hashtags) && (
+          <section class="detail-section">
+            <h2 class="detail-section-title"><span class="detail-section-num">5️⃣</span> 검색 및 해시태그 <span class="detail-section-title-en">Search &amp; Hashtags</span></h2>
+            {item.keywords_kr && (
+              <div class="keyword-block">
+                <p class="keyword-block-label">🔍 검색어 <span class="keyword-block-label-en">Search Keywords</span></p>
+                <ul class="keyword-list notranslate" translate="no">
+                  {splitBullets(item.keywords_kr).map((kw) => <li class="keyword-item">{kw}</li>)}
+                </ul>
+              </div>
+            )}
+            {item.hashtags && (
+              <div class="keyword-block">
+                <p class="keyword-block-label">#️⃣ 해시태그 <span class="keyword-block-label-en">Hashtags</span></p>
+                <ul class="hashtag-list notranslate" translate="no">
+                  {splitBullets(item.hashtags).map((h) => <li class="hashtag-item">{h.startsWith('#') ? h : `#${h}`}</li>)}
+                </ul>
+              </div>
+            )}
+          </section>
+        )}
+
+        <!-- 6) 꿀팁 -->
+        {item.tips_kr && (
+          <section class="detail-section">
+            <h2 class="detail-section-title"><span class="detail-section-num">6️⃣</span> 꿀팁 <span class="detail-section-title-en">Insider Tip</span></h2>
+            <ul class="item-tips-list">
+              {splitBullets(item.tips_kr).map((line, i) => (
+                <li class="item-tips-line">
+                  <span class="item-tips-kr notranslate" translate="no">{line}</span>
+                  {splitBullets(item.tips_en)[i] && <span class="item-tips-en">{splitBullets(item.tips_en)[i]}</span>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <nav class="item-detail-pager">
+          {prevItem ? (
+            <a href={`/04-channels/${channel}/${sub}/${prevItem.itemSlug}`} class="item-pager-btn item-pager-prev">← <span class="notranslate" translate="no">{prevItem.title_kr}</span></a>
+          ) : <span />}
+          {nextItem ? (
+            <a href={`/04-channels/${channel}/${sub}/${nextItem.itemSlug}`} class="item-pager-btn item-pager-next"><span class="notranslate" translate="no">{nextItem.title_kr}</span> →</a>
+          ) : <span />}
+        </nav>
+      </article>
+    )}
+  </div>
+
+  <script>
+    document.addEventListener('click', async (e) => {
+      const btn = e.target.closest('.addr-copy-btn');
+      if (!btn) return;
+      const text = btn.getAttribute('data-copy-text') || '';
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (err) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      const label = btn.querySelector('.addr-copy-label');
+      const originalText = label ? label.textContent : '';
+      btn.classList.add('addr-copy-btn-done');
+      if (label) label.textContent = '복사됨';
+      setTimeout(() => {
+        btn.classList.remove('addr-copy-btn-done');
+        if (label) label.textContent = originalText;
+      }, 1500);
+    });
+  </script>
+</Layout>

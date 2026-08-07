@@ -71,7 +71,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
                   <span class="plan-detail-label-en" data-i18n="en">SINGLE</span>
                 </span>
                 <a href={`/02-payment?key=${ch.payKey}_${t.key}`} class="plan-detail-box plan-detail-box-media" style={`--tc:${ch.color};--hero-img:url('/images/channels/${ch.slug === 'emart-convenience' ? 'emart' : slug}.jpg')`}>
-                  <span class="plan-detail-names" style={`color:${ch.color}`}>taerijay+{slug === 'emartCvs' ? 'emart+convenience' : slug}</span>
+                  <span class="plan-detail-names notranslate" translate="no" style={`color:${ch.color}`}>taerijay+{slug === 'emartCvs' ? 'emart+convenience' : slug}</span>
                   <span class="plan-detail-price-wrap">
                     <span class="plan-detail-krw">₩{krw(parseFloat(t.price))}</span>
                     <span class="plan-detail-price">USD {t.price}</span>
@@ -110,7 +110,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
             </span>
             <a href={`/02-payment?key=${dp.payKey}`} class="plan-detail-box" style={`--tc:${dp.color}`}>
               <span class="plan-detail-names-wrap">
-                <span class="plan-detail-prefix">taerijay+</span>
+                <span class="plan-detail-prefix notranslate" translate="no">taerijay+</span>
                 <span class="plan-detail-combo">
                   <span style={`color:${channels[dp.a].color}`}>{dp.a}</span>
                   <span class="plan-detail-x">×</span>
@@ -153,7 +153,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
           <span class="total-detail-heading" data-i18n="en">ALL SERVICES</span>
           <div class="total-detail-names">
             {Object.entries(channels).filter(([slug]) => slug !== 'entertainment').map(([slug, ch]) => (
-              <span class="total-chip-line" style={`color:${ch.color}`}>taerijay+{slug === 'emartCvs' ? 'emart+convenience' : slug}</span>
+              <span class="total-chip-line notranslate" translate="no" style={`color:${ch.color}`}>taerijay+{slug === 'emartCvs' ? 'emart+convenience' : slug}</span>
             ))}
           </div>
           <span class="plan-detail-price-wrap">

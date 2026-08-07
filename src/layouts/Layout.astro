@@ -94,7 +94,7 @@ import { languages } from '../lib/languages.js';
 
       <nav class="side-links side-links-channels">
         {Object.values(channels).map((ch) => (
-          <a href={`/04-channels/${ch.slug}`} style={`--c:${ch.color}`}>taerijay+{ch.slug === 'emart-convenience' ? 'emart+convenience' : ch.slug}</a>
+          <a href={`/04-channels/${ch.slug}`} style={`--c:${ch.color}`} class="notranslate" translate="no">taerijay+{ch.slug === 'emart-convenience' ? 'emart+convenience' : ch.slug}</a>
         ))}
       </nav>
 
@@ -211,7 +211,7 @@ import { languages } from '../lib/languages.js';
         <svg viewBox="0 0 24 24" width="20" height="20"><rect width="24" height="24" rx="6" fill="#03C75A"/><path fill="#fff" d="M14.4 13.6 9.7 6.5H6.5v11h3.1v-7.1l4.7 7.1h3.2v-11h-3.1v7.1Z"/></svg>
       </a>
     </div>
-    <p class="footer-copy">© 2026 TAERIJAY · 사업자등록번호 673-51-01148 · taerijay.com</p>
+    <p class="footer-copy">© 2026 <span class="notranslate" translate="no">TAERIJAY</span> · 사업자등록번호 673-51-01148 · <span class="notranslate" translate="no">taerijay.com</span></p>
   </footer>
 
   <script>
