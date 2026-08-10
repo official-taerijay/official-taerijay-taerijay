@@ -6,7 +6,14 @@ export const prerender = false;
 import Layout from '../../../../layouts/Layout.astro';
 import { CHANNEL_MAP } from '../../../../lib/channelCategories.js';
 import { fetchChannelRows } from '../../../../lib/sheetsCms.js';
-import { withItemSlugs, splitBullets, extractSido } from '../../../../lib/itemHelpers.js';
+import { withItemSlugs, splitBullets, splitSentences, extractSido, priceKrToUsdHint } from '../../../../lib/itemHelpers.js';
+
+// buy_kr 불릿 중 "가격대: 5,000원"처럼 원화 금액이 들어간 줄에 (약 USD x) 참고값을 붙여준다.
+function withUsdHint(line) {
+  if (!line || !line.includes('원')) return line;
+  const hint = priceKrToUsdHint(line);
+  return hint ? `${line} (${hint})` : line;
+}
 import '../../../../styles/channel-page.css';
 import '../../../../styles/item-detail.css';
 
@@ -86,8 +93,14 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
         {item.desc_kr && (
           <section class="detail-section">
             <h2 class="detail-section-title"><span class="detail-section-num">1️⃣</span> 주제 소개 <span class="detail-section-title-en">Overview</span></h2>
-            <p class="item-desc-kr notranslate" translate="no">{item.desc_kr}</p>
-            {item.desc_en && <p class="item-desc-en">{item.desc_en}</p>}
+            <ul class="detail-line-list">
+              {splitSentences(item.desc_kr).map((line, i) => (
+                <li class="detail-line">
+                  <span class="detail-line-kr notranslate" translate="no">{line}</span>
+                  {splitSentences(item.desc_en)[i] && <span class="detail-line-en">{splitSentences(item.desc_en)[i]}</span>}
+                </li>
+              ))}
+            </ul>
           </section>
         )}
 
@@ -118,7 +131,7 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
               {splitBullets(item.direction_kr || item.route_kr).map((line, i) => (
                 <li class="detail-line">
                   <span class="detail-line-kr notranslate" translate="no">📍 {line}</span>
-                  {splitBullets(item.direction_en || item.route_en)[i] && <span class="detail-line-en">📍{splitBullets(item.direction_en || item.route_en)[i]}</span>}
+                  {splitBullets(item.direction_en || item.route_en)[i] && <span class="detail-line-en">{splitBullets(item.direction_en || item.route_en)[i]}</span>}
                 </li>
               ))}
             </ul>
@@ -135,7 +148,7 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
               <ul class="detail-line-list">
                 {splitBullets(item.buy_kr).map((line, i) => (
                   <li class="detail-line">
-                    <span class="detail-line-kr notranslate" translate="no">{line}</span>
+                    <span class="detail-line-kr notranslate" translate="no">{withUsdHint(line)}</span>
                     {splitBullets(item.buy_en)[i] && <span class="detail-line-en">{splitBullets(item.buy_en)[i]}</span>}
                   </li>
                 ))}
@@ -200,10 +213,16 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
                 <div class="item-meta-row"><span class="item-meta-label">소요시간</span><span class="item-meta-value">{item.duration}</span></div>
               )}
               {item.budget_kr && (
-                <div class="item-meta-row"><span class="item-meta-label">예산</span><span class="item-meta-value">{item.budget_kr}</span></div>
+                <div class="item-meta-row">
+                  <span class="item-meta-label">예산</span>
+                  <span class="item-meta-value">{item.budget_kr}{priceKrToUsdHint(item.budget_kr) && ` (${priceKrToUsdHint(item.budget_kr)})`}</span>
+                </div>
               )}
-              {item.price_kr && (
-                <div class="item-meta-row"><span class="item-meta-label">가격대</span><span class="item-meta-value">{item.price_kr}</span></div>
+              {item.price_kr && !(item.buy_kr || '').includes('가격대') && (
+                <div class="item-meta-row">
+                  <span class="item-meta-label">가격대</span>
+                  <span class="item-meta-value">{item.price_kr}{priceKrToUsdHint(item.price_kr) && ` (${priceKrToUsdHint(item.price_kr)})`}</span>
+                </div>
               )}
               {item.genre && (
                 <div class="item-meta-row"><span class="item-meta-label">장르</span><span class="item-meta-value">{item.genre}{item.year ? ` · ${item.year}` : ''}</span></div>

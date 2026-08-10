@@ -1,7 +1,7 @@
 [
   {
     "sub": "taxfree-instant",
-    "title_kr": "이마트 즉시환급, 계산 후 고객센터에서 바로 받는다",
+    "title_kr": "이마트 즉시환급, 계산 후 고객센터에서 바로 수령",
     "title_en": "E-Mart offers instant tax refund at the customer service counter after checkout",
     "desc_kr": "이마트는 외국인 관광객을 위한 사후면세(택스리펀) 즉시환급을 지원. 매장에서 상품을 구매한 뒤 영수증과 여권을 들고 매장 내 고객센터(또는 문화센터 데스크)로 가면, 부가세(10%) 상당액을 뺀 금액을 그 자리에서 현금 또는 카드로 환급 가능. 절차: ①매장 내 어디서나 정상 결제 → ②영수증·여권 지참 → ③고객센터 방문해 즉시환급 신청 → ④차액 수령. 결제 수단에 따라 환급 방식이 다를 수 있어(카드 결제분은 카드로, 현금 결제분은 현금으로) 계산 시 결제수단 기억 권장. 최소구매금액은 매장 표시 기준(통상 3만원 이상)이며, 매장·시간대별로 즉시환급 데스크 운영 여부가 다를 수 있으므로 방문 전 해당 지점 확인 필요.",
     "desc_en": "E-Mart supports instant VAT refunds for foreign tourists at its post tax-free program. After paying at any register, bring your receipt and passport to the in-store customer service counter to receive the VAT amount (about 10%) back on the spot, in cash or to your card depending on how you paid. Steps: 1) Pay normally at any checkout, 2) Keep your receipt and passport, 3) Go to the customer service desk and request an instant refund, 4) Receive the refund immediately. Minimum purchase is typically around 30,000 KRW, and desk hours vary by branch, so it's best to confirm with the specific store before visiting.",
@@ -121,7 +121,7 @@
   },
   {
     "sub": "taxfree-instant",
-    "title_kr": "세븐일레븐, 즉시환급 미지원 안내 — 사후환급으로 이용하세요",
+    "title_kr": "세븐일레븐, 즉시환급 미지원 안내 — 사후환급 이용 권장",
     "title_en": "Seven Eleven: instant refund not supported — use the post-purchase refund process instead",
     "desc_kr": "세븐일레븐(코리아세븐)은 CU, GS25와 달리 편의점 자체 즉시환급(사전 차감) 시스템을 도입했다는 공식 확인 없음. 현재까지 확인된 바로는 세븐일레븐 매장에서 여권 스캔만으로 부가세를 차감받는 즉시환급 서비스는 일반적으로 지원되지 않음. 다만 일부 매장이 개별적으로 사후면세점(외국인 면세판매장)으로 등록되어 있을 수 있으니, 구매 전 매장 입구나 계산대 근처에 'Tax Free' 표시 여부 확인 또는 직원 문의 필요. 사후면세점으로 등록된 매장이라면, 3만원 이상 구매 시 영수증과 물품보관 후 출국 당일 인천공항 등 공항 세관 환급창구나 무인 환급 키오스크에서 부가세 환급 가능(사후환급).",
     "desc_en": "Unlike CU and GS25, Seven Eleven (Korea Seven) has no confirmed official instant (pre-deduction) VAT refund system of its own. Based on currently available information, passport-scan instant refunds are generally not supported at Seven Eleven stores. That said, individual branches may be separately registered as tax-free retailers, so check for a 'Tax Free' sign at the entrance or ask staff before buying. If the store is registered, purchases of 30,000 KRW or more are eligible for a post-purchase refund: keep your receipt and unopened goods, then claim the VAT refund at the airport customs counter or self-service kiosk (e.g., Incheon Airport) on your departure day.",

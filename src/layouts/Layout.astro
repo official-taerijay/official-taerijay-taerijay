@@ -311,8 +311,10 @@ import { languages } from '../lib/languages.js';
       }
       if (sideLink) sideLink.textContent = loggedIn ? '로그아웃' : '회원가입/로그인';
 
-      // 한글 원문 라인은 구글 번역이 건드리지 않도록 고정 (첫 줄 = 한글 절대값)
-      document.querySelectorAll('[class*="-kr"]').forEach((el) => {
+      // 한글 원문 라인 + 이미 영문인 라인은 구글 번역이 건드리지 않도록 고정.
+      // (영문 라인까지 번역 대상에 두면 "Copy & paste..." 같은 원문 옆에
+      //  구글이 재번역한 문구가 팝업으로 겹쳐 표시되는 문제가 생김)
+      document.querySelectorAll('[class*="-kr"], [class*="-en"]').forEach((el) => {
         el.classList.add('notranslate');
         el.setAttribute('translate', 'no');
       });
