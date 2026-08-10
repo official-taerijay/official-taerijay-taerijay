@@ -33,6 +33,20 @@ try {
 
 const items = withItemSlugs(rawItems);
 const lockedCount = freeCount > 0 ? Math.max(items.length - freeCount, 0) : 0;
+
+// mini 채널은 지역별 항목 수가 많아(3hour 126개, recommend 79개 등) 지역 필터 칩을 추가로 노출.
+// region 필드 앞부분(시/도)만 뽑아 중복 제거 + 항목 수 기준 내림차순 정렬.
+const showRegionFilter = channel === 'mini' && items.length > 8;
+let regionCounts = [];
+if (showRegionFilter) {
+  const counts = new Map();
+  items.forEach((item) => {
+    const sido = extractSido(item);
+    if (!sido) return;
+    counts.set(sido, (counts.get(sido) || 0) + 1);
+  });
+  regionCounts = [...counts.entries()].sort((a, b) => b[1] - a[1]);
+}
 ---
 <Layout title={`taerijay+${channel} · ${subData.kr} | TAERIJAY`}>
   <div class="sub-page" style={`--c:${color}`}>
@@ -69,8 +83,17 @@ const lockedCount = freeCount > 0 ? Math.max(items.length - freeCount, 0) : 0;
       </section>
     )}
 
+    {showRegionFilter && regionCounts.length > 1 && (
+      <div class="region-filter" id="regionFilter">
+        <button type="button" class="region-chip is-active" data-region="all">전체 <span class="region-chip-en">All</span> <span class="region-chip-count">{items.length}</span></button>
+        {regionCounts.map(([sido, count]) => (
+          <button type="button" class="region-chip notranslate" translate="no" data-region={sido}>{sido} <span class="region-chip-count">{count}</span></button>
+        ))}
+      </div>
+    )}
+
     {!loadError && items.length > 0 && (
-      <section class="item-grid-section">
+      <section class="item-grid-section" id="itemGrid">
         {items.map((item, idx) => {
           const isLocked = freeCount > 0 && idx >= freeCount;
           const sido = extractSido(item);
@@ -78,6 +101,7 @@ const lockedCount = freeCount > 0 ? Math.max(items.length - freeCount, 0) : 0;
             <a
               href={isLocked ? '/pricing' : `/04-channels/${channel}/${sub}/${item.itemSlug}`}
               class={`item-card-tile${isLocked ? ' item-card-tile-locked' : ''}`}
+              data-region={sido || ''}
             >
               <div class="item-card-tile-art">
                 <span class={`cat-card-tier ${isLocked ? 'is-paid' : 'is-free'}`}>{isLocked ? '🔒 유료' : '무료'}</span>
@@ -90,11 +114,56 @@ const lockedCount = freeCount > 0 ? Math.max(items.length - freeCount, 0) : 0;
         })}
       </section>
     )}
+
+    {showRegionFilter && (
+      <p class="region-empty-note" id="regionEmptyNote" hidden>
+        <span>선택한 지역에 해당하는 콘텐츠가 없습니다.</span>
+        <span class="region-empty-note-en">No content found for this region.</span>
+      </p>
+    )}
   </div>
+
+  {showRegionFilter && (
+    <script>
+      const filterBar = document.getElementById('regionFilter');
+      const grid = document.getElementById('itemGrid');
+      const emptyNote = document.getElementById('regionEmptyNote');
+      if (filterBar && grid) {
+        filterBar.addEventListener('click', (e) => {
+          const btn = e.target.closest('.region-chip');
+          if (!btn) return;
+          filterBar.querySelectorAll('.region-chip').forEach((c) => c.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          const region = btn.getAttribute('data-region');
+          let visibleCount = 0;
+          grid.querySelectorAll('.item-card-tile').forEach((card) => {
+            const match = region === 'all' || card.getAttribute('data-region') === region;
+            card.hidden = !match;
+            if (match) visibleCount++;
+          });
+          if (emptyNote) emptyNote.hidden = visibleCount > 0;
+        });
+      }
+    </script>
+  )}
 
   <style>
     .sub-count{margin-top:10px;font-size:.8rem;color:var(--dim)}
     .sub-count-lock{color:var(--c);font-weight:700}
+
+    .region-filter{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 24px}
+    .region-chip{
+      display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:6px 14px;
+      font-size:.78rem;font-weight:700;color:var(--muted);cursor:pointer;
+      transition:background .18s ease,border-color .18s ease,color .18s ease;
+    }
+    .region-chip:hover{background:rgba(255,255,255,.1);color:var(--ivory)}
+    .region-chip.is-active{background:color-mix(in srgb, var(--c) 22%, transparent);border-color:color-mix(in srgb, var(--c) 55%, transparent);color:var(--c)}
+    .region-chip-en{font-size:.68rem;font-weight:600;color:var(--dim);text-transform:uppercase}
+    .region-chip-count{font-size:.68rem;color:var(--dim);opacity:.8}
+    .region-empty-note{text-align:center;padding:32px 16px;color:var(--dim);font-size:.86rem;display:flex;flex-direction:column;gap:4px}
+    .region-empty-note-en{font-size:.78rem;opacity:.8}
 
     .item-grid-section{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:16px;margin-bottom:44px}
 

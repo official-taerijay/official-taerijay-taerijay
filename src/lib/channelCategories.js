@@ -41,39 +41,37 @@ export const CHANNEL_MAP = {
     photo:            { kr: '사진맛집 코스', en: 'Photo Spot Course' },
     indoor:           { kr: '실내 코스 (우천 대비)', en: 'Indoor Course' },
   }},
-  daiso: { color: '#E1261C', subs: {
-    // 프리뷰/무료 오픈 3개
-    'taxfree-instant': { kr: '매장 즉시 세금환급', en: 'Instant Tax Refund', free: true },
-    'mask-pack':       { kr: '마스크팩',          en: 'Mask Pack',          free: true },
-    'trouble-care':    { kr: '트러블·진정 케어',    en: 'Trouble & Calming',  free: true },
-    // 유료 9개
-    skincare:          { kr: '스킨케어',           en: 'Skincare' },
-    cleanser:          { kr: '클렌저 케어',        en: 'Cleanser' },
-    'color-cosmetics': { kr: '색조',              en: 'Color Cosmetics' },
-    haircare:          { kr: '헤어케어',           en: 'Hair Care' },
-    bodycare:          { kr: '바디케어',           en: 'Body Care' },
-    perfume:           { kr: '향수',              en: 'Perfume' },
-    'beauty-tools':    { kr: '뷰티 소품',          en: 'Beauty Tools' },
-    'gender-care':     { kr: '남성용품·여성용품',    en: 'Men & Women Care' },
-    'soldout-items':   { kr: '품절 대란템·시즌 한정판', en: 'Viral & Seasonal' },
+  'red-green': { color: '#E1261C', subs: {
+    // red 탭(균일가 생활용품점 뷰티) — 프리뷰/무료 오픈 3개
+    'red-taxfree-instant': { kr: '[RED] 매장 즉시 세금환급', en: '[RED] Instant Tax Refund', free: true },
+    'red-mask-pack':       { kr: '[RED] 마스크팩',          en: '[RED] Mask Pack',          free: true },
+    'red-trouble-care':    { kr: '[RED] 트러블·진정 케어',    en: '[RED] Trouble & Calming',  free: true },
+    // red 탭 — 유료 9개
+    'red-skincare':          { kr: '[RED] 스킨케어',           en: '[RED] Skincare' },
+    'red-cleanser':          { kr: '[RED] 클렌저 케어',        en: '[RED] Cleanser' },
+    'red-color-cosmetics':   { kr: '[RED] 색조',              en: '[RED] Color Cosmetics' },
+    'red-haircare':          { kr: '[RED] 헤어케어',           en: '[RED] Hair Care' },
+    'red-bodycare':          { kr: '[RED] 바디케어',           en: '[RED] Body Care' },
+    'red-perfume':           { kr: '[RED] 향수',              en: '[RED] Perfume' },
+    'red-beauty-tools':      { kr: '[RED] 뷰티 소품',          en: '[RED] Beauty Tools' },
+    'red-gender-care':       { kr: '[RED] 남성용품·여성용품',    en: '[RED] Men & Women Care' },
+    'red-soldout-items':     { kr: '[RED] 품절 대란템·시즌 한정판', en: '[RED] Viral & Seasonal' },
+    // green 탭(H&B 스토어) — 프리뷰/무료 오픈 3개
+    'green-taxfree-instant': { kr: '[GREEN] 매장 즉시 세금환급', en: '[GREEN] Instant Tax Refund', free: true },
+    'green-mask-pack':       { kr: '[GREEN] 마스크팩',          en: '[GREEN] Mask Pack',          free: true },
+    'green-trouble-care':    { kr: '[GREEN] 트러블·진정 케어',    en: '[GREEN] Trouble & Calming',  free: true },
+    // green 탭 — 유료 9개
+    'green-skincare':          { kr: '[GREEN] 스킨케어',           en: '[GREEN] Skincare' },
+    'green-cleanser':          { kr: '[GREEN] 클렌저 케어',        en: '[GREEN] Cleanser' },
+    'green-color-cosmetics':   { kr: '[GREEN] 색조',              en: '[GREEN] Color Cosmetics' },
+    'green-haircare':          { kr: '[GREEN] 헤어케어',           en: '[GREEN] Hair Care' },
+    'green-bodycare':          { kr: '[GREEN] 바디케어',           en: '[GREEN] Body Care' },
+    'green-perfume':           { kr: '[GREEN] 향수',              en: '[GREEN] Perfume' },
+    'green-beauty-tools':      { kr: '[GREEN] 뷰티 소품',          en: '[GREEN] Beauty Tools' },
+    'green-gender-care':       { kr: '[GREEN] 남성용품·여성용품',    en: '[GREEN] Men & Women Care' },
+    'green-soldout-items':     { kr: '[GREEN] 품절 대란템·시즌 한정판', en: '[GREEN] Viral & Seasonal' },
   }},
-  oliveyoung: { color: '#6F8B2E', subs: {
-    // 프리뷰/무료 오픈 3개
-    'taxfree-instant': { kr: '매장 즉시 세금환급', en: 'Instant Tax Refund', free: true },
-    'mask-pack':       { kr: '마스크팩',          en: 'Mask Pack',          free: true },
-    'trouble-care':    { kr: '트러블·진정 케어',    en: 'Trouble & Calming',  free: true },
-    // 유료 9개
-    skincare:          { kr: '스킨케어',           en: 'Skincare' },
-    cleanser:          { kr: '클렌저 케어',        en: 'Cleanser' },
-    'color-cosmetics': { kr: '색조',              en: 'Color Cosmetics' },
-    haircare:          { kr: '헤어케어',           en: 'Hair Care' },
-    bodycare:          { kr: '바디케어',           en: 'Body Care' },
-    perfume:           { kr: '향수',              en: 'Perfume' },
-    'beauty-tools':    { kr: '뷰티 소품',          en: 'Beauty Tools' },
-    'gender-care':     { kr: '남성용품·여성용품',    en: 'Men & Women Care' },
-    'soldout-items':   { kr: '품절 대란템·시즌 한정판', en: 'Viral & Seasonal' },
-  }},
-  'emart-convenience': { color: '#FFDD00', subs: {
+  'mart-convenience': { color: '#FFDD00', subs: {
     // 브랜드별 페이지 1개씩(무료 5개 + 유료 25개 = TOP 30을 한 페이지 안에서 등급으로 구분)
     emart:              { kr: '이마트 핫템 TOP 30',       en: 'E-Mart Top 30',    freeCount: 5 },
     nobrand:            { kr: '노브랜드 핫템 TOP 30',      en: 'No Brand Top 30',  freeCount: 5 },

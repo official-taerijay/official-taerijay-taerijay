@@ -14,6 +14,7 @@
 .content-notice-en{display:block;margin-top:2px;color:var(--dim);opacity:.8}
 
 .detail-section{margin-bottom:34px}
+.detail-divider{border:none;border-top:1px dashed color-mix(in srgb, var(--c) 24%, transparent);margin:-14px 0 28px;opacity:.7}
 .detail-section-title{
   display:flex;align-items:baseline;gap:8px;font-family:var(--f-display);font-weight:800;
   font-size:1.02rem;color:var(--ivory);margin-bottom:14px;padding-bottom:8px;
@@ -33,25 +34,37 @@
 .item-meta{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
 .item-meta-row{display:flex;gap:10px;font-size:.82rem;flex-wrap:wrap}
 .item-meta-label{flex:0 0 56px;color:var(--dim);font-weight:700;padding-top:2px}
+.item-meta-label-en{display:block;font-size:.66rem;font-weight:600;color:var(--dim);opacity:.7;text-transform:uppercase;letter-spacing:.03em}
 .item-meta-value{color:var(--muted);word-break:keep-all}
 .item-detail-copy-hint{font-size:.72rem;color:var(--dim);margin:-4px 0 10px;padding-left:2px}
+.item-detail-copy-hint-en{display:block;opacity:.8;margin-top:1px}
 
-.item-meta-row-addr,.item-meta-row-phone{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;row-gap:6px}
-.item-meta-row-addr .item-meta-label,.item-meta-row-phone .item-meta-label{grid-column:1 / -1;grid-row:1;flex:none;padding-top:0}
-.item-addr-value,.item-phone-value{grid-column:1;grid-row:2;min-width:0;word-break:break-word;align-self:center}
-.item-meta-row-addr .addr-copy-btn,.item-meta-row-phone .phone-call-btn{grid-column:2;grid-row:2;align-self:center}
+/* 한글 원문(고정) 줄이 위, 영문(번역 가능) 줄이 아래 — 항상 이 순서 유지 */
+.item-meta-value-stack{display:flex;flex-direction:column;gap:2px}
+.item-addr-kr{color:var(--ivory);font-weight:600}
+.item-addr-en{color:var(--dim);font-size:.78rem}
+
+.item-meta-row-addr,.item-meta-row-phone,.item-meta-row-web{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;row-gap:6px}
+.item-meta-row-addr .item-meta-label,.item-meta-row-phone .item-meta-label,.item-meta-row-web .item-meta-label{grid-column:1 / -1;grid-row:1;flex:none;padding-top:0}
+.item-addr-value,.item-phone-value,.item-web-value{grid-column:1;grid-row:2;min-width:0;word-break:break-word;align-self:center}
+.item-meta-row-addr .addr-copy-btn,.item-meta-row-web .addr-copy-btn{grid-column:2;grid-row:2;align-self:center}
+.item-meta-row-phone .item-meta-row-actions{grid-column:2;grid-row:2;align-self:center;display:flex;gap:6px}
 .addr-copy-btn{flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:3px 10px;font-size:.7rem;font-weight:700;color:var(--ivory);cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease}
 .addr-copy-btn:hover{background:rgba(255,255,255,.14)}
 .addr-copy-icon{width:12px;height:12px;flex:0 0 auto}
 .addr-copy-btn-done{background:color-mix(in srgb, var(--c) 30%, transparent);border-color:var(--c);color:var(--c)}
-.item-phone-value{flex:1;font-weight:700;color:var(--ivory)}
+.item-phone-value,.item-web-value{flex:1;font-weight:700;color:var(--ivory)}
 .phone-call-btn{flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;text-decoration:none;background:color-mix(in srgb, var(--c) 18%, transparent);border:1px solid color-mix(in srgb, var(--c) 45%, transparent);border-radius:100px;padding:3px 10px;font-size:.7rem;font-weight:700;color:var(--c);cursor:pointer;transition:background .2s ease,border-color .2s ease}
 .phone-call-btn:hover{background:color-mix(in srgb, var(--c) 30%, transparent)}
 .phone-call-icon{width:12px;height:12px;flex:0 0 auto}
 
-.item-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.item-link-btn{text-decoration:none;font-size:.76rem;font-weight:700;color:var(--ivory);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:6px 14px;transition:background .2s ease}
+.item-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.item-links-maps{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.06)}
+.item-link-btn{text-decoration:none;font-size:.76rem;font-weight:700;color:var(--ivory);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:6px 14px;transition:background .2s ease;display:inline-flex;align-items:baseline;gap:5px}
 .item-link-btn:hover{background:rgba(255,255,255,.14)}
+.item-link-btn-en{font-size:.64rem;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.02em}
+.item-link-btn-map{border-color:color-mix(in srgb, var(--c) 40%, transparent)}
+.item-link-btn-google{border-color:color-mix(in srgb, #4285F4 55%, transparent);color:#4285F4}
 .item-link-btn-web{border-color:color-mix(in srgb, var(--c) 45%, transparent);color:var(--c)}
 
 .keyword-block{margin-bottom:16px}

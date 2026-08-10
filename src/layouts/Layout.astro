@@ -12,20 +12,16 @@ const FIREBASE_PROJECT_ID = "taerijay-official";
 const CHANNEL_LABELS = {
   protocol: 'protocol',
   mini: 'mini',
-  daiso: 'daiso',
-  oliveyoung: 'oliveyoung',
-  emart: 'emart+convenience',
-  convenience: 'emart+convenience',
-  emart_cvs: 'emart+convenience',
+  'red-green': 'red+green',
+  'mart-convenience': 'mart+convenience',
 };
 
 const channels = {
   entertainment: { slug: 'entertainment', color: '#00E5FF' },
   protocol:      { slug: 'protocol',      color: '#F16B24' },
   mini:          { slug: 'mini',          color: '#e8e4dc' },
-  daiso:         { slug: 'daiso',         color: '#E1261C' },
-  oliveyoung:    { slug: 'oliveyoung',    color: '#6F8B2E' },
-  emartCvs:      { slug: 'emart-convenience', color: '#FFDD00' },
+  redGreen:      { slug: 'red-green',     color: '#E1261C' },
+  martCvs:       { slug: 'mart-convenience', color: '#FFDD00' },
 };
 
 const socialLinks = [
@@ -94,7 +90,7 @@ import { languages } from '../lib/languages.js';
 
       <nav class="side-links side-links-channels">
         {Object.values(channels).map((ch) => (
-          <a href={`/04-channels/${ch.slug}`} style={`--c:${ch.color}`} class="notranslate" translate="no">taerijay+{ch.slug === 'emart-convenience' ? 'emart+convenience' : ch.slug}</a>
+          <a href={`/04-channels/${ch.slug}`} style={`--c:${ch.color}`} class="notranslate" translate="no">taerijay+{ch.slug === 'mart-convenience' ? 'mart+convenience' : ch.slug === 'red-green' ? 'red+green' : ch.slug}</a>
         ))}
       </nav>
 

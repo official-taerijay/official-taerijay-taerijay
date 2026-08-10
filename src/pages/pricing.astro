@@ -5,9 +5,8 @@ const channels = {
   entertainment: { slug: 'entertainment', color: '#00E5FF', region: 'Seoul' },
   protocol:      { slug: 'protocol',      color: '#F16B24', payKey: 'protocol', region: 'Seorak' },
   mini:          { slug: 'mini',          color: '#e8e4dc', payKey: 'mini', region: 'Jeonju' },
-  daiso:         { slug: 'daiso',         color: '#E1261C', payKey: 'daiso', region: 'Gyeongju' },
-  oliveyoung:    { slug: 'oliveyoung',    color: '#6F8B2E', payKey: 'olive', region: 'Busan' },
-  emartCvs:      { slug: 'emart-convenience', color: '#FFDD00', payKey: 'emart_cvs', region: 'Jeju' },
+  redGreen:      { slug: 'red-green',      color: '#E1261C', payKey: 'red_green', region: 'Gyeongju · Busan' },
+  emartCvs:      { slug: 'mart-convenience', color: '#FFDD00', payKey: 'emart_cvs', region: 'Jeju' },
 };
 
 const singleTiers = [
@@ -18,7 +17,6 @@ const singleTiers = [
 
 const doublePlans = [
   { color: '#2DD4BF', a: 'protocol', b: 'mini', payKey: 'protocol_mini' },
-  { color: '#818CF8', a: 'daiso', b: 'oliveyoung', payKey: 'daiso_olive' },
 ];
 
 const USD_KRW = 1400;
@@ -70,8 +68,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
                   <span class="plan-detail-label-kr">싱글 요금제</span>
                   <span class="plan-detail-label-en" data-i18n="en">SINGLE</span>
                 </span>
-                <a href={`/02-payment?key=${ch.payKey}_${t.key}`} class="plan-detail-box plan-detail-box-media" style={`--tc:${ch.color};--hero-img:url('/images/channels/${ch.slug === 'emart-convenience' ? 'emart' : slug}.jpg')`}>
-                  <span class="plan-detail-names notranslate" translate="no" style={`color:${ch.color}`}>taerijay+{slug === 'emartCvs' ? 'emart+convenience' : slug}</span>
+                <a href={`/02-payment?key=${ch.payKey}_${t.key}`} class="plan-detail-box plan-detail-box-media" style={`--tc:${ch.color};--hero-img:url('/images/channels/${ch.slug === 'mart-convenience' ? 'emart' : ch.slug === 'red-green' ? 'daiso' : slug}.jpg')`}>
+                  <span class="plan-detail-names notranslate" translate="no" style={`color:${ch.color}`}>taerijay+{ch.slug === 'mart-convenience' ? 'mart+convenience' : ch.slug === 'red-green' ? 'red+green' : ch.slug}</span>
                   <span class="plan-detail-price-wrap">
                     <span class="plan-detail-krw">₩{krw(parseFloat(t.price))}</span>
                     <span class="plan-detail-price">USD {t.price}</span>
@@ -112,9 +110,9 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
               <span class="plan-detail-names-wrap">
                 <span class="plan-detail-prefix notranslate" translate="no">taerijay+</span>
                 <span class="plan-detail-combo">
-                  <span style={`color:${channels[dp.a].color}`}>{dp.a}</span>
+                  <span style={`color:${channels[dp.a].color}`}>{channels[dp.a].slug}</span>
                   <span class="plan-detail-x">×</span>
-                  <span style={`color:${channels[dp.b].color}`}>{dp.b}</span>
+                  <span style={`color:${channels[dp.b].color}`}>{channels[dp.b].slug}</span>
                 </span>
               </span>
               <span class="plan-detail-price-wrap">
@@ -133,8 +131,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
         <span class="pricing-block-title-kr" style="color:#B33A52">토탈 요금제</span>
         <span class="pricing-block-title-en" style="color:#B33A52" data-i18n="en">TOTAL PLAN</span>
       </h2>
-      <p class="pricing-block-desc-kr">유료 채널 5개 전체 이용, 신규 채널 자동 포함</p>
-      <p class="pricing-block-desc-en" data-i18n="en">All 5 paid channels, new channels included automatically</p>
+      <p class="pricing-block-desc-kr">유료 채널 4개 전체 이용, 신규 채널 자동 포함</p>
+      <p class="pricing-block-desc-en" data-i18n="en">All 4 paid channels, new channels included automatically</p>
 
       <ul class="plan-specs plan-specs-inline">
         <li><span class="spec-kr">아이디 1</span><span class="spec-en" data-i18n="en">1 ID</span></li>
@@ -153,7 +151,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
           <span class="total-detail-heading" data-i18n="en">ALL SERVICES</span>
           <div class="total-detail-names">
             {Object.entries(channels).filter(([slug]) => slug !== 'entertainment').map(([slug, ch]) => (
-              <span class="total-chip-line notranslate" translate="no" style={`color:${ch.color}`}>taerijay+{slug === 'emartCvs' ? 'emart+convenience' : slug}</span>
+              <span class="total-chip-line notranslate" translate="no" style={`color:${ch.color}`}>taerijay+{ch.slug === 'mart-convenience' ? 'mart+convenience' : ch.slug === 'red-green' ? 'red+green' : ch.slug}</span>
             ))}
           </div>
           <span class="plan-detail-price-wrap">

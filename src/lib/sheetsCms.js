@@ -108,14 +108,22 @@ function filterByPublishDate(rows, now = new Date()) {
   });
 }
 
-// channel: 'entertainment' | 'protocol' | 'mini' | 'daiso' | 'oliveyoung' | 'emart-convenience'
-export async function fetchChannelRows(channel) {
-  const { id, gid } = resolveSheetTarget(channel);
+// 채널 -> 실제 데이터소스 채널키(들). 통합 채널(red-green)은 두 소스를 합쳐서 접두사를 붙인다.
+// prefix가 있으면 각 행의 sub 값 앞에 `${prefix}-`를 붙여 [sub].astro 라우팅과 매칭시킨다.
+const COMPOSITE_CHANNELS = {
+  'red-green': [
+    { source: 'daiso', prefix: 'red' },
+    { source: 'oliveyoung', prefix: 'green' },
+  ],
+};
+
+async function fetchSingleChannelRows(sourceChannel) {
+  const { id, gid } = resolveSheetTarget(sourceChannel);
 
   // 구글시트 ID가 아직 설정되지 않은 채널은 내장된 로컬 데이터를 사용
   if (!id) {
-    const fallback = LOCAL_FALLBACK[channel];
-    if (!fallback) throw new Error(`no data available for channel: ${channel}`);
+    const fallback = LOCAL_FALLBACK[sourceChannel];
+    if (!fallback) throw new Error(`no data available for channel: ${sourceChannel}`);
     return filterByPublishDate(fallback);
   }
 
@@ -127,13 +135,28 @@ export async function fetchChannelRows(channel) {
     return filterByPublishDate(rows);
   } catch (e) {
     // 구글시트 fetch가 일시적으로 실패해도 내장 데이터로 폴백해 콘텐츠가 완전히 비지 않도록 함
-    const fallback = LOCAL_FALLBACK[channel];
+    const fallback = LOCAL_FALLBACK[sourceChannel];
     if (fallback) {
-      console.error(`[sheetsCms] sheet fetch failed for ${channel}, falling back to local data:`, e);
+      console.error(`[sheetsCms] sheet fetch failed for ${sourceChannel}, falling back to local data:`, e);
       return filterByPublishDate(fallback);
     }
     throw e;
   }
+}
+
+// channel: 'entertainment' | 'protocol' | 'mini' | 'red-green' | 'mart-convenience'
+export async function fetchChannelRows(channel) {
+  const composite = COMPOSITE_CHANNELS[channel];
+  if (composite) {
+    const parts = await Promise.all(
+      composite.map(async ({ source, prefix }) => {
+        const rows = await fetchSingleChannelRows(source);
+        return rows.map((r) => ({ ...r, sub: `${prefix}-${(r.sub || '').trim()}` }));
+      })
+    );
+    return parts.flat();
+  }
+  return fetchSingleChannelRows(channel);
 }
 
 // 하위호환: 기존 sheetKey 기반 호출부(sheet-data.js)를 위해 유지
