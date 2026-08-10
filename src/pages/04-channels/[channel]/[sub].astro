@@ -104,8 +104,7 @@ if (showRegionFilter) {
               data-region={sido || ''}
             >
               <div class="item-card-tile-art">
-                <span class={`cat-card-tier ${isLocked ? 'is-paid' : 'is-free'}`}>{isLocked ? '🔒 유료' : '무료'}</span>
-                {sido && <span class="item-card-tile-region notranslate" translate="no">{sido}</span>}
+                <span class={`cat-card-tier notranslate ${isLocked ? 'is-paid' : 'is-free'}`} translate="no">{isLocked ? '🔒 유료' : '무료'}</span>
                 <span class="item-card-tile-name notranslate" translate="no">{item.title_kr}</span>
                 {item.title_en && <span class="item-card-tile-name-en">{item.title_en}</span>}
               </div>

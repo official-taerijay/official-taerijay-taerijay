@@ -14,6 +14,14 @@ function withUsdHint(line) {
   const hint = priceKrToUsdHint(line);
   return hint ? `${line} (${hint})` : line;
 }
+
+// entertainment 채널 전용: platform 필드(넷플릭스/디즈니+)로 공식 시청 페이지 홈을 매핑.
+// 작품별 개별 URL은 검증되지 않은 값을 넣으면 깨진 링크가 될 위험이 있어
+// 플랫폼 공식 홈으로 안내(사용자가 검색해 바로 찾을 수 있음).
+const PLATFORM_HOME = {
+  '넷플릭스': 'https://www.netflix.com/kr/',
+  '디즈니+': 'https://www.disneyplus.com/ko-kr/home',
+};
 import '../../../../styles/channel-page.css';
 import '../../../../styles/item-detail.css';
 
@@ -75,7 +83,7 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
         <header class="item-detail-head">
           {sido && <span class="item-detail-region notranslate" translate="no">[{sido}]</span>}
           <h1 class="item-detail-title notranslate" translate="no">{item.title_kr}</h1>
-          {item.title_en && <p class="item-detail-title-en">{item.title_en}</p>}
+          {item.title_en && <p class="item-detail-title-en notranslate" translate="no">{item.title_en}</p>}
 
           <div class="item-detail-tags">
             {item.region && <span class="item-tag notranslate" translate="no">{item.region}</span>}
@@ -85,14 +93,14 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
         </header>
 
         <p class="content-notice notranslate" translate="no">
-          💡 본 콘텐츠는 AI 도구를 활용해 정리되었으며, 순차적으로 웹검색 팩트체크를 진행 중입니다. 실제 방문 전 최신 정보를 별도로 확인해 주세요.
-          <span class="content-notice-en">Some content is AI-assisted and undergoing fact-check verification. Please confirm details before visiting.</span>
+          💡 실제 방문 전 한번 더 확인 필수!
+          <span class="content-notice-en">Please double-check details before visiting.</span>
         </p>
 
         <!-- 1) 주제소개 -->
         {item.desc_kr && (
           <section class="detail-section">
-            <h2 class="detail-section-title"><span class="detail-section-num">1️⃣</span> 주제 소개 <span class="detail-section-title-en">Overview</span></h2>
+            <h2 class="detail-section-title"><span class="detail-section-num">1️⃣</span> <span class="detail-section-title-kr">주제 소개</span> <span class="detail-section-title-en">Overview</span></h2>
             <ul class="detail-line-list">
               {splitSentences(item.desc_kr).map((line, i) => (
                 <li class="detail-line">
@@ -109,7 +117,7 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
         <!-- 2) 하차가이드 -->
         {item.getoff_kr && (
           <section class="detail-section">
-            <h2 class="detail-section-title"><span class="detail-section-num">2️⃣</span> 하차 가이드 <span class="detail-section-title-en">Get Off Here</span></h2>
+            <h2 class="detail-section-title"><span class="detail-section-num">2️⃣</span> <span class="detail-section-title-kr">하차 가이드</span> <span class="detail-section-title-en">Get Off Here</span></h2>
             <ul class="detail-line-list">
               {splitBullets(item.getoff_kr).map((line, i) => (
                 <li class="detail-line">
@@ -126,7 +134,7 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
         <!-- 3) 도착상세 (route_kr 재활용) -->
         {(item.direction_kr || item.route_kr) && (
           <section class="detail-section">
-            <h2 class="detail-section-title"><span class="detail-section-num">3️⃣</span> 도착 상세 <span class="detail-section-title-en">Direction Detail</span></h2>
+            <h2 class="detail-section-title"><span class="detail-section-num">3️⃣</span> <span class="detail-section-title-kr">도착 상세</span> <span class="detail-section-title-en">Direction Detail</span></h2>
             <ul class="detail-line-list">
               {splitBullets(item.direction_kr || item.route_kr).map((line, i) => (
                 <li class="detail-line">
@@ -143,7 +151,7 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
         <!-- 4) 위치정보 (매장형 상품 채널은 buy_kr로 대체) -->
         {(item.addr_kr || item.phone_kr || item.hours_kr || item.web || item.buy_kr) && (
           <section class="detail-section">
-            <h2 class="detail-section-title"><span class="detail-section-num">4️⃣</span> {item.buy_kr && !item.addr_kr ? '구매 가이드' : '위치 정보'} <span class="detail-section-title-en">{item.buy_kr && !item.addr_kr ? 'Where to Buy' : 'Location Info'}</span></h2>
+            <h2 class="detail-section-title"><span class="detail-section-num">4️⃣</span> <span class="detail-section-title-kr">{item.buy_kr && !item.addr_kr ? '구매 가이드' : '위치 정보'}</span> <span class="detail-section-title-en">{item.buy_kr && !item.addr_kr ? 'Where to Buy' : 'Location Info'}</span></h2>
             {item.buy_kr && (
               <ul class="detail-line-list">
                 {splitBullets(item.buy_kr).map((line, i) => (
@@ -157,7 +165,7 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
             <div class="item-meta">
               {item.addr_kr && (
                 <div class="item-meta-row item-meta-row-addr">
-                  <span class="item-meta-label">🏠 주소 <span class="item-meta-label-en">Address</span></span>
+                  <span class="item-meta-label notranslate" translate="no">🏠 주소 <span class="item-meta-label-en">Address</span></span>
                   <div class="item-meta-value-stack">
                     <span class="item-meta-value item-addr-value item-addr-kr notranslate" translate="no">{item.addr_kr}</span>
                     {item.addr_en && <span class="item-meta-value item-addr-value item-addr-en">{item.addr_en}</span>}
@@ -174,7 +182,7 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
               {item.addr_kr && <p class="item-detail-copy-hint">📝 복사해서 네이버/카카오/구글 맵에 붙여넣으세요. <span class="item-detail-copy-hint-en">Copy &amp; paste into Naver/Kakao/Google Map apps.</span></p>}
               {item.phone_kr && (
                 <div class="item-meta-row item-meta-row-phone">
-                  <span class="item-meta-label">연락처 <span class="item-meta-label-en">Contact</span></span>
+                  <span class="item-meta-label notranslate" translate="no">연락처 <span class="item-meta-label-en">Contact</span></span>
                   <span class="item-meta-value item-phone-value">{item.phone_kr}</span>
                   <div class="item-meta-row-actions">
                     <button type="button" class="addr-copy-btn" data-copy-text={item.phone_kr} aria-label="전화번호 복사" title="전화번호 복사 Copy number">
@@ -195,7 +203,7 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
               )}
               {item.web && (
                 <div class="item-meta-row item-meta-row-web">
-                  <span class="item-meta-label">🌐 웹사이트 <span class="item-meta-label-en">Website</span></span>
+                  <span class="item-meta-label notranslate" translate="no">🌐 웹사이트 <span class="item-meta-label-en">Website</span></span>
                   <span class="item-meta-value item-web-value notranslate" translate="no">{item.web.replace(/^https?:\/\//, '')}</span>
                   <button type="button" class="addr-copy-btn" data-copy-text={item.web} aria-label="웹사이트 주소 복사" title="웹사이트 주소 복사 Copy URL">
                     <svg class="addr-copy-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -207,35 +215,35 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
                 </div>
               )}
               {item.hours_kr && (
-                <div class="item-meta-row"><span class="item-meta-label">시간</span><span class="item-meta-value">{item.hours_kr}</span></div>
+                <div class="item-meta-row"><span class="item-meta-label notranslate" translate="no">시간</span><span class="item-meta-value">{item.hours_kr}</span></div>
               )}
               {item.duration && (
-                <div class="item-meta-row"><span class="item-meta-label">소요시간</span><span class="item-meta-value">{item.duration}</span></div>
+                <div class="item-meta-row"><span class="item-meta-label notranslate" translate="no">소요시간</span><span class="item-meta-value">{item.duration}</span></div>
               )}
               {item.budget_kr && (
                 <div class="item-meta-row">
-                  <span class="item-meta-label">예산</span>
+                  <span class="item-meta-label notranslate" translate="no">예산</span>
                   <span class="item-meta-value">{item.budget_kr}{priceKrToUsdHint(item.budget_kr) && ` (${priceKrToUsdHint(item.budget_kr)})`}</span>
                 </div>
               )}
               {item.price_kr && !(item.buy_kr || '').includes('가격대') && (
                 <div class="item-meta-row">
-                  <span class="item-meta-label">가격대</span>
+                  <span class="item-meta-label notranslate" translate="no">가격대</span>
                   <span class="item-meta-value">{item.price_kr}{priceKrToUsdHint(item.price_kr) && ` (${priceKrToUsdHint(item.price_kr)})`}</span>
                 </div>
               )}
               {item.genre && (
-                <div class="item-meta-row"><span class="item-meta-label">장르</span><span class="item-meta-value">{item.genre}{item.year ? ` · ${item.year}` : ''}</span></div>
+                <div class="item-meta-row"><span class="item-meta-label notranslate" translate="no">장르</span><span class="item-meta-value">{item.genre}{item.year ? ` · ${item.year}` : ''}</span></div>
               )}
               {item.cast_kr && (
-                <div class="item-meta-row"><span class="item-meta-label">출연</span><span class="item-meta-value notranslate" translate="no">{item.cast_kr}</span></div>
+                <div class="item-meta-row"><span class="item-meta-label notranslate" translate="no">출연</span><span class="item-meta-value notranslate" translate="no">{item.cast_kr}</span></div>
               )}
             </div>
             {item.addr_kr && (
               <div class="item-links item-links-maps">
-                <a href={item.naver_map || `https://map.naver.com/v5/search/${encodeURIComponent(item.addr_kr)}`} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-map">네이버맵 <span class="item-link-btn-en">Naver Maps</span></a>
-                <a href={item.kakao_map || `https://map.kakao.com/link/search/${encodeURIComponent(item.addr_kr)}`} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-map">카카오맵 <span class="item-link-btn-en">Kakao Map</span></a>
-                <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.addr_en || item.addr_kr)}`} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-map item-link-btn-google">구글맵 <span class="item-link-btn-en">Google Maps</span></a>
+                <a href={item.naver_map || `https://map.naver.com/v5/search/${encodeURIComponent(item.addr_kr)}`} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-map notranslate" translate="no">네이버맵 <span class="item-link-btn-en">Naver Maps</span></a>
+                <a href={item.kakao_map || `https://map.kakao.com/link/search/${encodeURIComponent(item.addr_kr)}`} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-map notranslate" translate="no">카카오맵 <span class="item-link-btn-en">Kakao Map</span></a>
+                <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.addr_en || item.addr_kr)}`} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-map item-link-btn-google notranslate" translate="no">구글맵 <span class="item-link-btn-en">Google Maps</span></a>
               </div>
             )}
             {item.web && (
@@ -251,10 +259,10 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
         <!-- 5) 검색키워드 / 해시태그 -->
         {(item.keywords_kr || item.hashtags) && (
           <section class="detail-section">
-            <h2 class="detail-section-title"><span class="detail-section-num">5️⃣</span> 검색 및 해시태그 <span class="detail-section-title-en">Search &amp; Hashtags</span></h2>
+            <h2 class="detail-section-title"><span class="detail-section-num">5️⃣</span> <span class="detail-section-title-kr">검색 및 해시태그</span> <span class="detail-section-title-en">Search &amp; Hashtags</span></h2>
             {item.keywords_kr && (
               <div class="keyword-block">
-                <p class="keyword-block-label">🔍 검색어 <span class="keyword-block-label-en">Search Keywords</span></p>
+                <p class="keyword-block-label notranslate" translate="no">🔍 검색어 <span class="keyword-block-label-en">Search Keywords</span></p>
                 <ul class="keyword-list notranslate" translate="no">
                   {splitBullets(item.keywords_kr).map((kw) => <li class="keyword-item">{kw}</li>)}
                 </ul>
@@ -262,7 +270,7 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
             )}
             {item.hashtags && (
               <div class="keyword-block">
-                <p class="keyword-block-label">#️⃣ 해시태그 <span class="keyword-block-label-en">Hashtags</span></p>
+                <p class="keyword-block-label notranslate" translate="no">#️⃣ 해시태그 <span class="keyword-block-label-en">Hashtags</span></p>
                 <ul class="hashtag-list notranslate" translate="no">
                   {splitBullets(item.hashtags).map((h) => <li class="hashtag-item">{h.startsWith('#') ? h : `#${h}`}</li>)}
                 </ul>
@@ -276,7 +284,7 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
         <!-- 6) 꿀팁 -->
         {item.tips_kr && (
           <section class="detail-section">
-            <h2 class="detail-section-title"><span class="detail-section-num">6️⃣</span> 꿀팁 <span class="detail-section-title-en">Insider Tip</span></h2>
+            <h2 class="detail-section-title"><span class="detail-section-num">6️⃣</span> <span class="detail-section-title-kr">꿀팁</span> <span class="detail-section-title-en">Insider Tip</span></h2>
             <ul class="item-tips-list">
               {splitBullets(item.tips_kr).map((line, i) => (
                 <li class="item-tips-line">
@@ -286,6 +294,23 @@ const nextItem = itemIdx < items.length - 1 ? items[itemIdx + 1] : null;
               ))}
             </ul>
           </section>
+        )}
+
+        {channel === 'entertainment' && (item.trailer_youtube || PLATFORM_HOME[item.platform]) && (
+          <>
+            <hr class="detail-divider" />
+            <section class="detail-section">
+              <h2 class="detail-section-title"><span class="detail-section-num">7️⃣</span> <span class="detail-section-title-kr">시청 링크</span> <span class="detail-section-title-en">Watch Links</span></h2>
+              <div class="item-links">
+                {PLATFORM_HOME[item.platform] && (
+                  <a href={PLATFORM_HOME[item.platform]} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web notranslate" translate="no">🌐 공식 웹사이트 <span class="item-link-btn-en">Official Website</span></a>
+                )}
+                {item.trailer_youtube && (
+                  <a href={item.trailer_youtube} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web notranslate" translate="no">▶️ 유튜브 예고편 <span class="item-link-btn-en">YouTube Trailer</span></a>
+                )}
+              </div>
+            </section>
+          </>
         )}
 
         <nav class="item-detail-pager">

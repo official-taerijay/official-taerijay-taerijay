@@ -24,14 +24,10 @@ const color = '#FFDD00';
     </div>
 
     <section class="channel-hero-banner" style={`--hero-img:url('/images/channels/emart.jpg');--c:${color}`}>
-      <span class="channel-hero-region">
-        <span class="channel-hero-region-kr">제주</span>
-        <span class="channel-hero-region-en" data-i18n="en">JEJU</span>
-      </span>
     </section>
 
     <section class="channel-hero">
-      <span class="channel-badge channel-badge-lock">7개 브랜드 · 브랜드별 TOP 30 (무료 5 + 유료 25)</span>
+      <span class="channel-badge channel-badge-lock notranslate" translate="no">7개 브랜드 · 브랜드별 TOP 30 (무료 5 + 유료 25)</span>
       <span class="channel-category">SHOPPING</span>
       <h1 class="channel-title">taerijay<span style={`color:${color}`}>+mart+convenience</span></h1>
       <p class="channel-sub">대형마트·편의점 7개 브랜드 핫템 랭킹. 브랜드별 100개 고정, 월 2회(10일·20일) 리뉴얼</p>
@@ -51,7 +47,7 @@ const color = '#FFDD00';
       {extras.map((cat) => (
         <a href={`/04-channels/mart-convenience/${cat.slug}`} class="cat-card">
           <div class="cat-card-art">
-            <span class={`cat-card-tier ${cat.free ? 'is-free' : 'is-paid'}`}>{cat.free ? '무료' : '유료'}</span>
+            <span class={`cat-card-tier notranslate ${cat.free ? 'is-free' : 'is-paid'}`} translate="no">{cat.free ? '무료' : '유료'}</span>
             <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
             <span class="cat-card-name-en">{cat.labelEn}</span>
           </div>

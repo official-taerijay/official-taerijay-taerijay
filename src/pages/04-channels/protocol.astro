@@ -24,15 +24,10 @@ const color = '#F16B24';
       <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
     </div>
 
-    <section class="channel-hero-banner" style={`--hero-img:url('/images/channels/protocol.jpg');--c:${color}`}>
-      <span class="channel-hero-region">
-        <span class="channel-hero-region-kr">설악</span>
-        <span class="channel-hero-region-en" data-i18n="en">SEORAK</span>
-      </span>
-    </section>
+    <section class="channel-hero-banner" style={`--hero-img:url('/images/channels/protocol.jpg');--c:${color}`}></section>
 
     <section class="channel-hero">
-      <span class="channel-badge channel-badge-lock">무료 5개 + 유료 7개 · 총 12개 카테고리</span>
+      <span class="channel-badge channel-badge-lock notranslate" translate="no">무료 5개 + 유료 7개 · 총 12개 카테고리</span>
       <h1 class="channel-title">taerijay<span style={`color:${color}`}>+protocol</span></h1>
       <p class="channel-sub">공항·세관·대중교통 규약부터 맛집·카페까지, 검증된 현지 정보. 월 2회(10일·20일) 업데이트</p>
       <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
@@ -42,7 +37,7 @@ const color = '#F16B24';
       {categories.map((cat) => (
         <a href={`/04-channels/protocol/${cat.slug}`} class="cat-card">
           <div class="cat-card-art">
-            <span class={`cat-card-tier ${cat.free ? 'is-free' : 'is-paid'}`}>{cat.free ? '무료' : '유료'}</span>
+            <span class={`cat-card-tier notranslate ${cat.free ? 'is-free' : 'is-paid'}`} translate="no">{cat.free ? '무료' : '유료'}</span>
             <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
             <span class="cat-card-name-en">{cat.labelEn}</span>
           </div>

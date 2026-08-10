@@ -25,14 +25,10 @@ const color = '#e8e4dc';
     </div>
 
     <section class="channel-hero-banner" style={`--hero-img:url('/images/channels/mini.jpg');--c:${color}`}>
-      <span class="channel-hero-region">
-        <span class="channel-hero-region-kr">전주</span>
-        <span class="channel-hero-region-en" data-i18n="en">JEONJU</span>
-      </span>
     </section>
 
     <section class="channel-hero">
-      <span class="channel-badge channel-badge-lock">무료 3개 + 유료 9개 · 총 12개 카테고리</span>
+      <span class="channel-badge channel-badge-lock notranslate" translate="no">무료 3개 + 유료 9개 · 총 12개 카테고리</span>
       <h1 class="channel-title">taerijay<span style={`color:${color}`}>+mini</span></h1>
       <p class="channel-sub">거점 도시별 최적 동선, 시간대별 큐레이션 코스. 100→1,000개 누적, 월 2회(10일·20일) 업데이트</p>
       <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
@@ -42,10 +38,10 @@ const color = '#e8e4dc';
       {tabs.map((tab) => (
         <a href={`/04-channels/mini/${tab.slug}`} class="cat-card">
           <div class="cat-card-art">
-            <span class={`cat-card-tier ${tab.free ? 'is-free' : 'is-paid'}`}>{tab.free ? '무료' : '유료'}</span>
+            <span class={`cat-card-tier notranslate ${tab.free ? 'is-free' : 'is-paid'}`} translate="no">{tab.free ? '무료' : '유료'}</span>
             <span class="cat-card-name notranslate" translate="no">{tab.label}</span>
             <span class="cat-card-name-en">{tab.labelEn}</span>
-            {tab.sub && <span class="cat-card-sub">{tab.sub}</span>}
+            {tab.sub && <span class="cat-card-sub notranslate" translate="no">{tab.sub}</span>}
           </div>
         </a>
       ))}
