@@ -674,14 +674,14 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
       productName.textContent  = product.label;
       productTier.textContent  = product.tier;
 
-      const USD_KRW = 1400;
-      const krwAmount = Math.round(product.price * USD_KRW).toLocaleString('ko-KR');
-      priceAmountKrw.textContent = `₩${krwAmount}`;
+      const usdText = product.price % 1 === 0 ? product.price.toString() : product.price.toFixed(2);
+      priceAmountKrw.textContent = `USD $${usdText}`;
 
+      const USD_KRW = 1400;
       const priceUsdRow = document.getElementById('priceUsdRow');
       if (priceUsdRow) {
-        const usdText = product.price % 1 === 0 ? product.price.toString() : product.price.toFixed(2);
-        priceUsdRow.textContent = `USD $${usdText} (환율 변동에 따라 실제 청구 금액과 다를 수 있음)`;
+        const krwAmount = Math.round(product.price * USD_KRW).toLocaleString('ko-KR');
+        priceUsdRow.textContent = `₩${krwAmount} 상당 (환율 변동에 따라 실제 청구 금액과 다를 수 있음)`;
       }
 
       benefitList.innerHTML = product.benefits

@@ -11,7 +11,7 @@ const channels = {
 };
 
 const singleTiers = [
-  { color: '#FBF9F4', price: '19.99', en: 'BASIC',    key: 'basic',    id: 1, device: 1, concurrent: 1 },
+  { color: '#FBF9F4', price: '19.99', en: 'BASIC',    key: 'basic',    id: 1, device: 1, concurrent: null },
   { color: '#22C55E', price: '29.99', en: 'STANDARD', key: 'standard', id: 1, device: 2, concurrent: 2 },
   { color: '#F16B24', price: '39.99', en: 'PRO',      key: 'pro',      id: 1, device: 4, concurrent: 4 },
 ];
@@ -54,13 +54,13 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
       {singleTiers.map((t) => (
         <div class="tier-group">
           <div class="tier-group-header" style={`--tc:${t.color}`}>
-            <span class="tier-group-krw">₩{krw(parseFloat(t.price))}</span>
             <span class="tier-group-price">USD {t.price}</span>
+            <span class="tier-group-krw">₩{krw(parseFloat(t.price))} 상당</span>
             <span class="tier-group-en" data-i18n="en">{t.en}</span>
             <ul class="plan-specs plan-specs-inline">
               <li><span class="spec-kr">아이디 {t.id}</span><span class="spec-en" data-i18n="en">{t.id} ID</span></li>
               <li><span class="spec-kr">디바이스 {t.device}</span><span class="spec-en" data-i18n="en">{t.device} Device{t.device > 1 ? 's' : ''}</span></li>
-              <li><span class="spec-kr">동시접속 {t.concurrent}</span><span class="spec-en" data-i18n="en">{t.concurrent} Concurrent</span></li>
+              <li><span class="spec-kr">동시접속 {t.concurrent === null ? '해당없음' : t.concurrent}</span><span class="spec-en" data-i18n="en">{t.concurrent === null ? 'N/A' : `${t.concurrent} Concurrent`}</span></li>
             </ul>
           </div>
           <div class="plan-detail-list">
@@ -73,8 +73,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
                 <a href={`/02-payment?key=${ch.payKey}_${t.key}`} class="plan-detail-box plan-detail-box-media" style={`--tc:${ch.color};--hero-img:url('/images/channels/${ch.slug === 'mart-convenience' ? 'emart' : ch.slug === 'red' ? 'daiso' : ch.slug === 'green' ? 'oliveyoung' : slug}.jpg')`}>
                   <span class="plan-detail-names notranslate" translate="no" style={`color:${ch.color}`}>taerijay+{ch.slug === 'mart-convenience' ? 'mart+convenience' : ch.slug}</span>
                   <span class="plan-detail-price-wrap">
-                    <span class="plan-detail-krw">₩{krw(parseFloat(t.price))}</span>
                     <span class="plan-detail-price">USD {t.price}</span>
+                    <span class="plan-detail-krw">₩{krw(parseFloat(t.price))} 상당</span>
                   </span>
                 </a>
               </div>
@@ -96,7 +96,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
       <ul class="plan-specs plan-specs-inline">
         <li><span class="spec-kr">아이디 1</span><span class="spec-en" data-i18n="en">1 ID</span></li>
         <li><span class="spec-kr">디바이스 1</span><span class="spec-en" data-i18n="en">1 Device</span></li>
-        <li><span class="spec-kr">동시접속 1</span><span class="spec-en" data-i18n="en">1 Concurrent</span></li>
+        <li><span class="spec-kr">동시접속 해당없음</span><span class="spec-en" data-i18n="en">Concurrent: N/A</span></li>
       </ul>
       <p class="plan-specs-note-kr">번들 상품은 계정 공유 방지를 위해 1기기로 제한됩니다.</p>
       <p class="plan-specs-note-en" data-i18n="en">Bundle plans are limited to 1 device to prevent account sharing.</p>
@@ -118,8 +118,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
                 </span>
               </span>
               <span class="plan-detail-price-wrap">
-                <span class="plan-detail-krw">₩{krw(34.99)}</span>
                 <span class="plan-detail-price">USD 34.99</span>
+                <span class="plan-detail-krw">₩{krw(34.99)} 상당</span>
               </span>
             </a>
           </div>
@@ -139,7 +139,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
       <ul class="plan-specs plan-specs-inline">
         <li><span class="spec-kr">아이디 1</span><span class="spec-en" data-i18n="en">1 ID</span></li>
         <li><span class="spec-kr">디바이스 1</span><span class="spec-en" data-i18n="en">1 Device</span></li>
-        <li><span class="spec-kr">동시접속 1</span><span class="spec-en" data-i18n="en">1 Concurrent</span></li>
+        <li><span class="spec-kr">동시접속 해당없음</span><span class="spec-en" data-i18n="en">Concurrent: N/A</span></li>
       </ul>
       <p class="plan-specs-note-kr">번들 상품은 계정 공유 방지를 위해 1기기로 제한됩니다.</p>
       <p class="plan-specs-note-en" data-i18n="en">Bundle plans are limited to 1 device to prevent account sharing.</p>
@@ -157,8 +157,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
             ))}
           </div>
           <span class="plan-detail-price-wrap">
-            <span class="plan-detail-krw">₩{krw(99.99)}</span>
             <span class="plan-detail-price">USD 99.99</span>
+            <span class="plan-detail-krw">₩{krw(99.99)} 상당</span>
           </span>
         </a>
       </div>
@@ -186,8 +186,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
 
     .tier-group{margin:22px 0 30px;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px;background:rgba(255,255,255,.015)}
     .tier-group-header{border-left:4px solid var(--tc);padding-left:16px;margin-bottom:14px}
-    .tier-group-krw{display:block;font-family:var(--f-display);font-weight:900;font-size:1.5rem;color:var(--tc)}
-    .tier-group-price{display:block;font-size:.82rem;font-weight:600;color:var(--dim);margin-top:2px}
+    .tier-group-price{display:block;font-family:var(--f-display);font-weight:900;font-size:1.5rem;color:var(--tc)}
+    .tier-group-krw{display:block;font-size:.78rem;font-weight:600;color:var(--dim);margin-top:2px}
     .tier-group-en{font-size:1.05rem;font-weight:700;color:var(--ivory);letter-spacing:.03em}
 
     .plan-specs{list-style:none;margin:6px 0}
@@ -224,22 +224,22 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     .plan-detail-combo{font-family:var(--f-display);font-weight:700;font-size:1.05rem}
     .plan-detail-x{color:var(--dim);margin:0 8px}
     .plan-detail-price-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:0}
-    .plan-detail-krw{font-weight:900;font-size:1.2rem;color:var(--tc);white-space:nowrap}
-    .plan-detail-price{font-size:.78rem;font-weight:600;color:var(--dim);white-space:nowrap}
+    .plan-detail-price{font-weight:900;font-size:1.2rem;color:var(--tc);white-space:nowrap}
+    .plan-detail-krw{font-size:.74rem;font-weight:600;color:var(--dim);white-space:nowrap}
 
     .plan-detail-box-total{display:block;border:1px solid #B33A52;background:linear-gradient(160deg, rgba(179,58,82,.12) 0%, rgba(179,58,82,.02) 100%);min-width:260px}
     .plan-detail-box-total:hover{background:linear-gradient(160deg, rgba(179,58,82,.22) 0%, rgba(179,58,82,.05) 100%)}
     .total-detail-heading{display:block;font-weight:800;font-size:1rem;color:var(--ivory);margin-bottom:14px}
     .total-detail-names{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
     .total-chip-line{font-size:.9rem;font-weight:700}
-    .plan-detail-box-total .plan-detail-krw{font-size:1.8rem}
-    .plan-detail-box-total .plan-detail-price{font-size:.9rem}
+    .plan-detail-box-total .plan-detail-price{font-size:1.8rem}
+    .plan-detail-box-total .plan-detail-krw{font-size:.85rem}
 
     @media (max-width: 560px){
       .plan-detail-row{flex-direction:column;align-items:flex-start;gap:8px}
       .plan-detail-label{flex:none}
       .plan-detail-box{flex-direction:column;align-items:flex-start;gap:8px}
-      .plan-detail-krw{font-size:1.05rem}
+      .plan-detail-price{font-size:1.05rem}
       .tier-group{padding:16px}
     }
   </style>
