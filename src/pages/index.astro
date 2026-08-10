@@ -5,7 +5,8 @@ const channels = {
   entertainment: { slug: 'entertainment', color: '#00E5FF', free: true,  tag: 'K-ENTERTAINMENT', region: 'Seoul',    regionKr: '서울' },
   protocol:      { slug: 'protocol',      color: '#F16B24', free: false, tag: 'K-SURVIVAL',      region: 'Seorak',   regionKr: '설악' },
   mini:          { slug: 'mini',          color: '#e8e4dc', free: false, tag: 'K-TRAVEL',        region: 'Jeonju',   regionKr: '전주' },
-  redGreen:      { slug: 'red-green',      color: '#E1261C', free: false, tag: 'K-BEAUTY',        region: 'Gyeongju · Busan', regionKr: '경주·부산' },
+  red:           { slug: 'red',           color: '#E1261C', free: false, tag: 'K-BEAUTY',        region: 'Gyeongju', regionKr: '경주' },
+  green:         { slug: 'green',         color: '#6F8B2E', free: false, tag: 'K-BEAUTY',        region: 'Busan',    regionKr: '부산' },
   emartCvs:      { slug: 'mart-convenience', color: '#FFDD00', free: false, tag: '이마트×트레이더스×노브랜드×이마트24×CU×GS25×세븐일레븐', region: 'Jeju', regionKr: '제주' },
 };
 const USD_KRW = 1400;
@@ -48,11 +49,16 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
       </a>
     </div>
 
-    <div class="channel-row" data-count="1">
-      <a href={`/04-channels/${channels.redGreen.slug}`} class="service-card" style={`--c:${channels.redGreen.color};--hero-img:url('/images/channels/daiso.jpg')`}>
+    <div class="channel-row" data-count="2">
+      <a href={`/04-channels/${channels.red.slug}`} class="service-card" style={`--c:${channels.red.color};--hero-img:url('/images/channels/daiso.jpg')`}>
         <span class="service-status status-click">CLICK</span>
-        <span class="service-name notranslate" translate="no">taerijay+red+green</span>
-        <span class="service-tag">{channels.redGreen.tag}</span>
+        <span class="service-name notranslate" translate="no">taerijay+red</span>
+        <span class="service-tag">{channels.red.tag}</span>
+      </a>
+      <a href={`/04-channels/${channels.green.slug}`} class="service-card" style={`--c:${channels.green.color};--hero-img:url('/images/channels/oliveyoung.jpg')`}>
+        <span class="service-status status-click">CLICK</span>
+        <span class="service-name notranslate" translate="no">taerijay+green</span>
+        <span class="service-tag">{channels.green.tag}</span>
       </a>
     </div>
 
@@ -114,6 +120,25 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
       </div>
     </div>
 
+    <div class="plan-row">
+      <span class="plan-row-label">
+        <span class="plan-row-label-kr">더블 요금제</span>
+        <span class="plan-row-label-en" data-i18n="en">DOUBLE</span>
+      </span>
+      <div class="plan-row-items">
+        <a href="/02-payment?key=red_green" class="plan-chip plan-chip-double" style="--tc:#818CF8">
+          <span class="plan-chip-name-wrap">
+            <span class="plan-chip-prefix notranslate" translate="no">taerijay+</span>
+            <span class="plan-chip-combo">red × green</span>
+          </span>
+          <span class="plan-chip-price-wrap">
+            <span class="plan-chip-krw">₩{krw(34.99)}</span>
+            <span class="plan-chip-price">USD 34.99</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
     <div class="plan-row plan-row-total">
       <span class="plan-row-label">
         <span class="plan-row-label-kr" style="color:#B33A52">토탈 요금제</span>
@@ -125,7 +150,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
             <span class="plan-chip-name">ALL SERVICES</span>
             <span class="plan-chip-total-item notranslate" translate="no">taerijay+protocol</span>
             <span class="plan-chip-total-item notranslate" translate="no">taerijay+mini</span>
-            <span class="plan-chip-total-item notranslate" translate="no">taerijay+red+green</span>
+            <span class="plan-chip-total-item notranslate" translate="no">taerijay+red</span>
+            <span class="plan-chip-total-item notranslate" translate="no">taerijay+green</span>
             <span class="plan-chip-total-item notranslate" translate="no">taerijay+mart+convenience</span>
           </div>
           <span class="plan-chip-price-wrap">

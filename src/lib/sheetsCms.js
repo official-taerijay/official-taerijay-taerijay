@@ -7,7 +7,8 @@
 //   - entertainment: 독립 시트 파일 1개
 //   - protocol:       독립 시트 파일 1개
 //   - mini:           독립 시트 파일 1개
-//   - shopping:       파일 1개 안에 탭 3개(daiso / oliveyoung / emart-convenience) — gid로 탭 구분
+//   - shopping:       파일 1개 안에 탭 3개(red / green / mart-convenience) — gid로 탭 구분
+//     (구 daiso/oliveyoung/emart-convenience 탭을 2026-08 리브랜딩으로 red/green/mart-convenience로 개명)
 //
 // 실제 파일 ID/탭 gid는 사용자가 구글시트를 만든 뒤 채워 넣는다 (.env 또는 아래 상수 직접 수정).
 //
@@ -22,13 +23,15 @@ import daisoData from '../data/daiso.json';
 import oliveyoungData from '../data/oliveyoung.json';
 import emartConvenienceData from '../data/emart-convenience.json';
 
+// LOCAL_FALLBACK의 키는 라우팅 slug(red/green) 기준. 데이터 파일 자체는 daiso.json/oliveyoung.json
+// 그대로 재사용(내용 동일, 파일명만 구 브랜드명 유지 — 필요 시 리네이밍 가능).
 const LOCAL_FALLBACK = {
   entertainment: entertainmentData,
   protocol: protocolData,
   mini: miniData,
-  daiso: daisoData,
-  oliveyoung: oliveyoungData,
-  'emart-convenience': emartConvenienceData,
+  red: daisoData,
+  green: oliveyoungData,
+  'mart-convenience': emartConvenienceData,
 };
 
 // 채널 -> 구글 시트 파일 ID 매핑
@@ -36,20 +39,20 @@ export const SHEET_IDS = {
   entertainment: import.meta.env.SHEET_ID_ENTERTAINMENT || '',
   protocol: import.meta.env.SHEET_ID_PROTOCOL || '',
   mini: import.meta.env.SHEET_ID_MINI || '',
-  // daiso / oliveyoung / emart-convenience는 한 파일 안의 서로 다른 탭(gid)
+  // red / green / mart-convenience는 한 파일 안의 서로 다른 탭(gid)
   shopping: import.meta.env.SHEET_ID_SHOPPING || '',
 };
 
 // shopping 파일 안에서 채널별 탭 gid (구글시트 하단 탭 클릭 시 URL의 #gid=숫자 부분)
 export const SHOPPING_TAB_GID = {
-  daiso: import.meta.env.SHEET_GID_DAISO || '0',
-  oliveyoung: import.meta.env.SHEET_GID_OLIVEYOUNG || '',
-  'emart-convenience': import.meta.env.SHEET_GID_EMART_CONVENIENCE || '',
+  red: import.meta.env.SHEET_GID_RED || import.meta.env.SHEET_GID_DAISO || '0',
+  green: import.meta.env.SHEET_GID_GREEN || import.meta.env.SHEET_GID_OLIVEYOUNG || '',
+  'mart-convenience': import.meta.env.SHEET_GID_MART_CONVENIENCE || import.meta.env.SHEET_GID_EMART_CONVENIENCE || '',
 };
 
 // 채널 -> (파일 ID, 탭 gid) 조회
 function resolveSheetTarget(channel) {
-  if (channel === 'daiso' || channel === 'oliveyoung' || channel === 'emart-convenience') {
+  if (channel === 'red' || channel === 'green' || channel === 'mart-convenience') {
     return { id: SHEET_IDS.shopping, gid: SHOPPING_TAB_GID[channel] };
   }
   return { id: SHEET_IDS[channel], gid: '0' };
@@ -108,22 +111,14 @@ function filterByPublishDate(rows, now = new Date()) {
   });
 }
 
-// 채널 -> 실제 데이터소스 채널키(들). 통합 채널(red-green)은 두 소스를 합쳐서 접두사를 붙인다.
-// prefix가 있으면 각 행의 sub 값 앞에 `${prefix}-`를 붙여 [sub].astro 라우팅과 매칭시킨다.
-const COMPOSITE_CHANNELS = {
-  'red-green': [
-    { source: 'daiso', prefix: 'red' },
-    { source: 'oliveyoung', prefix: 'green' },
-  ],
-};
-
-async function fetchSingleChannelRows(sourceChannel) {
-  const { id, gid } = resolveSheetTarget(sourceChannel);
+// channel: 'entertainment' | 'protocol' | 'mini' | 'red' | 'green' | 'mart-convenience'
+export async function fetchChannelRows(channel) {
+  const { id, gid } = resolveSheetTarget(channel);
 
   // 구글시트 ID가 아직 설정되지 않은 채널은 내장된 로컬 데이터를 사용
   if (!id) {
-    const fallback = LOCAL_FALLBACK[sourceChannel];
-    if (!fallback) throw new Error(`no data available for channel: ${sourceChannel}`);
+    const fallback = LOCAL_FALLBACK[channel];
+    if (!fallback) throw new Error(`no data available for channel: ${channel}`);
     return filterByPublishDate(fallback);
   }
 
@@ -135,28 +130,13 @@ async function fetchSingleChannelRows(sourceChannel) {
     return filterByPublishDate(rows);
   } catch (e) {
     // 구글시트 fetch가 일시적으로 실패해도 내장 데이터로 폴백해 콘텐츠가 완전히 비지 않도록 함
-    const fallback = LOCAL_FALLBACK[sourceChannel];
+    const fallback = LOCAL_FALLBACK[channel];
     if (fallback) {
-      console.error(`[sheetsCms] sheet fetch failed for ${sourceChannel}, falling back to local data:`, e);
+      console.error(`[sheetsCms] sheet fetch failed for ${channel}, falling back to local data:`, e);
       return filterByPublishDate(fallback);
     }
     throw e;
   }
-}
-
-// channel: 'entertainment' | 'protocol' | 'mini' | 'red-green' | 'mart-convenience'
-export async function fetchChannelRows(channel) {
-  const composite = COMPOSITE_CHANNELS[channel];
-  if (composite) {
-    const parts = await Promise.all(
-      composite.map(async ({ source, prefix }) => {
-        const rows = await fetchSingleChannelRows(source);
-        return rows.map((r) => ({ ...r, sub: `${prefix}-${(r.sub || '').trim()}` }));
-      })
-    );
-    return parts.flat();
-  }
-  return fetchSingleChannelRows(channel);
 }
 
 // 하위호환: 기존 sheetKey 기반 호출부(sheet-data.js)를 위해 유지

@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/channel-page.css';
+
+const categories = [
+  { slug: 'taxfree-instant', label: '매장 즉시 세금환급',   labelEn: 'Instant Tax Refund',  free: true },
+  { slug: 'mask-pack',       label: '마스크팩',            labelEn: 'Mask Pack',           free: true },
+  { slug: 'trouble-care',    label: '트러블·진정 케어',      labelEn: 'Trouble & Calming',   free: true },
+  { slug: 'skincare',        label: '스킨케어',             labelEn: 'Skincare' },
+  { slug: 'cleanser',        label: '클렌저 케어',          labelEn: 'Cleanser' },
+  { slug: 'color-cosmetics', label: '색조',                labelEn: 'Color Cosmetics' },
+  { slug: 'haircare',        label: '헤어케어',             labelEn: 'Hair Care' },
+  { slug: 'bodycare',        label: '바디케어',             labelEn: 'Body Care' },
+  { slug: 'perfume',         label: '향수',                labelEn: 'Perfume' },
+  { slug: 'beauty-tools',    label: '뷰티 소품',            labelEn: 'Beauty Tools' },
+  { slug: 'gender-care',     label: '남성용품·여성용품',      labelEn: 'Men & Women Care' },
+  { slug: 'soldout-items',   label: '품절 대란템·시즌 한정판', labelEn: 'Viral & Seasonal' },
+];
+const color = '#E1261C';
+---
+<Layout title="taerijay+red | TAERIJAY">
+  <div class="channel-page" style={`--c:${color}`}>
+    <div class="channel-topbar">
+      <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
+    </div>
+
+    <section class="channel-hero-banner" style={`--hero-img:url('/images/channels/daiso.jpg');--c:${color}`}>
+      <span class="channel-hero-region">
+        <span class="channel-hero-region-kr">경주</span>
+        <span class="channel-hero-region-en" data-i18n="en">GYEONGJU</span>
+      </span>
+    </section>
+
+    <section class="channel-hero">
+      <span class="channel-badge channel-badge-lock">무료 3개 + 유료 9개 · 총 12개 카테고리</span>
+      <span class="channel-category">BEAUTY</span>
+      <h1 class="channel-title">taerijay<span style={`color:${color}`}>+red</span></h1>
+      <p class="channel-sub">균일가 생활용품점 뷰티 대란템 실시간 DB, 매장별 재고·위치 정보. 100개 고정, 월 2회(10일·20일) 리뉴얼</p>
+      <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
+    </section>
+
+    <section class="cat-grid-section">
+      {categories.map((cat) => (
+        <a href={`/04-channels/red/${cat.slug}`} class="cat-card">
+          <div class="cat-card-art">
+            <span class={`cat-card-tier ${cat.free ? 'is-free' : 'is-paid'}`}>{cat.free ? '무료' : '유료'}</span>
+            <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
+            <span class="cat-card-name-en">{cat.labelEn}</span>
+          </div>
+        </a>
+      ))}
+    </section>
+
+    <section class="empty-note">
+      <p>콘텐츠 준비 중입니다.</p>
+      <p class="empty-note-en">Content coming soon.</p>
+    </section>
+  </div>
+</Layout>

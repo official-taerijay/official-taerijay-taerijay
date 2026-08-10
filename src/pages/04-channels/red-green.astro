@@ -1,103 +1,32 @@
 ---
+// red-green 통합 채널은 2026-08 리브랜딩으로 red / green 두 개의 독립 채널로 분리됨.
+// 어느 한쪽으로 단정할 수 없어 자동 리다이렉트 대신 선택 안내 페이지로 전환.
 import Layout from '../../layouts/Layout.astro';
 import '../../styles/channel-page.css';
-
-const redCategories = [
-  { slug: 'red-taxfree-instant', label: '매장 즉시 세금환급',   labelEn: 'Instant Tax Refund',  free: true },
-  { slug: 'red-mask-pack',       label: '마스크팩',            labelEn: 'Mask Pack',           free: true },
-  { slug: 'red-trouble-care',    label: '트러블·진정 케어',      labelEn: 'Trouble & Calming',   free: true },
-  { slug: 'red-skincare',        label: '스킨케어',             labelEn: 'Skincare' },
-  { slug: 'red-cleanser',        label: '클렌저 케어',          labelEn: 'Cleanser' },
-  { slug: 'red-color-cosmetics', label: '색조',                labelEn: 'Color Cosmetics' },
-  { slug: 'red-haircare',        label: '헤어케어',             labelEn: 'Hair Care' },
-  { slug: 'red-bodycare',        label: '바디케어',             labelEn: 'Body Care' },
-  { slug: 'red-perfume',         label: '향수',                labelEn: 'Perfume' },
-  { slug: 'red-beauty-tools',    label: '뷰티 소품',            labelEn: 'Beauty Tools' },
-  { slug: 'red-gender-care',     label: '남성용품·여성용품',      labelEn: 'Men & Women Care' },
-  { slug: 'red-soldout-items',   label: '품절 대란템·시즌 한정판', labelEn: 'Viral & Seasonal' },
-];
-const greenCategories = [
-  { slug: 'green-taxfree-instant', label: '매장 즉시 세금환급',   labelEn: 'Instant Tax Refund',  free: true },
-  { slug: 'green-mask-pack',       label: '마스크팩',            labelEn: 'Mask Pack',           free: true },
-  { slug: 'green-trouble-care',    label: '트러블·진정 케어',      labelEn: 'Trouble & Calming',   free: true },
-  { slug: 'green-skincare',        label: '스킨케어',             labelEn: 'Skincare' },
-  { slug: 'green-cleanser',        label: '클렌저 케어',          labelEn: 'Cleanser' },
-  { slug: 'green-color-cosmetics', label: '색조',                labelEn: 'Color Cosmetics' },
-  { slug: 'green-haircare',        label: '헤어케어',             labelEn: 'Hair Care' },
-  { slug: 'green-bodycare',        label: '바디케어',             labelEn: 'Body Care' },
-  { slug: 'green-perfume',         label: '향수',                labelEn: 'Perfume' },
-  { slug: 'green-beauty-tools',    label: '뷰티 소품',            labelEn: 'Beauty Tools' },
-  { slug: 'green-gender-care',     label: '남성용품·여성용품',      labelEn: 'Men & Women Care' },
-  { slug: 'green-soldout-items',   label: '품절 대란템·시즌 한정판', labelEn: 'Viral & Seasonal' },
-];
-const color = '#E1261C';
-const greenColor = '#6F8B2E';
 ---
-<Layout title="taerijay+red+green | TAERIJAY">
-  <div class="channel-page" style={`--c:${color}`}>
+<Layout title="taerijay+red / taerijay+green | TAERIJAY">
+  <div class="channel-page">
     <div class="channel-topbar">
       <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
     </div>
-
-    <section class="channel-hero-banner" style={`--hero-img:url('/images/channels/daiso.jpg');--c:${color}`}>
-      <span class="channel-hero-region">
-        <span class="channel-hero-region-kr">경주 · 부산</span>
-        <span class="channel-hero-region-en" data-i18n="en">GYEONGJU · BUSAN</span>
-      </span>
-    </section>
-
     <section class="channel-hero">
-      <span class="channel-badge channel-badge-lock">2개 탭 · 탭별 무료 3개 + 유료 9개 (총 24개 카테고리)</span>
       <span class="channel-category">BEAUTY</span>
-      <h1 class="channel-title">taerijay<span style={`color:${color}`}>+red</span><span style={`color:${greenColor}`}>+green</span></h1>
-      <p class="channel-sub">균일가 생활용품점(RED) · H&B 스토어(GREEN) 뷰티 대란템 실시간 DB, 매장별 재고·위치 정보. 탭별 100개 고정, 월 2회(10일·20일) 리뉴얼</p>
-      <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
-    </section>
-
-    <section class="cat-tab-heading" style={`--c:${color}`}>
-      <span class="cat-tab-dot"></span>
-      <span class="cat-tab-title notranslate" translate="no">RED</span>
-      <span class="cat-tab-title-en">Uniform Price Living Store</span>
+      <h1 class="channel-title">taerijay+red / taerijay+green</h1>
+      <p class="channel-sub">taerijay+red+green 채널은 taerijay+red, taerijay+green 두 개의 독립 채널로 분리되었습니다. 원하는 채널을 선택해주세요.</p>
     </section>
     <section class="cat-grid-section">
-      {redCategories.map((cat) => (
-        <a href={`/04-channels/red-green/${cat.slug}`} class="cat-card" style="--c:#E1261C">
-          <div class="cat-card-art">
-            <span class={`cat-card-tier ${cat.free ? 'is-free' : 'is-paid'}`}>{cat.free ? '무료' : '유료'}</span>
-            <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
-            <span class="cat-card-name-en">{cat.labelEn}</span>
-          </div>
-        </a>
-      ))}
-    </section>
-
-    <section class="cat-tab-heading" style={`--c:${greenColor}`}>
-      <span class="cat-tab-dot"></span>
-      <span class="cat-tab-title notranslate" translate="no">GREEN</span>
-      <span class="cat-tab-title-en">H&B Store</span>
-    </section>
-    <section class="cat-grid-section">
-      {greenCategories.map((cat) => (
-        <a href={`/04-channels/red-green/${cat.slug}`} class="cat-card" style="--c:#6F8B2E">
-          <div class="cat-card-art">
-            <span class={`cat-card-tier ${cat.free ? 'is-free' : 'is-paid'}`}>{cat.free ? '무료' : '유료'}</span>
-            <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
-            <span class="cat-card-name-en">{cat.labelEn}</span>
-          </div>
-        </a>
-      ))}
-    </section>
-
-    <section class="empty-note">
-      <p>콘텐츠 준비 중입니다.</p>
-      <p class="empty-note-en">Content coming soon.</p>
+      <a href="/04-channels/red" class="cat-card" style="--c:#E1261C">
+        <div class="cat-card-art">
+          <span class="cat-card-name notranslate" translate="no">taerijay+red</span>
+          <span class="cat-card-name-en">Uniform-Price Living Store Beauty</span>
+        </div>
+      </a>
+      <a href="/04-channels/green" class="cat-card" style="--c:#6F8B2E">
+        <div class="cat-card-art">
+          <span class="cat-card-name notranslate" translate="no">taerijay+green</span>
+          <span class="cat-card-name-en">H&B Store Beauty</span>
+        </div>
+      </a>
     </section>
   </div>
-
-  <style>
-    .cat-tab-heading{display:flex;align-items:baseline;gap:10px;margin:0 0 18px}
-    .cat-tab-dot{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 12px color-mix(in srgb, var(--c) 70%, transparent)}
-    .cat-tab-title{font-family:var(--f-display);font-weight:900;font-size:1.3rem;color:var(--c);letter-spacing:.02em}
-    .cat-tab-title-en{font-size:.74rem;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;font-weight:700}
-  </style>
 </Layout>
