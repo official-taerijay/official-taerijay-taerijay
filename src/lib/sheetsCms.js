@@ -157,10 +157,18 @@ export async function fetchSheetRows(sheetKey) {
 //   sub_en     : 카테고리 영문명 (예: Mask Pack)
 //   sub_free   : "TRUE"/"1"/"free" 등 → 무료 카테고리 표시(FREE 배지 + 로그인 없이 열람)
 //   sub_order  : 정렬 순서(숫자, 작을수록 앞) — 비우면 시트에 처음 등장한 순서 사용
+// 구글시트 CSV 파서는 항상 문자열을 주지만, 로컬 JSON 폴백 데이터는 sub_order 같은
+// 필드가 숫자 타입으로 저장돼 있을 수 있다. .trim()은 문자열에만 있는 메서드라
+// 숫자/undefined/null이 오면 그대로 호출 시 TypeError로 500 에러가 나므로,
+// 항상 String()으로 먼저 문자열화해 방어한다.
+export function toStr(v) {
+  return v === undefined || v === null ? '' : String(v).trim();
+}
+
 export function deriveCategoriesFromRows(rows) {
   const bySlug = new Map();
   rows.forEach((row, idx) => {
-    const slug = (row.sub || '').trim();
+    const slug = toStr(row.sub);
     if (!slug) return;
     if (!bySlug.has(slug)) {
       bySlug.set(slug, {
@@ -174,11 +182,11 @@ export function deriveCategoriesFromRows(rows) {
     }
     const cat = bySlug.get(slug);
     cat.count += 1;
-    if (!cat.kr && row.sub_kr) cat.kr = row.sub_kr.trim();
-    if (!cat.en && row.sub_en) cat.en = row.sub_en.trim();
-    const freeVal = (row.sub_free || '').trim().toLowerCase();
+    if (!cat.kr && row.sub_kr) cat.kr = toStr(row.sub_kr);
+    if (!cat.en && row.sub_en) cat.en = toStr(row.sub_en);
+    const freeVal = toStr(row.sub_free).toLowerCase();
     if (['true', '1', 'free', 'y', 'yes'].includes(freeVal)) cat.free = true;
-    const orderVal = (row.sub_order || '').trim();
+    const orderVal = toStr(row.sub_order);
     if (orderVal && !Number.isNaN(Number(orderVal))) cat.order = Number(orderVal);
   });
   return [...bySlug.values()].sort((a, b) => a.order - b.order);

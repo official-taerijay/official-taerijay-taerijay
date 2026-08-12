@@ -25,7 +25,12 @@ try {
 } catch (e) {
   console.error('[mart-convenience-index] sheet fetch failed', e);
 }
-const sheetCategories = deriveCategoriesFromRows(allRows);
+let sheetCategories = [];
+try {
+  sheetCategories = deriveCategoriesFromRows(allRows);
+} catch (e) {
+  console.error('[mart-convenience-index] deriveCategoriesFromRows failed', e);
+}
 const merged = mergeSheetCategories('mart-convenience', sheetCategories) || CHANNEL_MAP['mart-convenience'];
 
 const brands = BRAND_SLUGS.map((slug) => {

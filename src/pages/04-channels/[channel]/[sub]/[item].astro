@@ -5,7 +5,7 @@ export const prerender = false;
 
 import Layout from '../../../../layouts/Layout.astro';
 import { CHANNEL_MAP, mergeSheetCategories } from '../../../../lib/channelCategories.js';
-import { fetchChannelRows, deriveCategoriesFromRows } from '../../../../lib/sheetsCms.js';
+import { fetchChannelRows, deriveCategoriesFromRows, toStr } from '../../../../lib/sheetsCms.js';
 import { withItemSlugs, splitBullets, splitSentences, extractSido, priceKrToUsdHint } from '../../../../lib/itemHelpers.js';
 
 // buy_kr 불릿 중 "가격대: 5,000원"처럼 원화 금액이 들어간 줄에 (약 USD x) 참고값을 붙여준다.
@@ -32,14 +32,20 @@ let rawItems = [];
 let loadError = false;
 try {
   allRows = await fetchChannelRows(channel);
-  rawItems = allRows.filter((r) => (r.sub || '').trim() === sub);
+  rawItems = allRows.filter((r) => toStr(r.sub) === sub);
 } catch (e) {
   console.error('[item-detail] sheet fetch failed', e);
   loadError = true;
 }
 
 // 시트의 sub_kr/sub_en/sub_free 컬럼으로 카테고리 메타(이름/무료여부)를 자동 인식.
-const sheetCategories = deriveCategoriesFromRows(allRows);
+// 도출 로직이 예기치 않은 데이터로 실패해도 CHANNEL_MAP 하드코딩 값으로 폴백해 500을 방지.
+let sheetCategories = [];
+try {
+  sheetCategories = deriveCategoriesFromRows(allRows);
+} catch (e) {
+  console.error('[item-detail] deriveCategoriesFromRows failed', e);
+}
 const channelData = mergeSheetCategories(channel, sheetCategories) || CHANNEL_MAP[channel];
 const subData = channelData?.subs?.[sub];
 

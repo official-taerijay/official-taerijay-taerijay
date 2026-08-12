@@ -13,7 +13,12 @@ try {
 } catch (e) {
   console.error('[protocol-index] sheet fetch failed', e);
 }
-const sheetCategories = deriveCategoriesFromRows(allRows);
+let sheetCategories = [];
+try {
+  sheetCategories = deriveCategoriesFromRows(allRows);
+} catch (e) {
+  console.error('[protocol-index] deriveCategoriesFromRows failed', e);
+}
 const merged = mergeSheetCategories('protocol', sheetCategories) || CHANNEL_MAP.protocol;
 const categories = Object.entries(merged.subs).map(([slug, cat]) => ({
   slug, label: cat.kr, labelEn: cat.en, free: !!cat.free,
