@@ -143,3 +143,49 @@ export async function fetchChannelRows(channel) {
 export async function fetchSheetRows(sheetKey) {
   return fetchChannelRows(sheetKey);
 }
+
+// ── 카테고리(서브페이지) 자동 도출 ──────────────────────────────────────
+// 코드에 카테고리를 하드코딩하지 않고, 시트의 항목 행에 있는
+// sub / sub_kr / sub_en / sub_free / sub_order 컬럼만으로 카테고리 목록을 만든다.
+// → 시트에 새 sub 값을 가진 행을 하나만 추가해도 그 카테고리가 자동 생성되고,
+//   그 sub의 모든 행을 지우면 카테고리도 자동으로 사라진다(재배포 불필요).
+//
+// 필요 컬럼(항목 시트에 추가):
+//   sub        : 카테고리 slug (예: mask-pack) — 기존에 이미 쓰던 컬럼
+//   sub_kr     : 카테고리 한글명 (예: 마스크팩) — 같은 sub의 모든 행에 동일하게 채우되,
+//                하나만 채워도 그 값을 그 카테고리 전체 이름으로 사용
+//   sub_en     : 카테고리 영문명 (예: Mask Pack)
+//   sub_free   : "TRUE"/"1"/"free" 등 → 무료 카테고리 표시(FREE 배지 + 로그인 없이 열람)
+//   sub_order  : 정렬 순서(숫자, 작을수록 앞) — 비우면 시트에 처음 등장한 순서 사용
+export function deriveCategoriesFromRows(rows) {
+  const bySlug = new Map();
+  rows.forEach((row, idx) => {
+    const slug = (row.sub || '').trim();
+    if (!slug) return;
+    if (!bySlug.has(slug)) {
+      bySlug.set(slug, {
+        slug,
+        kr: '',
+        en: '',
+        free: false,
+        order: idx,
+        count: 0,
+      });
+    }
+    const cat = bySlug.get(slug);
+    cat.count += 1;
+    if (!cat.kr && row.sub_kr) cat.kr = row.sub_kr.trim();
+    if (!cat.en && row.sub_en) cat.en = row.sub_en.trim();
+    const freeVal = (row.sub_free || '').trim().toLowerCase();
+    if (['true', '1', 'free', 'y', 'yes'].includes(freeVal)) cat.free = true;
+    const orderVal = (row.sub_order || '').trim();
+    if (orderVal && !Number.isNaN(Number(orderVal))) cat.order = Number(orderVal);
+  });
+  return [...bySlug.values()].sort((a, b) => a.order - b.order);
+}
+
+// fetchChannelRows + deriveCategoriesFromRows를 한 번에 — 채널 인덱스 페이지에서 사용.
+export async function fetchChannelCategories(channel) {
+  const rows = await fetchChannelRows(channel);
+  return deriveCategoriesFromRows(rows);
+}

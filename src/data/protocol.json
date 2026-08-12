@@ -9,18 +9,22 @@
     "addr_en": "Incheon Int'l Airport Animal Quarantine Counter (1F) / Get off at Incheon Int'l Airport T1 Station (AREX), Animal Quarantine at Arrival Hall 1F baggage carousel",
     "phone_kr": "",
     "hours_kr": "24시간 상시 운영 (항공기 도착 시간에 맞춰 대기)",
-    "tips_kr": "▪ 마이크로칩 삽입 및 광견병 항체가검사(0.5 IU/ml 이상) 완료 필요 — 필요 대기기간은 출발국·검역 조건에 따라 다르므로 반드시 사전 확인 (정보 확인 필요)\n▪ 농림축산검역본부(QIA) 공식 홈페이지에서 자신의 출발국 기준 최신 정보 확인 필수\n▪ 검역 서류 미비 시 계류장 격리 조치될 수 있음",
-    "tips_en": "▪ Microchip & rabies neutralizing antibody test (0.5 IU/ml+) required — exact waiting period varies by departure country, verify with QIA in advance (info verification needed)\n▪ Check QIA (Animal and Plant Quarantine Agency) website for rules specific to your departure country\n▪ Incomplete documents may result in quarantine holding facility isolation",
+    "tips_kr": "▪ 마이크로칩 삽입 및 광견병 항체가검사(0.5 IU/ml 이상) 완료 필요\n▪ 필요 대기기간은 출발국·검역 조건에 따라 다르므로 반드시 사전 확인 (정보 확인 필요)\n▪ 농림축산검역본부(QIA) 공식 홈페이지에서 자신의 출발국 기준 최신 정보 확인 필수\n▪ 검역 서류 미비 시 계류장 격리 조치될 수 있음",
+    "tips_en": "▪ Microchip & rabies neutralizing antibody test (0.5 IU/ml+) required\n▪ Exact waiting period varies by departure country, verify with QIA in advance (info verification needed)\n▪ Check QIA (Animal and Plant Quarantine Agency) website for rules specific to your departure country\n▪ Incomplete documents may result in quarantine holding facility isolation",
     "naver_map": "https://map.naver.com/v5/search/인천국제공항",
     "kakao_map": "https://map.kakao.com/link/search/인천국제공항",
     "web": "https://www.qia.go.kr",
     "publish_at": "",
     "getoff_kr": "🚇 공항철도(AREX) 인천공항T1역 하차 후 입국장 이동",
     "getoff_en": "🚇 Get off at Incheon Int'l Airport T1 Station (AREX)",
-    "direction_kr": "📍 인천공항T1역: 도보 이동 → 입국장 1층 동물검역대(수화물수취대 앞)",
-    "direction_en": "📍 Incheon Airport T1 Station: walk → Arrival Hall 1F Animal Quarantine (near baggage carousel)",
+    "direction_kr": "인천공항T1역: 도보 이동 → 입국장 1층 동물검역대(수화물수취대 앞)",
+    "direction_en": "Incheon Airport T1 Station: walk → Arrival Hall 1F Animal Quarantine (near baggage carousel)",
     "keywords_kr": "인천공항▪동물검역▪반려동물입국▪QIA",
-    "hashtags": "petentry▪incheonairport▪quarantine▪travelwithpets"
+    "hashtags": "petentry▪incheonairport▪quarantine▪travelwithpets",
+    "sub_kr": "입국 법적 정보",
+    "sub_en": "Entry & Legal Info",
+    "sub_free": "TRUE",
+    "sub_order": 0
   },
   {
     "sub": "legal-info",
@@ -43,7 +47,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "K-ETA▪전자여행허가▪무비자입국",
-    "hashtags": "keta▪visafree▪koreaentry▪travelauth"
+    "hashtags": "keta▪visafree▪koreaentry▪travelauth",
+    "sub_kr": "입국 법적 정보",
+    "sub_en": "Entry & Legal Info",
+    "sub_free": "TRUE",
+    "sub_order": 0
   },
   {
     "sub": "legal-info",
@@ -63,10 +71,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 공항철도(AREX) 인천공항T1역 하차 후 세관 신고대 이동",
     "getoff_en": "🚇 Get off at Incheon Int'l Airport T1 Station (AREX)",
-    "direction_kr": "📍 인천공항T1역: 도보 이동 → 제1여객터미널 세관 신고대",
-    "direction_en": "📍 Incheon Airport T1 Station: walk → Terminal 1 Customs Declaration Desk",
+    "direction_kr": "인천공항T1역: 도보 이동 → 제1여객터미널 세관 신고대",
+    "direction_en": "Incheon Airport T1 Station: walk → Terminal 1 Customs Declaration Desk",
     "keywords_kr": "인천공항세관▪반입금지물품▪관세청",
-    "hashtags": "customs▪prohibiteditems▪incheonairport▪koreacustoms"
+    "hashtags": "customs▪prohibiteditems▪incheonairport▪koreacustoms",
+    "sub_kr": "입국 법적 정보",
+    "sub_en": "Entry & Legal Info",
+    "sub_free": "TRUE",
+    "sub_order": 0
   },
   {
     "sub": "essential-apps",
@@ -89,7 +101,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "미세먼지▪에어코리아▪황사▪대기질",
-    "hashtags": "airquality▪finedust▪airkorea▪yellowdust"
+    "hashtags": "airquality▪finedust▪airkorea▪yellowdust",
+    "sub_kr": "필수 앱·웹사이트",
+    "sub_en": "Essential Apps",
+    "sub_free": "",
+    "sub_order": 7
   },
   {
     "sub": "mobile-number-wifi",
@@ -109,10 +125,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 공항철도(AREX) 인천공항1터미널역 하차 후 3층 출국장 이동",
     "getoff_en": "🚇 Get off at Incheon Airport T1 Station (AREX), go to 3F departure hall",
-    "direction_kr": "📍 인천공항1터미널역: 도보 이동 → 3층 출국장 KT·SKT·LGU+ 로밍센터",
-    "direction_en": "📍 Incheon Airport T1 Station: walk → 3F Departure Hall KT/SKT/LGU+ Roaming Centers",
+    "direction_kr": "인천공항1터미널역: 도보 이동 → 3층 출국장 KT·SKT·LGU+ 로밍센터",
+    "direction_en": "Incheon Airport T1 Station: walk → 3F Departure Hall KT/SKT/LGU+ Roaming Centers",
     "keywords_kr": "포켓와이파이▪eSIM▪인천공항로밍센터▪유심",
-    "hashtags": "pocketwifi▪esim▪koreasim▪roaming"
+    "hashtags": "pocketwifi▪esim▪koreasim▪roaming",
+    "sub_kr": "번호 발급·와이파이",
+    "sub_en": "Phone Number & WiFi",
+    "sub_free": "",
+    "sub_order": 6
   },
   {
     "sub": "hotspot",
@@ -132,10 +152,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 3호선 경복궁역 5번 출구 하차 (궁 내부 직결) / 국립중앙박물관은 4·6호선 이촌역 2번 출구",
     "getoff_en": "🚇 Get off at Gyeongbokgung Station (Line 3) Exit 5, direct access / National Museum: Ichon Station (Line 4/6) Exit 2",
-    "direction_kr": "📍 경복궁역 5번 출구: 궁 내부 직결 이동 → 경복궁 / 이촌역 2번 출구: 도보 5분 → 국립중앙박물관",
-    "direction_en": "📍 Gyeongbokgung Station Exit 5: direct access → Gyeongbokgung Palace / Ichon Station Exit 2: 5-min walk → National Museum of Korea",
+    "direction_kr": "경복궁역 5번 출구: 궁 내부 직결 이동 → 경복궁 / 이촌역 2번 출구: 도보 5분 → 국립중앙박물관",
+    "direction_en": "Gyeongbokgung Station Exit 5: direct access → Gyeongbokgung Palace / Ichon Station Exit 2: 5-min walk → National Museum of Korea",
     "keywords_kr": "무장애여행▪경복궁▪국립중앙박물관▪휠체어",
-    "hashtags": "barrierfree▪wheelchairaccess▪gyeongbokgung▪seoultravel"
+    "hashtags": "barrierfree▪wheelchairaccess▪gyeongbokgung▪seoultravel",
+    "sub_kr": "그 외 핫템·핫플",
+    "sub_en": "Hot Items & Spots",
+    "sub_free": "",
+    "sub_order": 11
   },
   {
     "sub": "hotspot",
@@ -155,10 +179,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 1·3·5호선 종로3가역 또는 5·6호선 공덕역 하차 후 고객안전실 이동",
     "getoff_en": "🚇 Get off at Jongno 3(sam)-ga Station (Line 1/3/5) or Gongdeok Station (Line 5/6)",
-    "direction_kr": "📍 종로3가역/공덕역: 도보 이동 → 고객안전실(임산부 배지 수령)",
-    "direction_en": "📍 Jongno 3-ga / Gongdeok Station: walk → Customer Service Room (pregnancy badge pickup)",
+    "direction_kr": "종로3가역/공덕역: 도보 이동 → 고객안전실(임산부 배지 수령)",
+    "direction_en": "Jongno 3-ga / Gongdeok Station: walk → Customer Service Room (pregnancy badge pickup)",
     "keywords_kr": "임산부배지▪임산부여행▪고객안전실▪보건소",
-    "hashtags": "pregnancytravel▪maternitybadge▪koreatravel▪publictransit"
+    "hashtags": "pregnancytravel▪maternitybadge▪koreatravel▪publictransit",
+    "sub_kr": "그 외 핫템·핫플",
+    "sub_en": "Hot Items & Spots",
+    "sub_free": "",
+    "sub_order": 11
   },
   {
     "sub": "restaurant",
@@ -181,7 +209,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "비건식당▪사찰음식▪해피카우▪비건여행",
-    "hashtags": "vegan▪plantbased▪templefood▪happycow"
+    "hashtags": "vegan▪plantbased▪templefood▪happycow",
+    "sub_kr": "맛집",
+    "sub_en": "Restaurant",
+    "sub_free": "",
+    "sub_order": 9
   },
   {
     "sub": "hotspot",
@@ -201,10 +233,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 코스별 지하철역 상이 — 각 명소 최인접역 하차 후 도보 이동",
     "getoff_en": "🚇 Varies by stop — get off at nearest subway station to each attraction",
-    "direction_kr": "📍 각 명소 최인접 지하철역: 도보 이동 → 목적지",
-    "direction_en": "📍 Nearest subway station: walk → each attraction",
+    "direction_kr": "각 명소 최인접 지하철역: 도보 이동 → 목적지",
+    "direction_en": "Nearest subway station: walk → each attraction",
     "keywords_kr": "가족여행▪서울코스▪아이동반▪한복체험",
-    "hashtags": "familytravel▪seoulwithkids▪kidfriendly▪koreatravel"
+    "hashtags": "familytravel▪seoulwithkids▪kidfriendly▪koreatravel",
+    "sub_kr": "그 외 핫템·핫플",
+    "sub_en": "Hot Items & Spots",
+    "sub_free": "",
+    "sub_order": 11
   },
   {
     "sub": "essential-apps",
@@ -224,10 +260,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 인근 지하철역 하차 후 도보 이동 (전국 대부분 도보 5분 내 위치)",
     "getoff_en": "🚇 Get off at any nearby subway station — usually within a 5-min walk",
-    "direction_kr": "📍 인근 지하철역: 도보 5분 이내 → 편의점",
-    "direction_en": "📍 Nearest subway station: within 5-min walk → convenience store",
+    "direction_kr": "인근 지하철역: 도보 5분 이내 → 편의점",
+    "direction_en": "Nearest subway station: within 5-min walk → convenience store",
     "keywords_kr": "편의점▪전자레인지▪ATM해외카드▪도시락할인",
-    "hashtags": "cvs▪koreanconveniencestore▪traveltips▪24hours"
+    "hashtags": "cvs▪koreanconveniencestore▪traveltips▪24hours",
+    "sub_kr": "필수 앱·웹사이트",
+    "sub_en": "Essential Apps",
+    "sub_free": "",
+    "sub_order": 7
   },
   {
     "sub": "restaurant",
@@ -247,10 +287,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 6호선 이태원역 3번 출구 하차 (이슬람중앙성원 방면)",
     "getoff_en": "🚇 Get off at Itaewon Station (Line 6) Exit 3, toward Seoul Central Mosque",
-    "direction_kr": "📍 이태원역 3번 출구: 도보 5분 → 할랄 식당 밀집 지역",
-    "direction_en": "📍 Itaewon Station Exit 3: 5-min walk → Halal restaurant district",
+    "direction_kr": "이태원역 3번 출구: 도보 5분 → 할랄 식당 밀집 지역",
+    "direction_en": "Itaewon Station Exit 3: 5-min walk → Halal restaurant district",
     "keywords_kr": "할랄식당▪이태원▪무슬림여행▪중앙모스크",
-    "hashtags": "halalfood▪itaewon▪muslimtravel▪halalkorea"
+    "hashtags": "halalfood▪itaewon▪muslimtravel▪halalkorea",
+    "sub_kr": "맛집",
+    "sub_en": "Restaurant",
+    "sub_free": "",
+    "sub_order": 9
   },
   {
     "sub": "restaurant",
@@ -270,10 +314,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 2호선 해운대역 5번 출구 하차",
     "getoff_en": "🚇 Get off at Haeundae Station (Line 2) Exit 5",
-    "direction_kr": "📍 해운대역 5번 출구: 도보 10분 → 수변최고돼지국밥 해운대점",
-    "direction_en": "📍 Haeundae Station Exit 5: 10-min walk → Subyeon Choigo Doeji Gukbap Haeundae",
+    "direction_kr": "해운대역 5번 출구: 도보 10분 → 수변최고돼지국밥 해운대점",
+    "direction_en": "Haeundae Station Exit 5: 10-min walk → Subyeon Choigo Doeji Gukbap Haeundae",
     "keywords_kr": "해운대▪돼지국밥▪부산맛집▪순대국밥",
-    "hashtags": "haeundae▪busanfood▪porksoup▪dwaejigukbap"
+    "hashtags": "haeundae▪busanfood▪porksoup▪dwaejigukbap",
+    "sub_kr": "맛집",
+    "sub_en": "Restaurant",
+    "sub_free": "",
+    "sub_order": 9
   },
   {
     "sub": "restaurant",
@@ -293,10 +341,14 @@
     "publish_at": "",
     "getoff_kr": "🚌 시내버스 '관광수산시장' 정류장 하차",
     "getoff_en": "🚌 Get off at 'Gwangwang Susan Sijang' city bus stop",
-    "direction_kr": "📍 관광수산시장 정류장: 도보 5분 → 만석닭강정 중앙시장점",
-    "direction_en": "📍 Gwangwang Susan Sijang bus stop: 5-min walk → Manseok Dakgangjeong Jungang Market",
+    "direction_kr": "관광수산시장 정류장: 도보 5분 → 만석닭강정 중앙시장점",
+    "direction_en": "Gwangwang Susan Sijang bus stop: 5-min walk → Manseok Dakgangjeong Jungang Market",
     "keywords_kr": "속초중앙시장▪닭강정▪만석닭강정▪속초맛집",
-    "hashtags": "sokcho▪dakgangjeong▪jungangmarket▪koreanstreetfood"
+    "hashtags": "sokcho▪dakgangjeong▪jungangmarket▪koreanstreetfood",
+    "sub_kr": "맛집",
+    "sub_en": "Restaurant",
+    "sub_free": "",
+    "sub_order": 9
   },
   {
     "sub": "restaurant",
@@ -316,10 +368,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 1호선 종각역 3-1번 출구 하차",
     "getoff_en": "🚇 Get off at Jonggak Station (Line 1) Exit 3-1",
-    "direction_kr": "📍 종각역 3-1번 출구: 도보 5분 → 이문설농탕",
-    "direction_en": "📍 Jonggak Station Exit 3-1: 5-min walk → Imun Seolnongtang",
+    "direction_kr": "종각역 3-1번 출구: 도보 5분 → 이문설농탕",
+    "direction_en": "Jonggak Station Exit 3-1: 5-min walk → Imun Seolnongtang",
     "keywords_kr": "설렁탕▪이문설농탕▪종각▪한국전통음식",
-    "hashtags": "seolleongtang▪koreanfood▪jonggak▪oxbonesoup"
+    "hashtags": "seolleongtang▪koreanfood▪jonggak▪oxbonesoup",
+    "sub_kr": "맛집",
+    "sub_en": "Restaurant",
+    "sub_free": "",
+    "sub_order": 9
   },
   {
     "sub": "restaurant",
@@ -339,10 +395,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 4호선 명동역 6번 출구 하차",
     "getoff_en": "🚇 Get off at Myeongdong Station (Line 4) Exit 6",
-    "direction_kr": "📍 명동역 6번 출구: 도보 3분 → 명동성당·눈스퀘어 방면 포장마차거리",
-    "direction_en": "📍 Myeongdong Station Exit 6: 3-min walk → toward Myeongdong Cathedral/Noon Square food stall street",
+    "direction_kr": "명동역 6번 출구: 도보 3분 → 명동성당·눈스퀘어 방면 포장마차거리",
+    "direction_en": "Myeongdong Station Exit 6: 3-min walk → toward Myeongdong Cathedral/Noon Square food stall street",
     "keywords_kr": "포장마차▪명동분식▪길거리음식▪떡볶이",
-    "hashtags": "streetfood▪myeongdong▪tteokbokki▪koreanstreetfood"
+    "hashtags": "streetfood▪myeongdong▪tteokbokki▪koreanstreetfood",
+    "sub_kr": "맛집",
+    "sub_en": "Restaurant",
+    "sub_free": "",
+    "sub_order": 9
   },
   {
     "sub": "restaurant",
@@ -362,10 +422,14 @@
     "publish_at": "",
     "getoff_kr": "🚌 안동버스터미널 하차 후 도보 이동",
     "getoff_en": "🚌 Get off at Andong Bus Terminal",
-    "direction_kr": "📍 안동버스터미널: 도보 10분 → 원조안동찜닭 본점(구시장 찜닭골목)",
-    "direction_en": "📍 Andong Bus Terminal: 10-min walk → Wonjo Andong Jjimdak (Gusijang Jjimdak Alley)",
+    "direction_kr": "안동버스터미널: 도보 10분 → 원조안동찜닭 본점(구시장 찜닭골목)",
+    "direction_en": "Andong Bus Terminal: 10-min walk → Wonjo Andong Jjimdak (Gusijang Jjimdak Alley)",
     "keywords_kr": "안동찜닭▪찜닭골목▪구시장▪안동맛집",
-    "hashtags": "andong▪jjimdak▪braisedchicken▪koreanfood"
+    "hashtags": "andong▪jjimdak▪braisedchicken▪koreanfood",
+    "sub_kr": "맛집",
+    "sub_en": "Restaurant",
+    "sub_free": "",
+    "sub_order": 9
   },
   {
     "sub": "restaurant",
@@ -385,10 +449,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 6호선 이태원역 3번 출구 하차",
     "getoff_en": "🚇 Get off at Itaewon Station (Line 6) Exit 3",
-    "direction_kr": "📍 이태원역 3번 출구: 도보 10분 → 서울중앙성원 일대 (케르반 레스토랑 등)",
-    "direction_en": "📍 Itaewon Station Exit 3: 10-min walk → Seoul Central Mosque area (Kervan Restaurant, etc.)",
+    "direction_kr": "이태원역 3번 출구: 도보 10분 → 서울중앙성원 일대 (케르반 레스토랑 등)",
+    "direction_en": "Itaewon Station Exit 3: 10-min walk → Seoul Central Mosque area (Kervan Restaurant, etc.)",
     "keywords_kr": "이태원할랄식당▪케르반▪마칸▪서울중앙성원",
-    "hashtags": "halalitaewon▪kervan▪muslimfriendly▪itaewonfood"
+    "hashtags": "halalitaewon▪kervan▪muslimfriendly▪itaewonfood",
+    "sub_kr": "맛집",
+    "sub_en": "Restaurant",
+    "sub_free": "",
+    "sub_order": 9
   },
   {
     "sub": "hotspot",
@@ -411,7 +479,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "4월날씨▪환절기옷차림▪벚꽃시즌▪황사",
-    "hashtags": "aprilweather▪koreaweather▪springtravel▪whattowear"
+    "hashtags": "aprilweather▪koreaweather▪springtravel▪whattowear",
+    "sub_kr": "그 외 핫템·핫플",
+    "sub_en": "Hot Items & Spots",
+    "sub_free": "",
+    "sub_order": 11
   },
   {
     "sub": "hotspot",
@@ -434,7 +506,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "단풍시기▪설악산▪남산▪가을여행",
-    "hashtags": "autumnfoliage▪seoraksan▪koreaautumn▪fallcolors"
+    "hashtags": "autumnfoliage▪seoraksan▪koreaautumn▪fallcolors",
+    "sub_kr": "그 외 핫템·핫플",
+    "sub_en": "Hot Items & Spots",
+    "sub_free": "",
+    "sub_order": 11
   },
   {
     "sub": "cafe",
@@ -454,10 +530,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 3호선 안국역 6번 출구 하차",
     "getoff_en": "🚇 Get off at Anguk Station (Line 3) Exit 6",
-    "direction_kr": "📍 안국역 6번 출구: 도보 5분 → 인사동길 전통찻집(경인미술관 전통다원 등)",
-    "direction_en": "📍 Anguk Station Exit 6: 5-min walk → Insadong-gil traditional teahouses (Gyeongin Museum Tea Garden, etc.)",
+    "direction_kr": "안국역 6번 출구: 도보 5분 → 인사동길 전통찻집(경인미술관 전통다원 등)",
+    "direction_en": "Anguk Station Exit 6: 5-min walk → Insadong-gil traditional teahouses (Gyeongin Museum Tea Garden, etc.)",
     "keywords_kr": "인사동찻집▪쌍화차▪전통다원▪안국역",
-    "hashtags": "insadong▪traditionaltea▪hanok▪ssanghwacha"
+    "hashtags": "insadong▪traditionaltea▪hanok▪ssanghwacha",
+    "sub_kr": "카페",
+    "sub_en": "Cafe",
+    "sub_free": "",
+    "sub_order": 10
   },
   {
     "sub": "hotspot",
@@ -477,10 +557,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 2·8호선 잠실역 4번 출구 하차",
     "getoff_en": "🚇 Get off at Jamsil Station (Line 2/8) Exit 4",
-    "direction_kr": "📍 잠실역 4번 출구: 도보 2분 → 롯데월드 어드벤처",
-    "direction_en": "📍 Jamsil Station Exit 4: 2-min walk → Lotte World Adventure",
+    "direction_kr": "잠실역 4번 출구: 도보 2분 → 롯데월드 어드벤처",
+    "direction_en": "Jamsil Station Exit 4: 2-min walk → Lotte World Adventure",
     "keywords_kr": "롯데월드▪매직패스▪잠실역▪놀이공원",
-    "hashtags": "lotteworld▪magicpass▪jamsil▪themepark"
+    "hashtags": "lotteworld▪magicpass▪jamsil▪themepark",
+    "sub_kr": "그 외 핫템·핫플",
+    "sub_en": "Hot Items & Spots",
+    "sub_free": "",
+    "sub_order": 11
   },
   {
     "sub": "legal-info",
@@ -500,10 +584,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 4호선 명동역 6번 출구 하차",
     "getoff_en": "🚇 Get off at Myeongdong Station (Line 4) Exit 6",
-    "direction_kr": "📍 명동역 6번 출구: 도보 3분 → 명동 Tax Free 환급소",
-    "direction_en": "📍 Myeongdong Station Exit 6: 3-min walk → Myeongdong Tax Free refund counter",
+    "direction_kr": "명동역 6번 출구: 도보 3분 → 명동 Tax Free 환급소",
+    "direction_en": "Myeongdong Station Exit 6: 3-min walk → Myeongdong Tax Free refund counter",
     "keywords_kr": "부가세환급▪팁문화▪택스프리▪명동환급소",
-    "hashtags": "vatrefund▪taxfree▪notipping▪koreashopping"
+    "hashtags": "vatrefund▪taxfree▪notipping▪koreashopping",
+    "sub_kr": "입국 법적 정보",
+    "sub_en": "Entry & Legal Info",
+    "sub_free": "TRUE",
+    "sub_order": 0
   },
   {
     "sub": "legal-info",
@@ -523,10 +611,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 4호선 명동역 6번 출구 또는 2호선 강남역 하차",
     "getoff_en": "🚇 Get off at Myeongdong Station (Line 4) Exit 6 or Gangnam Station (Line 2)",
-    "direction_kr": "📍 명동역 6번 출구/강남역: 도보 이동 → 택스 프리 무인 환급기",
-    "direction_en": "📍 Myeongdong/Gangnam Station: walk → Tax Free self-service kiosk",
+    "direction_kr": "명동역 6번 출구/강남역: 도보 이동 → 택스 프리 무인 환급기",
+    "direction_en": "Myeongdong/Gangnam Station: walk → Tax Free self-service kiosk",
     "keywords_kr": "택스프리환급기▪명동환급소▪강남환급소▪부가세환급",
-    "hashtags": "taxfreekiosk▪vatrefund▪myeongdong▪gangnam"
+    "hashtags": "taxfreekiosk▪vatrefund▪myeongdong▪gangnam",
+    "sub_kr": "입국 법적 정보",
+    "sub_en": "Entry & Legal Info",
+    "sub_free": "TRUE",
+    "sub_order": 0
   },
   {
     "sub": "transit",
@@ -549,7 +641,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "카카오T▪택시호출▪카카오T블루",
-    "hashtags": "kakaot▪koreataxi▪rideshare▪traveltips"
+    "hashtags": "kakaot▪koreataxi▪rideshare▪traveltips",
+    "sub_kr": "대중교통",
+    "sub_en": "Public Transit",
+    "sub_free": "",
+    "sub_order": 5
   },
   {
     "sub": "transit",
@@ -572,7 +668,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "따릉이▪서울공공자전거▪한강공원▪서울숲",
-    "hashtags": "ttareungyi▪seoulbike▪hanriver▪bikerental"
+    "hashtags": "ttareungyi▪seoulbike▪hanriver▪bikerental",
+    "sub_kr": "대중교통",
+    "sub_en": "Public Transit",
+    "sub_free": "",
+    "sub_order": 5
   },
   {
     "sub": "hotspot",
@@ -592,10 +692,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 각 지점 최인접 지하철역 하차 (대부분 역세권 위치)",
     "getoff_en": "🚇 Get off at the nearest subway station — most branches are near stations",
-    "direction_kr": "📍 최인접 지하철역: 도보 이동 → 호텔 체인 지점",
-    "direction_en": "📍 Nearest subway station: walk → hotel branch",
+    "direction_kr": "최인접 지하철역: 도보 이동 → 호텔 체인 지점",
+    "direction_en": "Nearest subway station: walk → hotel branch",
     "keywords_kr": "신라스테이▪나인트리▪이비스▪비즈니스호텔",
-    "hashtags": "businesshotel▪shillastay▪ibis▪koreahotel"
+    "hashtags": "businesshotel▪shillastay▪ibis▪koreahotel",
+    "sub_kr": "그 외 핫템·핫플",
+    "sub_en": "Hot Items & Spots",
+    "sub_free": "",
+    "sub_order": 11
   },
   {
     "sub": "hotspot",
@@ -615,10 +719,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 4호선 명동역 6번 출구 하차",
     "getoff_en": "🚇 Get off at Myeongdong Station (Line 4) Exit 6",
-    "direction_kr": "📍 명동역 6번 출구: 도보 5분 → 이비스 스타일 앰배서더 서울 명동",
-    "direction_en": "📍 Myeongdong Station Exit 6: 5-min walk → Ibis Styles Ambassador Seoul Myeongdong",
+    "direction_kr": "명동역 6번 출구: 도보 5분 → 이비스 스타일 앰배서더 서울 명동",
+    "direction_en": "Myeongdong Station Exit 6: 5-min walk → Ibis Styles Ambassador Seoul Myeongdong",
     "keywords_kr": "명동호텔▪이비스스타일▪가성비호텔▪명동숙소",
-    "hashtags": "myeongdonghotel▪ibisstyles▪budgethotel▪koreastay"
+    "hashtags": "myeongdonghotel▪ibisstyles▪budgethotel▪koreastay",
+    "sub_kr": "그 외 핫템·핫플",
+    "sub_en": "Hot Items & Spots",
+    "sub_free": "",
+    "sub_order": 11
   },
   {
     "sub": "cafe",
@@ -638,10 +746,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 2호선 성수역 3번 출구 하차",
     "getoff_en": "🚇 Get off at Seongsu Station (Line 2) Exit 3",
-    "direction_kr": "📍 성수역 3번 출구: 도보 7분 → 대림창고·어니언 성수",
-    "direction_en": "📍 Seongsu Station Exit 3: 7-min walk → Daelim Changgo / Onion Seongsu",
+    "direction_kr": "성수역 3번 출구: 도보 7분 → 대림창고·어니언 성수",
+    "direction_en": "Seongsu Station Exit 3: 7-min walk → Daelim Changgo / Onion Seongsu",
     "keywords_kr": "성수동카페▪대림창고▪어니언성수▪성수역",
-    "hashtags": "seongsu▪seoulcafe▪daelimchanggo▪cafehopping"
+    "hashtags": "seongsu▪seoulcafe▪daelimchanggo▪cafehopping",
+    "sub_kr": "카페",
+    "sub_en": "Cafe",
+    "sub_free": "",
+    "sub_order": 10
   },
   {
     "sub": "cafe",
@@ -661,10 +773,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 2·6호선 및 공항철도 홍대입구역 3번 출구 하차",
     "getoff_en": "🚇 Get off at Hongik Univ. Station (Line 2/6, AREX) Exit 3",
-    "direction_kr": "📍 홍대입구역 3번 출구: 도보 5분 → 연남동 경의선숲길 카페 드 래빗",
-    "direction_en": "📍 Hongik Univ. Station Exit 3: 5-min walk → Cafe de Rabbit, Yeonnam Gyeongui Line Forest",
+    "direction_kr": "홍대입구역 3번 출구: 도보 5분 → 연남동 경의선숲길 카페 드 래빗",
+    "direction_en": "Hongik Univ. Station Exit 3: 5-min walk → Cafe de Rabbit, Yeonnam Gyeongui Line Forest",
     "keywords_kr": "연남동카페▪경의선숲길▪카페드래빗▪홍대입구역",
-    "hashtags": "yeonnamdong▪gyeonguiline▪seoulcafe▪forestpark"
+    "hashtags": "yeonnamdong▪gyeonguiline▪seoulcafe▪forestpark",
+    "sub_kr": "카페",
+    "sub_en": "Cafe",
+    "sub_free": "",
+    "sub_order": 10
   },
   {
     "sub": "restaurant",
@@ -684,10 +800,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 5호선 광화문역 3번 출구 하차",
     "getoff_en": "🚇 Get off at Gwanghwamun Station (Line 5) Exit 3",
-    "direction_kr": "📍 광화문역 3번 출구: 도보 5분 → 무교동낙지(무교동 낙지골목)",
-    "direction_en": "📍 Gwanghwamun Station Exit 3: 5-min walk → Mugyo-dong Nakji (Octopus Alley)",
+    "direction_kr": "광화문역 3번 출구: 도보 5분 → 무교동낙지(무교동 낙지골목)",
+    "direction_en": "Gwanghwamun Station Exit 3: 5-min walk → Mugyo-dong Nakji (Octopus Alley)",
     "keywords_kr": "무교동낙지골목▪광화문맛집▪회식맛집▪직장인회식",
-    "hashtags": "gwanghwamun▪mugyodong▪koreanoffice▪spicyoctopus"
+    "hashtags": "gwanghwamun▪mugyodong▪koreanoffice▪spicyoctopus",
+    "sub_kr": "맛집",
+    "sub_en": "Restaurant",
+    "sub_free": "",
+    "sub_order": 9
   },
   {
     "sub": "hotspot",
@@ -707,10 +827,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 3호선 안국역 6번 출구 하차 (또는 1·3·5호선 종로3가역 5번 출구)",
     "getoff_en": "🚇 Get off at Anguk Station (Line 3) Exit 6 (or Jongno 3-ga Station Line 1/3/5 Exit 5)",
-    "direction_kr": "📍 안국역 6번 출구: 도보 4분 → 쌈지길",
-    "direction_en": "📍 Anguk Station Exit 6: 4-min walk → Ssamzigil",
+    "direction_kr": "안국역 6번 출구: 도보 4분 → 쌈지길",
+    "direction_en": "Anguk Station Exit 6: 4-min walk → Ssamzigil",
     "keywords_kr": "쌈지길▪인사동쇼핑▪안국역▪전통기념품",
-    "hashtags": "ssamzigil▪insadong▪seoulshopping▪souvenirs"
+    "hashtags": "ssamzigil▪insadong▪seoulshopping▪souvenirs",
+    "sub_kr": "그 외 핫템·핫플",
+    "sub_en": "Hot Items & Spots",
+    "sub_free": "",
+    "sub_order": 11
   },
   {
     "sub": "emergency-help",
@@ -733,7 +857,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "1330▪관광통역안내전화▪외국인관광안내",
-    "hashtags": "1330▪koreatravelhotline▪touristinfo▪interpretation"
+    "hashtags": "1330▪koreatravelhotline▪touristinfo▪interpretation",
+    "sub_kr": "응급·긴급 통역",
+    "sub_en": "Emergency Help",
+    "sub_free": "TRUE",
+    "sub_order": 1
   },
   {
     "sub": "emergency-help",
@@ -756,7 +884,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "119▪응급신고▪화재구조▪소방청",
-    "hashtags": "119▪emergency▪fireandrescue▪koreasafety"
+    "hashtags": "119▪emergency▪fireandrescue▪koreasafety",
+    "sub_kr": "응급·긴급 통역",
+    "sub_en": "Emergency Help",
+    "sub_free": "TRUE",
+    "sub_order": 1
   },
   {
     "sub": "emergency-help",
@@ -779,7 +911,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "112▪경찰신고▪외국어통역▪범죄신고",
-    "hashtags": "112▪koreapolice▪emergency▪interpretation"
+    "hashtags": "112▪koreapolice▪emergency▪interpretation",
+    "sub_kr": "응급·긴급 통역",
+    "sub_en": "Emergency Help",
+    "sub_free": "TRUE",
+    "sub_order": 1
   },
   {
     "sub": "emergency-help",
@@ -802,7 +938,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "1345▪외국인종합안내센터▪출입국▪비자상담",
-    "hashtags": "1345▪immigration▪visahelp▪koreastay"
+    "hashtags": "1345▪immigration▪visahelp▪koreastay",
+    "sub_kr": "응급·긴급 통역",
+    "sub_en": "Emergency Help",
+    "sub_free": "TRUE",
+    "sub_order": 1
   },
   {
     "sub": "emergency-help",
@@ -825,7 +965,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "BBB코리아▪전화통역서비스▪1588-5644",
-    "hashtags": "bbbkorea▪interpretation▪phonetranslation▪emergencyhelp"
+    "hashtags": "bbbkorea▪interpretation▪phonetranslation▪emergencyhelp",
+    "sub_kr": "응급·긴급 통역",
+    "sub_en": "Emergency Help",
+    "sub_free": "TRUE",
+    "sub_order": 1
   },
   {
     "sub": "emergency-help",
@@ -845,10 +989,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 4호선 명동역 하차 후 명동관광특구 일대",
     "getoff_en": "🚇 Get off at Myeongdong Station (Line 4), within Myeongdong Special Tourism Zone",
-    "direction_kr": "📍 명동역: 도보 이동 → 명동관광특구 관광경찰 안내소",
-    "direction_en": "📍 Myeongdong Station: walk → Tourist Police kiosk, Myeongdong Special Tourism Zone",
+    "direction_kr": "명동역: 도보 이동 → 명동관광특구 관광경찰 안내소",
+    "direction_en": "Myeongdong Station: walk → Tourist Police kiosk, Myeongdong Special Tourism Zone",
     "keywords_kr": "관광경찰대▪명동관광특구▪TOURISTPOLICE",
-    "hashtags": "touristpolice▪myeongdong▪travelersafety▪koreahelp"
+    "hashtags": "touristpolice▪myeongdong▪travelersafety▪koreahelp",
+    "sub_kr": "응급·긴급 통역",
+    "sub_en": "Emergency Help",
+    "sub_free": "TRUE",
+    "sub_order": 1
   },
   {
     "sub": "emergency-help",
@@ -871,7 +1019,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "여행자보험▪응급실이용▪캐시리스▪보험청구",
-    "hashtags": "travelinsurance▪emergencycare▪cashless▪koreahealthcare"
+    "hashtags": "travelinsurance▪emergencycare▪cashless▪koreahealthcare",
+    "sub_kr": "응급·긴급 통역",
+    "sub_en": "Emergency Help",
+    "sub_free": "TRUE",
+    "sub_order": 1
   },
   {
     "sub": "incheon-airport",
@@ -891,10 +1043,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 제1터미널 3층 출국장 8·13번 게이트 또는 제2터미널 3층 출국장 4·5번 게이트 하차",
     "getoff_en": "🚇 Board at Terminal 1 3F Gates 8/13 or Terminal 2 3F Gates 4/5",
-    "direction_kr": "📍 제1터미널 3층: 게이트 앞 이동 → 셔틀버스 승차 → 제2터미널 (약 15~20분)",
-    "direction_en": "📍 Terminal 1 3F: walk to gate → board shuttle → Terminal 2 (approx. 15-20 min)",
+    "direction_kr": "제1터미널 3층: 게이트 앞 이동 → 셔틀버스 승차 → 제2터미널 (약 15~20분)",
+    "direction_en": "Terminal 1 3F: walk to gate → board shuttle → Terminal 2 (approx. 15-20 min)",
     "keywords_kr": "인천공항셔틀▪T1T2셔틀▪무료셔틀버스",
-    "hashtags": "incheonairport▪shuttlebus▪t1t2▪airporttransfer"
+    "hashtags": "incheonairport▪shuttlebus▪t1t2▪airporttransfer",
+    "sub_kr": "인천공항",
+    "sub_en": "Incheon Airport",
+    "sub_free": "TRUE",
+    "sub_order": 2
   },
   {
     "sub": "incheon-airport",
@@ -914,10 +1070,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 제1여객터미널역 또는 제2여객터미널역 (공항철도 승강장) 하차",
     "getoff_en": "🚇 Get off at Incheon Airport Terminal 1 or Terminal 2 Station (AREX platform)",
-    "direction_kr": "📍 제1·2터미널역: 지하 승강장 이동 → 공항철도 탑승 → 서울역",
-    "direction_en": "📍 Terminal 1/2 Station: go to underground platform → board AREX → Seoul Station",
+    "direction_kr": "제1·2터미널역: 지하 승강장 이동 → 공항철도 탑승 → 서울역",
+    "direction_en": "Terminal 1/2 Station: go to underground platform → board AREX → Seoul Station",
     "keywords_kr": "공항철도▪AREX▪직통열차▪서울역",
-    "hashtags": "arex▪airportrailroad▪incheonairport▪seoulstation"
+    "hashtags": "arex▪airportrailroad▪incheonairport▪seoulstation",
+    "sub_kr": "인천공항",
+    "sub_en": "Incheon Airport",
+    "sub_free": "TRUE",
+    "sub_order": 2
   },
   {
     "sub": "incheon-airport",
@@ -937,10 +1097,14 @@
     "publish_at": "",
     "getoff_kr": "🚌 제1여객터미널 1층 또는 제2여객터미널 1층 리무진버스 승차장 하차",
     "getoff_en": "🚌 Board at Terminal 1 or Terminal 2, 1F Limousine Bus Boarding Area",
-    "direction_kr": "📍 제1·2터미널 1층: 승차장 이동 → 리무진버스 탑승 → 서울역/강남/홍대 등",
-    "direction_en": "📍 Terminal 1/2, 1F: walk to boarding area → board limousine bus → Seoul Station/Gangnam/Hongdae",
+    "direction_kr": "제1·2터미널 1층: 승차장 이동 → 리무진버스 탑승 → 서울역/강남/홍대 등",
+    "direction_en": "Terminal 1/2, 1F: walk to boarding area → board limousine bus → Seoul Station/Gangnam/Hongdae",
     "keywords_kr": "공항리무진버스▪6001번▪서울시내버스▪인천공항버스",
-    "hashtags": "airportlimousine▪incheonairport▪seoulbus▪airporttransfer"
+    "hashtags": "airportlimousine▪incheonairport▪seoulbus▪airporttransfer",
+    "sub_kr": "인천공항",
+    "sub_en": "Incheon Airport",
+    "sub_free": "TRUE",
+    "sub_order": 2
   },
   {
     "sub": "incheon-airport",
@@ -960,10 +1124,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 제1여객터미널 3층 출국장 4·5·11번 게이트 부근 또는 제2여객터미널 1층·3층 하차",
     "getoff_en": "🚇 Terminal 1, 3F Departures near Gates 4/5/11, or Terminal 2, 1F & 3F",
-    "direction_kr": "📍 제1터미널 3층: 게이트 부근 이동 → 은행 환전 창구",
-    "direction_en": "📍 Terminal 1, 3F: walk near gates → bank currency exchange counter",
+    "direction_kr": "제1터미널 3층: 게이트 부근 이동 → 은행 환전 창구",
+    "direction_en": "Terminal 1, 3F: walk near gates → bank currency exchange counter",
     "keywords_kr": "인천공항환전▪하나은행▪우리은행▪환율우대",
-    "hashtags": "currencyexchange▪incheonairport▪forex▪koreanwon"
+    "hashtags": "currencyexchange▪incheonairport▪forex▪koreanwon",
+    "sub_kr": "인천공항",
+    "sub_en": "Incheon Airport",
+    "sub_free": "TRUE",
+    "sub_order": 2
   },
   {
     "sub": "incheon-airport",
@@ -983,10 +1151,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 제1여객터미널 1층 입국장 또는 3층 출국장 하차",
     "getoff_en": "🚇 Terminal 1, 1F Arrival Hall or 3F Departure Hall",
-    "direction_kr": "📍 제1터미널 1층 입국장: 통신사 부스 이동 → 유심 구매 / 3층: 편의점·자판기",
-    "direction_en": "📍 Terminal 1, 1F Arrival Hall: walk to carrier booths → purchase SIM / 3F: convenience stores & vending machines",
+    "direction_kr": "제1터미널 1층 입국장: 통신사 부스 이동 → 유심 구매 / 3층: 편의점·자판기",
+    "direction_en": "Terminal 1, 1F Arrival Hall: walk to carrier booths → purchase SIM / 3F: convenience stores & vending machines",
     "keywords_kr": "유심구매▪eSIM▪인천공항통신사▪SKT KT LGU+",
-    "hashtags": "simcard▪esim▪incheonairport▪koreatravel"
+    "hashtags": "simcard▪esim▪incheonairport▪koreatravel",
+    "sub_kr": "인천공항",
+    "sub_en": "Incheon Airport",
+    "sub_free": "TRUE",
+    "sub_order": 2
   },
   {
     "sub": "incheon-airport",
@@ -1006,10 +1178,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 공항철도(AREX)·리무진버스로 인천국제공항 제1터미널 또는 제2터미널 하차 후 터미널 내부 이동",
     "getoff_en": "🚇 Take AREX or airport limousine bus to Incheon Airport Terminal 1 or Terminal 2, then move within the terminal",
-    "direction_kr": "📍 제1터미널 3층 B카운터 / 제2터미널 3층 H카운터: 체크인 카운터 구역 도보 이동 → 짐보관 카운터",
-    "direction_en": "📍 Terminal 1 3F Counter B / Terminal 2 3F Counter H: Walk to check-in counter area → Baggage storage counter",
+    "direction_kr": "제1터미널 3층 B카운터 / 제2터미널 3층 H카운터: 체크인 카운터 구역 도보 이동 → 짐보관 카운터",
+    "direction_en": "Terminal 1 3F Counter B / Terminal 2 3F Counter H: Walk to check-in counter area → Baggage storage counter",
     "keywords_kr": "인천공항▪짐보관▪수하물보관소▪짐제로▪짐프로",
-    "hashtags": "IncheonAirport▪BaggageStorage▪LuggageService▪AirportTips▪Korea"
+    "hashtags": "IncheonAirport▪BaggageStorage▪LuggageService▪AirportTips▪Korea",
+    "sub_kr": "인천공항",
+    "sub_en": "Incheon Airport",
+    "sub_free": "TRUE",
+    "sub_order": 2
   },
   {
     "sub": "gimpo-airport",
@@ -1029,10 +1205,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 5·9호선, 공항철도, 김포골드라인 김포공항역 하차 후 청사 직결 통로 이용",
     "getoff_en": "🚇 Take Seoul Subway Line 5/9, AREX, or Gimpo Gold Line to Gimpo Airport Station, then use the terminal-connected passage",
-    "direction_kr": "📍 김포공항역: 지하철역과 직결된 통로 도보 이동 → 국제선청사 또는 국내선청사",
-    "direction_en": "📍 Gimpo Airport Station: Walk through the station-connected passage → International or Domestic Terminal",
+    "direction_kr": "김포공항역: 지하철역과 직결된 통로 도보 이동 → 국제선청사 또는 국내선청사",
+    "direction_en": "Gimpo Airport Station: Walk through the station-connected passage → International or Domestic Terminal",
     "keywords_kr": "김포공항▪국제선국내선▪셔틀버스▪김포공항역▪터미널이동",
-    "hashtags": "GimpoAirport▪TerminalTransfer▪ShuttleBus▪Seoul▪AirportGuide"
+    "hashtags": "GimpoAirport▪TerminalTransfer▪ShuttleBus▪Seoul▪AirportGuide",
+    "sub_kr": "김포공항",
+    "sub_en": "Gimpo Airport",
+    "sub_free": "TRUE",
+    "sub_order": 3
   },
   {
     "sub": "gimpo-airport",
@@ -1052,10 +1232,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 5·9호선, 공항철도(AREX), 김포골드라인 김포공항역 하차",
     "getoff_en": "🚇 Get off at Gimpo Airport Station via Subway Line 5/9, AREX, or Gimpo Gold Line",
-    "direction_kr": "📍 김포공항역: 환승통로 도보 이동 → 9호선 급행 또는 공항철도 탑승 → 서울 시내 방면",
-    "direction_en": "📍 Gimpo Airport Station: Walk through the transfer passage → Board Line 9 express or AREX → Toward downtown Seoul",
+    "direction_kr": "김포공항역: 환승통로 도보 이동 → 9호선 급행 또는 공항철도 탑승 → 서울 시내 방면",
+    "direction_en": "Gimpo Airport Station: Walk through the transfer passage → Board Line 9 express or AREX → Toward downtown Seoul",
     "keywords_kr": "김포공항역▪공항철도▪9호선급행▪서울시내이동▪지하철환승",
-    "hashtags": "GimpoAirport▪AREX▪Subway▪SeoulTransit▪KoreaTravel"
+    "hashtags": "GimpoAirport▪AREX▪Subway▪SeoulTransit▪KoreaTravel",
+    "sub_kr": "김포공항",
+    "sub_en": "Gimpo Airport",
+    "sub_free": "TRUE",
+    "sub_order": 3
   },
   {
     "sub": "gimpo-airport",
@@ -1075,10 +1259,14 @@
     "publish_at": "",
     "getoff_kr": "🚌 김포공항 국제선·국내선 청사 1층 승차장에서 리무진버스 6003번 탑승",
     "getoff_en": "🚌 Board Limousine Bus 6003 at the 1F platform of Gimpo Airport's International or Domestic Terminal",
-    "direction_kr": "📍 1층 4·5·6번 승차장: 버스 탑승 → 마포역·공덕역 경유 → 서울역 하차",
-    "direction_en": "📍 1F Platform 4/5/6: Board the bus → Via Mapo Station, Gongdeok Station → Get off at Seoul Station",
+    "direction_kr": "1층 4·5·6번 승차장: 버스 탑승 → 마포역·공덕역 경유 → 서울역 하차",
+    "direction_en": "1F Platform 4/5/6: Board the bus → Via Mapo Station, Gongdeok Station → Get off at Seoul Station",
     "keywords_kr": "리무진버스▪6003번▪김포공항▪서울역▪공항버스",
-    "hashtags": "LimousineBus▪GimpoAirport▪SeoulStation▪AirportBus▪Korea"
+    "hashtags": "LimousineBus▪GimpoAirport▪SeoulStation▪AirportBus▪Korea",
+    "sub_kr": "김포공항",
+    "sub_en": "Gimpo Airport",
+    "sub_free": "TRUE",
+    "sub_order": 3
   },
   {
     "sub": "gimpo-airport",
@@ -1098,10 +1286,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 김포공항역 하차 후 지하 환승통로(롯데몰 방향) 또는 9호선 환승통로 이용",
     "getoff_en": "🚇 Get off at Gimpo Airport Station, then head to the underground transfer passage (Lotte Mall direction) or Line 9 passage",
-    "direction_kr": "📍 김포공항역 지하 환승통로: 도보 이동 → 자동환전기 / 국제선청사 내 은행 창구",
-    "direction_en": "📍 Gimpo Airport Station underground passage: Walk → Currency exchange kiosk / Bank counter in International Terminal",
+    "direction_kr": "김포공항역 지하 환승통로: 도보 이동 → 자동환전기 / 국제선청사 내 은행 창구",
+    "direction_en": "Gimpo Airport Station underground passage: Walk → Currency exchange kiosk / Bank counter in International Terminal",
     "keywords_kr": "김포공항▪환전▪자동환전기▪롯데몰▪우리은행",
-    "hashtags": "CurrencyExchange▪GimpoAirport▪MoneyExchange▪KoreaTravel▪AirportTips"
+    "hashtags": "CurrencyExchange▪GimpoAirport▪MoneyExchange▪KoreaTravel▪AirportTips",
+    "sub_kr": "김포공항",
+    "sub_en": "Gimpo Airport",
+    "sub_free": "TRUE",
+    "sub_order": 3
   },
   {
     "sub": "gimpo-airport",
@@ -1121,10 +1313,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 김포공항역 하차 후 국제선청사 방향 이동",
     "getoff_en": "🚇 Get off at Gimpo Airport Station, then head toward the International Terminal",
-    "direction_kr": "📍 국제선청사 1층: 입국장 도보 이동 → 관광안내소",
-    "direction_en": "📍 International Terminal 1F: Walk to the arrival hall → Tourist Information Center",
+    "direction_kr": "국제선청사 1층: 입국장 도보 이동 → 관광안내소",
+    "direction_en": "International Terminal 1F: Walk to the arrival hall → Tourist Information Center",
     "keywords_kr": "김포공항▪관광안내소▪KAC고객센터▪입국장▪여행정보",
-    "hashtags": "TouristInfo▪GimpoAirport▪TravelHelp▪KoreaGuide▪AirportService"
+    "hashtags": "TouristInfo▪GimpoAirport▪TravelHelp▪KoreaGuide▪AirportService",
+    "sub_kr": "김포공항",
+    "sub_en": "Gimpo Airport",
+    "sub_free": "TRUE",
+    "sub_order": 3
   },
   {
     "sub": "jeju-airport",
@@ -1144,10 +1340,14 @@
     "publish_at": "",
     "getoff_kr": "🚌 제주국제공항 1층 도착 후 버스 승차장으로 이동",
     "getoff_en": "🚌 After arriving at Jeju International Airport 1F, head to the bus platform",
-    "direction_kr": "📍 1층 버스 승차장: 급행버스(101·102·110·120·130·150·181·182번 등) 탑승 → 제주시내·서귀포 방면",
-    "direction_en": "📍 1F bus platform: Board an express bus (101, 102, 110, 120, 130, 150, 181, 182, etc.) → Toward Jeju City or Seogwipo",
+    "direction_kr": "1층 버스 승차장: 급행버스(101·102·110·120·130·150·181·182번 등) 탑승 → 제주시내·서귀포 방면",
+    "direction_en": "1F bus platform: Board an express bus (101, 102, 110, 120, 130, 150, 181, 182, etc.) → Toward Jeju City or Seogwipo",
     "keywords_kr": "제주공항▪급행버스▪서귀포▪제주시내▪시내버스",
-    "hashtags": "JejuAirport▪ExpressBus▪JejuIsland▪PublicTransit▪KoreaTravel"
+    "hashtags": "JejuAirport▪ExpressBus▪JejuIsland▪PublicTransit▪KoreaTravel",
+    "sub_kr": "제주공항",
+    "sub_en": "Jeju Airport",
+    "sub_free": "TRUE",
+    "sub_order": 4
   },
   {
     "sub": "jeju-airport",
@@ -1167,10 +1367,14 @@
     "publish_at": "",
     "getoff_kr": "🚐 제주국제공항 1층 5번 게이트 외부로 이동 후 렌터카 업체별 무료 셔틀버스 탑승",
     "getoff_en": "🚐 Head outside Gate 5 on Jeju Airport 1F and board the free shuttle bus for your reserved rental car company",
-    "direction_kr": "📍 1층 5번 게이트 외부: 횡단보도 건너 이동 → 렌트카 종합안내센터 → 예약 업체 셔틀 탑승",
-    "direction_en": "📍 Outside Gate 5, 1F: Cross the crosswalk → Rental Car Information Center → Board your reserved company's shuttle",
+    "direction_kr": "1층 5번 게이트 외부: 횡단보도 건너 이동 → 렌트카 종합안내센터 → 예약 업체 셔틀 탑승",
+    "direction_en": "Outside Gate 5, 1F: Cross the crosswalk → Rental Car Information Center → Board your reserved company's shuttle",
     "keywords_kr": "제주공항▪렌터카셔틀▪5번게이트▪렌트카안내센터▪제주렌트카",
-    "hashtags": "JejuAirport▪RentalCar▪ShuttleBus▪JejuIsland▪KoreaTravel"
+    "hashtags": "JejuAirport▪RentalCar▪ShuttleBus▪JejuIsland▪KoreaTravel",
+    "sub_kr": "제주공항",
+    "sub_en": "Jeju Airport",
+    "sub_free": "TRUE",
+    "sub_order": 4
   },
   {
     "sub": "jeju-airport",
@@ -1190,10 +1394,14 @@
     "publish_at": "",
     "getoff_kr": "🚶 제주국제공항 1층 도착 후 5번 게이트 방향, 또는 3층으로 이동",
     "getoff_en": "🚶 After arriving at Jeju Airport 1F, head toward Gate 5, or move to 3F",
-    "direction_kr": "📍 1층 5번 게이트 옆(국제선 에스컬레이터 부근) 또는 3층 5번 게이트 옆: 도보 이동 → 짐보관소 카운터",
-    "direction_en": "📍 Next to Gate 5 on 1F (near international escalator) or next to Gate 5 on 3F: Walk → Baggage storage counter",
+    "direction_kr": "1층 5번 게이트 옆(국제선 에스컬레이터 부근) 또는 3층 5번 게이트 옆: 도보 이동 → 짐보관소 카운터",
+    "direction_en": "Next to Gate 5 on 1F (near international escalator) or next to Gate 5 on 3F: Walk → Baggage storage counter",
     "keywords_kr": "제주공항▪짐보관소▪수하물보관▪5번게이트▪제주여행",
-    "hashtags": "JejuAirport▪BaggageStorage▪LuggageService▪JejuIsland▪AirportTips"
+    "hashtags": "JejuAirport▪BaggageStorage▪LuggageService▪JejuIsland▪AirportTips",
+    "sub_kr": "제주공항",
+    "sub_en": "Jeju Airport",
+    "sub_free": "TRUE",
+    "sub_order": 4
   },
   {
     "sub": "jeju-airport",
@@ -1213,14 +1421,18 @@
     "publish_at": "",
     "getoff_kr": "🚶 제주국제공항 1층 도착장에서 하차",
     "getoff_en": "🚶 Arrive at Jeju Airport 1F arrival hall",
-    "direction_kr": "📍 1층 도착장: 도보 이동 → 통신 3사 유심 부스 및 자동판매기 / 관광안내소",
-    "direction_en": "📍 1F Arrival Hall: Walk → Telecom carrier USIM booths and vending machines / Tourist Information Center",
+    "direction_kr": "1층 도착장: 도보 이동 → 통신 3사 유심 부스 및 자동판매기 / 관광안내소",
+    "direction_en": "1F Arrival Hall: Walk → Telecom carrier USIM booths and vending machines / Tourist Information Center",
     "keywords_kr": "제주공항▪유심▪이심▪관광안내소▪도착장",
-    "hashtags": "JejuAirport▪USIM▪eSIM▪TouristInfo▪JejuIsland"
+    "hashtags": "JejuAirport▪USIM▪eSIM▪TouristInfo▪JejuIsland",
+    "sub_kr": "제주공항",
+    "sub_en": "Jeju Airport",
+    "sub_free": "TRUE",
+    "sub_order": 4
   },
   {
     "sub": "kent",
-    "title_kr": "하이브(HYBE) 사옥 & 하이브 인사이트",
+    "title_kr": "하이브(HYBE) 사옥 & 하이브 인사이트 / [용산구] [한강로3가]",
     "title_en": "HYBE Headquarters & HYBE Insight",
     "desc_kr": "방탄소년단(BTS) 소속사 하이브의 용산 사옥. 지상 19층 규모로 사옥 내부는 일반인 출입이 불가하지만, 지하 1~2층에 있는 유료 전시공간 'HYBE INSIGHT'는 사전 온라인 예약으로 누구나 방문 가능",
     "desc_en": "HYBE (BTS's agency) headquarters in Yongsan. The 19-story building itself is not open to the public, but the paid exhibition space 'HYBE INSIGHT' on B1-B2 floors is open to all visitors with advance online reservation",
@@ -1236,14 +1448,18 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 4호선·경의중앙선 신용산역 2번 출구 하차 후 도보 약 8분",
     "getoff_en": "🚇 Get off at Sinyongsan Station (Line 4 / Gyeongui-Jungang Line) Exit 2, then walk about 8 minutes",
-    "direction_kr": "📍 신용산역 2번 출구: 도보 약 8분 이동 → 하이브(HYBE) 사옥 / HYBE INSIGHT",
-    "direction_en": "📍 Sinyongsan Station Exit 2: Walk about 8 minutes → HYBE Building / HYBE INSIGHT",
+    "direction_kr": "신용산역 2번 출구: 도보 약 8분 이동 → 하이브(HYBE) 사옥 / HYBE INSIGHT",
+    "direction_en": "Sinyongsan Station Exit 2: Walk about 8 minutes → HYBE Building / HYBE INSIGHT",
     "keywords_kr": "하이브사옥▪HYBEINSIGHT▪신용산역▪BTS▪용산구",
-    "hashtags": "HYBE▪HYBEINSIGHT▪BTS▪Sinyongsan▪KpopTour"
+    "hashtags": "HYBE▪HYBEINSIGHT▪BTS▪Sinyongsan▪KpopTour",
+    "sub_kr": "K-엔터 회사 위치",
+    "sub_en": "K-Entertainment",
+    "sub_free": "",
+    "sub_order": 8
   },
   {
     "sub": "kent",
-    "title_kr": "SM엔터테인먼트 사옥 (성수동)",
+    "title_kr": "SM엔터테인먼트 사옥 / [성동구] [성수동]",
     "title_en": "SM Entertainment Headquarters (Seongsu)",
     "desc_kr": "에스파, NCT, 레드벨벳 등 소속사 SM엔터테인먼트의 성수동 본사. 2021년 아크로 서울포레스트 D타워로 이전했으며, 사옥 내부 출입은 불가하지만 연결된 서울숲역 자체가 팬들의 포토스팟이자 성지로 유명",
     "desc_en": "SM Entertainment (aespa, NCT, Red Velvet) headquarters in Seongsu-dong. Relocated to Acro Seoul Forest D Tower in 2021. Building interior is not accessible, but the connected Seoul Forest Station itself is a famous fan photo spot",
@@ -1259,14 +1475,18 @@
     "publish_at": "",
     "getoff_kr": "🚇 수인분당선 서울숲역 5번 출구 방향 하차",
     "getoff_en": "🚇 Get off at Seoul Forest Station (Suin-Bundang Line) toward Exit 5",
-    "direction_kr": "📍 서울숲역 5번 출구: 도보 이동 → 아크로 서울포레스트 D타워(SM엔터테인먼트 사옥)",
-    "direction_en": "📍 Seoul Forest Station Exit 5: Walk → Acro Seoul Forest D Tower (SM Entertainment HQ)",
+    "direction_kr": "서울숲역 5번 출구: 도보 이동 → 아크로 서울포레스트 D타워(SM엔터테인먼트 사옥)",
+    "direction_en": "Seoul Forest Station Exit 5: Walk → Acro Seoul Forest D Tower (SM Entertainment HQ)",
     "keywords_kr": "SM엔터테인먼트▪서울숲역▪성수동▪에스파▪NCT",
-    "hashtags": "SMEntertainment▪SeoulForestStation▪Seongsu▪KpopTour▪SMTown"
+    "hashtags": "SMEntertainment▪SeoulForestStation▪Seongsu▪KpopTour▪SMTown",
+    "sub_kr": "K-엔터 회사 위치",
+    "sub_en": "K-Entertainment",
+    "sub_free": "",
+    "sub_order": 8
   },
   {
     "sub": "kent",
-    "title_kr": "JYP엔터테인먼트 사옥 (성내동)",
+    "title_kr": "JYP엔터테인먼트 사옥 / [강동구] [성내동]",
     "title_en": "JYP Entertainment Headquarters (Seongnae-dong)",
     "desc_kr": "트와이스, 스트레이키즈, 있지(ITZY) 소속사 JYP엔터테인먼트의 강동구 사옥. 2018년 청담동에서 성내동으로 이전, 지하 4층~지상 10층 규모의 'JYP Center'. 사옥 내부는 일반인 출입 불가",
     "desc_en": "JYP Entertainment (TWICE, Stray Kids, ITZY) headquarters in Gangdong-gu. Relocated from Cheongdam-dong to Seongnae-dong in 2018; 'JYP Center' has 4 basement and 10 above-ground floors. Interior is not open to the public",
@@ -1282,14 +1502,18 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 8호선 강동구청역 2번 출구 하차 후 도보 약 10분 (5호선 천호역은 도보 약 20분)",
     "getoff_en": "🚇 Get off at Gangdong-gu Office Station (Line 8) Exit 2, then walk about 10 minutes (Cheonho Station on Line 5 is about 20 min walk)",
-    "direction_kr": "📍 강동구청역 2번 출구: 도보 약 10분 이동 → JYP Center (JYP엔터테인먼트 사옥)",
-    "direction_en": "📍 Gangdong-gu Office Station Exit 2: Walk about 10 minutes → JYP Center (JYP Entertainment HQ)",
+    "direction_kr": "강동구청역 2번 출구: 도보 약 10분 이동 → JYP Center (JYP엔터테인먼트 사옥)",
+    "direction_en": "Gangdong-gu Office Station Exit 2: Walk about 10 minutes → JYP Center (JYP Entertainment HQ)",
     "keywords_kr": "JYP엔터테인먼트▪JYPCenter▪강동구청역▪성내동▪트와이스",
-    "hashtags": "JYPEntertainment▪Gangdong▪JYPCenter▪KpopTour▪Twice"
+    "hashtags": "JYPEntertainment▪Gangdong▪JYPCenter▪KpopTour▪Twice",
+    "sub_kr": "K-엔터 회사 위치",
+    "sub_en": "K-Entertainment",
+    "sub_free": "",
+    "sub_order": 8
   },
   {
     "sub": "kent",
-    "title_kr": "YG엔터테인먼트 사옥 (합정동)",
+    "title_kr": "YG엔터테인먼트 사옥 / [마포구] [합정동]",
     "title_en": "YG Entertainment Headquarters (Hapjeong-dong)",
     "desc_kr": "블랙핑크, 위너, 트레저 소속사 YG엔터테인먼트의 마포구 신사옥. 2020년 완공된 기존 사옥 10배 규모 건물로, 구사옥과 나란히 위치. 팬들 사이에서 '블핑 타워'로도 불림. 사옥 내부는 출입 불가",
     "desc_en": "YG Entertainment (BLACKPINK, WINNER, TREASURE) new headquarters in Mapo-gu. Completed in 2020, about 10x the size of the old building, standing next to it. Nicknamed 'BLINK Tower' by fans. Interior is not open to the public",
@@ -1305,14 +1529,18 @@
     "publish_at": "",
     "getoff_kr": "🚇 지하철 2·6호선 합정역 하차 후 도보 이동",
     "getoff_en": "🚇 Get off at Hapjeong Station (Line 2/6), then walk",
-    "direction_kr": "📍 합정역: 도보 이동 → YG엔터테인먼트 신사옥·구사옥(합정동)",
-    "direction_en": "📍 Hapjeong Station: Walk → YG Entertainment new/old building (Hapjeong-dong)",
+    "direction_kr": "합정역: 도보 이동 → YG엔터테인먼트 신사옥·구사옥(합정동)",
+    "direction_en": "Hapjeong Station: Walk → YG Entertainment new/old building (Hapjeong-dong)",
     "keywords_kr": "YG엔터테인먼트▪합정역▪블랙핑크▪합정동▪블핑타워",
-    "hashtags": "YGEntertainment▪Hapjeong▪BlackPink▪KpopTour▪Treasure"
+    "hashtags": "YGEntertainment▪Hapjeong▪BlackPink▪KpopTour▪Treasure",
+    "sub_kr": "K-엔터 회사 위치",
+    "sub_en": "K-Entertainment",
+    "sub_free": "",
+    "sub_order": 8
   },
   {
     "sub": "kent",
-    "title_kr": "CJ ENM 센터 (상암동)",
+    "title_kr": "CJ ENM 센터 / [마포구] [상암동]",
     "title_en": "CJ ENM Center (Sangam-dong)",
     "desc_kr": "Mnet, 프로듀스 시리즈 등 K-POP 콘텐츠와 방송을 제작하는 CJ ENM 본사. 상암 디지털미디어시티(DMC) 내 위치하며 지상 20층·지하 6층 규모. 사옥 내부는 일반 출입 불가하나 인근이 방송·미디어 명소",
     "desc_en": "CJ ENM headquarters, producer of Mnet and Produce series K-POP content. Located in Sangam Digital Media City (DMC); 20 floors above ground, 6 below. Interior not open to the public, but the surrounding area is a broadcasting/media hotspot",
@@ -1328,14 +1556,18 @@
     "publish_at": "",
     "getoff_kr": "🚇 경의중앙선 디지털미디어시티(DMC)역 하차 후 도보 약 7분",
     "getoff_en": "🚇 Get off at Digital Media City (DMC) Station (Gyeongui-Jungang Line), then walk about 7 minutes",
-    "direction_kr": "📍 디지털미디어시티역: 도보 약 7분 이동 → CJ ENM 센터(상암동)",
-    "direction_en": "📍 Digital Media City Station: Walk about 7 minutes → CJ ENM Center (Sangam-dong)",
+    "direction_kr": "디지털미디어시티역: 도보 약 7분 이동 → CJ ENM 센터(상암동)",
+    "direction_en": "Digital Media City Station: Walk about 7 minutes → CJ ENM Center (Sangam-dong)",
     "keywords_kr": "CJENM▪상암DMC▪디지털미디어시티역▪Mnet▪상암동",
-    "hashtags": "CJENM▪DMC▪Sangam▪Mnet▪KpopTour"
+    "hashtags": "CJENM▪DMC▪Sangam▪Mnet▪KpopTour",
+    "sub_kr": "K-엔터 회사 위치",
+    "sub_en": "K-Entertainment",
+    "sub_free": "",
+    "sub_order": 8
   },
   {
     "sub": "kent",
-    "title_kr": "스타쉽엔터테인먼트 사옥 (청담동)",
+    "title_kr": "스타쉽엔터테인먼트 사옥 / [강남구] [청담동]",
     "title_en": "Starship Entertainment Headquarters (Cheongdam-dong)",
     "desc_kr": "몬스타엑스, 아이브(IVE), 세븐틴(공동) 등 소속사 스타쉽엔터테인먼트의 강남 청담동 사옥. 2020년부터 도산대로 소재 건물(지하 1층~지상 2층, 킹콩by스타쉽과 공용) 사용 중이며, 아이브 소속사로 최근 인근에 신사옥 투자 소식도 있음",
     "desc_en": "Starship Entertainment (Monsta X, IVE) headquarters in Cheongdam-dong, Gangnam. Since 2020, based in a building on Dosan-daero (B1-2F, shared with Kingkong by Starship); recent reports of a new building investment nearby",
@@ -1351,10 +1583,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 수인분당선 압구정로데오역 하차 후 도보 약 5분",
     "getoff_en": "🚇 Get off at Apgujeong Rodeo Station (Suin-Bundang Line), then walk about 5 minutes",
-    "direction_kr": "📍 압구정로데오역: 도보 약 5분 이동 → 스타쉽엔터테인먼트 사옥(청담동)",
-    "direction_en": "📍 Apgujeong Rodeo Station: Walk about 5 minutes → Starship Entertainment HQ (Cheongdam-dong)",
+    "direction_kr": "압구정로데오역: 도보 약 5분 이동 → 스타쉽엔터테인먼트 사옥(청담동)",
+    "direction_en": "Apgujeong Rodeo Station: Walk about 5 minutes → Starship Entertainment HQ (Cheongdam-dong)",
     "keywords_kr": "스타쉽엔터테인먼트▪압구정로데오역▪청담동▪아이브▪몬스타엑스",
-    "hashtags": "StarshipEntertainment▪Cheongdam▪IVE▪KpopTour▪Monstax"
+    "hashtags": "StarshipEntertainment▪Cheongdam▪IVE▪KpopTour▪Monstax",
+    "sub_kr": "K-엔터 회사 위치",
+    "sub_en": "K-Entertainment",
+    "sub_free": "",
+    "sub_order": 8
   },
   {
     "sub": "kent",
@@ -1377,7 +1613,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "K엔터사옥▪팬매너▪사생활보호▪기획사방문▪케이팝투어",
-    "hashtags": "KpopEtiquette▪FanManners▪Kpop▪AgencyVisit▪RespectPrivacy"
+    "hashtags": "KpopEtiquette▪FanManners▪Kpop▪AgencyVisit▪RespectPrivacy",
+    "sub_kr": "K-엔터 회사 위치",
+    "sub_en": "K-Entertainment",
+    "sub_free": "",
+    "sub_order": 8
   },
   {
     "sub": "mobile-number-wifi",
@@ -1397,10 +1637,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 공항철도·리무진버스로 인천국제공항 제1터미널 또는 제2터미널 하차",
     "getoff_en": "🚇 Take AREX or an airport limousine bus to Incheon Airport Terminal 1 or Terminal 2",
-    "direction_kr": "📍 제1터미널 3층 출국장 또는 1층 입국장: 통신사 카운터 위치 확인 후 이동 → SKT·KT·LGU+ 로밍센터",
-    "direction_en": "📍 T1 3F Departure Hall or 1F Arrival Hall: Check carrier counter location → SKT/KT/LGU+ roaming center",
+    "direction_kr": "제1터미널 3층 출국장 또는 1층 입국장: 통신사 카운터 위치 확인 후 이동 → SKT·KT·LGU+ 로밍센터",
+    "direction_en": "T1 3F Departure Hall or 1F Arrival Hall: Check carrier counter location → SKT/KT/LGU+ roaming center",
     "keywords_kr": "인천공항▪로밍센터▪유심구매▪SKT▪KT▪LGU플러스",
-    "hashtags": "IncheonAirport▪RoamingCenter▪PrepaidSIM▪Korea▪Telecom"
+    "hashtags": "IncheonAirport▪RoamingCenter▪PrepaidSIM▪Korea▪Telecom",
+    "sub_kr": "번호 발급·와이파이",
+    "sub_en": "Phone Number & WiFi",
+    "sub_free": "",
+    "sub_order": 6
   },
   {
     "sub": "mobile-number-wifi",
@@ -1420,10 +1664,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 전국 지하철역·번화가 인근 편의점(CU·GS25·세븐일레븐·이마트24) 하차 후 도보 이동",
     "getoff_en": "🚇 Get off near any subway station or downtown area with a convenience store (CU, GS25, 7-Eleven, Emart24), then walk",
-    "direction_kr": "📍 편의점 매장: 도보 이동 → 유심 판매 매대 또는 계산대",
-    "direction_en": "📍 Convenience store: Walk in → SIM card display or checkout counter",
+    "direction_kr": "편의점 매장: 도보 이동 → 유심 판매 매대 또는 계산대",
+    "direction_en": "Convenience store: Walk in → SIM card display or checkout counter",
     "keywords_kr": "편의점유심▪CU▪GS25▪세븐일레븐▪셀프개통",
-    "hashtags": "ConvenienceStore▪PrepaidSIM▪CU▪GS25▪KoreaTravel"
+    "hashtags": "ConvenienceStore▪PrepaidSIM▪CU▪GS25▪KoreaTravel",
+    "sub_kr": "번호 발급·와이파이",
+    "sub_en": "Phone Number & WiFi",
+    "sub_free": "",
+    "sub_order": 6
   },
   {
     "sub": "mobile-number-wifi",
@@ -1446,7 +1694,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "Airalo▪eSIM▪한국eSIM▪사전구매▪QR코드설치",
-    "hashtags": "Airalo▪eSIM▪KoreaESIM▪TravelData▪DigitalSIM"
+    "hashtags": "Airalo▪eSIM▪KoreaESIM▪TravelData▪DigitalSIM",
+    "sub_kr": "번호 발급·와이파이",
+    "sub_en": "Phone Number & WiFi",
+    "sub_free": "",
+    "sub_order": 6
   },
   {
     "sub": "mobile-number-wifi",
@@ -1469,7 +1721,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "클룩▪Klook▪eSIM▪SKT▪한국유심",
-    "hashtags": "Klook▪eSIM▪SKT▪KoreaTravel▪DigitalSIM"
+    "hashtags": "Klook▪eSIM▪SKT▪KoreaTravel▪DigitalSIM",
+    "sub_kr": "번호 발급·와이파이",
+    "sub_en": "Phone Number & WiFi",
+    "sub_free": "",
+    "sub_order": 6
   },
   {
     "sub": "mobile-number-wifi",
@@ -1489,10 +1745,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 공항철도·리무진버스로 인천국제공항 제1터미널 또는 제2터미널 하차",
     "getoff_en": "🚇 Take AREX or an airport limousine bus to Incheon Airport Terminal 1 or Terminal 2",
-    "direction_kr": "📍 제1·2터미널 내: 도보 이동 → 와이파이도시락 등 포켓 와이파이 대여 카운터",
-    "direction_en": "📍 Inside T1/T2: Walk → Pocket Wi-Fi rental counter (e.g. WiFiDosirak)",
+    "direction_kr": "제1·2터미널 내: 도보 이동 → 와이파이도시락 등 포켓 와이파이 대여 카운터",
+    "direction_en": "Inside T1/T2: Walk → Pocket Wi-Fi rental counter (e.g. WiFiDosirak)",
     "keywords_kr": "포켓와이파이▪와이파이도시락▪인천공항▪와이파이대여▪단체여행",
-    "hashtags": "PocketWifi▪IncheonAirport▪WifiRental▪KoreaTravel▪GroupTravel"
+    "hashtags": "PocketWifi▪IncheonAirport▪WifiRental▪KoreaTravel▪GroupTravel",
+    "sub_kr": "번호 발급·와이파이",
+    "sub_en": "Phone Number & WiFi",
+    "sub_free": "",
+    "sub_order": 6
   },
   {
     "sub": "mobile-number-wifi",
@@ -1512,10 +1772,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 인천·김포공항 또는 서울 시내 주요 지하철역 하차 후 키오스크 위치 확인",
     "getoff_en": "🚇 Get off at Incheon/Gimpo Airport or a major Seoul subway station, then check the kiosk location",
-    "direction_kr": "📍 공항 또는 지하철역: 도보 이동 → WOWPASS 무인 키오스크",
-    "direction_en": "📍 Airport or subway station: Walk → WOWPASS self-service kiosk",
+    "direction_kr": "공항 또는 지하철역: 도보 이동 → WOWPASS 무인 키오스크",
+    "direction_en": "Airport or subway station: Walk → WOWPASS self-service kiosk",
     "keywords_kr": "WOWPASS▪환전▪티머니충전▪무인키오스크▪선불카드",
-    "hashtags": "WOWPASS▪CurrencyExchange▪Tmoney▪PrepaidCard▪KoreaTravel"
+    "hashtags": "WOWPASS▪CurrencyExchange▪Tmoney▪PrepaidCard▪KoreaTravel",
+    "sub_kr": "번호 발급·와이파이",
+    "sub_en": "Phone Number & WiFi",
+    "sub_free": "",
+    "sub_order": 6
   },
   {
     "sub": "mobile-number-wifi",
@@ -1538,7 +1802,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "통신실명제▪유심개통▪여권등록▪외국인등록증▪실명인증",
-    "hashtags": "SimRegistration▪RealNamePolicy▪Passport▪KoreaTelecom▪TravelTips"
+    "hashtags": "SimRegistration▪RealNamePolicy▪Passport▪KoreaTelecom▪TravelTips",
+    "sub_kr": "번호 발급·와이파이",
+    "sub_en": "Phone Number & WiFi",
+    "sub_free": "",
+    "sub_order": 6
   },
   {
     "sub": "essential-apps",
@@ -1561,7 +1829,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "네이버지도▪NaverMap▪길찾기앱▪대중교통길찾기▪한국여행앱",
-    "hashtags": "NaverMap▪KoreaTravelApp▪PublicTransit▪Navigation▪MustHaveApp"
+    "hashtags": "NaverMap▪KoreaTravelApp▪PublicTransit▪Navigation▪MustHaveApp",
+    "sub_kr": "필수 앱·웹사이트",
+    "sub_en": "Essential Apps",
+    "sub_free": "",
+    "sub_order": 7
   },
   {
     "sub": "essential-apps",
@@ -1584,7 +1856,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "카카오맵▪KakaoMap▪내비게이션▪대중교통▪한국지도앱",
-    "hashtags": "KakaoMap▪KoreaTravelApp▪Navigation▪PublicTransit▪MustHaveApp"
+    "hashtags": "KakaoMap▪KoreaTravelApp▪Navigation▪PublicTransit▪MustHaveApp",
+    "sub_kr": "필수 앱·웹사이트",
+    "sub_en": "Essential Apps",
+    "sub_free": "",
+    "sub_order": 7
   },
   {
     "sub": "essential-apps",
@@ -1607,7 +1883,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "파파고▪Papago▪번역앱▪이미지번역▪한국어번역",
-    "hashtags": "Papago▪Translation▪KoreanLanguage▪TravelApp▪MustHaveApp"
+    "hashtags": "Papago▪Translation▪KoreanLanguage▪TravelApp▪MustHaveApp",
+    "sub_kr": "필수 앱·웹사이트",
+    "sub_en": "Essential Apps",
+    "sub_free": "",
+    "sub_order": 7
   },
   {
     "sub": "essential-apps",
@@ -1630,7 +1910,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "카카오T▪KakaoT▪택시호출▪해외카드등록▪카카오T블루",
-    "hashtags": "KakaoT▪TaxiApp▪KoreaTravel▪RideHailing▪MustHaveApp"
+    "hashtags": "KakaoT▪TaxiApp▪KoreaTravel▪RideHailing▪MustHaveApp",
+    "sub_kr": "필수 앱·웹사이트",
+    "sub_en": "Essential Apps",
+    "sub_free": "",
+    "sub_order": 7
   },
   {
     "sub": "essential-apps",
@@ -1653,7 +1937,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "코레일톡▪KorailTalk▪KTX예매▪기차표▪모바일승차권",
-    "hashtags": "KorailTalk▪KTX▪TrainBooking▪KoreaTravel▪MustHaveApp"
+    "hashtags": "KorailTalk▪KTX▪TrainBooking▪KoreaTravel▪MustHaveApp",
+    "sub_kr": "필수 앱·웹사이트",
+    "sub_en": "Essential Apps",
+    "sub_free": "",
+    "sub_order": 7
   },
   {
     "sub": "essential-apps",
@@ -1676,7 +1964,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "네이버페이▪카카오페이▪간편결제▪해외카드▪본인인증",
-    "hashtags": "NaverPay▪KakaoPay▪MobilePayment▪KoreaTravel▪PaymentApp"
+    "hashtags": "NaverPay▪KakaoPay▪MobilePayment▪KoreaTravel▪PaymentApp",
+    "sub_kr": "필수 앱·웹사이트",
+    "sub_en": "Essential Apps",
+    "sub_free": "",
+    "sub_order": 7
   },
   {
     "sub": "essential-apps",
@@ -1699,7 +1991,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "트립닷컴▪TripCom▪항공권예약▪숙소예약▪해외카드결제",
-    "hashtags": "TripCom▪FlightBooking▪HotelBooking▪TravelApp▪KoreaTravel"
+    "hashtags": "TripCom▪FlightBooking▪HotelBooking▪TravelApp▪KoreaTravel",
+    "sub_kr": "필수 앱·웹사이트",
+    "sub_en": "Essential Apps",
+    "sub_free": "",
+    "sub_order": 7
   },
   {
     "sub": "essential-apps",
@@ -1722,7 +2018,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "클룩▪Klook▪액티비티예약▪투어티켓▪놀이공원입장권",
-    "hashtags": "Klook▪ActivityBooking▪TourTickets▪KoreaTravel▪TravelApp"
+    "hashtags": "Klook▪ActivityBooking▪TourTickets▪KoreaTravel▪TravelApp",
+    "sub_kr": "필수 앱·웹사이트",
+    "sub_en": "Essential Apps",
+    "sub_free": "",
+    "sub_order": 7
   },
   {
     "sub": "essential-apps",
@@ -1745,7 +2045,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "VisitKorea▪한국관광공사▪공식관광앱▪여행가이드▪1330",
-    "hashtags": "VisitKorea▪KTO▪TravelGuide▪OfficialApp▪KoreaTravel"
+    "hashtags": "VisitKorea▪KTO▪TravelGuide▪OfficialApp▪KoreaTravel",
+    "sub_kr": "필수 앱·웹사이트",
+    "sub_en": "Essential Apps",
+    "sub_free": "",
+    "sub_order": 7
   },
   {
     "sub": "transit",
@@ -1765,10 +2069,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 서울 지하철 각 역 개찰구 앞 하차",
     "getoff_en": "🚇 Get off at any Seoul subway station, near the ticket gates",
-    "direction_kr": "📍 개찰구 앞: 도보 이동 → 1회용 교통카드 발매기 → 목적지 하차 후 보증금 환급기",
-    "direction_en": "📍 Near the ticket gates: Walk to the single-use card vending machine → After arrival, use the deposit refund machine",
+    "direction_kr": "개찰구 앞: 도보 이동 → 1회용 교통카드 발매기 → 목적지 하차 후 보증금 환급기",
+    "direction_en": "Near the ticket gates: Walk to the single-use card vending machine → After arrival, use the deposit refund machine",
     "keywords_kr": "1회용교통카드▪지하철카드▪보증금환급▪서울지하철▪발매기",
-    "hashtags": "SeoulSubway▪SingleUseCard▪SubwayTicket▪KoreaTravel▪PublicTransit"
+    "hashtags": "SeoulSubway▪SingleUseCard▪SubwayTicket▪KoreaTravel▪PublicTransit",
+    "sub_kr": "대중교통",
+    "sub_en": "Public Transit",
+    "sub_free": "",
+    "sub_order": 5
   },
   {
     "sub": "transit",
@@ -1788,10 +2096,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 전국 편의점(CU·GS25·세븐일레븐·이마트24·미니스톱) 또는 지하철 역사 하차 후 도보 이동",
     "getoff_en": "🚇 Get off near any convenience store (CU, GS25, 7-Eleven, Emart24, Ministop) or subway station, then walk",
-    "direction_kr": "📍 편의점 계산대 또는 지하철 역사: 도보 이동 → T-money 카드 구매·충전",
-    "direction_en": "📍 Convenience store checkout or subway station: Walk → Purchase/top up T-money card",
+    "direction_kr": "편의점 계산대 또는 지하철 역사: 도보 이동 → T-money 카드 구매·충전",
+    "direction_en": "Convenience store checkout or subway station: Walk → Purchase/top up T-money card",
     "keywords_kr": "T money▪티머니▪교통카드▪편의점충전▪환승할인",
-    "hashtags": "Tmoney▪TransitCard▪KoreaSubway▪ConvenienceStore▪PublicTransit"
+    "hashtags": "Tmoney▪TransitCard▪KoreaSubway▪ConvenienceStore▪PublicTransit",
+    "sub_kr": "대중교통",
+    "sub_en": "Public Transit",
+    "sub_free": "",
+    "sub_order": 5
   },
   {
     "sub": "transit",
@@ -1811,10 +2123,14 @@
     "publish_at": "",
     "getoff_kr": "🚌 서울 시내버스 정류장 하차",
     "getoff_en": "🚌 Get off at any Seoul city bus stop",
-    "direction_kr": "📍 버스 정류장: T-money 카드 태그 후 승차 → 하차 시 재태그하여 환승 할인 적용",
-    "direction_en": "📍 Bus stop: Tag your T-money card to board → Tag again when getting off for transfer discount",
+    "direction_kr": "버스 정류장: T-money 카드 태그 후 승차 → 하차 시 재태그하여 환승 할인 적용",
+    "direction_en": "Bus stop: Tag your T-money card to board → Tag again when getting off for transfer discount",
     "keywords_kr": "서울시내버스▪환승시스템▪T money▪버스요금▪환승할인",
-    "hashtags": "SeoulBus▪PublicTransit▪Tmoney▪TransferDiscount▪KoreaTravel"
+    "hashtags": "SeoulBus▪PublicTransit▪Tmoney▪TransferDiscount▪KoreaTravel",
+    "sub_kr": "대중교통",
+    "sub_en": "Public Transit",
+    "sub_free": "",
+    "sub_order": 5
   },
   {
     "sub": "transit",
@@ -1834,10 +2150,14 @@
     "publish_at": "",
     "getoff_kr": "🚇 인천국제공항 T1·T2역 또는 서울역 지하 공항철도 승강장 하차",
     "getoff_en": "🚇 Get off at the AREX platform in Incheon Airport T1/T2 or Seoul Station (underground)",
-    "direction_kr": "📍 공항철도 승강장: 일반열차(전 역 정차, T-money 가능) 또는 직통열차(무정차, 별도 승차권) 선택 탑승",
-    "direction_en": "📍 AREX platform: Choose the all-stop general train (T-money accepted) or the non-stop express train (separate ticket required)",
+    "direction_kr": "공항철도 승강장: 일반열차(전 역 정차, T-money 가능) 또는 직통열차(무정차, 별도 승차권) 선택 탑승",
+    "direction_en": "AREX platform: Choose the all-stop general train (T-money accepted) or the non-stop express train (separate ticket required)",
     "keywords_kr": "공항철도▪AREX▪직통열차▪일반열차▪인천공항서울역",
-    "hashtags": "AREX▪IncheonAirport▪SeoulStation▪AirportTrain▪KoreaTravel"
+    "hashtags": "AREX▪IncheonAirport▪SeoulStation▪AirportTrain▪KoreaTravel",
+    "sub_kr": "대중교통",
+    "sub_en": "Public Transit",
+    "sub_free": "",
+    "sub_order": 5
   },
   {
     "sub": "transit",
@@ -1857,10 +2177,14 @@
     "publish_at": "",
     "getoff_kr": "🚄 전국 KTX 정차역(서울역·용산역·부산역 등) 하차",
     "getoff_en": "🚄 Get off at any KTX station (Seoul Station, Yongsan Station, Busan Station, etc.)",
-    "direction_kr": "📍 KTX 정차역: 코레일톡 앱에서 모바일 승차권(QR코드) 확인 후 개찰구 통과 → 승강장",
-    "direction_en": "📍 KTX station: Check your mobile ticket (QR code) in the Korail Talk app → Pass the gate → Platform",
+    "direction_kr": "KTX 정차역: 코레일톡 앱에서 모바일 승차권(QR코드) 확인 후 개찰구 통과 → 승강장",
+    "direction_en": "KTX station: Check your mobile ticket (QR code) in the Korail Talk app → Pass the gate → Platform",
     "keywords_kr": "코레일톡▪KTX예매▪고속철도▪서울역▪모바일승차권",
-    "hashtags": "KorailTalk▪KTX▪HighSpeedTrain▪KoreaTravel▪TrainBooking"
+    "hashtags": "KorailTalk▪KTX▪HighSpeedTrain▪KoreaTravel▪TrainBooking",
+    "sub_kr": "대중교통",
+    "sub_en": "Public Transit",
+    "sub_free": "",
+    "sub_order": 5
   },
   {
     "sub": "transit",
@@ -1880,10 +2204,14 @@
     "publish_at": "",
     "getoff_kr": "🚄 수서역·동탄역·평택지제역 등 SRT 정차역 하차",
     "getoff_en": "🚄 Get off at an SRT station such as Suseo, Dongtan, or Pyeongtaek Jije",
-    "direction_kr": "📍 SRT 정차역: 앱 또는 홈페이지 예매 승차권 확인 → 개찰구 통과 → 승강장",
-    "direction_en": "📍 SRT station: Check your ticket booked via app or website → Pass the gate → Platform",
+    "direction_kr": "SRT 정차역: 앱 또는 홈페이지 예매 승차권 확인 → 개찰구 통과 → 승강장",
+    "direction_en": "SRT station: Check your ticket booked via app or website → Pass the gate → Platform",
     "keywords_kr": "SRT예매▪수서역▪고속철도▪동탄역▪평택지제역",
-    "hashtags": "SRT▪Suseo▪HighSpeedTrain▪KoreaTravel▪TrainBooking"
+    "hashtags": "SRT▪Suseo▪HighSpeedTrain▪KoreaTravel▪TrainBooking",
+    "sub_kr": "대중교통",
+    "sub_en": "Public Transit",
+    "sub_free": "",
+    "sub_order": 5
   },
   {
     "sub": "transit",
@@ -1903,10 +2231,14 @@
     "publish_at": "",
     "getoff_kr": "🚌 전국 고속버스터미널·시외버스터미널(서울고속버스터미널·센트럴시티 등) 하차",
     "getoff_en": "🚌 Get off at any intercity/express bus terminal (Seoul Express Bus Terminal, Central City, etc.)",
-    "direction_kr": "📍 버스터미널: 티머니GO 앱 모바일 승차권(QR코드) 확인 → 창구 없이 바로 승차장 이동",
-    "direction_en": "📍 Bus terminal: Check your mobile ticket (QR code) in the T-money GO app → Head straight to the platform, no counter needed",
+    "direction_kr": "버스터미널: 티머니GO 앱 모바일 승차권(QR코드) 확인 → 창구 없이 바로 승차장 이동",
+    "direction_en": "Bus terminal: Check your mobile ticket (QR code) in the T-money GO app → Head straight to the platform, no counter needed",
     "keywords_kr": "티머니GO▪고속버스▪시외버스▪서울고속버스터미널▪센트럴시티",
-    "hashtags": "TmoneyGO▪ExpressBus▪IntercityBus▪KoreaTravel▪BusBooking"
+    "hashtags": "TmoneyGO▪ExpressBus▪IntercityBus▪KoreaTravel▪BusBooking",
+    "sub_kr": "대중교통",
+    "sub_en": "Public Transit",
+    "sub_free": "",
+    "sub_order": 5
   },
   {
     "sub": "transit",
@@ -1929,7 +2261,11 @@
     "direction_kr": "",
     "direction_en": "",
     "keywords_kr": "네이버지도▪카카오맵▪대중교통길찾기▪환승경로▪실시간버스",
-    "hashtags": "NaverMap▪KakaoMap▪PublicTransit▪RouteFinder▪KoreaTravel"
+    "hashtags": "NaverMap▪KakaoMap▪PublicTransit▪RouteFinder▪KoreaTravel",
+    "sub_kr": "대중교통",
+    "sub_en": "Public Transit",
+    "sub_free": "",
+    "sub_order": 5
   },
   {
     "sub": "transit",
@@ -1949,9 +2285,13 @@
     "publish_at": "",
     "getoff_kr": "🚇 서울역 등 기후동행카드 발매기 설치 지하철역 하차",
     "getoff_en": "🚇 Get off at Seoul Station or another subway station with a Climate Card vending machine",
-    "direction_kr": "📍 서울역(세종대로 110): 도보 이동 → 발매기에서 기후동행카드 단기권 구매",
-    "direction_en": "📍 Seoul Station (110 Sejong-daero): Walk → Purchase the short-term Climate Card at the vending machine",
+    "direction_kr": "서울역(세종대로 110): 도보 이동 → 발매기에서 기후동행카드 단기권 구매",
+    "direction_en": "Seoul Station (110 Sejong-daero): Walk → Purchase the short-term Climate Card at the vending machine",
     "keywords_kr": "기후동행카드▪서울역▪무제한교통권▪외국인단기권▪따릉이",
-    "hashtags": "ClimateCard▪SeoulTransit▪UnlimitedPass▪Ttareungyi▪KoreaTravel"
+    "hashtags": "ClimateCard▪SeoulTransit▪UnlimitedPass▪Ttareungyi▪KoreaTravel",
+    "sub_kr": "대중교통",
+    "sub_en": "Public Transit",
+    "sub_free": "",
+    "sub_order": 5
   }
 ]

@@ -23,9 +23,9 @@
   background-image:repeating-linear-gradient(115deg, color-mix(in srgb, var(--c) 10%, transparent) 0px, transparent 2px, transparent 34px);
 }
 .channel-hero-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(6,10,18,.9) 100%)}
-.channel-hero-region{position:absolute;left:22px;bottom:18px;z-index:1;display:flex;flex-direction:column;gap:2px}
-.channel-hero-region-kr{font-family:var(--f-display);font-weight:900;font-size:clamp(1.05rem,2.6vw,1.3rem);color:var(--ivory);letter-spacing:.01em}
-.channel-hero-region-en{font-size:.82rem;letter-spacing:.16em;font-weight:700;color:var(--c);text-transform:uppercase}
+.channel-hero-region{position:absolute;left:22px;bottom:18px;z-index:1;display:flex;flex-direction:column;gap:4px}
+.channel-hero-region-kr{font-family:var(--f-display);font-weight:900;font-size:clamp(.72rem,1.8vw,.9rem);color:var(--ivory);letter-spacing:.01em}
+.channel-hero-region-en{font-size:clamp(1.3rem,3.6vw,1.8rem);letter-spacing:.02em;font-weight:800;color:var(--c);text-transform:uppercase}
 @media (max-width:560px){.channel-hero-banner{aspect-ratio:16/9;border-radius:14px}}
 
 /* ── 채널 헤더 ── */
@@ -61,7 +61,7 @@
 
 .cat-card-art{
   position:relative;aspect-ratio:16/10;padding:14px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;text-align:left;
   background:
     radial-gradient(ellipse 120% 90% at 50% 120%, color-mix(in srgb, var(--c) 22%, transparent) 0%, transparent 60%),
     linear-gradient(160deg, color-mix(in srgb, var(--c) 24%, var(--bg)) 0%, var(--bg) 82%);
@@ -74,27 +74,29 @@
 }
 
 .cat-card-name{
+  --kr-size:.7rem;
   font-family:var(--f-display);font-weight:900;color:var(--c);
-  font-size:clamp(1.05rem,3.2vw,1.4rem);line-height:1.28;
+  font-size:var(--kr-size);line-height:1.28;text-align:left;
   word-break:keep-all;overflow-wrap:break-word;max-width:22ch;
 }
 .cat-card-name-en{
-  font-size:.78rem;letter-spacing:.07em;color:var(--muted);text-transform:uppercase;
-  word-break:keep-all;max-width:24ch;line-height:1.4;
+  font-size:calc(var(--kr-size, .7rem) * 2);letter-spacing:.02em;color:var(--muted);text-transform:uppercase;
+  word-break:keep-all;max-width:24ch;line-height:1.25;text-align:left;
 }
 .cat-card-sub{font-size:.68rem;color:var(--dim);margin-top:2px;letter-spacing:.02em}
 
 .cat-card-tier{position:absolute;top:10px;right:10px;z-index:1;font-size:.64rem;font-weight:800;letter-spacing:.04em;padding:4px 10px;border-radius:100px;backdrop-filter:blur(4px)}
 .cat-card-tier.is-free{background:rgba(34,197,94,.92);color:#052e12;border:1px solid rgba(134,239,172,.9)}
 .cat-card-tier.is-paid{background:rgba(245,158,11,.92);color:#3d2400;border:1px solid rgba(253,204,110,.9)}
+.cat-card-tier.cat-card-tier-mixed{background:linear-gradient(90deg, rgba(34,197,94,.92) 0%, rgba(34,197,94,.92) 45%, rgba(245,158,11,.92) 55%, rgba(245,158,11,.92) 100%);color:#1a1400;border:1px solid rgba(255,255,255,.5)}
 
 /* ── 빈 상태 / 콘텐츠 준비중 ── */
 .empty-note{
-  text-align:center;padding:56px 20px;border:1px dashed rgba(255,255,255,.16);border-radius:16px;
+  text-align:left;padding:56px 20px;border:1px dashed rgba(255,255,255,.16);border-radius:16px;
   background:radial-gradient(ellipse 60% 100% at 50% 0%, color-mix(in srgb, var(--c) 8%, transparent) 0%, transparent 70%), rgba(255,255,255,.02);
 }
 .empty-note::before{
-  content:'';display:block;width:40px;height:40px;margin:0 auto 16px;border-radius:50%;
+  content:'';display:block;width:40px;height:40px;margin:0 0 16px;border-radius:50%;
   background:color-mix(in srgb, var(--c) 16%, transparent);
   background-image:radial-gradient(circle, color-mix(in srgb, var(--c) 55%, transparent) 0%, transparent 70%);
 }
@@ -107,20 +109,20 @@
 .sub-hero{padding-bottom:28px;border-bottom:1px solid color-mix(in srgb, var(--c) 28%, transparent);margin-bottom:36px}
 .sub-parent-link{display:inline-block;text-decoration:none;font-size:.78rem;font-weight:700;color:var(--c);margin-bottom:12px;transition:opacity .15s ease}
 .sub-parent-link:hover{opacity:.75}
-.sub-title{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.sub-title-kr{font-family:var(--f-display);font-weight:900;font-size:clamp(1.5rem,4.5vw,2.2rem);word-break:keep-all}
-.sub-title-en{font-size:1rem;letter-spacing:.05em;color:var(--muted);text-transform:uppercase}
+.sub-title{display:flex;flex-direction:column;align-items:flex-start;gap:4px;flex-wrap:wrap}
+.sub-title-kr{font-family:var(--f-display);font-weight:900;font-size:clamp(1.1rem,3.4vw,1.6rem);word-break:keep-all}
+.sub-title-en{font-size:clamp(1.6rem,6vw,2.4rem);letter-spacing:.01em;color:var(--muted);text-transform:uppercase;font-weight:800;line-height:1.15}
 
 @media (max-width: 768px){
   .cat-grid-section{grid-template-columns:repeat(3,1fr);gap:12px}
-  .cat-card-name{font-size:1rem}
+  .cat-card-name{--kr-size:.66rem}
 }
 @media (max-width: 560px){
   .cat-grid-section{grid-template-columns:repeat(2,1fr);gap:12px}
   .channel-hero{margin-bottom:32px;padding-bottom:24px}
 }
 @media (max-width: 380px){
-  .cat-card-name{font-size:.94rem}
+  .cat-card-name{--kr-size:.62rem}
 }
 
 @media (prefers-reduced-motion: reduce){

@@ -17,7 +17,12 @@
     "buy_kr": "🏪 이마트 즉시환급 이용 절차\n①매장 내 어디서나 정상 결제▪②영수증·여권 지참▪③고객센터 방문해 즉시환급 신청▪④차액 수령▪결제 수단에 따라 환급 방식이 다를 수 있어(카드 결제분은 카드로, 현금 결제분은 현금으로) 계산 시 결제수단 기억 권장. 최소구매금액은 매장 표시 기준(통상 3만원 이상)이며, 매장·시간대별로 즉시환급 데스크 운영 여부가 다를 수 있으므로 방문 전 해당 지점 확인 필요.▪영수증 보관 필수. 계산대가 아니라 매장 내 별도 고객센터(문화센터/서비스 데스크)에서 환급 처리. 여권 원본 지참 필수이며 사본은 인정되지 않는 경우 다수.",
     "buy_en": "How to use instant tax refund at E-Mart\n1) Pay normally at any checkout▪2) Keep your receipt and passport▪3) Go to the customer service desk and request an instant refund▪4) Receive the refund immediately▪Minimum purchase is typically around 30,000 KRW, and desk hours vary by branch, so it's best to confirm with the specific store before visiting.▪Keep your receipt safe — refunds are processed at a separate customer service desk, not at the checkout register. Bring your original passport, as photocopies are often not accepted.",
     "keywords_kr": "이마트 즉시환급, 계산 후 고객센터에서 바로 받는다▪이마트 즉시환급▪택스리펀▪외국인관광객 부가세환급",
-    "hashtags": "EMart▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree"
+    "hashtags": "EMart▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree",
+    "web": "https://www.emart.com/",
+    "sub_kr": "매장 즉시 세금환급",
+    "sub_en": "Instant Tax Refund",
+    "sub_free": "TRUE",
+    "sub_order": 0
   },
   {
     "sub": "taxfree-instant",
@@ -37,7 +42,12 @@
     "buy_kr": "🏪 노브랜드 즉시환급 이용 안내\n노브랜드는 이마트의 자체 브랜드 매장으로, 대형 노브랜드 스토어 중 일부는 외국인 면세판매장(사후면세점)으로 등록되어 있어 택스리펀 대상 가능.▪다만 모든 노브랜드 매장이 사후면세점으로 지정된 것은 아니며, 즉시환급 데스크가 별도로 마련된 매장은 이마트 본점 대비 적은 편.▪매장 입구나 계산대 근처에 'Tax Free' 또는 'Tax Refund' 표시 여부 확인 필요하며, 표시가 없다면 직원에게 환급 가능 여부 사전 문의 필요.▪'Tax Free' 스티커가 없는 매장이 많으니 큰 노브랜드 스토어(스탠드얼론 매장) 위주로 방문 권장, 구매 전 즉시환급 여부 직원 확인 필수.",
     "buy_en": "Instant tax refund guide at NoBrand\nNo Brand, E-Mart's private label store chain, has some larger branches registered as tax-free retailers, making tax refunds possible.▪However, not every No Brand store is registered, and dedicated instant-refund counters are less common than at full E-Mart stores.▪Look for a 'Tax Free' or 'Tax Refund' sign near the entrance or checkout, or simply ask staff before purchasing.▪Many locations lack a 'Tax Free' sticker, so prioritize larger standalone No Brand stores and always ask staff about instant refunds before buying.",
     "keywords_kr": "노브랜드, 이마트 계열 매장이지만 즉시환급 지정 여부는 지점마다 달라 사전확인 필수▪노브랜드 즉시환급▪택스리펀▪외국인관광객 부가세환급",
-    "hashtags": "NoBrand▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree"
+    "hashtags": "NoBrand▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree",
+    "web": "https://www.nobrand.co.kr/",
+    "sub_kr": "매장 즉시 세금환급",
+    "sub_en": "Instant Tax Refund",
+    "sub_free": "TRUE",
+    "sub_order": 0
   },
   {
     "sub": "taxfree-instant",
@@ -57,7 +67,12 @@
     "buy_kr": "🏪 트레이더스 즉시환급 이용 안내\n이마트 계열의 창고형 매장 트레이더스 홀세일 클럽에서도 외국인 관광객 대상 즉시환급 가능.▪이마트와 동일하게 매장에서 결제를 마친 후 영수증과 여권을 지참해 매장 내 고객센터로 가면 부가세 상당액을 그 자리에서 환급 가능.▪트레이더스는 대용량·묶음 상품이 많아 1회 구매액이 커지기 쉬운 만큼 최소구매금액 기준은 쉽게 충족되는 편이지만, 즉시환급 한도(통상 20만원 미만 등 지점별 상이)를 초과하는 고액 구매 시에는 즉시환급이 제한되고 출국 시 사후환급으로 안내 가능.▪대용량 구매 특성상 총액이 즉시환급 한도를 넘기기 쉬우니, 한도 초과 시 사후환급(출국 시 공항)으로 전환된다는 점 사전 숙지 필요.",
     "buy_en": "Instant tax refund guide at Traders\nTraders Wholesale Club, E-Mart's warehouse-style retail chain, also offers instant VAT refunds for foreign tourists.▪As with E-Mart, pay at the register first, then bring your receipt and passport to the in-store customer service counter for an on-the-spot refund of the VAT amount.▪Because Traders sells bulk and multi-packs, purchases often clear the minimum threshold easily — but very large purchases exceeding the instant-refund cap (commonly under 200,000 KRW, varies by branch) may need to be claimed later at the airport instead.▪Because purchases are often bulk-sized, totals can exceed the instant-refund cap easily — know that in that case you'll need to claim the refund later at the airport instead.",
     "keywords_kr": "트레이더스 홀세일, 대용량 쇼핑도 즉시환급 가능▪트레이더스 즉시환급▪택스리펀▪외국인관광객 부가세환급",
-    "hashtags": "Traders▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree"
+    "hashtags": "Traders▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree",
+    "web": "https://www.emart.com/tradersMain.do",
+    "sub_kr": "매장 즉시 세금환급",
+    "sub_en": "Instant Tax Refund",
+    "sub_free": "TRUE",
+    "sub_order": 0
   },
   {
     "sub": "taxfree-instant",
@@ -77,7 +92,12 @@
     "buy_kr": "🏪 이마트24 즉시환급 이용 안내\n이마트24는 외국인 관광객을 위한 부가세 즉시환급 서비스 운영.▪별도의 환급 창구를 거치지 않고, 계산대에서 결제 전 직원에게 여권을 제시해 스캔하면 부가세가 차감된 금액으로 바로 결제되는 방식(사전 차감형 즉시환급).▪결제 가능 금액은 통상 3만원 이상 50만원 미만이며, 이 구간을 벗어나는 소액·고액 구매는 즉시환급 대상에서 제외 가능.▪계산 전에 여권을 미리 꺼내 직원에게 제시 필요 — 결제가 끝난 후에는 소급 적용되지 않는 사전 차감 방식.",
     "buy_en": "Instant tax refund guide at emart24\nEmart24 runs a VAT instant-refund program for foreign tourists.▪Rather than a separate refund desk, staff scan your passport before you pay and the VAT is deducted directly from the price at checkout.▪Eligible purchases are typically between 30,000 and 500,000 KRW; amounts outside this range may not qualify.▪Have your passport ready before paying — this is a pre-deduction system, so it cannot be applied retroactively after checkout.",
     "keywords_kr": "이마트24, 여권 스캔만으로 결제 시 즉시 할인▪이마트24 즉시환급▪택스리펀▪외국인관광객 부가세환급",
-    "hashtags": "Emart24▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree"
+    "hashtags": "Emart24▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree",
+    "web": "https://www.emart24.co.kr/",
+    "sub_kr": "매장 즉시 세금환급",
+    "sub_en": "Instant Tax Refund",
+    "sub_free": "TRUE",
+    "sub_order": 0
   },
   {
     "sub": "taxfree-instant",
@@ -97,7 +117,12 @@
     "buy_kr": "🏪 CU 즉시환급 이용 안내\nCU는 국내 편의점 중 즉시환급 서비스를 도입한 대표 브랜드로, 전국 약 570개 매장에서 이용 가능(명동역점 등 관광지 인근 매장 다수 포함).▪이용 방법은 모바일 여권 인증 앱 'Trip.PASS'를 설치해 여권 정보를 등록한 뒤, 결제 전 직원에게 앱 화면을 제시하면 부가세가 차감된 금액으로 결제.▪최소구매금액은 1만5천원이며, 주류·담배 등 일부 품목은 환급 대상에서 제외.▪참여 매장이 한정적이니 Trip.PASS 앱에서 가맹점 지도 사전 확인 권장. 주류·담배는 환급 대상 제외.",
     "buy_en": "Instant tax refund guide at CU\nCU is a leading convenience store chain offering instant tax refunds, available at roughly 570 stores nationwide, including many near tourist areas such as the CU Myeongdong Station branch.▪To use it, install the 'Trip.PASS' passport-verification app, register your passport, then show the app screen to staff before paying — VAT is deducted directly at checkout.▪The minimum purchase is 15,000 KRW, and some items like alcohol and tobacco are excluded.▪Since only select stores participate, check the Trip.PASS app's store map before visiting. Alcohol and tobacco purchases are not eligible for the refund.",
     "keywords_kr": "CU 즉시환급, 전국 약 570개 매장에서 Trip.PASS로 이용▪CU 즉시환급▪택스리펀▪외국인관광객 부가세환급",
-    "hashtags": "CU▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree"
+    "hashtags": "CU▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree",
+    "web": "https://cu.bgfretail.com/",
+    "sub_kr": "매장 즉시 세금환급",
+    "sub_en": "Instant Tax Refund",
+    "sub_free": "TRUE",
+    "sub_order": 0
   },
   {
     "sub": "taxfree-instant",
@@ -117,7 +142,12 @@
     "buy_kr": "🏪 GS25 즉시환급 이용 안내\nGS25는 국내 편의점 중 최초로 관세청과 연계한 부가세 즉시환급 시스템 도입.▪외국인 관광객이 매장에서 상품을 고른 뒤 계산대에서 결제 전 여권을 제시해 스캔하면, 부가세가 차감된 금액으로 즉시 결제(사전 차감형).▪전국 매장 중 관광지·해안 지역(강릉, 속초, 해운대, 제주 등) 인근 매장을 중심으로 즉시환급 서비스 운영 매장이 확대되는 추세이나, 모든 GS25 매장이 지원하는 것은 아님.▪관광지·해안가 매장일수록 지원 가능성 높음. 결제 전 여권 제시 필수이며, 결제 후에는 적용 불가.",
     "buy_en": "Instant tax refund guide at GS25\nGS25 was the first Korean convenience store chain to build an instant VAT refund system linked with Korea Customs.▪Foreign tourists show their passport for scanning before paying, and the VAT is deducted immediately at checkout (pre-deduction method).▪Participation is expanding especially near tourist and coastal areas (Gangneung, Sokcho, Haeundae, Jeju, etc.), but not every GS25 store offers this service.▪Stores in tourist or coastal areas are more likely to support this. You must present your passport before paying — it cannot be applied after the transaction is complete.",
     "keywords_kr": "GS25, 여권 스캔으로 관세청 연계 즉시환급 지원▪GS25 즉시환급▪택스리펀▪외국인관광객 부가세환급",
-    "hashtags": "GS25▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree"
+    "hashtags": "GS25▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree",
+    "web": "https://gs25.gsretail.com/",
+    "sub_kr": "매장 즉시 세금환급",
+    "sub_en": "Instant Tax Refund",
+    "sub_free": "TRUE",
+    "sub_order": 0
   },
   {
     "sub": "taxfree-instant",
@@ -137,7 +167,12 @@
     "buy_kr": "🏪 세븐일레븐 즉시환급 이용 안내\n세븐일레븐(코리아세븐)은 CU, GS25와 달리 편의점 자체 즉시환급(사전 차감) 시스템을 도입했다는 공식 확인 없음.▪현재까지 확인된 바로는 세븐일레븐 매장에서 여권 스캔만으로 부가세를 차감받는 즉시환급 서비스는 일반적으로 지원되지 않음.▪다만 일부 매장이 개별적으로 사후면세점(외국인 면세판매장)으로 등록되어 있을 수 있으니, 구매 전 매장 입구나 계산대 근처에 'Tax Free' 표시 여부 확인 또는 직원 문의 필요.▪즉시환급을 기대하지 말고 영수증 보관 필수. 출국 당일 공항 세관 환급창구/키오스크에서 사후환급 신청 가능.",
     "buy_en": "Instant tax refund guide at 7-Eleven\nUnlike CU and GS25, Seven Eleven (Korea Seven) has no confirmed official instant (pre-deduction) VAT refund system of its own.▪Based on currently available information, passport-scan instant refunds are generally not supported at Seven Eleven stores.▪That said, individual branches may be separately registered as tax-free retailers, so check for a 'Tax Free' sign at the entrance or ask staff before buying.▪Don't expect an instant refund — keep your receipt. You can claim a post-purchase refund at the airport customs counter or kiosk on your departure day.",
     "keywords_kr": "세븐일레븐, 즉시환급 미지원 안내 — 사후환급으로 이용하세요▪세븐일레븐 즉시환급▪택스리펀▪외국인관광객 부가세환급",
-    "hashtags": "SevenEleven▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree"
+    "hashtags": "SevenEleven▪TaxRefund▪InstantRefund▪KoreaShopping▪DutyFree",
+    "web": "https://www.7-eleven.co.kr/",
+    "sub_kr": "매장 즉시 세금환급",
+    "sub_en": "Instant Tax Refund",
+    "sub_free": "TRUE",
+    "sub_order": 0
   },
   {
     "sub": "emart",
@@ -157,7 +192,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 약 5,980원",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 약 5,980원",
     "keywords_kr": "피코크 정갈한 소고기미역국▪이마트▪즉석 국물 요리▪피코크",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -177,7 +213,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 9,980원",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 9,980원",
     "keywords_kr": "이마트 키친델리 스시e9980▪이마트▪키친델리 스시e9980",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -197,7 +234,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1만원대",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1만원대",
     "keywords_kr": "이마트 키친델리 벤토스시▪이마트▪키친델리 벤토스시",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -217,7 +255,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1,980원~4,480원",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1,980원~4,480원",
     "keywords_kr": "이마트 키친델리 셀렉션초밥▪이마트▪키친델리 셀렉션초밥",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -237,7 +276,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1만원 내외",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1만원 내외",
     "keywords_kr": "갈비맛 돼지후라이드▪이마트▪키친델리",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -257,7 +297,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1만원대",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1만원대",
     "keywords_kr": "스시-e 복 초밥▪이마트▪초밥▪키친델리",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -277,7 +318,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 3,000원대~1만원대",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 3,000원대~1만원대",
     "keywords_kr": "빌리엔젤 레시피 케이크▪이마트▪디저트▪케이크",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -297,7 +339,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 3,000원대",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 3,000원대",
     "keywords_kr": "그릭데이 그릭요거트▪이마트▪디저트▪요거트",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -317,7 +360,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 3만원대~5만원대",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 3만원대~5만원대",
     "keywords_kr": "CJ 스팸 타워 세트▪이마트▪선물세트▪명절",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -337,7 +381,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 3만원대~5만원대",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 3만원대~5만원대",
     "keywords_kr": "동원 참치 타워 세트▪이마트▪선물세트▪명절",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -357,7 +402,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 5만원대~10만원대",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 5만원대~10만원대",
     "keywords_kr": "휴럼 6년근 고려홍삼진액골드▪이마트▪선물세트▪홍삼",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -377,7 +423,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 500g 1만원 내외",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 500g 1만원 내외",
     "keywords_kr": "무라벨 설향딸기▪이마트▪신선식품▪딸기",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -397,7 +444,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 5개 9,950원 내외",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 5개 9,950원 내외",
     "keywords_kr": "제주 한라봉▪이마트▪한라봉▪과일",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -417,7 +465,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 500g 21,900원 내외",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 500g 21,900원 내외",
     "keywords_kr": "이마트 손질 생연어▪이마트▪손질 생연어",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -437,7 +486,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1,580원 내외",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1,580원 내외",
     "keywords_kr": "이마트 노브랜드버거 숯불갈비맛버거▪이마트▪노브랜드버거 숯불갈비맛버거",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -457,7 +507,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 품목별 상이",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 품목별 상이",
     "keywords_kr": "이마트 초저가 상품 50종▪이마트▪초저가 상품 50종",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -477,7 +528,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1만원대",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1만원대",
     "keywords_kr": "피코크 라무라 흑라멘▪이마트▪즉석 라멘▪피코크",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -497,7 +549,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1만원 내외",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1만원 내외",
     "keywords_kr": "피코크 라무라 닭껍질교자▪이마트▪교자만두▪피코크",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -517,7 +570,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1만원 내외",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1만원 내외",
     "keywords_kr": "홍복 유니짜장면▪이마트▪즉석 짜장면▪피코크",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -537,7 +591,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 2,000원대~4,000원대",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 2,000원대~4,000원대",
     "keywords_kr": "이마트 키친델리 김밥▪이마트▪키친델리 김밥",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -557,7 +612,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 2,000원대~4,000원대",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 2,000원대~4,000원대",
     "keywords_kr": "이마트 키친델리 샌드위치▪이마트▪키친델리 샌드위치",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -577,7 +633,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 6,000원 내외",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 6,000원 내외",
     "keywords_kr": "피코크 순대실록 순대국밥▪이마트▪즉석조리▪국물요리",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -597,7 +654,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 3,000원대~1만원대",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 3,000원대~1만원대",
     "keywords_kr": "코튼클럽 빵▪이마트▪베이커리▪빵",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -617,7 +675,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 5,000원 내외",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 5,000원 내외",
     "keywords_kr": "풀무원 롤유부초밥▪이마트▪초밥▪유부초밥",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -637,7 +696,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 5,000원 내외",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 5,000원 내외",
     "keywords_kr": "동원 사각유부초밥▪이마트▪초밥▪유부초밥",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -657,7 +717,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1만원 내외",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1만원 내외",
     "keywords_kr": "CJ 주부초밥왕▪이마트▪초밥▪초밥 키트",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -677,7 +738,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1만원대~5만원대",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1만원대~5만원대",
     "keywords_kr": "이마트 핸드캐리 선물세트▪이마트▪핸드캐리 선물세트",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -697,7 +759,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 6,000원 내외",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 6,000원 내외",
     "keywords_kr": "이마트 조선호텔 소고기미역국▪이마트▪조선호텔 소고기미역국",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -717,7 +780,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 가격대 1만원대~",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 가격대 1만원대~",
     "keywords_kr": "이마트 K-과자 모둠 선물세트▪이마트▪K-과자 모둠 선물세트",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "emart",
@@ -737,7 +801,8 @@
     "buy_kr": "🏪 전국 이마트 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 가격대 시즌별 상이",
     "buy_en": "🏪 Available at E-Mart stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 가격대 시즌별 상이",
     "keywords_kr": "이마트 대용량 딸기▪이마트▪대용량 딸기",
-    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "EMart▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.emart.com/"
   },
   {
     "sub": "nobrand",
@@ -757,7 +822,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1,280원",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1,280원",
     "keywords_kr": "노브랜드 고르곤졸라치즈 소프트콘▪노브랜드▪고르곤졸라치즈 소프트콘",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -777,7 +843,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 약 4,000원(한 판)",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 약 4,000원(한 판)",
     "keywords_kr": "노브랜드 대란▪노브랜드▪대란",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -797,7 +864,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 12,980원",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 12,980원",
     "keywords_kr": "노브랜드 냉동 오징어링▪노브랜드▪냉동 오징어링",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -817,7 +885,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 9,980원",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 9,980원",
     "keywords_kr": "노브랜드 슬라이스치즈▪노브랜드▪슬라이스치즈",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -837,7 +906,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 500ml x20 3,800원 내외",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 500ml x20 3,800원 내외",
     "keywords_kr": "노브랜드 미네랄워터 무라벨▪노브랜드▪미네랄워터 무라벨",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -857,7 +927,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 890원",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 890원",
     "keywords_kr": "노브랜드 감자칩 오리지널▪노브랜드▪감자칩 오리지널",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -877,7 +948,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 890원 내외",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 890원 내외",
     "keywords_kr": "노브랜드 감자칩 사워크림&어니언▪노브랜드▪감자칩 사워크림&어니언",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -897,7 +969,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1,500원 내외",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1,500원 내외",
     "keywords_kr": "노브랜드 자색고구마칩▪노브랜드▪자색고구마칩",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -917,7 +990,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 2,000원대",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 2,000원대",
     "keywords_kr": "노브랜드 초코칩쿠키▪노브랜드▪초코칩쿠키",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -937,7 +1011,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1만원 내외(박스)",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1만원 내외(박스)",
     "keywords_kr": "노브랜드 미니 웨하스 바닐라맛▪노브랜드▪미니 웨하스 바닐라맛",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -957,7 +1032,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1,500원 내외(60g)",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1,500원 내외(60g)",
     "keywords_kr": "노브랜드 호지차 웨하스▪노브랜드▪호지차 웨하스",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -977,7 +1053,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 7,980원",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 7,980원",
     "keywords_kr": "노브랜드 치킨너겟▪노브랜드▪치킨너겟",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -997,7 +1074,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 5,000원대",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 5,000원대",
     "keywords_kr": "노브랜드 교자만두▪노브랜드▪교자만두",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1017,7 +1095,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 6,000원 내외",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 6,000원 내외",
     "keywords_kr": "노브랜드 갈비만두▪노브랜드▪갈비만두",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1037,7 +1116,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 5,000원대",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 5,000원대",
     "keywords_kr": "노브랜드 군만두▪노브랜드▪군만두",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1057,7 +1137,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 5,000원대",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 5,000원대",
     "keywords_kr": "노브랜드 왕만두▪노브랜드▪왕만두",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1077,7 +1158,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 3,000원대",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 3,000원대",
     "keywords_kr": "노브랜드 라면 한그릇▪노브랜드▪라면 한그릇",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1097,7 +1179,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능\n▪온라인몰(SSG닷컴 등)에서도 구매 가능\n▪참고 가격: 1,500원 내외(250g)",
     "buy_en": "🏪 Available at NoBrand stores nationwide\n▪Also available via online store (e.g. SSG.com)\n▪Reference price (as listed in KRW): 1,500원 내외(250g)",
     "keywords_kr": "노브랜드 라면스낵▪노브랜드▪라면스낵",
-    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket"
+    "hashtags": "NoBrand▪KoreaShopping▪KoreanFood▪Supermarket",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1117,7 +1200,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능. 가격은 1,000원 내외 수준. 온라인몰(SSG닷컴 등)에서도 구매 가능.",
     "buy_en": "🏪 Available at No Brand stores nationwide. Priced around 1,000원 내외. Also available via online mall (SSG.com).",
     "keywords_kr": "노브랜드 도톰한 물티슈▪노브랜드▪노브랜드 가성비▪노브랜드 추천▪노브랜드 도톰한 물티슈 구매",
-    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup"
+    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1137,7 +1221,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능. 가격은 1만원대 수준. 온라인몰(SSG닷컴 등)에서도 구매 가능.",
     "buy_en": "🏪 Available at No Brand stores nationwide. Priced around 1만원대. Also available via online mall (SSG.com).",
     "keywords_kr": "노브랜드 3겹 화장지▪노브랜드▪노브랜드 가성비▪노브랜드 추천▪노브랜드 3겹 화장지 구매",
-    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup"
+    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1157,7 +1242,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능. 가격은 2,000원대 수준. 온라인몰(SSG닷컴 등)에서도 구매 가능.",
     "buy_en": "🏪 Available at No Brand stores nationwide. Priced around 2,000원대. Also available via online mall (SSG.com).",
     "keywords_kr": "노브랜드 우유식빵▪노브랜드▪노브랜드 가성비▪노브랜드 추천▪노브랜드 우유식빵 구매",
-    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup"
+    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1177,7 +1263,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능. 가격은 3,000원대 수준. 온라인몰(SSG닷컴 등)에서도 구매 가능.",
     "buy_en": "🏪 Available at No Brand stores nationwide. Priced around 3,000원대. Also available via online mall (SSG.com).",
     "keywords_kr": "노브랜드 우유케이크▪노브랜드▪노브랜드 가성비▪노브랜드 추천▪노브랜드 우유케이크 구매",
-    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup"
+    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1197,7 +1284,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능. 가격은 1,000원 내외 수준. 온라인몰(SSG닷컴 등)에서도 구매 가능.",
     "buy_en": "🏪 Available at No Brand stores nationwide. Priced around 1,000원 내외. Also available via online mall (SSG.com).",
     "keywords_kr": "노브랜드 라면(매운맛)▪노브랜드▪노브랜드 가성비▪노브랜드 추천▪노브랜드 라면(매운맛) 구매",
-    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup"
+    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1217,7 +1305,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능. 가격은 5,000원대 수준. 온라인몰(SSG닷컴 등)에서도 구매 가능.",
     "buy_en": "🏪 Available at No Brand stores nationwide. Priced around 5,000원대. Also available via online mall (SSG.com).",
     "keywords_kr": "노브랜드 냉동피자▪노브랜드▪노브랜드 가성비▪노브랜드 추천▪노브랜드 냉동피자 구매",
-    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup"
+    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1237,7 +1326,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능. 가격은 5,000원대(멀티팩) 수준. 온라인몰(SSG닷컴 등)에서도 구매 가능.",
     "buy_en": "🏪 Available at No Brand stores nationwide. Priced around 5,000원대(멀티팩). Also available via online mall (SSG.com).",
     "keywords_kr": "노브랜드 냉동핫도그▪노브랜드▪노브랜드 가성비▪노브랜드 추천▪노브랜드 냉동핫도그 구매",
-    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup"
+    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1257,7 +1347,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능. 가격은 5,000원 내외 수준. 온라인몰(SSG닷컴 등)에서도 구매 가능.",
     "buy_en": "🏪 Available at No Brand stores nationwide. Priced around 5,000원 내외. Also available via online mall (SSG.com).",
     "keywords_kr": "노브랜드 미네랄워터 2L▪노브랜드▪노브랜드 가성비▪노브랜드 추천▪노브랜드 미네랄워터 2L 구매",
-    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup"
+    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1277,7 +1368,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능. 가격은 2,000원대 수준. 온라인몰(SSG닷컴 등)에서도 구매 가능.",
     "buy_en": "🏪 Available at No Brand stores nationwide. Priced around 2,000원대. Also available via online mall (SSG.com).",
     "keywords_kr": "노브랜드 시나몬롤▪노브랜드▪노브랜드 가성비▪노브랜드 추천▪노브랜드 시나몬롤 구매",
-    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup"
+    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1297,7 +1389,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능. 가격은 800원 내외 수준. 온라인몰(SSG닷컴 등)에서도 구매 가능.",
     "buy_en": "🏪 Available at No Brand stores nationwide. Priced around 800원 내외. Also available via online mall (SSG.com).",
     "keywords_kr": "노브랜드 즉석밥▪노브랜드▪노브랜드 가성비▪노브랜드 추천▪노브랜드 즉석밥 구매",
-    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup"
+    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1317,7 +1410,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능. 가격은 5,000원대 수준. 온라인몰(SSG닷컴 등)에서도 구매 가능.",
     "buy_en": "🏪 Available at No Brand stores nationwide. Priced around 5,000원대. Also available via online mall (SSG.com).",
     "keywords_kr": "노브랜드 소시지▪노브랜드▪노브랜드 가성비▪노브랜드 추천▪노브랜드 소시지 구매",
-    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup"
+    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "nobrand",
@@ -1337,7 +1431,8 @@
     "buy_kr": "🏪 전국 노브랜드 매장에서 구매 가능. 가격은 3,000원대(멀티팩) 수준. 온라인몰(SSG닷컴 등)에서도 구매 가능.",
     "buy_en": "🏪 Available at No Brand stores nationwide. Priced around 3,000원대(멀티팩). Also available via online mall (SSG.com).",
     "keywords_kr": "노브랜드 도시락김▪노브랜드▪노브랜드 가성비▪노브랜드 추천▪노브랜드 도시락김 구매",
-    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup"
+    "hashtags": "NoBrand▪노브랜드▪KoreaGrocery▪ValueShopping▪EmartGroup",
+    "web": "https://www.nobrand.co.kr/"
   },
   {
     "sub": "traders",
@@ -1357,7 +1452,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 15,980원 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 15,980원. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 딸기한가득케이크▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 딸기한가득케이크 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1377,7 +1473,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 떠먹는 초코딸기케이크▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 떠먹는 초코딸기케이크 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1397,7 +1494,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 어메이징 마카롱▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 어메이징 마카롱 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1417,7 +1515,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 16,800원 내외 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 16,800원 내외. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 불고기피자▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 불고기피자 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1437,7 +1536,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 16,800원~18,800원 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 16,800원~18,800원. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 콤비네이션피자▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 콤비네이션피자 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1457,7 +1557,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 18,800원 내외 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 18,800원 내외. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 치즈크러스트피자▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 치즈크러스트피자 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1477,7 +1578,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원 내외 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원 내외. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "아미고 나쵸칩 1kg▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪아미고 나쵸칩 1kg 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1497,7 +1599,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원 내외 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원 내외. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "아미고 나쵸 반반 콤보▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪아미고 나쵸 반반 콤보 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1517,7 +1620,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 맛있는 스낵 멀티팩▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 맛있는 스낵 멀티팩 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1537,7 +1641,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 로스팅 치킨▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 로스팅 치킨 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1557,7 +1662,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원 내외 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원 내외. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 냉동 볶음밥▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 냉동 볶음밥 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1577,7 +1683,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원 내외 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원 내외. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 불고기조각피자▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 불고기조각피자 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1597,7 +1704,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 2,000원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 2,000원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 우유크림빵▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 우유크림빵 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1617,7 +1725,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 2,000원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 2,000원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 우유빵▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 우유빵 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1637,7 +1746,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원대(다입 묶음) 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원대(다입 묶음). Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 초당옥수수▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 초당옥수수 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1657,7 +1767,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원 내외 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원 내외. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 대용량 목초우유▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 대용량 목초우유 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1677,7 +1788,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 3만원대~5만원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 3만원대~5만원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 호주산 소고기 브리스킷▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 호주산 소고기 브리스킷 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1697,7 +1809,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원 내외(30구) 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원 내외(30구). Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 대용량 계란▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 대용량 계란 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1717,7 +1830,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 품목별 상이 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 품목별 상이. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 수입과일 세트▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 수입과일 세트 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1737,7 +1851,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 2만원대~4만원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 2만원대~4만원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 대용량 생선회▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 대용량 생선회 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1757,7 +1872,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 대용량 닭꼬치▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 대용량 닭꼬치 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1777,7 +1893,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 바비큐 닭다리 세트▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 바비큐 닭다리 세트 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1797,7 +1914,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 꼬치구이 팩▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 꼬치구이 팩 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1817,7 +1935,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 멀티 스낵 버킷▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 멀티 스낵 버킷 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1837,7 +1956,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원 내외 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원 내외. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 누가크래커▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 누가크래커 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1857,7 +1977,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원 내외 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원 내외. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 오징어해씨볼▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 오징어해씨볼 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1877,7 +1998,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 오트밀 미니바이트 1000g▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 오트밀 미니바이트 1000g 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1897,7 +2019,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원대(멀티팩) 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원대(멀티팩). Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 대용량 코코넛워터▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 대용량 코코넛워터 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1917,7 +2040,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 대용량 견과류 믹스▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 대용량 견과류 믹스 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "traders",
@@ -1937,7 +2061,8 @@
     "buy_kr": "🏪 전국 트레이더스 매장에서 구매 가능. 가격은 1만원대 수준. 온라인몰(SSG닷컴 트레이더스몰)에서도 구매 가능. 대용량 상품이 많아 방문 전 재고 확인 권장.",
     "buy_en": "🏪 Available at Traders stores nationwide. Priced around 1만원대. Also available via online mall (SSG.com Traders Mall). Bulk items, so check stock before visiting.",
     "keywords_kr": "트레이더스 대용량 냉동 만두▪트레이더스▪트레이더스 대용량▪트레이더스 추천▪트레이더스 대용량 냉동 만두 구매",
-    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping"
+    "hashtags": "Traders▪트레이더스▪CostcoAlternative▪BulkShopping▪KoreaShopping",
+    "web": "https://www.emart.com/tradersMain.do"
   },
   {
     "sub": "emart24",
@@ -1957,7 +2082,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능. 가격은 1,500원대 수준. 24시간 운영 매장이 많아 언제든 구매 가능.",
     "buy_en": "🏪 Available at emart24 stores nationwide. Priced around 1,500원대. Many locations operate 24 hours, so you can buy anytime.",
     "keywords_kr": "참치마요 삼각김밥▪이마트24▪이마트24 편의점▪이마트24 추천▪참치마요 삼각김밥 구매",
-    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping"
+    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -1977,7 +2103,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능. 가격은 1,900원 수준. 24시간 운영 매장이 많아 언제든 구매 가능.",
     "buy_en": "🏪 Available at emart24 stores nationwide. Priced around 1,900원. Many locations operate 24 hours, so you can buy anytime.",
     "keywords_kr": "1900김밥▪이마트24▪이마트24 편의점▪이마트24 추천▪1900김밥 구매",
-    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping"
+    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -1997,7 +2124,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능. 가격은 900원 수준. 24시간 운영 매장이 많아 언제든 구매 가능.",
     "buy_en": "🏪 Available at emart24 stores nationwide. Priced around 900원. Many locations operate 24 hours, so you can buy anytime.",
     "keywords_kr": "900삼각김밥▪이마트24▪이마트24 편의점▪이마트24 추천▪900삼각김밥 구매",
-    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping"
+    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2017,7 +2145,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능. 가격은 2,900원 수준. 24시간 운영 매장이 많아 언제든 구매 가능.",
     "buy_en": "🏪 Available at emart24 stores nationwide. Priced around 2,900원. Many locations operate 24 hours, so you can buy anytime.",
     "keywords_kr": "2900짜장면▪이마트24▪이마트24 편의점▪이마트24 추천▪2900짜장면 구매",
-    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping"
+    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2037,7 +2166,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능. 가격은 3,600원 수준. 24시간 운영 매장이 많아 언제든 구매 가능.",
     "buy_en": "🏪 Available at emart24 stores nationwide. Priced around 3,600원. Many locations operate 24 hours, so you can buy anytime.",
     "keywords_kr": "3600비빔밥▪이마트24▪이마트24 편의점▪이마트24 추천▪3600비빔밥 구매",
-    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping"
+    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2057,7 +2187,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능. 가격은 2,900원 수준. 24시간 운영 매장이 많아 언제든 구매 가능.",
     "buy_en": "🏪 Available at emart24 stores nationwide. Priced around 2,900원. Many locations operate 24 hours, so you can buy anytime.",
     "keywords_kr": "2900덮밥▪이마트24▪이마트24 편의점▪이마트24 추천▪2900덮밥 구매",
-    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping"
+    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2077,7 +2208,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능. 가격은 2,200원 수준. 24시간 운영 매장이 많아 언제든 구매 가능.",
     "buy_en": "🏪 Available at emart24 stores nationwide. Priced around 2,200원. Many locations operate 24 hours, so you can buy anytime.",
     "keywords_kr": "2200치즈버거▪이마트24▪이마트24 편의점▪이마트24 추천▪2200치즈버거 구매",
-    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping"
+    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2097,7 +2229,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능. 가격은 7,600원 수준. 24시간 운영 매장이 많아 언제든 구매 가능.",
     "buy_en": "🏪 Available at emart24 stores nationwide. Priced around 7,600원. Many locations operate 24 hours, so you can buy anytime.",
     "keywords_kr": "7600롤티슈▪이마트24▪이마트24 편의점▪이마트24 추천▪7600롤티슈 구매",
-    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping"
+    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2117,7 +2250,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능. 가격은 3,900원 수준. 24시간 운영 매장이 많아 언제든 구매 가능.",
     "buy_en": "🏪 Available at emart24 stores nationwide. Priced around 3,900원. Many locations operate 24 hours, so you can buy anytime.",
     "keywords_kr": "3900정찬(제육&돈까스)▪이마트24▪이마트24 편의점▪이마트24 추천▪3900정찬(제육&돈까스) 구매",
-    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping"
+    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2137,7 +2271,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능. 가격은 1,800원 수준. 24시간 운영 매장이 많아 언제든 구매 가능.",
     "buy_en": "🏪 Available at emart24 stores nationwide. Priced around 1,800원. Many locations operate 24 hours, so you can buy anytime.",
     "keywords_kr": "1800햄포테이토샌드위치▪이마트24▪이마트24 편의점▪이마트24 추천▪1800햄포테이토샌드위치 구매",
-    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping"
+    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2157,7 +2292,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능. 가격은 1,000원 수준. 24시간 운영 매장이 많아 언제든 구매 가능.",
     "buy_en": "🏪 Available at emart24 stores nationwide. Priced around 1,000원. Many locations operate 24 hours, so you can buy anytime.",
     "keywords_kr": "1000블랙커피▪이마트24▪이마트24 편의점▪이마트24 추천▪1000블랙커피 구매",
-    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping"
+    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2177,7 +2313,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능. 가격은 1,500원~2,500원대 수준. 24시간 운영 매장이 많아 언제든 구매 가능.",
     "buy_en": "🏪 Available at emart24 stores nationwide. Priced around 1,500원~2,500원대. Many locations operate 24 hours, so you can buy anytime.",
     "keywords_kr": "모찌롤▪이마트24▪이마트24 편의점▪이마트24 추천▪모찌롤 구매",
-    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping"
+    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2197,7 +2334,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능. 가격은 2,000원~3,000원대 수준. 24시간 운영 매장이 많아 언제든 구매 가능.",
     "buy_en": "🏪 Available at emart24 stores nationwide. Priced around 2,000원~3,000원대. Many locations operate 24 hours, so you can buy anytime.",
     "keywords_kr": "쇼콜라생크림케이크▪이마트24▪이마트24 편의점▪이마트24 추천▪쇼콜라생크림케이크 구매",
-    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping"
+    "hashtags": "Emart24▪이마트24▪ConvenienceStore▪KoreaConvenienceStore▪KoreaShopping",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2217,7 +2355,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 3,500원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 3,500원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "딸기크림샌드▪이마트24▪이마트24 딸기크림샌드▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪StrawberryCreamSand▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪StrawberryCreamSand▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2237,7 +2376,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 3,500원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 3,500원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "딸기초코크림샌드▪이마트24▪이마트24 딸기초코크림샌드▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪StrawberryChocoCreamSand▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪StrawberryChocoCreamSand▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2257,7 +2397,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 1,900원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 1,900원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "우유크림쫀득모찌빵▪이마트24▪이마트24 우유크림쫀득모찌빵▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪MilkCreamChewyMochiBread▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪MilkCreamChewyMochiBread▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2277,7 +2418,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 2,000원~3,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 2,000원~3,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "초코카스테라카다이프모찌▪이마트24▪이마트24 초코카스테라카다이프모찌▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪ChocoCastellaKadayifMochi▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪ChocoCastellaKadayifMochi▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2297,7 +2439,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 2,000원~3,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 2,000원~3,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "서울대빵▪이마트24▪이마트24 서울대빵▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪SeoulUniv.Bread▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪SeoulUniv.Bread▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2317,7 +2460,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 2,000원~3,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 2,000원~3,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "약콩크림빵▪이마트24▪이마트24 약콩크림빵▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪Yak-kongSoybeanCreamBread▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪Yak-kongSoybeanCreamBread▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2337,7 +2481,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 2,000원~3,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 2,000원~3,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "카라멜 약콩크림롤▪이마트24▪이마트24 카라멜 약콩크림롤▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪CaramelYak-kongCreamRoll▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪CaramelYak-kongCreamRoll▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2357,7 +2502,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 5,500원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 5,500원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "참치김치찌개도시락▪이마트24▪이마트24 참치김치찌개도시락▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪TunaKimchiStewLunchBox▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪TunaKimchiStewLunchBox▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2377,7 +2523,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 5,500원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 5,500원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "떡만둣국정찬도시락▪이마트24▪이마트24 떡만둣국정찬도시락▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪Tteok-mandu-gukSetLunchBox▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪Tteok-mandu-gukSetLunchBox▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2397,7 +2544,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 5,500원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 5,500원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "부대찌개도시락▪이마트24▪이마트24 부대찌개도시락▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪Budae-jjigaeLunchBox▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪Budae-jjigaeLunchBox▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2417,7 +2565,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 4,000원~5,500원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 4,000원~5,500원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "토핑라면정식▪이마트24▪이마트24 토핑라면정식▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪ToppingRamyeonSetMeal▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪ToppingRamyeonSetMeal▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2437,7 +2586,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 5,000원~6,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 5,000원~6,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "한판모둠도시락▪이마트24▪이마트24 한판모둠도시락▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪HansungAssortedLunchBox▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪HansungAssortedLunchBox▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2457,7 +2607,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 1,700원~2,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 1,700원~2,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "더빅크래미게딱지장삼각김밥▪이마트24▪이마트24 더빅크래미게딱지장삼각김밥▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪TheBigCrab-miGejangTriangleKimbap▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪TheBigCrab-miGejangTriangleKimbap▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2477,7 +2628,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 3,000원~4,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 3,000원~4,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "카브루 레디 클래식 하이볼▪이마트24▪이마트24 카브루 레디 클래식 하이볼▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪KabrewReadyClassicHighball▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪KabrewReadyClassicHighball▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2497,7 +2649,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 8,000원~15,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 8,000원~15,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "모리19▪이마트24▪이마트24 모리19▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪Mori19▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪Mori19▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2517,7 +2670,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 2,200원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 2,200원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "카라멜맛쿠키(트릭컬 리바이브 콜라보)▪이마트24▪이마트24 카라멜맛쿠키(트릭컬 리바이브 콜라보)▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪CaramelCookie(trickcalReviveCollab)▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪CaramelCookie(trickcalReviveCollab)▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "emart24",
@@ -2537,7 +2691,8 @@
     "buy_kr": "🏪 전국 이마트24 매장에서 구매 가능 (참고 가격: 3,000원~4,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at Emart24 stores nationwide (reference price: 3,000원~4,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "갈릭에그햄치즈 샌드위치(브레드이발소 콜라보)▪이마트24▪이마트24 갈릭에그햄치즈 샌드위치(브레드이발소 콜라보)▪편의점 간식",
-    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪GarlicEggHamCheeseSandwich(breadBarbersh▪KoreaTravel"
+    "hashtags": "Emart24▪ConvenienceStore▪KoreaShopping▪GarlicEggHamCheeseSandwich(breadBarbersh▪KoreaTravel",
+    "web": "https://www.emart24.co.kr/"
   },
   {
     "sub": "cu",
@@ -2557,7 +2712,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 2,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 2,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "연세우유 생크림빵▪CU▪CU 연세우유 생크림빵▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪YonseiMilkCreamBread▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪YonseiMilkCreamBread▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2577,7 +2733,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 3,900원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 3,900원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "곰표 밀맥주▪CU▪CU 곰표 밀맥주▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪GompyoWheatBeer▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪GompyoWheatBeer▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2597,7 +2754,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 1,700원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 1,700원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "곰표 팝콘▪CU▪CU 곰표 팝콘▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪GompyoPopcorn▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪GompyoPopcorn▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2617,7 +2775,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 2,300원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 2,300원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "곰표 나초 오리지널▪CU▪CU 곰표 나초 오리지널▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪GompyoNachoOriginal▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪GompyoNachoOriginal▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2637,7 +2796,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 2,500원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 2,500원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "백종원 고깃집볶음밥 김밥▪CU▪CU 백종원 고깃집볶음밥 김밥▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪BaekJong-wonsGrilledMeatFriedRiceKimbap▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪BaekJong-wonsGrilledMeatFriedRiceKimbap▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2657,7 +2817,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 1,200원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 1,200원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "백종원 고깃집볶음밥 삼각김밥▪CU▪CU 백종원 고깃집볶음밥 삼각김밥▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪BaekJong-wonsGrilledMeatFriedRiceTriangl▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪BaekJong-wonsGrilledMeatFriedRiceTriangl▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2677,7 +2838,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 개당 480원 (5입 2,400원)) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 개당 480원 (5입 2,400원)) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "헤이루 득템 라면▪CU▪CU 헤이루 득템 라면▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪HeyrooDeuktemRamen▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪HeyrooDeuktemRamen▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2697,7 +2859,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 2,500원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 2,500원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "헤이루 득템 핫바▪CU▪CU 헤이루 득템 핫바▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪HeyrooDeuktemHotBar▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪HeyrooDeuktemHotBar▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2717,7 +2880,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 990원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 990원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "990원 매콤어묵 삼각김밥▪CU▪CU 990원 매콤어묵 삼각김밥▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪990WonSpicyEomukTriangleKimbap▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪990WonSpicyEomukTriangleKimbap▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2737,7 +2901,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 1,700원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 1,700원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "겉바속촉 참치마요 삼각김밥▪CU▪CU 겉바속촉 참치마요 삼각김밥▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪Crispy-outsideSoft-insideTunaMayoTriangl▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪Crispy-outsideSoft-insideTunaMayoTriangl▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2757,7 +2922,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 3,900원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 3,900원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "두바이 초코 브라우니▪CU▪CU 두바이 초코 브라우니▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪DubaiChocolateBrownie▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪DubaiChocolateBrownie▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2777,7 +2943,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 3,100원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 3,100원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "두바이 쫀득 찹쌀떡▪CU▪CU 두바이 쫀득 찹쌀떡▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪DubaiChewyGlutinousRiceCake▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪DubaiChewyGlutinousRiceCake▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2797,7 +2964,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 4,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 4,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "스스스 딸기 샌드위치▪CU▪CU 스스스 딸기 샌드위치▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪SseuseuseuStrawberrySandwich▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪SseuseuseuStrawberrySandwich▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2817,7 +2985,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 4,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 4,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "키키 요거트샌드▪CU▪CU 키키 요거트샌드▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪KikiYogurtSandwich▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪KikiYogurtSandwich▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2837,7 +3006,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 4,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 4,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "샤샤샤 요거트샌드▪CU▪CU 샤샤샤 요거트샌드▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪ShashashaYogurtSandwich▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪ShashashaYogurtSandwich▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2857,7 +3027,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 2,000원 내외) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 2,000원 내외) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "델라페 블랙아메리카노▪CU▪CU 델라페 블랙아메리카노▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪DellaCaféBlackAmericano▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪DellaCaféBlackAmericano▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2877,7 +3048,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 2,000원 내외) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 2,000원 내외) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "델라페 청포도에이드▪CU▪CU 델라페 청포도에이드▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪DellaCaféGreenGrapeAde▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪DellaCaféGreenGrapeAde▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2897,7 +3069,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 2,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 2,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "델라페 플러스 레드 석류 블렌디드▪CU▪CU 델라페 플러스 레드 석류 블렌디드▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪DellaCaféPlusRedPomegranateBlend▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪DellaCaféPlusRedPomegranateBlend▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2917,7 +3090,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 4,500원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 4,500원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "기사님도 반한 불백 도시락▪CU▪CU 기사님도 반한 불백 도시락▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪TheDriversFavoriteBulgogiBento▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪TheDriversFavoriteBulgogiBento▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2937,7 +3111,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 1,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 1,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "헤이루 우리쌀밥 득템▪CU▪CU 헤이루 우리쌀밥 득템▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪HeyrooKoreanRiceDeuktem▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪HeyrooKoreanRiceDeuktem▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2957,7 +3132,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 1,500원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 1,500원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "곤약젤리 (타라미)▪CU▪CU 곤약젤리 (타라미)▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪KonjacJelly(tarami)▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪KonjacJelly(tarami)▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2977,7 +3153,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 3,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 3,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "백종원 매운돼지비빔면▪CU▪CU 백종원 매운돼지비빔면▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪BaekJong-wonsSpicyPorkBibimNoodles▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪BaekJong-wonsSpicyPorkBibimNoodles▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -2997,7 +3174,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 4,500원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 4,500원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "백종원 한판 도시락▪CU▪CU 백종원 한판 도시락▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪BaekJong-wonsOne-plateBento▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪BaekJong-wonsOne-plateBento▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -3017,7 +3195,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 2,500원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 2,500원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "백종원의 매콤한마리 라면김밥▪CU▪CU 백종원의 매콤한마리 라면김밥▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪BaekJong-wonsSpicyWholeChickenRamenKimba▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪BaekJong-wonsSpicyWholeChickenRamenKimba▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -3037,7 +3216,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 7,900원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 7,900원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "곰표 쿠션팩트▪CU▪CU 곰표 쿠션팩트▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪GompyoCushionCompact▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪GompyoCushionCompact▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -3057,7 +3237,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 비정기 판매 (시즌 한정)) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 비정기 판매 (시즌 한정)) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "곰표 미니캐리어 (빼빼로 콜라보)▪CU▪CU 곰표 미니캐리어 (빼빼로 콜라보)▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪GompyoMiniCarrier(peperoCollaboration)▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪GompyoMiniCarrier(peperoCollaboration)▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -3077,7 +3258,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 2,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 2,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "고메 포테토 솔티버터맛▪CU▪CU 고메 포테토 솔티버터맛▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪GourmetPotatoSaltyButterFlavor▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪GourmetPotatoSaltyButterFlavor▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -3097,7 +3279,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 2,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 2,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "오사쯔 델리만쥬맛 스낵▪CU▪CU 오사쯔 델리만쥬맛 스낵▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪OsatsuDelimanjuFlavorSnack▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪OsatsuDelimanjuFlavorSnack▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -3117,7 +3300,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 4,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 4,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "백종원 부대볶음 간편식▪CU▪CU 백종원 부대볶음 간편식▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪BaekJong-wonsBudaeJjigaeStir-fryConvenie▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪BaekJong-wonsBudaeJjigaeStir-fryConvenie▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "cu",
@@ -3137,7 +3321,8 @@
     "buy_kr": "🏪 전국 CU 매장에서 구매 가능 (참고 가격: 1,500원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at CU stores nationwide (reference price: 1,500원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "김치제육 삼각김밥▪CU▪CU 김치제육 삼각김밥▪CU 편의점",
-    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪KimchiPorkBulgogiTriangleKimbap▪KoreaTravel"
+    "hashtags": "CU▪ConvenienceStore▪KoreaShopping▪KimchiPorkBulgogiTriangleKimbap▪KoreaTravel",
+    "web": "https://cu.bgfretail.com/"
   },
   {
     "sub": "gs25",
@@ -3157,7 +3342,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능 (참고 가격: 4,300원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at GS25 stores nationwide (reference price: 4,300원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "오늘의든든한도시락▪GS25▪GS25 오늘의든든한도시락▪GS25 편의점",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪TodaysHeartyLunchbox▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪TodaysHeartyLunchbox▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3177,7 +3363,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능 (참고 가격: 5,500원) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at GS25 stores nationwide (reference price: 5,500원) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "이달의 도시락 개강·개학편▪GS25▪GS25 이달의 도시락 개강·개학편▪GS25 편의점",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪MonthlyLunchboxBack-to-schoolEdition▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪MonthlyLunchboxBack-to-schoolEdition▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3197,7 +3384,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능 (참고 가격: 4,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at GS25 stores nationwide (reference price: 4,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "김혜자도시락 한돈반반제육▪GS25▪GS25 김혜자도시락 한돈반반제육▪GS25 편의점",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪KimHye-jaLunchboxHalf&HalfHanwooPork▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪KimHye-jaLunchboxHalf&HalfHanwooPork▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3217,7 +3405,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능 (참고 가격: 4,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at GS25 stores nationwide (reference price: 4,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "혜자로운 집밥 오징어불고기 도시락▪GS25▪GS25 혜자로운 집밥 오징어불고기 도시락▪GS25 편의점",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪HyejaHomestyleSquidBulgogiLunchbox▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪HyejaHomestyleSquidBulgogiLunchbox▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3237,7 +3426,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능 (참고 가격: 5,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at GS25 stores nationwide (reference price: 5,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "명일방주: 엔드필드 콜라보 도시락▪GS25▪GS25 명일방주: 엔드필드 콜라보 도시락▪GS25 편의점",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪ArknightsEndfieldCollabLunchbox▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪ArknightsEndfieldCollabLunchbox▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3257,7 +3447,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능 (참고 가격: 5,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at GS25 stores nationwide (reference price: 5,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "슈퍼 마리오 갤럭시 콜라보 도시락▪GS25▪GS25 슈퍼 마리오 갤럭시 콜라보 도시락▪GS25 편의점",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪SuperMarioGalaxyCollabLunchbox▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪SuperMarioGalaxyCollabLunchbox▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3277,7 +3468,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능 (참고 가격: 5,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at GS25 stores nationwide (reference price: 5,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "이환 콜라보 도시락▪GS25▪GS25 이환 콜라보 도시락▪GS25 편의점",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪E-hwanCollabLunchbox▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪E-hwanCollabLunchbox▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3297,7 +3489,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능 (참고 가격: 2,000원대) ▪ 24시간 운영 매장이 많아 언제든 구매 가능 ▪ 매장별 재고·판매 여부는 다를 수 있음",
     "buy_en": "Available for purchase at GS25 stores nationwide (reference price: 2,000원대) ▪ Many locations operate 24 hours, so you can buy it anytime ▪ Stock and availability may vary by store",
     "keywords_kr": "픽셀리 콜라보 빵▪GS25▪GS25 픽셀리 콜라보 빵▪GS25 편의점",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪PixelyCollabBread▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪PixelyCollabBread▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3317,7 +3510,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 2,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 품절이 잦으니 출시 초기 오전 방문이 구매 확률을 높이는 방법.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced around KRW 2,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Sellouts are common, so visiting early on release days boosts your chances.",
     "keywords_kr": "블루 아카이브 빵▪GS25▪GS25 블루 아카이브 빵▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪BlueArchiveBread▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪BlueArchiveBread▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3337,7 +3531,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 5,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 2차 협업 상품이라 시리즈 굿즈 함께 확인 권장.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced around KRW 5,000. Many locations operate 24 hours, so you can drop by anytime. ▪ As part of a second collaboration wave, check for matching series merchandise too.",
     "keywords_kr": "블루 아카이브 콜라보 도시락▪GS25▪GS25 블루 아카이브 콜라보 도시락▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪BlueArchiveCollabLunchbox▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪BlueArchiveCollabLunchbox▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3357,7 +3552,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 1,700원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 전자레인지에 살짝 데우면 밥알 식감이 더 살아남.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced around KRW 1,700. Many locations operate 24 hours, so you can drop by anytime. ▪ A brief microwave warm-up brings out the fluffy rice texture even more.",
     "keywords_kr": "소프트 삼각김밥 치킨마요▪GS25▪GS25 소프트 삼각김밥 치킨마요▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪SoftOnigiriChickenMayo▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪SoftOnigiriChickenMayo▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3377,7 +3573,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 1,700원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 치킨마요와 비교해 먹어보면 식감 차이를 더 잘 느낄 수 있음.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced around KRW 1,700. Many locations operate 24 hours, so you can drop by anytime. ▪ Try it alongside the chicken mayo version to compare the texture difference.",
     "keywords_kr": "소프트 삼각김밥 새우마요▪GS25▪GS25 소프트 삼각김밥 새우마요▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪SoftOnigiriShrimpMayo▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪SoftOnigiriShrimpMayo▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3397,7 +3594,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 1,500원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 양이 많아 한 끼 대용으로도 충분.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced around KRW 1,500. Many locations operate 24 hours, so you can drop by anytime. ▪ Big enough to serve as a full light meal on its own.",
     "keywords_kr": "더큰 참치마요 삼각김밥▪GS25▪GS25 더큰 참치마요 삼각김밥▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪TheBiggerTunaMayoOnigiri▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪TheBiggerTunaMayoOnigiri▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3417,7 +3615,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 2,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 열량이 일반 김밥의 절반 수준이라 다이어트 중에도 부담 적음.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced around KRW 2,000. Many locations operate 24 hours, so you can drop by anytime. ▪ About half the calories of regular gimbap, making it a lighter choice while dieting.",
     "keywords_kr": "통오이김밥▪GS25▪GS25 통오이김밥▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪WholeCucumberGimbap▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪WholeCucumberGimbap▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3437,7 +3636,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 2,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ GS25 냉장 디저트 빵 매출 상위 대부분을 이 시리즈가 차지할 만큼 인기.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced around KRW 2,000. Many locations operate 24 hours, so you can drop by anytime. ▪ This series dominates GS25's top-selling refrigerated dessert bread rankings.",
     "keywords_kr": "서울우유 우유크림빵▪GS25▪GS25 서울우유 우유크림빵▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪SeoulMilkCreamBread▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪SeoulMilkCreamBread▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3457,7 +3657,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 4,000원 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 독특한 비주얼 덕분에 SNS 인증샷용으로도 인기.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced KRW 4,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Its unusual look makes it a popular pick for social media photos.",
     "keywords_kr": "신년 수건케이크▪GS25▪GS25 신년 수건케이크▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪NewYearTowelCake▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪NewYearTowelCake▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3477,7 +3678,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 4,800원 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 나눠 먹기 좋은 두께라 친구나 가족과 함께 즐기기 좋음.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced KRW 4,800. Many locations operate 24 hours, so you can drop by anytime. ▪ Thick enough to share, making it great for enjoying with friends or family.",
     "keywords_kr": "벽돌초콜릿케이크▪GS25▪GS25 벽돌초콜릿케이크▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪BrickChocolateCake▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪BrickChocolateCake▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3497,7 +3699,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 2,500원 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 모찌 식감을 살리려면 상온에 잠깐 두었다가 먹는 것 추천.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced KRW 2,500. Many locations operate 24 hours, so you can drop by anytime. ▪ Let it sit at room temperature briefly to bring out the chewy mochi texture.",
     "keywords_kr": "쿠냥이의 딸기 모찌팬케이크▪GS25▪GS25 쿠냥이의 딸기 모찌팬케이크▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪KunyangSStrawberryMochiPancake▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪KunyangSStrawberryMochiPancake▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3517,7 +3720,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 1,500원 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 균일가 시리즈라 다른 맛과 함께 구매해 비교해보기 좋음.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced KRW 1,500. Many locations operate 24 hours, so you can drop by anytime. ▪ Since it's part of a flat-price series, try pairing it with other flavors in the line.",
     "keywords_kr": "혜자로운 소보로땅콩크림빵▪GS25▪GS25 혜자로운 소보로땅콩크림빵▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪HyejaSoboroPeanutCreamBread▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪HyejaSoboroPeanutCreamBread▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3537,7 +3741,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 1,500원 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 따뜻하게 데워 먹으면 팥앙금이 더 부드럽게 느껴짐.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced KRW 1,500. Many locations operate 24 hours, so you can drop by anytime. ▪ Warming it slightly makes the red bean filling even softer.",
     "keywords_kr": "혜자로운 단팥크림빵▪GS25▪GS25 혜자로운 단팥크림빵▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪HyejaRedBeanCreamBread▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪HyejaRedBeanCreamBread▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3557,7 +3762,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 1,300원 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 프로모션 기간에는 1,000원까지 할인되는 경우가 있어 확인 후 구매 권장.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced KRW 1,300. Many locations operate 24 hours, so you can drop by anytime. ▪ Check for promotions — it sometimes drops to 1,000 won during special campaigns.",
     "keywords_kr": "카페25 아이스 아메리카노▪GS25▪GS25 카페25 아이스 아메리카노▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪Cafe25IcedAmericano▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪Cafe25IcedAmericano▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3577,7 +3783,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 3,000원 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 무더운 여름철 매장별 하루 200잔 이상 팔릴 정도로 인기이니 이른 시간 방문 권장.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced KRW 3,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Popular enough to sell 200+ cups a day per store in summer, so visit earlier for better availability.",
     "keywords_kr": "생과일 스무디▪GS25▪GS25 생과일 스무디▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪FreshFruitSmoothie▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪FreshFruitSmoothie▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3597,7 +3804,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 3,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 원소주는 GS25에서만 500만 병 이상 팔린 메가 히트 상품이라 투고 버전도 품절 잦음.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced around KRW 3,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Since the original Wonsoju sold over 5 million bottles exclusively at GS25, the To Go version sells out frequently too.",
     "keywords_kr": "원소주 투고▪GS25▪GS25 원소주 투고▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪WonsojuToGo▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪WonsojuToGo▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3617,7 +3825,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 4,500원 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 전자레인지 조리 후 소스를 골고루 섞어 먹으면 맛 상승.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced KRW 4,500. Many locations operate 24 hours, so you can drop by anytime. ▪ Stir the sauce thoroughly after microwaving for the best flavor.",
     "keywords_kr": "떡볶퀸 클래식더블토핑떡볶이▪GS25▪GS25 떡볶퀸 클래식더블토핑떡볶이▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪DdukbokqueenClassicDoubleToppingTteokbokki▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪DdukbokqueenClassicDoubleToppingTteokbokki▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3637,7 +3846,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 4,500원 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 매운맛이 부담스러우면 로제 버전 먼저 시도 추천.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced KRW 4,500. Many locations operate 24 hours, so you can drop by anytime. ▪ If spicy food isn't your thing, try the rose version first.",
     "keywords_kr": "떡볶퀸 로제더블토핑떡볶이▪GS25▪GS25 떡볶퀸 로제더블토핑떡볶이▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪DdukbokqueenRoseDoubleToppingTteokbokki▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪DdukbokqueenRoseDoubleToppingTteokbokki▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3657,7 +3867,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 2,000원 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 영화나 드라마를 볼 때 곁들이면 넷플릭스 콜라보 감성을 제대로 느낄 수 있음.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced KRW 2,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Pair it with a movie or show night to fully enjoy the Netflix collaboration vibe.",
     "keywords_kr": "넷플릭스 트러플 팝콘▪GS25▪GS25 넷플릭스 트러플 팝콘▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪NetflixTrufflePopcorn▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪NetflixTrufflePopcorn▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3677,7 +3888,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 1,500원 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 소용량이라 여러 맛을 한 번에 구매해 비교해보기 좋음.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced KRW 1,500. Many locations operate 24 hours, so you can drop by anytime. ▪ The small size makes it easy to buy several flavors at once to compare.",
     "keywords_kr": "유어스 견과안주 버터피넛▪GS25▪GS25 유어스 견과안주 버터피넛▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪YouusNutSnackButterPeanut▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪YouusNutSnackButterPeanut▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3697,7 +3909,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 2,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 맥주와 함께 먹으면 트러플 향이 더 살아남.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced around KRW 2,000. Many locations operate 24 hours, so you can drop by anytime. ▪ The truffle aroma comes through even more when paired with beer.",
     "keywords_kr": "유어스 감자칩 트러플향▪GS25▪GS25 유어스 감자칩 트러플향▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪YouusPotatoChipsTruffleFlavor▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪YouusPotatoChipsTruffleFlavor▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3717,7 +3930,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 1,500원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 커피와 함께 먹으면 버터 풍미가 배가.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced around KRW 1,500. Many locations operate 24 hours, so you can drop by anytime. ▪ Pairing it with coffee doubles the buttery flavor experience.",
     "keywords_kr": "유어스 버터러스크▪GS25▪GS25 유어스 버터러스크▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪YouusButterRusk▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪YouusButterRusk▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "gs25",
@@ -3737,7 +3951,8 @@
     "buy_kr": "🏪 전국 GS25 매장에서 구매 가능. 가격은 2,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 얼음을 가득 채운 컵에 부어 먹으면 더 시원하게 즐길 수 있음.",
     "buy_en": "🏪 Available for purchase at GS25 stores nationwide. Priced around KRW 2,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Pour over a cup full of ice for an extra refreshing drink.",
     "keywords_kr": "유어스 수박에이드▪GS25▪GS25 유어스 수박에이드▪편의점 신상▪GS25 추천템",
-    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪YouusWatermelonAde▪KoreaTravel"
+    "hashtags": "GS25▪ConvenienceStore▪KoreaShopping▪YouusWatermelonAde▪KoreaTravel",
+    "web": "https://gs25.gsretail.com/"
   },
   {
     "sub": "seveneleven",
@@ -3757,7 +3972,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 2,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 얼큰하고 불맛 나는 국물이 특징이니 매운맛을 좋아한다면 시도 추천.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 2,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Known for its spicy, smoky broth — a must-try for spicy food lovers.",
     "keywords_kr": "세븐셀렉트 이비가짬뽕라면▪세븐일레븐▪세븐일레븐 세븐셀렉트 이비가짬뽕라면▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪7SelectEbigaJjamppongRamen▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪7SelectEbigaJjamppongRamen▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -3777,7 +3993,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 4,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 일반 편의점 도시락보다 양이 많은 편이라 남성이나 대식가에게 추천.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 4,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Portions are larger than typical convenience store lunchboxes, making it a good pick for big eaters.",
     "keywords_kr": "맛장우 도시락 고추장불백▪세븐일레븐▪세븐일레븐 맛장우 도시락 고추장불백▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪MatjanguGochujangBulgogiLunchbox▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪MatjanguGochujangBulgogiLunchbox▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -3797,7 +4014,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 4,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 두 가지 메인 반찬을 한 번에 즐기고 싶을 때 좋은 선택.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 4,000. Many locations operate 24 hours, so you can drop by anytime. ▪ A great choice when you want two hearty main dishes in one meal.",
     "keywords_kr": "맛장우 돈까스&김치제육 도시락▪세븐일레븐▪세븐일레븐 맛장우 돈까스&김치제육 도시락▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪MatjanguPorkCutletKimchiPorkLunchbox▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪MatjanguPorkCutletKimchiPorkLunchbox▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -3817,7 +4035,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 4,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 비빔밥 특성상 잘 흔들어 비벼 먹으면 맛 상승.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 4,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Shake and mix well before eating for the best flavor, as with any bibimbap.",
     "keywords_kr": "맛장우 전주식비빔밥▪세븐일레븐▪세븐일레븐 맛장우 전주식비빔밥▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪MatjanguJeonjuStyleBibimbap▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪MatjanguJeonjuStyleBibimbap▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -3837,7 +4056,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 1,700원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 양이 많아 한 개만 먹어도 든든한 한 끼.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 1,700. Many locations operate 24 hours, so you can drop by anytime. ▪ The generous size makes even one piece a filling meal.",
     "keywords_kr": "맛장우 전주비빔삼각김밥▪세븐일레븐▪세븐일레븐 맛장우 전주비빔삼각김밥▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪MatjanguJeonjuBibimbapTriangleKimbap▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪MatjanguJeonjuBibimbapTriangleKimbap▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -3857,7 +4077,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 2,500원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 냉장 보관 제품이라 시원하게 그대로 먹는 것이 가장 맛있는 방법.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 2,500. Many locations operate 24 hours, so you can drop by anytime. ▪ Best enjoyed chilled straight from the fridge for the ideal texture.",
     "keywords_kr": "생초코파이▪세븐일레븐▪세븐일레븐 생초코파이▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪NamaChocoPieFreshChocolatePie▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪NamaChocoPieFreshChocolatePie▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -3877,7 +4098,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 2,500원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 유통기한이 짧은 편이라 구매 즉시 신선할 때 먹는 것 권장.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 2,500. Many locations operate 24 hours, so you can drop by anytime. ▪ Has a short shelf life, so it's best eaten fresh soon after purchase.",
     "keywords_kr": "저지우유푸딩▪세븐일레븐▪세븐일레븐 저지우유푸딩▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪JerseyMilkPudding▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪JerseyMilkPudding▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -3897,7 +4119,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 1,700원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 매운맛에 약하다면 물을 넉넉히 넣어 국물 농도를 조절하는 것 권장.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 1,700. Many locations operate 24 hours, so you can drop by anytime. ▪ If you're sensitive to spice, add extra water to tone down the broth's heat.",
     "keywords_kr": "세븐셀렉트 대파열라면▪세븐일레븐▪세븐일레븐 세븐셀렉트 대파열라면▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪7SelectDaepaYeolRamen▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪7SelectDaepaYeolRamen▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -3917,7 +4140,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 1,300원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 대파를 더 아삭하게 즐기고 싶다면 조리 마지막에 넣는 것 추천.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 1,300. Many locations operate 24 hours, so you can drop by anytime. ▪ Add the green onion block at the very end of cooking for extra crunch.",
     "keywords_kr": "세븐셀렉트 대파라면▪세븐일레븐▪세븐일레븐 세븐셀렉트 대파라면▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪7SelectDaepaGreenOnionRamen▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪7SelectDaepaGreenOnionRamen▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -3937,7 +4161,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 2,500원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 쌉쌀한 말차와 상큼한 레몬 탄산의 조합이 특징이니 차게 마시는 것 추천.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 2,500. Many locations operate 24 hours, so you can drop by anytime. ▪ Best served cold to enjoy the balance of bitter matcha and tangy lemon carbonation.",
     "keywords_kr": "말차하이볼▪세븐일레븐▪세븐일레븐 말차하이볼▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪MatchaHighball▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪MatchaHighball▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -3957,7 +4182,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 2,500원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 겨울 한정판이므로 시즌 내 맛보기 추천.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 2,500. Many locations operate 24 hours, so you can drop by anytime. ▪ A winter-only limited release, so try it while the season lasts.",
     "keywords_kr": "스트로베리 말차하이볼▪세븐일레븐▪세븐일레븐 스트로베리 말차하이볼▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪StrawberryMatchaHighball▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪StrawberryMatchaHighball▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -3977,7 +4203,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 1,200원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 드립 방식이라 오일 성분이 적어 깔끔한 맛을 원한다면 추천.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 1,200. Many locations operate 24 hours, so you can drop by anytime. ▪ The drip method filters out oils for a cleaner taste — ideal if you prefer a smoother cup.",
     "keywords_kr": "세븐카페 드립커피▪세븐일레븐▪세븐일레븐 세븐카페 드립커피▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪SevenCafeDripCoffee▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪SevenCafeDripCoffee▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -3997,7 +4224,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 2,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 간편하게 즐길 수 있는 원핸드 스낵으로 야외활동이나 이동 중 간식으로 좋음.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 2,000. Many locations operate 24 hours, so you can drop by anytime. ▪ An easy one-hand snack, great for outdoor activities or eating on the go.",
     "keywords_kr": "세븐셀렉트 바프허니버터팝콘▪세븐일레븐▪세븐일레븐 세븐셀렉트 바프허니버터팝콘▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪7SelectBafHoneyButterPopcorn▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪7SelectBafHoneyButterPopcorn▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4017,7 +4245,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 2,900원 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 가성비 좋은 한 끼 대용 빵으로 저녁 시간대에 특히 잘 팔림.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced KRW 2,900. Many locations operate 24 hours, so you can drop by anytime. ▪ A great value meal-replacement bread, especially popular in the evening hours.",
     "keywords_kr": "세븐셀렉트 숨결통식빵▪세븐일레븐▪세븐일레븐 세븐셀렉트 숨결통식빵▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪7SelectSumgyeolWholeLoafBread▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪7SelectSumgyeolWholeLoafBread▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4037,7 +4266,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 6,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 안주류로 전자레인지에 데워 먹으면 더 부드러운 식감을 즐길 수 있음.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 6,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Microwave-heating enhances the tender texture — great as a drinking snack.",
     "keywords_kr": "정지선 동파육▪세븐일레븐▪세븐일레븐 정지선 동파육▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪JungJiSunSDongpaPork▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪JungJiSunSDongpaPork▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4057,7 +4287,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 5,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 짭짤하고 마늘향이 강해 술안주나 간식으로 인기.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 5,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Its savory, garlicky flavor makes it a popular drinking snack or casual treat.",
     "keywords_kr": "안유성 마늘갈비 육포▪세븐일레븐▪세븐일레븐 안유성 마늘갈비 육포▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪AhnYooSungSGarlicGalbiJerky▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪AhnYooSungSGarlicGalbiJerky▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4077,7 +4308,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 5,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 랜덤씰이 동봉되어 있어 수집을 좋아하는 팬들에게도 인기.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 5,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Comes with a random collectible sticker, appealing to fans who enjoy collecting.",
     "keywords_kr": "이정후 포크바베큐플래터 도시락▪세븐일레븐▪세븐일레븐 이정후 포크바베큐플래터 도시락▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪LeeJungHooBbqPorkPlatterLunchbox▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪LeeJungHooBbqPorkPlatterLunchbox▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4097,7 +4329,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 3,500원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 일반 김밥과 다른 색다른 조합을 즐기고 싶은 이들에게 추천.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 3,500. Many locations operate 24 hours, so you can drop by anytime. ▪ Recommended for those looking to try a unique twist on classic kimbap.",
     "keywords_kr": "이정후 함박스테이크김밥▪세븐일레븐▪세븐일레븐 이정후 함박스테이크김밥▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪LeeJungHooHamburgSteakKimbap▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪LeeJungHooHamburgSteakKimbap▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4117,7 +4350,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 4,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 전자레인지에 데워 패티를 따뜻하게 즐기는 것 추천.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 4,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Microwaving it warms the patty for the best eating experience.",
     "keywords_kr": "이정후 더블클래식버거▪세븐일레븐▪세븐일레븐 이정후 더블클래식버거▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪LeeJungHooDoubleClassicBurger▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪LeeJungHooDoubleClassicBurger▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4137,7 +4371,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 4,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 치즈 함량이 많아 치즈러버들에게 추천.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 4,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Its generous cheese content makes it a great pick for cheese lovers.",
     "keywords_kr": "이정후 치즈폭탄버거▪세븐일레븐▪세븐일레븐 이정후 치즈폭탄버거▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪LeeJungHooCheeseBombBurger▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪LeeJungHooCheeseBombBurger▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4157,7 +4392,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 5,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 고기 토핑이 많아 든든한 한 끼 식사로 충분.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 5,000. Many locations operate 24 hours, so you can drop by anytime. ▪ The generous meat topping makes it a satisfying full meal on its own.",
     "keywords_kr": "이정후 고기폭탄홈런비빔밥▪세븐일레븐▪세븐일레븐 이정후 고기폭탄홈런비빔밥▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪LeeJungHooMeatBombHomerunBibimbap▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪LeeJungHooMeatBombHomerunBibimbap▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4177,7 +4413,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 1,300원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 전자레인지 없이도 부드러운 식감을 유지하도록 개선되어 바로 먹기에도 좋음.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 1,300. Many locations operate 24 hours, so you can drop by anytime. ▪ Improved to stay soft even without microwaving, making it convenient to eat straight away.",
     "keywords_kr": "참치마요 삼각김밥▪세븐일레븐▪세븐일레븐 참치마요 삼각김밥▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪TunaMayoTriangleKimbap▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪TunaMayoTriangleKimbap▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4197,7 +4434,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 1,700원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 양을 늘린 상품이라 한 끼 식사 대용으로 충분.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 1,700. Many locations operate 24 hours, so you can drop by anytime. ▪ The larger portion makes it filling enough to serve as a full meal.",
     "keywords_kr": "더 커진 제육볶음 삼각김밥▪세븐일레븐▪세븐일레븐 더 커진 제육볶음 삼각김밥▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪BiggerSpicyPorkTriangleKimbap▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪BiggerSpicyPorkTriangleKimbap▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4217,7 +4455,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 4,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 귀여운 캐릭터 패키지 때문에 선물용으로도 인기.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 4,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Its cute character packaging also makes it a popular gift item.",
     "keywords_kr": "헬로키티 딸기샌드위치▪세븐일레븐▪세븐일레븐 헬로키티 딸기샌드위치▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪HelloKittyStrawberrySandwich▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪HelloKittyStrawberrySandwich▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4237,7 +4476,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 4,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 바삭한 페스츄리와 부드러운 크림의 대비를 즐길 수 있음.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 4,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Enjoy the contrast between the crispy pastry and the soft cream filling.",
     "keywords_kr": "헬로키티 페스츄리 딸기샌드위치▪세븐일레븐▪세븐일레븐 헬로키티 페스츄리 딸기샌드위치▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪HelloKittyPastryStrawberrySandwich▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪HelloKittyPastryStrawberrySandwich▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4257,7 +4497,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 3,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 일본 편의점 인기 과자를 국내에서 바로 맛볼 수 있는 기회.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 3,000. Many locations operate 24 hours, so you can drop by anytime. ▪ A rare chance to try a beloved Japanese convenience store snack without traveling abroad.",
     "keywords_kr": "컨트리맘 딸기초콜릿(12입)▪세븐일레븐▪세븐일레븐 컨트리맘 딸기초콜릿(12입)▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪CountryMaAmStrawberryChocolate12Pcs▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪CountryMaAmStrawberryChocolate12Pcs▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4277,7 +4518,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 1,500원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 서클칩 수집을 좋아하는 아이들과 포켓몬 팬들에게 인기.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 1,500. Many locations operate 24 hours, so you can drop by anytime. ▪ Popular with kids and Pokemon fans who enjoy collecting the circle chips.",
     "keywords_kr": "포켓몬 파이리초코별▪세븐일레븐▪세븐일레븐 포켓몬 파이리초코별▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪PokemonCharmanderChocoStarSnack▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪PokemonCharmanderChocoStarSnack▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4297,7 +4539,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 1,500원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 오랜 스테디셀러 과자라 남녀노소 부담 없이 즐길 수 있음.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 1,500. Many locations operate 24 hours, so you can drop by anytime. ▪ A long-running steady seller that's easy for anyone to enjoy, regardless of age.",
     "keywords_kr": "포켓몬 피카츄 계란과자▪세븐일레븐▪세븐일레븐 포켓몬 피카츄 계란과자▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪PokemonPikachuEggSnack▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪PokemonPikachuEggSnack▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4317,7 +4560,8 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 5,000원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 신선한 국내산 딸기를 그대로 즐기고 싶은 이들에게 추천.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 5,000. Many locations operate 24 hours, so you can drop by anytime. ▪ Recommended for those who want to enjoy fresh, domestically grown strawberries as-is.",
     "keywords_kr": "킹스베리 딸기▪세븐일레븐▪세븐일레븐 킹스베리 딸기▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪KingsberryStrawberry▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪KingsberryStrawberry▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   },
   {
     "sub": "seveneleven",
@@ -4337,6 +4581,7 @@
     "buy_kr": "🏪 전국 세븐일레븐 매장에서 구매 가능. 가격은 2,500원대 수준. 24시간 운영 매장이 많아 언제든 방문해 구매할 수 있음. ▪ 한정판이므로 겨울 시즌에만 만나볼 수 있다는 점 기억.",
     "buy_en": "🏪 Available for purchase at 7-Eleven stores nationwide. Priced around KRW 2,500. Many locations operate 24 hours, so you can drop by anytime. ▪ Remember it's only available during the winter season as a limited release.",
     "keywords_kr": "말차 하이볼(딸기 시즌 한정판)▪세븐일레븐▪세븐일레븐 말차 하이볼(딸기 시즌 한정판)▪편의점 신상▪세븐일레븐 추천템",
-    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪MatchaHighballStrawberryLimitedEdition▪KoreaTravel"
+    "hashtags": "7Eleven▪ConvenienceStore▪KoreaShopping▪MatchaHighballStrawberryLimitedEdition▪KoreaTravel",
+    "web": "https://www.7-eleven.co.kr/"
   }
 ]

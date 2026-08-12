@@ -1,20 +1,47 @@
 ---
+export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
+import { CHANNEL_MAP, mergeSheetCategories } from '../../lib/channelCategories.js';
+import { fetchChannelRows, deriveCategoriesFromRows } from '../../lib/sheetsCms.js';
 import '../../styles/channel-page.css';
 
-const brands = [
-  { slug: 'emart',       label: '이마트',     labelEn: 'E-Mart',    sub: '무료 5 · 유료 25' },
-  { slug: 'nobrand',     label: '노브랜드',    labelEn: 'No Brand',  sub: '무료 5 · 유료 25' },
-  { slug: 'traders',     label: '트레이더스',  labelEn: 'Traders',   sub: '무료 5 · 유료 25' },
-  { slug: 'emart24',     label: '이마트24',    labelEn: 'emart24',   sub: '무료 5 · 유료 25' },
-  { slug: 'cu',          label: 'CU',          labelEn: 'CU',        sub: '무료 5 · 유료 25' },
-  { slug: 'gs25',        label: 'GS25',        labelEn: 'GS25',      sub: '무료 5 · 유료 25' },
-  { slug: 'seveneleven', label: '세븐일레븐',  labelEn: '7-Eleven',  sub: '무료 5 · 유료 25' },
-];
-const extras = [
-  { slug: 'taxfree-instant', label: '매장 즉시 세금환급', labelEn: 'Instant Tax Refund', free: true },
-  { slug: 'gender-care',     label: '남성용품·여성용품',   labelEn: 'Men & Women Care' },
-];
+// 7개 브랜드(emart/nobrand/traders/emart24/cu/gs25/seveneleven)는 "브랜드별 TOP30(무료5+유료25)"라는
+// 고정 구조라 브랜드 카드 자체는 코드에 유지. 그 외 순수 카테고리(세금환급, 젠더케어 등)는
+// 시트(sub/sub_kr/sub_en/sub_free 컬럼)에서 자동 도출 — 시트에 새 sub를 추가하면 새 카테고리가 자동 생김.
+const BRAND_SLUGS = ['emart', 'nobrand', 'traders', 'emart24', 'cu', 'gs25', 'seveneleven'];
+const BRAND_LABELS = {
+  emart: { kr: '이마트', en: 'E-Mart' },
+  nobrand: { kr: '노브랜드', en: 'No Brand' },
+  traders: { kr: '트레이더스', en: 'Traders' },
+  emart24: { kr: '이마트24', en: 'emart24' },
+  cu: { kr: 'CU', en: 'CU' },
+  gs25: { kr: 'GS25', en: 'GS25' },
+  seveneleven: { kr: '세븐일레븐', en: '7-Eleven' },
+};
+
+let allRows = [];
+try {
+  allRows = await fetchChannelRows('mart-convenience');
+} catch (e) {
+  console.error('[mart-convenience-index] sheet fetch failed', e);
+}
+const sheetCategories = deriveCategoriesFromRows(allRows);
+const merged = mergeSheetCategories('mart-convenience', sheetCategories) || CHANNEL_MAP['mart-convenience'];
+
+const brands = BRAND_SLUGS.map((slug) => {
+  const overrideLabel = merged.subs[slug];
+  return {
+    slug,
+    label: BRAND_LABELS[slug].kr,
+    labelEn: BRAND_LABELS[slug].en,
+    sub: overrideLabel?.freeCount ? `무료 ${overrideLabel.freeCount} · 유료 ${25}` : '무료 5 · 유료 25',
+  };
+});
+
+const extras = Object.entries(merged.subs)
+  .filter(([slug]) => !BRAND_SLUGS.includes(slug))
+  .map(([slug, cat]) => ({ slug, label: cat.kr, labelEn: cat.en, free: !!cat.free }));
+
 const color = '#FFDD00';
 ---
 <Layout title="taerijay+mart+convenience | TAERIJAY">
@@ -38,6 +65,7 @@ const color = '#FFDD00';
       {brands.map((b) => (
         <a href={`/04-channels/mart-convenience/${b.slug}`} class="cat-card">
           <div class="cat-card-art">
+            <span class="cat-card-tier cat-card-tier-mixed notranslate" translate="no">FREE + PAID</span>
             <span class="cat-card-name notranslate" translate="no">{b.label}</span>
             <span class="cat-card-name-en">{b.labelEn}</span>
             <span class="cat-card-sub notranslate" translate="no">{b.sub}</span>
@@ -47,7 +75,7 @@ const color = '#FFDD00';
       {extras.map((cat) => (
         <a href={`/04-channels/mart-convenience/${cat.slug}`} class="cat-card">
           <div class="cat-card-art">
-            <span class={`cat-card-tier notranslate ${cat.free ? 'is-free' : 'is-paid'}`} translate="no">{cat.free ? '무료' : '유료'}</span>
+            <span class={`cat-card-tier notranslate ${cat.free ? 'is-free' : 'is-paid'}`} translate="no">{cat.free ? 'FREE' : 'PAID'}</span>
             <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
             <span class="cat-card-name-en">{cat.labelEn}</span>
           </div>

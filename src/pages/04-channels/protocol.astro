@@ -1,21 +1,25 @@
 ---
+export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
+import { CHANNEL_MAP, mergeSheetCategories } from '../../lib/channelCategories.js';
+import { fetchChannelRows, deriveCategoriesFromRows } from '../../lib/sheetsCms.js';
 import '../../styles/channel-page.css';
 
-const categories = [
-  { slug: 'legal-info',       label: '입국 법적 정보',     labelEn: 'Entry & Legal Info',   free: true },
-  { slug: 'emergency-help',   label: '응급·긴급 통역',     labelEn: 'Emergency Help',        free: true },
-  { slug: 'incheon-airport',  label: '인천공항',          labelEn: 'Incheon Airport',       free: true },
-  { slug: 'gimpo-airport',    label: '김포공항',          labelEn: 'Gimpo Airport',         free: true },
-  { slug: 'jeju-airport',     label: '제주공항',          labelEn: 'Jeju Airport',          free: true },
-  { slug: 'transit',          label: '대중교통',          labelEn: 'Public Transit' },
-  { slug: 'mobile-number-wifi', label: '번호 발급·와이파이', labelEn: 'Phone Number & WiFi' },
-  { slug: 'essential-apps',   label: '필수 앱·웹사이트',   labelEn: 'Essential Apps' },
-  { slug: 'restaurant',       label: '맛집',              labelEn: 'Restaurant' },
-  { slug: 'cafe',             label: '카페',              labelEn: 'Cafe' },
-  { slug: 'kent',             label: 'K-엔터 회사 위치',   labelEn: 'K-Entertainment' },
-  { slug: 'hotspot',          label: '그 외 핫템·핫플',    labelEn: 'Hot Items & Spots' },
-];
+// 카테고리 목록은 코드에 하드코딩하지 않고 시트(sub/sub_kr/sub_en/sub_free/sub_order 컬럼)에서 자동 도출.
+// 시트에 새 sub 값을 가진 행을 추가하면 카테고리가 자동 생성되고, 항목이 하나도 없어지면 사라진다.
+let allRows = [];
+try {
+  allRows = await fetchChannelRows('protocol');
+} catch (e) {
+  console.error('[protocol-index] sheet fetch failed', e);
+}
+const sheetCategories = deriveCategoriesFromRows(allRows);
+const merged = mergeSheetCategories('protocol', sheetCategories) || CHANNEL_MAP.protocol;
+const categories = Object.entries(merged.subs).map(([slug, cat]) => ({
+  slug, label: cat.kr, labelEn: cat.en, free: !!cat.free,
+}));
+const freeN = categories.filter((c) => c.free).length;
+const paidN = categories.length - freeN;
 const color = '#F16B24';
 ---
 <Layout title="taerijay+protocol | TAERIJAY">
@@ -27,27 +31,31 @@ const color = '#F16B24';
     <section class="channel-hero-banner" style={`--hero-img:url('/images/channels/protocol.jpg');--c:${color}`}></section>
 
     <section class="channel-hero">
-      <span class="channel-badge channel-badge-lock notranslate" translate="no">무료 5개 + 유료 7개 · 총 12개 카테고리</span>
+      <span class="channel-badge channel-badge-lock notranslate" translate="no">무료 {freeN}개 + 유료 {paidN}개 · 총 {categories.length}개 카테고리</span>
       <h1 class="channel-title">taerijay<span style={`color:${color}`}>+protocol</span></h1>
       <p class="channel-sub">공항·세관·대중교통 규약부터 맛집·카페까지, 검증된 현지 정보. 월 2회(10일·20일) 업데이트</p>
       <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
     </section>
 
-    <section class="cat-grid-section">
-      {categories.map((cat) => (
-        <a href={`/04-channels/protocol/${cat.slug}`} class="cat-card">
-          <div class="cat-card-art">
-            <span class={`cat-card-tier notranslate ${cat.free ? 'is-free' : 'is-paid'}`} translate="no">{cat.free ? '무료' : '유료'}</span>
-            <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
-            <span class="cat-card-name-en">{cat.labelEn}</span>
-          </div>
-        </a>
-      ))}
-    </section>
+    {categories.length > 0 && (
+      <section class="cat-grid-section">
+        {categories.map((cat) => (
+          <a href={`/04-channels/protocol/${cat.slug}`} class="cat-card">
+            <div class="cat-card-art">
+              <span class={`cat-card-tier notranslate ${cat.free ? 'is-free' : 'is-paid'}`} translate="no">{cat.free ? 'FREE' : 'PAID'}</span>
+              <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
+              <span class="cat-card-name-en">{cat.labelEn}</span>
+            </div>
+          </a>
+        ))}
+      </section>
+    )}
 
-    <section class="empty-note">
-      <p>콘텐츠 준비 중입니다.</p>
-      <p class="empty-note-en">Content coming soon.</p>
-    </section>
+    {categories.length === 0 && (
+      <section class="empty-note">
+        <p>콘텐츠 준비 중입니다.</p>
+        <p class="empty-note-en">Content coming soon.</p>
+      </section>
+    )}
   </div>
 </Layout>

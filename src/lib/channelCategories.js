@@ -87,3 +87,53 @@ export const CHANNEL_MAP = {
     'gender-care':       { kr: '남성용품·여성용품',        en: 'Men & Women Care' },
   }},
 };
+
+/**
+ * @typedef {{ kr?: string, en?: string, free?: boolean, freeCount?: number }} CategoryMeta
+ */
+
+// 시트에서 자동 도출한 카테고리 목록(deriveCategoriesFromRows 결과)을 CHANNEL_MAP에 병합.
+// - 시트에 sub_kr/sub_en/sub_free가 채워진 카테고리는 그 값을 우선 사용(코드 재배포 없이 이름/무료여부 변경 가능)
+// - 시트에만 있고 CHANNEL_MAP에 없는 새 sub는 자동으로 카테고리로 추가됨(새 카테고리를 시트에서 바로 생성)
+// - CHANNEL_MAP에만 있고 시트에 해당 sub 행이 하나도 없는 카테고리는 그대로 유지(빈 카테고리로 표시, "준비중" 안내)
+// - freeCount처럼 시트 컬럼으로 표현 안 되는 값은 기존 CHANNEL_MAP 설정을 그대로 보존
+/**
+ * @param {string} channel
+ * @param {Array<{slug: string, kr: string, en: string, free: boolean, order: number}>} sheetCategories
+ * @returns {{ color: string, subs: Record<string, CategoryMeta> } | null}
+ */
+export function mergeSheetCategories(channel, sheetCategories) {
+  const base = CHANNEL_MAP[channel];
+  if (!base) return null;
+  /** @type {Record<string, CategoryMeta>} */
+  const subs = { ...base.subs };
+  const order = Object.keys(subs);
+
+  (sheetCategories || []).forEach((cat) => {
+    const existing = subs[cat.slug];
+    subs[cat.slug] = {
+      ...existing,
+      kr: cat.kr || existing?.kr || cat.slug,
+      en: cat.en || existing?.en || cat.slug,
+      free: existing?.freeCount ? existing.free : (cat.free || existing?.free || false),
+      // freeCount(브랜드형 채널)는 시트 sub_free로 대체되지 않도록 기존 값 유지
+      ...(existing?.freeCount ? { freeCount: existing.freeCount } : {}),
+    };
+    if (!order.includes(cat.slug)) order.push(cat.slug);
+  });
+
+  // sub_order가 있는 시트 카테고리는 시트 순서를 따르고, 없으면 CHANNEL_MAP 정의 순서 유지
+  const sheetOrderMap = new Map((sheetCategories || []).map((c) => [c.slug, c.order]));
+  const sortedOrder = [...order].sort((a, b) => {
+    const oa = sheetOrderMap.has(a) ? sheetOrderMap.get(a) : Number.MAX_SAFE_INTEGER;
+    const ob = sheetOrderMap.has(b) ? sheetOrderMap.get(b) : Number.MAX_SAFE_INTEGER;
+    if (oa !== ob) return oa - ob;
+    return order.indexOf(a) - order.indexOf(b);
+  });
+
+  /** @type {Record<string, CategoryMeta>} */
+  const sortedSubs = {};
+  sortedOrder.forEach((slug) => { sortedSubs[slug] = subs[slug]; });
+
+  return { ...base, subs: sortedSubs };
+}

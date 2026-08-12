@@ -1,21 +1,37 @@
 ---
+export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
+import { CHANNEL_MAP, mergeSheetCategories } from '../../lib/channelCategories.js';
+import { fetchChannelRows, deriveCategoriesFromRows } from '../../lib/sheetsCms.js';
 import '../../styles/channel-page.css';
 
-const tabs = [
-  { slug: 'booking-tips', label: '예약·결제 서비스 안내', labelEn: 'Booking & Payment Tips', free: true },
-  { slug: 'emergency-help', label: '응급·긴급 통역',       labelEn: 'Emergency Help',          free: true },
-  { slug: '3hour',       label: '3시간 코스 (서울 12개)', labelEn: '3-Hour Course',           free: true },
-  { slug: '1day',        label: '1일 코스',   labelEn: '1-Day Course', sub: '지역 내부' },
-  { slug: '2day',        label: '2일 코스',   labelEn: '2-Day Course', sub: '타 지역 포함' },
-  { slug: '3day',        label: '3일 코스',   labelEn: '3-Day Course', sub: '타 지역 포함' },
-  { slug: 'region',      label: '지역별로',   labelEn: 'By Region', sub: '타 지역 포함' },
-  { slug: 'recommend',   label: '추천코스',   labelEn: 'Recommended', sub: '지역 × 카테고리' },
-  { slug: 'kdrama',      label: 'K-드라마 촬영지', labelEn: 'K-Drama Locations', sub: '단독 목록' },
-  { slug: 'nightview',   label: '야경 명소 코스', labelEn: 'Night View Course', sub: '지역 × 카테고리' },
-  { slug: 'photo',       label: '사진맛집 코스', labelEn: 'Photo Spot Course', sub: '지역 × 카테고리' },
-  { slug: 'indoor',      label: '실내 코스 (우천 대비)', labelEn: 'Indoor Course', sub: '지역 × 카테고리' },
-];
+// 카드 하단 부가설명("지역 내부" 등)은 시트 컬럼으로 표현하지 않는 순수 UI 문구라 코드에 유지.
+// 카테고리 자체(이름/무료여부/추가·삭제)는 시트(sub/sub_kr/sub_en/sub_free 컬럼)에서 자동 도출.
+const SUB_HINTS = {
+  '1day': '지역 내부',
+  '2day': '타 지역 포함',
+  '3day': '타 지역 포함',
+  region: '타 지역 포함',
+  recommend: '지역 × 카테고리',
+  kdrama: '단독 목록',
+  nightview: '지역 × 카테고리',
+  photo: '지역 × 카테고리',
+  indoor: '지역 × 카테고리',
+};
+
+let allRows = [];
+try {
+  allRows = await fetchChannelRows('mini');
+} catch (e) {
+  console.error('[mini-index] sheet fetch failed', e);
+}
+const sheetCategories = deriveCategoriesFromRows(allRows);
+const merged = mergeSheetCategories('mini', sheetCategories) || CHANNEL_MAP.mini;
+const tabs = Object.entries(merged.subs).map(([slug, cat]) => ({
+  slug, label: cat.kr, labelEn: cat.en, free: !!cat.free, sub: SUB_HINTS[slug] || '',
+}));
+const freeN = tabs.filter((t) => t.free).length;
+const paidN = tabs.length - freeN;
 const color = '#e8e4dc';
 ---
 <Layout title="taerijay+mini | TAERIJAY">
@@ -28,28 +44,32 @@ const color = '#e8e4dc';
     </section>
 
     <section class="channel-hero">
-      <span class="channel-badge channel-badge-lock notranslate" translate="no">무료 3개 + 유료 9개 · 총 12개 카테고리</span>
+      <span class="channel-badge channel-badge-lock notranslate" translate="no">무료 {freeN}개 + 유료 {paidN}개 · 총 {tabs.length}개 카테고리</span>
       <h1 class="channel-title">taerijay<span style={`color:${color}`}>+mini</span></h1>
       <p class="channel-sub">거점 도시별 최적 동선, 시간대별 큐레이션 코스. 100→1,000개 누적, 월 2회(10일·20일) 업데이트</p>
       <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
     </section>
 
-    <section class="cat-grid-section">
-      {tabs.map((tab) => (
-        <a href={`/04-channels/mini/${tab.slug}`} class="cat-card">
-          <div class="cat-card-art">
-            <span class={`cat-card-tier notranslate ${tab.free ? 'is-free' : 'is-paid'}`} translate="no">{tab.free ? '무료' : '유료'}</span>
-            <span class="cat-card-name notranslate" translate="no">{tab.label}</span>
-            <span class="cat-card-name-en">{tab.labelEn}</span>
-            {tab.sub && <span class="cat-card-sub notranslate" translate="no">{tab.sub}</span>}
-          </div>
-        </a>
-      ))}
-    </section>
+    {tabs.length > 0 && (
+      <section class="cat-grid-section">
+        {tabs.map((tab) => (
+          <a href={`/04-channels/mini/${tab.slug}`} class="cat-card">
+            <div class="cat-card-art">
+              <span class={`cat-card-tier notranslate ${tab.free ? 'is-free' : 'is-paid'}`} translate="no">{tab.free ? 'FREE' : 'PAID'}</span>
+              <span class="cat-card-name notranslate" translate="no">{tab.label}</span>
+              <span class="cat-card-name-en">{tab.labelEn}</span>
+              {tab.sub && <span class="cat-card-sub notranslate" translate="no">{tab.sub}</span>}
+            </div>
+          </a>
+        ))}
+      </section>
+    )}
 
-    <section class="empty-note">
-      <p>콘텐츠 준비 중입니다.</p>
-      <p class="empty-note-en">Content coming soon.</p>
-    </section>
+    {tabs.length === 0 && (
+      <section class="empty-note">
+        <p>콘텐츠 준비 중입니다.</p>
+        <p class="empty-note-en">Content coming soon.</p>
+      </section>
+    )}
   </div>
 </Layout>
