@@ -1,16 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+// heroImg: true인 채널만 /images/channels/*.jpg를 배경으로 요청한다.
+// 이미지 파일이 실제로 public/images/channels/에 업로드되기 전까지는 false로 두어
+// 브라우저가 404를 요청하지 않도록 방지한다(그라디언트 배경은 CSS에서 항상 표시됨).
+// 이미지를 추가하면 해당 채널의 heroImg만 true로 바꾸면 된다.
 const channels = {
-  entertainment: { slug: 'entertainment', color: '#00E5FF', free: true,  tag: 'K-ENTERTAINMENT', region: 'Seoul',    regionKr: '서울' },
-  protocol:      { slug: 'protocol',      color: '#F16B24', free: false, tag: 'K-SURVIVAL',      region: 'Seorak',   regionKr: '설악' },
-  mini:          { slug: 'mini',          color: '#e8e4dc', free: false, tag: 'K-TRAVEL',        region: 'Jeonju',   regionKr: '전주' },
-  red:           { slug: 'red',           color: '#E1261C', free: false, tag: 'K-BEAUTY',        region: 'Gyeongju', regionKr: '경주' },
-  green:         { slug: 'green',         color: '#6F8B2E', free: false, tag: 'K-BEAUTY',        region: 'Busan',    regionKr: '부산' },
-  emartCvs:      { slug: 'mart-convenience', color: '#FFDD00', free: false, tag: '이마트×트레이더스×노브랜드×이마트24×CU×GS25×세븐일레븐', region: 'Jeju', regionKr: '제주' },
+  entertainment: { slug: 'entertainment', color: '#00E5FF', free: true,  tag: 'K-ENTERTAINMENT', region: 'Seoul',    regionKr: '서울', heroImg: false },
+  protocol:      { slug: 'protocol',      color: '#F16B24', free: false, tag: 'K-SURVIVAL',      region: 'Seorak',   regionKr: '설악', heroImg: false },
+  mini:          { slug: 'mini',          color: '#e8e4dc', free: false, tag: 'K-TRAVEL',        region: 'Jeonju',   regionKr: '전주', heroImg: false },
+  red:           { slug: 'red',           color: '#E1261C', free: false, tag: 'K-BEAUTY',        region: 'Gyeongju', regionKr: '경주', heroImg: false },
+  green:         { slug: 'green',         color: '#6F8B2E', free: false, tag: 'K-BEAUTY',        region: 'Busan',    regionKr: '부산', heroImg: false },
+  emartCvs:      { slug: 'mart-convenience', color: '#FFDD00', free: false, tag: '이마트×트레이더스×노브랜드×이마트24×CU×GS25×세븐일레븐', region: 'Jeju', regionKr: '제주', heroImg: false },
 };
 const USD_KRW = 1400;
 const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
+const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-img:url('/images/channels/${imgName}.jpg')` : ''}`;
 ---
 <Layout title="TAERIJAY">
   <section class="hero">
@@ -29,7 +34,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
   <section class="channels-section" id="channels">
 
     <div class="channel-row" data-count="1">
-      <a href={`/04-channels/${channels.entertainment.slug}`} class="service-card" style={`--c:${channels.entertainment.color};--hero-img:url('/images/channels/${channels.entertainment.slug}.jpg')`}>
+      <a href={`/04-channels/${channels.entertainment.slug}`} class="service-card" style={heroStyle(channels.entertainment.color, channels.entertainment.slug, channels.entertainment.heroImg ? channels.entertainment.slug : null)}>
         <span class="service-status status-click">CLICK</span>
         <span class="service-name notranslate" translate="no">taerijay+entertainment</span>
         <span class="service-tag">{channels.entertainment.tag}</span>
@@ -37,12 +42,12 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     </div>
 
     <div class="channel-row" data-count="2">
-      <a href={`/04-channels/${channels.protocol.slug}`} class="service-card" style={`--c:${channels.protocol.color};--hero-img:url('/images/channels/${channels.protocol.slug}.jpg')`}>
+      <a href={`/04-channels/${channels.protocol.slug}`} class="service-card" style={heroStyle(channels.protocol.color, channels.protocol.slug, channels.protocol.heroImg ? channels.protocol.slug : null)}>
         <span class="service-status status-click">CLICK</span>
         <span class="service-name notranslate" translate="no">taerijay+protocol</span>
         <span class="service-tag">{channels.protocol.tag}</span>
       </a>
-      <a href={`/04-channels/${channels.mini.slug}`} class="service-card" style={`--c:${channels.mini.color};--hero-img:url('/images/channels/${channels.mini.slug}.jpg')`}>
+      <a href={`/04-channels/${channels.mini.slug}`} class="service-card" style={heroStyle(channels.mini.color, channels.mini.slug, channels.mini.heroImg ? channels.mini.slug : null)}>
         <span class="service-status status-click">CLICK</span>
         <span class="service-name notranslate" translate="no">taerijay+mini</span>
         <span class="service-tag">{channels.mini.tag}</span>
@@ -50,12 +55,12 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     </div>
 
     <div class="channel-row" data-count="2">
-      <a href={`/04-channels/${channels.red.slug}`} class="service-card" style={`--c:${channels.red.color};--hero-img:url('/images/channels/daiso.jpg')`}>
+      <a href={`/04-channels/${channels.red.slug}`} class="service-card" style={heroStyle(channels.red.color, channels.red.slug, channels.red.heroImg ? 'daiso' : null)}>
         <span class="service-status status-click">CLICK</span>
         <span class="service-name notranslate" translate="no">taerijay+red</span>
         <span class="service-tag">{channels.red.tag}</span>
       </a>
-      <a href={`/04-channels/${channels.green.slug}`} class="service-card" style={`--c:${channels.green.color};--hero-img:url('/images/channels/oliveyoung.jpg')`}>
+      <a href={`/04-channels/${channels.green.slug}`} class="service-card" style={heroStyle(channels.green.color, channels.green.slug, channels.green.heroImg ? 'oliveyoung' : null)}>
         <span class="service-status status-click">CLICK</span>
         <span class="service-name notranslate" translate="no">taerijay+green</span>
         <span class="service-tag">{channels.green.tag}</span>
@@ -63,7 +68,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     </div>
 
     <div class="channel-row" data-count="1">
-      <a href={`/04-channels/${channels.emartCvs.slug}`} class="service-card" style={`--c:${channels.emartCvs.color};--hero-img:url('/images/channels/emart.jpg')`}>
+      <a href={`/04-channels/${channels.emartCvs.slug}`} class="service-card" style={heroStyle(channels.emartCvs.color, channels.emartCvs.slug, channels.emartCvs.heroImg ? 'emart' : null)}>
         <span class="service-status status-click">CLICK</span>
         <span class="service-name notranslate" translate="no">taerijay+mart+convenience</span>
         <span class="service-tag notranslate" translate="no">{channels.emartCvs.tag}</span>
@@ -232,21 +237,21 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     .service-tag{font-size:.92rem;font-weight:700;color:var(--muted);letter-spacing:.02em}
 
     .plans-section{width:var(--container);margin:0 auto;padding:60px 0 90px}
-    .plans-eyebrow-kr{font-size:.78rem;font-weight:700;color:var(--muted);margin-bottom:2px}
-    .plans-eyebrow-en{font-size:.94rem;letter-spacing:.06em;font-weight:700;color:var(--muted);margin-bottom:28px;text-transform:uppercase}
+    .plans-eyebrow-kr{font-size:clamp(.78rem,2vw,.94rem);font-weight:700;color:var(--muted);margin-bottom:2px}
+    .plans-eyebrow-en{font-size:clamp(.78rem,2vw,.94rem);letter-spacing:.06em;font-weight:700;color:var(--muted);margin-bottom:28px;text-transform:uppercase}
     .plans-eyebrow-link{text-decoration:none;display:inline-block;cursor:pointer}
     .plans-eyebrow-link:hover .plans-eyebrow-en{color:var(--gold)}
     .plans-more{text-align:left;margin-top:32px}
     .btn-plans-more{display:inline-flex;flex-direction:column;align-items:flex-start;gap:2px;text-decoration:none;border:1px solid rgba(212,175,55,.4);border-radius:100px;padding:12px 28px;transition:background .2s}
     .btn-plans-more:hover{background:rgba(212,175,55,.1)}
-    .btn-plans-more-kr{font-size:.86rem;font-weight:700;color:var(--ivory)}
-    .btn-plans-more-en{font-size:.92rem;font-weight:600;color:var(--gold)}
+    .btn-plans-more-kr{font-size:clamp(.86rem,2.2vw,1rem);font-weight:700;color:var(--ivory)}
+    .btn-plans-more-en{font-size:clamp(.86rem,2.2vw,1rem);font-weight:600;color:var(--gold)}
 
     .plan-row{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
     .plan-row-total{border-bottom:none}
     .plan-row-label{flex:0 0 110px;display:flex;flex-direction:column;gap:2px}
-    .plan-row-label-kr{font-size:.78rem;font-weight:700;color:var(--muted)}
-    .plan-row-label-en{font-size:.86rem;font-weight:600;letter-spacing:.05em;color:var(--dim);text-transform:uppercase}
+    .plan-row-label-kr{font-size:clamp(.78rem,2vw,.9rem);font-weight:700;color:var(--muted)}
+    .plan-row-label-en{font-size:clamp(.78rem,2vw,.9rem);font-weight:600;letter-spacing:.05em;color:var(--dim);text-transform:uppercase}
     .plan-row-items{display:flex;gap:12px;flex-wrap:wrap;flex:1}
 
     .plan-row-items-stack{flex-direction:column;gap:10px}

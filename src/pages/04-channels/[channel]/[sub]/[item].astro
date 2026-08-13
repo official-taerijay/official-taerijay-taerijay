@@ -127,7 +127,7 @@ const showAddrCopy = isRealAddress;
         <!-- 1) 주제소개 -->
         {item.desc_kr && (
           <section class="detail-section">
-            <h2 class="detail-section-title"><span class="detail-section-num">1️⃣</span> <span class="detail-section-title-kr">주제 소개</span> <span class="detail-section-title-en">Overview</span></h2>
+            <h2 class="detail-section-title"><span class="detail-section-title-kr">주제 소개</span> <span class="detail-section-title-en">Overview</span></h2>
             <ul class="detail-line-list">
               {splitSentences(item.desc_kr).map((line, i) => (
                 <li class="detail-line">
@@ -144,7 +144,7 @@ const showAddrCopy = isRealAddress;
         <!-- 2) 하차가이드 -->
         {item.getoff_kr && (
           <section class="detail-section">
-            <h2 class="detail-section-title"><span class="detail-section-num">2️⃣</span> <span class="detail-section-title-kr">하차 가이드</span> <span class="detail-section-title-en">Get Off Here</span></h2>
+            <h2 class="detail-section-title"><span class="detail-section-title-kr">하차 가이드</span> <span class="detail-section-title-en">Get Off Here</span></h2>
             <ul class="detail-line-list">
               {splitBullets(item.getoff_kr).map((line, i) => (
                 <li class="detail-line">
@@ -161,7 +161,7 @@ const showAddrCopy = isRealAddress;
         <!-- 3) 도착상세 (route_kr 재활용) -->
         {(item.direction_kr || item.route_kr) && (
           <section class="detail-section">
-            <h2 class="detail-section-title"><span class="detail-section-num">3️⃣</span> <span class="detail-section-title-kr">도착 상세</span> <span class="detail-section-title-en">Direction Detail</span></h2>
+            <h2 class="detail-section-title"><span class="detail-section-title-kr">도착 상세</span> <span class="detail-section-title-en">Direction Detail</span></h2>
             <ul class="detail-line-list">
               {splitBullets(item.direction_kr || item.route_kr).map((line, i) => (
                 <li class="detail-line">
@@ -178,7 +178,7 @@ const showAddrCopy = isRealAddress;
         <!-- 4) 위치정보 (매장형 상품 채널은 buy_kr로 대체) -->
         {(item.addr_kr || item.phone_kr || item.hours_kr || item.web || item.buy_kr) && (
           <section class="detail-section">
-            <h2 class="detail-section-title"><span class="detail-section-num">4️⃣</span> <span class="detail-section-title-kr">{item.buy_kr && !item.addr_kr ? '구매 가이드' : '위치 정보'}</span> <span class="detail-section-title-en">{item.buy_kr && !item.addr_kr ? 'Where to Buy' : 'Location Info'}</span></h2>
+            <h2 class="detail-section-title"><span class="detail-section-title-kr">{item.buy_kr && !item.addr_kr ? '구매 가이드' : '위치 정보'}</span> <span class="detail-section-title-en">{item.buy_kr && !item.addr_kr ? 'Where to Buy' : 'Location Info'}</span></h2>
             {item.buy_kr && (
               <ul class="detail-line-list">
                 {splitBullets(item.buy_kr).map((line, i) => (
@@ -288,7 +288,7 @@ const showAddrCopy = isRealAddress;
         <!-- 5) 검색키워드 / 해시태그 -->
         {(item.keywords_kr || item.hashtags) && (
           <section class="detail-section">
-            <h2 class="detail-section-title"><span class="detail-section-num">5️⃣</span> <span class="detail-section-title-kr">검색 및 해시태그</span> <span class="detail-section-title-en">Search &amp; Hashtags</span></h2>
+            <h2 class="detail-section-title"><span class="detail-section-title-kr">검색 및 해시태그</span> <span class="detail-section-title-en">Search &amp; Hashtags</span></h2>
             {item.keywords_kr && (
               <div class="keyword-block">
                 <p class="keyword-block-label notranslate" translate="no">🔍 검색어 <span class="keyword-block-label-en">Search Keywords</span></p>
@@ -313,7 +313,7 @@ const showAddrCopy = isRealAddress;
         <!-- 6) 꿀팁 -->
         {item.tips_kr && (
           <section class="detail-section">
-            <h2 class="detail-section-title"><span class="detail-section-num">6️⃣</span> <span class="detail-section-title-kr">꿀팁</span> <span class="detail-section-title-en">Insider Tip</span></h2>
+            <h2 class="detail-section-title"><span class="detail-section-title-kr">꿀팁</span> <span class="detail-section-title-en">Insider Tip</span></h2>
             <ul class="item-tips-list">
               {splitBullets(item.tips_kr).map((line, i) => (
                 <li class="item-tips-line">
@@ -329,7 +329,7 @@ const showAddrCopy = isRealAddress;
           <>
             <hr class="detail-divider" />
             <section class="detail-section">
-              <h2 class="detail-section-title"><span class="detail-section-num">7️⃣</span> <span class="detail-section-title-kr">시청 링크</span> <span class="detail-section-title-en">Watch Links</span></h2>
+              <h2 class="detail-section-title"><span class="detail-section-title-kr">시청 링크</span> <span class="detail-section-title-en">Watch Links</span></h2>
               <div class="item-links">
                 {PLATFORM_HOME[item.platform] && (
                   <a href={PLATFORM_HOME[item.platform]} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web notranslate" translate="no">🌐 공식 웹사이트 <span class="item-link-btn-en">Official Website</span></a>

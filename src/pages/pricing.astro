@@ -34,7 +34,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
       <p class="pricing-eyebrow-kr">요금제</p>
       <p class="pricing-eyebrow-en" data-i18n="en">PRICING</p>
       <p class="pricing-sub-kr">필요한 채널 선택, 필요한 만큼만 결제</p>
-      <p class="pricing-sub-en" data-i18n="en">Select only the channels you need</p>
+      <p class="pricing-sub-en" data-i18n="en">Select only the channels you need, pay only for what you use</p>
     </section>
 
     <!-- 싱글 요금제 상세 -->
@@ -70,7 +70,7 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
                   <span class="plan-detail-label-kr">싱글 요금제</span>
                   <span class="plan-detail-label-en" data-i18n="en">SINGLE</span>
                 </span>
-                <a href={`/02-payment?key=${ch.payKey}_${t.key}`} class="plan-detail-box plan-detail-box-media" style={`--tc:${ch.color};--hero-img:url('/images/channels/${ch.slug === 'mart-convenience' ? 'emart' : ch.slug === 'red' ? 'daiso' : ch.slug === 'green' ? 'oliveyoung' : slug}.jpg')`}>
+                <a href={`/02-payment?key=${ch.payKey}_${t.key}`} class="plan-detail-box plan-detail-box-media" style={`--tc:${ch.color}`}>
                   <span class="plan-detail-names notranslate" translate="no" style={`color:${ch.color}`}>taerijay+{ch.slug === 'mart-convenience' ? 'mart+convenience' : ch.slug}</span>
                   <span class="plan-detail-price-wrap">
                     <span class="plan-detail-price">USD {t.price}</span>
@@ -172,17 +172,17 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     .back-btn:hover{background:rgba(255,255,255,.1)}
 
     .pricing-hero{padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:44px}
-    .pricing-eyebrow-kr{font-size:.82rem;font-weight:700;color:var(--muted);margin-bottom:2px}
-    .pricing-eyebrow-en{font-size:.98rem;letter-spacing:.08em;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
-    .pricing-sub-kr{font-size:.95rem;color:var(--ivory);margin-bottom:2px}
-    .pricing-sub-en{font-size:1.05rem;color:var(--muted)}
+    .pricing-eyebrow-kr{font-size:clamp(.82rem,2.1vw,.98rem);font-weight:700;color:var(--muted);margin-bottom:2px}
+    .pricing-eyebrow-en{font-size:clamp(.82rem,2.1vw,.98rem);letter-spacing:.08em;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+    .pricing-sub-kr{font-size:clamp(.9rem,2.3vw,1.05rem);color:var(--dim);margin-bottom:2px}
+    .pricing-sub-en{font-size:clamp(.9rem,2.3vw,1.05rem);color:var(--ivory)}
 
     .pricing-block{margin-bottom:56px}
     .pricing-block-title{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:10px}
     .pricing-block-title-kr{font-family:var(--f-display);font-weight:900;font-size:1.4rem}
     .pricing-block-title-en{font-size:1.02rem;letter-spacing:.06em;font-weight:700;color:var(--dim);text-transform:uppercase}
-    .pricing-block-desc-kr{font-size:.88rem;color:var(--ivory);line-height:1.6;margin-bottom:2px}
-    .pricing-block-desc-en{font-size:1rem;color:var(--muted);line-height:1.5;margin-bottom:8px}
+    .pricing-block-desc-kr{font-size:clamp(.84rem,2.1vw,1rem);color:var(--dim);line-height:1.6;margin-bottom:2px}
+    .pricing-block-desc-en{font-size:clamp(.84rem,2.1vw,1rem);color:var(--ivory);line-height:1.5;margin-bottom:8px}
 
     .tier-group{margin:22px 0 30px;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px;background:rgba(255,255,255,.015)}
     .tier-group-header{border-left:4px solid var(--tc);padding-left:16px;margin-bottom:14px}
@@ -193,25 +193,25 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     .plan-specs{list-style:none;margin:6px 0}
     .plan-specs li{margin-bottom:6px}
     .plan-specs-inline{display:flex;flex-direction:column;gap:2px;margin-bottom:18px}
-    .plan-specs-note-kr{font-size:.76rem;color:var(--dim);margin-bottom:1px}
-    .plan-specs-note-en{font-size:.8rem;color:var(--dim);opacity:.8;margin-bottom:18px}
-    .spec-kr{display:block;font-size:.82rem;color:var(--ivory)}
-    .spec-en{display:block;font-size:.86rem;color:var(--dim)}
+    .plan-specs-note-kr{font-size:clamp(.76rem,1.9vw,.86rem);color:var(--dim);margin-bottom:1px}
+    .plan-specs-note-en{font-size:clamp(.76rem,1.9vw,.86rem);color:var(--dim);opacity:.8;margin-bottom:18px}
+    .spec-kr{display:block;font-size:clamp(.78rem,2vw,.9rem);color:var(--dim)}
+    .spec-en{display:block;font-size:clamp(.78rem,2vw,.9rem);color:var(--ivory)}
 
     .pricing-warning{border:1px solid rgba(241,107,36,.35);background:rgba(241,107,36,.08);border-radius:10px;padding:14px 18px;margin-bottom:26px}
-    .pricing-warning-kr{font-size:.82rem;color:#F16B24;line-height:1.6;margin-bottom:2px}
-    .pricing-warning-en{font-size:.9rem;color:#F16B24;opacity:.85;line-height:1.5}
+    .pricing-warning-kr{font-size:clamp(.82rem,2.1vw,.94rem);color:#F16B24;line-height:1.6;margin-bottom:2px}
+    .pricing-warning-en{font-size:clamp(.82rem,2.1vw,.94rem);color:#F16B24;opacity:.85;line-height:1.5}
 
-    .pricing-pick-hint-kr{font-size:.8rem;color:var(--ivory);margin-bottom:1px}
-    .pricing-pick-hint-en{font-size:.86rem;color:var(--dim);margin-bottom:18px}
+    .pricing-pick-hint-kr{font-size:clamp(.8rem,2vw,.9rem);color:var(--dim);margin-bottom:1px}
+    .pricing-pick-hint-en{font-size:clamp(.8rem,2vw,.9rem);color:var(--ivory);margin-bottom:18px}
 
     /* 싱글/더블/토탈 공통 행(row) 레이아웃 — 통일된 카드 스타일 */
     .plan-detail-list{display:flex;flex-direction:column;gap:0;margin-top:12px}
     .plan-detail-row{display:flex;align-items:center;gap:18px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
     .plan-detail-row-total{border-bottom:none;padding-top:6px}
     .plan-detail-label{flex:0 0 110px;display:flex;flex-direction:column;gap:2px}
-    .plan-detail-label-kr{font-size:.78rem;font-weight:700;color:var(--muted)}
-    .plan-detail-label-en{font-size:.84rem;font-weight:600;letter-spacing:.05em;color:var(--dim);text-transform:uppercase}
+    .plan-detail-label-kr{font-size:clamp(.78rem,2vw,.9rem);font-weight:700;color:var(--muted)}
+    .plan-detail-label-en{font-size:clamp(.78rem,2vw,.9rem);font-weight:600;letter-spacing:.05em;color:var(--dim);text-transform:uppercase}
     .plan-detail-box{font:inherit;width:100%;text-decoration:none;cursor:pointer;border:2px solid var(--tc);border-radius:10px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex:1;background:color-mix(in srgb, var(--tc) 8%, transparent);transition:background .2s,transform .15s;color:inherit}
     .plan-detail-box:hover{background:color-mix(in srgb, var(--tc) 18%, transparent);transform:translateY(-1px)}
     .plan-detail-box-media{position:relative;overflow:hidden;background-image:var(--hero-img, none), color-mix(in srgb, var(--tc) 8%, transparent);background-size:cover;background-position:center}

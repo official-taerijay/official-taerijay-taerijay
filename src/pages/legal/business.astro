@@ -13,19 +13,22 @@ import Layout from '../../layouts/Layout.astro';
 
     <div class="legal-table">
       <div class="legal-row"><span class="legal-label">상호명 <span class="legal-label-en">Business Name</span></span><span class="legal-value">태리재이 <span class="notranslate" translate="no">TAERIJAY</span></span></div>
+      <div class="legal-row"><span class="legal-label">대표자 <span class="legal-label-en">Representative</span></span><span class="legal-value">이요셉<br/><span class="legal-value-en">YOO SEIB LEE</span></span></div>
       <div class="legal-row"><span class="legal-label">사업자등록번호 <span class="legal-label-en">Registration No.</span></span><span class="legal-value">673-51-01148</span></div>
-      <div class="legal-row"><span class="legal-label">사업자 구분 <span class="legal-label-en">Registration Type</span></span><span class="legal-value">간이과세자</span></div>
-      <div class="legal-row"><span class="legal-label">업태/업종 <span class="legal-label-en">Business Type</span></span><span class="legal-value">도매 및 소매업 / 전자상거래 소매업</span></div>
+      <div class="legal-row"><span class="legal-label">사업자 구분 <span class="legal-label-en">Registration Type</span></span><span class="legal-value">간이과세자<br/><span class="legal-value-en">Simplified Taxpayer</span></span></div>
+      <div class="legal-row"><span class="legal-label">업태/업종 <span class="legal-label-en">Business Type</span></span><span class="legal-value">도매 및 소매업 / 전자상거래 소매업<br/><span class="legal-value-en">Wholesale &amp; Retail / E-Commerce Retail</span></span></div>
       <div class="legal-row"><span class="legal-label">통신판매업 신고번호 <span class="legal-label-en">Mail-Order Sales No.</span></span><span class="legal-value">제2026-화도수동-0247호</span></div>
+      <div class="legal-row"><span class="legal-label">전화번호 <span class="legal-label-en">Phone</span></span><span class="legal-value">이메일 문의로 대체<br/><span class="legal-value-en">Inquiries via email only</span></span></div>
       <div class="legal-row"><span class="legal-label">사업장 소재지 <span class="legal-label-en">Address</span></span><span class="legal-value">경기도 남양주시 화도읍 경춘로1842번길 36-1 (우)12178<br/><span class="legal-value-en">36-1, Gyeongchun-ro 1842beon-gil, Hwado-eup, Namyangju-si, Gyeonggi-do, Republic of Korea</span></span></div>
       <div class="legal-row"><span class="legal-label">개업일 <span class="legal-label-en">Business Start Date</span></span><span class="legal-value">2026.04.01</span></div>
       <div class="legal-row"><span class="legal-label">사업자등록일 <span class="legal-label-en">Registration Date</span></span><span class="legal-value">2026.03.26</span></div>
-      <div class="legal-row"><span class="legal-label">발급처 <span class="legal-label-en">Issuing Authority</span></span><span class="legal-value">남양주세무서장</span></div>
+      <div class="legal-row"><span class="legal-label">발급처 <span class="legal-label-en">Issuing Authority</span></span><span class="legal-value">남양주세무서장<br/><span class="legal-value-en">Head of Namyangju Tax Office</span></span></div>
       <div class="legal-row"><span class="legal-label">이메일 <span class="legal-label-en">Email</span></span><span class="legal-value">official@taerijay.com<br/>taerijay@gmail.com</span></div>
       <div class="legal-row"><span class="legal-label">결제 대행 <span class="legal-label-en">Payment Processor</span></span><span class="legal-value">Paddle.com Market Ltd. (Merchant of Record)</span></div>
       <div class="legal-row"><span class="legal-label">호스팅 제공 <span class="legal-label-en">Hosting Provider</span></span><span class="legal-value">Vercel Inc.</span></div>
     </div>
-    <p class="legal-note">사업자등록증명(간이과세자) 기준 정보입니다. 통신판매업 신고번호는 제2026-화도수동-0247호이며, 공동사업자는 해당사항 없습니다.</p>
+    <p class="legal-note">사업자등록증명(간이과세자) 기준 정보입니다. 통신판매업 신고번호는 제2026-화도수동-0247호이며, 공동사업자는 해당사항 없습니다. 고객 문의는 전화 상담 없이 이메일로만 접수하고 있습니다.</p>
+    <p class="legal-note legal-note-en">This information is based on the business registration certificate (simplified taxpayer). The mail-order sales registration number is No. 2026-Hwadosudong-0247. There is no co-representative for this business. Customer inquiries are handled by email only; phone support is not available.</p>
   </div>
 
   <style>
@@ -34,8 +37,8 @@ import Layout from '../../layouts/Layout.astro';
     .back-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--ivory);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer}
     .back-btn:hover{background:rgba(255,255,255,.1)}
     .legal-title{margin-bottom:28px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-    .legal-title-kr{font-family:var(--f-display);font-weight:900;font-size:1.5rem}
-    .legal-title-en{font-size:1rem;letter-spacing:.06em;font-weight:700;color:var(--dim);text-transform:uppercase}
+    .legal-title-kr{font-family:var(--f-display);font-weight:900;font-size:clamp(1.1rem,3vw,1.5rem);color:var(--dim)}
+    .legal-title-en{font-size:clamp(1.1rem,3vw,1.5rem);letter-spacing:.06em;font-weight:700;color:var(--ivory);text-transform:uppercase}
     .legal-table{display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden}
     .legal-row{display:flex;justify-content:space-between;gap:14px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
     .legal-row:last-child{border-bottom:none}
@@ -44,5 +47,6 @@ import Layout from '../../layouts/Layout.astro';
     .legal-value{font-size:.88rem;color:var(--gold);font-weight:700;text-align:right}
     .legal-value-en{display:block;font-size:.74rem;color:var(--dim);font-weight:500;margin-top:2px}
     .legal-note{font-size:.76rem;color:var(--dim);margin-top:14px;line-height:1.6}
+    .legal-note-en{margin-top:8px;color:var(--muted)}
   </style>
 </Layout>

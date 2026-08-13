@@ -24,8 +24,8 @@
 }
 .channel-hero-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(6,10,18,.9) 100%)}
 .channel-hero-region{position:absolute;left:22px;bottom:18px;z-index:1;display:flex;flex-direction:column;gap:4px}
-.channel-hero-region-kr{font-family:var(--f-display);font-weight:900;font-size:clamp(.72rem,1.8vw,.9rem);color:var(--ivory);letter-spacing:.01em}
-.channel-hero-region-en{font-size:clamp(1.3rem,3.6vw,1.8rem);letter-spacing:.02em;font-weight:800;color:var(--c);text-transform:uppercase}
+.channel-hero-region-kr{font-family:var(--f-display);font-weight:900;font-size:clamp(1rem,2.6vw,1.4rem);color:var(--dim);letter-spacing:.01em}
+.channel-hero-region-en{font-size:clamp(1rem,2.6vw,1.4rem);letter-spacing:.02em;font-weight:800;color:var(--c);text-transform:uppercase}
 @media (max-width:560px){.channel-hero-banner{aspect-ratio:16/9;border-radius:14px}}
 
 /* ── 채널 헤더 ── */
@@ -74,13 +74,12 @@
 }
 
 .cat-card-name{
-  --kr-size:.7rem;
-  font-family:var(--f-display);font-weight:900;color:var(--c);
-  font-size:var(--kr-size);line-height:1.28;text-align:left;
+  font-family:var(--f-display);font-weight:900;color:var(--dim);
+  font-size:clamp(.86rem,2.2vw,1.04rem);line-height:1.28;text-align:left;
   word-break:keep-all;overflow-wrap:break-word;max-width:22ch;
 }
 .cat-card-name-en{
-  font-size:calc(var(--kr-size, .7rem) * 2);letter-spacing:.02em;color:var(--muted);text-transform:uppercase;
+  font-size:clamp(.86rem,2.2vw,1.04rem);letter-spacing:.02em;color:var(--ivory);text-transform:uppercase;
   word-break:keep-all;max-width:24ch;line-height:1.25;text-align:left;
 }
 .cat-card-sub{font-size:.68rem;color:var(--dim);margin-top:2px;letter-spacing:.02em}
@@ -110,19 +109,15 @@
 .sub-parent-link{display:inline-block;text-decoration:none;font-size:.78rem;font-weight:700;color:var(--c);margin-bottom:12px;transition:opacity .15s ease}
 .sub-parent-link:hover{opacity:.75}
 .sub-title{display:flex;flex-direction:column;align-items:flex-start;gap:4px;flex-wrap:wrap}
-.sub-title-kr{font-family:var(--f-display);font-weight:900;font-size:clamp(1.1rem,3.4vw,1.6rem);word-break:keep-all}
-.sub-title-en{font-size:clamp(1.6rem,6vw,2.4rem);letter-spacing:.01em;color:var(--muted);text-transform:uppercase;font-weight:800;line-height:1.15}
+.sub-title-kr{font-family:var(--f-display);font-weight:900;font-size:clamp(1.3rem,4vw,1.9rem);color:var(--dim);word-break:keep-all}
+.sub-title-en{font-size:clamp(1.3rem,4vw,1.9rem);letter-spacing:.01em;color:var(--ivory);text-transform:uppercase;font-weight:800;line-height:1.15}
 
 @media (max-width: 768px){
   .cat-grid-section{grid-template-columns:repeat(3,1fr);gap:12px}
-  .cat-card-name{--kr-size:.66rem}
 }
 @media (max-width: 560px){
   .cat-grid-section{grid-template-columns:repeat(2,1fr);gap:12px}
   .channel-hero{margin-bottom:32px;padding-bottom:24px}
-}
-@media (max-width: 380px){
-  .cat-card-name{--kr-size:.62rem}
 }
 
 @media (prefers-reduced-motion: reduce){
