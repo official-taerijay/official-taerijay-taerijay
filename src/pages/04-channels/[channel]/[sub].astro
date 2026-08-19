@@ -87,14 +87,14 @@ if (showRegionFilter) {
 
     {loadError && (
       <section class="empty-note">
-        <p>콘텐츠를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.</p>
+        <p>콘텐츠 로드 실패. 잠시 후 재시도</p>
         <p class="empty-note-en">Failed to load content. Please try again shortly.</p>
       </section>
     )}
 
     {!loadError && items.length === 0 && (
       <section class="empty-note">
-        <p>콘텐츠 준비 중입니다.</p>
+        <p>콘텐츠 준비 중</p>
         <p class="empty-note-en">Content coming soon.</p>
       </section>
     )}
@@ -132,7 +132,7 @@ if (showRegionFilter) {
 
     {showRegionFilter && (
       <p class="region-empty-note" id="regionEmptyNote" hidden>
-        <span>선택한 지역에 해당하는 콘텐츠가 없습니다.</span>
+        <span>선택 지역 콘텐츠 없음</span>
         <span class="region-empty-note-en">No content found for this region.</span>
       </p>
     )}

@@ -93,7 +93,7 @@ const showAddrCopy = isRealAddress;
 
     {loadError && (
       <section class="empty-note">
-        <p>콘텐츠를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.</p>
+        <p>콘텐츠 로드 실패. 잠시 후 재시도</p>
         <p class="empty-note-en">Failed to load content. Please try again shortly.</p>
       </section>
     )}
@@ -299,7 +299,7 @@ const showAddrCopy = isRealAddress;
             )}
             {item.hashtags && (
               <div class="keyword-block">
-                <p class="keyword-block-label notranslate" translate="no">#️⃣ 해시태그 <span class="keyword-block-label-en">Hashtags</span></p>
+                <p class="keyword-block-label notranslate" translate="no">해시태그 <span class="keyword-block-label-en">Hashtags</span></p>
                 <ul class="hashtag-list notranslate" translate="no">
                   {splitBullets(item.hashtags).map((h) => <li class="hashtag-item">{h.startsWith('#') ? h : `#${h}`}</li>)}
                 </ul>
