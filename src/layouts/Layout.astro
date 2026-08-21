@@ -72,8 +72,8 @@ import { languages } from '../lib/languages.js';
           </div>
         </div>
         <a href="/01-auth" class="nav-account-btn" id="nav-account-btn">
-          <span class="nav-account-kr" id="nav-account-kr">회원가입/로그인</span>
-          <span class="nav-account-en" id="nav-account-en" data-i18n="en">Sign Up / Log In</span>
+          <span class="nav-account-kr notranslate" translate="no" id="nav-account-kr">회원가입/로그인</span>
+          <span class="nav-account-en notranslate" translate="no" id="nav-account-en" data-i18n="en">Sign Up / Log In</span>
         </a>
       </div>
     </div>
@@ -163,17 +163,17 @@ import { languages } from '../lib/languages.js';
   {requireChannel && (
     <div class="channel-gate-loading" id="channel-gate-loading">
       <div class="channel-gate-spinner"></div>
-      <p class="channel-gate-kr">이용권 확인 중...</p>
-      <p class="channel-gate-en">Checking your access...</p>
+      <p class="channel-gate-kr notranslate" translate="no">이용권 확인 중...</p>
+      <p class="channel-gate-en notranslate" translate="no">Checking your access...</p>
     </div>
   )}
 
   <footer class="footer">
     <div class="footer-links">
-      <a href="/legal/terms"><span class="footer-en">Terms</span></a>
-      <a href="/legal/privacy"><span class="footer-en">Privacy</span></a>
-      <a href="/legal/refund"><span class="footer-en">Refund</span></a>
-      <a href="/legal/business"><span class="footer-en">Business</span></a>
+      <a href="/legal/terms"><span class="footer-en notranslate" translate="no">Terms</span></a>
+      <a href="/legal/privacy"><span class="footer-en notranslate" translate="no">Privacy</span></a>
+      <a href="/legal/refund"><span class="footer-en notranslate" translate="no">Refund</span></a>
+      <a href="/legal/business"><span class="footer-en notranslate" translate="no">Business</span></a>
     </div>
     <div class="footer-social">
       <a href="#" class="social-icon social-yt" title="YouTube" aria-label="YouTube">
@@ -310,14 +310,6 @@ import { languages } from '../lib/languages.js';
         }
       }
       if (sideLink) sideLink.textContent = loggedIn ? '로그아웃' : '회원가입/로그인';
-
-      // 한글 원문 라인 + 이미 영문인 라인은 구글 번역이 건드리지 않도록 고정.
-      // (영문 라인까지 번역 대상에 두면 "Copy & paste..." 같은 원문 옆에
-      //  구글이 재번역한 문구가 팝업으로 겹쳐 표시되는 문제가 생김)
-      document.querySelectorAll('[class*="-kr"], [class*="-en"]').forEach((el) => {
-        el.classList.add('notranslate');
-        el.setAttribute('translate', 'no');
-      });
     });
   </script>
 

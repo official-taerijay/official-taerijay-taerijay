@@ -325,7 +325,7 @@ const showAddrCopy = isRealAddress;
           </section>
         )}
 
-        {channel === 'entertainment' && (item.trailer_youtube || PLATFORM_HOME[item.platform]) && (
+        {channel === 'entertainment' && (item.title_en || PLATFORM_HOME[item.platform]) && (
           <>
             <hr class="detail-divider" />
             <section class="detail-section">
@@ -334,8 +334,8 @@ const showAddrCopy = isRealAddress;
                 {PLATFORM_HOME[item.platform] && (
                   <a href={PLATFORM_HOME[item.platform]} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web notranslate" translate="no">🌐 공식 웹사이트 <span class="item-link-btn-en">Official Website</span></a>
                 )}
-                {item.trailer_youtube && (
-                  <a href={item.trailer_youtube} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web notranslate" translate="no">▶️ 유튜브 예고편 <span class="item-link-btn-en">YouTube Trailer</span></a>
+                {channel === 'entertainment' && item.title_en && (
+                  <a href={`https://www.youtube.com/results?search_query=${encodeURIComponent(item.title_en + ' official trailer')}`} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web notranslate" translate="no">▶️ 유튜브 영어 예고편 검색 <span class="item-link-btn-en">Search YouTube Trailer (English)</span></a>
                 )}
               </div>
             </section>
