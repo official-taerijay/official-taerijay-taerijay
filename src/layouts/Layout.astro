@@ -253,7 +253,15 @@ import { languages } from '../lib/languages.js';
     });
 
     // 구글 번역 엔진 연동 — 선택한 언어로 페이지 전체 실시간 번역
+    // 한글(-kr)/영문(-en) 라벨이 나란히 병기된 구조라, 번역 대상을 영문 쪽으로 고정하지 않으면
+    // "한글 라벨이 번역된 텍스트 + 원래 있던 영문 라벨"이 겹쳐 보이는 문제가 생긴다.
+    // 그래서 한국어가 아닌 언어를 고르면 -kr 요소는 숨기고 -en 요소만 남겨 그 영문을 번역 대상으로 삼는다.
+    function toggleKrEnVisibility(code) {
+      document.body.classList.toggle('lang-foreign', code !== 'ko');
+    }
+
     function translatePage(code) {
+      toggleKrEnVisibility(code);
       if (code === 'ko') {
         const combo = document.querySelector('.goog-te-combo');
         if (combo) { combo.value = ''; combo.dispatchEvent(new Event('change')); }
@@ -290,6 +298,7 @@ import { languages } from '../lib/languages.js';
       if (saved) {
         const opt = document.querySelector(`.lang-option[data-code="${saved}"]`);
         if (opt) langCurrent.textContent = opt.dataset.name;
+        toggleKrEnVisibility(saved);
       }
       setTimeout(() => {
         const s = document.getElementById('splash');
@@ -423,6 +432,10 @@ import { languages } from '../lib/languages.js';
     html,body{background:var(--bg);color:var(--ivory);font-family:var(--f-body);min-height:100vh;overflow-x:hidden;scroll-behavior:smooth}
     button{font:inherit}
     a{color:inherit}
+
+    /* 언어 선택이 한국어가 아닐 때: 한글(-kr) 라벨/텍스트는 숨기고 영문(-en) 쪽만 남겨
+       그 영문을 구글 번역 대상으로 삼는다. (한글 라벨이 번역되며 원래 영문과 겹쳐 보이는 문제 방지) */
+    body.lang-foreign [class*="-kr"]{display:none !important}
 
     .splash{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s ease}
     .splash-brand{font-family:var(--f-display);font-weight:900;font-size:clamp(1.8rem,6vw,2.6rem);letter-spacing:.06em;animation:tj-splash-pulse 1.4s ease-in-out infinite}

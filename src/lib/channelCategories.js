@@ -8,6 +8,7 @@ export const CHANNEL_MAP = {
   entertainment: { color: '#00E5FF', subs: {
     drama: { kr: '드라마', en: 'Drama', free: true },
     movie: { kr: '영화', en: 'Movie', free: true },
+    variety: { kr: '예능', en: 'Variety', free: true },
   }},
   protocol: { color: '#F16B24', subs: {
     // 프리뷰/무료 오픈 5개
