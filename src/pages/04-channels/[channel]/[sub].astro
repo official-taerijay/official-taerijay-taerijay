@@ -83,6 +83,17 @@ if (showRegionFilter) {
           <span class="sub-count-en" data-i18n="en">{items.length} items</span>
         </p>
       )}
+      {lockedCount > 0 && (
+        <div class="lock-progress">
+          <div class="lock-progress-track">
+            <div class="lock-progress-fill" style={`width:${Math.round(((items.length - lockedCount) / items.length) * 100)}%`}></div>
+          </div>
+          <p class="lock-progress-label">
+            <span class="lock-progress-label-kr">무료 {items.length - lockedCount}개 공개 중 · 전체 {items.length}개는 구독하면 바로 열람</span>
+            <span class="lock-progress-label-en" data-i18n="en">{items.length - lockedCount} free now · unlock all {items.length} with a subscription</span>
+          </p>
+        </div>
+      )}
     </section>
 
     {loadError && (
@@ -124,9 +135,23 @@ if (showRegionFilter) {
                 <span class="item-card-tile-name notranslate" translate="no">{item.title_kr}</span>
                 {item.title_en && <span class="item-card-tile-name-en">{item.title_en}</span>}
               </div>
+              {isLocked && (
+                <div class="item-card-tile-lockmask">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                </div>
+              )}
             </a>
           );
         })}
+        {lockedCount > 0 && (
+          <a href="/pricing" class="item-card-tile item-card-tile-more">
+            <div class="item-card-tile-art item-card-tile-more-art">
+              <span class="item-card-tile-more-num">+{lockedCount}</span>
+              <span class="item-card-tile-more-label-kr">더보기 · 구독하고 전체 열람</span>
+              <span class="item-card-tile-more-label-en">unlock all with a subscription</span>
+            </div>
+          </a>
+        )}
       </section>
     )}
 
@@ -151,7 +176,7 @@ if (showRegionFilter) {
           btn.classList.add('is-active');
           const region = btn.getAttribute('data-region');
           let visibleCount = 0;
-          grid.querySelectorAll('.item-card-tile').forEach((card) => {
+          grid.querySelectorAll('.item-card-tile:not(.item-card-tile-more)').forEach((card) => {
             const match = region === 'all' || card.getAttribute('data-region') === region;
             card.hidden = !match;
             if (match) visibleCount++;
@@ -181,7 +206,29 @@ if (showRegionFilter) {
     .region-empty-note{text-align:left;padding:32px 16px;color:var(--dim);font-size:.86rem;display:flex;flex-direction:column;gap:4px}
     .region-empty-note-en{font-size:.78rem;opacity:.8}
 
+    .lock-progress{margin-top:14px;max-width:420px}
+    .lock-progress-track{height:6px;border-radius:100px;background:rgba(255,255,255,.08);overflow:hidden}
+    .lock-progress-fill{height:100%;background:var(--c);border-radius:100px;transition:width .3s ease}
+    .lock-progress-label{margin-top:8px;display:flex;flex-direction:column;gap:2px}
+    .lock-progress-label-kr{font-size:.76rem;color:var(--muted);font-weight:600}
+    .lock-progress-label-en{font-size:.7rem;color:var(--dim)}
+
     .item-grid-section{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:16px;margin-bottom:44px}
+
+    .item-card-tile-lockmask{
+      position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+      background:rgba(10,25,47,.55);backdrop-filter:blur(3px);color:var(--muted);
+      opacity:0;transition:opacity .2s ease;
+    }
+    .item-card-tile-locked:hover .item-card-tile-lockmask{opacity:1}
+    .item-card-tile-locked .item-card-tile-name,
+    .item-card-tile-locked .item-card-tile-name-en{filter:blur(3px);user-select:none}
+
+    .item-card-tile-more{border-style:dashed;border-color:color-mix(in srgb, var(--c) 45%, transparent)}
+    .item-card-tile-more-art{align-items:center!important;justify-content:center!important;text-align:center!important;gap:6px!important}
+    .item-card-tile-more-num{font-family:var(--f-display);font-weight:900;font-size:clamp(1.3rem,4vw,1.7rem);color:var(--c)}
+    .item-card-tile-more-label-kr{font-size:.74rem;font-weight:700;color:var(--ivory);text-align:center}
+    .item-card-tile-more-label-en{font-size:.66rem;color:var(--dim);text-align:center}
 
     .item-card-tile{
       text-decoration:none;color:var(--ivory);display:block;position:relative;

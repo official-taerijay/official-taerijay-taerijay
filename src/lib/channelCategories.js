@@ -32,6 +32,7 @@ export const CHANNEL_MAP = {
     'emergency-help': { kr: '응급·긴급 통역',        en: 'Emergency Help',          free: true },
     '3hour':          { kr: '3시간 코스 (서울 12개)', en: '3-Hour Course',           free: true },
     // 유료 9개
+    'half-day':       { kr: '반나절 코스', en: 'Half-Day Course' },
     '1day':           { kr: '1일 코스',   en: '1-Day Course' },
     '2day':           { kr: '2일 코스',   en: '2-Day Course' },
     '3day':           { kr: '3일 코스',   en: '3-Day Course' },

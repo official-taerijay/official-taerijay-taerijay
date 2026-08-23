@@ -3,8 +3,8 @@
 // 모든 페이지(Layout.astro, 01-auth, 02-payment)가 이 파일 하나를 공유해서
 // 페이지마다 언어 개수가 달라지는 일이 없도록 함.
 export const languages = [
-  { code: 'en', name: 'English' },
   { code: 'ko', name: '한국어' },
+  { code: 'en', name: 'English' },
   { code: 'ja', name: '日本語' },
   { code: 'zh-CN', name: '简体中文' },
   { code: 'zh-TW', name: '繁體中文' },
