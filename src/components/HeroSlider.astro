@@ -34,6 +34,13 @@ const uid = Math.random().toString(36).slice(2, 8);
         )}
         <div class="hero-slide-pattern"></div>
         <div class="hero-slide-shade"></div>
+        {!s.img && (
+          <div class="hero-slide-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.6"/><path d="M4.5 16.5 9 12l3 3 4-4.5 3.5 4"/></svg>
+            <span class="hero-slide-placeholder-kr notranslate" translate="no">이미지 준비중</span>
+            <span class="hero-slide-placeholder-en">Image Coming Soon</span>
+          </div>
+        )}
       </div>
     ))}
 

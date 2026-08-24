@@ -1,5 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroSlider from '../components/HeroSlider.astro';
+
+// 메인 화면 히어로 배너 — 실제 이미지는 img 필드에 추후 URL만 채워넣으면 자동 반영됨(현재는 준비중 플레이스홀더)
+const mainHeroSlides = [
+  { titleKr: '대한민국, 그 안의 진짜 이야기', titleEn: 'The Real Korea, Curated', dateLabel: 'TAERIJAY' },
+  { titleKr: '6개 채널, 하나의 구독', titleEn: '6 Channels, One Subscription', dateLabel: 'ALL SERVICES' },
+  { titleKr: '외국인 관광객을 위한 로컬 정보', titleEn: 'Local Info for Every Traveler', dateLabel: 'FOR YOU' },
+];
 
 // heroImg: true인 채널만 /images/channels/*.jpg를 배경으로 요청한다.
 // 이미지 파일이 실제로 public/images/channels/에 업로드되기 전까지는 false로 두어
@@ -20,6 +28,9 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
 <Layout title="TAERIJAY">
   <section class="hero">
     <div class="hero-bg"></div>
+    <div class="hero-slider-wrap">
+      <HeroSlider slides={mainHeroSlides} color="#B33A52" durationMs={5000} />
+    </div>
     <div class="hero-scrim"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">TAERIJAY REPUBLIC OF KOREA</p>
@@ -184,7 +195,14 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
         radial-gradient(ellipse 70% 50% at 85% 80%, rgba(212,175,55,.12) 0%, transparent 55%),
         linear-gradient(160deg, #0d1f3d 0%, #0A192F 55%, #060f1e 100%);
     }
-    .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,25,47,.2) 0%, rgba(10,25,47,.4) 55%, var(--bg) 100%)}
+    .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,25,47,.2) 0%, rgba(10,25,47,.4) 55%, var(--bg) 100%);z-index:1}
+    .hero-slider-wrap{position:absolute;inset:0;z-index:0}
+    .hero-slider-wrap :global(.hero-slider){width:100%;height:100%;aspect-ratio:auto;border-radius:0;border:none;box-shadow:none;margin-bottom:0}
+    .hero-slider-wrap :global(.hero-slider-info),
+    .hero-slider-wrap :global(.hero-slider-track),
+    .hero-slider-wrap :global(.hero-slide-placeholder-kr),
+    .hero-slider-wrap :global(.hero-slide-placeholder-en){display:none}
+    .hero-slider-wrap :global(.hero-slide-placeholder svg){opacity:.35}
     .hero-content{position:relative;z-index:2;width:var(--container);margin:0 auto;text-align:left}
     .hero-eyebrow{font-size:clamp(.8rem,2vw,1rem);letter-spacing:.22em;font-weight:700;color:var(--gold);margin-bottom:20px}
     .hero-wordmark{
