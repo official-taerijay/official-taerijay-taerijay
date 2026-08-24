@@ -71,6 +71,10 @@ import { languages } from '../lib/languages.js';
           </div>
           </div>
         </div>
+        <div class="translate-notice" id="translate-notice" hidden role="status">
+          <span class="translate-notice-kr notranslate" translate="no">번역 로딩이 지연되고 있어요. 새로고침 후 다시 시도해주세요.</span>
+          <span class="translate-notice-en notranslate" translate="no">Translation is taking longer than usual. Please refresh and try again.</span>
+        </div>
         <a href="/01-auth" class="nav-account-btn" id="nav-account-btn">
           <span class="nav-account-kr notranslate" translate="no" id="nav-account-kr">회원가입/로그인</span>
           <span class="nav-account-en" id="nav-account-en" data-i18n="en">Sign Up / Log In</span>
@@ -256,21 +260,45 @@ import { languages } from '../lib/languages.js';
     // 한글(-kr)은 절대 고정값: notranslate + translate="no"가 개별 요소에 적용되어 있어
     // 어떤 언어를 선택해도 항상 그대로 보인다. 영문(-en)은 기본값이자 가변값으로,
     // 선택한 언어에 따라 구글 번역이 그 자리만 번역해 보여준다.
+    //
+    // 모바일(특히 iOS Safari, 저속 네트워크)에서는 구글 번역 스크립트/iframe 로딩이
+    // PC보다 훨씬 느리거나 아예 지연되는 경우가 흔하다. 그래서 재시도 총 대기 시간을
+    // 5초(250ms×20회)에서 최대 약 20초(300ms씩 점증)까지 늘리고, 시간 안에 위젯이
+    // 끝내 준비되지 않으면 조용히 실패하는 대신 사용자에게 안내를 보여준다.
+    let translateWidgetReady = false;
+    let pendingLangCode = null;
+
+    function showTranslateNotice(show) {
+      const notice = document.getElementById('translate-notice');
+      if (notice) notice.hidden = !show;
+    }
+
     function translatePage(code) {
       if (code === 'ko') {
         const combo = document.querySelector('.goog-te-combo');
         if (combo) { combo.value = ''; combo.dispatchEvent(new Event('change')); }
         document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        showTranslateNotice(false);
         return;
       }
       const gCode = code === 'zh-HK' ? 'zh-TW' : code;
+      pendingLangCode = gCode;
+      showTranslateNotice(false);
+      const MAX_ATTEMPTS = 45; // 약 20초까지 재시도 (모바일 저속 로딩 대응)
       const trySetCombo = (attempt) => {
         const combo = document.querySelector('.goog-te-combo');
         if (combo) {
+          translateWidgetReady = true;
           combo.value = gCode;
           combo.dispatchEvent(new Event('change'));
-        } else if (attempt < 20) {
-          setTimeout(() => trySetCombo(attempt + 1), 250);
+          showTranslateNotice(false);
+          pendingLangCode = null;
+        } else if (attempt < MAX_ATTEMPTS) {
+          setTimeout(() => trySetCombo(attempt + 1), 450);
+        } else {
+          // 20초 동안 위젯이 준비되지 않음 — 네트워크/브라우저 차단 가능성.
+          // 조용히 포기하지 않고 사용자에게 상태를 알린다.
+          showTranslateNotice(true);
         }
       };
       trySetCombo(0);
@@ -278,9 +306,23 @@ import { languages } from '../lib/languages.js';
 
     window.googleTranslateElementInit = function () {
       new google.translate.TranslateElement({ pageLanguage: 'ko', autoDisplay: false }, 'google_translate_element');
+      translateWidgetReady = true;
+      // 위젯이 초기화된 시점에 대기 중이던 언어 선택이 있으면 즉시 적용
+      if (pendingLangCode) {
+        translatePage(pendingLangCode === 'zh-TW' ? 'zh-HK' : pendingLangCode);
+        return;
+      }
       const saved = localStorage.getItem('taerijay_lang');
       if (saved && saved !== 'ko') translatePage(saved);
     };
+
+    // 구글 번역 스크립트 로드 자체가 실패한 경우(광고 차단기, 네트워크 정책 등)를 대비한 안전장치.
+    // 12초 안에 초기화 콜백이 오지 않고, 사용자가 이미 언어를 선택한 상태라면 안내를 띄운다.
+    setTimeout(() => {
+      if (!translateWidgetReady && localStorage.getItem('taerijay_lang') && localStorage.getItem('taerijay_lang') !== 'ko') {
+        showTranslateNotice(true);
+      }
+    }, 12000);
 
     document.addEventListener('click', (e) => {
       if (!langMenu.hidden && !e.target.closest('.lang-dropdown')) {
@@ -464,7 +506,7 @@ import { languages } from '../lib/languages.js';
     @keyframes tj-fade-in{from{opacity:0}to{opacity:1}}
     @media (prefers-reduced-motion: reduce){.channel-gate-spinner{animation-duration:1.4s}}
 
-    .nav-right-top{display:flex;align-items:center;gap:8px}
+    .nav-right-top{position:relative;display:flex;align-items:center;gap:8px}
     .nav-back-btn{background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--ivory);font-size:.9rem;line-height:1;padding:8px 11px;border-radius:6px;cursor:pointer;transition:background .2s}
     .nav-back-btn:hover{background:rgba(255,255,255,.1)}
     .lang-dropdown{position:relative}
@@ -472,6 +514,14 @@ import { languages } from '../lib/languages.js';
     .lang-menu{position:absolute;top:calc(100% + 8px);right:0;background:#151f33;border:1px solid rgba(255,255,255,.12);border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,.5);max-height:320px;overflow-y:auto;min-width:180px;z-index:300}
     .lang-option{display:block;width:100%;text-align:left;background:transparent;border:none;color:var(--ivory);font-size:.82rem;padding:10px 16px;cursor:pointer;transition:background .15s}
     .lang-option:hover{background:rgba(255,255,255,.08)}
+
+    .translate-notice{
+      position:absolute;top:calc(100% + 8px);right:0;z-index:290;width:min(260px,70vw);
+      background:rgba(241,107,36,.14);border:1px solid rgba(241,107,36,.4);border-radius:10px;
+      padding:10px 12px;display:flex;flex-direction:column;gap:2px;
+    }
+    .translate-notice-kr{font-size:.72rem;font-weight:700;color:var(--ivory)}
+    .translate-notice-en{font-size:.66rem;font-weight:600;color:var(--muted)}
 
     .side-menu{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300}
     .side-menu-inner{position:absolute;top:0;left:0;height:100%;width:min(320px,80vw);background:#0d1f3d;padding:24px;display:flex;flex-direction:column;overflow-y:auto}

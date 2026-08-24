@@ -819,8 +819,9 @@ const paddleToken = import.meta.env.PUBLIC_PADDLE_VENDOR_TOKEN;
             combo.value = gCode;
             combo.dispatchEvent(new Event('change'));
           }
-        } else if (attempt < 20) {
-          setTimeout(() => trySetCombo(attempt + 1), 250);
+        } else if (attempt < 45) {
+          // 모바일에서는 구글 번역 위젯 로딩이 PC보다 훨씬 느릴 수 있어 재시도 대기 시간을 늘림(최대 약 20초)
+          setTimeout(() => trySetCombo(attempt + 1), 450);
         }
       };
       trySetCombo(0);
