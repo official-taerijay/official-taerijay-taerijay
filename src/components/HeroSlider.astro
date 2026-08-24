@@ -1,0 +1,139 @@
+---
+// src/components/HeroSlider.astro
+// 디즈니+ 스타일 자동순환 히어로 배너 — 화면 구성(제목/버튼/레이아웃)은 고정, 배경 슬라이드만 자동 전환.
+// slides에 img(실제 이미지 URL, 준비되면 채워넣기)가 없으면 컬러 그라디언트+패턴으로 대체 렌더링되어
+// 이미지 없이도 바로 사용 가능하고, 나중에 img만 채우면 자동으로 실제 이미지로 전환됨.
+
+export interface HeroSlide {
+  titleKr: string;
+  titleEn: string;
+  dateLabel?: string; // 예: "8월 24일 업데이트"
+  img?: string; // 실제 배경 이미지 URL (없으면 그라디언트로 대체)
+}
+
+export interface Props {
+  slides: HeroSlide[];
+  color: string; // --c 브랜드 컬러
+  durationMs?: number; // 슬라이드당 노출 시간
+}
+
+const { slides, color, durationMs = 4500 } = Astro.props;
+const uid = Math.random().toString(36).slice(2, 8);
+---
+
+{slides.length > 0 && (
+  <section class="hero-slider" id={`hero-slider-${uid}`} style={`--c:${color};--hero-duration:${durationMs}ms`}>
+    {slides.map((s, i) => (
+      <div class={`hero-slide${i === 0 ? ' is-active' : ''}`} data-hero-slide>
+        {s.img ? (
+          <div class="hero-slide-bg" style={`background-image:url(${s.img})`}></div>
+        ) : (
+          <div class="hero-slide-bg" style={`background-image:
+            radial-gradient(ellipse 90% 100% at ${20 + (i * 15) % 60}% 0%, color-mix(in srgb, var(--c) ${30 - i * 4}%, transparent) 0%, transparent 62%),
+            linear-gradient(${140 + i * 20}deg, color-mix(in srgb, var(--c) ${26 - i * 3}%, var(--bg)) 0%, var(--bg) 80%)`}></div>
+        )}
+        <div class="hero-slide-pattern"></div>
+        <div class="hero-slide-shade"></div>
+      </div>
+    ))}
+
+    <div class="hero-slider-track">
+      {slides.map((_, i) => (
+        <button type="button" class={`hero-slider-bar${i === 0 ? ' is-active' : ''}`} data-hero-bar data-index={i} aria-label={`슬라이드 ${i + 1}`}>
+          <span class="hero-slider-bar-fill"></span>
+        </button>
+      ))}
+    </div>
+
+    <div class="hero-slider-info">
+      <div class="hero-slider-text">
+        <span class="hero-slider-title-kr notranslate" translate="no" data-hero-title-kr>{slides[0].titleKr}</span>
+        <span class="hero-slider-title-en" data-hero-title-en>{slides[0].titleEn}</span>
+        {slides[0].dateLabel && <span class="hero-slider-date notranslate" translate="no" data-hero-date>{slides[0].dateLabel}</span>}
+      </div>
+      <button type="button" class="hero-slider-toggle" data-hero-toggle aria-label="일시정지">
+        <svg viewBox="0 0 20 20" fill="currentColor" data-icon-pause><rect x="5" y="4" width="3.4" height="12" rx="1"/><rect x="11.6" y="4" width="3.4" height="12" rx="1"/></svg>
+        <svg viewBox="0 0 20 20" fill="currentColor" data-icon-play hidden><path d="M6 4.5v11l9-5.5-9-5.5Z"/></svg>
+      </button>
+    </div>
+  </section>
+)}
+
+<script define:vars={{ uid, slideData: slides, durationMs }}>
+  (function () {
+    const root = document.getElementById(`hero-slider-${uid}`);
+    if (!root) return;
+    const slideEls = root.querySelectorAll('[data-hero-slide]');
+    const barEls = root.querySelectorAll('[data-hero-bar]');
+    const titleKrEl = root.querySelector('[data-hero-title-kr]');
+    const titleEnEl = root.querySelector('[data-hero-title-en]');
+    const dateEl = root.querySelector('[data-hero-date]');
+    const toggleBtn = root.querySelector('[data-hero-toggle]');
+    const iconPause = root.querySelector('[data-icon-pause]');
+    const iconPlay = root.querySelector('[data-icon-play]');
+
+    let current = 0;
+    let timer = null;
+    let paused = false;
+
+    function render(idx) {
+      slideEls.forEach((el, i) => el.classList.toggle('is-active', i === idx));
+      barEls.forEach((el, i) => {
+        el.classList.toggle('is-active', i === idx);
+        el.classList.toggle('is-done', i < idx);
+      });
+      const data = slideData[idx];
+      if (!data) return;
+      if (titleKrEl) titleKrEl.textContent = data.titleKr;
+      if (titleEnEl) titleEnEl.textContent = data.titleEn;
+      if (dateEl) {
+        if (data.dateLabel) { dateEl.textContent = data.dateLabel; dateEl.hidden = false; }
+        else { dateEl.hidden = true; }
+      }
+    }
+
+    function next() {
+      current = (current + 1) % slideData.length;
+      render(current);
+    }
+
+    function start() {
+      stop();
+      if (slideData.length <= 1) return;
+      timer = setInterval(next, durationMs);
+    }
+    function stop() {
+      if (timer) clearInterval(timer);
+      timer = null;
+    }
+
+    function goTo(idx) {
+      current = idx;
+      render(current);
+      // 재시작해 진행률바 애니메이션을 처음부터 다시 재생
+      barEls.forEach((el) => { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = ''; });
+      if (!paused) start();
+    }
+
+    barEls.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.getAttribute('data-index') || '0', 10);
+        goTo(idx);
+      });
+    });
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        paused = !paused;
+        root.classList.toggle('is-paused', paused);
+        if (iconPause) iconPause.hidden = paused;
+        if (iconPlay) iconPlay.hidden = !paused;
+        toggleBtn.setAttribute('aria-label', paused ? '재생' : '일시정지');
+        if (paused) stop(); else start();
+      });
+    }
+
+    render(0);
+    start();
+  })();
+</script>

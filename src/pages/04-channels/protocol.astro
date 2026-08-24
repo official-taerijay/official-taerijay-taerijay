@@ -1,9 +1,17 @@
 ---
 export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
+import HeroSlider from '../../components/HeroSlider.astro';
 import { CHANNEL_MAP, mergeSheetCategories } from '../../lib/channelCategories.js';
 import { fetchChannelRows, deriveCategoriesFromRows } from '../../lib/sheetsCms.js';
 import '../../styles/channel-page.css';
+
+// 서울 야경(광화문·남대문) 컨셉 — 실제 이미지는 img 필드에 추후 URL만 채워넣으면 자동 반영됨(현재는 그라디언트 대체)
+const heroSlides = [
+  { titleKr: '광화문의 밤, 서울의 첫인상', titleEn: 'Gwanghwamun by Night', dateLabel: 'SEOUL AT NIGHT' },
+  { titleKr: '공항에서 시내까지, 완벽 가이드', titleEn: 'Airport to City Guide', dateLabel: 'TRAVEL PROTOCOL' },
+  { titleKr: '현지인만 아는 맛집·카페', titleEn: 'Local Favorites', dateLabel: 'RESTAURANT & CAFE' },
+];
 
 // 카테고리 목록은 코드에 하드코딩하지 않고 시트(sub/sub_kr/sub_en/sub_free/sub_order 컬럼)에서 자동 도출.
 // 시트에 새 sub 값을 가진 행을 추가하면 카테고리가 자동 생성되고, 항목이 하나도 없어지면 사라진다.
@@ -33,7 +41,7 @@ const color = '#F16B24';
       <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
     </div>
 
-    <section class="channel-hero-banner" style={`--c:${color}`}></section>
+    <HeroSlider slides={heroSlides} color={color} />
 
     <section class="channel-hero">
       <span class="channel-badge channel-badge-lock notranslate" translate="no">무료 {freeN}개 + 유료 {paidN}개 · 총 {categories.length}개 카테고리</span>

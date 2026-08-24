@@ -1,9 +1,17 @@
 ---
 export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
+import HeroSlider from '../../components/HeroSlider.astro';
 import { CHANNEL_MAP, mergeSheetCategories } from '../../lib/channelCategories.js';
 import { fetchChannelRows, deriveCategoriesFromRows } from '../../lib/sheetsCms.js';
 import '../../styles/channel-page.css';
+
+// 한국 지도 + 지역별 여행 컨셉 — 실제 이미지는 img 필드에 추후 URL만 채워넣으면 자동 반영됨(현재는 그라디언트 대체)
+const heroSlides = [
+  { titleKr: '서울에서 시작하는 3시간 코스', titleEn: 'Seoul in 3 Hours', dateLabel: 'SEOUL' },
+  { titleKr: '부산·경주, 남쪽으로 떠나는 여행', titleEn: 'Busan & Gyeongju Trip', dateLabel: 'GYEONGSANG' },
+  { titleKr: '제주부터 강원까지, 전국 큐레이션', titleEn: 'Nationwide Curated Routes', dateLabel: 'ALL REGIONS' },
+];
 
 // 카드 하단 부가설명("지역 내부" 등)은 시트 컬럼으로 표현하지 않는 순수 UI 문구라 코드에 유지.
 // 카테고리 자체(이름/무료여부/추가·삭제)는 시트(sub/sub_kr/sub_en/sub_free 컬럼)에서 자동 도출.
@@ -46,8 +54,7 @@ const color = '#e8e4dc';
       <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
     </div>
 
-    <section class="channel-hero-banner" style={`--c:${color}`}>
-    </section>
+    <HeroSlider slides={heroSlides} color={color} />
 
     <section class="channel-hero">
       <span class="channel-badge channel-badge-lock notranslate" translate="no">무료 {freeN}개 + 유료 {paidN}개 · 총 {tabs.length}개 카테고리</span>

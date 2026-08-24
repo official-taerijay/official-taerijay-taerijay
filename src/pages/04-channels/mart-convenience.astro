@@ -1,9 +1,17 @@
 ---
 export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
+import HeroSlider from '../../components/HeroSlider.astro';
 import { CHANNEL_MAP, mergeSheetCategories } from '../../lib/channelCategories.js';
 import { fetchChannelRows, deriveCategoriesFromRows } from '../../lib/sheetsCms.js';
 import '../../styles/channel-page.css';
+
+// 대형마트 쇼핑 + 편의점 굿즈 컨셉 — 실제 이미지는 img 필드에 추후 URL만 채워넣으면 자동 반영됨(현재는 그라디언트 대체)
+const heroSlides = [
+  { titleKr: '대형마트 진열대, 오늘의 핫템', titleEn: "Today's Hot Picks", dateLabel: 'E-MART · TRADERS' },
+  { titleKr: '편의점 한정 굿즈, 놓치면 후회', titleEn: 'Limited Convenience Store Goods', dateLabel: 'CU · GS25 · 7-ELEVEN' },
+  { titleKr: '즉시 세금환급으로 더 알뜰하게', titleEn: 'Instant Tax Refund', dateLabel: 'TAX FREE' },
+];
 
 // 7개 브랜드(emart/nobrand/traders/emart24/cu/gs25/seveneleven)는 "브랜드별 TOP30(무료5+유료25)"라는
 // 고정 구조라 브랜드 카드 자체는 코드에 유지. 그 외 순수 카테고리(세금환급, 젠더케어 등)는
@@ -55,8 +63,7 @@ const color = '#FFDD00';
       <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
     </div>
 
-    <section class="channel-hero-banner" style={`--c:${color}`}>
-    </section>
+    <HeroSlider slides={heroSlides} color={color} />
 
     <section class="channel-hero">
       <span class="channel-badge channel-badge-lock notranslate" translate="no">7개 브랜드 · 브랜드별 TOP 30 (무료 5 + 유료 25)</span>

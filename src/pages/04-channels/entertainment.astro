@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import HeroSlider from '../../components/HeroSlider.astro';
 import '../../styles/channel-page.css';
 
 const categories = [
@@ -8,6 +9,13 @@ const categories = [
   { slug: 'variety', label: '예능', labelEn: 'Variety' },
 ];
 const color = '#00E5FF';
+
+// 아이돌 공연/무대 컨셉 — 실제 이미지는 img 필드에 추후 URL만 채워넣으면 자동 반영됨(현재는 그라디언트 대체)
+const heroSlides = [
+  { titleKr: '무대 위, 지금 이 순간', titleEn: 'On Stage, Right Now', dateLabel: 'K-POP LIVE' },
+  { titleKr: '오늘 밤, 다시 보는 인기 드라마', titleEn: 'Tonight’s Must-Watch Drama', dateLabel: 'K-DRAMA' },
+  { titleKr: '스크린 속 새로운 이야기', titleEn: 'New Stories on Screen', dateLabel: 'K-MOVIE' },
+];
 ---
 <Layout title="taerijay+entertainment | TAERIJAY">
   <div class="channel-page" style={`--c:${color}`}>
@@ -15,8 +23,7 @@ const color = '#00E5FF';
       <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
     </div>
 
-    <section class="channel-hero-banner" style={`--c:${color}`}>
-    </section>
+    <HeroSlider slides={heroSlides} color={color} />
 
     <section class="channel-hero">
       <span class="channel-badge notranslate" translate="no">무료 이용</span>
