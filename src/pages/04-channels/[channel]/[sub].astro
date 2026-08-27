@@ -134,6 +134,7 @@ if (showRegionFilter) {
                 <span class={`cat-card-tier notranslate ${isLocked ? 'is-paid' : 'is-free'}`} translate="no">{isLocked ? 'PAID' : 'FREE'}</span>
                 <span class="item-card-tile-name notranslate" translate="no">{item.title_kr}</span>
                 {item.title_en && <span class="item-card-tile-name-en">{item.title_en}</span>}
+                {sido && <span class="item-card-tile-region notranslate" translate="no">{sido}</span>}
               </div>
               {isLocked && (
                 <div class="item-card-tile-lockmask">
@@ -216,13 +217,13 @@ if (showRegionFilter) {
     .item-grid-section{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:16px;margin-bottom:44px}
 
     .item-card-tile-lockmask{
-      position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-      background:rgba(10,25,47,.55);backdrop-filter:blur(3px);color:var(--muted);
-      opacity:0;transition:opacity .2s ease;
+      position:absolute;top:10px;right:10px;inset:auto;width:26px;height:26px;
+      display:flex;align-items:center;justify-content:center;border-radius:50%;
+      background:rgba(10,25,47,.7);color:var(--muted);
+      opacity:1;transition:opacity .2s ease;
     }
-    .item-card-tile-locked:hover .item-card-tile-lockmask{opacity:1}
     .item-card-tile-locked .item-card-tile-name,
-    .item-card-tile-locked .item-card-tile-name-en{filter:blur(3px);user-select:none}
+    .item-card-tile-locked .item-card-tile-name-en{opacity:.82}
 
     .item-card-tile-more{border-style:dashed;border-color:color-mix(in srgb, var(--c) 45%, transparent)}
     .item-card-tile-more-art{align-items:center!important;justify-content:center!important;text-align:center!important;gap:6px!important}

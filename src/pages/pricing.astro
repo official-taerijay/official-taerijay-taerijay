@@ -10,10 +10,12 @@ const channels = {
   emartCvs:      { slug: 'mart-convenience', color: '#FFDD00', payKey: 'emart_cvs', region: 'Jeju' },
 };
 
+// 티어(기기수 차등)는 전 채널 공통·동일가로 고정. 콘텐츠량 격차는 가격이 아니라
+// red/green/mart+convenience 쪽 데이터를 늘려 맞추는 방향으로 대응한다.
 const singleTiers = [
   { color: '#FBF9F4', price: '19.99', en: 'BASIC',    key: 'basic',    id: 1, device: 1, concurrent: null },
   { color: '#22C55E', price: '29.99', en: 'STANDARD', key: 'standard', id: 1, device: 2, concurrent: 2 },
-  { color: '#F16B24', price: '39.99', en: 'PRO',      key: 'pro',      id: 1, device: 4, concurrent: 4 },
+  { color: '#F16B24', price: '39.99', en: 'PRO',      key: 'pro',      id: 1, device: 3, concurrent: 3 },
 ];
 
 const doublePlans = [
@@ -35,6 +37,15 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
       <p class="pricing-eyebrow-en" data-i18n="en">PRICING</p>
       <p class="pricing-sub-kr">필요한 채널 선택, 필요한 만큼만 결제</p>
       <p class="pricing-sub-en" data-i18n="en">Select only the channels you need, pay only for what you use</p>
+
+      <div class="pricing-lang-notice">
+        <p class="pricing-lang-notice-kr">
+          🌐 PC · 전 세계 130개+ 언어 지원 (Google 번역) &nbsp;|&nbsp; 📱 모바일 · 한국어·영어·중국어(간체/번체)·일본어·태국어 우선 지원
+        </p>
+        <p class="pricing-lang-notice-en" data-i18n="en">
+          🌐 PC · 130+ languages supported (via Google Translate) &nbsp;|&nbsp; 📱 Mobile · Korean, English, Chinese (Simplified/Traditional), Japanese, Thai supported first
+        </p>
+      </div>
     </section>
 
     <!-- 싱글 요금제 상세 -->
@@ -176,6 +187,13 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     .pricing-eyebrow-en{font-size:clamp(.82rem,2.1vw,.98rem);letter-spacing:.08em;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
     .pricing-sub-kr{font-size:clamp(.9rem,2.3vw,1.05rem);color:var(--dim);margin-bottom:2px}
     .pricing-sub-en{font-size:clamp(.9rem,2.3vw,1.05rem);color:var(--ivory)}
+
+    .pricing-lang-notice{margin-top:16px;padding:12px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px}
+    .pricing-lang-notice-kr{font-size:.78rem;color:var(--dim);line-height:1.6;margin-bottom:3px}
+    .pricing-lang-notice-en{font-size:.74rem;color:var(--ivory);opacity:.85;line-height:1.5}
+    @media (max-width:560px){
+      .pricing-lang-notice-kr,.pricing-lang-notice-en{font-size:.72rem}
+    }
 
     .pricing-block{margin-bottom:56px}
     .pricing-block-title{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:10px}

@@ -36,6 +36,65 @@ export const PRICE_TO_CHANNELS = {
   'pri_01kxynrmxggfrzymtp4721xyat': ['protocol', 'mini', 'red', 'green', 'mart-convenience'], // total
 };
 
+// priceId → 요금제 등급(tier). 동시접속 허용 디바이스 수 계산에 사용.
+// 기준(사용자 확정):
+//   basic    = 1 디바이스 · 동시접속 해당없음(=1)
+//   standard = 2 디바이스 · 동시접속 2
+//   pro      = 3 디바이스 · 동시접속 3
+//   double, total = basic과 동일(1 디바이스)
+export const PRICE_TO_TIER = {
+  'pri_01kqxyx1fecx184qt7q4dbr3a3': 'basic',
+  'pri_01kqxz3fghe6qsj5kh0vvjw24w': 'basic',
+  'pri_01kqxz5yjv0w5pcyt2wwft4gar': 'basic',
+  'pri_01kxv7ba8msb3j7h7rtsj1hx59': 'basic',
+  'pri_01kxv7pmea213szg7ejdnvx23t': 'basic',
+
+  'pri_01kxyjw7rxvbgm5pfcx2bqt6a0': 'standard',
+  'pri_01kxyk2mnc25zknae2wnm31bcw': 'standard',
+  'pri_01kxyk6rmhden7tw7k8qj4464d': 'standard',
+  'pri_01kxykabv1mvtr31pjahgxsct5': 'standard',
+  'pri_01kxykjvzjsbqe7gsq74hf7tbc': 'standard',
+
+  'pri_01kxykpqktg5a5q7sz6e9wbxxk': 'pro',
+  'pri_01kxyktf615tcbce2h84q549yv': 'pro',
+  'pri_01kxykytqx419t9hnknspte9kv': 'pro',
+  'pri_01kxym3cvmg277ew60m55jpgpf': 'pro',
+  'pri_01kxymc3g9hjq1rv28mb7nx0bb': 'pro',
+
+  'pri_01kxyq3era020h6719fc161hzv': 'basic', // 무료 코트시 패스
+
+  'pri_01kxyn9m5pv8rvk484z9b5gsdm': 'basic', // 더블(protocol_mini)
+  'pri_01kxyndffbjb7h3wzq78hgzydr': 'basic', // 더블(daiso_olive)
+
+  'pri_01kxynrmxggfrzymtp4721xyat': 'basic', // 토탈
+};
+
+// 등급별 허용 동시접속(디바이스) 수
+export const TIER_DEVICE_LIMIT = {
+  basic: 1,
+  standard: 2,
+  pro: 3,
+};
+
+/**
+ * 사용자가 보유한 유효(미만료) entitlement priceId 목록에서 가장 높은 등급을 찾아
+ * 허용 디바이스 수를 반환. 등급 없음(=구매 이력 없음)은 0.
+ */
+export function resolveDeviceLimit(priceIds = []) {
+  const rank = { basic: 1, standard: 2, pro: 3 };
+  let best = 0;
+  let bestTier = null;
+  for (const priceId of priceIds) {
+    const tier = PRICE_TO_TIER[priceId];
+    if (!tier) continue;
+    if ((rank[tier] || 0) > best) {
+      best = rank[tier];
+      bestTier = tier;
+    }
+  }
+  return bestTier ? TIER_DEVICE_LIMIT[bestTier] : 0;
+}
+
 // 정식 결제 이용기간: 결제일로부터 1년
 export const PAID_DURATION_DAYS = 365;
 

@@ -44,10 +44,10 @@ export const CHANNEL_MAP = {
     indoor:           { kr: '실내 코스 (우천 대비)', en: 'Indoor Course' },
   }},
   red: { color: '#E1261C', subs: {
-    // 프리뷰/무료 오픈 3개
-    'taxfree-instant': { kr: '매장 즉시 세금환급', en: 'Instant Tax Refund', free: true },
-    'mask-pack':       { kr: '마스크팩',          en: 'Mask Pack',          free: true },
-    'trouble-care':    { kr: '트러블·진정 케어',    en: 'Trouble & Calming',  free: true },
+    // 프리뷰 카테고리 3개 — 카테고리 자체는 열람 가능하되, 안의 항목은 3개까지만 무료 공개
+    'taxfree-instant': { kr: '매장 즉시 세금환급', en: 'Instant Tax Refund', freeCount: 3 },
+    'mask-pack':       { kr: '마스크팩',          en: 'Mask Pack',          freeCount: 3 },
+    'trouble-care':    { kr: '트러블·진정 케어',    en: 'Trouble & Calming',  freeCount: 3 },
     // 유료 9개
     skincare:          { kr: '스킨케어',           en: 'Skincare' },
     cleanser:          { kr: '클렌저 케어',        en: 'Cleanser' },
@@ -60,10 +60,10 @@ export const CHANNEL_MAP = {
     'soldout-items':   { kr: '품절 대란템·시즌 한정판', en: 'Viral & Seasonal' },
   }},
   green: { color: '#6F8B2E', subs: {
-    // 프리뷰/무료 오픈 3개
-    'taxfree-instant': { kr: '매장 즉시 세금환급', en: 'Instant Tax Refund', free: true },
-    'mask-pack':       { kr: '마스크팩',          en: 'Mask Pack',          free: true },
-    'trouble-care':    { kr: '트러블·진정 케어',    en: 'Trouble & Calming',  free: true },
+    // 프리뷰 카테고리 3개 — 카테고리 자체는 열람 가능하되, 안의 항목은 3개까지만 무료 공개
+    'taxfree-instant': { kr: '매장 즉시 세금환급', en: 'Instant Tax Refund', freeCount: 3 },
+    'mask-pack':       { kr: '마스크팩',          en: 'Mask Pack',          freeCount: 3 },
+    'trouble-care':    { kr: '트러블·진정 케어',    en: 'Trouble & Calming',  freeCount: 3 },
     // 유료 9개
     skincare:          { kr: '스킨케어',           en: 'Skincare' },
     cleanser:          { kr: '클렌저 케어',        en: 'Cleanser' },

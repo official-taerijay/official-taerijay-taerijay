@@ -7,7 +7,7 @@ export const prerender = false;
 
 import crypto from 'node:crypto';
 import { getAdminDb } from '../../lib/firebaseAdmin.js';
-import { resolveEntitlement } from '../../lib/entitlements.js';
+import { resolveEntitlement, PRICE_TO_TIER } from '../../lib/entitlements.js';
 
 // Paddle-Signature 헤더 형식: "ts=1671552777;h1=abcdef..."
 function verifyPaddleSignature(rawBody, signatureHeader, secret) {
@@ -81,6 +81,7 @@ export async function POST({ request }) {
       batch.set(ref, {
         channel,
         priceId,
+        tier: PRICE_TO_TIER[priceId] || 'basic',
         source: isFree ? 'coupon' : 'paid',
         durationDays,
         purchasedAt: purchasedAtMs,

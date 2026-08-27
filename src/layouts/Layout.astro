@@ -65,6 +65,14 @@ import { languages } from '../lib/languages.js';
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </button>
           <div class="lang-menu" id="lang-menu" hidden>
+            <div class="lang-menu-notice">
+              <p class="lang-menu-notice-pc">
+                <span class="notranslate" translate="no">🌐 전 세계 130개+ 언어 지원 (Google 번역 제공)</span>
+              </p>
+              <p class="lang-menu-notice-mobile">
+                <span class="notranslate" translate="no">📱 모바일 최적화: 한국어·영어·중국어(간체/번체)·일본어·태국어</span>
+              </p>
+            </div>
             {languages.map((l) => (
               <button type="button" class="lang-option" data-code={l.code} data-name={l.name}>{l.name}</button>
             ))}
@@ -273,14 +281,101 @@ import { languages } from '../lib/languages.js';
       if (notice) notice.hidden = !show;
     }
 
+    // ── 모바일 API 번역 (Google Translation API 직접 호출) ──────────────────
+    // 구글 웹사이트 번역 위젯이 모바일에서 구조적으로 불안정한 문제를 근본적으로
+    // 피하기 위해, 모바일 + 아래 5개 지원 언어 조합일 때는 위젯 대신 이 방식을 사용한다.
+    // 한글(-kr) 요소는 건드리지 않고, 영문(-en, notranslate 없는 것만) 요소의 텍스트만
+    // /api/translate 로 보내 번역 결과로 교체한다. 원문은 data-orig-en에 백업해뒀다가
+    // 한국어로 되돌릴 때 그대로 복원한다.
+    const API_TRANSLATE_TARGETS = new Set(['zh-CN', 'zh-TW', 'zh-HK', 'ja', 'th']);
+
+    function isMobileViewport() {
+      return window.matchMedia('(max-width: 768px)').matches;
+    }
+
+    function collectTranslatableEls() {
+      // class 이름이 "-en"으로 끝나는 요소만 대상. notranslate가 붙은 요소는 고정 텍스트라 제외.
+      return Array.from(document.querySelectorAll('[class*="-en"]')).filter((el) => {
+        if (el.classList.contains('notranslate')) return false;
+        if (!Array.from(el.classList).some((c) => c.endsWith('-en'))) return false;
+        const text = el.textContent.trim();
+        return text.length > 0;
+      });
+    }
+
+    function restoreOriginalEnText() {
+      document.querySelectorAll('[data-orig-en]').forEach((el) => {
+        el.textContent = el.getAttribute('data-orig-en');
+      });
+    }
+
+    // 같은 페이지 안에서 같은 언어로 다시 전환할 때 API를 또 호출하지 않도록 localStorage에 캐싱.
+    // 키는 페이지 경로+언어 기준이라 페이지가 바뀌면 새로 캐싱된다.
+    function getCacheKey(code) {
+      return `tj_translate_cache_${code}_${window.location.pathname}`;
+    }
+
+    async function translateViaApi(code) {
+      const els = collectTranslatableEls();
+      if (!els.length) return;
+
+      els.forEach((el) => {
+        if (!el.hasAttribute('data-orig-en')) {
+          el.setAttribute('data-orig-en', el.textContent);
+        }
+      });
+
+      const cacheKey = getCacheKey(code);
+      let cached = null;
+      try {
+        const raw = localStorage.getItem(cacheKey);
+        if (raw) cached = JSON.parse(raw);
+      } catch {}
+
+      if (cached && Array.isArray(cached) && cached.length === els.length) {
+        els.forEach((el, i) => { if (cached[i]) el.textContent = cached[i]; });
+        return;
+      }
+
+      const texts = els.map((el) => el.getAttribute('data-orig-en'));
+      try {
+        const res = await fetch('/api/translate', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ texts, target: code }),
+        });
+        if (!res.ok) throw new Error('translate api failed');
+        const data = await res.json();
+        const translations = data.translations || [];
+        els.forEach((el, i) => {
+          if (translations[i]) el.textContent = translations[i];
+        });
+        try {
+          localStorage.setItem(cacheKey, JSON.stringify(translations));
+        } catch {}
+      } catch (e) {
+        console.error('[translate] api translate failed', e);
+        showTranslateNotice(true);
+      }
+    }
+
     function translatePage(code) {
       if (code === 'ko') {
         const combo = document.querySelector('.goog-te-combo');
         if (combo) { combo.value = ''; combo.dispatchEvent(new Event('change')); }
         document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        restoreOriginalEnText();
         showTranslateNotice(false);
         return;
       }
+
+      // 모바일 + API 지원 언어 조합이면 구글 위젯 대신 번역 API로 직접 처리
+      if (isMobileViewport() && API_TRANSLATE_TARGETS.has(code)) {
+        showTranslateNotice(false);
+        translateViaApi(code);
+        return;
+      }
+
       const gCode = code === 'zh-HK' ? 'zh-TW' : code;
       pendingLangCode = gCode;
       showTranslateNotice(false);
@@ -308,13 +403,25 @@ import { languages } from '../lib/languages.js';
       new google.translate.TranslateElement({ pageLanguage: 'ko', autoDisplay: false }, 'google_translate_element');
       translateWidgetReady = true;
       // 위젯이 초기화된 시점에 대기 중이던 언어 선택이 있으면 즉시 적용
+      // (단, 모바일+API 지원 언어는 아래 즉시 실행 블록에서 이미 처리됐을 수 있어 중복 호출을 피함)
       if (pendingLangCode) {
         translatePage(pendingLangCode === 'zh-TW' ? 'zh-HK' : pendingLangCode);
         return;
       }
       const saved = localStorage.getItem('taerijay_lang');
-      if (saved && saved !== 'ko') translatePage(saved);
+      if (saved && saved !== 'ko' && !(isMobileViewport() && API_TRANSLATE_TARGETS.has(saved))) {
+        translatePage(saved);
+      }
     };
+
+    // 모바일 + API 지원 언어 조합이면 구글 스크립트 로딩을 기다리지 않고 페이지 로드 즉시 번역 적용
+    // (이미 저장된 언어가 있는 재방문 사용자를 위함 — 첫 방문은 기본값 한국어라 별도 처리 불필요)
+    (function initMobileApiTranslateOnLoad() {
+      const saved = localStorage.getItem('taerijay_lang');
+      if (saved && saved !== 'ko' && isMobileViewport() && API_TRANSLATE_TARGETS.has(saved)) {
+        translatePage(saved);
+      }
+    })();
 
     // 구글 번역 스크립트 로드 자체가 실패한 경우(광고 차단기, 네트워크 정책 등)를 대비한 안전장치.
     // 12초 안에 초기화 콜백이 오지 않고, 사용자가 이미 언어를 선택한 상태라면 안내를 띄운다.
@@ -363,7 +470,7 @@ import { languages } from '../lib/languages.js';
   <!-- 이용권 만료 카운트다운 — 로그인 상태 확인 후 /api/entitlements 조회 -->
   <script type="module" define:vars={{ FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID, CHANNEL_LABELS, requireChannel }}>
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-    import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+    import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
 
     const app = initializeApp({
       apiKey: FIREBASE_API_KEY,
@@ -415,12 +522,53 @@ import { languages } from '../lib/languages.js';
       window.location.href = '/pricing';
     }
 
+    // 이 브라우저/기기의 고정 식별자 (01-auth 로그인 시 생성된 것과 동일한 값)
+    function getDeviceId() {
+      let id = localStorage.getItem('tj_device_id');
+      if (!id) {
+        id = 'dev_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+        localStorage.setItem('tj_device_id', id);
+      }
+      return id;
+    }
+
+    function redirectToDeviceLimit() {
+      window.location.href = '/03-device-limit';
+    }
+
+    // 동시접속 초과로 다른 기기 로그인 시 이 기기가 밀려났는지(evicted) 확인.
+    // 밀려났으면 강제 로그아웃 처리 후 안내 페이지로 이동.
+    async function checkDeviceSession(user) {
+      try {
+        const token = await user.getIdToken();
+        const res = await fetch(`/api/device-session?deviceId=${encodeURIComponent(getDeviceId())}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (!res.ok) return true;
+        const data = await res.json();
+        if (data.valid === false) {
+          await signOut(auth);
+          sessionStorage.removeItem('user_email');
+          redirectToDeviceLimit();
+          return false;
+        }
+        return true;
+      } catch (e) {
+        console.error('[device-session] check failed', e);
+        return true;
+      }
+    }
+
     onAuthStateChanged(auth, async (user) => {
       if (!user) {
         bar.hidden = true;
         if (requireChannel) redirectToLogin();
         return;
       }
+
+      const stillValid = await checkDeviceSession(user);
+      if (!stillValid) return;
+
       try {
         const token = await user.getIdToken();
         const res = await fetch('/api/entitlements', {
@@ -456,6 +604,14 @@ import { languages } from '../lib/languages.js';
         if (requireChannel) redirectToPricing();
       }
     });
+
+    // 채널 콘텐츠 열람 중에도 5분마다 다른 기기에 의해 밀려나지 않았는지 재확인
+    if (requireChannel) {
+      setInterval(() => {
+        const user = auth.currentUser;
+        if (user) checkDeviceSession(user);
+      }, 5 * 60 * 1000);
+    }
   </script>
 
   <style is:global>
@@ -512,6 +668,13 @@ import { languages } from '../lib/languages.js';
     .lang-dropdown{position:relative}
     .lang-trigger{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--ivory);font-size:.76rem;font-weight:600;padding:8px 12px;border-radius:6px;cursor:pointer}
     .lang-menu{position:absolute;top:calc(100% + 8px);right:0;background:#151f33;border:1px solid rgba(255,255,255,.12);border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,.5);max-height:320px;overflow-y:auto;min-width:180px;z-index:300}
+    .lang-menu-notice{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.1);position:sticky;top:0;background:#151f33;z-index:1}
+    .lang-menu-notice p{margin:0;font-size:.68rem;line-height:1.5;color:var(--dim)}
+    .lang-menu-notice-mobile{display:none}
+    @media (max-width: 768px){
+      .lang-menu-notice-pc{display:none}
+      .lang-menu-notice-mobile{display:block}
+    }
     .lang-option{display:block;width:100%;text-align:left;background:transparent;border:none;color:var(--ivory);font-size:.82rem;padding:10px 16px;cursor:pointer;transition:background .15s}
     .lang-option:hover{background:rgba(255,255,255,.08)}
 

@@ -135,6 +135,50 @@ import { languages } from '../../lib/languages.js';
     // 잘못된 "로그아웃" 상태를 화면에 잠깐 그렸다가 다시 뒤집는 깜빡임(=반복되는 것처럼 보임)을 막기 위한 플래그
     let redirectPending = sessionStorage.getItem('tj_redirect_pending') === '1';
 
+    // 이 브라우저/기기를 식별하는 고정 ID. 최초 1회 생성해 localStorage에 저장.
+    function getDeviceId() {
+      let id = localStorage.getItem('tj_device_id');
+      if (!id) {
+        id = 'dev_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+        localStorage.setItem('tj_device_id', id);
+      }
+      return id;
+    }
+
+    function getDeviceLabel() {
+      const ua = navigator.userAgent || '';
+      let os = 'Unknown OS';
+      if (/iPhone|iPad|iPod/.test(ua)) os = 'iOS';
+      else if (/Android/.test(ua)) os = 'Android';
+      else if (/Mac OS X/.test(ua)) os = 'macOS';
+      else if (/Windows/.test(ua)) os = 'Windows';
+      else if (/Linux/.test(ua)) os = 'Linux';
+      let browser = 'Browser';
+      if (/Chrome/.test(ua) && !/Edg/.test(ua)) browser = 'Chrome';
+      else if (/Safari/.test(ua) && !/Chrome/.test(ua)) browser = 'Safari';
+      else if (/Firefox/.test(ua)) browser = 'Firefox';
+      else if (/Edg/.test(ua)) browser = 'Edge';
+      return `${os} · ${browser}`;
+    }
+
+    // 로그인 직후 이 디바이스를 서버에 등록. 요금제 등급별 허용 대수를 초과하면
+    // 서버가 가장 오래전에 접속한 다른 디바이스를 강제로 밀어냄(evict).
+    async function registerDeviceSession(user) {
+      try {
+        const idToken = await user.getIdToken();
+        const res = await fetch('/api/device-session', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json', authorization: `Bearer ${idToken}` },
+          body: JSON.stringify({ deviceId: getDeviceId(), deviceLabel: getDeviceLabel() }),
+        });
+        const data = await res.json();
+        return data;
+      } catch (e) {
+        console.error('[device-session] register failed', e);
+        return null;
+      }
+    }
+
     function renderAuthUI(user) {
       const signinBtn = document.getElementById('btn-signin');
       const statusPanel = document.getElementById('statusPanel');
@@ -152,6 +196,8 @@ import { languages } from '../../lib/languages.js';
 
         const modal = document.getElementById('auth-modal');
         if (modal) modal.hidden = true;
+
+        registerDeviceSession(user);
 
         const target = getRedirectTarget();
         if (target) {
