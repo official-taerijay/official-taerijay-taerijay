@@ -64,6 +64,13 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
         <span class="intro-item-en" data-i18n="en">Available in 7 languages</span>
       </div>
     </div>
+
+    <p class="intro-lang-notice-kr">
+      🌐 PC · 전 세계 130개+ 언어 지원 (Google 번역) &nbsp;|&nbsp; 📱 모바일 · 한국어·영어·중국어(간체/번체)·일본어·태국어·베트남어·말레이/인도네시아어 7개 언어 지원
+    </p>
+    <p class="intro-lang-notice-en" data-i18n="en">
+      🌐 PC · 130+ languages supported (via Google Translate) &nbsp;|&nbsp; 📱 Mobile · 7 languages supported: Korean, English, Chinese (Simplified/Traditional), Japanese, Thai, Vietnamese, Malay/Indonesian
+    </p>
   </section>
 
   <section class="channels-section" id="channels">
@@ -246,14 +253,17 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
     .intro-section{width:var(--container);margin:0 auto;padding:44px 0 8px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
     .intro-lead-kr{font-family:var(--f-display);font-weight:800;font-size:clamp(1.15rem,3.4vw,1.55rem);color:var(--ivory);line-height:1.45;margin-bottom:6px;word-break:keep-all}
     .intro-lead-en{font-size:clamp(.86rem,2.2vw,1rem);color:var(--dim);line-height:1.5;margin-bottom:28px}
-    .intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:36px}
+    .intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:20px}
     .intro-item{display:flex;flex-direction:column;gap:4px;padding:16px 18px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)}
     .intro-icon{font-size:1.3rem;margin-bottom:6px;color:var(--gold)}
     .intro-item-kr{font-size:.92rem;font-weight:700;color:var(--ivory)}
     .intro-item-en{font-size:.78rem;color:var(--muted)}
+    .intro-lang-notice-kr{font-size:.78rem;color:var(--dim);line-height:1.6;margin-bottom:3px;padding-bottom:16px}
+    .intro-lang-notice-en{font-size:.74rem;color:var(--ivory);opacity:.85;line-height:1.5;padding-bottom:16px}
     @media (max-width:700px){
       .intro-grid{grid-template-columns:1fr;gap:10px}
       .intro-section{padding:36px 0 8px}
+      .intro-lang-notice-kr,.intro-lang-notice-en{font-size:.72rem}
     }
 
     .channels-section{width:var(--container);margin:0 auto;padding:56px 0 20px}
