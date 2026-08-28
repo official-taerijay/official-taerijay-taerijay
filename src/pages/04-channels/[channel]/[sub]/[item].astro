@@ -147,7 +147,31 @@ const showAddrCopy = isRealAddress;
           </section>
         )}
 
-        {item.desc_kr && (item.getoff_kr || item.direction_kr || item.route_kr) && <hr class="detail-divider" />}
+        {item.desc_kr && item.menu_kr && <hr class="detail-divider" />}
+
+        <!-- 1-1) 대표메뉴 소개 -->
+        {item.menu_kr && (
+          <section class="detail-section">
+            <h2 class="detail-section-title">
+              <span class="detail-section-title-kr notranslate" translate="no">{item.menu_name_kr || (item.sub === 'cafe' ? '추천메뉴' : '대표메뉴')}</span>
+              <span class="detail-section-title-en">{item.menu_name_en || (item.sub === 'cafe' ? 'Recommended Menu' : 'Signature Menu')}</span>
+            </h2>
+            <ul class="item-tips-list">
+              {splitBullets(item.menu_kr).map((line, i) => (
+                <li class="item-tips-line">
+                  <span class="item-tips-kr notranslate" translate="no">{line}</span>
+                  {splitBullets(item.menu_en)[i] && <span class="item-tips-en">{splitBullets(item.menu_en)[i]}</span>}
+                </li>
+              ))}
+            </ul>
+            <p class="menu-more-hint notranslate" translate="no">
+              📖 전체 메뉴와 상세 정보는 아래 링크에서 더 확인하실 수 있어요.
+              <span class="menu-more-hint-en">See the link below for the full menu and more details.</span>
+            </p>
+          </section>
+        )}
+
+        {(item.desc_kr || item.menu_kr) && (item.getoff_kr || item.direction_kr || item.route_kr) && <hr class="detail-divider" />}
 
         <!-- 2) 하차가이드 -->
         {item.getoff_kr && (
