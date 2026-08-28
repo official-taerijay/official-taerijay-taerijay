@@ -11,6 +11,8 @@ export default defineConfig({
   output: 'hybrid',
   adapter: vercel(),
   vite: {
+    // 샌드박스 환경에서 node_modules/.vite 캐시 정리 단계가 깨지는 문제 회피용 임시 캐시 경로
+    cacheDir: process.env.TJ_VITE_CACHE_DIR || undefined,
     resolve: {
       alias: {
         // 대표님의 인프라 폴더 규격에 정확히 맞춘 고해상도 경로 별칭 고정

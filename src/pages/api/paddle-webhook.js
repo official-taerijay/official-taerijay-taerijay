@@ -8,6 +8,7 @@ export const prerender = false;
 import crypto from 'node:crypto';
 import { getAdminDb } from '../../lib/firebaseAdmin.js';
 import { resolveEntitlement, PRICE_TO_TIER } from '../../lib/entitlements.js';
+import { sendPaymentConfirmationEmail } from '../../lib/sendPaymentEmail.js';
 
 // Paddle-Signature 헤더 형식: "ts=1671552777;h1=abcdef..."
 function verifyPaddleSignature(rawBody, signatureHeader, secret) {
@@ -70,18 +71,25 @@ export async function POST({ request }) {
   const db = getAdminDb();
   const batch = db.batch();
 
+  // 이메일 발송용으로 이번 트랜잭션에서 열린 채널/등급/만료일을 모아둔다
+  const allChannels = [];
+  let emailTier = 'basic';
+  let emailExpiresAtMs = purchasedAtMs;
+  const tierRank = { basic: 1, standard: 2, pro: 3 };
+
   for (const item of items) {
     const priceId = item.price?.id;
     if (!priceId) continue;
 
     const { channels, durationDays, expiresAtMs } = resolveEntitlement(priceId, isFree, purchasedAtMs);
+    const itemTier = PRICE_TO_TIER[priceId] || 'basic';
 
     for (const channel of channels) {
       const ref = db.collection('users').doc(email).collection('entitlements').doc(channel);
       batch.set(ref, {
         channel,
         priceId,
-        tier: PRICE_TO_TIER[priceId] || 'basic',
+        tier: itemTier,
         source: isFree ? 'coupon' : 'paid',
         durationDays,
         purchasedAt: purchasedAtMs,
@@ -89,10 +97,33 @@ export async function POST({ request }) {
         transactionId: txn.id,
         updatedAt: Date.now(),
       });
+      if (!allChannels.includes(channel)) allChannels.push(channel);
     }
+
+    if ((tierRank[itemTier] || 0) > (tierRank[emailTier] || 0)) emailTier = itemTier;
+    if (expiresAtMs > emailExpiresAtMs) emailExpiresAtMs = expiresAtMs;
   }
 
   await batch.commit();
+
+  // 결제 확인 이메일 발송 — 실패해도 결제/이용권 처리 자체는 이미 완료된 상태이므로
+  // 여기서 에러가 나도 webhook 응답은 정상(200)으로 반환한다.
+  if (allChannels.length > 0) {
+    try {
+      await sendPaymentConfirmationEmail({
+        email,
+        channels: allChannels,
+        tier: emailTier,
+        expiresAtMs: emailExpiresAtMs,
+        transactionId: txn.id,
+        isFree,
+        amount: isFree ? 0 : grandTotal,
+        currency: txn.currency_code || 'USD',
+      });
+    } catch (err) {
+      console.error('[paddle-webhook] 결제 확인 이메일 발송 중 오류', err);
+    }
+  }
 
   return new Response('ok', { status: 200 });
 }
