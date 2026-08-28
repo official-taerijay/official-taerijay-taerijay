@@ -10,6 +10,12 @@ const mainHeroSlides = [
   { titleKr: '외국인 관광객을 위한 로컬 정보', titleEn: 'Local Info for Every Traveler', dateLabel: 'FOR YOU', img: '/images/channels/home/hero-3.png' },
 ];
 
+// 최신 릴스 섹션 — 인스타그램 게시물 URL을 채워넣으면 공식 embed.js가 자동으로 카드를 렌더링한다.
+// URL이 비어있는 동안은 "준비중" 안내만 표시되고 인스타 스크립트 자체를 불러오지 않는다.
+const reelsUrls = [
+  // 예: 'https://www.instagram.com/reel/XXXXXXXXXXX/',
+];
+
 // heroImg: true인 채널만 /images/channels/*.jpg를 배경으로 요청한다.
 // 이미지 파일이 실제로 public/images/channels/에 업로드되기 전까지는 false로 두어
 // 브라우저가 404를 요청하지 않도록 방지한다(그라디언트 배경은 CSS에서 항상 표시됨).
@@ -72,6 +78,33 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
       🌐 PC and Mobile both support 135 languages (via Google Translate)
     </p>
   </section>
+
+  <section class="reels-section">
+    <p class="reels-title-kr">최신 릴스</p>
+    <p class="reels-title-en" data-i18n="en">Latest Reels</p>
+
+    {reelsUrls.length > 0 ? (
+      <div class="reels-grid">
+        {reelsUrls.map((url) => (
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink={url}
+            data-instgrm-version="14"
+            style="width:100%; margin:0;"
+          ></blockquote>
+        ))}
+      </div>
+    ) : (
+      <div class="reels-placeholder">
+        <span class="reels-placeholder-kr notranslate" translate="no">릴스 업로드 준비중</span>
+        <span class="reels-placeholder-en" data-i18n="en">Reels coming soon</span>
+      </div>
+    )}
+  </section>
+
+  {reelsUrls.length > 0 && (
+    <script is:inline async src="//www.instagram.com/embed.js"></script>
+  )}
 
   <section class="channels-section" id="channels">
 
@@ -265,6 +298,14 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
       .intro-section{padding:36px 0 8px}
       .intro-lang-notice-kr,.intro-lang-notice-en{font-size:.72rem}
     }
+
+    .reels-section{width:var(--container);margin:0 auto;padding:32px 0 8px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .reels-title-kr{font-family:var(--f-display);font-weight:800;font-size:clamp(1.05rem,2.8vw,1.3rem);color:var(--ivory);margin-bottom:2px}
+    .reels-title-en{font-size:.8rem;color:var(--dim);margin-bottom:20px}
+    .reels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;padding-bottom:32px}
+    .reels-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:160px;border-radius:12px;background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.15);margin-bottom:32px}
+    .reels-placeholder-kr{font-size:.92rem;font-weight:700;color:var(--muted)}
+    .reels-placeholder-en{font-size:.78rem;color:var(--dim)}
 
     .channels-section{width:var(--container);margin:0 auto;padding:56px 0 20px}
     .channel-row{display:grid;gap:16px;margin-bottom:16px}
