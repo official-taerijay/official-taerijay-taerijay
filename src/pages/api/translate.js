@@ -5,9 +5,12 @@
 //
 // 1차 지원 언어(방한 관광객 비중 기준으로 확정): zh-CN, zh-TW, zh-HK, ja, th
 // 2차 확장(2026-08): vi(베트남), ms(말레이시아/인도네시아 — Bahasa Melayu·Indonesia 상호 이해 가능해 단일 코드로 통합 대응)
+// 3차 확장(2026-08): tl(필리핀/타갈로그), ru(러시아), mn(몽골), hi(인도/힌디), fr(프랑스), es(스페인)
+// 4차 확장(2026-08): PC 구글 번역 위젯과 동일하게 languages.js 전체 135개 언어(한국어 제외 134개,
+// 영어는 원문 자체가 영어이므로 번역 대상에서 자동 제외)를 모바일 API 번역 대상으로 전부 지원.
 // (한국어 원문은 번역 요청 자체가 필요 없고, 영어는 title_en 등 원래도 고정 데이터로 존재)
 //
-// 요청 형식: POST { texts: string[], target: 'zh-CN' | 'zh-TW' | 'zh-HK' | 'ja' | 'th' | 'vi' | 'ms' }
+// 요청 형식: POST { texts: string[], target: string } — target은 languages.js의 code 중 'ko'를 제외한 값
 // 응답 형식: { translations: string[] }
 //
 // 중요: 클라이언트(Layout.astro의 translateViaApi)가 실제로 보내는 texts는 "-en" 클래스
@@ -18,19 +21,22 @@
 // 돌려주는 사례가 잦았다 — 이것이 "언어 전환 시 일부 텍스트만 번역이 안 되는" 증상의 원인.
 // source를 생략해 자동 감지를 쓰면 이 텍스트를 실제로 영어로 인식해 정상 번역된다.
 
+import { languages } from '../../lib/languages.js';
+
 export const prerender = false;
 
 // Google Translation API가 실제로 쓰는 언어 코드로 변환.
-// zh-HK는 별도 코드가 없어 zh-TW(번체)로 대체 요청.
-const TARGET_LANG_MAP = {
-  'zh-CN': 'zh-CN',
-  'zh-TW': 'zh-TW',
+// zh-HK는 별도 코드가 없어 zh-TW(번체)로 대체 요청. 나머지는 languages.js의 code를 그대로 사용
+// (구글 번역 위젯과 Translation API v2가 같은 코드 체계를 공유하므로 대부분 1:1로 맞음).
+const CODE_OVERRIDE = {
   'zh-HK': 'zh-TW',
-  ja: 'ja',
-  th: 'th',
-  vi: 'vi',
-  ms: 'ms',
 };
+
+const TARGET_LANG_MAP = Object.fromEntries(
+  languages
+    .filter((l) => l.code !== 'ko') // 한국어는 번역 요청 자체가 불필요
+    .map((l) => [l.code, CODE_OVERRIDE[l.code] || l.code])
+);
 
 const SUPPORTED_TARGETS = new Set(Object.keys(TARGET_LANG_MAP));
 

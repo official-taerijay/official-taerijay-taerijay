@@ -67,10 +67,7 @@ import { languages } from '../lib/languages.js';
           <div class="lang-menu" id="lang-menu" hidden>
             <div class="lang-menu-notice">
               <p class="lang-menu-notice-pc">
-                <span class="notranslate" translate="no">🌐 전 세계 130개+ 언어 지원 (Google 번역 제공)</span>
-              </p>
-              <p class="lang-menu-notice-mobile">
-                <span class="notranslate" translate="no">📱 모바일 최적화: 한국어·영어·중국어(간체/번체)·일본어·태국어·베트남어·말레이/인도네시아어</span>
+                <span class="notranslate" translate="no">🌐 PC × 📱 모바일 동일하게 135개 언어 지원 (Google 번역 제공)</span>
               </p>
             </div>
             {languages.map((l) => (
@@ -283,11 +280,18 @@ import { languages } from '../lib/languages.js';
 
     // ── 모바일 API 번역 (Google Translation API 직접 호출) ──────────────────
     // 구글 웹사이트 번역 위젯이 모바일에서 구조적으로 불안정한 문제를 근본적으로
-    // 피하기 위해, 모바일 + 아래 5개 지원 언어 조합일 때는 위젯 대신 이 방식을 사용한다.
+    // 피하기 위해, 모바일 + 아래 지원 언어 조합일 때는 위젯 대신 이 방식을 사용한다.
     // 한글(-kr) 요소는 건드리지 않고, 영문(-en, notranslate 없는 것만) 요소의 텍스트만
     // /api/translate 로 보내 번역 결과로 교체한다. 원문은 data-orig-en에 백업해뒀다가
     // 한국어로 되돌릴 때 그대로 복원한다.
-    const API_TRANSLATE_TARGETS = new Set(['zh-CN', 'zh-TW', 'zh-HK', 'ja', 'th', 'vi', 'ms']);
+    // 2026-08 4차 확장: PC 구글 번역 위젯과 동일하게 languages.js 전체 135개 언어(한국어 제외)를
+    // 모바일에서도 지원 — .lang-option 버튼 목록(아래 languages.map으로 렌더링됨)에서
+    // data-code를 그대로 수집해 API 번역 대상 집합을 만든다(하드코딩 목록 유지 불필요).
+    const API_TRANSLATE_TARGETS = new Set(
+      Array.from(document.querySelectorAll('.lang-option'))
+        .map((opt) => opt.dataset.code)
+        .filter((code) => code && code !== 'ko')
+    );
 
     function isMobileViewport() {
       return window.matchMedia('(max-width: 768px)').matches;
