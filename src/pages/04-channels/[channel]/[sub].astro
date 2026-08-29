@@ -94,6 +94,13 @@ if (showRegionFilter) {
           </p>
         </div>
       )}
+      {items.length > 0 && (
+        <div class="channel-search">
+          <svg class="channel-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="itemSearchInput" class="channel-search-input" placeholder="항목 검색 / Search items" autocomplete="off" />
+          <button type="button" id="itemSearchClear" class="channel-search-clear" hidden aria-label="검색어 지우기">×</button>
+        </div>
+      )}
     </section>
 
     {loadError && (
@@ -129,6 +136,7 @@ if (showRegionFilter) {
               href={`/04-channels/${channel}/${sub}/${item.itemSlug}`}
               class={`item-card-tile${isLocked ? ' item-card-tile-locked' : ''}`}
               data-region={sido || ''}
+              data-search={`${item.title_kr || ''} ${item.title_en || ''}`.toLowerCase()}
             >
               <div class="item-card-tile-art">
                 <span class={`cat-card-tier notranslate ${isLocked ? 'is-paid' : 'is-free'}`} translate="no">{isLocked ? 'PAID' : 'FREE'}</span>
@@ -162,28 +170,65 @@ if (showRegionFilter) {
         <span class="region-empty-note-en">No content found for this region.</span>
       </p>
     )}
+    {items.length > 0 && (
+      <p class="channel-search-empty" id="itemSearchEmpty" hidden>
+        <span>검색 결과가 없어요</span>
+        <span class="channel-search-empty-en">No results found</span>
+      </p>
+    )}
   </div>
 
-  {showRegionFilter && (
+  {items.length > 0 && (
     <script>
       const filterBar = document.getElementById('regionFilter');
       const grid = document.getElementById('itemGrid');
-      const emptyNote = document.getElementById('regionEmptyNote');
-      if (filterBar && grid) {
-        filterBar.addEventListener('click', (e) => {
-          const btn = e.target.closest('.region-chip');
-          if (!btn) return;
-          filterBar.querySelectorAll('.region-chip').forEach((c) => c.classList.remove('is-active'));
-          btn.classList.add('is-active');
-          const region = btn.getAttribute('data-region');
+      const regionEmptyNote = document.getElementById('regionEmptyNote');
+      const searchInput = document.getElementById('itemSearchInput');
+      const searchClear = document.getElementById('itemSearchClear');
+      const searchEmptyNote = document.getElementById('itemSearchEmpty');
+
+      if (grid) {
+        const cards = Array.from(grid.querySelectorAll('.item-card-tile:not(.item-card-tile-more)'));
+
+        const applyFilters = () => {
+          const activeRegionBtn = filterBar ? filterBar.querySelector('.region-chip.is-active') : null;
+          const region = activeRegionBtn ? activeRegionBtn.getAttribute('data-region') : 'all';
+          const q = searchInput ? searchInput.value.trim().toLowerCase() : '';
+          if (searchClear) searchClear.hidden = q.length === 0;
+
           let visibleCount = 0;
-          grid.querySelectorAll('.item-card-tile:not(.item-card-tile-more)').forEach((card) => {
-            const match = region === 'all' || card.getAttribute('data-region') === region;
+          cards.forEach((card) => {
+            const regionMatch = !filterBar || region === 'all' || card.getAttribute('data-region') === region;
+            const searchMatch = !q || (card.getAttribute('data-search') || '').includes(q);
+            const match = regionMatch && searchMatch;
             card.hidden = !match;
             if (match) visibleCount++;
           });
-          if (emptyNote) emptyNote.hidden = visibleCount > 0;
-        });
+
+          if (regionEmptyNote) regionEmptyNote.hidden = !(filterBar && visibleCount === 0 && !q);
+          if (searchEmptyNote) searchEmptyNote.hidden = !(q && visibleCount === 0);
+        };
+
+        if (filterBar) {
+          filterBar.addEventListener('click', (e) => {
+            const btn = e.target.closest('.region-chip');
+            if (!btn) return;
+            filterBar.querySelectorAll('.region-chip').forEach((c) => c.classList.remove('is-active'));
+            btn.classList.add('is-active');
+            applyFilters();
+          });
+        }
+
+        if (searchInput) {
+          searchInput.addEventListener('input', applyFilters);
+        }
+        if (searchClear) {
+          searchClear.addEventListener('click', () => {
+            searchInput.value = '';
+            applyFilters();
+            searchInput.focus();
+          });
+        }
       }
     </script>
   )}

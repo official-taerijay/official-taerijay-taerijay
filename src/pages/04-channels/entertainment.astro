@@ -29,11 +29,16 @@ const heroSlides = [
       <span class="channel-badge notranslate" translate="no">무료 이용</span>
       <h1 class="channel-title">taerijay<span style={`color:${color}`}>+entertainment</span></h1>
       <p class="channel-sub">K-콘텐츠 촬영지·팬 성지 총정리, 전체 무료</p>
+      <div class="channel-search">
+        <svg class="channel-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="channelSearchInput" class="channel-search-input" placeholder="드라마·영화·예능 검색 / Search drama, movie, variety" autocomplete="off" />
+        <button type="button" id="channelSearchClear" class="channel-search-clear" hidden aria-label="검색어 지우기">×</button>
+      </div>
     </section>
 
-    <section class="cat-grid-section">
+    <section class="cat-grid-section" id="catGrid">
       {categories.map((cat) => (
-        <a href={`/04-channels/entertainment/${cat.slug}`} class="cat-card">
+        <a href={`/04-channels/entertainment/${cat.slug}`} class="cat-card" data-search={`${cat.label} ${cat.labelEn}`.toLowerCase()}>
           <div class="cat-card-art">
             <span class="cat-card-tier is-free notranslate" translate="no">FREE</span>
             <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
@@ -43,9 +48,37 @@ const heroSlides = [
       ))}
     </section>
 
+    <p class="channel-search-empty" id="channelSearchEmpty" hidden>
+      <span>검색 결과가 없어요</span>
+      <span class="channel-search-empty-en">No results found</span>
+    </p>
+
     <section class="empty-note">
       <p>콘텐츠 준비 중</p>
       <p class="empty-note-en">Content coming soon.</p>
     </section>
   </div>
+
+  <script>
+    const input = document.getElementById('channelSearchInput');
+    const clearBtn = document.getElementById('channelSearchClear');
+    const grid = document.getElementById('catGrid');
+    const emptyNote = document.getElementById('channelSearchEmpty');
+    if (input && grid) {
+      const cards = Array.from(grid.querySelectorAll('[data-search]'));
+      const runFilter = () => {
+        const q = input.value.trim().toLowerCase();
+        clearBtn.hidden = q.length === 0;
+        let visible = 0;
+        cards.forEach((card) => {
+          const match = !q || card.getAttribute('data-search').includes(q);
+          card.hidden = !match;
+          if (match) visible++;
+        });
+        if (emptyNote) emptyNote.hidden = !(q && visible === 0);
+      };
+      input.addEventListener('input', runFilter);
+      clearBtn.addEventListener('click', () => { input.value = ''; runFilter(); input.focus(); });
+    }
+  </script>
 </Layout>
