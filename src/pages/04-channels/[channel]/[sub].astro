@@ -94,13 +94,6 @@ if (showRegionFilter) {
           </p>
         </div>
       )}
-      {items.length > 0 && (
-        <div class="channel-search">
-          <svg class="channel-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-          <input type="text" id="itemSearchInput" class="channel-search-input" placeholder="항목 검색 / Search items" autocomplete="off" />
-          <button type="button" id="itemSearchClear" class="channel-search-clear" hidden aria-label="검색어 지우기">×</button>
-        </div>
-      )}
     </section>
 
     {loadError && (
@@ -136,7 +129,6 @@ if (showRegionFilter) {
               href={`/04-channels/${channel}/${sub}/${item.itemSlug}`}
               class={`item-card-tile${isLocked ? ' item-card-tile-locked' : ''}`}
               data-region={sido || ''}
-              data-search={`${item.title_kr || ''} ${item.title_en || ''}`.toLowerCase()}
             >
               <div class="item-card-tile-art">
                 <span class={`cat-card-tier notranslate ${isLocked ? 'is-paid' : 'is-free'}`} translate="no">{isLocked ? 'PAID' : 'FREE'}</span>
@@ -170,65 +162,28 @@ if (showRegionFilter) {
         <span class="region-empty-note-en">No content found for this region.</span>
       </p>
     )}
-    {items.length > 0 && (
-      <p class="channel-search-empty" id="itemSearchEmpty" hidden>
-        <span>검색 결과가 없어요</span>
-        <span class="channel-search-empty-en">No results found</span>
-      </p>
-    )}
   </div>
 
-  {items.length > 0 && (
+  {showRegionFilter && (
     <script>
       const filterBar = document.getElementById('regionFilter');
       const grid = document.getElementById('itemGrid');
-      const regionEmptyNote = document.getElementById('regionEmptyNote');
-      const searchInput = document.getElementById('itemSearchInput');
-      const searchClear = document.getElementById('itemSearchClear');
-      const searchEmptyNote = document.getElementById('itemSearchEmpty');
-
-      if (grid) {
-        const cards = Array.from(grid.querySelectorAll('.item-card-tile:not(.item-card-tile-more)'));
-
-        const applyFilters = () => {
-          const activeRegionBtn = filterBar ? filterBar.querySelector('.region-chip.is-active') : null;
-          const region = activeRegionBtn ? activeRegionBtn.getAttribute('data-region') : 'all';
-          const q = searchInput ? searchInput.value.trim().toLowerCase() : '';
-          if (searchClear) searchClear.hidden = q.length === 0;
-
+      const emptyNote = document.getElementById('regionEmptyNote');
+      if (filterBar && grid) {
+        filterBar.addEventListener('click', (e) => {
+          const btn = e.target.closest('.region-chip');
+          if (!btn) return;
+          filterBar.querySelectorAll('.region-chip').forEach((c) => c.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          const region = btn.getAttribute('data-region');
           let visibleCount = 0;
-          cards.forEach((card) => {
-            const regionMatch = !filterBar || region === 'all' || card.getAttribute('data-region') === region;
-            const searchMatch = !q || (card.getAttribute('data-search') || '').includes(q);
-            const match = regionMatch && searchMatch;
+          grid.querySelectorAll('.item-card-tile:not(.item-card-tile-more)').forEach((card) => {
+            const match = region === 'all' || card.getAttribute('data-region') === region;
             card.hidden = !match;
             if (match) visibleCount++;
           });
-
-          if (regionEmptyNote) regionEmptyNote.hidden = !(filterBar && visibleCount === 0 && !q);
-          if (searchEmptyNote) searchEmptyNote.hidden = !(q && visibleCount === 0);
-        };
-
-        if (filterBar) {
-          filterBar.addEventListener('click', (e) => {
-            const btn = e.target.closest('.region-chip');
-            if (!btn) return;
-            filterBar.querySelectorAll('.region-chip').forEach((c) => c.classList.remove('is-active'));
-            btn.classList.add('is-active');
-            applyFilters();
-          });
-        }
-
-        if (searchInput) {
-          searchInput.addEventListener('input', applyFilters);
-        }
-        if (searchClear) {
-          searchClear.addEventListener('click', () => {
-            searchInput.value = '';
-            applyFilters();
-            searchInput.focus();
-          });
-        }
+          if (emptyNote) emptyNote.hidden = visibleCount > 0;
+        });
       }
     </script>
   )}
@@ -242,74 +197,15 @@ if (showRegionFilter) {
     .region-chip{
       display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:6px 14px;
-      font-size:.78rem;font-weight:700;color:var(--muted);cursor:pointer;
-      transition:background .18s ease,border-color .18s ease,color .18s ease;
+      color:var(--muted);font-size:.8rem;font-weight:600;cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease;
     }
-    .region-chip:hover{background:rgba(255,255,255,.1);color:var(--ivory)}
-    .region-chip.is-active{background:color-mix(in srgb, var(--c) 22%, transparent);border-color:color-mix(in srgb, var(--c) 55%, transparent);color:var(--c)}
-    .region-chip-en{font-size:.68rem;font-weight:600;color:var(--dim);text-transform:uppercase}
-    .region-chip-count{font-size:.68rem;color:var(--dim);opacity:.8}
-    .region-empty-note{text-align:left;padding:32px 16px;color:var(--dim);font-size:.86rem;display:flex;flex-direction:column;gap:4px}
-    .region-empty-note-en{font-size:.78rem;opacity:.8}
+    .region-chip:hover{background:rgba(255,255,255,.09)}
+    .region-chip.is-active{background:color-mix(in srgb, var(--c) 18%, transparent);border-color:color-mix(in srgb, var(--c) 50%, transparent);color:var(--ivory)}
+    .region-chip-en{color:var(--dim);font-size:.72rem}
+    .region-chip-count{color:var(--dim);font-size:.72rem}
+    .region-chip.is-active .region-chip-count{color:var(--c)}
 
-    .lock-progress{margin-top:14px;max-width:420px}
-    .lock-progress-track{height:6px;border-radius:100px;background:rgba(255,255,255,.08);overflow:hidden}
-    .lock-progress-fill{height:100%;background:var(--c);border-radius:100px;transition:width .3s ease}
-    .lock-progress-label{margin-top:8px;display:flex;flex-direction:column;gap:2px}
-    .lock-progress-label-kr{font-size:.76rem;color:var(--muted);font-weight:600}
-    .lock-progress-label-en{font-size:.7rem;color:var(--dim)}
-
-    .item-grid-section{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:16px;margin-bottom:44px}
-
-    .item-card-tile-lockmask{
-      position:absolute;top:10px;right:10px;inset:auto;width:26px;height:26px;
-      display:flex;align-items:center;justify-content:center;border-radius:50%;
-      background:rgba(10,25,47,.7);color:var(--muted);
-      opacity:1;transition:opacity .2s ease;
-    }
-    .item-card-tile-locked .item-card-tile-name,
-    .item-card-tile-locked .item-card-tile-name-en{opacity:.82}
-
-    .item-card-tile-more{border-style:dashed;border-color:color-mix(in srgb, var(--c) 45%, transparent)}
-    .item-card-tile-more-art{align-items:center!important;justify-content:center!important;text-align:center!important;gap:6px!important}
-    .item-card-tile-more-num{font-family:var(--f-display);font-weight:900;font-size:clamp(1.3rem,4vw,1.7rem);color:var(--c)}
-    .item-card-tile-more-label-kr{font-size:.74rem;font-weight:700;color:var(--ivory);text-align:center}
-    .item-card-tile-more-label-en{font-size:.66rem;color:var(--dim);text-align:center}
-
-    .item-card-tile{
-      text-decoration:none;color:var(--ivory);display:block;position:relative;
-      border:1px solid color-mix(in srgb, var(--c) 30%, transparent);border-radius:14px;overflow:hidden;
-      transition:transform .26s cubic-bezier(.2,.8,.2,1), box-shadow .26s ease, border-color .26s ease;
-    }
-    .item-card-tile:hover{
-      transform:translateY(-5px) scale(1.015);
-      border-color:color-mix(in srgb, var(--c) 60%, transparent);
-      box-shadow:0 16px 36px -14px color-mix(in srgb, var(--c) 50%, transparent);
-      z-index:2;
-    }
-    .item-card-tile-locked{opacity:.7}
-    .item-card-tile-locked:hover{opacity:1}
-
-    .item-card-tile-art{
-      position:relative;aspect-ratio:4/3;padding:16px 14px;
-      display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:4px;text-align:left;
-      background:
-        radial-gradient(ellipse 120% 90% at 20% 120%, color-mix(in srgb, var(--c) 20%, transparent) 0%, transparent 60%),
-        linear-gradient(160deg, color-mix(in srgb, var(--c) 20%, var(--bg)) 0%, var(--bg) 82%);
-      transition:background .26s ease;
-    }
-    .item-card-tile:hover .item-card-tile-art{
-      background:
-        radial-gradient(ellipse 120% 90% at 20% 120%, color-mix(in srgb, var(--c) 30%, transparent) 0%, transparent 62%),
-        linear-gradient(160deg, color-mix(in srgb, var(--c) 28%, var(--bg)) 0%, var(--bg) 82%);
-    }
-
-    .item-card-tile-region{font-size:.68rem;font-weight:800;letter-spacing:.03em;color:var(--c)}
-    .item-card-tile-art{text-align:left!important;align-items:flex-start!important}
-    .item-card-tile-name{font-family:var(--f-display);font-weight:800;font-size:clamp(.78rem,2vw,.94rem);line-height:1.3;color:var(--dim);word-break:keep-all;text-align:left}
-    .item-card-tile-name-en{font-size:clamp(.78rem,2vw,.94rem);color:var(--ivory);text-transform:uppercase;letter-spacing:.01em;word-break:keep-all;text-align:left}
-
-    @media (max-width:768px){.item-grid-section{grid-template-columns:repeat(3,1fr);gap:10px}}
-    @media (max-width:560px){.item-grid-section{grid-template-columns:repeat(2,1fr);gap:10px}}
+    .region-empty-note{margin:24px 0;padding:20px;text-align:center;color:var(--dim);font-size:.86rem;border:1px dashed rgba(255,255,255,.14);border-radius:12px}
+    .region-empty-note-en{display:block;margin-top:4px;color:var(--muted);font-size:.78rem}
   </style>
 </Layout>

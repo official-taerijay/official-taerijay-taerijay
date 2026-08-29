@@ -48,19 +48,12 @@ const color = '#E1261C';
       <h1 class="channel-title">taerijay<span style={`color:${color}`}>+red</span></h1>
       <p class="channel-sub">균일가 생활용품점 뷰티 대란템 정리 DB, 매장 위치 정보. 100개 고정, 매월 10일·20일 업데이트</p>
       <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
-      {categories.length > 0 && (
-        <div class="channel-search">
-          <svg class="channel-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-          <input type="text" id="channelSearchInput" class="channel-search-input" placeholder="카테고리 검색 / Search categories" autocomplete="off" />
-          <button type="button" id="channelSearchClear" class="channel-search-clear" hidden aria-label="검색어 지우기">×</button>
-        </div>
-      )}
     </section>
 
     {categories.length > 0 && (
-      <section class="cat-grid-section" id="catGrid">
+      <section class="cat-grid-section">
         {categories.map((cat) => (
-          <a href={`/04-channels/red/${cat.slug}`} class="cat-card" data-search={`${cat.label} ${cat.labelEn}`.toLowerCase()}>
+          <a href={`/04-channels/red/${cat.slug}`} class="cat-card">
             <div class="cat-card-art">
               <span class={`cat-card-tier notranslate ${cat.free ? 'is-free' : 'is-paid'}`} translate="no">{cat.free ? 'FREE' : 'PAID'}</span>
               <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
@@ -71,13 +64,6 @@ const color = '#E1261C';
       </section>
     )}
 
-    {categories.length > 0 && (
-      <p class="channel-search-empty" id="channelSearchEmpty" hidden>
-        <span>검색 결과가 없어요</span>
-        <span class="channel-search-empty-en">No results found</span>
-      </p>
-    )}
-
     {categories.length === 0 && (
       <section class="empty-note">
         <p>콘텐츠 준비 중</p>
@@ -85,29 +71,4 @@ const color = '#E1261C';
       </section>
     )}
   </div>
-
-  {categories.length > 0 && (
-    <script>
-      const input = document.getElementById('channelSearchInput');
-      const clearBtn = document.getElementById('channelSearchClear');
-      const grid = document.getElementById('catGrid');
-      const emptyNote = document.getElementById('channelSearchEmpty');
-      if (input && grid) {
-        const cards = Array.from(grid.querySelectorAll('[data-search]'));
-        const runFilter = () => {
-          const q = input.value.trim().toLowerCase();
-          clearBtn.hidden = q.length === 0;
-          let visible = 0;
-          cards.forEach((card) => {
-            const match = !q || card.getAttribute('data-search').includes(q);
-            card.hidden = !match;
-            if (match) visible++;
-          });
-          if (emptyNote) emptyNote.hidden = !(q && visible === 0);
-        };
-        input.addEventListener('input', runFilter);
-        clearBtn.addEventListener('click', () => { input.value = ''; runFilter(); input.focus(); });
-      }
-    </script>
-  )}
 </Layout>
