@@ -1,0 +1,168 @@
+---
+// 전체 사이트 검색 결과 페이지. 헤더 검색창(Layout.astro)에서 여기로 이동해온다.
+// 6개 채널의 모든 항목(구글시트 + 로컬 폴백)을 서버에서 가져와 제목(title_kr/title_en) 기준으로
+// 검색어와 매칭한다. 기존 채널 페이지 구조는 전혀 건드리지 않는 완전히 독립된 페이지.
+export const prerender = false;
+
+import Layout from '../layouts/Layout.astro';
+import { fetchChannelRows, toStr } from '../lib/sheetsCms.js';
+import { withItemSlugs } from '../lib/itemHelpers.js';
+
+const CHANNELS = [
+  { slug: 'entertainment', label: 'taerijay+entertainment', color: '#00E5FF' },
+  { slug: 'protocol', label: 'taerijay+protocol', color: '#F16B24' },
+  { slug: 'mini', label: 'taerijay+mini', color: '#e8e4dc' },
+  { slug: 'red', label: 'taerijay+red', color: '#E1261C' },
+  { slug: 'green', label: 'taerijay+green', color: '#6F8B2E' },
+  { slug: 'mart-convenience', label: 'taerijay+mart+convenience', color: '#FFDD00' },
+];
+
+const q = (Astro.url.searchParams.get('q') || '').trim();
+const qLower = q.toLowerCase();
+
+let results = [];
+let loadError = false;
+
+if (q) {
+  try {
+    const perChannel = await Promise.all(
+      CHANNELS.map(async (ch) => {
+        try {
+          const rows = await fetchChannelRows(ch.slug);
+          const items = withItemSlugs(rows);
+          return items
+            .filter((item) => {
+              const hay = `${item.title_kr || ''} ${item.title_en || ''}`.toLowerCase();
+              return hay.includes(qLower);
+            })
+            .map((item) => ({
+              channel: ch.slug,
+              channelLabel: ch.label,
+              color: ch.color,
+              sub: toStr(item.sub),
+              title_kr: item.title_kr,
+              title_en: item.title_en,
+              itemSlug: item.itemSlug,
+            }));
+        } catch (e) {
+          console.error(`[search] fetch failed for ${ch.slug}`, e);
+          return [];
+        }
+      })
+    );
+    results = perChannel.flat().slice(0, 60);
+  } catch (e) {
+    console.error('[search] failed', e);
+    loadError = true;
+  }
+}
+---
+<Layout title={q ? `"${q}" 검색 결과 | TAERIJAY` : '검색 | TAERIJAY'}>
+  <div class="search-page">
+    <div class="search-topbar">
+      <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
+    </div>
+
+    <section class="search-hero">
+      <p class="search-eyebrow-kr">전체 검색</p>
+      <p class="search-eyebrow-en" data-i18n="en">SEARCH</p>
+      <form class="search-form" method="get" action="/search">
+        <svg class="search-form-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" name="q" class="search-form-input" value={q} placeholder="드라마, 맛집, 마스크팩 등 검색 / Search anything" autocomplete="off" autofocus />
+        <button type="submit" class="search-form-btn">검색</button>
+      </form>
+    </section>
+
+    {q && !loadError && (
+      <p class="search-result-count">
+        <span>"{q}" 검색 결과 {results.length}개</span>
+        <span class="search-result-count-en">{results.length} results for "{q}"</span>
+      </p>
+    )}
+
+    {loadError && (
+      <section class="empty-note">
+        <p>검색 중 오류가 발생했어요. 잠시 후 다시 시도해주세요.</p>
+        <p class="empty-note-en">Something went wrong. Please try again shortly.</p>
+      </section>
+    )}
+
+    {q && !loadError && results.length === 0 && (
+      <section class="empty-note">
+        <p>검색 결과가 없어요</p>
+        <p class="empty-note-en">No results found</p>
+      </section>
+    )}
+
+    {!q && (
+      <section class="empty-note">
+        <p>검색어를 입력해보세요</p>
+        <p class="empty-note-en">Type something to search across all channels</p>
+      </section>
+    )}
+
+    {results.length > 0 && (
+      <section class="search-result-grid">
+        {results.map((r) => (
+          <a
+            href={`/04-channels/${r.channel}/${r.sub}/${r.itemSlug}`}
+            class="search-result-card"
+            style={`--c:${r.color}`}
+          >
+            <span class="search-result-card-channel notranslate" translate="no">{r.channelLabel}</span>
+            <span class="search-result-card-title notranslate" translate="no">{r.title_kr}</span>
+            {r.title_en && <span class="search-result-card-title-en">{r.title_en}</span>}
+          </a>
+        ))}
+      </section>
+    )}
+  </div>
+
+  <style>
+    .search-page{width:var(--container);margin:0 auto;padding:24px 0 72px}
+    .search-topbar{margin-bottom:20px;padding-top:88px}
+
+    .search-hero{padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:28px}
+    .search-eyebrow-kr{font-size:clamp(.82rem,2.1vw,.98rem);font-weight:700;color:var(--kr-bright);margin-bottom:2px}
+    .search-eyebrow-en{font-size:.7rem;letter-spacing:.14em;font-weight:700;color:var(--dim);text-transform:uppercase;margin-bottom:16px}
+
+    .search-form{position:relative;display:flex;align-items:center;gap:8px;max-width:520px}
+    .search-form-icon{position:absolute;left:14px;width:16px;height:16px;color:var(--dim);pointer-events:none}
+    .search-form-input{
+      flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.16);
+      border-radius:10px;padding:12px 14px 12px 38px;font-size:.92rem;color:var(--ivory);
+      transition:border-color .2s ease,background .2s ease;
+    }
+    .search-form-input::placeholder{color:var(--dim)}
+    .search-form-input:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.07)}
+    .search-form-btn{
+      background:var(--gold);color:var(--bg);border:none;border-radius:10px;
+      padding:12px 20px;font-weight:800;font-size:.86rem;cursor:pointer;transition:opacity .2s ease;
+    }
+    .search-form-btn:hover{opacity:.88}
+
+    .search-result-count{margin-bottom:20px;display:flex;flex-direction:column;gap:2px;font-size:.86rem;color:var(--kr-bright)}
+    .search-result-count-en{font-size:.78rem;color:var(--dim)}
+
+    .search-result-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+    .search-result-card{
+      text-decoration:none;display:flex;flex-direction:column;gap:4px;
+      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+      border-top:3px solid var(--c);border-radius:12px;padding:16px;
+      transition:transform .2s ease,border-color .2s ease;
+    }
+    .search-result-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb, var(--c) 50%, transparent)}
+    .search-result-card-channel{font-size:.7rem;font-weight:800;color:var(--c);letter-spacing:.02em}
+    .search-result-card-title{font-size:.94rem;font-weight:700;color:var(--ivory);word-break:keep-all}
+    .search-result-card-title-en{font-size:.78rem;color:var(--dim)}
+
+    .empty-note{padding:40px 16px;text-align:center;color:var(--dim);font-size:.88rem;border:1px dashed rgba(255,255,255,.12);border-radius:12px}
+    .empty-note-en{margin-top:4px;color:var(--muted);font-size:.8rem}
+
+    @media (max-width:560px){
+      .search-topbar{padding-top:72px}
+      .search-form{flex-wrap:wrap}
+      .search-form-btn{flex:0 0 auto}
+    }
+  </style>
+</Layout>
