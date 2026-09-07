@@ -128,8 +128,8 @@
 .cat-card:focus-visible{outline:2px solid var(--c);outline-offset:2px}
 
 .cat-card-art{
-  position:relative;aspect-ratio:2/3;padding:14px;
-  display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:6px;text-align:left;
+  position:relative;aspect-ratio:16/10;padding:14px;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;text-align:left;
   background:
     radial-gradient(ellipse 120% 90% at 50% 120%, color-mix(in srgb, var(--c) 22%, transparent) 0%, transparent 60%),
     linear-gradient(160deg, color-mix(in srgb, var(--c) 24%, var(--bg)) 0%, var(--bg) 82%);
@@ -175,12 +175,16 @@
 .item-card-tile:focus-visible{outline:2px solid var(--c);outline-offset:2px}
 
 .item-card-tile-art{
-  position:relative;aspect-ratio:2/3;padding:14px;
-  display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:6px;text-align:left;
+  position:relative;aspect-ratio:16/10;padding:14px;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;text-align:left;
   background:
     radial-gradient(ellipse 120% 90% at 50% 120%, color-mix(in srgb, var(--c) 22%, transparent) 0%, transparent 60%),
     linear-gradient(160deg, color-mix(in srgb, var(--c) 24%, var(--bg)) 0%, var(--bg) 82%);
   transition:background .28s ease;
+}
+/* 포스터 이미지가 있는 카드(entertainment 장르 등)만 넷플릭스 스타일 세로형(2:3) 유지 */
+.item-card-tile-art-has-img{
+  aspect-ratio:2/3;justify-content:flex-end;
 }
 .item-card-tile:hover .item-card-tile-art{
   background:
@@ -223,7 +227,7 @@
 }
 
 .item-card-tile-more .item-card-tile-more-art{
-  aspect-ratio:2/3;padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  aspect-ratio:16/10;padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:4px;text-align:center;background:rgba(255,255,255,.03);
 }
 .item-card-tile-more-num{font-family:var(--f-display);font-weight:900;font-size:1.6rem;color:var(--c)}
