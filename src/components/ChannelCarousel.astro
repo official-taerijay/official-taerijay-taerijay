@@ -4,6 +4,11 @@
 // 카드뉴스 슬라이드처럼 한 장씩 넘어가며 각 서비스의 핵심 정보(카테고리 구성, 태그라인)를 소개한다.
 // 텍스트 규칙은 사이트 전역과 동일: 한글은 고정, 영문은 data-i18n="en"로 표시해 구글 번역 대상이 되게 한다.
 
+export interface CarouselBullet {
+  kr: string;          // 한글 줄
+  en: string;           // 영문 줄 — 숫자/브랜드명은 언어 무관해도 사이트 전역 규칙(한글 위·영문 아래)에 맞춰 항상 표기
+}
+
 export interface CarouselSlide {
   slug: string;
   color: string;
@@ -12,7 +17,7 @@ export interface CarouselSlide {
   tagEn: string;       // 상단 카테고리 라벨 (영문)
   taglineKr: string;   // 첫줄 — 한글 고정
   taglineEn: string;   // 둘째줄 — 영문 기본값, 사용자 선택 언어로 자동 전환
-  bullets: string[];   // 카테고리 구성 요약 (숫자/구성은 언어 무관하므로 notranslate)
+  bullets: CarouselBullet[]; // 카테고리 구성 요약 — 각 항목 한글 줄 + 영문 줄
 }
 
 export interface Props {
@@ -43,7 +48,10 @@ const uid = Math.random().toString(36).slice(2, 8);
 
         <span class="ch-slide-bullets">
           {s.bullets.map((b) => (
-            <span class="ch-slide-bullet notranslate" translate="no">{b}</span>
+            <span class="ch-slide-bullet notranslate" translate="no">
+              <span class="ch-slide-bullet-kr">{b.kr}</span>
+              <span class="ch-slide-bullet-en">{b.en}</span>
+            </span>
           ))}
         </span>
       </a>
@@ -95,7 +103,13 @@ const uid = Math.random().toString(36).slice(2, 8);
   .ch-slide-tagline-en{font-size:.78rem;color:var(--dim);line-height:1.5;font-style:italic}
 
   .ch-slide-bullets{display:flex;flex-direction:column;gap:6px;margin-top:auto;padding-top:14px}
-  .ch-slide-bullet{font-size:.76rem;font-weight:600;color:var(--muted);padding:6px 12px;border-radius:8px;background:color-mix(in srgb, var(--c) 10%, transparent);border:1px solid color-mix(in srgb, var(--c) 25%, transparent)}
+  .ch-slide-bullet{
+    display:flex;flex-direction:column;gap:1px;
+    padding:6px 12px;border-radius:8px;
+    background:color-mix(in srgb, var(--c) 10%, transparent);border:1px solid color-mix(in srgb, var(--c) 25%, transparent);
+  }
+  .ch-slide-bullet-kr{font-size:.76rem;font-weight:700;color:var(--kr-bright)}
+  .ch-slide-bullet-en{font-size:.66rem;font-weight:600;letter-spacing:.02em;color:var(--dim)}
 
   .ch-carousel-dots{display:flex;gap:8px;justify-content:center;margin-top:4px}
   .ch-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);border:none;padding:0;cursor:pointer;transition:width .2s,background .2s}
