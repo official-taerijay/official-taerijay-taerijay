@@ -21,8 +21,7 @@
     "sub_kr": "매장 즉시 세금환급",
     "sub_en": "Instant Tax Refund",
     "sub_free": "TRUE",
-    "sub_order": 0,
-    "img": "/images/red/genre/taxfree-instant.png"
+    "sub_order": 0
   },
   {
     "sub": "taxfree-instant",
@@ -46,8 +45,7 @@
     "sub_kr": "매장 즉시 세금환급",
     "sub_en": "Instant Tax Refund",
     "sub_free": "TRUE",
-    "sub_order": 0,
-    "img": "/images/red/genre/taxfree-instant.png"
+    "sub_order": 0
   },
   {
     "sub": "taxfree-instant",
@@ -71,8 +69,7 @@
     "sub_kr": "매장 즉시 세금환급",
     "sub_en": "Instant Tax Refund",
     "sub_free": "TRUE",
-    "sub_order": 0,
-    "img": "/images/red/genre/taxfree-instant.png"
+    "sub_order": 0
   },
   {
     "sub": "taxfree-instant",
@@ -96,8 +93,7 @@
     "sub_kr": "매장 즉시 세금환급",
     "sub_en": "Instant Tax Refund",
     "sub_free": "TRUE",
-    "sub_order": 0,
-    "img": "/images/red/genre/taxfree-instant.png"
+    "sub_order": 0
   },
   {
     "sub": "mask-pack",
@@ -122,8 +118,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "mask-pack",
@@ -148,8 +143,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "mask-pack",
@@ -174,8 +168,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "mask-pack",
@@ -200,8 +193,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "mask-pack",
@@ -226,8 +218,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "mask-pack",
@@ -252,8 +243,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "trouble-care",
@@ -278,8 +268,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "trouble-care",
@@ -304,8 +293,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "trouble-care",
@@ -330,8 +318,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "trouble-care",
@@ -356,8 +343,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "cleanser",
@@ -382,8 +368,7 @@
     "sub_kr": "클렌저 케어",
     "sub_en": "Cleanser",
     "sub_free": "",
-    "sub_order": 4,
-    "img": "/images/red/genre/cleanser.png"
+    "sub_order": 4
   },
   {
     "sub": "cleanser",
@@ -408,8 +393,7 @@
     "sub_kr": "클렌저 케어",
     "sub_en": "Cleanser",
     "sub_free": "",
-    "sub_order": 4,
-    "img": "/images/red/genre/cleanser.png"
+    "sub_order": 4
   },
   {
     "sub": "cleanser",
@@ -434,8 +418,7 @@
     "sub_kr": "클렌저 케어",
     "sub_en": "Cleanser",
     "sub_free": "",
-    "sub_order": 4,
-    "img": "/images/red/genre/cleanser.png"
+    "sub_order": 4
   },
   {
     "sub": "cleanser",
@@ -460,8 +443,7 @@
     "sub_kr": "클렌저 케어",
     "sub_en": "Cleanser",
     "sub_free": "",
-    "sub_order": 4,
-    "img": "/images/red/genre/cleanser.png"
+    "sub_order": 4
   },
   {
     "sub": "perfume",
@@ -486,8 +468,7 @@
     "sub_kr": "향수",
     "sub_en": "Perfume",
     "sub_free": "",
-    "sub_order": 8,
-    "img": "/images/red/genre/perfume.png"
+    "sub_order": 8
   },
   {
     "sub": "perfume",
@@ -512,8 +493,7 @@
     "sub_kr": "향수",
     "sub_en": "Perfume",
     "sub_free": "",
-    "sub_order": 8,
-    "img": "/images/red/genre/perfume.png"
+    "sub_order": 8
   },
   {
     "sub": "perfume",
@@ -538,8 +518,7 @@
     "sub_kr": "향수",
     "sub_en": "Perfume",
     "sub_free": "",
-    "sub_order": 8,
-    "img": "/images/red/genre/perfume.png"
+    "sub_order": 8
   },
   {
     "sub": "perfume",
@@ -564,8 +543,7 @@
     "sub_kr": "향수",
     "sub_en": "Perfume",
     "sub_free": "",
-    "sub_order": 8,
-    "img": "/images/red/genre/perfume.png"
+    "sub_order": 8
   },
   {
     "sub": "beauty-tools",
@@ -590,8 +568,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -616,8 +593,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -642,8 +618,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -668,8 +643,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "gender-care",
@@ -694,8 +668,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -720,8 +693,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -746,8 +718,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -772,8 +743,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -798,8 +768,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "soldout-items",
@@ -824,8 +793,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -850,8 +818,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -876,8 +843,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "skincare",
@@ -902,8 +868,7 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3,
-    "img": "/images/red/genre/skincare.png"
+    "sub_order": 3
   },
   {
     "sub": "skincare",
@@ -928,8 +893,7 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3,
-    "img": "/images/red/genre/skincare.png"
+    "sub_order": 3
   },
   {
     "sub": "skincare",
@@ -954,8 +918,7 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3,
-    "img": "/images/red/genre/skincare.png"
+    "sub_order": 3
   },
   {
     "sub": "skincare",
@@ -980,8 +943,7 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3,
-    "img": "/images/red/genre/skincare.png"
+    "sub_order": 3
   },
   {
     "sub": "haircare",
@@ -1006,8 +968,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -1032,8 +993,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -1058,8 +1018,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -1084,8 +1043,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "bodycare",
@@ -1110,8 +1068,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -1136,8 +1093,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -1162,8 +1118,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -1188,8 +1143,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "color-cosmetics",
@@ -1214,8 +1168,7 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5,
-    "img": "/images/red/genre/color-cosmetics.png"
+    "sub_order": 5
   },
   {
     "sub": "color-cosmetics",
@@ -1240,8 +1193,7 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5,
-    "img": "/images/red/genre/color-cosmetics.png"
+    "sub_order": 5
   },
   {
     "sub": "color-cosmetics",
@@ -1266,8 +1218,7 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5,
-    "img": "/images/red/genre/color-cosmetics.png"
+    "sub_order": 5
   },
   {
     "sub": "color-cosmetics",
@@ -1292,8 +1243,7 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5,
-    "img": "/images/red/genre/color-cosmetics.png"
+    "sub_order": 5
   },
   {
     "sub": "mask-pack",
@@ -1314,8 +1264,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 1,000 KRW",
     "keywords_kr": "다이소 PDRN 마스크▪브이티 시트마스크▪다이소 광채팩",
     "hashtags": "PDRN▪VT코스메틱▪시트마스크",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1336,8 +1285,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 시카팩▪브이티 진정마스크▪다이소 카밍팩",
     "hashtags": "VT시카▪진정마스크▪시트팩",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1358,8 +1306,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 500 KRW",
     "keywords_kr": "다이소 에센셜마스크▪올리브팜 알로에팩▪500원 마스크팩",
     "hashtags": "올리브팜▪에센셜마스크▪500원팩",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1380,8 +1327,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 500 KRW",
     "keywords_kr": "다이소 꿀마스크▪에센셜마스크시트▪다이소 보습팩",
     "hashtags": "꿀마스크▪보습팩▪에센셜시트",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1402,8 +1348,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 500 KRW",
     "keywords_kr": "다이소 라이스마스크▪쌀마스크팩▪에센셜시트",
     "hashtags": "라이스마스크▪쌀팩▪에센셜시트",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1424,8 +1369,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 500 KRW",
     "keywords_kr": "다이소 콜라겐마스크▪올리브팜 탄력팩▪500원 시트마스크",
     "hashtags": "콜라겐마스크▪탄력케어▪올리브팜",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1446,8 +1390,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 500 KRW",
     "keywords_kr": "다이소 시카시트▪올리브팜 진정팩▪500원 시카마스크",
     "hashtags": "시카마스크▪진정팩▪올리브팜",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1468,8 +1411,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 500 KRW",
     "keywords_kr": "다이소 캡슐팩▪허니캡슐팩▪1회용 마스크팩",
     "hashtags": "캡슐팩▪허니캡슐▪1회용팩",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1490,8 +1432,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 500 KRW",
     "keywords_kr": "다이소 어성초캡슐팩▪캡슐팩 트러블▪1회용 진정팩",
     "hashtags": "어성초캡슐▪트러블케어▪캡슐팩",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1512,8 +1453,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 500 KRW",
     "keywords_kr": "다이소 라이스필링▪필링캡슐팩▪각질케어팩",
     "hashtags": "라이스필링▪캡슐팩▪각질케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1534,8 +1474,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 500 KRW",
     "keywords_kr": "다이소 알로에캡슐팩▪캡슐팩 수분▪1회용 알로에팩",
     "hashtags": "알로에캡슐▪수분팩▪캡슐팩",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1556,8 +1495,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 메디필 모델링팩▪락토 모공 리프팅▪다이소 석고팩",
     "hashtags": "메디필▪모델링팩▪모공케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1578,8 +1516,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000(세트) KRW",
     "keywords_kr": "다이소 리들샷 스팀마스크▪VT 랩핑팩▪리페어EGF",
     "hashtags": "리들샷▪VT코스메틱▪스팀마스크",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1600,8 +1537,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 1,000 KRW",
     "keywords_kr": "다이소 풋마스크팩▪발보습팩▪발뒤꿈치 각질케어",
     "hashtags": "풋마스크팩▪발보습▪각질케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1622,8 +1558,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 풋필링팩▪발각질제거▪필링마스크팩",
     "hashtags": "풋필링▪각질제거▪풋케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1644,8 +1579,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 1,000 KRW",
     "keywords_kr": "다이소 압축마스크시트▪압축팩 20개입▪DIY마스크팩",
     "hashtags": "압축마스크시트▪DIY팩▪여행용마스크",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1666,8 +1600,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 아이마스크▪콜라겐 눈가팩▪다크서클패치",
     "hashtags": "아이마스크▪콜라겐패치▪눈가케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1688,8 +1621,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 1,000 KRW",
     "keywords_kr": "다이소 코팩▪메디필 블랙헤드▪모공 딥클렌징",
     "hashtags": "메디필▪코팩▪블랙헤드케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1710,8 +1642,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 참숯코팩▪코아코스 코팩▪블랙헤드제거",
     "hashtags": "참숯코팩▪코팩▪블랙헤드",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1732,8 +1663,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 1,000 KRW",
     "keywords_kr": "다이소 블랙헤드제거기▪압출기▪코팩 도구",
     "hashtags": "블랙헤드제거기▪압출기▪뷰티잡화",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1754,8 +1684,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 피지흡착팩▪T존 유분팩▪신상마스크팩",
     "hashtags": "피지흡착▪유분케어▪신상팩",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1776,8 +1705,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 500 KRW",
     "keywords_kr": "다이소 석류캡슐팩▪콜라겐캡슐팩▪1회용팩",
     "hashtags": "석류콜라겐▪캡슐팩▪탄력케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1798,8 +1726,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 500 KRW",
     "keywords_kr": "다이소 화산송이캡슐팩▪모공캡슐팩▪피지케어팩",
     "hashtags": "화산송이▪캡슐팩▪모공케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1820,8 +1747,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 500 KRW",
     "keywords_kr": "다이소 감자캡슐팩▪캡슐팩 진정▪500원 마스크팩",
     "hashtags": "감자캡슐팩▪진정팩▪캡슐팩",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "mask-pack",
@@ -1842,8 +1768,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 500 KRW",
     "keywords_kr": "다이소 에그캡슐팩▪모공캡슐팩▪500원 마스크팩",
     "hashtags": "에그캡슐팩▪모공케어▪캡슐팩",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/mask-pack.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -1864,8 +1789,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 브이티 토너▪PDRN 토너▪다이소 광채라인",
     "hashtags": "VT코스메틱▪PDRN▪토너",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -1886,8 +1810,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 클리덤 비타민C▪잡티광앰플▪리포좀 비타민씨",
     "hashtags": "클리덤▪비타민C앰플▪잡티케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -1908,8 +1831,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 클리덤 아이앰플▪눈가마사지 앰플▪콜라겐아이크림",
     "hashtags": "클리덤▪아이앰플▪눈가케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -1930,8 +1852,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 더랩바이블랑두▪물광크림▪클리어히알크림",
     "hashtags": "더랩바이블랑두▪물광크림▪화잘먹템",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -1952,8 +1873,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 큐어소나 앰플▪래디언스글로우▪빨간앰플",
     "hashtags": "큐어소나▪글로우앰플▪물광케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -1974,8 +1894,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 본셉 레티놀▪레티놀세럼▪500IU레티놀",
     "hashtags": "본셉▪레티놀세럼▪탄력케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -1996,8 +1915,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 내외 KRW",
     "keywords_kr": "다이소 본셉 링클샷▪레티놀2500▪주름집중케어",
     "hashtags": "본셉▪링클샷▪주름케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2018,8 +1936,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 내외 KRW",
     "keywords_kr": "다이소 큐어소나 쿨링젤▪닥터오라클 수딩크림▪진정젤크림",
     "hashtags": "닥터오라클▪쿨링젤크림▪진정케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2040,8 +1957,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 내외 KRW",
     "keywords_kr": "다이소 김정문알로에▪큐어알파크림▪알로에진정크림",
     "hashtags": "김정문알로에▪카밍크림▪진정보습",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2062,8 +1978,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 세라베이스 토너▪바이리얼베리어▪장벽케어토너",
     "hashtags": "세라베이스▪장벽케어▪바이리얼베리어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2084,8 +1999,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 세라베이스 크림▪카밍크림▪장벽강화크림",
     "hashtags": "세라베이스▪카밍크림▪장벽케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2106,8 +2020,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 세라베이스 브라이트닝▪미백크림▪바이리얼베리어",
     "hashtags": "세라베이스▪브라이트닝크림▪미백케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2128,8 +2041,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 세라마이드밤▪딥모이스처밤▪건성피부크림",
     "hashtags": "세라마이드▪모이스처밤▪건성케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2150,8 +2062,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 알로에미스트▪과일나라 수딩미스트▪수분미스트",
     "hashtags": "과일나라▪알로에미스트▪수딩미스트",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2172,8 +2083,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 비프루브 미스트▪코스모코스 미스트▪수분워터미스트",
     "hashtags": "비프루브▪코스모코스▪워터미스트",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2194,8 +2104,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 본셉 비타씨크림▪토니모리 본셉▪레티놀비타민크림",
     "hashtags": "본셉▪비타씨라인▪레티놀크림",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2216,8 +2125,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 본셉 아이패치▪비타씨아이겔▪눈가케어패치",
     "hashtags": "본셉▪아이패치▪비타씨라인",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2238,8 +2146,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 본셉 아이크림▪비타씨아이크림▪다크서클케어",
     "hashtags": "본셉▪아이크림▪다크서클케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2260,8 +2167,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 내외 KRW",
     "keywords_kr": "다이소 클리덤 주름스틱▪콜라겐스틱▪주름채움스틱",
     "hashtags": "클리덤▪주름스틱▪콜라겐케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2282,8 +2188,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 내외 KRW",
     "keywords_kr": "다이소 네시픽 미스트▪글로우더블샷▪속광미스트",
     "hashtags": "네시픽▪글로우미스트▪속광케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2304,8 +2209,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 메디필 물광마스크▪로로정식▪물광랩핑마스크",
     "hashtags": "메디필▪물광케어▪랩핑마스크",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2326,8 +2230,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 VT PDRN크림▪광채크림▪PDRN영양크림",
     "hashtags": "VT코스메틱▪PDRN크림▪광채케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2348,8 +2251,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 VT PDRN에센스▪PDRN스틱▪탄력광채에센스",
     "hashtags": "VT코스메틱▪PDRN에센스▪스틱형에센스",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2370,8 +2272,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 리노이아 앰플에센스▪노워시헤어▪코스모코스헤어",
     "hashtags": "리노이아▪노워시▪헤어에센스",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2392,8 +2293,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 리노이아 크림팩▪노워시크림팩▪헤어에센스",
     "hashtags": "리노이아▪크림팩에센스▪헤어케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -2414,8 +2314,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 리노이아 워터트리트먼트▪코스모코스헤어▪단백질트리트먼트",
     "hashtags": "리노이아▪워터트리트먼트▪헤어케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2436,8 +2335,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 포인트 클렌징오일▪딥클린오일▪클렌징오일",
     "hashtags": "포인트▪클렌징오일▪딥클린",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2458,8 +2356,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 포인트 클렌징티슈▪올인원티슈▪클렌징티슈",
     "hashtags": "포인트▪클렌징티슈▪올인원클렌징",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2480,8 +2377,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 1,000 KRW",
     "keywords_kr": "다이소 브이티 클렌징티슈▪시카카밍티슈▪여행용클렌징",
     "hashtags": "VT코스메틱▪시카클렌징▪클렌징티슈",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2502,8 +2398,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 1,000 KRW",
     "keywords_kr": "다이소 초초스랩 필링패드▪클린톡스패드▪1회용클렌징",
     "hashtags": "초초스랩▪필링패드▪클린톡스",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2524,8 +2419,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 초초스랩 클렌징밤▪클린톡스밤▪조성아클렌징",
     "hashtags": "초초스랩▪클렌징밤▪조성아뷰티",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2546,8 +2440,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 더페이스샵 쌀클렌징▪약산성젤폼▪맑은쌀클렌저",
     "hashtags": "더페이스샵▪쌀클렌징▪약산성폼",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2568,8 +2461,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 초초스랩 립앤아이▪립앤아이리무버▪포인트메이크업리무버",
     "hashtags": "초초스랩▪립앤아이리무버▪클린톡스",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2590,8 +2482,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 원더바스 리무버▪레몬퓨어▪립앤아이리무버",
     "hashtags": "원더바스▪립앤아이리무버▪비건클렌징",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2612,8 +2503,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 포인트 리무버패드▪레몬탄산수리무버▪립앤아이패드",
     "hashtags": "포인트▪리무버패드▪탄산수클렌징",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2634,8 +2524,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 병풀클렌징워터▪식물원 클렌징워터▪센텔라클렌저",
     "hashtags": "식물원▪병풀클렌징▪클렌징워터",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2656,8 +2545,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 더페이스샵 클렌징워터▪맑은쌀워터▪마일드클렌징",
     "hashtags": "더페이스샵▪쌀클렌징워터▪클렌징워터",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2678,8 +2566,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 탄산수클렌징티슈▪탄산클렌징▪클렌징티슈30매",
     "hashtags": "탄산수클렌징▪클렌징티슈▪탄산클렌저",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2700,8 +2587,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 약산성클렌징티슈▪저자극 클렌징티슈▪휴대용클렌저",
     "hashtags": "약산성클렌징▪클렌징티슈▪저자극클렌저",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2722,8 +2608,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 모공세안브러시▪딥클렌징브러시▪블랙헤드브러시",
     "hashtags": "세안브러시▪모공케어▪딥클렌징",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2744,8 +2629,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 실리콘세안브러시▪세안브러시리필▪딥클렌징브러시",
     "hashtags": "실리콘브러시▪세안브러시▪딥클렌징",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2766,8 +2650,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 딥클렌징폼▪콜라겐클렌징폼▪저가클렌징폼",
     "hashtags": "딥클렌징폼▪콜라겐클렌저▪클렌징폼",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2788,8 +2671,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 어퓨 클렌징폼▪티트리클렌징폼▪트러블클렌저",
     "hashtags": "어퓨▪티트리클렌징폼▪트러블케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2810,8 +2692,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 포인트 마스카라리무버▪딥클린퀵리무버▪워터프루프리무버",
     "hashtags": "포인트▪마스카라리무버▪딥클린",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2832,8 +2713,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 랩잇 닥터지▪포어마스크▪모공워시오프팩",
     "hashtags": "닥터지▪랩잇▪포어마스크",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2854,8 +2734,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 성분에디터 마스크▪워시오프마스크▪순한성분마스크",
     "hashtags": "성분에디터▪워시오프마스크▪순한클렌징",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2876,8 +2755,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 퓨어덤 리무버티슈▪메이크업리무버티슈▪60매클렌징티슈",
     "hashtags": "퓨어덤▪메이크업리무버▪클렌징티슈",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "cleanser",
@@ -2898,8 +2776,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 1,000 KRW",
     "keywords_kr": "다이소 녹차클렌징티슈▪그린티클렌징▪1000원클렌징티슈",
     "hashtags": "녹차클렌징▪클렌징티슈▪그린티",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/cleanser.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -2920,8 +2797,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 손앤박 틴트▪워터글로우틴트▪비건틴트",
     "hashtags": "손앤박▪워터글로우틴트▪비건색조",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -2942,8 +2818,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 손앤박 블러틴트▪워터블러틴트▪매트틴트",
     "hashtags": "손앤박▪워터블러틴트▪매트립",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -2964,8 +2839,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 입큰 컨실러▪퍼스널톤컨실러▪컬러코렉팅컨실러",
     "hashtags": "입큰▪컨실러듀오▪컬러코렉팅",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -2986,8 +2860,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 붓펜아이라이너▪스타일리쉬라이너▪브라운아이라이너",
     "hashtags": "붓펜아이라이너▪아이라이너▪브라운라이너",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3008,8 +2881,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 브러쉬아이라이너▪스타일리쉬아이라이너▪블랙아이라이너",
     "hashtags": "브러쉬아이라이너▪아이라이너▪블랙발색",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3030,8 +2902,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 딘토 립틴트▪프릴루드딘토▪플럼핑틴트",
     "hashtags": "딘토▪립틴트▪프릴루드딘토",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3052,8 +2923,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 딘토 아이팔레트▪노스탈지아팔레트▪프릴루드딘토섀도우",
     "hashtags": "딘토▪아이팔레트▪프릴루드딘토",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3074,8 +2944,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 딘토 루스파우더▪페어리더스트파우더▪밀착파우더",
     "hashtags": "딘토▪루스파우더▪프릴루드딘토",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3096,8 +2965,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 딘토 아이라이너▪단테아이라이너▪트리플프루프라이너",
     "hashtags": "딘토▪아이라이너▪트리플프루프",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3118,8 +2986,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 어퓨 캔디틴트▪더퓨어캔디▪3000원틴트",
     "hashtags": "어퓨▪캔디틴트▪더퓨어캔디",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3140,8 +3007,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 어퓨 캔디컬러밤▪더퓨어캔디밤▪립밤틴트",
     "hashtags": "어퓨▪캔디컬러밤▪더퓨어캔디",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3162,8 +3028,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 어퓨 워터치크▪캔디워터치크▪물광치크",
     "hashtags": "어퓨▪워터치크▪캔디라인",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3184,8 +3049,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 입큰 쿠션▪퍼스널톤쿠션▪쿠션파운데이션",
     "hashtags": "입큰▪퍼스널톤쿠션▪쿠션파운데이션",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3206,8 +3070,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 입큰 치크라이터▪퍼스널톤치크▪치크하이라이터듀오",
     "hashtags": "입큰▪치크라이터듀오▪퍼스널톤",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3228,8 +3091,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 정샘물 쿠션▪줌바이정샘물▪세범다운쿠션",
     "hashtags": "정샘물▪세범다운쿠션▪줌바이정샘물",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3250,8 +3112,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 정샘물 프렙패드▪줌바이정샘물▪메이크업프렙",
     "hashtags": "정샘물▪프렙스킨패드▪줌바이정샘물",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3272,8 +3133,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 1,000 KRW",
     "keywords_kr": "다이소 태그 컨투어스틱▪투쿨포스쿨 컨투어▪멀티컨투어",
     "hashtags": "태그▪컨투어스틱▪투쿨포스쿨",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3294,8 +3154,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 태그 하이라이터▪볼륨하이라이터빔▪투쿨포스쿨",
     "hashtags": "태그▪하이라이터▪투쿨포스쿨",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3316,8 +3175,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 태그 브로우펜슬▪눈썹펜슬▪투쿨포스쿨브로우",
     "hashtags": "태그▪브로우펜슬▪눈썹메이크업",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3338,8 +3196,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 태그 파우더브로우▪브로우키트▪투쿨포스쿨브로우",
     "hashtags": "태그▪파우더브로우▪눈썹키트",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3360,8 +3217,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 트윙클팝 립펜슬▪오버립펜슬▪클리오립펜슬",
     "hashtags": "트윙클팝▪립펜슬▪클리오",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3382,8 +3238,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 태그 헤어컨투어▪헤어라인쿠션▪투쿨포스쿨헤어",
     "hashtags": "태그▪헤어컨투어쿠션▪헤어라인",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3404,8 +3259,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 트윙클팝 팔레트▪레이어링무드▪클리오아이섀도우",
     "hashtags": "트윙클팝▪아이팔레트▪클리오",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3426,8 +3280,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 트윙클팝 아이스틱▪스파클링아이스틱▪클리오글리터",
     "hashtags": "트윙클팝▪아이스틱▪클리오",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3448,8 +3301,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 트윙클팝 글래스틴트▪퓨어글래스틴트▪클리오틴트",
     "hashtags": "트윙클팝▪글래스틴트▪클리오",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3470,8 +3322,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 1,000 KRW",
     "keywords_kr": "다이소 디즈니퍼프▪극세사퍼프▪스윗토피아퍼프",
     "hashtags": "디즈니퍼프▪극세사퍼프▪메이크업소품",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "color-cosmetics",
@@ -3492,8 +3343,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 1,000 KRW",
     "keywords_kr": "다이소 올리브데코 퍼프▪원형퍼프▪극세사퍼프",
     "hashtags": "올리브데코▪퍼프▪메이크업소품",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/color-cosmetics.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3514,8 +3364,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 에이솔루션 진정콕▪어성초칼라민▪트러블스팟",
     "hashtags": "에이솔루션▪진정콕스팟▪어성초칼라민",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3536,8 +3385,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 에이솔루션 스팟패치▪트러블패치▪뾰꾸패치",
     "hashtags": "에이솔루션▪트러블패치▪뾰꾸패치",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3558,8 +3406,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 테라스킨 스팟패치▪하이드로콜로이드패치▪72매스팟패치",
     "hashtags": "테라스킨▪스팟패치▪트러블케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3580,8 +3427,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 해서린 스팟패치▪노란스팟패치▪하이드로콜로이드",
     "hashtags": "해서린▪스팟케어패치▪트러블케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3602,8 +3448,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 미모랑 마이크로패치▪소형트러블패치▪좁쌀여드름패치",
     "hashtags": "미모랑▪마이크로패치▪트러블케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3624,8 +3469,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 마데카21 스팟젤▪테카솔루션▪트러블진정젤",
     "hashtags": "마데카21▪수딩스팟젤▪트러블진정",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3646,8 +3490,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 브이티 시카크림▪시카카밍크림▪트러블진정크림",
     "hashtags": "VT코스메틱▪시카크림▪트러블진정",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3668,8 +3511,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 브이티 시카에센스▪시카카밍에센스▪트러블에센스",
     "hashtags": "VT코스메틱▪시카에센스▪트러블케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3690,8 +3532,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 닥터씨피유 부스터앰플▪진정리페어▪트러블부스터",
     "hashtags": "닥터씨피유▪부스터앰플▪트러블리페어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3712,8 +3553,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 CNP 블레미쉬▪오디티디 트러블젤▪나이트스팟젤",
     "hashtags": "CNP▪블레미쉬트리트먼트▪트러블케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3734,8 +3574,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 어퓨 티트리토너▪더퓨어티트리▪트러블토너",
     "hashtags": "어퓨▪티트리토너▪더퓨어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3756,8 +3595,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 어퓨 티트리세럼▪스팟세럼▪트러블세럼",
     "hashtags": "어퓨▪티트리스팟세럼▪더퓨어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3778,8 +3616,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 1,000 KRW",
     "keywords_kr": "다이소 어퓨 티트리패드▪모공패드▪트러블패드",
     "hashtags": "어퓨▪티트리모공패드▪더퓨어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3800,8 +3637,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 애즈어스 토너패드▪시카카밍패드▪100매토너패드",
     "hashtags": "애즈어스▪시카토너패드▪트러블진정",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3822,8 +3658,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 소미썸 티트리패드▪사각패드▪지성피부패드",
     "hashtags": "소미썸▪티트리패드▪트러블케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3844,8 +3679,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 마데카21 릴리프패치▪스팟케어패치▪68매패치",
     "hashtags": "마데카21▪릴리프패치▪하이드로콜로이드",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3866,8 +3700,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 마데카21 스팟큐어패치▪클리어패치▪의약외품패치",
     "hashtags": "마데카21▪스팟큐어패치▪트러블케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3888,8 +3721,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 윙크걸 기름종이파우더▪피지조절파우더▪오일컨트롤",
     "hashtags": "윙크걸▪기름종이파우더▪피지조절",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3910,8 +3742,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 태그 노세범쿠션▪메쉬쿠션▪세범컨트롤쿠션",
     "hashtags": "태그▪노세범쿠션▪투쿨포스쿨",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3932,8 +3763,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 파티온 흔적앰플▪노스카나인▪트러블흔적케어",
     "hashtags": "파티온▪노스카나인▪흔적앰플",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3954,8 +3784,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 에이솔루션 진정크림▪어성초칼라민크림▪트러블진정크림",
     "hashtags": "에이솔루션▪진정크림▪어성초칼라민",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3976,8 +3805,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 리들샷 바디미스트▪등드름케어▪AC워시오프",
     "hashtags": "VT코스메틱▪등드름미스트▪바디트러블케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -3998,8 +3826,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 이즈앤트리 어니언앰플▪블레미쉬수딩앰플▪흔적케어앰플",
     "hashtags": "이즈앤트리▪어니언앰플▪흔적케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -4020,8 +3847,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 닥터오라클 오투앰플▪큐어소나카밍앰플▪쿨링진정앰플",
     "hashtags": "닥터오라클▪큐어소나▪쿨링앰플",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -4042,8 +3868,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 마데카21 수딩캡슐앰플▪테카솔루션▪피부재생앰플",
     "hashtags": "마데카21▪수딩캡슐앰플▪피부재생",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -4064,8 +3889,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000 KRW",
     "keywords_kr": "다이소 큐어레스트 버블토너▪수분진정토너▪버블에센스토너",
     "hashtags": "큐어레스트▪버블토너▪수분진정",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "trouble-care",
@@ -4086,8 +3910,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000 KRW",
     "keywords_kr": "다이소 에이솔루션 클리어패치▪짜고난후패치▪흉터예방패치",
     "hashtags": "에이솔루션▪트러블클리어패치▪흉터케어",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/trouble-care.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4108,8 +3931,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 5,000대 KRW",
     "keywords_kr": "다이소 말차매그놀리아▪에이딕트 향수▪멜로우향수",
     "hashtags": "에이딕트▪말차매그놀리아▪다이소향수",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4130,8 +3952,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000대 KRW",
     "keywords_kr": "다이소 데일리콤마 고체향수▪벨로드퍼퓸▪고체향수",
     "hashtags": "데일리콤마▪고체향수▪머스크향수",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4152,8 +3973,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000대 KRW",
     "keywords_kr": "다이소 데일리콤마 디스커버리세트▪온더그레이▪시트러스향수",
     "hashtags": "데일리콤마▪디스커버리세트▪온더그레이",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4174,8 +3994,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000대 KRW",
     "keywords_kr": "다이소 데일리콤마 와일드코지▪디스커버리세트▪시트러스우디",
     "hashtags": "데일리콤마▪와일드코지▪디스커버리세트",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4196,8 +4015,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000대 KRW",
     "keywords_kr": "다이소 데일리콤마 플뢰르무드▪디스커버리세트▪플로럴향수",
     "hashtags": "데일리콤마▪플뢰르무드▪디스커버리세트",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4218,8 +4036,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 2,000대 KRW",
     "keywords_kr": "다이소 데일리콤마 펄스튜디오▪디스커버리세트▪파우더리향수",
     "hashtags": "데일리콤마▪펄스튜디오▪디스커버리세트",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4240,8 +4057,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 데일리콤마 디어로지▪고체향수▪장미향수",
     "hashtags": "데일리콤마▪디어로지▪고체향수",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4262,8 +4078,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 데일리콤마 바닐라재즈▪고체향수▪바닐라향수",
     "hashtags": "데일리콤마▪바닐라재즈▪고체향수",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4284,8 +4099,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 데일리콤마 벨벳우드▪고체향수▪허브향수",
     "hashtags": "데일리콤마▪벨벳우드▪고체향수",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4306,8 +4120,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 데일리콤마 모스트▪우디가든▪지속력향수",
     "hashtags": "데일리콤마▪모스트▪우디가든",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4328,8 +4141,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 데일리콤마 나티블루▪오드퍼퓸▪데일리향수",
     "hashtags": "데일리콤마▪나티블루▪오드퍼퓸",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4350,8 +4162,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 데일리콤마 시그널베리▪모스트향수▪베리향수",
     "hashtags": "데일리콤마▪시그널베리▪모스트오드퍼퓸",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4372,8 +4183,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 데일리콤마 텐더파리▪모스트향수▪블랙베리향수",
     "hashtags": "데일리콤마▪텐더파리▪모스트오드퍼퓸",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4394,8 +4204,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 데일리콤마 머스크무화과▪모스트향수▪무화과향수",
     "hashtags": "데일리콤마▪머스크무화과▪모스트오드퍼퓸",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4416,8 +4225,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 데일리콤마 코튼화이트▪모스트향수▪클린향수",
     "hashtags": "데일리콤마▪코튼화이트▪모스트오드퍼퓸",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4438,8 +4246,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 데일리콤마 헤어퍼퓸▪베이비글로우▪헤어향수",
     "hashtags": "데일리콤마▪헤어퍼퓸▪베이비글로우",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4460,8 +4267,7 @@
     "buy_en": "🏪 Available at Daiso stores nationwide\n▪Also available online at Daiso Mall (daisomall.co.kr)\n▪Reference price (as listed in KRW): approx. 3,000 KRW",
     "keywords_kr": "다이소 데일리콤마 헤어퍼퓸▪블루미아▪샴푸향헤어퍼퓸",
     "hashtags": "데일리콤마▪헤어퍼퓸▪블루미아",
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4486,8 +4292,7 @@
       "#다이소향수",
       "#남성향수"
     ],
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "perfume",
@@ -4512,8 +4317,7 @@
       "#퍼퓸밤",
       "#미니향수"
     ],
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/perfume.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "skincare",
@@ -4538,8 +4342,7 @@
       "#다이소앰플",
       "#여행용스킨케어"
     ],
-    "web": "https://www.daiso.co.kr",
-    "img": "/images/red/genre/skincare.png"
+    "web": "https://www.daiso.co.kr"
   },
   {
     "sub": "haircare",
@@ -4564,8 +4367,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4590,8 +4392,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4616,8 +4417,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4642,8 +4442,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4668,8 +4467,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4694,8 +4492,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4720,8 +4517,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4746,8 +4542,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4772,8 +4567,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4798,8 +4592,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4824,8 +4617,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4850,8 +4642,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4876,8 +4667,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4902,8 +4692,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4928,8 +4717,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4954,8 +4742,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -4980,8 +4767,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -5006,8 +4792,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "bodycare",
@@ -5032,8 +4817,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5058,8 +4842,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5084,8 +4867,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5110,8 +4892,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5136,8 +4917,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5162,8 +4942,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5188,8 +4967,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5214,8 +4992,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5240,8 +5017,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5266,8 +5042,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5292,8 +5067,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5318,8 +5092,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5344,8 +5117,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5370,8 +5142,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -5396,8 +5167,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "gender-care",
@@ -5422,8 +5192,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -5448,8 +5217,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -5474,8 +5242,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -5500,8 +5267,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -5526,8 +5292,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -5552,8 +5317,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -5578,8 +5342,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -5604,8 +5367,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -5630,8 +5392,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -5656,8 +5417,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -5682,8 +5442,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "beauty-tools",
@@ -5708,8 +5467,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -5734,8 +5492,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -5760,8 +5517,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -5786,8 +5542,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -5812,8 +5567,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -5838,8 +5592,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -5864,8 +5617,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -5890,8 +5642,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -5916,8 +5667,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -5942,8 +5692,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -5968,8 +5717,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -5994,8 +5742,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -6020,8 +5767,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -6046,8 +5792,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -6072,8 +5817,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "soldout-items",
@@ -6098,8 +5842,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -6124,8 +5867,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -6150,8 +5892,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -6176,8 +5917,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -6202,8 +5942,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "taxfree-instant",
@@ -6228,8 +5967,7 @@
     "sub_kr": "매장 즉시 세금환급",
     "sub_en": "Instant Tax Refund",
     "sub_free": "TRUE",
-    "sub_order": 0,
-    "img": "/images/red/genre/taxfree-instant.png"
+    "sub_order": 0
   },
   {
     "sub": "taxfree-instant",
@@ -6254,8 +5992,7 @@
     "sub_kr": "매장 즉시 세금환급",
     "sub_en": "Instant Tax Refund",
     "sub_free": "TRUE",
-    "sub_order": 0,
-    "img": "/images/red/genre/taxfree-instant.png"
+    "sub_order": 0
   },
   {
     "sub": "taxfree-instant",
@@ -6280,8 +6017,7 @@
     "sub_kr": "매장 즉시 세금환급",
     "sub_en": "Instant Tax Refund",
     "sub_free": "TRUE",
-    "sub_order": 0,
-    "img": "/images/red/genre/taxfree-instant.png"
+    "sub_order": 0
   },
   {
     "sub": "taxfree-instant",
@@ -6306,8 +6042,7 @@
     "sub_kr": "매장 즉시 세금환급",
     "sub_en": "Instant Tax Refund",
     "sub_free": "TRUE",
-    "sub_order": 0,
-    "img": "/images/red/genre/taxfree-instant.png"
+    "sub_order": 0
   },
   {
     "sub": "mask-pack",
@@ -6332,8 +6067,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "mask-pack",
@@ -6358,8 +6092,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "mask-pack",
@@ -6384,8 +6117,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "mask-pack",
@@ -6410,8 +6142,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "mask-pack",
@@ -6436,8 +6167,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "mask-pack",
@@ -6462,8 +6192,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "trouble-care",
@@ -6488,8 +6217,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "trouble-care",
@@ -6514,8 +6242,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "trouble-care",
@@ -6540,8 +6267,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "trouble-care",
@@ -6566,8 +6292,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "trouble-care",
@@ -6592,8 +6317,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "trouble-care",
@@ -6618,8 +6342,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "trouble-care",
@@ -6644,8 +6367,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "trouble-care",
@@ -6670,8 +6392,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "skincare",
@@ -6696,8 +6417,7 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3,
-    "img": "/images/red/genre/skincare.png"
+    "sub_order": 3
   },
   {
     "sub": "skincare",
@@ -6722,8 +6442,7 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3,
-    "img": "/images/red/genre/skincare.png"
+    "sub_order": 3
   },
   {
     "sub": "skincare",
@@ -6748,8 +6467,7 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3,
-    "img": "/images/red/genre/skincare.png"
+    "sub_order": 3
   },
   {
     "sub": "skincare",
@@ -6774,8 +6492,7 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3,
-    "img": "/images/red/genre/skincare.png"
+    "sub_order": 3
   },
   {
     "sub": "skincare",
@@ -6800,8 +6517,7 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3,
-    "img": "/images/red/genre/skincare.png"
+    "sub_order": 3
   },
   {
     "sub": "skincare",
@@ -6826,8 +6542,7 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3,
-    "img": "/images/red/genre/skincare.png"
+    "sub_order": 3
   },
   {
     "sub": "skincare",
@@ -6852,8 +6567,7 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3,
-    "img": "/images/red/genre/skincare.png"
+    "sub_order": 3
   },
   {
     "sub": "cleanser",
@@ -6878,8 +6592,7 @@
     "sub_kr": "클렌저 케어",
     "sub_en": "Cleanser",
     "sub_free": "",
-    "sub_order": 4,
-    "img": "/images/red/genre/cleanser.png"
+    "sub_order": 4
   },
   {
     "sub": "cleanser",
@@ -6904,8 +6617,7 @@
     "sub_kr": "클렌저 케어",
     "sub_en": "Cleanser",
     "sub_free": "",
-    "sub_order": 4,
-    "img": "/images/red/genre/cleanser.png"
+    "sub_order": 4
   },
   {
     "sub": "cleanser",
@@ -6930,8 +6642,7 @@
     "sub_kr": "클렌저 케어",
     "sub_en": "Cleanser",
     "sub_free": "",
-    "sub_order": 4,
-    "img": "/images/red/genre/cleanser.png"
+    "sub_order": 4
   },
   {
     "sub": "cleanser",
@@ -6956,8 +6667,7 @@
     "sub_kr": "클렌저 케어",
     "sub_en": "Cleanser",
     "sub_free": "",
-    "sub_order": 4,
-    "img": "/images/red/genre/cleanser.png"
+    "sub_order": 4
   },
   {
     "sub": "cleanser",
@@ -6982,8 +6692,7 @@
     "sub_kr": "클렌저 케어",
     "sub_en": "Cleanser",
     "sub_free": "",
-    "sub_order": 4,
-    "img": "/images/red/genre/cleanser.png"
+    "sub_order": 4
   },
   {
     "sub": "cleanser",
@@ -7008,8 +6717,7 @@
     "sub_kr": "클렌저 케어",
     "sub_en": "Cleanser",
     "sub_free": "",
-    "sub_order": 4,
-    "img": "/images/red/genre/cleanser.png"
+    "sub_order": 4
   },
   {
     "sub": "cleanser",
@@ -7034,8 +6742,7 @@
     "sub_kr": "클렌저 케어",
     "sub_en": "Cleanser",
     "sub_free": "",
-    "sub_order": 4,
-    "img": "/images/red/genre/cleanser.png"
+    "sub_order": 4
   },
   {
     "sub": "cleanser",
@@ -7060,8 +6767,7 @@
     "sub_kr": "클렌저 케어",
     "sub_en": "Cleanser",
     "sub_free": "",
-    "sub_order": 4,
-    "img": "/images/red/genre/cleanser.png"
+    "sub_order": 4
   },
   {
     "sub": "color-cosmetics",
@@ -7086,8 +6792,7 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5,
-    "img": "/images/red/genre/color-cosmetics.png"
+    "sub_order": 5
   },
   {
     "sub": "color-cosmetics",
@@ -7112,8 +6817,7 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5,
-    "img": "/images/red/genre/color-cosmetics.png"
+    "sub_order": 5
   },
   {
     "sub": "color-cosmetics",
@@ -7138,8 +6842,7 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5,
-    "img": "/images/red/genre/color-cosmetics.png"
+    "sub_order": 5
   },
   {
     "sub": "color-cosmetics",
@@ -7164,8 +6867,7 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5,
-    "img": "/images/red/genre/color-cosmetics.png"
+    "sub_order": 5
   },
   {
     "sub": "color-cosmetics",
@@ -7190,8 +6892,7 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5,
-    "img": "/images/red/genre/color-cosmetics.png"
+    "sub_order": 5
   },
   {
     "sub": "color-cosmetics",
@@ -7216,8 +6917,7 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5,
-    "img": "/images/red/genre/color-cosmetics.png"
+    "sub_order": 5
   },
   {
     "sub": "color-cosmetics",
@@ -7242,8 +6942,7 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5,
-    "img": "/images/red/genre/color-cosmetics.png"
+    "sub_order": 5
   },
   {
     "sub": "color-cosmetics",
@@ -7268,8 +6967,7 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5,
-    "img": "/images/red/genre/color-cosmetics.png"
+    "sub_order": 5
   },
   {
     "sub": "haircare",
@@ -7294,8 +6992,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -7320,8 +7017,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -7346,8 +7042,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -7372,8 +7067,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -7398,8 +7092,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -7424,8 +7117,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -7450,8 +7142,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "haircare",
@@ -7476,8 +7167,7 @@
     "sub_kr": "헤어케어",
     "sub_en": "Hair Care",
     "sub_free": "",
-    "sub_order": 6,
-    "img": "/images/red/genre/haircare.png"
+    "sub_order": 6
   },
   {
     "sub": "bodycare",
@@ -7502,8 +7192,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -7528,8 +7217,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -7554,8 +7242,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -7580,8 +7267,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -7606,8 +7292,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -7632,8 +7317,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -7658,8 +7342,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "bodycare",
@@ -7684,8 +7367,7 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7,
-    "img": "/images/red/genre/bodycare.png"
+    "sub_order": 7
   },
   {
     "sub": "perfume",
@@ -7710,8 +7392,7 @@
     "sub_kr": "향수",
     "sub_en": "Perfume",
     "sub_free": "",
-    "sub_order": 8,
-    "img": "/images/red/genre/perfume.png"
+    "sub_order": 8
   },
   {
     "sub": "perfume",
@@ -7736,8 +7417,7 @@
     "sub_kr": "향수",
     "sub_en": "Perfume",
     "sub_free": "",
-    "sub_order": 8,
-    "img": "/images/red/genre/perfume.png"
+    "sub_order": 8
   },
   {
     "sub": "perfume",
@@ -7762,8 +7442,7 @@
     "sub_kr": "향수",
     "sub_en": "Perfume",
     "sub_free": "",
-    "sub_order": 8,
-    "img": "/images/red/genre/perfume.png"
+    "sub_order": 8
   },
   {
     "sub": "perfume",
@@ -7788,8 +7467,7 @@
     "sub_kr": "향수",
     "sub_en": "Perfume",
     "sub_free": "",
-    "sub_order": 8,
-    "img": "/images/red/genre/perfume.png"
+    "sub_order": 8
   },
   {
     "sub": "perfume",
@@ -7814,8 +7492,7 @@
     "sub_kr": "향수",
     "sub_en": "Perfume",
     "sub_free": "",
-    "sub_order": 8,
-    "img": "/images/red/genre/perfume.png"
+    "sub_order": 8
   },
   {
     "sub": "perfume",
@@ -7840,8 +7517,7 @@
     "sub_kr": "향수",
     "sub_en": "Perfume",
     "sub_free": "",
-    "sub_order": 8,
-    "img": "/images/red/genre/perfume.png"
+    "sub_order": 8
   },
   {
     "sub": "perfume",
@@ -7866,8 +7542,7 @@
     "sub_kr": "향수",
     "sub_en": "Perfume",
     "sub_free": "",
-    "sub_order": 8,
-    "img": "/images/red/genre/perfume.png"
+    "sub_order": 8
   },
   {
     "sub": "perfume",
@@ -7892,8 +7567,7 @@
     "sub_kr": "향수",
     "sub_en": "Perfume",
     "sub_free": "",
-    "sub_order": 8,
-    "img": "/images/red/genre/perfume.png"
+    "sub_order": 8
   },
   {
     "sub": "beauty-tools",
@@ -7918,8 +7592,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -7944,8 +7617,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -7970,8 +7642,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -7996,8 +7667,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -8022,8 +7692,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -8048,8 +7717,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -8074,8 +7742,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -8100,8 +7767,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "beauty-tools",
@@ -8126,8 +7792,7 @@
     "sub_kr": "뷰티 소품",
     "sub_en": "Beauty Tools",
     "sub_free": "",
-    "sub_order": 9,
-    "img": "/images/red/genre/beauty-tools.png"
+    "sub_order": 9
   },
   {
     "sub": "gender-care",
@@ -8152,8 +7817,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -8178,8 +7842,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -8204,8 +7867,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -8230,8 +7892,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -8256,8 +7917,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -8282,8 +7942,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -8308,8 +7967,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -8334,8 +7992,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "gender-care",
@@ -8360,8 +8017,7 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10,
-    "img": "/images/red/genre/gender-care.png"
+    "sub_order": 10
   },
   {
     "sub": "soldout-items",
@@ -8386,8 +8042,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -8412,8 +8067,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -8438,8 +8092,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -8464,8 +8117,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -8490,8 +8142,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -8516,8 +8167,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -8542,8 +8192,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -8568,8 +8217,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "soldout-items",
@@ -8594,8 +8242,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11,
-    "img": "/images/red/genre/soldout-items.png"
+    "sub_order": 11
   },
   {
     "sub": "taxfree-instant",
@@ -8620,8 +8267,7 @@
     "sub_kr": "매장 즉시 세금환급",
     "sub_en": "Instant Tax Refund",
     "sub_free": "TRUE",
-    "sub_order": 0,
-    "img": "/images/red/genre/taxfree-instant.png"
+    "sub_order": 0
   },
   {
     "sub": "taxfree-instant",
@@ -8646,8 +8292,7 @@
     "sub_kr": "매장 즉시 세금환급",
     "sub_en": "Instant Tax Refund",
     "sub_free": "TRUE",
-    "sub_order": 0,
-    "img": "/images/red/genre/taxfree-instant.png"
+    "sub_order": 0
   },
   {
     "sub": "mask-pack",
@@ -8672,8 +8317,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "mask-pack",
@@ -8698,8 +8342,7 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1,
-    "img": "/images/red/genre/mask-pack.png"
+    "sub_order": 1
   },
   {
     "sub": "trouble-care",
@@ -8724,8 +8367,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "trouble-care",
@@ -8750,8 +8392,7 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2,
-    "img": "/images/red/genre/trouble-care.png"
+    "sub_order": 2
   },
   {
     "sub": "skincare",
@@ -8776,8 +8417,7 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3,
-    "img": "/images/red/genre/skincare.png"
+    "sub_order": 3
   },
   {
     "sub": "skincare",
@@ -8802,7 +8442,6 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3,
-    "img": "/images/red/genre/skincare.png"
+    "sub_order": 3
   }
 ]
