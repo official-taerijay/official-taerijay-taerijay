@@ -127,18 +127,16 @@
 }
 .cat-card:focus-visible{outline:2px solid var(--c);outline-offset:2px}
 
+/* 이미지가 없는 카테고리 카드는 넷플릭스 포스터 비율 대신 낮은 텍스트 카드로 통일
+   (사이트 전체에서 "이미지 있는 카드=세로형 포스터, 이미지 없는 카드=낮은 텍스트 카드" 두 종류만 사용) */
 .cat-card-art{
-  position:relative;aspect-ratio:16/10;padding:14px;
+  position:relative;aspect-ratio:auto;min-height:64px;padding:14px;
   display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;text-align:left;
-  background:
-    radial-gradient(ellipse 120% 90% at 50% 120%, color-mix(in srgb, var(--c) 22%, transparent) 0%, transparent 60%),
-    linear-gradient(160deg, color-mix(in srgb, var(--c) 24%, var(--bg)) 0%, var(--bg) 82%);
+  background:rgba(255,255,255,.04);
   transition:background .28s ease;
 }
 .cat-card:hover .cat-card-art{
-  background:
-    radial-gradient(ellipse 120% 90% at 50% 120%, color-mix(in srgb, var(--c) 32%, transparent) 0%, transparent 62%),
-    linear-gradient(160deg, color-mix(in srgb, var(--c) 32%, var(--bg)) 0%, var(--bg) 82%);
+  background:rgba(255,255,255,.07);
 }
 
 .cat-card-name{
@@ -174,19 +172,25 @@
 }
 .item-card-tile:focus-visible{outline:2px solid var(--c);outline-offset:2px}
 
+/* 이미지가 없는 항목 카드도 카테고리 카드와 동일한 낮은 텍스트 카드로 통일 */
 .item-card-tile-art{
-  position:relative;aspect-ratio:16/10;padding:14px;
+  position:relative;aspect-ratio:auto;min-height:64px;padding:14px;
   display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;text-align:left;
+  background:rgba(255,255,255,.04);
+  transition:background .28s ease;
+}
+.item-card-tile:hover .item-card-tile-art{
+  background:rgba(255,255,255,.07);
+}
+/* 포스터 이미지가 있는 카드(entertainment 장르 등)만 넷플릭스 스타일 세로형(2:3) 유지 —
+   배경 그라디언트+이미지가 있으므로 위 낮은 텍스트 카드 배경은 덮어쓴다 */
+.item-card-tile-art-has-img{
+  aspect-ratio:2/3;min-height:0;justify-content:flex-end;
   background:
     radial-gradient(ellipse 120% 90% at 50% 120%, color-mix(in srgb, var(--c) 22%, transparent) 0%, transparent 60%),
     linear-gradient(160deg, color-mix(in srgb, var(--c) 24%, var(--bg)) 0%, var(--bg) 82%);
-  transition:background .28s ease;
 }
-/* 포스터 이미지가 있는 카드(entertainment 장르 등)만 넷플릭스 스타일 세로형(2:3) 유지 */
-.item-card-tile-art-has-img{
-  aspect-ratio:2/3;justify-content:flex-end;
-}
-.item-card-tile:hover .item-card-tile-art{
+.item-card-tile:hover .item-card-tile-art-has-img{
   background:
     radial-gradient(ellipse 120% 90% at 50% 120%, color-mix(in srgb, var(--c) 32%, transparent) 0%, transparent 62%),
     linear-gradient(160deg, color-mix(in srgb, var(--c) 32%, var(--bg)) 0%, var(--bg) 82%);
@@ -227,7 +231,7 @@
 }
 
 .item-card-tile-more .item-card-tile-more-art{
-  aspect-ratio:16/10;padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  aspect-ratio:auto;min-height:64px;padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:4px;text-align:center;background:rgba(255,255,255,.03);
 }
 .item-card-tile-more-num{font-family:var(--f-display);font-weight:900;font-size:1.6rem;color:var(--c)}
