@@ -1,0 +1,162 @@
+---
+// src/components/ChannelCarousel.astro
+// 홈페이지 "6개 서비스 소개" 캐러셀 — 인트로 섹션과 채널 카드 그리드 사이에 배치.
+// 카드뉴스 슬라이드처럼 한 장씩 넘어가며 각 서비스의 핵심 정보(카테고리 구성, 태그라인)를 소개한다.
+// 텍스트 규칙은 사이트 전역과 동일: 한글은 고정, 영문은 data-i18n="en"로 표시해 구글 번역 대상이 되게 한다.
+
+export interface CarouselSlide {
+  slug: string;
+  color: string;
+  name: string;       // 예: taerijay+entertainment
+  tagKr: string;       // 상단 카테고리 라벨 (한글)
+  tagEn: string;       // 상단 카테고리 라벨 (영문)
+  taglineKr: string;   // 첫줄 — 한글 고정
+  taglineEn: string;   // 둘째줄 — 영문 기본값, 사용자 선택 언어로 자동 전환
+  bullets: string[];   // 카테고리 구성 요약 (숫자/구성은 언어 무관하므로 notranslate)
+}
+
+export interface Props {
+  slides: CarouselSlide[];
+}
+
+const { slides } = Astro.props;
+const uid = Math.random().toString(36).slice(2, 8);
+---
+
+<section class="ch-carousel" id={`ch-carousel-${uid}`}>
+  <div class="ch-carousel-track">
+    {slides.map((s, i) => (
+      <a
+        href={s.slug === 'main' ? '#channels' : `/04-channels/${s.slug}`}
+        class={`ch-slide${i === 0 ? ' is-active' : ''}`}
+        data-ch-slide
+        style={`--c:${s.color}`}
+      >
+        <span class="ch-slide-eyebrow notranslate" translate="no">TAERIJAY</span>
+        <span class="ch-slide-progress">{i + 1} / {slides.length}</span>
+
+        <span class="ch-slide-name notranslate" translate="no">{s.name}</span>
+        <span class="ch-slide-tag notranslate" translate="no">{s.tagKr}</span>
+
+        <span class="ch-slide-tagline-kr">{s.taglineKr}</span>
+        <span class="ch-slide-tagline-en" data-i18n="en">{s.taglineEn}</span>
+
+        <span class="ch-slide-bullets">
+          {s.bullets.map((b) => (
+            <span class="ch-slide-bullet notranslate" translate="no">{b}</span>
+          ))}
+        </span>
+      </a>
+    ))}
+  </div>
+
+  <div class="ch-carousel-dots">
+    {slides.map((_, i) => (
+      <button type="button" class={`ch-dot${i === 0 ? ' is-active' : ''}`} data-ch-dot data-index={i} aria-label={`슬라이드 ${i + 1}`}></button>
+    ))}
+  </div>
+
+  <div class="ch-carousel-arrows">
+    <button type="button" class="ch-arrow ch-arrow-prev" data-ch-prev aria-label="이전 슬라이드">‹</button>
+    <button type="button" class="ch-arrow ch-arrow-next" data-ch-next aria-label="다음 슬라이드">›</button>
+  </div>
+</section>
+
+<style>
+  .ch-carousel{width:var(--container);margin:0 auto;padding:8px 0 40px;position:relative}
+  .ch-carousel-track{
+    display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+    padding-bottom:14px;scrollbar-width:none;
+  }
+  .ch-carousel-track::-webkit-scrollbar{display:none}
+
+  .ch-slide{
+    flex:0 0 min(320px, 82vw);scroll-snap-align:start;
+    display:flex;flex-direction:column;gap:10px;text-decoration:none;
+    padding:26px 22px;border-radius:16px;min-height:280px;
+    border:1px solid color-mix(in srgb, var(--c) 40%, transparent);
+    background:
+      radial-gradient(ellipse 90% 100% at 15% 0%, color-mix(in srgb, var(--c) 18%, transparent) 0%, transparent 55%),
+      linear-gradient(160deg, color-mix(in srgb, var(--c) 12%, var(--bg)) 0%, var(--bg) 88%);
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .ch-slide:hover, .ch-slide.is-active{
+    border-color:color-mix(in srgb, var(--c) 65%, transparent);
+    box-shadow:0 18px 40px -18px color-mix(in srgb, var(--c) 45%, transparent);
+  }
+
+  .ch-slide-eyebrow{font-size:.68rem;font-weight:800;letter-spacing:.14em;color:color-mix(in srgb, var(--c) 70%, var(--muted));opacity:.85}
+  .ch-slide-progress{position:absolute;margin-top:-2px;align-self:flex-end;font-size:.68rem;font-weight:600;color:var(--dim)}
+
+  .ch-slide-name{font-family:var(--f-display);font-weight:800;font-size:clamp(1.15rem,3.4vw,1.4rem);color:var(--c);line-height:1.2;margin-top:6px}
+  .ch-slide-tag{font-size:.72rem;font-weight:700;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+
+  .ch-slide-tagline-kr{font-family:var(--f-display);font-weight:700;font-size:1.02rem;color:var(--ivory);line-height:1.4;margin-top:8px;word-break:keep-all}
+  .ch-slide-tagline-en{font-size:.78rem;color:var(--dim);line-height:1.5;font-style:italic}
+
+  .ch-slide-bullets{display:flex;flex-direction:column;gap:6px;margin-top:auto;padding-top:14px}
+  .ch-slide-bullet{font-size:.76rem;font-weight:600;color:var(--muted);padding:6px 12px;border-radius:8px;background:color-mix(in srgb, var(--c) 10%, transparent);border:1px solid color-mix(in srgb, var(--c) 25%, transparent)}
+
+  .ch-carousel-dots{display:flex;gap:8px;justify-content:center;margin-top:4px}
+  .ch-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);border:none;padding:0;cursor:pointer;transition:width .2s,background .2s}
+  .ch-dot.is-active{width:24px;border-radius:6px;background:var(--gold)}
+
+  .ch-carousel-arrows{display:none}
+  @media (min-width: 900px){
+    .ch-carousel-arrows{display:flex;justify-content:space-between;position:absolute;top:45%;left:-4px;right:-4px;pointer-events:none}
+    .ch-arrow{pointer-events:auto;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(10,25,47,.75);color:var(--ivory);font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+    .ch-arrow:hover{background:rgba(255,255,255,.12)}
+  }
+</style>
+
+<script define:vars={{ uid }}>
+  (function () {
+    const root = document.getElementById(`ch-carousel-${uid}`);
+    if (!root) return;
+    const track = root.querySelector('.ch-carousel-track');
+    const slides = root.querySelectorAll('[data-ch-slide]');
+    const dots = root.querySelectorAll('[data-ch-dot]');
+    const prevBtn = root.querySelector('[data-ch-prev]');
+    const nextBtn = root.querySelector('[data-ch-next]');
+    let current = 0;
+
+    function setActive(idx) {
+      current = Math.max(0, Math.min(idx, slides.length - 1));
+      slides.forEach((el, i) => el.classList.toggle('is-active', i === current));
+      dots.forEach((el, i) => el.classList.toggle('is-active', i === current));
+    }
+
+    function scrollToIndex(idx) {
+      const target = slides[idx];
+      if (!target || !track) return;
+      track.scrollTo({ left: target.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      setActive(idx);
+    }
+
+    dots.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.getAttribute('data-index') || '0', 10);
+        scrollToIndex(idx);
+      });
+    });
+
+    if (prevBtn) prevBtn.addEventListener('click', () => scrollToIndex(current - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => scrollToIndex(current + 1));
+
+    if (track) {
+      let scrollTimer = null;
+      track.addEventListener('scroll', () => {
+        if (scrollTimer) clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+          let closest = 0;
+          let closestDist = Infinity;
+          slides.forEach((el, i) => {
+            const dist = Math.abs(el.offsetLeft - track.offsetLeft - track.scrollLeft);
+            if (dist < closestDist) { closestDist = dist; closest = i; }
+          });
+          setActive(closest);
+        }, 100);
+      }, { passive: true });
+    }
+  })();
+</script>

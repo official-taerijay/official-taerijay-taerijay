@@ -1,0 +1,202 @@
+/* ============================================================
+   TAERIJAY 구글 블로그(Blogger) 커스텀 CSS
+   브랜드 컬러: 다크 네이비 #0A192F + 골드 #D4AF37 + 아이보리 #FBF9F4
+   적용 방법: Blogger 관리 화면 > 테마 > 맞춤설정 > 고급 > CSS 추가
+   (또는 테마 > HTML 편집 > </head> 태그 바로 위에 <style>...</style>로 감싸서 삽입)
+   ============================================================ */
+
+/* 전체 배경 */
+body {
+  background-color: #0A192F !important;
+  color: #FBF9F4 !important;
+}
+
+/* 블로그 헤더 영역 */
+.header, #Header1, .Header {
+  background-color: #0A192F !important;
+  border-bottom: 1px solid rgba(212,175,55,0.3) !important;
+}
+
+.Header h1, .Header .title {
+  color: #D4AF37 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.05em !important;
+}
+
+.Header .description {
+  color: #C7D0DE !important;
+}
+
+/* 상단 네비게이션 메뉴 */
+#PageList1, .PageList {
+  background-color: #0A192F !important;
+  border-bottom: 1px solid rgba(212,175,55,0.2) !important;
+}
+
+.PageList a {
+  color: #FBF9F4 !important;
+}
+
+.PageList a:hover {
+  color: #D4AF37 !important;
+}
+
+/* 게시물 카드 영역 */
+.post, .post-outer {
+  background-color: rgba(255,255,255,0.03) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+/* 게시물 제목 */
+.post-title, .post-title a, h3.post-title {
+  color: #D4AF37 !important;
+  font-weight: 800 !important;
+}
+
+.post-title a:hover {
+  color: #E8C766 !important;
+}
+
+/* 게시물 본문 */
+.post-body {
+  color: #C7D0DE !important;
+  line-height: 1.8 !important;
+}
+
+/* 게시물 메타정보 (날짜, 작성자) */
+.post-header .published, .post-timestamp {
+  color: #5B6B85 !important;
+}
+
+/* 링크 색상 */
+a {
+  color: #D4AF37;
+}
+a:hover {
+  color: #E8C766;
+}
+
+/* 사이드바 위젯 */
+.sidebar, .widget {
+  background-color: #0A192F !important;
+}
+
+.widget h2, .widget .title {
+  color: #D4AF37 !important;
+  font-weight: 800 !important;
+  border-bottom: 1px solid rgba(212,175,55,0.3) !important;
+  padding-bottom: 8px !important;
+}
+
+.widget a {
+  color: #C7D0DE !important;
+}
+
+/* 라벨(카테고리) 위젯 */
+.label-size-1, .label-size-2, .label-size-3 {
+  color: #C7D0DE !important;
+}
+
+/* 댓글 영역 */
+#comments, .comments {
+  background-color: #0A192F !important;
+  color: #C7D0DE !important;
+  border-top: 1px solid rgba(212,175,55,0.2) !important;
+}
+
+/* 페이지 이동 버튼 (이전글/다음글) */
+.blog-pager a {
+  color: #D4AF37 !important;
+  border: 1px solid rgba(212,175,55,0.4) !important;
+  border-radius: 100px !important;
+  padding: 6px 16px !important;
+}
+
+.blog-pager a:hover {
+  background-color: rgba(212,175,55,0.12) !important;
+}
+
+/* 푸터 */
+.footer, #Footer1 {
+  background-color: #0A192F !important;
+  color: #5B6B85 !important;
+  border-top: 1px solid rgba(212,175,55,0.2) !important;
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A192F;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   TAERIJAY 7개 채널 시그니처 컬러 (라벨 기준)
+   Blogger는 "라벨(Label)"이 카테고리 역할을 하므로,
+   라벨명을 채널명과 동일하게 만들면 아래 CSS가 자동 매칭됩니다.
+   라벨 예시: main / entertainment / protocol / mini / red / green / mart
+   ============================================================ */
+
+/* 라벨 링크 기본 색상을 채널별로 (사이드바 라벨 위젯) */
+.label-name a[href*="/search/label/entertainment"] { color: #00E5FF !important; }
+.label-name a[href*="/search/label/protocol"]       { color: #F16B24 !important; }
+.label-name a[href*="/search/label/mini"]           { color: #e8e4dc !important; }
+.label-name a[href*="/search/label/red"]            { color: #E1261C !important; }
+.label-name a[href*="/search/label/green"]          { color: #8FB84A !important; }
+.label-name a[href*="/search/label/mart"]           { color: #FFDD00 !important; }
+.label-name a[href*="/search/label/main"]           { color: #D4AF37 !important; }
+
+/* 채널 뱃지 유틸 클래스 (포스트 HTML 편집 모드에서 직접 사용) */
+.ch-main         { color: #D4AF37 !important; }
+.ch-entertainment{ color: #00E5FF !important; }
+.ch-protocol     { color: #F16B24 !important; }
+.ch-mini         { color: #e8e4dc !important; }
+.ch-red          { color: #E1261C !important; }
+.ch-green        { color: #8FB84A !important; }
+.ch-mart         { color: #FFDD00 !important; }
+
+.ch-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1.5px solid currentColor;
+  margin-bottom: 8px;
+}
+.ch-badge.ch-main          { background-color: rgba(212,175,55,0.12); }
+.ch-badge.ch-entertainment { background-color: rgba(0,229,255,0.12); }
+.ch-badge.ch-protocol      { background-color: rgba(241,107,36,0.12); }
+.ch-badge.ch-mini          { background-color: rgba(232,228,220,0.12); }
+.ch-badge.ch-red           { background-color: rgba(225,38,28,0.12); }
+.ch-badge.ch-green         { background-color: rgba(143,184,74,0.12); }
+.ch-badge.ch-mart          { background-color: rgba(255,221,0,0.12); }
+
+/* 채널 라벨이 붙은 포스트 카드 좌측 컬러 바 (선택 적용) */
+.post[data-label="entertainment"] { border-left: 3px solid #00E5FF !important; }
+.post[data-label="protocol"]      { border-left: 3px solid #F16B24 !important; }
+.post[data-label="mini"]          { border-left: 3px solid #e8e4dc !important; }
+.post[data-label="red"]           { border-left: 3px solid #E1261C !important; }
+.post[data-label="green"]         { border-left: 3px solid #8FB84A !important; }
+.post[data-label="mart"]          { border-left: 3px solid #FFDD00 !important; }
+.post[data-label="main"]          { border-left: 3px solid #D4AF37 !important; }
+
+/* ============================================================
+   참고사항
+   - Blogger는 선택한 테마(템플릿)에 따라 실제 클래스명이 다를 수 있습니다.
+   - 적용 후 레이아웃이 깨지면, 테마를 Blogger 기본 제공 테마(예: "Contempo",
+     "Soho" 등) 중 미니멀한 것으로 먼저 바꾼 뒤 이 CSS를 적용하면 충돌이 적습니다.
+   - 가장 안전한 삽입 위치: 테마 > 맞춤설정 > 고급 > "CSS 추가" 칸
+     (HTML 직접 수정보다 안전하고, 언제든 초기화 가능)
+   - .post[data-label="..."] 선택자는 Blogger 기본 템플릿에 data-label 속성이
+     없는 경우가 많아, 실제 적용되려면 테마 HTML에 해당 속성을 추가하거나
+     라벨 링크(.label-name a) 방식을 우선 사용하는 것을 권장합니다.
+   ============================================================ */

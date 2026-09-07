@@ -1,0 +1,161 @@
+/* ============================================================
+   TAERIJAY 네이버 블로그 스킨 커스텀 CSS
+   브랜드 컬러: 다크 네이비 #0A192F + 골드 #D4AF37 + 아이보리 #FBF9F4
+   적용 방법: 네이버 블로그 관리 > 꾸미기 설정 > 스킨 편집 > HTML/CSS 편집
+   위젯 하단 CSS 영역 또는 <style> 태그 안에 아래 코드를 붙여넣기
+   ============================================================ */
+
+/* 전체 배경 */
+body, #mainFrame {
+  background-color: #0A192F !important;
+}
+
+/* 블로그 타이틀 영역 */
+.blog_title, .title_area {
+  background-color: #0A192F !important;
+  border-bottom: 1px solid rgba(212,175,55,0.3) !important;
+}
+
+.blog_title .title, .title_area .title {
+  color: #D4AF37 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.05em !important;
+}
+
+.blog_title .title_desc, .title_area .title_desc {
+  color: #C7D0DE !important;
+}
+
+/* 상단 카테고리 메뉴 */
+.category_area, #gnb {
+  background-color: #0A192F !important;
+  border-bottom: 1px solid rgba(212,175,55,0.2) !important;
+}
+
+.category_area a, #gnb a {
+  color: #FBF9F4 !important;
+}
+
+.category_area a:hover, #gnb a:hover {
+  color: #D4AF37 !important;
+}
+
+/* 본문 영역 배경 */
+#postListBody, .post_area, .se-main-container {
+  background-color: #0A192F !important;
+  color: #FBF9F4 !important;
+}
+
+/* 포스트 제목 */
+.se-title-text, .pcol1, .htitle {
+  color: #D4AF37 !important;
+  font-weight: 800 !important;
+}
+
+/* 포스트 본문 텍스트 */
+.se-text-paragraph, .post_ct, .contents_style {
+  color: #C7D0DE !important;
+  line-height: 1.8 !important;
+}
+
+/* 포스트 카드/박스 */
+.post_wrap, .item_area {
+  background-color: rgba(255,255,255,0.03) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 12px !important;
+}
+
+/* 링크 색상 */
+a {
+  color: #D4AF37;
+}
+a:hover {
+  color: #E8C766;
+}
+
+/* 사이드바 위젯 */
+.sidebar, .widget_area {
+  background-color: #0A192F !important;
+}
+
+.sidebar .tit, .widget_area .tit_h4 {
+  color: #D4AF37 !important;
+  font-weight: 800 !important;
+  border-bottom: 1px solid rgba(212,175,55,0.3) !important;
+}
+
+.sidebar a, .widget_area a {
+  color: #C7D0DE !important;
+}
+
+/* 댓글 영역 */
+.comment_area, #commentArea {
+  background-color: #0A192F !important;
+  color: #C7D0DE !important;
+}
+
+/* 하단 푸터 */
+.blog_footer, #footer {
+  background-color: #0A192F !important;
+  color: #5B6B85 !important;
+  border-top: 1px solid rgba(212,175,55,0.2) !important;
+}
+
+/* 스크롤바 (선택) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A192F;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   TAERIJAY 7개 채널 시그니처 컬러
+   카테고리(말머리)별로 구분해 포스트 제목/카테고리 링크에 적용
+   사용법: 포스트 제목 앞에 [채널명]을 붙이고, 카테고리 메뉴에
+   아래 클래스명과 매칭되는 카테고리를 만들어 사용하세요.
+   (네이버 블로그는 카테고리별 커스텀 클래스 지정이 제한적이라,
+   실무적으로는 포스트 제목에 span 태그로 감싸 색상을 직접 지정하는
+   방식을 권장합니다 — 예: <span class="ch-entertainment">[엔터테인먼트]</span> 제목)
+   ============================================================ */
+
+.ch-main         { color: #D4AF37 !important; } /* TAERIJAY 메인 - 골드 */
+.ch-entertainment{ color: #00E5FF !important; } /* K-ENTERTAINMENT - 시안 */
+.ch-protocol     { color: #F16B24 !important; } /* K-SURVIVAL - 오렌지 */
+.ch-mini         { color: #e8e4dc !important; } /* K-TRAVEL - 아이보리 */
+.ch-red          { color: #E1261C !important; } /* K-BEAUTY(red) - 레드 */
+.ch-green        { color: #8FB84A !important; } /* K-BEAUTY(green) - 그린 */
+.ch-mart         { color: #FFDD00 !important; } /* K-SHOPPING - 옐로우 */
+
+/* 채널 뱃지 스타일 (포스트 상단에 카테고리 뱃지처럼 사용) */
+.ch-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1.5px solid currentColor;
+  margin-bottom: 8px;
+}
+.ch-badge.ch-main          { background-color: rgba(212,175,55,0.12); }
+.ch-badge.ch-entertainment { background-color: rgba(0,229,255,0.12); }
+.ch-badge.ch-protocol      { background-color: rgba(241,107,36,0.12); }
+.ch-badge.ch-mini          { background-color: rgba(232,228,220,0.12); }
+.ch-badge.ch-red           { background-color: rgba(225,38,28,0.12); }
+.ch-badge.ch-green         { background-color: rgba(143,184,74,0.12); }
+.ch-badge.ch-mart          { background-color: rgba(255,221,0,0.12); }
+
+/* ============================================================
+   참고사항
+   - 네이버 블로그는 스킨(테마)마다 실제 클래스명이 조금씩 다를 수 있습니다.
+   - 위 클래스명이 그대로 안 먹히면, 블로그 관리 화면에서 F12(개발자 도구)로
+     실제 요소의 class명을 확인해 매칭해야 합니다.
+   - 가장 확실한 적용 방법: 스킨 편집 > "레이아웃·위젯 설정"에서 스킨을
+     "심플" 계열로 먼저 바꾼 뒤 이 CSS를 적용하면 충돌이 적습니다.
+   - 채널별 컬러(.ch-*)는 네이버 에디터에서 HTML 편집 모드로 전환한 뒤
+     본문에 직접 <span class="ch-red">...</span> 형태로 넣어야 적용됩니다.
+   ============================================================ */

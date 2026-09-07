@@ -2,6 +2,7 @@
 export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
 import HeroSlider from '../../components/HeroSlider.astro';
+import ChannelLogo from '../../components/ChannelLogo.astro';
 import { CHANNEL_MAP, mergeSheetCategories } from '../../lib/channelCategories.js';
 import { fetchChannelRows, deriveCategoriesFromRows } from '../../lib/sheetsCms.js';
 import '../../styles/channel-page.css';
@@ -45,7 +46,7 @@ const color = '#F16B24';
 
     <section class="channel-hero">
       <span class="channel-badge channel-badge-lock notranslate" translate="no">무료 {freeN}개 + 유료 {paidN}개 · 총 {categories.length}개 카테고리</span>
-      <h1 class="channel-title">taerijay<span style={`color:${color}`}>+protocol</span></h1>
+      <ChannelLogo slug="protocol" suffix="+protocol" color={color} />
       <p class="channel-sub">공항·세관·대중교통 규약부터 맛집·카페까지, 검증된 현지 정보. 매월 10일·20일 업데이트</p>
       <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
     </section>

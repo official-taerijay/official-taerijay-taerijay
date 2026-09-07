@@ -1,0 +1,48 @@
+---
+// src/components/ChannelLogo.astro
+// 각 서비스 페이지 상단(channel-hero)의 "taerijay+서비스명" 자리에 로고 이미지를 표시한다.
+// public/images/logos/{slug}.png 파일이 있으면 이미지로, 없으면 기존 텍스트 워드마크로 자동 대체된다
+// (HeroSlider의 img 필드와 동일한 "파일만 넣으면 자동 반영" 패턴).
+// 이미지 로드에 실패하면(onerror) 즉시 텍스트 폴백으로 전환해 깨진 이미지 아이콘이 보이지 않게 한다.
+
+export interface Props {
+  slug: string;       // public/images/logos/{slug}.png 로 매핑
+  suffix: string;      // "+entertainment" 등 텍스트 폴백에 쓰일 서비스명
+  color: string;
+}
+
+const { slug, suffix, color } = Astro.props;
+const uid = Math.random().toString(36).slice(2, 8);
+const src = `/images/logos/${slug}.png`;
+---
+
+<div class="channel-logo-wrap" id={`channel-logo-${uid}`}>
+  <img
+    src={src}
+    alt={`TAERIJAY${suffix}`}
+    class="channel-logo-img notranslate"
+    translate="no"
+    loading="eager"
+    onerror={`this.style.display='none'; document.getElementById('channel-logo-fallback-${uid}').style.display='block';`}
+  />
+  <h1 class="channel-title channel-logo-fallback" id={`channel-logo-fallback-${uid}`} style="display:none">
+    taerijay<span style={`color:${color}`}>{suffix}</span>
+  </h1>
+</div>
+
+<style>
+  .channel-logo-wrap{margin-bottom:12px}
+  .channel-logo-img{
+    display:block;
+    max-width:min(520px, 100%);
+    height:auto;
+    max-height:280px;
+    width:auto;
+    object-fit:contain;
+    object-position:left center;
+    margin-left:-8px;
+  }
+  @media (max-width:560px){
+    .channel-logo-img{max-height:200px}
+  }
+</style>

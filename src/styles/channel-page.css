@@ -157,6 +157,72 @@
 .cat-card-tier.is-paid{background:rgba(245,158,11,.92);color:#3d2400;border:1px solid rgba(253,204,110,.9)}
 .cat-card-tier.cat-card-tier-mixed{background:linear-gradient(90deg, rgba(34,197,94,.92) 0%, rgba(34,197,94,.92) 45%, rgba(245,158,11,.92) 55%, rgba(245,158,11,.92) 100%);color:#1a1400;border:1px solid rgba(255,255,255,.5)}
 
+/* ── 항목(item) 카드 그리드 — [channel]/[sub].astro ── */
+.item-grid-section{display:grid;grid-template-columns:repeat(auto-fill,minmax(216px,1fr));gap:18px;margin-bottom:44px}
+
+.item-card-tile{
+  text-decoration:none;color:var(--ivory);display:block;position:relative;
+  border:1px solid color-mix(in srgb, var(--c) 34%, transparent);border-radius:14px;overflow:hidden;
+  transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease, border-color .28s ease;
+  will-change:transform;
+}
+.item-card-tile:hover{
+  transform:translateY(-6px) scale(1.02);
+  border-color:color-mix(in srgb, var(--c) 65%, transparent);
+  box-shadow:0 20px 44px -16px color-mix(in srgb, var(--c) 55%, transparent), 0 4px 14px rgba(0,0,0,.35);
+  z-index:2;
+}
+.item-card-tile:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+
+.item-card-tile-art{
+  position:relative;aspect-ratio:16/10;padding:14px;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;text-align:left;
+  background:
+    radial-gradient(ellipse 120% 90% at 50% 120%, color-mix(in srgb, var(--c) 22%, transparent) 0%, transparent 60%),
+    linear-gradient(160deg, color-mix(in srgb, var(--c) 24%, var(--bg)) 0%, var(--bg) 82%);
+  transition:background .28s ease;
+}
+.item-card-tile:hover .item-card-tile-art{
+  background:
+    radial-gradient(ellipse 120% 90% at 50% 120%, color-mix(in srgb, var(--c) 32%, transparent) 0%, transparent 62%),
+    linear-gradient(160deg, color-mix(in srgb, var(--c) 32%, var(--bg)) 0%, var(--bg) 82%);
+}
+
+.item-card-tile-name{
+  font-family:var(--f-display);font-weight:900;color:var(--dim);
+  font-size:clamp(.86rem,2.2vw,1.04rem);line-height:1.28;text-align:left;
+  word-break:keep-all;overflow-wrap:break-word;max-width:22ch;
+}
+.item-card-tile-name-en{
+  font-size:clamp(.86rem,2.2vw,1.04rem);letter-spacing:.02em;color:var(--ivory);text-transform:uppercase;
+  word-break:keep-all;max-width:24ch;line-height:1.25;text-align:left;
+}
+.item-card-tile-region{font-size:.68rem;color:var(--dim);margin-top:2px;letter-spacing:.02em}
+
+.item-card-tile-lockmask{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(10,25,47,.55);backdrop-filter:blur(1.5px);color:var(--ivory);opacity:.9;
+}
+
+.item-card-tile-more .item-card-tile-more-art{
+  aspect-ratio:16/10;padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;text-align:center;background:rgba(255,255,255,.03);
+}
+.item-card-tile-more-num{font-family:var(--f-display);font-weight:900;font-size:1.6rem;color:var(--c)}
+.item-card-tile-more-label-kr{font-size:.78rem;color:var(--kr-bright);word-break:keep-all}
+.item-card-tile-more-label-en{font-size:.68rem;color:var(--dim);text-transform:uppercase;letter-spacing:.02em}
+
+@media (min-width: 900px){
+  .item-grid-section{grid-template-columns:repeat(3,1fr);gap:12px}
+}
+@media (max-width: 560px){
+  .item-grid-section{grid-template-columns:repeat(2,1fr);gap:12px}
+}
+@media (prefers-reduced-motion: reduce){
+  .item-card-tile, .item-card-tile-art{transition:none!important}
+  .item-card-tile:hover{transform:none}
+}
+
 /* ── 빈 상태 / 콘텐츠 준비중 ── */
 .empty-note{
   text-align:left;padding:56px 20px;border:1px dashed rgba(255,255,255,.16);border-radius:16px;

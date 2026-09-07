@@ -1,7 +1,56 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HeroSlider from '../components/HeroSlider.astro';
+import ChannelCarousel from '../components/ChannelCarousel.astro';
 import '../styles/channel-page.css';
+
+// "여기가 어디인지" 한눈에 보여주는 6개 서비스 소개 캐러셀 — intro-section과 channels-section 사이에 배치.
+// 첫줄(taglineKr)은 한글 고정, 둘째줄(taglineEn)은 영문 기본값이며 사이트 전역 규칙과 동일하게
+// data-i18n="en" 처리되어 사용자가 선택한 언어로 자동 전환된다(Google 번역 기반, 135개 언어).
+const carouselSlides = [
+  {
+    slug: 'entertainment', color: '#00E5FF', name: 'taerijay+entertainment',
+    tagKr: 'K-ENTERTAINMENT', tagEn: 'K-ENTERTAINMENT',
+    taglineKr: '무대 위, 지금 이 순간',
+    taglineEn: 'K-content filming locations & fan pilgrimage sites, fully organized',
+    bullets: ['드라마 FREE', '영화 FREE', '예능 FREE'],
+  },
+  {
+    slug: 'protocol', color: '#F16B24', name: 'taerijay+protocol',
+    tagKr: 'TRAVEL PROTOCOL', tagEn: 'TRAVEL PROTOCOL',
+    taglineKr: '공항에서 시내까지, 완벽 가이드',
+    taglineEn: 'From airport customs to public transit, restaurants, and cafes',
+    bullets: ['무료 5개', '유료 7개', '총 12개 카테고리'],
+  },
+  {
+    slug: 'mini', color: '#e8e4dc', name: 'taerijay+mini',
+    tagKr: 'GYEONGSANG', tagEn: 'GYEONGSANG',
+    taglineKr: '부산·경주, 남쪽으로 떠나는 여행',
+    taglineEn: 'Optimized routes by hub city, curated courses by time of day',
+    bullets: ['무료 3개', '유료 10개', '총 13개 카테고리'],
+  },
+  {
+    slug: 'red', color: '#E1261C', name: 'taerijay+red',
+    tagKr: 'BEAUTY · 균일가', tagEn: 'BEAUTY',
+    taglineKr: '오늘의 대란템, 매장에서 바로',
+    taglineEn: "Viral beauty must-haves from Korea's dollar-store chains, organized",
+    bullets: ['유료 12개 카테고리', '매장 위치 정보', '10일·20일 리뉴얼'],
+  },
+  {
+    slug: 'green', color: '#8FB84A', name: 'taerijay+green',
+    tagKr: 'BEAUTY · H&B', tagEn: 'BEAUTY',
+    taglineKr: '지금 가장 잘 팔리는 뷰티템',
+    taglineEn: 'H&B store bestseller rankings and viral must-haves, organized',
+    bullets: ['유료 12개 카테고리', '매장 위치 정보', '10일·20일 리뉴얼'],
+  },
+  {
+    slug: 'mart-convenience', color: '#FFDD00', name: 'taerijay+mart+convenience',
+    tagKr: 'SHOPPING', tagEn: 'SHOPPING',
+    taglineKr: '대형마트 진열대, 오늘의 핫템',
+    taglineEn: 'Hot-item rankings from 7 major mart & convenience store brands',
+    bullets: ['이마트·노브랜드·트레이더스', '이마트24·CU·GS25·세븐일레븐', '브랜드별 무료5+유료25'],
+  },
+];
 
 // 메인 화면 히어로 배너 — 실제 이미지는 img 필드에 추후 URL만 채워넣으면 자동 반영됨(현재는 준비중 플레이스홀더)
 const mainHeroSlides = [
@@ -20,6 +69,7 @@ const reelsUrls = [
 // 이미지 파일이 실제로 public/images/channels/에 업로드되기 전까지는 false로 두어
 // 브라우저가 404를 요청하지 않도록 방지한다(그라디언트 배경은 CSS에서 항상 표시됨).
 // 이미지를 추가하면 해당 채널의 heroImg만 true로 바꾸면 된다.
+// 6개 채널 고정 구성 — 순서 변경 시 아래 channel-row 마크업의 순서도 함께 맞춰야 함
 const channels = {
   entertainment: { slug: 'entertainment', color: '#00E5FF', free: true,  tag: 'K-ENTERTAINMENT', region: 'Seoul',    regionKr: '서울', heroImg: false },
   protocol:      { slug: 'protocol',      color: '#F16B24', free: false, tag: 'K-SURVIVAL',      region: 'Seorak',   regionKr: '설악', heroImg: false },
@@ -105,6 +155,8 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
   {reelsUrls.length > 0 && (
     <script is:inline async src="//www.instagram.com/embed.js"></script>
   )}
+
+  <ChannelCarousel slides={carouselSlides} />
 
   <section class="channels-section" id="channels">
 

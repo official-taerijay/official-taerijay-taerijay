@@ -2,6 +2,7 @@
 export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
 import HeroSlider from '../../components/HeroSlider.astro';
+import ChannelLogo from '../../components/ChannelLogo.astro';
 import { CHANNEL_MAP, mergeSheetCategories } from '../../lib/channelCategories.js';
 import { fetchChannelRows, deriveCategoriesFromRows } from '../../lib/sheetsCms.js';
 import '../../styles/channel-page.css';
@@ -68,7 +69,7 @@ const color = '#FFDD00';
     <section class="channel-hero">
       <span class="channel-badge channel-badge-lock notranslate" translate="no">7개 브랜드 · 브랜드별 TOP 30 (무료 5 + 유료 25)</span>
       <span class="channel-category">SHOPPING</span>
-      <h1 class="channel-title">taerijay<span style={`color:${color}`}>+mart+convenience</span></h1>
+      <ChannelLogo slug="mart-convenience" suffix="+mart+convenience" color={color} />
       <p class="channel-sub">대형마트·편의점 7개 브랜드 핫템 랭킹. 브랜드별 100개 고정, 매월 10일·20일 업데이트</p>
       <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
     </section>
