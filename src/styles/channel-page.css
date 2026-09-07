@@ -143,6 +143,7 @@
   font-family:var(--f-display);font-weight:900;color:var(--dim);
   font-size:clamp(.86rem,2.2vw,1.04rem);line-height:1.28;text-align:left;
   word-break:keep-all;overflow-wrap:break-word;max-width:22ch;
+  padding-right:64px;
 }
 .cat-card-name-en{
   font-size:clamp(.86rem,2.2vw,1.04rem);letter-spacing:.02em;color:var(--ivory);text-transform:uppercase;
@@ -150,6 +151,8 @@
 }
 .cat-card-sub{font-size:.68rem;color:var(--dim);margin-top:2px;letter-spacing:.02em}
 
+/* 카드가 낮은 텍스트형이 되면서 우상단 고정 뱃지가 제목과 겹칠 수 있어
+   첫 줄(cat-card-name)에만 오른쪽 여백을 확보해 뱃지 자리를 비워둔다 */
 .cat-card-tier{position:absolute;top:10px;right:10px;z-index:1;font-size:.6rem;font-weight:800;letter-spacing:.02em;padding:4px 9px;border-radius:100px;backdrop-filter:blur(4px);white-space:nowrap}
 .cat-card-tier.is-free{background:rgba(34,197,94,.92);color:#052e12;border:1px solid rgba(134,239,172,.9)}
 .cat-card-tier.is-paid{background:rgba(245,158,11,.92);color:#3d2400;border:1px solid rgba(253,204,110,.9)}
@@ -185,7 +188,7 @@
 /* 포스터 이미지가 있는 카드(entertainment 장르 등)만 넷플릭스 스타일 세로형(2:3) 유지 —
    배경 그라디언트+이미지가 있으므로 위 낮은 텍스트 카드 배경은 덮어쓴다 */
 .item-card-tile-art-has-img{
-  aspect-ratio:2/3;min-height:0;justify-content:flex-end;
+  aspect-ratio:2/3;min-height:0;justify-content:flex-end;padding:12px;
   background:
     radial-gradient(ellipse 120% 90% at 50% 120%, color-mix(in srgb, var(--c) 22%, transparent) 0%, transparent 60%),
     linear-gradient(160deg, color-mix(in srgb, var(--c) 24%, var(--bg)) 0%, var(--bg) 82%);
@@ -194,11 +197,6 @@
   background:
     radial-gradient(ellipse 120% 90% at 50% 120%, color-mix(in srgb, var(--c) 32%, transparent) 0%, transparent 62%),
     linear-gradient(160deg, color-mix(in srgb, var(--c) 32%, var(--bg)) 0%, var(--bg) 82%);
-}
-
-/* 포스터 이미지가 있는 카드 — 넷플릭스/디즈니+ 스타일: 배경 이미지 + 하단 그라디언트 오버레이 */
-.item-card-tile-art-has-img{
-  aspect-ratio:2/3;justify-content:flex-end;padding:12px;
 }
 .item-card-tile-bg{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
@@ -210,14 +208,18 @@
   background:linear-gradient(180deg, rgba(10,25,47,0) 40%, rgba(10,25,47,.55) 70%, rgba(10,25,47,.92) 100%);
 }
 .item-card-tile-art-has-img > *{position:relative;z-index:1}
-.item-card-tile-art-has-img .item-card-tile-name{color:var(--ivory)}
+.item-card-tile-art-has-img .item-card-tile-name{color:var(--ivory);padding-right:0}
 /* FREE/PAID 뱃지는 이미지 카드에서도 우상단 코너 고정 유지 (제목과 겹치지 않도록) */
 .item-card-tile-art-has-img > .cat-card-tier{position:absolute;top:10px;right:10px;z-index:2}
 
+/* 카드가 낮은 텍스트형이 되면서 우상단 고정 뱃지가 제목과 겹칠 수 있어
+   첫 줄(item-card-tile-name)에만 오른쪽 여백을 확보해 뱃지 자리를 비워둔다.
+   (이미지 있는 카드는 뱃지가 절대 배치라 겹치지 않으므로 위에서 padding-right:0으로 되돌림) */
 .item-card-tile-name{
   font-family:var(--f-display);font-weight:900;color:var(--dim);
   font-size:clamp(.86rem,2.2vw,1.04rem);line-height:1.28;text-align:left;
   word-break:keep-all;overflow-wrap:break-word;max-width:22ch;
+  padding-right:64px;
 }
 .item-card-tile-name-en{
   font-size:clamp(.86rem,2.2vw,1.04rem);letter-spacing:.02em;color:var(--ivory);text-transform:uppercase;

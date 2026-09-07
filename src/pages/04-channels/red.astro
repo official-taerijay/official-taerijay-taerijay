@@ -55,7 +55,7 @@ const color = '#E1261C';
         {categories.map((cat) => (
           <a href={`/04-channels/red/${cat.slug}`} class="cat-card">
             <div class="cat-card-art">
-              <span class={`cat-card-tier notranslate ${cat.free ? 'is-free' : 'is-paid'}`} translate="no">{cat.free ? 'FREE' : 'PAID'}</span>
+              <span class={`cat-card-tier notranslate ${cat.free ? 'is-free' : 'is-paid'}`} translate="no">{cat.free ? '무료 FREE' : '유료 PAID'}</span>
               <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
               <span class="cat-card-name-en">{cat.labelEn}</span>
             </div>

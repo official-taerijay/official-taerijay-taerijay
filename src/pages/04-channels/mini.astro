@@ -68,7 +68,7 @@ const color = '#e8e4dc';
         {tabs.map((tab) => (
           <a href={`/04-channels/mini/${tab.slug}`} class="cat-card">
             <div class="cat-card-art">
-              <span class={`cat-card-tier notranslate ${tab.free ? 'is-free' : 'is-paid'}`} translate="no">{tab.free ? 'FREE' : 'PAID'}</span>
+              <span class={`cat-card-tier notranslate ${tab.free ? 'is-free' : 'is-paid'}`} translate="no">{tab.free ? '무료 FREE' : '유료 PAID'}</span>
               <span class="cat-card-name notranslate" translate="no">{tab.label}</span>
               <span class="cat-card-name-en">{tab.labelEn}</span>
               {tab.sub && <span class="cat-card-sub notranslate" translate="no">{tab.sub}</span>}

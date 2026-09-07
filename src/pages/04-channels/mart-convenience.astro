@@ -77,7 +77,7 @@ const color = '#FFDD00';
       {brands.map((b) => (
         <a href={`/04-channels/mart-convenience/${b.slug}`} class="cat-card">
           <div class="cat-card-art">
-            <span class="cat-card-tier cat-card-tier-mixed notranslate" translate="no">FREE + PAID</span>
+            <span class="cat-card-tier cat-card-tier-mixed notranslate" translate="no">무료+유료 FREE+PAID</span>
             <span class="cat-card-name notranslate" translate="no">{b.label}</span>
             <span class="cat-card-name-en">{b.labelEn}</span>
             <span class="cat-card-sub notranslate" translate="no">{b.sub}</span>
@@ -87,7 +87,7 @@ const color = '#FFDD00';
       {extras.map((cat) => (
         <a href={`/04-channels/mart-convenience/${cat.slug}`} class="cat-card">
           <div class="cat-card-art">
-            <span class={`cat-card-tier notranslate ${cat.free ? 'is-free' : 'is-paid'}`} translate="no">{cat.free ? 'FREE' : 'PAID'}</span>
+            <span class={`cat-card-tier notranslate ${cat.free ? 'is-free' : 'is-paid'}`} translate="no">{cat.free ? '무료 FREE' : '유료 PAID'}</span>
             <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
             <span class="cat-card-name-en">{cat.labelEn}</span>
           </div>
