@@ -39,9 +39,31 @@ export function splitSentences(text) {
 // addr_kr에서 "서울/부산/제주 ..." 같은 시/도 단위를 최대한 추출.
 // item.region이 있으면 그걸 우선 쓰고, 없으면 주소 앞부분에서 시/도명을 뽑아온다.
 const SIDO_LIST = ['서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종', '경기', '강원', '충북', '충남', '전북', '전남', '경북', '경남', '제주'];
+// 주소가 "경상북도/전라남도" 같은 정식 행정구역명으로 시작하는 경우도 축약형(SIDO_LIST) 표준으로 인식시키기 위한 매핑.
+// 정식명이 축약형보다 먼저 매칭되도록 별도 리스트로 우선 검사한다.
+const SIDO_FULL_MAP = {
+  '서울특별시': '서울', '부산광역시': '부산', '대구광역시': '대구', '인천광역시': '인천',
+  '광주광역시': '광주', '대전광역시': '대전', '울산광역시': '울산', '세종특별자치시': '세종',
+  '경기도': '경기', '강원특별자치도': '강원', '강원도': '강원',
+  '충청북도': '충북', '충청남도': '충남', '전북특별자치도': '전북', '전라북도': '전북', '전라남도': '전남',
+  '경상북도': '경북', '경상남도': '경남', '제주특별자치도': '제주', '제주도': '제주',
+};
+// item.region(mini 채널처럼 시트에 이미 지역이 채워진 경우)의 표기 편차를 같은 지역칩으로 통합.
+// "강원도"/"강원특별자치도" → "강원", "경기북부"/"경기남부"(세분화 코스명) → "경기" 등.
+// SIDO_LIST에 이미 있는 값(서울, 부산 등)은 그대로 두고, 여기 없는 표기만 별칭으로 매핑한다.
+const REGION_ALIAS_MAP = {
+  ...SIDO_FULL_MAP,
+  '경기북부': '경기',
+  '경기남부': '경기',
+};
+function normalizeRegionToken(token) {
+  return REGION_ALIAS_MAP[token] || token;
+}
 export function extractSido(item) {
-  if (item.region) return item.region.split(/[·,\s]/)[0];
+  if (item.region) return normalizeRegionToken(item.region.split(/[·,\s]/)[0]);
   const addr = item.addr_kr || '';
+  const fullMatch = Object.keys(SIDO_FULL_MAP).find((full) => addr.startsWith(full) || addr.includes(full));
+  if (fullMatch) return SIDO_FULL_MAP[fullMatch];
   const found = SIDO_LIST.find((s) => addr.startsWith(s) || addr.includes(s));
   return found || '';
 }

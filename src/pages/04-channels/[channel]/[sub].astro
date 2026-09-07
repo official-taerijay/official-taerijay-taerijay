@@ -10,6 +10,9 @@ import { fetchChannelRows, deriveCategoriesFromRows, toStr } from '../../../lib/
 import { withItemSlugs, extractSido, sidoToEn } from '../../../lib/itemHelpers.js';
 import '../../../styles/channel-page.css';
 
+// 동시접속 대량 트래픽 대비: 공개 콘텐츠라 Vercel Edge CDN이 60초간 캐싱하도록 지시
+Astro.response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300');
+
 const { channel, sub } = Astro.params;
 
 let allRows = [];

@@ -111,8 +111,23 @@ function filterByPublishDate(rows, now = new Date()) {
   });
 }
 
-// channel: 'entertainment' | 'protocol' | 'mini' | 'red' | 'green' | 'mart-convenience'
-export async function fetchChannelRows(channel) {
+// ── 인메모리 캐시 (동시접속 대량 트래픽 대응) ──────────────────────────
+// 서버리스 함수 인스턴스는 콜드스타트 후 짧은 시간 동안 여러 요청을 재사용하는데,
+// 캐시가 없으면 그 매 요청마다 구글시트로 fetch가 나가 동시접속이 수천~수만 명
+// 규모가 되는 순간 구글시트에 요청이 폭주해 지연/실패(429 등)로 이어질 수 있다.
+//
+// 아래 두 장치로 이를 방지한다:
+//   1) TTL 캐시: 채널별로 마지막으로 가져온 결과를 CACHE_TTL_MS 동안 재사용.
+//      콘텐츠 반영 지연은 최대 TTL만큼이며(운영상 60초면 충분), 그 사이의
+//      수만 건 요청은 전부 캐시로 응답해 구글시트 호출이 사실상 발생하지 않는다.
+//   2) in-flight 중복 제거: 캐시가 막 만료된 찰나에 동시에 수천 개 요청이
+//      몰려도, 이미 진행 중인 fetch Promise를 그대로 공유해 실제 네트워크
+//      요청은 채널당 단 1건만 나가도록 한다.
+const CACHE_TTL_MS = 60 * 1000; // 60초 — 구글시트 CSV 반영 주기와 맞춤
+const rowsCache = new Map(); // channel -> { rows, fetchedAt }
+const inFlight = new Map(); // channel -> Promise<rows>
+
+async function fetchChannelRowsUncached(channel) {
   const { id, gid } = resolveSheetTarget(channel);
 
   // 구글시트 ID가 아직 설정되지 않은 채널은 내장된 로컬 데이터를 사용
@@ -137,6 +152,31 @@ export async function fetchChannelRows(channel) {
     }
     throw e;
   }
+}
+
+// channel: 'entertainment' | 'protocol' | 'mini' | 'red' | 'green' | 'mart-convenience'
+export async function fetchChannelRows(channel) {
+  const cached = rowsCache.get(channel);
+  if (cached && Date.now() - cached.fetchedAt < CACHE_TTL_MS) {
+    return cached.rows;
+  }
+
+  // 이미 같은 채널에 대한 fetch가 진행 중이면 그 결과를 그대로 재사용
+  // (캐시 만료 직후 동시에 몰리는 대량 요청이 전부 개별 fetch를 쏘지 않도록)
+  const existing = inFlight.get(channel);
+  if (existing) return existing;
+
+  const promise = fetchChannelRowsUncached(channel)
+    .then((rows) => {
+      rowsCache.set(channel, { rows, fetchedAt: Date.now() });
+      return rows;
+    })
+    .finally(() => {
+      inFlight.delete(channel);
+    });
+
+  inFlight.set(channel, promise);
+  return promise;
 }
 
 // 하위호환: 기존 sheetKey 기반 호출부(sheet-data.js)를 위해 유지

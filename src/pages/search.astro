@@ -8,6 +8,9 @@ import Layout from '../layouts/Layout.astro';
 import { fetchChannelRows, toStr } from '../lib/sheetsCms.js';
 import { withItemSlugs } from '../lib/itemHelpers.js';
 
+// 동시접속 대량 트래픽 대비: 검색 결과도 공개 데이터 기반이라 CDN이 쿼리(q)별로 60초간 캐싱하도록 지시
+Astro.response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300');
+
 const CHANNELS = [
   { slug: 'entertainment', label: 'taerijay+entertainment', color: '#00E5FF' },
   { slug: 'protocol', label: 'taerijay+protocol', color: '#F16B24' },
