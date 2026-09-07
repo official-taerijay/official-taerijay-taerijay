@@ -130,7 +130,16 @@ if (showRegionFilter) {
               class={`item-card-tile${isLocked ? ' item-card-tile-locked' : ''}`}
               data-region={sido || ''}
             >
-              <div class="item-card-tile-art">
+              <div class={`item-card-tile-art${item.img ? ' item-card-tile-art-has-img' : ''}`}>
+                {item.img && (
+                  <img
+                    src={item.img}
+                    alt=""
+                    class="item-card-tile-bg"
+                    loading="lazy"
+                    onerror="this.remove(); this.closest('.item-card-tile-art')?.classList.remove('item-card-tile-art-has-img');"
+                  />
+                )}
                 <span class={`cat-card-tier notranslate ${isLocked ? 'is-paid' : 'is-free'}`} translate="no">{isLocked ? 'PAID' : 'FREE'}</span>
                 <span class="item-card-tile-name notranslate" translate="no">{item.title_kr}</span>
                 {item.title_en && <span class="item-card-tile-name-en">{item.title_en}</span>}

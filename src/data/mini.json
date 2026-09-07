@@ -27,7 +27,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -57,7 +58,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -87,7 +89,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -117,7 +120,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -147,7 +151,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -177,7 +182,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -207,7 +213,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -237,7 +244,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -267,7 +275,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -297,7 +306,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -327,7 +337,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -357,7 +368,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -387,7 +399,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -417,7 +430,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -447,7 +461,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -477,7 +492,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -507,7 +523,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -537,7 +554,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -567,7 +585,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -597,7 +616,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -627,7 +647,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -657,7 +678,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -687,7 +709,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "1day",
@@ -717,7 +740,8 @@
     "sub_kr": "1일 코스",
     "sub_en": "1-Day Course",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -747,7 +771,8 @@
     "sub_kr": "1일 코스",
     "sub_en": "1-Day Course",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -777,7 +802,8 @@
     "sub_kr": "1일 코스",
     "sub_en": "1-Day Course",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "3hour",
@@ -807,7 +833,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -837,7 +864,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -867,7 +895,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -897,7 +926,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -927,7 +957,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -957,7 +988,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "nightview",
@@ -987,7 +1019,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "1day",
@@ -1017,7 +1050,8 @@
     "sub_kr": "1일 코스",
     "sub_en": "1-Day Course",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "3hour",
@@ -1047,7 +1081,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -1077,7 +1112,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -1107,7 +1143,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -1137,7 +1174,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -1167,7 +1205,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -1197,7 +1236,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -1227,7 +1267,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -1257,7 +1298,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "1day",
@@ -1287,7 +1329,8 @@
     "sub_kr": "1일 코스",
     "sub_en": "1-Day Course",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "3hour",
@@ -1317,7 +1360,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -1347,7 +1391,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -1377,7 +1422,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -1407,7 +1453,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -1437,7 +1484,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -1467,7 +1515,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -1497,7 +1546,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -1527,7 +1577,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -1557,7 +1608,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -1587,7 +1639,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -1617,7 +1670,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -1647,7 +1701,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -1677,7 +1732,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -1707,7 +1763,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -1737,7 +1794,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "1day",
@@ -1767,7 +1825,8 @@
     "sub_kr": "1일 코스",
     "sub_en": "1-Day Course",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "3hour",
@@ -1797,7 +1856,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -1827,7 +1887,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -1857,7 +1918,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -1887,7 +1949,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -1917,7 +1980,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -1947,7 +2011,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -1977,7 +2042,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -2007,7 +2073,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -2037,7 +2104,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -2067,7 +2135,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -2097,7 +2166,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -2127,7 +2197,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -2157,7 +2228,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -2187,7 +2259,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -2217,7 +2290,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -2247,7 +2321,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -2277,7 +2352,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -2307,7 +2383,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -2337,7 +2414,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -2367,7 +2445,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -2397,7 +2476,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -2427,7 +2507,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -2457,7 +2538,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -2487,7 +2569,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -2517,7 +2600,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -2547,7 +2631,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -2577,7 +2662,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -2607,7 +2693,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -2637,7 +2724,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -2667,7 +2755,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -2697,7 +2786,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -2727,7 +2817,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -2757,7 +2848,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -2787,7 +2879,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -2817,7 +2910,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -2847,7 +2941,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -2877,7 +2972,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -2907,7 +3003,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -2937,7 +3034,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "kdrama",
@@ -2967,7 +3065,8 @@
     "sub_kr": "K-드라마 촬영지",
     "sub_en": "K-Drama Locations",
     "sub_free": "",
-    "sub_order": 8
+    "sub_order": 8,
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -2997,7 +3096,8 @@
     "sub_kr": "K-드라마 촬영지",
     "sub_en": "K-Drama Locations",
     "sub_free": "",
-    "sub_order": 8
+    "sub_order": 8,
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -3027,7 +3127,8 @@
     "sub_kr": "K-드라마 촬영지",
     "sub_en": "K-Drama Locations",
     "sub_free": "",
-    "sub_order": 8
+    "sub_order": 8,
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -3057,7 +3158,8 @@
     "sub_kr": "K-드라마 촬영지",
     "sub_en": "K-Drama Locations",
     "sub_free": "",
-    "sub_order": 8
+    "sub_order": 8,
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -3087,7 +3189,8 @@
     "sub_kr": "K-드라마 촬영지",
     "sub_en": "K-Drama Locations",
     "sub_free": "",
-    "sub_order": 8
+    "sub_order": 8,
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -3117,7 +3220,8 @@
     "sub_kr": "K-드라마 촬영지",
     "sub_en": "K-Drama Locations",
     "sub_free": "",
-    "sub_order": 8
+    "sub_order": 8,
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -3147,7 +3251,8 @@
     "sub_kr": "K-드라마 촬영지",
     "sub_en": "K-Drama Locations",
     "sub_free": "",
-    "sub_order": 8
+    "sub_order": 8,
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "nightview",
@@ -3177,7 +3282,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -3207,7 +3313,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -3237,7 +3344,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -3267,7 +3375,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -3297,7 +3406,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -3327,7 +3437,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -3357,7 +3468,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -3387,7 +3499,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "photo",
@@ -3417,7 +3530,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -3447,7 +3561,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -3477,7 +3592,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -3507,7 +3623,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -3537,7 +3654,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -3567,7 +3685,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "indoor",
@@ -3597,7 +3716,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -3627,7 +3747,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -3657,7 +3778,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -3687,7 +3809,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -3717,7 +3840,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -3747,7 +3871,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -3777,7 +3902,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "2day",
@@ -3807,7 +3933,8 @@
     "sub_kr": "2일 코스",
     "sub_en": "2-Day Course",
     "sub_free": "",
-    "sub_order": 4
+    "sub_order": 4,
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -3837,7 +3964,8 @@
     "sub_kr": "2일 코스",
     "sub_en": "2-Day Course",
     "sub_free": "",
-    "sub_order": 4
+    "sub_order": 4,
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -3867,7 +3995,8 @@
     "sub_kr": "2일 코스",
     "sub_en": "2-Day Course",
     "sub_free": "",
-    "sub_order": 4
+    "sub_order": 4,
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -3897,7 +4026,8 @@
     "sub_kr": "2일 코스",
     "sub_en": "2-Day Course",
     "sub_free": "",
-    "sub_order": 4
+    "sub_order": 4,
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -3927,7 +4057,8 @@
     "sub_kr": "2일 코스",
     "sub_en": "2-Day Course",
     "sub_free": "",
-    "sub_order": 4
+    "sub_order": 4,
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "3day",
@@ -3957,7 +4088,8 @@
     "sub_kr": "3일 코스",
     "sub_en": "3-Day Course",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -3987,7 +4119,8 @@
     "sub_kr": "3일 코스",
     "sub_en": "3-Day Course",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -4017,7 +4150,8 @@
     "sub_kr": "3일 코스",
     "sub_en": "3-Day Course",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -4047,7 +4181,8 @@
     "sub_kr": "3일 코스",
     "sub_en": "3-Day Course",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "region",
@@ -4077,7 +4212,8 @@
     "sub_kr": "지역별로",
     "sub_en": "By Region",
     "sub_free": "",
-    "sub_order": 6
+    "sub_order": 6,
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -4107,7 +4243,8 @@
     "sub_kr": "지역별로",
     "sub_en": "By Region",
     "sub_free": "",
-    "sub_order": 6
+    "sub_order": 6,
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -4137,7 +4274,8 @@
     "sub_kr": "지역별로",
     "sub_en": "By Region",
     "sub_free": "",
-    "sub_order": 6
+    "sub_order": 6,
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -4167,7 +4305,8 @@
     "sub_kr": "지역별로",
     "sub_en": "By Region",
     "sub_free": "",
-    "sub_order": 6
+    "sub_order": 6,
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "3hour",
@@ -4197,7 +4336,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -4227,7 +4367,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -4257,7 +4398,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -4287,7 +4429,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -4317,7 +4460,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -4347,7 +4491,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -4377,7 +4522,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -4407,7 +4553,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -4437,7 +4584,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -4467,7 +4615,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -4497,7 +4646,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -4527,7 +4677,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -4557,7 +4708,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -4587,7 +4739,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -4617,7 +4770,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "1day",
@@ -4647,7 +4801,8 @@
     "sub_kr": "1일 코스",
     "sub_en": "1-Day Course",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "recommend",
@@ -4677,7 +4832,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -4707,7 +4863,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "nightview",
@@ -4737,7 +4894,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "recommend",
@@ -4767,7 +4925,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -4797,7 +4956,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -4827,7 +4987,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -4857,7 +5018,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -4887,7 +5049,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "1day",
@@ -4917,7 +5080,8 @@
     "sub_kr": "1일 코스",
     "sub_en": "1-Day Course",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "kdrama",
@@ -4947,7 +5111,8 @@
     "sub_kr": "K-드라마 촬영지",
     "sub_en": "K-Drama Locations",
     "sub_free": "",
-    "sub_order": 8
+    "sub_order": 8,
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "2day",
@@ -4977,7 +5142,8 @@
     "sub_kr": "2일 코스",
     "sub_en": "2-Day Course",
     "sub_free": "",
-    "sub_order": 4
+    "sub_order": 4,
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -5007,7 +5173,8 @@
     "sub_kr": "2일 코스",
     "sub_en": "2-Day Course",
     "sub_free": "",
-    "sub_order": 4
+    "sub_order": 4,
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "3day",
@@ -5037,7 +5204,8 @@
     "sub_kr": "3일 코스",
     "sub_en": "3-Day Course",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "region",
@@ -5067,7 +5235,8 @@
     "sub_kr": "지역별로",
     "sub_en": "By Region",
     "sub_free": "",
-    "sub_order": 6
+    "sub_order": 6,
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "3hour",
@@ -5097,7 +5266,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -5127,7 +5297,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -5157,7 +5328,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -5187,7 +5359,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -5217,7 +5390,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -5247,7 +5421,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -5277,7 +5452,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -5307,7 +5483,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -5337,7 +5514,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -5367,7 +5545,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -5397,7 +5576,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -5427,7 +5607,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -5457,7 +5638,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -5487,7 +5669,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -5517,7 +5700,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -5547,7 +5731,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -5577,7 +5762,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -5607,7 +5793,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -5637,7 +5824,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -5667,7 +5855,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -5697,7 +5886,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -5727,7 +5917,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -5757,7 +5948,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "1day",
@@ -5787,7 +5979,8 @@
     "sub_kr": "1일 코스",
     "sub_en": "1-Day Course",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "3hour",
@@ -5817,7 +6010,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -5847,7 +6041,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -5877,7 +6072,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -5907,7 +6103,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -5937,7 +6134,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -5967,7 +6165,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -5997,7 +6196,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -6027,7 +6227,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -6057,7 +6258,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -6087,7 +6289,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -6117,7 +6320,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -6147,7 +6351,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -6177,7 +6382,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -6207,7 +6413,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -6237,7 +6444,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "nightview",
@@ -6267,7 +6475,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "3hour",
@@ -6297,7 +6506,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "1day",
@@ -6327,7 +6537,8 @@
     "sub_kr": "1일 코스",
     "sub_en": "1-Day Course",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "kdrama",
@@ -6357,7 +6568,8 @@
     "sub_kr": "K-드라마 촬영지",
     "sub_en": "K-Drama Locations",
     "sub_free": "",
-    "sub_order": 8
+    "sub_order": 8,
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "nightview",
@@ -6387,7 +6599,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "photo",
@@ -6417,7 +6630,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -6447,7 +6661,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "indoor",
@@ -6477,7 +6692,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "2day",
@@ -6507,7 +6723,8 @@
     "sub_kr": "2일 코스",
     "sub_en": "2-Day Course",
     "sub_free": "",
-    "sub_order": 4
+    "sub_order": 4,
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -6537,7 +6754,8 @@
     "sub_kr": "2일 코스",
     "sub_en": "2-Day Course",
     "sub_free": "",
-    "sub_order": 4
+    "sub_order": 4,
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -6567,7 +6785,8 @@
     "sub_kr": "2일 코스",
     "sub_en": "2-Day Course",
     "sub_free": "",
-    "sub_order": 4
+    "sub_order": 4,
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "3day",
@@ -6597,7 +6816,8 @@
     "sub_kr": "3일 코스",
     "sub_en": "3-Day Course",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -6627,7 +6847,8 @@
     "sub_kr": "3일 코스",
     "sub_en": "3-Day Course",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "region",
@@ -6657,7 +6878,8 @@
     "sub_kr": "지역별로",
     "sub_en": "By Region",
     "sub_free": "",
-    "sub_order": 6
+    "sub_order": 6,
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -6687,7 +6909,8 @@
     "sub_kr": "지역별로",
     "sub_en": "By Region",
     "sub_free": "",
-    "sub_order": 6
+    "sub_order": 6,
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "recommend",
@@ -6717,7 +6940,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -6747,7 +6971,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -6777,7 +7002,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -6807,7 +7033,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -6837,7 +7064,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -6867,7 +7095,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -6897,7 +7126,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -6927,7 +7157,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -6957,7 +7188,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -6987,7 +7219,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -7017,7 +7250,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -7047,7 +7281,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -7077,7 +7312,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -7107,7 +7343,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -7137,7 +7374,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -7167,7 +7405,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -7197,7 +7436,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -7227,7 +7467,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -7257,7 +7498,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -7287,7 +7529,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -7317,7 +7560,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -7347,7 +7591,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -7377,7 +7622,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -7407,7 +7653,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -7437,7 +7684,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -7467,7 +7715,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -7497,7 +7746,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -7527,7 +7777,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -7557,7 +7808,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -7587,7 +7839,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -7617,7 +7870,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -7647,7 +7901,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -7677,7 +7932,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -7707,7 +7963,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -7737,7 +7994,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -7767,7 +8025,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -7797,7 +8056,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -7827,7 +8087,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -7857,7 +8118,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -7887,7 +8149,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -7917,7 +8180,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "recommend",
@@ -7947,7 +8211,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "1day",
@@ -7977,7 +8242,8 @@
     "sub_kr": "1일 코스",
     "sub_en": "1-Day Course",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "3hour",
@@ -8007,7 +8273,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "nightview",
@@ -8037,7 +8304,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "recommend",
@@ -8067,7 +8335,8 @@
     "sub_kr": "추천코스",
     "sub_en": "Recommended",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -8097,7 +8366,8 @@
     "sub_kr": "3시간 코스 (서울 12개)",
     "sub_en": "3-Hour Course",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "1day",
@@ -8127,7 +8397,8 @@
     "sub_kr": "1일 코스",
     "sub_en": "1-Day Course",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "kdrama",
@@ -8157,7 +8428,8 @@
     "sub_kr": "K-드라마 촬영지",
     "sub_en": "K-Drama Locations",
     "sub_free": "",
-    "sub_order": 8
+    "sub_order": 8,
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "2day",
@@ -8187,7 +8459,8 @@
     "sub_kr": "2일 코스",
     "sub_en": "2-Day Course",
     "sub_free": "",
-    "sub_order": 4
+    "sub_order": 4,
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -8217,7 +8490,8 @@
     "sub_kr": "2일 코스",
     "sub_en": "2-Day Course",
     "sub_free": "",
-    "sub_order": 4
+    "sub_order": 4,
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -8247,7 +8521,8 @@
     "sub_kr": "2일 코스",
     "sub_en": "2-Day Course",
     "sub_free": "",
-    "sub_order": 4
+    "sub_order": 4,
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "3day",
@@ -8277,7 +8552,8 @@
     "sub_kr": "3일 코스",
     "sub_en": "3-Day Course",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -8307,7 +8583,8 @@
     "sub_kr": "3일 코스",
     "sub_en": "3-Day Course",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "region",
@@ -8337,7 +8614,8 @@
     "sub_kr": "지역별로",
     "sub_en": "By Region",
     "sub_free": "",
-    "sub_order": 6
+    "sub_order": 6,
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -8367,7 +8645,8 @@
     "sub_kr": "지역별로",
     "sub_en": "By Region",
     "sub_free": "",
-    "sub_order": 6
+    "sub_order": 6,
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "booking-tips",
@@ -8397,7 +8676,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -8427,7 +8707,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -8457,7 +8738,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -8487,7 +8769,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -8517,7 +8800,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -8547,7 +8831,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -8577,7 +8862,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -8607,7 +8893,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "emergency-help",
@@ -8637,7 +8924,8 @@
     "sub_kr": "응급·긴급 통역",
     "sub_en": "Emergency Help",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "img": "/images/mini/genre/emergency-help.png"
   },
   {
     "sub": "emergency-help",
@@ -8667,7 +8955,8 @@
     "sub_kr": "응급·긴급 통역",
     "sub_en": "Emergency Help",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "img": "/images/mini/genre/emergency-help.png"
   },
   {
     "sub": "emergency-help",
@@ -8697,7 +8986,8 @@
     "sub_kr": "응급·긴급 통역",
     "sub_en": "Emergency Help",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "img": "/images/mini/genre/emergency-help.png"
   },
   {
     "sub": "emergency-help",
@@ -8727,7 +9017,8 @@
     "sub_kr": "응급·긴급 통역",
     "sub_en": "Emergency Help",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "img": "/images/mini/genre/emergency-help.png"
   },
   {
     "sub": "emergency-help",
@@ -8757,7 +9048,8 @@
     "sub_kr": "응급·긴급 통역",
     "sub_en": "Emergency Help",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "img": "/images/mini/genre/emergency-help.png"
   },
   {
     "sub": "kdrama",
@@ -8787,7 +9079,8 @@
     "sub_kr": "K-드라마 촬영지",
     "sub_en": "K-Drama Locations",
     "sub_free": "",
-    "sub_order": 8
+    "sub_order": 8,
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "3hour",
@@ -8817,7 +9110,8 @@
     "direction_kr": "수원역 노보텔 정류장: 11번 또는 13번 버스 탑승 → 장안문 인근 하차 후 도보 이동",
     "direction_en": "From the Novotel stop at Suwon Station: take Bus No. 11 or 13 to a stop near Janganmun, then a short walk",
     "keywords_kr": "수원 화성▪장안문▪수원 화성 북문",
-    "hashtags": "SuwonHwaseong▪Janganmun▪UNESCOKorea▪SuwonTravel"
+    "hashtags": "SuwonHwaseong▪Janganmun▪UNESCOKorea▪SuwonTravel",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -8847,7 +9141,8 @@
     "direction_kr": "수원역 노보텔 정류장: 11번 또는 13번 버스 탑승 → 화성행궁·수원성지 하차 후 도보 약 5분 → 화성행궁",
     "direction_en": "From the Novotel stop at Suwon Station: take Bus No. 11 or 13 to the Hwaseong Haenggung/Suwon Sacred Site stop, then a 5-min walk to Hwaseong Haenggung",
     "keywords_kr": "화성행궁▪정조대왕▪수원 화성",
-    "hashtags": "HwaseongHaenggung▪UNESCOKorea▪SuwonTravel"
+    "hashtags": "HwaseongHaenggung▪UNESCOKorea▪SuwonTravel",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -8877,7 +9172,8 @@
     "direction_kr": "매산시장 정류장: 11번 또는 13번 버스 탑승 → 팔달문 인근 하차 후 도보 이동",
     "direction_en": "From Maesan Market stop: take Bus No. 11 or 13 to a stop near Paldalmun, then a short walk",
     "keywords_kr": "수원 화성▪팔달문▪수원 화성 남문",
-    "hashtags": "SuwonHwaseong▪Paldalmun▪UNESCOKorea▪SuwonTravel"
+    "hashtags": "SuwonHwaseong▪Paldalmun▪UNESCOKorea▪SuwonTravel",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -8907,7 +9203,8 @@
     "addr_kr": "강원특별자치도 양양군 현남면 인구중앙길 95 (인구해변 일대)",
     "addr_en": "95 Ingu-jungang-gil, Hyeonnam-myeon, Yangyang-gun, Gangwon-do (Ingu Beach area)",
     "keywords_kr": "죽도해변▪양양 서핑▪서프오션▪양양 서핑샵",
-    "hashtags": "JukdoBeach▪YangyangSurf▪SurfOcean▪KoreaSurfing"
+    "hashtags": "JukdoBeach▪YangyangSurf▪SurfOcean▪KoreaSurfing",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -8937,7 +9234,8 @@
     "addr_kr": "강원특별자치도 양양군 현남면 인구중앙길 95 (인구해변 일대)",
     "addr_en": "95 Ingu-jungang-gil, Hyeonnam-myeon, Yangyang-gun, Gangwon-do (Ingu Beach area)",
     "keywords_kr": "죽도해변▪양양 서핑▪와이키키서프▪양양 서핑샵",
-    "hashtags": "JukdoBeach▪YangyangSurf▪WaikikiSurf▪KoreaSurfing"
+    "hashtags": "JukdoBeach▪YangyangSurf▪WaikikiSurf▪KoreaSurfing",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -8967,7 +9265,8 @@
     "addr_kr": "강원특별자치도 양양군 현남면 인구중앙길 95 (인구해변 일대)",
     "addr_en": "95 Ingu-jungang-gil, Hyeonnam-myeon, Yangyang-gun, Gangwon-do (Ingu Beach area)",
     "keywords_kr": "죽도해변▪양양 서핑▪서프랩▪양양 서핑샵",
-    "hashtags": "JukdoBeach▪YangyangSurf▪Surflab▪KoreaSurfing"
+    "hashtags": "JukdoBeach▪YangyangSurf▪Surflab▪KoreaSurfing",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -8997,7 +9296,8 @@
     "desc_kr": "예능 '무한도전' 촬영지로 알려진 50년 전통 닭갈비 맛집",
     "desc_en": "50-year tradition dakgalbi restaurant, known as a filming site for the show 'Infinite Challenge'",
     "keywords_kr": "춘천 닭갈비▪명동 닭갈비골목▪우미닭갈비▪춘천 여행",
-    "hashtags": "ChuncheonDakgalbi▪MyeongdongAlley▪UmiDakgalbi▪KoreaFoodTour"
+    "hashtags": "ChuncheonDakgalbi▪MyeongdongAlley▪UmiDakgalbi▪KoreaFoodTour",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -9027,7 +9327,8 @@
     "desc_kr": "명동 닭갈비 골목 숯불 닭갈비 맛집",
     "desc_en": "Charcoal-grilled dakgalbi restaurant in Myeongdong dakgalbi alley",
     "keywords_kr": "춘천 닭갈비▪명동 닭갈비골목▪조약돌숯불닭갈비▪춘천 여행",
-    "hashtags": "ChuncheonDakgalbi▪MyeongdongAlley▪SutbulDakgalbi▪KoreaFoodTour"
+    "hashtags": "ChuncheonDakgalbi▪MyeongdongAlley▪SutbulDakgalbi▪KoreaFoodTour",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -9057,7 +9358,8 @@
     "desc_kr": "명동 닭갈비 골목 숯불 닭불고기 맛집",
     "desc_en": "Charcoal-grilled chicken bulgogi restaurant in Myeongdong dakgalbi alley",
     "keywords_kr": "춘천 닭갈비▪명동 닭갈비골목▪원조숯불닭불고기▪춘천 여행",
-    "hashtags": "ChuncheonDakgalbi▪MyeongdongAlley▪DakbulgogiKorea▪KoreaFoodTour"
+    "hashtags": "ChuncheonDakgalbi▪MyeongdongAlley▪DakbulgogiKorea▪KoreaFoodTour",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -9087,7 +9389,8 @@
     "direction_kr": "강릉역: 테라로사 강릉본점(구정면)은 대중교통 도보 이동이 불가능해 택시 또는 차량 이용 권장",
     "direction_en": "From Gangneung Station: not walkable to Terarosa's Gangneung main store (Gujeong-myeon) — a taxi or car ride is recommended",
     "keywords_kr": "테라로사 강릉본점▪구정면 커피▪강릉 로스터리",
-    "hashtags": "TerarosaCoffee▪GangneungCafe▪KoreaCoffeeTour▪CoffeeRoastery"
+    "hashtags": "TerarosaCoffee▪GangneungCafe▪KoreaCoffeeTour▪CoffeeRoastery",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -9117,7 +9420,8 @@
     "direction_kr": "강릉역에서 시내버스로 안목해변(창해로) 정류장 하차 후 도보 이동",
     "direction_en": "Local bus from Gangneung Station to the Anmok Beach (Changhae-ro) stop, then a short walk",
     "keywords_kr": "안목해변 커피거리▪보헤미안 로스터즈▪박이추커피공장",
-    "hashtags": "BohemianRoasters▪AnmokBeach▪GangneungCafe▪KoreaCoffeeTour"
+    "hashtags": "BohemianRoasters▪AnmokBeach▪GangneungCafe▪KoreaCoffeeTour",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -9147,7 +9451,8 @@
     "desc_kr": "대포항 수산시장 내 활어회 상가, 새벽 5~8시경 가장 활기",
     "desc_en": "Live-fish vendor inside Daepohang market, most active around 5–8am",
     "keywords_kr": "대포항 새벽시장▪부부활어회센터▪속초 어시장",
-    "hashtags": "Daepohang▪SokchoFishMarket▪KoreaSeafood▪FreshCatch"
+    "hashtags": "Daepohang▪SokchoFishMarket▪KoreaSeafood▪FreshCatch",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -9178,7 +9483,8 @@
     "desc_en": "Live-fish vendor inside Daepohang market (11:30–21:00, break 16:00–17:00)",
     "hours_kr": "11:30–21:00 (브레이크타임 16:00–17:00)",
     "keywords_kr": "대포항 새벽시장▪종일활어▪속초 어시장",
-    "hashtags": "Daepohang▪SokchoFishMarket▪KoreaSeafood▪FreshCatch"
+    "hashtags": "Daepohang▪SokchoFishMarket▪KoreaSeafood▪FreshCatch",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -9208,7 +9514,8 @@
     "desc_kr": "대포항 수산시장 내 활어회 상가, 새벽 5~8시경 가장 활기",
     "desc_en": "Live-fish vendor inside Daepohang market, most active around 5–8am",
     "keywords_kr": "대포항 새벽시장▪갈성활어▪속초 어시장",
-    "hashtags": "Daepohang▪SokchoFishMarket▪KoreaSeafood▪FreshCatch"
+    "hashtags": "Daepohang▪SokchoFishMarket▪KoreaSeafood▪FreshCatch",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -9238,7 +9545,8 @@
     "desc_kr": "서문시장 야시장 대표 납작만두 맛집, 매주 금·토·일 운영",
     "desc_en": "Flat dumpling specialty shop at Seomun Market Night Market, open Fri/Sat/Sun only",
     "keywords_kr": "서문시장 야시장▪미성당 납작만두▪대구 먹거리",
-    "hashtags": "SeomunMarket▪DaeguNightMarket▪KoreaStreetFood▪DaeguFoodTour"
+    "hashtags": "SeomunMarket▪DaeguNightMarket▪KoreaStreetFood▪DaeguFoodTour",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -9268,7 +9576,8 @@
     "desc_kr": "서문시장 야시장 대표 떡볶이 맛집, 매주 금·토·일 운영",
     "desc_en": "Tteokbokki specialty shop at Seomun Market Night Market, open Fri/Sat/Sun only",
     "keywords_kr": "서문시장 야시장▪중앙떡볶이▪대구 먹거리",
-    "hashtags": "SeomunMarket▪DaeguNightMarket▪KoreaStreetFood▪DaeguFoodTour"
+    "hashtags": "SeomunMarket▪DaeguNightMarket▪KoreaStreetFood▪DaeguFoodTour",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "1day",
@@ -9298,7 +9607,8 @@
     "desc_kr": "2014년 개점, 포항·강릉·울산에도 지점 운영하는 송정 서핑스쿨\n▪ 초보 → 중급 5일 집중 마스터 코스\n▪ 일 2~3시간 · 수료증 발급",
     "desc_en": "Opened 2014, also operates branches in Pohang/Gangneung/Ulsan\n▪ Beginner → intermediate 5-day intensive master course\n▪ 2–3 hours/day · certificate issued",
     "keywords_kr": "송정 서핑▪서프홀릭 송정본점▪송정해수욕장▪부산 서핑스쿨",
-    "hashtags": "SongjeongBeach▪BusanSurfing▪Surfholic▪KoreaSurf"
+    "hashtags": "SongjeongBeach▪BusanSurfing▪Surfholic▪KoreaSurf",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9328,7 +9638,8 @@
     "desc_kr": "송정해수욕장 서핑스쿨\n▪ 초보 → 중급 5일 집중 마스터 코스\n▪ 일 2~3시간 · 수료증 발급",
     "desc_en": "Songjeong Beach surf school\n▪ Beginner → intermediate 5-day intensive master course\n▪ 2–3 hours/day · certificate issued",
     "keywords_kr": "송정 서핑▪엉클서프▪송정해수욕장▪부산 서핑스쿨",
-    "hashtags": "SongjeongBeach▪BusanSurfing▪UncleSurf▪KoreaSurf"
+    "hashtags": "SongjeongBeach▪BusanSurfing▪UncleSurf▪KoreaSurf",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9358,7 +9669,8 @@
     "desc_kr": "송정해수욕장 서핑스쿨\n▪ 초보 → 중급 5일 집중 마스터 코스\n▪ 일 2~3시간 · 수료증 발급",
     "desc_en": "Songjeong Beach surf school\n▪ Beginner → intermediate 5-day intensive master course\n▪ 2–3 hours/day · certificate issued",
     "keywords_kr": "송정 서핑▪데이서프▪송정해수욕장▪부산 서핑스쿨",
-    "hashtags": "SongjeongBeach▪BusanSurfing▪DaySurf▪KoreaSurf"
+    "hashtags": "SongjeongBeach▪BusanSurfing▪DaySurf▪KoreaSurf",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "recommend",
@@ -9388,7 +9700,8 @@
     "desc_kr": "경주 신라 토기 체험 공방 — 물레 성형 → 건조 → 완성품 배송",
     "desc_en": "Silla pottery experience studio — wheel shaping → drying → completed piece delivery",
     "keywords_kr": "신라 토기 체험▪라움공방▪황리단길 공방▪경주 전통공예",
-    "hashtags": "SillaPottery▪Hwangridangil▪KoreaCraftClass▪HandmadeKorea"
+    "hashtags": "SillaPottery▪Hwangridangil▪KoreaCraftClass▪HandmadeKorea",
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -9418,7 +9731,8 @@
     "desc_kr": "경주 금속공예(금·은·동 세공) 체험 공방",
     "desc_en": "Metal craft (gold·silver·copper) experience studio in Gyeongju",
     "keywords_kr": "경주 금속공예▪임다로운 금속공방▪황리단길 공방▪경주 전통공예",
-    "hashtags": "GyeongjuMetalcraft▪Hwangridangil▪KoreaCraftClass▪HandmadeKorea"
+    "hashtags": "GyeongjuMetalcraft▪Hwangridangil▪KoreaCraftClass▪HandmadeKorea",
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -9448,7 +9762,8 @@
     "addr_kr": "부산시 해운대구 동백로 52 더베이101 (우동 747-7) 요트탈래 매표소",
     "addr_en": "Yacht Tale Ticket Office, The Bay 101, 52 Dongbaek-ro, Haeundae-gu, Busan",
     "keywords_kr": "마린시티 요트투어▪선셋크루즈▪요트탈래▪더베이101",
-    "hashtags": "MarineCityYacht▪SunsetCruise▪YachtTale▪LuxuryBusan"
+    "hashtags": "MarineCityYacht▪SunsetCruise▪YachtTale▪LuxuryBusan",
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "recommend",
@@ -9478,7 +9793,8 @@
     "addr_kr": "부산시 해운대구 동백로 52 더베이101 (우동 747-7)",
     "addr_en": "The Bay 101, 52 Dongbaek-ro, Haeundae-gu, Busan",
     "keywords_kr": "마린시티 요트투어▪더베이101▪선셋크루즈▪부산 요트",
-    "hashtags": "MarineCityYacht▪TheBay101▪SunsetCruise▪LuxuryBusan"
+    "hashtags": "MarineCityYacht▪TheBay101▪SunsetCruise▪LuxuryBusan",
+    "img": "/images/mini/genre/recommend.png"
   },
   {
     "sub": "3hour",
@@ -9508,7 +9824,8 @@
     "direction_kr": "강릉역 → 202번 버스(약 15분) → 안목해변 정류장 하차",
     "direction_en": "Gangneung Station → Bus 202 (approx. 15min) → Get off at Anmok Beach stop",
     "keywords_kr": "강릉커피▪로스터리▪강릉카페▪커피투어▪핸드드립",
-    "hashtags": "GangneungCoffee▪Roastery▪GangneungCafe▪CoffeeTour▪HandDrip"
+    "hashtags": "GangneungCoffee▪Roastery▪GangneungCafe▪CoffeeTour▪HandDrip",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -9538,7 +9855,8 @@
     "direction_kr": "서문시장역 1번 출구: 도보 3분 → 서문시장 야시장",
     "direction_en": "From Exit 1: 3-min walk → Seomun Market Night Market",
     "keywords_kr": "대구야시장▪서문시장▪길거리음식▪대구여행▪포장마차",
-    "hashtags": "DaeguNightMarket▪SeomunMarket▪StreetFood▪DaeguTravel▪Pojangmacha"
+    "hashtags": "DaeguNightMarket▪SeomunMarket▪StreetFood▪DaeguTravel▪Pojangmacha",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -9568,7 +9886,8 @@
     "direction_kr": "속초버스터미널 → 1·1-1번 버스(약 10분) → 대포항 정류장 하차",
     "direction_en": "Sokcho Bus Terminal → Bus 1/1-1 (approx. 10min) → Get off at Daepohang stop",
     "keywords_kr": "대포항▪속초어시장▪활어▪속초여행▪동해바다",
-    "hashtags": "Daepohang▪SokchoFishMarket▪LiveFish▪SokchoTravel▪EastSea"
+    "hashtags": "Daepohang▪SokchoFishMarket▪LiveFish▪SokchoTravel▪EastSea",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "3hour",
@@ -9598,7 +9917,8 @@
     "direction_kr": "수원역 2번 출구 → 마을버스 11번(약 15분) → 화성행궁 정류장 하차",
     "direction_en": "From Exit 2 → Village bus 11 (approx. 15min) → Get off at Hwaseong Haenggung stop",
     "keywords_kr": "수원화성▪유네스코▪수원여행▪성곽투어▪경기도여행",
-    "hashtags": "SuwonHwaseong▪UNESCO▪SuwonTravel▪FortressTour▪GyeonggiTravel"
+    "hashtags": "SuwonHwaseong▪UNESCO▪SuwonTravel▪FortressTour▪GyeonggiTravel",
+    "img": "/images/mini/genre/3hour.png"
   },
   {
     "sub": "1day",
@@ -9628,7 +9948,8 @@
     "direction_kr": "서문시장역 5번 출구: 도보 10분 → 청라언덕 입구",
     "direction_en": "From Exit 5: 10-min walk to Cheongna Hill entrance",
     "keywords_kr": "대구 근대골목▪청라언덕▪계산성당▪김광석다시그리기길▪대구 당일치기",
-    "hashtags": "DaeguModernAlley▪CheongnaHill▪KimKwangSeokStreet▪DaeguTravel"
+    "hashtags": "DaeguModernAlley▪CheongnaHill▪KimKwangSeokStreet▪DaeguTravel",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9658,7 +9979,8 @@
     "direction_kr": "동피랑벽화마을 도보 관람 후 중앙시장 경유 → 통영케이블카 발개로 탑승장으로 이동",
     "direction_en": "From Dongpirang, walk through Jungang Market to Tongyeong Cable Car station on Balgae-ro",
     "keywords_kr": "통영 여행▪동피랑벽화마을▪통영케이블카▪미륵산▪경남 당일치기",
-    "hashtags": "Tongyeong▪Dongpirang▪TongyeongCableCar▪MireuksanMountain"
+    "hashtags": "Tongyeong▪Dongpirang▪TongyeongCableCar▪MireuksanMountain",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9688,7 +10010,8 @@
     "direction_kr": "여수엑스포역: 버스/택시로 15분 → 여수해상케이블카 자산공원 탑승장",
     "direction_en": "From Yeosu Expo Station: 15-min bus/taxi to Yeosu Cable Car Jasan Park station",
     "keywords_kr": "여수 밤바다▪여수해상케이블카▪오동도▪낭만포차거리▪전남 당일치기",
-    "hashtags": "YeosuNightSea▪YeosuCableCar▪Odongdo▪NangmanPocha"
+    "hashtags": "YeosuNightSea▪YeosuCableCar▪Odongdo▪NangmanPocha",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9718,7 +10041,8 @@
     "direction_kr": "도장포 선착장에서 외도행 유람선 탑승 → 약 30분 뒤 외도 보타니아 도착",
     "direction_en": "From Dojangpo pier, take the ferry to Oedo (about 30 min)",
     "keywords_kr": "거제 여행▪바람의언덕▪외도 보타니아▪해금강 유람선▪경남 당일치기",
-    "hashtags": "Geoje▪WindyHill▪OedoBotania▪HaegeumgangCruise"
+    "hashtags": "Geoje▪WindyHill▪OedoBotania▪HaegeumgangCruise",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9748,7 +10072,8 @@
     "direction_kr": "경암동 철길마을 도보 관람 후 초원사진관 방면으로 도보 이동(약 12분)",
     "direction_en": "After walking through the railroad village, 12-min walk to Chowon Photo Studio",
     "keywords_kr": "군산 여행▪경암동철길마을▪초원사진관▪근대문화유산▪전북 당일치기",
-    "hashtags": "Gunsan▪RailroadVillage▪ChowonPhotoStudio▪ModernHeritage"
+    "hashtags": "Gunsan▪RailroadVillage▪ChowonPhotoStudio▪ModernHeritage",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9778,7 +10103,8 @@
     "direction_kr": "가평역: 셔틀버스로 아침고요수목원 이동 → 이후 쁘띠프랑스행 셔틀 환승",
     "direction_en": "From Gapyeong Station: shuttle to Garden of Morning Calm, then transfer shuttle to Petite France",
     "keywords_kr": "가평 여행▪아침고요수목원▪쁘띠프랑스▪경기 당일치기",
-    "hashtags": "Gapyeong▪MorningCalmGarden▪PetiteFrance▪GyeonggiTravel"
+    "hashtags": "Gapyeong▪MorningCalmGarden▪PetiteFrance▪GyeonggiTravel",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9808,7 +10134,8 @@
     "direction_kr": "보성버스터미널: 시내버스로 약 20분 → 대한다원 정류장 하차",
     "direction_en": "From Boseong Bus Terminal: about 20-min bus ride to Daehan Dawon stop",
     "keywords_kr": "보성 녹차밭▪대한다원▪봇재▪전남 당일치기",
-    "hashtags": "Boseong▪GreenTeaField▪DaehanDawon▪JeollanamTravel"
+    "hashtags": "Boseong▪GreenTeaField▪DaehanDawon▪JeollanamTravel",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9838,7 +10165,8 @@
     "direction_kr": "태안버스터미널: 시외버스로 약 40분 → 꽃지해수욕장 정류장",
     "direction_en": "From Taean Bus Terminal: about 40-min bus ride to Kkotji Beach stop",
     "keywords_kr": "태안 여행▪안면도▪꽃지해수욕장▪서해 낙조▪충남 당일치기",
-    "hashtags": "Taean▪Anmyeondo▪KkotjiBeach▪WestSeaSunset"
+    "hashtags": "Taean▪Anmyeondo▪KkotjiBeach▪WestSeaSunset",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9868,7 +10196,8 @@
     "direction_kr": "춘천역: 시내버스로 가평선착장 이동 → 남이섬행 셔틀선 탑승",
     "direction_en": "From Chuncheon Station: bus to Gapyeong ferry dock, then shuttle boat to Nami Island",
     "keywords_kr": "춘천 여행▪남이섬▪소양강스카이워크▪명동닭갈비골목▪강원 당일치기",
-    "hashtags": "Chuncheon▪NamiIsland▪SoyanggangSkywalk▪DakgalbiAlley"
+    "hashtags": "Chuncheon▪NamiIsland▪SoyanggangSkywalk▪DakgalbiAlley",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9898,7 +10227,8 @@
     "direction_kr": "안국역 2번 출구: 도보 5분 → 북촌한옥마을 초입",
     "direction_en": "From Exit 2: 5-min walk to Bukchon Hanok Village entrance",
     "keywords_kr": "북촌한옥마을▪인사동▪한복 체험▪경복궁▪서울 당일치기",
-    "hashtags": "Bukchon▪Insadong▪HanbokExperience▪SeoulTravel"
+    "hashtags": "Bukchon▪Insadong▪HanbokExperience▪SeoulTravel",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9928,7 +10258,8 @@
     "direction_kr": "센트럴파크역 4번 출구: 도보 3분 → 송도 센트럴파크 입구",
     "direction_en": "From Exit 4: 3-min walk to Songdo Central Park entrance",
     "keywords_kr": "송도 센트럴파크▪인천 여행▪국립세계문자박물관▪인천 당일치기",
-    "hashtags": "Songdo▪CentralPark▪IncheonTravel▪HangeulMuseum"
+    "hashtags": "Songdo▪CentralPark▪IncheonTravel▪HangeulMuseum",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9958,7 +10289,8 @@
     "direction_kr": "함양시외버스터미널: 도보 15분 → 상림공원 입구",
     "direction_en": "From Hamyang Bus Terminal: 15-min walk to Sangnim Forest entrance",
     "keywords_kr": "함양 여행▪상림공원▪개평한옥마을▪경남 당일치기",
-    "hashtags": "Hamyang▪SangnimForest▪GaepyeongHanok▪JirisanArea"
+    "hashtags": "Hamyang▪SangnimForest▪GaepyeongHanok▪JirisanArea",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -9988,7 +10320,8 @@
     "direction_kr": "안동터미널: 246번 버스로 약 50분 → 하회마을 종합안내소",
     "direction_en": "From Andong Bus Terminal: about 50-min ride on Bus 246 to Hahoe Village Info Center",
     "keywords_kr": "안동 여행▪하회마을▪부용대▪경북 당일치기",
-    "hashtags": "Andong▪HahoeVillage▪UNESCOHeritage▪GyeongbukTravel"
+    "hashtags": "Andong▪HahoeVillage▪UNESCOHeritage▪GyeongbukTravel",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -10018,7 +10351,8 @@
     "direction_kr": "담양공용버스터미널: 도보 10분 → 죽녹원 매표소",
     "direction_en": "From Damyang Bus Terminal: 10-min walk to Juknokwon ticket office",
     "keywords_kr": "담양 여행▪죽녹원▪메타세쿼이아길▪전남 당일치기",
-    "hashtags": "Damyang▪Juknokwon▪MetasequoiaRoad▪JeollanamTravel"
+    "hashtags": "Damyang▪Juknokwon▪MetasequoiaRoad▪JeollanamTravel",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -10048,7 +10382,8 @@
     "direction_kr": "토성역 6번 출구: 마을버스 사하1·1-1번 환승 → 감천문화마을 정류장",
     "direction_en": "From Exit 6: transfer to village bus Saha 1 or 1-1 to Gamcheon Culture Village stop",
     "keywords_kr": "감천문화마을▪태종대▪부산 당일치기▪자갈치시장",
-    "hashtags": "GamcheonCultureVillage▪Taejongdae▪BusanTravel"
+    "hashtags": "GamcheonCultureVillage▪Taejongdae▪BusanTravel",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "1day",
@@ -10078,7 +10413,8 @@
     "direction_kr": "전주고속버스터미널: 시내버스로 약 20분 → 전주한옥마을 정류장",
     "direction_en": "From Jeonju Express Bus Terminal: about 20-min bus ride to Jeonju Hanok Village stop",
     "keywords_kr": "전주한옥마을▪경기전▪남부시장야시장▪전북 당일치기",
-    "hashtags": "JeonjuHanok▪Gyeonggijeon▪NambuMarket▪JeonbukTravel"
+    "hashtags": "JeonjuHanok▪Gyeonggijeon▪NambuMarket▪JeonbukTravel",
+    "img": "/images/mini/genre/1day.png"
   },
   {
     "sub": "2day",
@@ -10108,7 +10444,8 @@
     "direction_kr": "서문시장역 5번 출구: 도보 10분 → 청라언덕",
     "direction_en": "From Exit 5: 10-min walk to Cheongna Hill",
     "keywords_kr": "대구 2박▪청라언덕▪팔공산▪김광석길",
-    "hashtags": "Daegu▪CheongnaHill▪Palgongsan▪TwoDayTrip"
+    "hashtags": "Daegu▪CheongnaHill▪Palgongsan▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10138,7 +10475,8 @@
     "direction_kr": "통영종합버스터미널: 시내버스로 동피랑 방면 이동",
     "direction_en": "From Tongyeong Bus Terminal: local bus toward Dongpirang",
     "keywords_kr": "통영 거제 2박▪동피랑▪바람의언덕▪외도",
-    "hashtags": "Tongyeong▪Geoje▪WindyHill▪TwoDayTrip"
+    "hashtags": "Tongyeong▪Geoje▪WindyHill▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10168,7 +10506,8 @@
     "direction_kr": "여수엑스포역: 버스/택시 15분 → 자산공원 탑승장",
     "direction_en": "From Yeosu Expo Station: 15-min bus/taxi to Jasan Park station",
     "keywords_kr": "여수 2박▪여수밤바다▪해상케이블카▪향일암",
-    "hashtags": "Yeosu▪NightSea▪Hyangiram▪TwoDayTrip"
+    "hashtags": "Yeosu▪NightSea▪Hyangiram▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10198,7 +10537,8 @@
     "direction_kr": "순천역: 1번 버스로 약 30분 → 순천만국가정원 서문",
     "direction_en": "From Suncheon Station: about 30-min ride on Bus 1 to Suncheonman Garden West Gate",
     "keywords_kr": "순천 2박▪순천만습지▪낙안읍성▪전남 여행",
-    "hashtags": "Suncheon▪SuncheonmanBay▪NaganFolkVillage▪TwoDayTrip"
+    "hashtags": "Suncheon▪SuncheonmanBay▪NaganFolkVillage▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10228,7 +10568,8 @@
     "direction_kr": "태안버스터미널: 약 40분 → 꽃지해수욕장 정류장",
     "direction_en": "From Taean Bus Terminal: about 40-min bus ride to Kkotji Beach stop",
     "keywords_kr": "태안 2박▪안면도▪꽃지해수욕장▪천리포수목원",
-    "hashtags": "Taean▪Anmyeondo▪KkotjiBeach▪TwoDayTrip"
+    "hashtags": "Taean▪Anmyeondo▪KkotjiBeach▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10258,7 +10599,8 @@
     "direction_kr": "함양시외버스터미널: 도보 15분 → 상림공원",
     "direction_en": "From Hamyang Bus Terminal: 15-min walk to Sangnim Forest",
     "keywords_kr": "함양 산청 2박▪상림공원▪지리산둘레길▪경남 여행",
-    "hashtags": "Hamyang▪Sancheong▪JirisanDulle▪TwoDayTrip"
+    "hashtags": "Hamyang▪Sancheong▪JirisanDulle▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10288,7 +10630,8 @@
     "direction_kr": "단양시외버스터미널: 버스로 약 15분 → 도담삼봉 정류장",
     "direction_en": "From Danyang Bus Terminal: about 15-min bus ride to Dodam Sambong stop",
     "keywords_kr": "단양 2박▪도담삼봉▪만천하스카이워크▪충북 여행",
-    "hashtags": "Danyang▪DodamSambong▪ManchonhaSkywalk▪TwoDayTrip"
+    "hashtags": "Danyang▪DodamSambong▪ManchonhaSkywalk▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10318,7 +10661,8 @@
     "direction_kr": "거창시외버스터미널: 버스로 약 30분 → 수승대 정류장",
     "direction_en": "From Geochang Bus Terminal: about 30-min bus ride to Suseungdae stop",
     "keywords_kr": "거창 2박▪수승대▪감악산▪경남 여행",
-    "hashtags": "Geochang▪Suseungdae▪Gamaksan▪TwoDayTrip"
+    "hashtags": "Geochang▪Suseungdae▪Gamaksan▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10348,7 +10692,8 @@
     "direction_kr": "군산고속버스터미널: 택시 15분 → 경암동 철길마을",
     "direction_en": "From Gunsan Bus Terminal: 15-min taxi to Railroad Village",
     "keywords_kr": "군산 2박▪경암동철길마을▪선유도▪새만금",
-    "hashtags": "Gunsan▪RailroadVillage▪Seonyudo▪TwoDayTrip"
+    "hashtags": "Gunsan▪RailroadVillage▪Seonyudo▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10378,7 +10723,8 @@
     "direction_kr": "가평역: 셔틀버스로 남이섬 선착장 이동 → 셔틀선 탑승",
     "direction_en": "From Gapyeong Station: shuttle bus to Nami Island ferry dock, then shuttle boat",
     "keywords_kr": "가평 2박▪남이섬▪아침고요수목원▪쁘띠프랑스",
-    "hashtags": "Gapyeong▪NamiIsland▪MorningCalm▪TwoDayTrip"
+    "hashtags": "Gapyeong▪NamiIsland▪MorningCalm▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10408,7 +10754,8 @@
     "direction_kr": "안동터미널: 버스로 약 40분 → 도산서원 정류장",
     "direction_en": "From Andong Bus Terminal: about 40-min bus ride to Dosan Seowon stop",
     "keywords_kr": "안동 2박▪도산서원▪하회마을▪경북 여행",
-    "hashtags": "Andong▪DosanSeowon▪HahoeVillage▪TwoDayTrip"
+    "hashtags": "Andong▪DosanSeowon▪HahoeVillage▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10438,7 +10785,8 @@
     "direction_kr": "담양공용버스터미널: 도보 10분 → 죽녹원 매표소",
     "direction_en": "From Damyang Bus Terminal: 10-min walk to Juknokwon ticket office",
     "keywords_kr": "담양 순창 2박▪죽녹원▪강천산▪전남 여행",
-    "hashtags": "Damyang▪Sunchang▪Juknokwon▪TwoDayTrip"
+    "hashtags": "Damyang▪Sunchang▪Juknokwon▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10468,7 +10816,8 @@
     "direction_kr": "하동버스터미널: 버스로 약 30분 → 최참판댁 정류장",
     "direction_en": "From Hadong Bus Terminal: about 30-min bus ride to Choi Champan's House stop",
     "keywords_kr": "하동 남해 2박▪최참판댁▪독일마을▪다랭이마을",
-    "hashtags": "Hadong▪Namhae▪GermanVillage▪TwoDayTrip"
+    "hashtags": "Hadong▪Namhae▪GermanVillage▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10498,7 +10847,8 @@
     "direction_kr": "강화터미널: 버스로 약 30분 → 전등사 정류장",
     "direction_en": "From Ganghwa Bus Terminal: about 30-min bus ride to Jeondeungsa stop",
     "keywords_kr": "강화도 2박▪전등사▪마니산▪인천 여행",
-    "hashtags": "Ganghwa▪Jeondeungsa▪Manisan▪TwoDayTrip"
+    "hashtags": "Ganghwa▪Jeondeungsa▪Manisan▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10528,7 +10878,8 @@
     "direction_kr": "포항시외버스터미널: 버스로 약 40분 → 구룡포 정류장",
     "direction_en": "From Pohang Bus Terminal: about 40-min bus ride to Guryongpo stop",
     "keywords_kr": "포항 2박▪구룡포▪호미곶▪갯마을차차차 촬영지",
-    "hashtags": "Pohang▪Guryongpo▪Homigot▪TwoDayTrip"
+    "hashtags": "Pohang▪Guryongpo▪Homigot▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10558,7 +10909,8 @@
     "direction_kr": "목포역: 버스로 약 15분 → 목포근대역사관",
     "direction_en": "From Mokpo Station: about 15-min bus ride to Modern History Museum",
     "keywords_kr": "목포 2박▪근대역사거리▪유달산▪전남 여행",
-    "hashtags": "Mokpo▪ModernHistoryStreet▪Yudalsan▪TwoDayTrip"
+    "hashtags": "Mokpo▪ModernHistoryStreet▪Yudalsan▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10588,7 +10940,8 @@
     "direction_kr": "정선시외버스터미널: 버스로 약 30분 → 아우라지역",
     "direction_en": "From Jeongseon Bus Terminal: about 30-min bus ride to Auraji Station",
     "keywords_kr": "정선 2박▪아우라지▪레일바이크▪화암동굴",
-    "hashtags": "Jeongseon▪Auraji▪RailBike▪TwoDayTrip"
+    "hashtags": "Jeongseon▪Auraji▪RailBike▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "2day",
@@ -10618,7 +10971,8 @@
     "direction_kr": "무주공용버스터미널: 버스로 약 40분 → 구천동관광단지",
     "direction_en": "From Muju Bus Terminal: about 40-min bus ride to Gucheondong Resort",
     "keywords_kr": "무주 2박▪구천동계곡▪덕유산곤돌라▪전북 여행",
-    "hashtags": "Muju▪Gucheondong▪Deogyusan▪TwoDayTrip"
+    "hashtags": "Muju▪Gucheondong▪Deogyusan▪TwoDayTrip",
+    "img": "/images/mini/genre/2day.png"
   },
   {
     "sub": "3day",
@@ -10648,7 +11002,8 @@
     "direction_kr": "동대구역: 지하철 1호선 환승 → 대구 시내 이동",
     "direction_en": "From Dongdaegu Station: transfer to Subway Line 1 into downtown Daegu",
     "keywords_kr": "대구 안동 경주 3박▪영남권 여행▪하회마을▪불국사",
-    "hashtags": "Daegu▪Andong▪Gyeongju▪ThreeDayTrip"
+    "hashtags": "Daegu▪Andong▪Gyeongju▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -10678,7 +11033,8 @@
     "direction_kr": "통영종합버스터미널: 시내버스로 동피랑 방면 이동",
     "direction_en": "From Tongyeong Bus Terminal: local bus toward Dongpirang",
     "keywords_kr": "통영 거제 남해 3박▪한려수도▪경남 여행",
-    "hashtags": "Tongyeong▪Geoje▪Namhae▪ThreeDayTrip"
+    "hashtags": "Tongyeong▪Geoje▪Namhae▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -10708,7 +11064,8 @@
     "direction_kr": "여수엑스포역: 버스/택시 15분 → 자산공원 탑승장",
     "direction_en": "From Yeosu Expo Station: 15-min bus/taxi to Jasan Park station",
     "keywords_kr": "여수 순천 보성 3박▪전남 동부 여행▪순천만▪녹차밭",
-    "hashtags": "Yeosu▪Suncheon▪Boseong▪ThreeDayTrip"
+    "hashtags": "Yeosu▪Suncheon▪Boseong▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -10738,7 +11095,8 @@
     "direction_kr": "태안버스터미널: 안면도행 버스로 약 40분 이동",
     "direction_en": "From Taean Bus Terminal: about 40-min bus ride toward Anmyeondo",
     "keywords_kr": "태안 서산 3박▪꽃지해수욕장▪해미읍성▪충남 여행",
-    "hashtags": "Taean▪Seosan▪KkotjiBeach▪ThreeDayTrip"
+    "hashtags": "Taean▪Seosan▪KkotjiBeach▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -10768,7 +11126,8 @@
     "direction_kr": "함양시외버스터미널: 도보 15분 → 상림공원",
     "direction_en": "From Hamyang Bus Terminal: 15-min walk to Sangnim Forest",
     "keywords_kr": "함양 거창 산청 3박▪지리산 자락▪경남 여행",
-    "hashtags": "Hamyang▪Geochang▪Sancheong▪ThreeDayTrip"
+    "hashtags": "Hamyang▪Geochang▪Sancheong▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -10798,7 +11157,8 @@
     "direction_kr": "전주고속버스터미널: 버스로 약 20분 → 전주한옥마을",
     "direction_en": "From Jeonju Bus Terminal: about 20-min bus ride to Jeonju Hanok Village",
     "keywords_kr": "전주 군산 무주 3박▪전북 여행▪한옥마을▪덕유산",
-    "hashtags": "Jeonju▪Gunsan▪Muju▪ThreeDayTrip"
+    "hashtags": "Jeonju▪Gunsan▪Muju▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -10828,7 +11188,8 @@
     "direction_kr": "가평역: 셔틀버스로 남이섬 선착장 이동",
     "direction_en": "From Gapyeong Station: shuttle bus to Nami Island ferry dock",
     "keywords_kr": "가평 춘천 3박▪남이섬▪아침고요수목원▪경기강원 여행",
-    "hashtags": "Gapyeong▪Chuncheon▪NamiIsland▪ThreeDayTrip"
+    "hashtags": "Gapyeong▪Chuncheon▪NamiIsland▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -10858,7 +11219,8 @@
     "direction_kr": "강화터미널: 버스로 약 30분 → 전등사 정류장",
     "direction_en": "From Ganghwa Bus Terminal: about 30-min bus ride to Jeondeungsa stop",
     "keywords_kr": "강화도 영종도 3박▪전등사▪을왕리▪인천 여행",
-    "hashtags": "Ganghwa▪Yeongjong▪Jeondeungsa▪ThreeDayTrip"
+    "hashtags": "Ganghwa▪Yeongjong▪Jeondeungsa▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -10888,7 +11250,8 @@
     "direction_kr": "포항시외버스터미널: 버스로 약 40분 → 구룡포 정류장",
     "direction_en": "From Pohang Bus Terminal: about 40-min bus ride to Guryongpo stop",
     "keywords_kr": "포항 경주 3박▪구룡포▪불국사▪경북 여행",
-    "hashtags": "Pohang▪Gyeongju▪Guryongpo▪ThreeDayTrip"
+    "hashtags": "Pohang▪Gyeongju▪Guryongpo▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -10918,7 +11281,8 @@
     "direction_kr": "목포역: 버스로 약 15분 → 목포근대역사관",
     "direction_en": "From Mokpo Station: about 15-min bus ride to Modern History Museum",
     "keywords_kr": "목포 담양 보성 3박▪근대역사거리▪죽녹원▪전남 여행",
-    "hashtags": "Mokpo▪Damyang▪Boseong▪ThreeDayTrip"
+    "hashtags": "Mokpo▪Damyang▪Boseong▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -10948,7 +11312,8 @@
     "direction_kr": "정선시외버스터미널: 버스로 약 30분 → 아우라지역",
     "direction_en": "From Jeongseon Bus Terminal: about 30-min bus ride to Auraji Station",
     "keywords_kr": "정선 평창 3박▪아우라지▪대관령양떼목장▪강원 여행",
-    "hashtags": "Jeongseon▪Pyeongchang▪Auraji▪ThreeDayTrip"
+    "hashtags": "Jeongseon▪Pyeongchang▪Auraji▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -10978,7 +11343,8 @@
     "direction_kr": "하동버스터미널: 버스로 약 30분 → 최참판댁 정류장",
     "direction_en": "From Hadong Bus Terminal: about 30-min bus ride to Choi Champan's House stop",
     "keywords_kr": "하동 남해 사천 3박▪최참판댁▪다랭이마을▪경남 여행",
-    "hashtags": "Hadong▪Namhae▪Sacheon▪ThreeDayTrip"
+    "hashtags": "Hadong▪Namhae▪Sacheon▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -11008,7 +11374,8 @@
     "direction_kr": "토성역 6번 출구: 마을버스 사하1·1-1번 환승",
     "direction_en": "From Exit 6: transfer to village bus Saha 1 or 1-1",
     "keywords_kr": "부산 거제 통영 3박▪감천문화마을▪바람의언덕▪동피랑",
-    "hashtags": "Busan▪Geoje▪Tongyeong▪ThreeDayTrip"
+    "hashtags": "Busan▪Geoje▪Tongyeong▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -11038,7 +11405,8 @@
     "direction_kr": "단양시외버스터미널: 버스로 약 15분 → 도담삼봉",
     "direction_en": "From Danyang Bus Terminal: about 15-min bus ride to Dodam Sambong",
     "keywords_kr": "단양 제천 3박▪도담삼봉▪청풍호▪충북 여행",
-    "hashtags": "Danyang▪Jecheon▪DodamSambong▪ThreeDayTrip"
+    "hashtags": "Danyang▪Jecheon▪DodamSambong▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -11068,7 +11436,8 @@
     "direction_kr": "제주공항: 렌터카로 약 1시간 → 성산일출봉",
     "direction_en": "From Jeju Airport: about 1-hour drive to Seongsan Ilchulbong",
     "keywords_kr": "제주 3박▪한라산▪성산일출봉▪오설록",
-    "hashtags": "Jeju▪Hallasan▪Seongsan▪ThreeDayTrip"
+    "hashtags": "Jeju▪Hallasan▪Seongsan▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -11098,7 +11467,8 @@
     "direction_kr": "강릉역: 버스로 약 20분 → 경포해변",
     "direction_en": "From Gangneung Station: about 20-min bus ride to Gyeongpo Beach",
     "keywords_kr": "강릉 동해 삼척 3박▪경포해변▪환선굴▪동해안 여행",
-    "hashtags": "Gangneung▪Donghae▪Samcheok▪ThreeDayTrip"
+    "hashtags": "Gangneung▪Donghae▪Samcheok▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -11128,7 +11498,8 @@
     "direction_kr": "임진강역: 도보 또는 셔틀버스 → 임진각",
     "direction_en": "From Imjingang Station: walk or shuttle bus to Imjingak",
     "keywords_kr": "파주 연천 포천 3박▪임진각▪한탄강▪경기북부 여행",
-    "hashtags": "Paju▪Yeoncheon▪Pocheon▪ThreeDayTrip"
+    "hashtags": "Paju▪Yeoncheon▪Pocheon▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -11158,7 +11529,8 @@
     "direction_kr": "수원역: 버스로 약 15분 → 화성행궁",
     "direction_en": "From Suwon Station: about 15-min bus ride to Hwaseong Haenggung",
     "keywords_kr": "수원 용인 이천 3박▪수원화성▪에버랜드▪경기남부 여행",
-    "hashtags": "Suwon▪Yongin▪Icheon▪ThreeDayTrip"
+    "hashtags": "Suwon▪Yongin▪Icheon▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -11188,7 +11560,8 @@
     "direction_kr": "진주시외버스터미널: 버스로 약 15분 → 진주성",
     "direction_en": "From Jinju Bus Terminal: about 15-min bus ride to Jinjuseong Fortress",
     "keywords_kr": "진주 산청 3박▪진주성▪동의보감촌▪경남 여행",
-    "hashtags": "Jinju▪Sancheong▪Jinjuseong▪ThreeDayTrip"
+    "hashtags": "Jinju▪Sancheong▪Jinjuseong▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -11218,7 +11591,8 @@
     "direction_kr": "여수엑스포역: 버스/택시 15분 → 자산공원 탑승장",
     "direction_en": "From Yeosu Expo Station: 15-min bus/taxi to Jasan Park station",
     "keywords_kr": "여수 순천 광양 3박▪매화마을▪순천만▪전남동부 여행",
-    "hashtags": "Yeosu▪Suncheon▪Gwangyang▪ThreeDayTrip"
+    "hashtags": "Yeosu▪Suncheon▪Gwangyang▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -11248,7 +11622,8 @@
     "direction_kr": "영주시외버스터미널: 버스로 약 40분 → 부석사",
     "direction_en": "From Yeongju Bus Terminal: about 40-min bus ride to Buseoksa Temple",
     "keywords_kr": "영주 문경 3박▪부석사▪무섬마을▪문경새재",
-    "hashtags": "Yeongju▪Mungyeong▪Buseoksa▪ThreeDayTrip"
+    "hashtags": "Yeongju▪Mungyeong▪Buseoksa▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "3day",
@@ -11278,7 +11653,8 @@
     "direction_kr": "공주종합터미널: 버스로 약 10분 → 공산성",
     "direction_en": "From Gongju Bus Terminal: about 10-min bus ride to Gongsanseong Fortress",
     "keywords_kr": "공주 부여 3박▪백제문화유적▪공산성▪충남 여행",
-    "hashtags": "Gongju▪Buyeo▪Baekje▪ThreeDayTrip"
+    "hashtags": "Gongju▪Buyeo▪Baekje▪ThreeDayTrip",
+    "img": "/images/mini/genre/3day.png"
   },
   {
     "sub": "region",
@@ -11308,7 +11684,8 @@
     "direction_kr": "서문시장역 5번 출구: 도보 10분 → 청라언덕",
     "direction_en": "From Exit 5: 10-min walk to Cheongna Hill",
     "keywords_kr": "대구 하이라이트▪청라언덕▪김광석길▪팔공산",
-    "hashtags": "Daegu▪Highlights▪CheongnaHill▪Palgongsan"
+    "hashtags": "Daegu▪Highlights▪CheongnaHill▪Palgongsan",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11338,7 +11715,8 @@
     "direction_kr": "안동터미널: 246번 버스로 약 50분 → 하회마을 종합안내소",
     "direction_en": "From Andong Bus Terminal: about 50-min ride on Bus 246 to Hahoe Village Info Center",
     "keywords_kr": "안동 하이라이트▪하회마을▪도산서원▪월영교",
-    "hashtags": "Andong▪Highlights▪HahoeVillage▪DosanSeowon"
+    "hashtags": "Andong▪Highlights▪HahoeVillage▪DosanSeowon",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11368,7 +11746,8 @@
     "direction_kr": "통영종합버스터미널: 시내버스로 동피랑 방면 이동",
     "direction_en": "From Tongyeong Bus Terminal: local bus toward Dongpirang",
     "keywords_kr": "통영 거제 하이라이트▪동피랑▪바람의언덕▪외도",
-    "hashtags": "Tongyeong▪Geoje▪Highlights▪WindyHill"
+    "hashtags": "Tongyeong▪Geoje▪Highlights▪WindyHill",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11398,7 +11777,8 @@
     "direction_kr": "여수엑스포역: 버스/택시 15분 → 자산공원 탑승장",
     "direction_en": "From Yeosu Expo Station: 15-min bus/taxi to Jasan Park station",
     "keywords_kr": "여수 하이라이트▪밤바다▪해상케이블카▪낭만포차",
-    "hashtags": "Yeosu▪Highlights▪NightSea▪CableCar"
+    "hashtags": "Yeosu▪Highlights▪NightSea▪CableCar",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11428,7 +11808,8 @@
     "direction_kr": "순천역: 1번 버스로 약 30분 → 순천만국가정원 서문",
     "direction_en": "From Suncheon Station: about 30-min ride on Bus 1 to Suncheonman Garden West Gate",
     "keywords_kr": "순천 하이라이트▪순천만습지▪낙안읍성▪국가정원",
-    "hashtags": "Suncheon▪Highlights▪SuncheonmanBay▪NaganFolkVillage"
+    "hashtags": "Suncheon▪Highlights▪SuncheonmanBay▪NaganFolkVillage",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11458,7 +11839,8 @@
     "direction_kr": "목포역: 버스로 약 15분 → 목포근대역사관",
     "direction_en": "From Mokpo Station: about 15-min bus ride to Modern History Museum",
     "keywords_kr": "목포 하이라이트▪근대역사거리▪유달산▪갓바위",
-    "hashtags": "Mokpo▪Highlights▪ModernHistory▪Yudalsan"
+    "hashtags": "Mokpo▪Highlights▪ModernHistory▪Yudalsan",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11488,7 +11870,8 @@
     "direction_kr": "담양공용버스터미널: 도보 10분 → 죽녹원 매표소",
     "direction_en": "From Damyang Bus Terminal: 10-min walk to Juknokwon ticket office",
     "keywords_kr": "담양 하이라이트▪죽녹원▪메타세쿼이아길",
-    "hashtags": "Damyang▪Highlights▪Juknokwon▪MetasequoiaRoad"
+    "hashtags": "Damyang▪Highlights▪Juknokwon▪MetasequoiaRoad",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11518,7 +11901,8 @@
     "direction_kr": "보성버스터미널: 시내버스로 약 20분 → 대한다원 정류장",
     "direction_en": "From Boseong Bus Terminal: about 20-min bus ride to Daehan Dawon stop",
     "keywords_kr": "보성 하이라이트▪대한다원▪녹차밭",
-    "hashtags": "Boseong▪Highlights▪GreenTeaField▪DaehanDawon"
+    "hashtags": "Boseong▪Highlights▪GreenTeaField▪DaehanDawon",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11548,7 +11932,8 @@
     "direction_kr": "함양시외버스터미널: 도보 15분 → 상림공원",
     "direction_en": "From Hamyang Bus Terminal: 15-min walk to Sangnim Forest",
     "keywords_kr": "함양 거창 하이라이트▪상림공원▪수승대▪지리산",
-    "hashtags": "Hamyang▪Geochang▪Highlights▪Jirisan"
+    "hashtags": "Hamyang▪Geochang▪Highlights▪Jirisan",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11578,7 +11963,8 @@
     "direction_kr": "태안버스터미널: 시외버스로 약 40분 → 꽃지해수욕장 정류장",
     "direction_en": "From Taean Bus Terminal: about 40-min bus ride to Kkotji Beach stop",
     "keywords_kr": "태안 하이라이트▪꽃지해수욕장▪서해 낙조",
-    "hashtags": "Taean▪Highlights▪KkotjiBeach▪WestSeaSunset"
+    "hashtags": "Taean▪Highlights▪KkotjiBeach▪WestSeaSunset",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11608,7 +11994,8 @@
     "direction_kr": "단양시외버스터미널: 버스로 약 15분 → 도담삼봉 정류장",
     "direction_en": "From Danyang Bus Terminal: about 15-min bus ride to Dodam Sambong stop",
     "keywords_kr": "단양 하이라이트▪도담삼봉▪만천하스카이워크",
-    "hashtags": "Danyang▪Highlights▪DodamSambong▪ManchonhaSkywalk"
+    "hashtags": "Danyang▪Highlights▪DodamSambong▪ManchonhaSkywalk",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11638,7 +12025,8 @@
     "direction_kr": "전주고속버스터미널: 시내버스로 약 20분 → 전주한옥마을 정류장",
     "direction_en": "From Jeonju Express Bus Terminal: about 20-min bus ride to Jeonju Hanok Village stop",
     "keywords_kr": "전주 하이라이트▪한옥마을 야시장▪경기전▪남부시장",
-    "hashtags": "Jeonju▪Highlights▪Hanok▪Gyeonggijeon"
+    "hashtags": "Jeonju▪Highlights▪Hanok▪Gyeonggijeon",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11668,7 +12056,8 @@
     "direction_kr": "군산고속버스터미널: 택시 15분 → 경암동 철길마을",
     "direction_en": "From Gunsan Bus Terminal: 15-min taxi to Railroad Village",
     "keywords_kr": "군산 하이라이트▪경암동철길마을▪초원사진관",
-    "hashtags": "Gunsan▪Highlights▪RailroadVillage▪ChowonPhotoStudio"
+    "hashtags": "Gunsan▪Highlights▪RailroadVillage▪ChowonPhotoStudio",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11698,7 +12087,8 @@
     "direction_kr": "가평역: 셔틀버스로 남이섬 선착장 이동 → 셔틀선 탑승",
     "direction_en": "From Gapyeong Station: shuttle bus to Nami Island ferry dock, then shuttle boat",
     "keywords_kr": "가평 하이라이트▪남이섬▪아침고요수목원▪쁘띠프랑스",
-    "hashtags": "Gapyeong▪Highlights▪NamiIsland▪PetiteFrance"
+    "hashtags": "Gapyeong▪Highlights▪NamiIsland▪PetiteFrance",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11728,7 +12118,8 @@
     "direction_kr": "춘천역: 시내버스로 가평선착장 이동 → 남이섬행 셔틀선 탑승",
     "direction_en": "From Chuncheon Station: bus to Gapyeong ferry dock, then shuttle boat to Nami Island",
     "keywords_kr": "춘천 하이라이트▪남이섬▪소양강스카이워크",
-    "hashtags": "Chuncheon▪Highlights▪NamiIsland▪SoyanggangSkywalk"
+    "hashtags": "Chuncheon▪Highlights▪NamiIsland▪SoyanggangSkywalk",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11758,7 +12149,8 @@
     "direction_kr": "정선시외버스터미널: 버스로 약 30분 → 아우라지역",
     "direction_en": "From Jeongseon Bus Terminal: about 30-min bus ride to Auraji Station",
     "keywords_kr": "정선 하이라이트▪레일바이크▪아우라지▪병방치스카이워크",
-    "hashtags": "Jeongseon▪Highlights▪RailBike▪Auraji"
+    "hashtags": "Jeongseon▪Highlights▪RailBike▪Auraji",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11788,7 +12180,8 @@
     "direction_kr": "강릉역: 버스로 약 20분 → 경포해변",
     "direction_en": "From Gangneung Station: about 20-min bus ride to Gyeongpo Beach",
     "keywords_kr": "강릉 동해 하이라이트▪경포해변▪주문진▪묵호등대",
-    "hashtags": "Gangneung▪Donghae▪Highlights▪Coastal"
+    "hashtags": "Gangneung▪Donghae▪Highlights▪Coastal",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11818,7 +12211,8 @@
     "direction_kr": "공주종합터미널: 버스로 약 10분 → 공산성",
     "direction_en": "From Gongju Bus Terminal: about 10-min bus ride to Gongsanseong Fortress",
     "keywords_kr": "공주 부여 하이라이트▪백제문화유적▪공산성▪정림사지",
-    "hashtags": "Gongju▪Buyeo▪Highlights▪Baekje"
+    "hashtags": "Gongju▪Buyeo▪Highlights▪Baekje",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11848,7 +12242,8 @@
     "direction_kr": "영주시외버스터미널: 버스로 약 40분 → 부석사",
     "direction_en": "From Yeongju Bus Terminal: about 40-min bus ride to Buseoksa Temple",
     "keywords_kr": "영주 하이라이트▪부석사▪소수서원▪무섬마을",
-    "hashtags": "Yeongju▪Highlights▪Buseoksa▪SosuSeowon"
+    "hashtags": "Yeongju▪Highlights▪Buseoksa▪SosuSeowon",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11878,7 +12273,8 @@
     "direction_kr": "포항시외버스터미널: 버스로 약 40분 → 구룡포 정류장",
     "direction_en": "From Pohang Bus Terminal: about 40-min bus ride to Guryongpo stop",
     "keywords_kr": "포항 하이라이트▪구룡포▪호미곶▪갯마을차차차",
-    "hashtags": "Pohang▪Highlights▪Guryongpo▪Homigot"
+    "hashtags": "Pohang▪Highlights▪Guryongpo▪Homigot",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11908,7 +12304,8 @@
     "direction_kr": "하동버스터미널: 버스로 약 30분 → 최참판댁 정류장",
     "direction_en": "From Hadong Bus Terminal: about 30-min bus ride to Choi Champan's House stop",
     "keywords_kr": "하동 남해 하이라이트▪최참판댁▪독일마을▪다랭이마을",
-    "hashtags": "Hadong▪Namhae▪Highlights▪DarangyiVillage"
+    "hashtags": "Hadong▪Namhae▪Highlights▪DarangyiVillage",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "region",
@@ -11938,7 +12335,8 @@
     "direction_kr": "강화터미널: 버스로 약 30분 → 전등사 정류장",
     "direction_en": "From Ganghwa Bus Terminal: about 30-min bus ride to Jeondeungsa stop",
     "keywords_kr": "강화도 하이라이트▪전등사▪마니산▪광성보",
-    "hashtags": "Ganghwa▪Highlights▪Jeondeungsa▪Manisan"
+    "hashtags": "Ganghwa▪Highlights▪Jeondeungsa▪Manisan",
+    "img": "/images/mini/genre/region.png"
   },
   {
     "sub": "half-day",
@@ -11968,7 +12366,8 @@
     "direction_kr": "경복궁역 5번 출구: 도보 5분 → 광화문",
     "direction_en": "From Exit 5: 5-min walk to Gwanghwamun Gate",
     "keywords_kr": "경복궁 한복▪북촌한옥마을▪서울 반나절",
-    "hashtags": "Gyeongbokgung▪Hanbok▪Bukchon▪HalfDay"
+    "hashtags": "Gyeongbokgung▪Hanbok▪Bukchon▪HalfDay",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -11998,7 +12397,8 @@
     "direction_kr": "안국역 6번 출구: 도보 5분 → 인사동길 입구",
     "direction_en": "From Exit 6: 5-min walk to Insadong-gil entrance",
     "keywords_kr": "인사동▪전통공예▪쌍리단길▪서울 반나절",
-    "hashtags": "Insadong▪TraditionalCraft▪Ssamziegil▪HalfDay"
+    "hashtags": "Insadong▪TraditionalCraft▪Ssamziegil▪HalfDay",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12028,7 +12428,8 @@
     "direction_kr": "종로5가역 8번 출구: 도보 3분 → 광장시장 입구",
     "direction_en": "From Exit 8: 3-min walk to Gwangjang Market entrance",
     "keywords_kr": "광장시장▪빈대떡▪마약김밥▪서울 반나절",
-    "hashtags": "GwangjangMarket▪StreetFood▪Bindaetteok▪HalfDay"
+    "hashtags": "GwangjangMarket▪StreetFood▪Bindaetteok▪HalfDay",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12058,7 +12459,8 @@
     "direction_kr": "토성역 6번 출구: 마을버스 사하1·1-1번 환승 → 감천문화마을 정류장",
     "direction_en": "From Exit 6: transfer to village bus Saha 1 or 1-1 to Gamcheon Culture Village stop",
     "keywords_kr": "감천문화마을▪부산 반나절▪예술마을",
-    "hashtags": "GamcheonCultureVillage▪Busan▪HalfDay"
+    "hashtags": "GamcheonCultureVillage▪Busan▪HalfDay",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12088,7 +12490,8 @@
     "direction_kr": "부산역: 버스로 약 30분 → 태종대유원지",
     "direction_en": "From Busan Station: about 30-min bus ride to Taejongdae",
     "keywords_kr": "태종대▪부산 반나절▪다누비열차",
-    "hashtags": "Taejongdae▪Busan▪HalfDay▪Danubi"
+    "hashtags": "Taejongdae▪Busan▪HalfDay▪Danubi",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12118,7 +12521,8 @@
     "direction_kr": "전주고속버스터미널: 시내버스로 약 20분 → 전주한옥마을 정류장",
     "direction_en": "From Jeonju Express Bus Terminal: about 20-min bus ride to Jeonju Hanok Village stop",
     "keywords_kr": "전주한옥마을▪경기전▪전주 반나절",
-    "hashtags": "Jeonju▪Hanok▪Gyeonggijeon▪HalfDay"
+    "hashtags": "Jeonju▪Hanok▪Gyeonggijeon▪HalfDay",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12148,7 +12552,8 @@
     "direction_kr": "통영종합버스터미널: 시내버스로 동피랑 방면 이동",
     "direction_en": "From Tongyeong Bus Terminal: local bus toward Dongpirang",
     "keywords_kr": "동피랑벽화마을▪통영 반나절▪강구안",
-    "hashtags": "Dongpirang▪Tongyeong▪HalfDay▪MuralVillage"
+    "hashtags": "Dongpirang▪Tongyeong▪HalfDay▪MuralVillage",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12178,7 +12583,8 @@
     "direction_kr": "춘천역: 택시 또는 버스로 약 15분 → 소양강스카이워크",
     "direction_en": "From Chuncheon Station: about 15-min bus/taxi to Soyanggang Skywalk",
     "keywords_kr": "소양강스카이워크▪춘천 반나절",
-    "hashtags": "SoyanggangSkywalk▪Chuncheon▪HalfDay"
+    "hashtags": "SoyanggangSkywalk▪Chuncheon▪HalfDay",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12208,7 +12614,8 @@
     "direction_kr": "강릉역: 버스로 약 20분 → 안목해변",
     "direction_en": "From Gangneung Station: about 20-min bus ride to Anmok Beach",
     "keywords_kr": "안목해변▪커피거리▪강릉 반나절",
-    "hashtags": "AnmokBeach▪CoffeeStreet▪Gangneung▪HalfDay"
+    "hashtags": "AnmokBeach▪CoffeeStreet▪Gangneung▪HalfDay",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12238,7 +12645,8 @@
     "direction_kr": "담양공용버스터미널: 도보 10분 → 죽녹원 매표소",
     "direction_en": "From Damyang Bus Terminal: 10-min walk to Juknokwon ticket office",
     "keywords_kr": "죽녹원▪담양 반나절▪대나무숲",
-    "hashtags": "Juknokwon▪Damyang▪HalfDay▪BambooForest"
+    "hashtags": "Juknokwon▪Damyang▪HalfDay▪BambooForest",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12268,7 +12676,8 @@
     "direction_kr": "센트럴파크역 4번 출구: 도보 3분 → 송도 센트럴파크 입구",
     "direction_en": "From Exit 4: 3-min walk to Songdo Central Park entrance",
     "keywords_kr": "송도센트럴파크▪인천 반나절",
-    "hashtags": "Songdo▪CentralPark▪Incheon▪HalfDay"
+    "hashtags": "Songdo▪CentralPark▪Incheon▪HalfDay",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12298,7 +12707,8 @@
     "direction_kr": "수원역: 버스로 약 15분 → 화성행궁",
     "direction_en": "From Suwon Station: about 15-min bus ride to Hwaseong Haenggung",
     "keywords_kr": "수원화성▪화성행궁▪수원 반나절",
-    "hashtags": "SuwonHwaseong▪Haenggung▪HalfDay"
+    "hashtags": "SuwonHwaseong▪Haenggung▪HalfDay",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12328,7 +12738,8 @@
     "direction_kr": "경주고속버스터미널: 버스로 약 15분 → 동궁과월지",
     "direction_en": "From Gyeongju Bus Terminal: about 15-min bus ride to Donggung Palace",
     "keywords_kr": "동궁과월지▪경주 반나절▪야경",
-    "hashtags": "DonggungPalace▪Gyeongju▪HalfDay▪NightView"
+    "hashtags": "DonggungPalace▪Gyeongju▪HalfDay▪NightView",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12358,7 +12769,8 @@
     "direction_kr": "제주공항: 렌터카로 약 1시간 → 성산일출봉",
     "direction_en": "From Jeju Airport: about 1-hour drive to Seongsan Ilchulbong",
     "keywords_kr": "성산일출봉▪제주 반나절▪섭지코지",
-    "hashtags": "SeongsanIlchulbong▪Jeju▪HalfDay▪Seopjikoji"
+    "hashtags": "SeongsanIlchulbong▪Jeju▪HalfDay▪Seopjikoji",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12388,7 +12800,8 @@
     "direction_kr": "제주공항: 렌터카로 약 40분 → 오설록티뮤지엄",
     "direction_en": "From Jeju Airport: about 40-min drive to Osulloc Tea Museum",
     "keywords_kr": "오설록티뮤지엄▪제주 반나절▪녹차밭",
-    "hashtags": "Osulloc▪Jeju▪HalfDay▪TeaMuseum"
+    "hashtags": "Osulloc▪Jeju▪HalfDay▪TeaMuseum",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12418,7 +12831,8 @@
     "direction_kr": "거제고속버스터미널: 버스로 약 50분 → 바람의언덕 정류장",
     "direction_en": "From Geoje Bus Terminal: about 50-min bus ride to Windy Hill stop",
     "keywords_kr": "바람의언덕▪거제 반나절▪신선대",
-    "hashtags": "WindyHill▪Geoje▪HalfDay▪Sinseondae"
+    "hashtags": "WindyHill▪Geoje▪HalfDay▪Sinseondae",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12448,7 +12862,8 @@
     "direction_kr": "여수엑스포역: 버스/택시로 15분 → 오동도 입구",
     "direction_en": "From Yeosu Expo Station: 15-min bus/taxi to Odongdo entrance",
     "keywords_kr": "오동도▪여수 반나절▪동백꽃",
-    "hashtags": "Odongdo▪Yeosu▪HalfDay▪Camellia"
+    "hashtags": "Odongdo▪Yeosu▪HalfDay▪Camellia",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12478,7 +12893,8 @@
     "direction_kr": "태안버스터미널: 시외버스로 약 40분 → 꽃지해수욕장 정류장",
     "direction_en": "From Taean Bus Terminal: about 40-min bus ride to Kkotji Beach stop",
     "keywords_kr": "꽃지해수욕장▪태안 반나절▪서해 낙조",
-    "hashtags": "KkotjiBeach▪Taean▪HalfDay▪WestSeaSunset"
+    "hashtags": "KkotjiBeach▪Taean▪HalfDay▪WestSeaSunset",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12508,7 +12924,8 @@
     "direction_kr": "가평역: 셔틀버스로 약 20분 → 쁘띠프랑스",
     "direction_en": "From Gapyeong Station: about 20-min shuttle bus ride to Petite France",
     "keywords_kr": "쁘띠프랑스▪가평 반나절▪어린왕자",
-    "hashtags": "PetiteFrance▪Gapyeong▪HalfDay▪LittlePrince"
+    "hashtags": "PetiteFrance▪Gapyeong▪HalfDay▪LittlePrince",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12538,7 +12955,8 @@
     "direction_kr": "안동터미널: 버스로 약 20분 → 월영교",
     "direction_en": "From Andong Bus Terminal: about 20-min bus ride to Wolyeonggyo Bridge",
     "keywords_kr": "월영교▪안동 반나절▪안동댐",
-    "hashtags": "Wolyeonggyo▪Andong▪HalfDay▪WoodenBridge"
+    "hashtags": "Wolyeonggyo▪Andong▪HalfDay▪WoodenBridge",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "half-day",
@@ -12568,7 +12986,8 @@
     "direction_kr": "진주시외버스터미널: 버스로 약 15분 → 진주성",
     "direction_en": "From Jinju Bus Terminal: about 15-min bus ride to Jinjuseong Fortress",
     "keywords_kr": "진주성▪진주 반나절▪촉석루",
-    "hashtags": "Jinjuseong▪Jinju▪HalfDay▪Chokseongnu"
+    "hashtags": "Jinjuseong▪Jinju▪HalfDay▪Chokseongnu",
+    "img": "/images/mini/genre/half-day.png"
   },
   {
     "sub": "kdrama",
@@ -12598,7 +13017,8 @@
     "direction_kr": "창원종합버스터미널: 버스로 약 40분 → 동부마을 정류장",
     "direction_en": "From Changwon Bus Terminal: about 40-min bus ride to Dongbu Village stop",
     "keywords_kr": "이상한변호사우영우 촬영지▪소덕동 팽나무▪창원 동부마을",
-    "hashtags": "ExtraordinaryAttorneyWoo▪SodeokdongTree▪ChangwonFilmingLocation"
+    "hashtags": "ExtraordinaryAttorneyWoo▪SodeokdongTree▪ChangwonFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -12628,7 +13048,8 @@
     "direction_kr": "울산역: 시내버스로 약 20분 → 울산지방법원",
     "direction_en": "From Ulsan Station: about 20-min bus ride to Ulsan District Court",
     "keywords_kr": "이상한변호사우영우 촬영지▪울산지방법원",
-    "hashtags": "ExtraordinaryAttorneyWoo▪UlsanDistrictCourt▪KdramaLocation"
+    "hashtags": "ExtraordinaryAttorneyWoo▪UlsanDistrictCourt▪KdramaLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -12658,7 +13079,8 @@
     "direction_kr": "수원역: 버스로 약 15분 → 행궁동 행리단길",
     "direction_en": "From Suwon Station: about 15-min bus ride to Haenggung-dong",
     "keywords_kr": "이상한변호사우영우 촬영지▪수원 행리단길▪카자구루마",
-    "hashtags": "ExtraordinaryAttorneyWoo▪SuwonFilmingLocation▪Haenggungdong"
+    "hashtags": "ExtraordinaryAttorneyWoo▪SuwonFilmingLocation▪Haenggungdong",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -12688,7 +13110,8 @@
     "direction_kr": "제주공항: 차량으로 10분 → 도두봉 주차장",
     "direction_en": "From Jeju Airport: 10-min drive to Dodubong parking area",
     "keywords_kr": "웰컴투삼달리 촬영지▪도두봉▪제주 드라마 촬영지",
-    "hashtags": "WelcomeToSamdalri▪Dodubong▪JejuFilmingLocation"
+    "hashtags": "WelcomeToSamdalri▪Dodubong▪JejuFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -12718,7 +13141,8 @@
     "direction_kr": "제주공항: 렌터카로 약 50분 → 신창풍차해안도로",
     "direction_en": "From Jeju Airport: about 50-min drive to Sinchang Windmill Coastal Road",
     "keywords_kr": "웰컴투삼달리 촬영지▪신창풍차해안도로▪제주 드라이브",
-    "hashtags": "WelcomeToSamdalri▪SinchangWindmillRoad▪JejuDrive"
+    "hashtags": "WelcomeToSamdalri▪SinchangWindmillRoad▪JejuDrive",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -12748,7 +13172,8 @@
     "direction_kr": "명동역 3번 출구: 남산순환버스(02번) 환승 → N서울타워",
     "direction_en": "From Exit 3: transfer to Namsan Circular Bus (No. 02) to N Seoul Tower",
     "keywords_kr": "별에서온그대 촬영지▪N서울타워▪서울 드라마 촬영지",
-    "hashtags": "MyLoveFromTheStar▪NSeoulTower▪SeoulFilmingLocation"
+    "hashtags": "MyLoveFromTheStar▪NSeoulTower▪SeoulFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -12778,7 +13203,8 @@
     "direction_kr": "노들역 3번 출구: 도보 10분 → 노들섬",
     "direction_en": "From Exit 3: 10-min walk to Nodeul Island",
     "keywords_kr": "스타트업 촬영지▪노들섬▪한강 드라마 촬영지",
-    "hashtags": "StartUp▪NodeulIsland▪HanRiverFilmingLocation"
+    "hashtags": "StartUp▪NodeulIsland▪HanRiverFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -12808,7 +13234,8 @@
     "direction_kr": "대화역: 버스로 약 15분 → 한류월드 아쿠아플라넷",
     "direction_en": "From Daehwa Station: about 15-min bus ride to Aquaplanet Hallyu World",
     "keywords_kr": "눈물의여왕 촬영지▪아쿠아플라넷▪고양 한류월드",
-    "hashtags": "QueenOfTears▪Aquaplanet▪GoyangFilmingLocation"
+    "hashtags": "QueenOfTears▪Aquaplanet▪GoyangFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -12838,7 +13265,8 @@
     "direction_kr": "대구 시내: 차량으로 약 1시간 → 사유원",
     "direction_en": "From downtown Daegu: about 1-hour drive to Sayuwon",
     "keywords_kr": "눈물의여왕 촬영지▪사유원▪대구 드라마 촬영지",
-    "hashtags": "QueenOfTears▪Sayuwon▪DaeguFilmingLocation"
+    "hashtags": "QueenOfTears▪Sayuwon▪DaeguFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -12868,7 +13296,8 @@
     "direction_kr": "양재역 5번 출구: 도보 10분 → 양재천 산책로",
     "direction_en": "From Exit 5: 10-min walk to Yangjaecheon Stream trail",
     "keywords_kr": "킹더랜드 촬영지▪양재천▪서울 드라마 촬영지",
-    "hashtags": "KingTheLand▪Yangjaecheon▪SeoulFilmingLocation"
+    "hashtags": "KingTheLand▪Yangjaecheon▪SeoulFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -12898,7 +13327,8 @@
     "direction_kr": "인제시외버스터미널: 차량으로 산간 지역 이동",
     "direction_en": "From Inje Bus Terminal: drive into the mountainous area",
     "keywords_kr": "사랑의불시착 촬영지▪인제▪강원도 드라마 촬영지",
-    "hashtags": "CrashLandingOnYou▪Inje▪GangwonFilmingLocation"
+    "hashtags": "CrashLandingOnYou▪Inje▪GangwonFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -12928,7 +13358,8 @@
     "direction_kr": "충주터미널: 버스로 약 40분 → 비내섬 입구",
     "direction_en": "From Chungju Bus Terminal: about 40-min bus ride to Binaeseom entrance",
     "keywords_kr": "사랑의불시착 촬영지▪비내섬▪충주 드라마 촬영지",
-    "hashtags": "CrashLandingOnYou▪Binaeseom▪ChungjuFilmingLocation"
+    "hashtags": "CrashLandingOnYou▪Binaeseom▪ChungjuFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -12958,7 +13389,8 @@
     "direction_kr": "포항시외버스터미널: 버스로 약 50분 → 석병리 정류장",
     "direction_en": "From Pohang Bus Terminal: about 50-min bus ride to Seokbyeong-ri stop",
     "keywords_kr": "갯마을차차차 촬영지▪석병리 방파제▪포항 드라마 촬영지",
-    "hashtags": "HometownChaChaCha▪Seokbyeongri▪PohangFilmingLocation"
+    "hashtags": "HometownChaChaCha▪Seokbyeongri▪PohangFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -12988,7 +13420,8 @@
     "direction_kr": "포항시외버스터미널: 버스로 약 40분 → 청하공진시장",
     "direction_en": "From Pohang Bus Terminal: about 40-min bus ride to Cheongha Market",
     "keywords_kr": "갯마을차차차 촬영지▪청하공진시장▪포항 드라마 촬영지",
-    "hashtags": "HometownChaChaCha▪CheonghaMarket▪PohangFilmingLocation"
+    "hashtags": "HometownChaChaCha▪CheonghaMarket▪PohangFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -13018,7 +13451,8 @@
     "direction_kr": "종각역 4번 출구: 도보 3분 → 청계천 산책로 입구",
     "direction_en": "From Exit 4: 3-min walk to Cheonggyecheon trail entrance",
     "keywords_kr": "눈물의여왕 촬영지▪청계천▪서강대교▪서울 드라마 촬영지",
-    "hashtags": "QueenOfTears▪Cheonggyecheon▪SeogangBridge▪SeoulFilmingLocation"
+    "hashtags": "QueenOfTears▪Cheonggyecheon▪SeogangBridge▪SeoulFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -13048,7 +13482,8 @@
     "direction_kr": "홍대입구역 3번 출구: 도보 10분 → 서교동 주택가",
     "direction_en": "From Exit 3: 10-min walk to Seogyo-dong residential area",
     "keywords_kr": "응답하라1988 촬영지▪서교동▪서울 드라마 촬영지",
-    "hashtags": "Reply1988▪Seogyodong▪SeoulFilmingLocation"
+    "hashtags": "Reply1988▪Seogyodong▪SeoulFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -13078,7 +13513,8 @@
     "direction_kr": "간석역: 도보 15분 → 신명여자고등학교",
     "direction_en": "From Ganseok Station: 15-min walk to Shinmyung Girls' High School",
     "keywords_kr": "응답하라1988 촬영지▪신명여고▪인천 드라마 촬영지",
-    "hashtags": "Reply1988▪ShinmyungGirlsHighSchool▪IncheonFilmingLocation"
+    "hashtags": "Reply1988▪ShinmyungGirlsHighSchool▪IncheonFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -13108,7 +13544,8 @@
     "direction_kr": "안성터미널: 버스로 약 30분 → 미리내성지 정류장",
     "direction_en": "From Anseong Bus Terminal: about 30-min bus ride to Miryeonae Holy Ground stop",
     "keywords_kr": "도깨비 촬영지▪메밀꽃밭▪안성 드라마 촬영지",
-    "hashtags": "Goblin▪BuckwheatField▪AnseongFilmingLocation"
+    "hashtags": "Goblin▪BuckwheatField▪AnseongFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -13138,7 +13575,8 @@
     "direction_kr": "제주공항: 렌터카로 약 1시간 → 신도포구",
     "direction_en": "From Jeju Airport: about 1-hour drive to Sindo Port",
     "keywords_kr": "이상한변호사우영우 촬영지▪신도포구▪제주 드라마 촬영지",
-    "hashtags": "ExtraordinaryAttorneyWoo▪SindoPort▪JejuFilmingLocation"
+    "hashtags": "ExtraordinaryAttorneyWoo▪SindoPort▪JejuFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "kdrama",
@@ -13168,7 +13606,8 @@
     "direction_kr": "강화터미널: 버스로 약 40분 → 화도면 해안 마을",
     "direction_en": "From Ganghwa Bus Terminal: about 40-min bus ride to Hwado-myeon coastal village",
     "keywords_kr": "이상한변호사우영우 촬영지▪강화도▪인천 드라마 촬영지",
-    "hashtags": "ExtraordinaryAttorneyWoo▪Ganghwa▪IncheonFilmingLocation"
+    "hashtags": "ExtraordinaryAttorneyWoo▪Ganghwa▪IncheonFilmingLocation",
+    "img": "/images/mini/genre/kdrama.png"
   },
   {
     "sub": "nightview",
@@ -13198,7 +13637,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -13228,7 +13668,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -13258,7 +13699,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -13288,7 +13730,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -13318,7 +13761,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -13348,7 +13792,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -13378,7 +13823,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -13408,7 +13854,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -13438,7 +13885,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -13468,7 +13916,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -13498,7 +13947,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "nightview",
@@ -13528,7 +13978,8 @@
     "sub_kr": "야경 명소 코스",
     "sub_en": "Night View Course",
     "sub_free": "",
-    "sub_order": 9
+    "sub_order": 9,
+    "img": "/images/mini/genre/nightview.png"
   },
   {
     "sub": "photo",
@@ -13558,7 +14009,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13588,7 +14040,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13618,7 +14071,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13648,7 +14102,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13678,7 +14133,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13708,7 +14164,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13738,7 +14195,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13768,7 +14226,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13798,7 +14257,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13828,7 +14288,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13858,7 +14319,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13888,7 +14350,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13918,7 +14381,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13948,7 +14412,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -13978,7 +14443,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -14008,7 +14474,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -14038,7 +14505,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -14068,7 +14536,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -14098,7 +14567,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -14128,7 +14598,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -14158,7 +14629,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -14188,7 +14660,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "photo",
@@ -14218,7 +14691,8 @@
     "sub_kr": "사진맛집 코스",
     "sub_en": "Photo Spot Course",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "img": "/images/mini/genre/photo.png"
   },
   {
     "sub": "indoor",
@@ -14248,7 +14722,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14278,7 +14753,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14308,7 +14784,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14338,7 +14815,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14368,7 +14846,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14398,7 +14877,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14428,7 +14908,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14458,7 +14939,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14488,7 +14970,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14518,7 +15001,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14548,7 +15032,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14578,7 +15063,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14608,7 +15094,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14638,7 +15125,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14668,7 +15156,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14698,7 +15187,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14728,7 +15218,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14758,7 +15249,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14788,7 +15280,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14818,7 +15311,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14848,7 +15342,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14878,7 +15373,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "indoor",
@@ -14908,7 +15404,8 @@
     "sub_kr": "실내 코스 (우천 대비)",
     "sub_en": "Indoor Course",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "img": "/images/mini/genre/indoor.png"
   },
   {
     "sub": "booking-tips",
@@ -14938,7 +15435,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -14968,7 +15466,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -14998,7 +15497,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15028,7 +15528,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15058,7 +15559,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15088,7 +15590,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15118,7 +15621,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15148,7 +15652,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15178,7 +15683,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15208,7 +15714,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15238,7 +15745,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15268,7 +15776,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15298,7 +15807,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15328,7 +15838,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15358,7 +15869,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15388,7 +15900,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15418,7 +15931,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15448,7 +15962,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15478,7 +15993,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15508,7 +16024,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15538,7 +16055,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15568,7 +16086,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "booking-tips",
@@ -15598,7 +16117,8 @@
     "sub_kr": "예약·결제 서비스 안내",
     "sub_en": "Booking & Payment Tips",
     "sub_free": "TRUE",
-    "sub_order": 0
+    "sub_order": 0,
+    "img": "/images/mini/genre/booking-tips.png"
   },
   {
     "sub": "emergency-help",
@@ -15628,7 +16148,8 @@
     "sub_kr": "응급·긴급 통역",
     "sub_en": "Emergency Help",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "img": "/images/mini/genre/emergency-help.png"
   },
   {
     "sub": "emergency-help",
@@ -15658,7 +16179,8 @@
     "sub_kr": "응급·긴급 통역",
     "sub_en": "Emergency Help",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "img": "/images/mini/genre/emergency-help.png"
   },
   {
     "sub": "emergency-help",
@@ -15688,7 +16210,8 @@
     "sub_kr": "응급·긴급 통역",
     "sub_en": "Emergency Help",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "img": "/images/mini/genre/emergency-help.png"
   },
   {
     "sub": "emergency-help",
@@ -15718,7 +16241,8 @@
     "sub_kr": "응급·긴급 통역",
     "sub_en": "Emergency Help",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "img": "/images/mini/genre/emergency-help.png"
   },
   {
     "sub": "emergency-help",
@@ -15748,7 +16272,8 @@
     "sub_kr": "응급·긴급 통역",
     "sub_en": "Emergency Help",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "img": "/images/mini/genre/emergency-help.png"
   },
   {
     "sub": "emergency-help",
@@ -15778,7 +16303,8 @@
     "sub_kr": "응급·긴급 통역",
     "sub_en": "Emergency Help",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "img": "/images/mini/genre/emergency-help.png"
   },
   {
     "sub": "emergency-help",
@@ -15808,6 +16334,7 @@
     "sub_kr": "응급·긴급 통역",
     "sub_en": "Emergency Help",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "img": "/images/mini/genre/emergency-help.png"
   }
 ]
