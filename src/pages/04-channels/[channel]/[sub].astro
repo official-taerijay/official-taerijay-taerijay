@@ -7,7 +7,7 @@ export const prerender = false;
 import Layout from '../../../layouts/Layout.astro';
 import { CHANNEL_MAP, mergeSheetCategories } from '../../../lib/channelCategories.js';
 import { fetchChannelRows, deriveCategoriesFromRows, toStr } from '../../../lib/sheetsCms.js';
-import { withItemSlugs, extractSido } from '../../../lib/itemHelpers.js';
+import { withItemSlugs, extractSido, sidoToEn } from '../../../lib/itemHelpers.js';
 import '../../../styles/channel-page.css';
 
 const { channel, sub } = Astro.params;
@@ -131,7 +131,8 @@ if (wantsBrandGroups) {
 const useBrandGroups = wantsBrandGroups && brandGroups.length > 1;
 
 // mini 채널은 지역별 항목 수가 많아(3hour 126개, recommend 79개 등) 지역 필터 칩을 추가로 노출.
-// region 필드 앞부분(시/도)만 뽑아 중복 제거 + 항목 수 기준 내림차순 정렬.
+// region 필드 앞부분(시/도)만 뽑아 중복 제거. 정렬은 "서울이 항상 맨 앞, 그 다음은 항목 수 내림차순".
+const regionSortKey = (sido) => (sido === '서울' ? -Infinity : 0);
 let regionCounts = [];
 let regionGroups = [];
 if (wantsRegionGroups) {
@@ -149,12 +150,18 @@ if (wantsRegionGroups) {
     }
     map.get(key).push({ item, idx });
   });
-  regionCounts = [...counts.entries()].sort((a, b) => b[1] - a[1]);
-  order.sort((a, b) => map.get(b).length - map.get(a).length);
+  regionCounts = [...counts.entries()].sort((a, b) => {
+    const bias = regionSortKey(a[0]) - regionSortKey(b[0]);
+    return bias !== 0 ? bias : b[1] - a[1];
+  });
+  order.sort((a, b) => {
+    const bias = regionSortKey(a) - regionSortKey(b);
+    return bias !== 0 ? bias : map.get(b).length - map.get(a).length;
+  });
   regionGroups = order.map((key) => ({
     key,
     nameKr: key,
-    nameEn: '',
+    nameEn: sidoToEn(key),
     img: '',
     entries: map.get(key),
   }));
@@ -217,9 +224,19 @@ const cardGroups = useGenreGroups ? genreGroups : (useBrandGroups ? brandGroups 
 
     {showRegionFilter && regionCounts.length > 1 && (
       <div class="region-filter" id="regionFilter">
-        <button type="button" class="region-chip is-active" data-region="all">전체 <span class="region-chip-en">All</span> <span class="region-chip-count">{items.length}</span></button>
+        <button type="button" class="region-chip is-active" data-region="all">
+          <span class="region-chip-text">
+            <span class="region-chip-kr notranslate" translate="no">전체 <span class="region-chip-count">{items.length}</span></span>
+            <span class="region-chip-en">All <span class="region-chip-count">{items.length}</span></span>
+          </span>
+        </button>
         {regionCounts.map(([sido, count]) => (
-          <button type="button" class="region-chip notranslate" translate="no" data-region={sido}>{sido} <span class="region-chip-count">{count}</span></button>
+          <button type="button" class="region-chip" data-region={sido}>
+            <span class="region-chip-text">
+              <span class="region-chip-kr notranslate" translate="no">{sido} <span class="region-chip-count">{count}</span></span>
+              <span class="region-chip-en">{sidoToEn(sido)} <span class="region-chip-count">{count}</span></span>
+            </span>
+          </button>
         ))}
       </div>
     )}
@@ -387,8 +404,8 @@ const cardGroups = useGenreGroups ? genreGroups : (useBrandGroups ? brandGroups 
     .genre-group-header:not(:has(.genre-group-poster)){
       border-left:3px solid var(--c);padding-left:12px;
     }
-    .genre-group-name{font-size:clamp(1.05rem,2.6vw,1.35rem);font-weight:800;color:var(--ivory)}
-    .genre-group-name-en{margin-left:8px;font-size:.7em;font-weight:700;color:var(--c);text-transform:uppercase;letter-spacing:.02em}
+    .genre-group-name{display:flex;flex-direction:column;gap:2px;font-size:clamp(1.05rem,2.6vw,1.35rem);font-weight:800;color:var(--ivory)}
+    .genre-group-name-en{display:block;font-size:.62em;font-weight:700;color:var(--c);text-transform:uppercase;letter-spacing:.03em}
     .genre-group-count{font-size:clamp(.7rem,1.8vw,.8rem);color:var(--dim)}
 
     .item-card-tile-text-only .item-card-tile-art{
@@ -408,14 +425,18 @@ const cardGroups = useGenreGroups ? genreGroups : (useBrandGroups ? brandGroups 
 
     .region-filter{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 24px}
     .region-chip{
-      display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:6px 14px;
-      color:var(--muted);font-size:.8rem;font-weight:600;cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease;
+      display:inline-flex;align-items:center;background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:6px 14px;
+      color:var(--muted);cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease;
+      line-height:1.35;
     }
     .region-chip:hover{background:rgba(255,255,255,.09)}
     .region-chip.is-active{background:color-mix(in srgb, var(--c) 18%, transparent);border-color:color-mix(in srgb, var(--c) 50%, transparent);color:var(--ivory)}
-    .region-chip-en{color:var(--dim);font-size:.72rem}
-    .region-chip-count{color:var(--dim);font-size:.72rem}
+    .region-chip-text{display:flex;flex-direction:column;gap:1px}
+    .region-chip-kr{font-size:.82rem;font-weight:700;color:var(--kr-bright)}
+    .region-chip-en{display:block;font-size:.66rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--dim)}
+    .region-chip.is-active .region-chip-kr{color:var(--ivory)}
+    .region-chip-count{color:var(--dim);font-size:.9em;font-weight:600}
     .region-chip.is-active .region-chip-count{color:var(--c)}
 
     .region-empty-note{margin:24px 0;padding:20px;text-align:center;color:var(--dim);font-size:.86rem;border:1px dashed rgba(255,255,255,.14);border-radius:12px}

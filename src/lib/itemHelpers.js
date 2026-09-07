@@ -46,6 +46,20 @@ export function extractSido(item) {
   return found || '';
 }
 
+// 시/도 한글명 → 영문명. 지역 그룹 헤더·필터 칩에 한글/영문 병기할 때 사용.
+// SIDO_LIST에 없는 세부 지역명(예: "속초", "수원" 등 시/군 단위)은 그대로 로마자 표기를 대문자로 보여준다.
+const SIDO_EN_MAP = {
+  '서울': 'Seoul', '부산': 'Busan', '대구': 'Daegu', '인천': 'Incheon', '광주': 'Gwangju',
+  '대전': 'Daejeon', '울산': 'Ulsan', '세종': 'Sejong', '경기': 'Gyeonggi', '강원': 'Gangwon',
+  '충북': 'Chungbuk', '충남': 'Chungnam', '전북': 'Jeonbuk', '전남': 'Jeonnam',
+  '경북': 'Gyeongbuk', '경남': 'Gyeongnam', '제주': 'Jeju',
+  '속초': 'Sokcho', '수원': 'Suwon', '전주': 'Jeonju', '여수': 'Yeosu', '경주': 'Gyeongju',
+  '강릉': 'Gangneung', '춘천': 'Chuncheon', '통영': 'Tongyeong', '거제': 'Geoje', '남해': 'Namhae',
+};
+export function sidoToEn(sido) {
+  return SIDO_EN_MAP[sido] || sido;
+}
+
 // items 배열에 각 항목의 고유 slug(itemSlug)를 부여해 반환.
 // 그리드 페이지와 상세 페이지 양쪽에서 동일한 인덱스 기준으로 slug를 생성해야
 // 링크가 어긋나지 않으므로, 반드시 이 함수를 통해서만 slug를 만든다.
