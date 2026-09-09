@@ -80,7 +80,9 @@ const useGenreGroups = channel === 'entertainment';
 // 브랜드/지역 그룹핑은 "실제로 그룹이 2종류 이상 나올 때만" 의미가 있다.
 // (예: booking-tips처럼 전 항목이 '전국'뿐인 카테고리는 그룹 1개로 묶여봤자 의미가 없어
 //  일반 카드 그리드로 그대로 보여준다.) 아래 두 후보 플래그는 그룹을 만들어본 뒤 최종 확정한다.
-const wantsBrandGroups = channel === 'red' || channel === 'green';
+// protocol의 franchise(프랜차이즈 브랜드관)는 지점 3개 이상인 체인만 모아둔 카테고리라
+// red/green과 동일하게 브랜드별로 묶어서 보여준다(테라로사 31개, 오설록 20개 등이 한 그룹으로).
+const wantsBrandGroups = channel === 'red' || channel === 'green' || (channel === 'protocol' && sub === 'franchise');
 const wantsRegionGroups = channel === 'mini' && items.length > 8;
 
 let genreGroups = [];

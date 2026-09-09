@@ -24,6 +24,9 @@ export const CHANNEL_MAP = {
     kent:                 { kr: 'K-엔터 회사 위치',      en: 'K-Entertainment' },
     restaurant:           { kr: '맛집',                en: 'Restaurant' },
     cafe:                 { kr: '카페',                en: 'Cafe' },
+    franchise:            { kr: '프랜차이즈 브랜드관',    en: 'Franchise Brands' },
+    attractions:          { kr: '박물관·미술관·테마파크',  en: 'Museums & Theme Parks' },
+    'seasonal-spots':     { kr: '계절 명소',            en: 'Seasonal Spots' },
     hotspot:              { kr: '그 외 핫템·핫플',       en: 'Hot Items & Spots' },
   }},
   mini: { color: '#e8e4dc', subs: {
