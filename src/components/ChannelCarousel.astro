@@ -18,6 +18,8 @@ export interface CarouselSlide {
   taglineKr: string;   // 첫줄 — 한글 고정
   taglineEn: string;   // 둘째줄 — 영문 기본값, 사용자 선택 언어로 자동 전환
   bullets: CarouselBullet[]; // 카테고리 구성 요약 — 각 항목 한글 줄 + 영문 줄
+  priceLabel?: string;  // 가격 표시 (예: "USD 19.99~", 무료 채널은 "FREE")
+  priceKrw?: string;    // 원화 환산 표시 (예: "₩27,986 상당")
 }
 
 export interface Props {
@@ -54,6 +56,20 @@ const uid = Math.random().toString(36).slice(2, 8);
             </span>
           ))}
         </span>
+
+        {s.priceLabel && (
+          <span class="ch-slide-buy-row">
+            <span class="ch-slide-price-wrap">
+              <span class="ch-slide-price">{s.priceLabel}</span>
+              {s.priceKrw && <span class="ch-slide-price-krw">{s.priceKrw}</span>}
+            </span>
+            <span class="ch-slide-add-btn">
+              <span class="notranslate" translate="no">+</span>
+              <span class="ch-slide-add-kr">바로 담기</span>
+              <span class="ch-slide-add-en" data-i18n="en">Add</span>
+            </span>
+          </span>
+        )}
       </a>
     ))}
   </div>
@@ -110,6 +126,22 @@ const uid = Math.random().toString(36).slice(2, 8);
   }
   .ch-slide-bullet-kr{font-size:.76rem;font-weight:700;color:var(--kr-bright)}
   .ch-slide-bullet-en{font-size:.66rem;font-weight:600;letter-spacing:.02em;color:var(--dim)}
+
+  .ch-slide-buy-row{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    margin-top:14px;padding-top:14px;border-top:1px solid color-mix(in srgb, var(--c) 25%, transparent);
+  }
+  .ch-slide-price-wrap{display:flex;flex-direction:column;gap:0}
+  .ch-slide-price{font-family:var(--f-display);font-weight:900;font-size:1.05rem;color:var(--c)}
+  .ch-slide-price-krw{font-size:.62rem;font-weight:600;color:var(--dim)}
+  .ch-slide-add-btn{
+    display:flex;align-items:center;gap:4px;flex:0 0 auto;
+    padding:8px 14px;border-radius:100px;
+    background:var(--c);color:#0A192F;font-weight:800;font-size:.72rem;letter-spacing:.02em;
+    transition:transform .15s,box-shadow .2s;
+  }
+  .ch-slide:hover .ch-slide-add-btn{transform:translateY(-1px);box-shadow:0 6px 16px -4px color-mix(in srgb, var(--c) 60%, transparent)}
+  .ch-slide-add-en{display:none}
 
   .ch-carousel-dots{display:flex;gap:8px;justify-content:center;margin-top:4px}
   .ch-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);border:none;padding:0;cursor:pointer;transition:width .2s,background .2s}

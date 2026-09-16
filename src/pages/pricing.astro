@@ -13,9 +13,9 @@ const channels = {
 // 티어(기기수 차등)는 전 채널 공통·동일가로 고정. 콘텐츠량 격차는 가격이 아니라
 // red/green/mart+convenience 쪽 데이터를 늘려 맞추는 방향으로 대응한다.
 const singleTiers = [
-  { color: '#FBF9F4', price: '19.99', en: 'BASIC',    key: 'basic',    id: 1, device: 1, concurrent: null },
-  { color: '#22C55E', price: '29.99', en: 'STANDARD', key: 'standard', id: 1, device: 2, concurrent: 2 },
-  { color: '#F16B24', price: '39.99', en: 'PRO',      key: 'pro',      id: 1, device: 3, concurrent: 3 },
+  { color: '#FBF9F4', price: '19.99', en: '1 DEVICE',  key: 'basic',    id: 1, device: 1, concurrent: null },
+  { color: '#22C55E', price: '29.99', en: '2 DEVICES', key: 'standard', id: 1, device: 2, concurrent: 2 },
+  { color: '#F16B24', price: '39.99', en: '3 DEVICES', key: 'pro',      id: 1, device: 3, concurrent: 3 },
 ];
 
 const doublePlans = [
@@ -35,8 +35,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     <section class="pricing-hero">
       <p class="pricing-eyebrow-kr">요금제</p>
       <p class="pricing-eyebrow-en" data-i18n="en">PRICING</p>
-      <p class="pricing-sub-kr">필요한 채널 선택, 필요한 만큼만 결제</p>
-      <p class="pricing-sub-en" data-i18n="en">Select only the channels you need, pay only for what you use</p>
+      <p class="pricing-sub-kr">필요한 채널만 장바구니에 담아 결제</p>
+      <p class="pricing-sub-en" data-i18n="en">Add only the channels you need to your cart and check out</p>
 
       <div class="pricing-lang-notice">
         <p class="pricing-lang-notice-kr">
@@ -51,11 +51,11 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     <!-- 싱글 요금제 상세 -->
     <section class="pricing-block">
       <h2 class="pricing-block-title">
-        <span class="pricing-block-title-kr">싱글 요금제</span>
-        <span class="pricing-block-title-en" data-i18n="en">SINGLE PLAN</span>
+        <span class="pricing-block-title-kr">1개 선택</span>
+        <span class="pricing-block-title-en" data-i18n="en">PICK 1</span>
       </h2>
-      <p class="pricing-block-desc-kr">유료 채널 1개 선택, 3가지 등급 중 필요에 맞게 선택</p>
-      <p class="pricing-block-desc-en" data-i18n="en">1 paid channel · 3 tiers to choose from</p>
+      <p class="pricing-block-desc-kr">유료 채널 1개 골라 담기, 기기 수에 맞게 선택</p>
+      <p class="pricing-block-desc-en" data-i18n="en">Add 1 paid channel to your cart · choose by device count</p>
 
       <div class="pricing-warning">
         <p class="pricing-warning-kr">⚠️ 디바이스·동시접속 초과 시 경고 표시, 초과분 접속 제한</p>
@@ -78,8 +78,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
             {Object.entries(channels).filter(([slug]) => slug !== 'entertainment').map(([slug, ch]) => (
               <div class="plan-detail-row">
                 <span class="plan-detail-label">
-                  <span class="plan-detail-label-kr">싱글 요금제</span>
-                  <span class="plan-detail-label-en" data-i18n="en">SINGLE</span>
+                  <span class="plan-detail-label-kr">1개 담기</span>
+                  <span class="plan-detail-label-en" data-i18n="en">ADD 1</span>
                 </span>
                 <a href={`/02-payment?key=${ch.payKey}_${t.key}`} class="plan-detail-box plan-detail-box-media" style={`--tc:${ch.color}`}>
                   <span class="plan-detail-names notranslate" translate="no" style={`color:${ch.color}`}>taerijay+{ch.slug === 'mart-convenience' ? 'mart+convenience' : ch.slug}</span>
@@ -98,11 +98,11 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     <!-- 더블 요금제 상세 -->
     <section class="pricing-block">
       <h2 class="pricing-block-title">
-        <span class="pricing-block-title-kr">더블 요금제</span>
-        <span class="pricing-block-title-en" data-i18n="en">DOUBLE PLAN</span>
+        <span class="pricing-block-title-kr">2개 묶음</span>
+        <span class="pricing-block-title-en" data-i18n="en">BUNDLE OF 2</span>
       </h2>
-      <p class="pricing-block-desc-kr">연관 채널 2개 묶음, 할인 가격 적용</p>
-      <p class="pricing-block-desc-en" data-i18n="en">2 related channels bundled at a discount</p>
+      <p class="pricing-block-desc-kr">연관 채널 2개 함께 담기, 할인 가격 적용</p>
+      <p class="pricing-block-desc-en" data-i18n="en">Add 2 related channels together at a discount</p>
 
       <ul class="plan-specs plan-specs-inline">
         <li><span class="spec-kr">아이디 1</span><span class="spec-en" data-i18n="en">1 ID</span></li>
@@ -116,8 +116,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
         {doublePlans.map((dp) => (
           <div class="plan-detail-row">
             <span class="plan-detail-label">
-              <span class="plan-detail-label-kr">더블 요금제</span>
-              <span class="plan-detail-label-en" data-i18n="en">DOUBLE</span>
+              <span class="plan-detail-label-kr">2개 담기</span>
+              <span class="plan-detail-label-en" data-i18n="en">ADD 2</span>
             </span>
             <a href={`/02-payment?key=${dp.payKey}`} class="plan-detail-box" style={`--tc:${dp.color}`}>
               <span class="plan-detail-names-wrap">
@@ -141,11 +141,11 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
     <!-- 토탈 요금제 상세 -->
     <section class="pricing-block">
       <h2 class="pricing-block-title">
-        <span class="pricing-block-title-kr" style="color:var(--burgundy-bright)">토탈 요금제</span>
-        <span class="pricing-block-title-en" style="color:var(--burgundy-bright)" data-i18n="en">TOTAL PLAN</span>
+        <span class="pricing-block-title-kr" style="color:var(--burgundy-bright)">전체 6개 담기</span>
+        <span class="pricing-block-title-en" style="color:var(--burgundy-bright)" data-i18n="en">ADD ALL 6</span>
       </h2>
-      <p class="pricing-block-desc-kr">유료 채널 5개 전체 이용, 신규 채널 자동 포함</p>
-      <p class="pricing-block-desc-en" data-i18n="en">All 5 paid channels, new channels included automatically</p>
+      <p class="pricing-block-desc-kr">유료 채널 5개 전체 담기, 신규 채널 자동 포함</p>
+      <p class="pricing-block-desc-en" data-i18n="en">Add all 5 paid channels, new channels included automatically</p>
 
       <ul class="plan-specs plan-specs-inline">
         <li><span class="spec-kr">아이디 1</span><span class="spec-en" data-i18n="en">1 ID</span></li>
@@ -157,8 +157,8 @@ const krw = (usd) => Math.round(usd * USD_KRW).toLocaleString('ko-KR');
 
       <div class="plan-detail-row plan-detail-row-total">
         <span class="plan-detail-label">
-          <span class="plan-detail-label-kr" style="color:var(--burgundy-bright)">토탈 요금제</span>
-          <span class="plan-detail-label-en" style="color:var(--burgundy-bright)" data-i18n="en">TOTAL</span>
+          <span class="plan-detail-label-kr" style="color:var(--burgundy-bright)">전체 6개</span>
+          <span class="plan-detail-label-en" style="color:var(--burgundy-bright)" data-i18n="en">ALL 6</span>
         </span>
         <a href="/02-payment?key=total" class="plan-detail-box plan-detail-box-total">
           <span class="total-detail-heading" data-i18n="en">ALL SERVICES</span>

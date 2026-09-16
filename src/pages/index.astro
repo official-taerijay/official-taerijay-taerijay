@@ -18,6 +18,7 @@ const carouselSlides = [
       { kr: '영화 FREE', en: 'Movie · FREE' },
       { kr: '예능 FREE', en: 'Variety · FREE' },
     ],
+    priceLabel: 'FREE',
   },
   {
     slug: 'protocol', color: '#F16B24', name: 'taerijay+protocol',
@@ -29,6 +30,8 @@ const carouselSlides = [
       { kr: '유료 7개', en: 'Paid · 7' },
       { kr: '총 12개 카테고리', en: '12 categories total' },
     ],
+    priceLabel: 'USD 19.99~',
+    priceKrw: '₩27,986~ 상당',
   },
   {
     slug: 'mini', color: '#e8e4dc', name: 'taerijay+mini',
@@ -40,6 +43,8 @@ const carouselSlides = [
       { kr: '유료 10개', en: 'Paid · 10' },
       { kr: '총 13개 카테고리', en: '13 categories total' },
     ],
+    priceLabel: 'USD 19.99~',
+    priceKrw: '₩27,986~ 상당',
   },
   {
     slug: 'red', color: '#E1261C', name: 'taerijay+red',
@@ -51,6 +56,8 @@ const carouselSlides = [
       { kr: '매장 위치 정보', en: 'Store location info' },
       { kr: '10일·20일 리뉴얼', en: 'Updated on the 10th & 20th' },
     ],
+    priceLabel: 'USD 19.99~',
+    priceKrw: '₩27,986~ 상당',
   },
   {
     slug: 'green', color: '#8FB84A', name: 'taerijay+green',
@@ -62,6 +69,8 @@ const carouselSlides = [
       { kr: '매장 위치 정보', en: 'Store location info' },
       { kr: '10일·20일 리뉴얼', en: 'Updated on the 10th & 20th' },
     ],
+    priceLabel: 'USD 19.99~',
+    priceKrw: '₩27,986~ 상당',
   },
   {
     slug: 'mart-convenience', color: '#FFDD00', name: 'taerijay+mart+convenience',
@@ -73,6 +82,8 @@ const carouselSlides = [
       { kr: '이마트24·CU·GS25·세븐일레븐', en: 'emart24 · CU · GS25 · 7-Eleven' },
       { kr: '브랜드별 무료5+유료25', en: '5 free + 25 paid per brand' },
     ],
+    priceLabel: 'USD 19.99~',
+    priceKrw: '₩27,986~ 상당',
   },
 ];
 
@@ -124,8 +135,18 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
   </section>
 
   <section class="intro-section">
-    <p class="intro-lead-kr">한국을 여행하는 외국인을 위한, 검증된 로컬 정보 구독 서비스</p>
-    <p class="intro-lead-en" data-i18n="en">A verified local-info subscription made for travelers exploring Korea</p>
+    <p class="intro-lead-kr">한국 정보, 카테고리별로 골라 담으세요</p>
+    <p class="intro-lead-en" data-i18n="en">Korea info, sorted by category — pick what you need</p>
+
+    <div class="shelf-grid">
+      {carouselSlides.map((s) => (
+        <a href={`/04-channels/${s.slug}`} class="shelf-item" style={`--c:${s.color}`}>
+          <span class="shelf-item-tag notranslate" translate="no">{s.tagKr}</span>
+          <span class="shelf-item-name notranslate" translate="no">{s.name}</span>
+          <span class="shelf-item-arrow">→</span>
+        </a>
+      ))}
+    </div>
 
     <div class="intro-grid">
       <div class="intro-item">
@@ -229,38 +250,38 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
 
   <section class="plans-section" id="plans">
     <a href="/pricing" class="plans-eyebrow-link">
-      <p class="plans-eyebrow-kr">요금 선택</p>
-      <p class="plans-eyebrow-en" data-i18n="en">SELECT TIER</p>
+      <p class="plans-eyebrow-kr">몇 개 담으시겠어요?</p>
+      <p class="plans-eyebrow-en" data-i18n="en">HOW MANY ARE YOU ADDING?</p>
     </a>
 
     <div class="plan-row">
       <span class="plan-row-label">
-        <span class="plan-row-label-kr">싱글 요금제</span>
-        <span class="plan-row-label-en" data-i18n="en">SINGLE</span>
+        <span class="plan-row-label-kr">1개 선택</span>
+        <span class="plan-row-label-en" data-i18n="en">PICK 1</span>
       </span>
       <div class="plan-row-items plan-row-items-stack">
         <a href="/pricing" class="tier-chip" style="--tc:#FBF9F4">
           <span class="tier-chip-price">USD 19.99</span>
           <span class="tier-chip-krw">₩{krw(19.99)} 상당</span>
-          <span class="tier-chip-en" data-i18n="en">BASIC</span>
+          <span class="tier-chip-en" data-i18n="en">1 DEVICE</span>
         </a>
         <a href="/pricing" class="tier-chip" style="--tc:#22C55E">
           <span class="tier-chip-price">USD 29.99</span>
           <span class="tier-chip-krw">₩{krw(29.99)} 상당</span>
-          <span class="tier-chip-en" data-i18n="en">STANDARD</span>
+          <span class="tier-chip-en" data-i18n="en">2 DEVICES</span>
         </a>
         <a href="/pricing" class="tier-chip" style="--tc:#F16B24">
           <span class="tier-chip-price">USD 39.99</span>
           <span class="tier-chip-krw">₩{krw(39.99)} 상당</span>
-          <span class="tier-chip-en" data-i18n="en">PRO</span>
+          <span class="tier-chip-en" data-i18n="en">3 DEVICES</span>
         </a>
       </div>
     </div>
 
     <div class="plan-row">
       <span class="plan-row-label">
-        <span class="plan-row-label-kr">더블 요금제</span>
-        <span class="plan-row-label-en" data-i18n="en">DOUBLE</span>
+        <span class="plan-row-label-kr">2개 묶음</span>
+        <span class="plan-row-label-en" data-i18n="en">BUNDLE OF 2</span>
       </span>
       <div class="plan-row-items">
         <a href="/02-payment?key=protocol_mini" class="plan-chip plan-chip-double" style="--tc:#2DD4BF">
@@ -278,8 +299,8 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
 
     <div class="plan-row">
       <span class="plan-row-label">
-        <span class="plan-row-label-kr">더블 요금제</span>
-        <span class="plan-row-label-en" data-i18n="en">DOUBLE</span>
+        <span class="plan-row-label-kr">2개 묶음</span>
+        <span class="plan-row-label-en" data-i18n="en">BUNDLE OF 2</span>
       </span>
       <div class="plan-row-items">
         <a href="/02-payment?key=red_green" class="plan-chip plan-chip-double" style="--tc:#818CF8">
@@ -297,8 +318,8 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
 
     <div class="plan-row plan-row-total">
       <span class="plan-row-label">
-        <span class="plan-row-label-kr" style="color:var(--burgundy-bright)">토탈 요금제</span>
-        <span class="plan-row-label-en" style="color:var(--burgundy-bright)" data-i18n="en">TOTAL</span>
+        <span class="plan-row-label-kr" style="color:var(--burgundy-bright)">전체 6개</span>
+        <span class="plan-row-label-en" style="color:var(--burgundy-bright)" data-i18n="en">ALL 6</span>
       </span>
       <div class="plan-row-items">
         <a href="/02-payment?key=total" class="plan-chip plan-chip-gold" style="--tc:#B33A52">
@@ -362,6 +383,24 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
     .intro-section{width:var(--container);margin:0 auto;padding:44px 0 8px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
     .intro-lead-kr{font-family:var(--f-display);font-weight:800;font-size:clamp(1.15rem,3.4vw,1.55rem);color:var(--ivory);line-height:1.45;margin-bottom:6px;word-break:keep-all}
     .intro-lead-en{font-size:clamp(.86rem,2.2vw,1rem);color:var(--dim);line-height:1.5;margin-bottom:28px}
+    .shelf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px}
+    .shelf-item{
+      display:flex;align-items:center;gap:8px;text-decoration:none;
+      padding:14px 16px;border-radius:10px;
+      border:1px solid color-mix(in srgb, var(--c) 40%, transparent);
+      background:color-mix(in srgb, var(--c) 8%, transparent);
+      transition:background .2s,transform .15s,border-color .2s;
+    }
+    .shelf-item:hover{background:color-mix(in srgb, var(--c) 16%, transparent);border-color:color-mix(in srgb, var(--c) 65%, transparent);transform:translateY(-1px)}
+    .shelf-item-tag{display:none}
+    .shelf-item-name{font-family:var(--f-display);font-weight:700;font-size:.86rem;color:var(--c);flex:1;line-height:1.3}
+    .shelf-item-arrow{font-size:.9rem;color:var(--c);opacity:.7;flex:0 0 auto}
+    @media (max-width:700px){
+      .shelf-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:420px){
+      .shelf-grid{grid-template-columns:1fr}
+    }
     .intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:20px}
     .intro-item{display:flex;flex-direction:column;gap:4px;padding:16px 18px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)}
     .intro-icon{font-size:1.3rem;margin-bottom:6px;color:var(--gold)}
