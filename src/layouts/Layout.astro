@@ -17,13 +17,16 @@ const CHANNEL_LABELS = {
   'mart-convenience': 'mart+convenience',
 };
 
+// tagKr/bullets: 사이드 메뉴에서 채널명에 마우스를 올리거나(모바일은 탭) 눌렀을 때
+// 펼쳐지는 미니 카드뉴스에 쓰이는 한 줄 소개 + 핵심 구성 정보.
+// 홈페이지 ChannelCarousel(캐러셀 상품카드)과 동일한 문구를 재사용해 디자인 언어를 통일.
 const channels = {
-  entertainment: { slug: 'entertainment', color: '#00E5FF' },
-  protocol:      { slug: 'protocol',      color: '#F16B24' },
-  mini:          { slug: 'mini',          color: '#e8e4dc' },
-  red:           { slug: 'red',           color: '#E1261C' },
-  green:         { slug: 'green',         color: '#6F8B2E' },
-  martCvs:       { slug: 'mart-convenience', color: '#FFDD00' },
+  entertainment: { slug: 'entertainment', color: '#00E5FF', tagKr: '무대 위, 지금 이 순간', bullets: '드라마·영화·예능 촬영지 — 전부 무료' },
+  protocol:      { slug: 'protocol',      color: '#F16B24', tagKr: '공항에서 시내까지, 완벽 가이드', bullets: '무료 5개 + 유료 7개, 총 12개 카테고리' },
+  mini:          { slug: 'mini',          color: '#e8e4dc', tagKr: '부산·경주, 남쪽으로 떠나는 여행', bullets: '무료 3개 + 유료 10개, 총 13개 카테고리' },
+  red:           { slug: 'red',           color: '#E1261C', tagKr: '오늘의 대란템, 매장에서 바로', bullets: '다이소 유료 12개 카테고리, 매장 위치 포함' },
+  green:         { slug: 'green',         color: '#6F8B2E', tagKr: '지금 가장 잘 팔리는 뷰티템', bullets: '올리브영 유료 12개 카테고리, 매장 위치 포함' },
+  martCvs:       { slug: 'mart-convenience', color: '#FFDD00', tagKr: '대형마트 진열대, 오늘의 핫템', bullets: '이마트·CU·GS25 등 7개 브랜드 랭킹' },
 };
 
 const SOCIAL_URLS = {
@@ -104,7 +107,13 @@ import { languages } from '../lib/languages.js';
 
       <nav class="side-links side-links-channels">
         {Object.values(channels).map((ch) => (
-          <a href={`/04-channels/${ch.slug}`} style={`--c:${ch.color}`} class="notranslate" translate="no">taerijay+{ch.slug === 'mart-convenience' ? 'mart+convenience' : ch.slug}</a>
+          <a href={`/04-channels/${ch.slug}`} style={`--c:${ch.color}`} class="side-channel-link">
+            <span class="side-channel-name notranslate" translate="no">taerijay+{ch.slug === 'mart-convenience' ? 'mart+convenience' : ch.slug}</span>
+            <span class="side-channel-preview">
+              <span class="side-channel-tag">{ch.tagKr}</span>
+              <span class="side-channel-bullets">{ch.bullets}</span>
+            </span>
+          </a>
         ))}
       </nav>
 
@@ -237,6 +246,22 @@ import { languages } from '../lib/languages.js';
     hamburgerBtn.addEventListener('click', () => { sideMenu.hidden = false; });
     sideClose.addEventListener('click', () => { sideMenu.hidden = true; });
     sideMenu.addEventListener('click', (e) => { if (e.target === sideMenu) sideMenu.hidden = true; });
+
+    // 모바일(터치 기기)에서는 hover가 없으므로, 채널 링크를 첫 탭에서는 미니 카드만
+    // 펼치고, 이미 펼쳐진 상태에서 다시 탭하면 실제로 이동하도록 함.
+    if (window.matchMedia('(hover: none)').matches) {
+      document.querySelectorAll('.side-channel-link').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          if (!link.classList.contains('is-open')) {
+            e.preventDefault();
+            document.querySelectorAll('.side-channel-link.is-open').forEach((el) => {
+              if (el !== link) el.classList.remove('is-open');
+            });
+            link.classList.add('is-open');
+          }
+        });
+      });
+    }
 
     const navBackBtn = document.getElementById('nav-back-btn');
     if (navBackBtn) {
@@ -707,6 +732,28 @@ import { languages } from '../lib/languages.js';
     .side-logo{font-family:var(--f-display);font-weight:900;font-size:1.3rem;margin-bottom:28px;text-decoration:none;color:#B33A52}
     .side-links{display:flex;flex-direction:column;gap:16px}
     .side-links a{text-decoration:none;font-size:.9rem;color:var(--c,var(--muted));font-weight:600}
+    .side-links-channels{gap:6px}
+    .side-channel-link{
+      display:flex;flex-direction:column;gap:0;
+      border-radius:10px;padding:10px 12px;margin:0 -12px;
+      transition:background .2s;
+    }
+    .side-channel-name{font-size:.9rem;font-weight:700;color:var(--c,var(--muted))}
+    .side-channel-preview{
+      display:grid;grid-template-rows:0fr;overflow:hidden;
+      transition:grid-template-rows .25s ease;
+    }
+    .side-channel-preview > *{overflow:hidden}
+    .side-channel-tag{font-size:.76rem;font-weight:700;color:var(--ivory);line-height:1.5;padding-top:6px;display:block}
+    .side-channel-bullets{font-size:.68rem;color:var(--dim);line-height:1.5;display:block;padding-bottom:2px}
+    .side-channel-link:hover,.side-channel-link:focus-visible,.side-channel-link.is-open{
+      background:color-mix(in srgb, var(--c,var(--muted)) 10%, transparent);
+    }
+    .side-channel-link:hover .side-channel-preview,
+    .side-channel-link:focus-visible .side-channel-preview,
+    .side-channel-link.is-open .side-channel-preview{
+      grid-template-rows:1fr;
+    }
     .side-divider{height:1px;background:rgba(255,255,255,.08);margin:20px 0}
     .side-account-link{color:var(--ivory)!important;font-weight:700!important}
     .side-links-plain a{color:var(--ivory);font-weight:700;letter-spacing:.04em}
