@@ -100,6 +100,17 @@ const reelsUrls = [
   'https://www.instagram.com/p/DdDfwjOtvhr/',
 ];
 
+// 최신 블로그 섹션 — taerijay.blogspot.com 게시물을 카드로 나열.
+// 구글 블로그는 공식 임베드를 지원하지 않아 카드 클릭 시 새 탭으로 원문 이동하는 방식.
+// 새 글 올라오면 이 배열 맨 위에 추가하면 됨(최대 5개 정도 유지 권장).
+const blogPosts = [
+  { titleKr: 'CU 편의점: 한국에서 꼭 먹어봐야 할 바이럴 간식 10선', titleEn: 'CU Convenience Store: 10 Viral Snacks to Try in Korea', date: '2026.09.12', url: 'https://taerijay.blogspot.com/2026/09/taerijay-shopping-convenience-top-finds.html' },
+  { titleKr: '다이소 마스크팩: 2026년 꼭 사야 할 베스트셀러 10선', titleEn: 'Daiso Mask Packs: 10 Best-Sellers Worth Buying in 2026', date: '2026.09.12', url: 'https://taerijay.blogspot.com/2026/09/taerijay-beauty-finds-daisos-top-rated.html' },
+  { titleKr: '올리브영 스킨케어: 한국에서 사야 할 베스트셀러 10선', titleEn: 'Olive Young Skincare: 10 Best-Selling Products to Buy in Korea', date: '2026.09.12', url: 'https://taerijay.blogspot.com/2026/09/taerijay-beauty-finds-olive-youngs-best.html' },
+  { titleKr: '서울 3시간 코스: 짧은 여행을 위한 완성형 루트 12선', titleEn: 'Seoul 3-Hour Itineraries: 12 Ready-Made Courses for Short Trips', date: '2026.09.12', url: 'https://taerijay.blogspot.com/2026/09/taerijaymini-courses-ready-made-korea.html' },
+  { titleKr: '넷플릭스 K-드라마 추천: 꼭 봐야 할 명작 10선', titleEn: 'Best K-Dramas on Netflix: 10 Must-Watch Titles Ranked', date: '2026.09.12', url: 'https://taerijay.blogspot.com/2026/09/taerijayentertainment-verified-k-drama.html' },
+];
+
 // heroImg: true인 채널만 /images/channels/*.jpg를 배경으로 요청한다.
 // 이미지 파일이 실제로 public/images/channels/에 업로드되기 전까지는 false로 두어
 // 브라우저가 404를 요청하지 않도록 방지한다(그라디언트 배경은 CSS에서 항상 표시됨).
@@ -202,6 +213,29 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
   {reelsUrls.length > 0 && (
     <script is:inline async src="//www.instagram.com/embed.js"></script>
   )}
+
+  <section class="blog-section">
+    <p class="blog-title-kr">최신 블로그</p>
+    <p class="blog-title-en" data-i18n="en">Latest From the Blog</p>
+
+    <div class="blog-grid">
+      {blogPosts.map((post) => (
+        <a href={post.url} target="_blank" rel="noopener noreferrer" class="blog-card">
+          <span class="blog-card-date notranslate" translate="no">{post.date}</span>
+          <span class="blog-card-title-kr">{post.titleKr}</span>
+          <span class="blog-card-title-en" data-i18n="en">{post.titleEn}</span>
+          <span class="blog-card-arrow">읽어보기 →</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="blog-more">
+      <a href="https://taerijay.blogspot.com/" target="_blank" rel="noopener noreferrer" class="btn-blog-more">
+        <span class="btn-blog-more-kr">블로그 전체 보기</span>
+        <span class="btn-blog-more-en" data-i18n="en">View All Posts →</span>
+      </a>
+    </div>
+  </section>
 
   <ChannelCarousel slides={carouselSlides} />
 
@@ -425,6 +459,27 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
     .reels-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:160px;border-radius:12px;background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.15);margin-bottom:32px}
     .reels-placeholder-kr{font-size:.92rem;font-weight:700;color:var(--muted)}
     .reels-placeholder-en{font-size:.78rem;color:var(--dim)}
+
+    .blog-section{width:var(--container);margin:0 auto;padding:32px 0 8px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .blog-title-kr{font-family:var(--f-display);font-weight:800;font-size:clamp(1.05rem,2.8vw,1.3rem);color:var(--ivory);margin-bottom:2px}
+    .blog-title-en{font-size:.8rem;color:var(--dim);margin-bottom:20px}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;padding-bottom:24px}
+    .blog-card{
+      display:flex;flex-direction:column;gap:6px;text-decoration:none;
+      padding:18px 20px;border-radius:12px;
+      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+      transition:background .2s,border-color .2s,transform .15s;
+    }
+    .blog-card:hover{background:rgba(255,255,255,.06);border-color:rgba(212,175,55,.35);transform:translateY(-2px)}
+    .blog-card-date{font-size:.68rem;font-weight:700;letter-spacing:.05em;color:var(--dim)}
+    .blog-card-title-kr{font-family:var(--f-display);font-weight:700;font-size:.94rem;color:var(--ivory);line-height:1.4;word-break:keep-all}
+    .blog-card-title-en{font-size:.74rem;color:var(--dim);line-height:1.5}
+    .blog-card-arrow{margin-top:auto;padding-top:6px;font-size:.76rem;font-weight:700;color:var(--gold)}
+    .blog-more{text-align:left;margin-bottom:28px}
+    .btn-blog-more{display:inline-flex;flex-direction:column;align-items:flex-start;gap:2px;text-decoration:none;border:1px solid rgba(212,175,55,.4);border-radius:100px;padding:12px 28px;transition:background .2s}
+    .btn-blog-more:hover{background:rgba(212,175,55,.1)}
+    .btn-blog-more-kr{font-size:clamp(.84rem,2.1vw,.96rem);font-weight:700;color:var(--ivory)}
+    .btn-blog-more-en{font-size:clamp(.84rem,2.1vw,.96rem);font-weight:600;color:var(--gold)}
 
     .channels-section{width:var(--container);margin:0 auto;padding:56px 0 20px}
     .channel-row{display:grid;gap:16px;margin-bottom:16px}
