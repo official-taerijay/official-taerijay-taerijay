@@ -127,6 +127,8 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
     <div class="hero-content">
       <p class="hero-eyebrow">TAERIJAY REPUBLIC OF KOREA</p>
       <h1 class="hero-wordmark notranslate" translate="no">TAERIJAY</h1>
+      <p class="hero-tagline-kr">한국 여행 정보, 검증된 것만 골라 파는 곳</p>
+      <p class="hero-tagline-en" data-i18n="en">Korea travel info — only the verified stuff, sold by category</p>
       <div class="hero-cta-row">
         <button class="btn-primary" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">PRICING</button>
         <button class="btn-ghost" onclick="document.getElementById('channels').scrollIntoView({behavior:'smooth'})">CHANNELS</button>
@@ -372,8 +374,10 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
       letter-spacing:.02em;line-height:1;
       background:linear-gradient(120deg, var(--ivory) 0%, var(--ivory) 55%, #B33A52 100%);
       -webkit-background-clip:text;background-clip:text;color:transparent;
-      margin-bottom:36px;
+      margin-bottom:18px;
     }
+    .hero-tagline-kr{font-family:var(--f-display);font-weight:700;font-size:clamp(1.05rem,3vw,1.4rem);color:var(--ivory);line-height:1.4;margin-bottom:4px;word-break:keep-all}
+    .hero-tagline-en{font-size:clamp(.82rem,2.1vw,.98rem);color:var(--dim);line-height:1.5;margin-bottom:32px}
     .hero-cta-row{display:flex;gap:12px;flex-wrap:wrap}
     .btn-primary{background:var(--ivory);color:var(--bg);border:none;border-radius:8px;padding:14px 28px;font-weight:700;font-size:.85rem;letter-spacing:.05em;cursor:pointer;transition:transform .15s,box-shadow .2s}
     .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
