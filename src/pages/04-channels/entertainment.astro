@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import HeroSlider from '../../components/HeroSlider.astro';
 import ChannelLogo from '../../components/ChannelLogo.astro';
+import CardNewsSlider from '../../components/CardNewsSlider.astro';
 import '../../styles/channel-page.css';
 
 const categories = [
@@ -30,6 +31,11 @@ const heroSlides = [
       <span class="channel-badge notranslate" translate="no">무료 이용</span>
       <ChannelLogo slug="entertainment" suffix="+entertainment" color={color} />
     </section>
+
+    <CardNewsSlider
+      images={['01_entertainment_1_intro.png', '01_entertainment_2_category.png', '01_entertainment_3_why.png']}
+      color={color}
+    />
 
     <section class="cat-grid-section">
       {categories.map((cat) => (

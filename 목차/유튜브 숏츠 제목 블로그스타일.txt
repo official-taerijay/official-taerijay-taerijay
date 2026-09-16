@@ -1,0 +1,50 @@
+TAERIJAY 유튜브 숏츠 제목 - 블로그와 동일한 스타일로 재작성
+
+원칙 (블로그와 동일)
+- 숫자 + 구체적 정보/검색어를 맨 앞에
+- 브랜드명(TAERIJAY)은 생략하거나 맨 끝
+- "Verified" 같은 추상적 수식어보다 실제 숫자·정보로 궁금증 유발
+
+====================================================
+수정 전 -> 수정 후 (블로그 스타일 적용)
+====================================================
+
+[2] TAERIJAY+Protocol — Beyond the City, Verified          (21회)
+-> 1,011 Restaurants, Cafes & Travel Spots in Korea
+
+[3] TAERIJAY+Mini — Perfect Korea Routes, Verified          (10회)
+-> 526 Ready-Made Korea Itineraries, 3 Hours to 3 Days
+
+[4] TAERIJAY+Green — Great Skin, Verified                    (7회)
+-> Olive Young Skincare: 386 Best-Selling Picks
+
+[5] TAERIJAY — Choose Your Plan, Choose Your Journey          (5회)
+-> 6 Korea Guides, Pick Only the Ones You Need
+
+[6] TAERIJAY+Mart+Convenience — Hidden Hits, Verified         (4회)
+-> 324 Top Snacks From Korea's Marts & Convenience Stores
+
+[7] TAERIJAY+Red — What's Really Worth Buying                (4회)
+-> Daiso Korea: 396 Best-Selling Beauty Picks
+
+[8] TAERIJAY+Entertainment — Seoul Nightlife, Verified        (4회)
+-> 265 K-Drama, Movie & Variety Filming Locations
+
+[9] TAERIJAY — All 6 Channels, One Korea Travel Guide         (0회, 가장 시급)
+-> 6 Korea Guides in One: Travel, K-Drama, Beauty & Shopping
+
+
+====================================================
+1번(터진 영상)과 비교 - 왜 이 스타일이 맞는지
+====================================================
+1번 "Verified Travel Info for Korea, All in One" (196회)도
+브랜드명이 아니라 정보/혜택으로 시작해서 터진 것.
+숫자(1,011 / 526 / 386 / 324 / 396 / 265)를 넣으면
+블로그에서 이미 검증된 "숫자+구체성" 공식이 그대로 적용됨.
+
+
+====================================================
+적용 방법
+====================================================
+유튜브 스튜디오 > 콘텐츠 > 각 영상 클릭 > 제목만 교체 (재업로드 아님, 페널티 없음)
+설명(더보기) 문구는 기존 그대로 둬도 무방 (이미 정보형으로 잘 되어 있음)

@@ -7,6 +7,7 @@ Astro.response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-re
 import Layout from '../../layouts/Layout.astro';
 import HeroSlider from '../../components/HeroSlider.astro';
 import ChannelLogo from '../../components/ChannelLogo.astro';
+import CardNewsSlider from '../../components/CardNewsSlider.astro';
 import { CHANNEL_MAP, mergeSheetCategories } from '../../lib/channelCategories.js';
 import { fetchChannelRows, deriveCategoriesFromRows } from '../../lib/sheetsCms.js';
 import '../../styles/channel-page.css';
@@ -53,6 +54,11 @@ const color = '#F16B24';
       <ChannelLogo slug="protocol" suffix="+protocol" color={color} />
       <a href="/pricing" class="channel-subscribe-btn">구독하기 · Subscribe</a>
     </section>
+
+    <CardNewsSlider
+      images={['02_protocol_1_intro.png', '02_protocol_2_category.png', '02_protocol_3_why.png']}
+      color={color}
+    />
 
     {categories.length > 0 && (
       <section class="cat-grid-section">

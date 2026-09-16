@@ -1,0 +1,94 @@
+TAERIJAY 셀프가이드 숏츠 - Kling AI 최종 완성본
+(간판글자/한자 방지 강화문구 v2 결합 버전)
+====================================================
+
+이 파일 하나로 끝 — 아래 "Kling AI 붙여넣기용 프롬프트 전체"를
+통째로 복사해서 Kling AI 입력창에 그대로 붙여넣으시면 됩니다.
+(장면 설명 + Style + 간판 방지 문구까지 전부 포함된 완성본)
+
+
+====================================================
+Kling AI 붙여넣기용 프롬프트 전체 (여기서부터 복사)
+====================================================
+
+A cinematic 15-second vertical (9:16) video about traveling confidently without a guide. Warm, relatable, real-world tone — not corporate. Handheld documentary-style camera, natural lighting, slight motion blur on transitions. No text, letters, UI, or interface elements — only real scenery, real human moments (faces not clearly shown), and subtle color shifts. A calm, warm male narrator speaks in clear, simple English, slowly and unhurried, with natural pauses.
+
+[0:00–0:03] Open on a slightly disorienting street-level shot in a busy Seoul neighborhood at dusk — neon signs, crowded sidewalk, a person standing still, slightly overwhelmed, looking left and right. Desaturated, slightly cooler color tone. Narration: "New places always start the same way."
+
+[0:03–0:06] Quick handheld shots: a phone screen glow reflected on a face (screen content not shown), a subway map wall glowing softly, a bus passing blurred in motion. Narration: "Wrong bus. Wrong exit. A translation that doesn't quite make sense."
+
+[0:06–0:09] The color grade shifts — warmer, steadier camera, golden hour light. The same person now walks with purpose down a clear alley toward a lit restaurant sign, calm and confident. Narration: "The hardest part of traveling isn't the distance. It's not knowing — until you do."
+
+[0:09–0:12] Smooth shots of confident movement: stepping off a subway platform correctly, sitting down at a restaurant table with quiet satisfaction, walking through a palace gate in warm afternoon light. Narration: "TAERIJAY isn't a guide walking beside you."
+
+[0:12–0:15] Final shot: the person pauses, looks around calmly, takes a breath, continues walking alone into a beautiful warm-lit Seoul street. Fade to dark navy (#0A192F) background with a single soft gold (#D4AF37) glow. Narration, slow and warm: "It's what lets you guide yourself." Hold 0.5 seconds of silence before fade completes — narration must never cut off mid-sentence.
+
+Style: cinematic color grading, shallow depth of field, natural handheld movement, warm-to-cool-to-warm color arc matching the emotional journey, 24fps, documentary-realistic — not glossy or corporate.
+
+IMPORTANT: This is South Korea — Korean Hangul only, never Chinese characters (Hanzi/Kanji), never Japanese script, never invented or illegible text. No readable signage, no shop signs, no street signs, no posters, no menus, no banners, no text on clothing, no visible writing of any kind anywhere in the frame. All storefronts and backgrounds must be completely free of legible text — replace any signage with plain architectural surfaces, awnings, or lighting only. If text cannot be avoided, keep it heavily blurred, out of focus, or turned away from camera so nothing is readable. Do not generate any Chinese, Japanese, or fictional pseudo-text anywhere.
+
+====================================================
+(여기까지 복사)
+====================================================
+
+
+====================================================
+자막 없음 - 나레이션 스크립트 (풀텍스트, 참고용)
+====================================================
+"New places always start the same way.
+Wrong bus. Wrong exit. A translation that doesn't quite make sense.
+The hardest part of traveling isn't the distance. It's not knowing — until you do.
+TAERIJAY isn't a guide walking beside you.
+It's what lets you guide yourself."
+
+
+====================================================
+제목 (숏츠 최적화 — 정보/혜택 먼저 원칙 적용)
+====================================================
+유튜브 숏츠/틱톡용 (권장, 검색 노출형):
+
+Why Getting Lost in Korea Is Just Wasted Time (Not Adventure)
+
+또는
+
+Wrong Bus, Wrong Exit: The Real Problem With Travel Guides
+
+또는 (짧고 강한 버전, 썸네일 텍스트로도 사용 가능):
+
+Stop Getting Lost in Korea — Here's the Fix
+
+
+====================================================
+설명 (복붙용)
+====================================================
+Getting lost isn't part of the adventure. It's just wasted time.
+
+Wrong subway exit. A translation that doesn't quite make sense. Standing at a bus stop, not sure which color bus to take.
+
+TAERIJAY isn't a tour guide walking beside you. It's verified information that lets you make the call yourself — where to eat, how to get there, what to expect. No guesswork, no guide required.
+
+taerijay.com
+
+[해시태그]
+#Shorts #KoreaTravel #TAERIJAY #TravelTips #SoloTravel #Seoul #VisitKorea #KoreaTrip
+
+
+====================================================
+참고 — 간판 방지 v2가 더 강한 이유 (기존 안내 유지)
+====================================================
+- "South Korea — Korean Hangul only, never Chinese characters"를
+  명시해서 AI가 "동아시아=한자"로 잘못 연결하는 걸 직접 차단
+- "replace signage with plain architectural surfaces"로
+  아예 간판 자체를 다른 요소로 대체하도록 유도 (블러 처리보다 확실)
+- "turned away from camera"까지 추가해 각도로도 회피 경로 마련
+
+
+====================================================
+그래도 한자/이상한 글자가 나올 경우 (AI 한계 - 100% 방지는 어려움)
+====================================================
+1. 같은 프롬프트로 2~3회 재생성 (Kling은 매번 결과가 달라짐 -
+   운 나쁘게 한자가 나온 경우 재생성으로 해결되는 경우多)
+2. 그래도 반복되면 해당 장면만 후반 편집에서 블러/크롭
+3. 아예 간판이 나올 수밖에 없는 구도(정면 상가 거리)를
+   피하고 공원, 강변, 궁궐 내부처럼 상업 간판이 없는
+   장소 중심으로 장면을 재구성

@@ -1,0 +1,119 @@
+---
+// src/components/CardNewsSlider.astro
+// 채널 페이지의 "구독하기" 버튼과 카테고리 그리드 사이에 배치하는 카드뉴스 슬라이더.
+// 인스타그램 카드뉴스 형식(1080x1350 정사각형에 가까운 세로형)으로 미리 제작된
+// intro/category/why 3장을 좌우로 넘기며 볼 수 있게 함. 사용자가 직접 스와이프/탭으로 넘기며,
+// HeroSlider와 달리 자동재생은 하지 않음(글자를 읽는 콘텐츠라 사용자 페이스에 맡김).
+
+export interface Props {
+  images: string[]; // public/images/cardnews/ 경로의 파일명들 (순서대로)
+  color: string;
+}
+
+const { images, color } = Astro.props;
+const uid = Math.random().toString(36).slice(2, 8);
+---
+
+{images.length > 0 && (
+  <section class="cardnews-slider" id={`cardnews-${uid}`} style={`--c:${color}`}>
+    <div class="cardnews-track">
+      {images.map((img, i) => (
+        <div class={`cardnews-slide${i === 0 ? ' is-active' : ''}`} data-cardnews-slide>
+          <img src={`/images/cardnews/${img}`} alt="" loading={i === 0 ? 'eager' : 'lazy'} />
+        </div>
+      ))}
+    </div>
+
+    <div class="cardnews-dots">
+      {images.map((_, i) => (
+        <button type="button" class={`cardnews-dot${i === 0 ? ' is-active' : ''}`} data-cardnews-dot data-index={i} aria-label={`카드 ${i + 1}`}></button>
+      ))}
+    </div>
+
+    <div class="cardnews-arrows">
+      <button type="button" class="cardnews-arrow cardnews-arrow-prev" data-cardnews-prev aria-label="이전 카드">‹</button>
+      <button type="button" class="cardnews-arrow cardnews-arrow-next" data-cardnews-next aria-label="다음 카드">›</button>
+    </div>
+  </section>
+)}
+
+<style>
+  .cardnews-slider{width:var(--container);margin:0 auto;padding:8px 0 36px;position:relative}
+  .cardnews-track{
+    display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+    padding-bottom:14px;scrollbar-width:none;
+  }
+  .cardnews-track::-webkit-scrollbar{display:none}
+
+  .cardnews-slide{
+    flex:0 0 min(360px, 86vw);scroll-snap-align:start;
+    border-radius:16px;overflow:hidden;
+    border:1px solid color-mix(in srgb, var(--c) 35%, transparent);
+    box-shadow:0 18px 40px -18px rgba(0,0,0,.5);
+    background:#0A192F;
+  }
+  .cardnews-slide img{display:block;width:100%;height:auto}
+
+  .cardnews-dots{display:flex;gap:8px;justify-content:center;margin-top:4px}
+  .cardnews-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);border:none;padding:0;cursor:pointer;transition:width .2s,background .2s}
+  .cardnews-dot.is-active{width:24px;border-radius:6px;background:var(--c)}
+
+  .cardnews-arrows{display:none}
+  @media (min-width: 900px){
+    .cardnews-arrows{display:flex;justify-content:space-between;position:absolute;top:45%;left:-4px;right:-4px;pointer-events:none}
+    .cardnews-arrow{pointer-events:auto;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(10,25,47,.85);color:var(--ivory);font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+    .cardnews-arrow:hover{background:rgba(255,255,255,.12)}
+  }
+</style>
+
+<script define:vars={{ uid }}>
+  (function () {
+    const root = document.getElementById(`cardnews-${uid}`);
+    if (!root) return;
+    const track = root.querySelector('.cardnews-track');
+    const slides = root.querySelectorAll('[data-cardnews-slide]');
+    const dots = root.querySelectorAll('[data-cardnews-dot]');
+    const prevBtn = root.querySelector('[data-cardnews-prev]');
+    const nextBtn = root.querySelector('[data-cardnews-next]');
+    let current = 0;
+
+    function setActive(idx) {
+      current = Math.max(0, Math.min(idx, slides.length - 1));
+      slides.forEach((el, i) => el.classList.toggle('is-active', i === current));
+      dots.forEach((el, i) => el.classList.toggle('is-active', i === current));
+    }
+
+    function scrollToIndex(idx) {
+      const target = slides[idx];
+      if (!target || !track) return;
+      track.scrollTo({ left: target.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      setActive(idx);
+    }
+
+    dots.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.getAttribute('data-index') || '0', 10);
+        scrollToIndex(idx);
+      });
+    });
+
+    if (prevBtn) prevBtn.addEventListener('click', () => scrollToIndex(current - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => scrollToIndex(current + 1));
+
+    if (track) {
+      let scrollTimer = null;
+      track.addEventListener('scroll', () => {
+        if (scrollTimer) clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+          let closest = 0;
+          let closestDist = Infinity;
+          slides.forEach((el, i) => {
+            const dist = Math.abs(el.offsetLeft - track.offsetLeft - track.scrollLeft);
+            if (dist < closestDist) { closestDist = dist; closest = i; }
+          });
+          setActive(closest);
+        }, 100);
+      }, { passive: true });
+    }
+  })();
+</script>

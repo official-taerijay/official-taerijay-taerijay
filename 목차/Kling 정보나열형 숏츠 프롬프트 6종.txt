@@ -1,0 +1,162 @@
+TAERIJAY 정보나열형 숏츠 - Kling AI 프롬프트 6종 (15초 이내)
+브랜드 소개 대신, 실제 항목을 빠르게 나열해 끝까지 보게 만드는 구조.
+각 영상: 0~2초 훅 텍스트 -> 2~13초 항목 5개 빠른 컷 전환 -> 13~15초 CTA
+
+====================================================
+1. Protocol - 서울 맛집 5곳
+====================================================
+
+[Kling 프롬프트]
+Cinematic 15-second vertical video, fast-paced restaurant montage in Seoul, Korea. Opens with bold white text on dark navy background: "SEOUL RESTAURANTS LOCALS ACTUALLY GO TO" for 2 seconds. Then 5 quick cinematic shots (2 seconds each) of Korean restaurant interiors and dishes - steaming soup bowls, grilled meat sizzling, traditional Korean tableware, warm ambient lighting, handheld documentary style with subtle camera movement. Each shot has a small text overlay in the corner showing a restaurant name. Final 2 seconds: text "1,000+ MORE VERIFIED SPOTS" with gold accent color, fading to navy background with small TAERIJAY wordmark bottom right. 9:16 vertical format, warm cinematic color grade, no people's faces shown clearly.
+
+[영상 안에 넣을 실제 장소명 (컷마다 교체)]
+1. Mugyo-dong Octopus Alley
+2. Imun Seolnongtang
+3. Naju Gomtang Naengmyeon
+4. Kervan Restaurant
+5. Dubai Restaurant
+
+[자막 타임라인]
+0:00-0:02  SEOUL RESTAURANTS LOCALS ACTUALLY GO TO
+0:02-0:04  Mugyo-dong Octopus Alley
+0:04-0:06  Imun Seolnongtang
+0:06-0:08  Naju Gomtang Naengmyeon
+0:08-0:10  Kervan Restaurant (Halal)
+0:10-0:12  Dubai Restaurant (Halal)
+0:12-0:15  1,000+ MORE VERIFIED SPOTS -> taerijay.com
+
+
+====================================================
+2. Mini Courses - 서울 3시간 코스 5선
+====================================================
+
+[Kling 프롬프트]
+Cinematic 15-second vertical video, fast travel montage across Seoul in a single day. Opens with bold white text: "NO TIME? HERE'S 3 HOURS IN SEOUL" for 2 seconds. Then 5 quick scenic shots (2 seconds each): a traditional palace courtyard, a sunset over the Han River with a walking path, a colorful street art alley, a hanok village narrow street, a K-pop dance studio with mirrors. Smooth drone-style and handheld transitions, golden hour lighting throughout. Small text overlay per shot showing course name. Final 2 seconds: text "526 MORE ROUTES READY" in gold on navy background, TAERIJAY wordmark bottom right. 9:16 vertical, warm travel-magazine color grade.
+
+[영상 안에 넣을 실제 코스명]
+1. Gyeongbokgung Palace History Tour
+2. Han River Sunset Walk
+3. Hongdae Street Art Tour
+4. Bukchon Hanok Village Alley Walk
+5. K-POP Dance Class
+
+[자막 타임라인]
+0:00-0:02  NO TIME? HERE'S 3 HOURS IN SEOUL
+0:02-0:04  Gyeongbokgung Palace History Tour
+0:04-0:06  Han River Sunset Walk
+0:06-0:08  Hongdae Street Art Tour
+0:08-0:10  Bukchon Hanok Village Walk
+0:10-0:12  K-POP Dance Class
+0:12-0:15  526 MORE ROUTES READY -> taerijay.com
+
+
+====================================================
+3. Entertainment - 넷플릭스 K드라마 5선
+====================================================
+
+[Kling 프롬프트]
+Cinematic 15-second vertical video, moody K-drama-style montage. Opens with bold white text on black background: "BEST K-DRAMAS ON NETFLIX RIGHT NOW" for 2 seconds. Then 5 quick atmospheric shots (2 seconds each) evoking different drama genres - a tense survival-game color palette (green and pink neon), a snowy border village at dusk, a dark courtroom silhouette, a mafia-style neon city street at night, a bright office building daytime shot. Each shot has bold text overlay showing the drama title, Netflix-red accent color. Cinematic, moody lighting, no visible faces or copyrighted logos. Final 2 seconds: text "265 MORE TITLES, FILMING LOCATIONS MAPPED" fading to navy with TAERIJAY wordmark. 9:16 vertical format.
+
+[영상 안에 넣을 실제 드라마명]
+1. Squid Game
+2. Crash Landing on You
+3. The Glory
+4. Vincenzo
+5. Extraordinary Attorney Woo
+
+[자막 타임라인]
+0:00-0:02  BEST K-DRAMAS ON NETFLIX RIGHT NOW
+0:02-0:04  Squid Game
+0:04-0:06  Crash Landing on You
+0:06-0:08  The Glory
+0:08-0:10  Vincenzo
+0:10-0:12  Extraordinary Attorney Woo
+0:12-0:15  265 MORE TITLES, FILMING LOCATIONS MAPPED -> taerijay.com
+
+
+====================================================
+4. Beauty Finds (Red - Daiso) - 마스크팩 베스트 5
+====================================================
+
+[Kling 프롬프트]
+Cinematic 15-second vertical video, clean beauty product showcase. Opens with bold white text on soft pink background: "DAISO MASK PACKS WORTH BUYING" for 2 seconds. Then 5 quick product-focused shots (2 seconds each): sheet mask packaging on a clean white surface with soft studio lighting, a hand holding a mask sheet, ampoule bottles arranged neatly, close-up of packaging text, a modeling pack container. Bright, clean beauty-commercial lighting, minimal shadows. Text overlay per shot showing product name. Final 2 seconds: text "396 MORE VERIFIED PICKS" in gold, fading to navy background with TAERIJAY wordmark. 9:16 vertical, bright clean beauty aesthetic.
+
+[영상 안에 넣을 실제 상품명]
+1. VT Reedle Shot 100 First Ampoule
+2. VT Reedle Shot 300 First Ampoule
+3. Daiso Compressed Mask Sheet 20 Pack
+4. VT Cica Sleeping Mask Pack
+5. Daiso Modeling Pack 4 Types
+
+[자막 타임라인]
+0:00-0:02  DAISO MASK PACKS WORTH BUYING
+0:02-0:04  VT Reedle Shot 100
+0:04-0:06  VT Reedle Shot 300
+0:06-0:08  Daiso Compressed Mask Sheet
+0:08-0:10  VT Cica Sleeping Mask Pack
+0:10-0:12  Daiso Modeling Pack 4 Types
+0:12-0:15  396 MORE VERIFIED PICKS -> taerijay.com
+
+
+====================================================
+5. Beauty Finds (Green - Olive Young) - 스킨케어 베스트 5
+====================================================
+
+[Kling 프롬프트]
+Cinematic 15-second vertical video, clean K-beauty product showcase. Opens with bold white text on soft green background: "OLIVE YOUNG SKINCARE BEST-SELLERS" for 2 seconds. Then 5 quick product shots (2 seconds each): toner bottle with water droplets, serum dropper close-up, ampoule bottle on marble surface, cleanser tube with foam texture, skincare products arranged in a flat-lay. Bright clean studio lighting, fresh dewy skin-care aesthetic. Text overlay per shot showing product name. Final 2 seconds: text "386 MORE VERIFIED PICKS" in gold, fading to navy background with TAERIJAY wordmark. 9:16 vertical, fresh clean K-beauty color grade.
+
+[영상 안에 넣을 실제 상품명]
+1. No.3 Super Glowing Essence Toner
+2. Dive-In Low Molecule Hyaluronic Acid Serum
+3. 1025 Dokdo Toner
+4. Heartleaf 77% Soothing Toner
+5. WELLAGE Real Hyaluronic Blue 100 Ampoule
+
+[자막 타임라인]
+0:00-0:02  OLIVE YOUNG SKINCARE BEST-SELLERS
+0:02-0:04  No.3 Super Glowing Essence Toner
+0:04-0:06  Dive-In Hyaluronic Acid Serum
+0:06-0:08  1025 Dokdo Toner
+0:08-0:10  Heartleaf 77% Soothing Toner
+0:10-0:12  WELLAGE Hyaluronic Blue Ampoule
+0:12-0:15  386 MORE VERIFIED PICKS -> taerijay.com
+
+
+====================================================
+6. Shopping & Convenience - CU 인기템 5
+====================================================
+
+[Kling 프롬프트]
+Cinematic 15-second vertical video, convenience store snack showcase. Opens with bold white text on bright blue background: "CU SNACKS WORTH THE TRIP" for 2 seconds. Then 5 quick shots (2 seconds each) inside a bright Korean convenience store - triangle kimbap on a shelf, bread packaging close-up, canned beer with condensation, popcorn bag, instant ramen cup - vibrant retail lighting, energetic quick cuts. Text overlay per shot showing item name. Final 2 seconds: text "324 MORE ITEMS RANKED" in gold, fading to navy background with TAERIJAY wordmark. 9:16 vertical, bright vibrant convenience-store color grade.
+
+[영상 안에 넣을 실제 상품명]
+1. Baek Jong-won's Grilled Meat Fried Rice Kimbap
+2. Yonsei Milk Cream Bread
+3. Gompyo Wheat Beer
+4. Gompyo Popcorn
+5. HEYROO Deuktem Ramen
+
+[자막 타임라인]
+0:00-0:02  CU SNACKS WORTH THE TRIP
+0:02-0:04  Grilled Meat Fried Rice Kimbap
+0:04-0:06  Yonsei Milk Cream Bread
+0:06-0:08  Gompyo Wheat Beer
+0:08-0:10  Gompyo Popcorn
+0:10-0:12  HEYROO Deuktem Ramen
+0:12-0:15  324 MORE ITEMS RANKED -> taerijay.com
+
+
+====================================================
+공통 제목 (유튜브 업로드용, 블로그 스타일 동일 적용)
+====================================================
+1. Seoul Restaurants: 5 Spots Locals Actually Recommend
+2. Seoul 3-Hour Itineraries: 5 Ready-Made Routes
+3. Best K-Dramas on Netflix: 5 Must-Watch Titles
+4. Daiso Mask Packs: 5 Best-Sellers Worth Buying
+5. Olive Young Skincare: 5 Best-Selling Products
+6. CU Convenience Store: 5 Viral Snacks to Try
+
+====================================================
+업로드 페이스 안내
+====================================================
+6개 전부 한번에 올리지 말고 하루 1~2개씩 나눠서 업로드하세요.

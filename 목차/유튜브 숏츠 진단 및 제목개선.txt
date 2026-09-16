@@ -1,0 +1,85 @@
+TAERIJAY 유튜브 숏츠 진단 - 9개 동시 업로드 문제 분석
+
+====================================================
+핵심 원인
+====================================================
+9개 숏츠가 전부 같은 날(2026.9.9)에 한꺼번에 업로드됨.
+-> 유튜브 알고리즘은 신규 채널이 짧은 시간에 다량 업로드하면
+   "테스트 노출"을 분산시키지 않고 1개 정도에만 몰아주는 경향이 있음
+   (196회 받은 "Verified Travel Info" 1개만 예외적으로 터짐, 나머지는 0~21회에 멈춤)
+-> 이미 올라간 9개를 재업로드하면 중복 콘텐츠로 불이익 가능성 있음.
+   재업로드 대신 "제목/설명만 수정" + "향후 페이스 조절"이 맞는 방향.
+
+
+====================================================
+현재 9개 조회수 현황 (스크린샷 기준)
+====================================================
+1. TAERIJAY — Verified Travel Info for Korea, All in One       196회  (유일하게 터짐)
+2. TAERIJAY+Protocol — Beyond the City, Verified                21회
+3. TAERIJAY+Mini — Perfect Korea Routes, Verified                10회
+4. TAERIJAY+Green — Great Skin, Verified                          7회
+5. TAERIJAY — Choose Your Plan, Choose Your Journey                5회
+6. TAERIJAY+Mart+Convenience — Hidden Hits, Verified               4회
+7. TAERIJAY+Red — What's Really Worth Buying                      4회
+8. TAERIJAY+Entertainment — Seoul Nightlife, Verified              4회
+9. TAERIJAY — All 6 Channels, One Korea Travel Guide               0회
+
+
+====================================================
+왜 1번만 터졌는가
+====================================================
+1번 제목 "Verified Travel Info for Korea, All in One"은 유일하게
+브랜드명(TAERIJAY)이 아니라 "혜택/정보"로 시작합니다.
+나머지 8개는 전부 "TAERIJAY+xxx —"로 시작 - 시청자 입장에서
+"이게 뭔지" 판단할 정보가 제목 첫 단어에 없어 스와이프됩니다.
+
+유튜브 숏츠는 제목보다 섬네일+첫 1~2초가 더 크게 작용하지만,
+검색/추천 노출 단계에서는 제목의 첫 부분이 클릭 여부를 좌우합니다.
+
+
+====================================================
+제목 재검토 (수정 전 -> 수정 후 제안)
+====================================================
+
+[2] TAERIJAY+Protocol — Beyond the City, Verified
+-> 1,011 Verified Spots in Korea You Won't Find on Google
+
+[3] TAERIJAY+Mini — Perfect Korea Routes, Verified
+-> No Time to Plan? This Korea Route Is Already Made
+
+[4] TAERIJAY+Green — Great Skin, Verified
+-> The Olive Young Products Koreans Actually Buy
+
+[5] TAERIJAY — Choose Your Plan, Choose Your Journey
+-> Why Pay for 6 When You Only Need 1?
+
+[6] TAERIJAY+Mart+Convenience — Hidden Hits, Verified
+-> Korean Convenience Stores Hide Better Snacks Than Restaurants
+
+[7] TAERIJAY+Red — What's Really Worth Buying
+-> Daiso Korea: What's Actually Worth Buying
+
+[8] TAERIJAY+Entertainment — Seoul Nightlife, Verified
+-> Seoul Nightlife Spots From Your Favorite K-Dramas
+
+[9] TAERIJAY — All 6 Channels, One Korea Travel Guide
+-> Korea Has More Sides Than You Think (0회라 가장 시급)
+
+
+====================================================
+공통 원칙
+====================================================
+- 제목 첫 3~4단어 안에 "무엇을 얻는지"가 나와야 함 (브랜드명은 뒤로)
+- 설명(더보기) 첫 줄도 동일 원칙 - 지금은 이미 잘 되어 있음
+  (예: "Why pay for six channels when you only need one?" - 이건 좋은 예)
+- 제목만 이렇게 바꿔도 기존 영상 파일은 그대로 재사용 가능
+  (유튜브 스튜디오에서 제목 수정은 재업로드가 아니므로 페널티 없음)
+
+
+====================================================
+앞으로 업로드 페이스 (신규 영상부터 적용)
+====================================================
+- 하루 1~2개씩만 업로드
+- 몰아서 올리지 말 것 - 채널이 이제 막 생긴 단계라 알고리즘이
+  분산 노출을 적게 줌
+- 제목은 "궁금증 유발형"으로: 브랜드명은 뒤에, 정보/혜택을 앞에

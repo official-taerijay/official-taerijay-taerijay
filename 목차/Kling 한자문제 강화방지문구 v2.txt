@@ -1,0 +1,38 @@
+Kling AI - 글자/한자 문제 강화 방지 문구 (v2)
+
+기존 문구보다 더 강하게, "한국 배경"이라는 설정 자체에서
+한자가 섞여 나오는 걸 막기 위해 국가/문자 체계를 명시합니다.
+
+====================================================
+프롬프트 맨 끝에 추가할 강화 문구
+====================================================
+
+"IMPORTANT: This is South Korea — Korean Hangul only, never Chinese
+characters (Hanzi/Kanji), never Japanese script, never invented or
+illegible text. No readable signage, no shop signs, no street signs,
+no posters, no menus, no banners, no text on clothing, no visible
+writing of any kind anywhere in the frame. All storefronts and
+backgrounds must be completely free of legible text — replace any
+signage with plain architectural surfaces, awnings, or lighting only.
+If text cannot be avoided, keep it heavily blurred, out of focus, or
+turned away from camera so nothing is readable. Do not generate any
+Chinese, Japanese, or fictional pseudo-text anywhere."
+
+====================================================
+왜 이게 더 강한가
+====================================================
+- "South Korea — Korean Hangul only, never Chinese characters"를
+  명시해서 AI가 "동아시아=한자"로 잘못 연결하는 걸 직접 차단
+- "replace signage with plain architectural surfaces"로
+  아예 간판 자체를 다른 요소로 대체하도록 유도 (블러 처리보다 확실)
+- "turned away from camera"까지 추가해 각도로도 회피 경로 마련
+
+====================================================
+그래도 나올 경우 (AI 한계 - 100% 방지는 어려움)
+====================================================
+1. 같은 프롬프트로 2~3회 재생성 (Kling은 매번 결과가 달라짐 -
+   운 나쁘게 한자가 나온 경우 재생성으로 해결되는 경우多)
+2. 그래도 반복되면 해당 장면만 후반 편집에서 블러/크롭
+3. 아예 간판이 나올 수밖에 없는 구도(정면 상가 거리)를
+   피하고 공원, 강변, 궁궐 내부처럼 상업 간판이 없는
+   장소 중심으로 장면을 재구성

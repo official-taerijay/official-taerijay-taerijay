@@ -1,0 +1,22 @@
+[TAERIJAY 마케팅/영상 프로젝트에 붙여넣을 명령어]
+
+구글 블로그(taerijay.blogspot.com)에 이미 올린 글 6개를 전부 수정할거야.
+
+지금 문제: 글이 전부 "TAERIJAY Mini Courses offers 526 pre-built itineraries..." 이런 식으로 서비스 소개/광고 문구로만 되어있어서, 검색해서 들어온 사람이 "그래서 뭐?" 하고 바로 나가버려. 사람들은 블로그 글을 안 읽고 싶어하고, 검색하면 바로 답부터 보고 싶어해.
+
+그래서 각 글을 아래 원칙으로 다시 써줘:
+1. 제목에 숫자 + 검색어를 넣을 것 (예: "서울 3시간 코스 12선", "다이소 마스크팩 베스트 10")
+2. 본문 첫 줄부터 바로 번호 리스트로 시작할 것 (배경 설명 문단 없이)
+3. 각 리스트 항목은 이름 + 한 줄 설명으로 끝낼 것
+4. 마지막 줄에만 "전체는 taerijay.com에서 확인" 안내 한 줄 넣을 것
+5. 실제 taerijay.com 데이터(protocol.json, mini.json, entertainment.json, daiso.json, oliveyoung.json, emart-convenience.json)에서 실제 존재하는 항목만 쓸 것 - 지어내지 말 것
+
+수정 대상 6개 글:
+1. Mini Courses 글 -> 서울 3시간 코스 리스트로
+2. Protocol 글 -> 서울 맛집 리스트로
+3. Entertainment 글 -> 넷플릭스 K-드라마 리스트로
+4. Beauty Finds(Red/다이소) 글 -> 다이소 마스크팩 베스트 리스트로
+5. Beauty Finds(Green/올리브영) 글 -> 올리브영 스킨케어 베스트 리스트로
+6. Shopping & Convenience 글 -> CU 편의점 인기템 리스트로
+
+각 글마다 [제목] [라벨] [본문] 형태로 바로 복사-붙여넣기 할 수 있게 정리해줘.

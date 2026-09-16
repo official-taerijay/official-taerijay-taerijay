@@ -1,0 +1,57 @@
+TAERIJAY 신규 숏츠 - "셀프 가이드" 개념 (Kling AI 프롬프트)
+컨셉: 가이드 투어가 아니라, 낯선 곳에서 스스로 판단할 수 있게 해주는 도구.
+핵심 문제: 의사소통 + 시행착오. 해결: 검색시간 단축, 번역 오류 감소, 대중교통 혼선 제거.
+구조: 문제 상황(막막함) -> 전환(정보 확인) -> 해결(자신 있게 이동) -> CTA
+
+====================================================
+Kling AI 프롬프트 (15초, 9:16)
+====================================================
+
+A cinematic 15-second vertical (9:16) video about traveling confidently without a guide. Warm, relatable, real-world tone — not corporate. Handheld documentary-style camera, natural lighting, slight motion blur on transitions. No text, letters, UI, or interface elements — only real scenery, real human moments (faces not clearly shown), and subtle color shifts. A calm, warm male narrator speaks in clear, simple English, slowly and unhurried, with natural pauses.
+
+[0:00–0:03] Open on a slightly disorienting street-level shot in a busy Seoul neighborhood at dusk — neon signs, crowded sidewalk, a person standing still, slightly overwhelmed, looking left and right. Desaturated, slightly cooler color tone. Narration: "New places always start the same way."
+
+[0:03–0:06] Quick handheld shots: a phone screen glow reflected on a face (screen content not shown), a subway map wall glowing softly, a bus passing blurred in motion. Narration: "Wrong bus. Wrong exit. A translation that doesn't quite make sense."
+
+[0:06–0:09] The color grade shifts — warmer, steadier camera, golden hour light. The same person now walks with purpose down a clear alley toward a lit restaurant sign, calm and confident. Narration: "The hardest part of traveling isn't the distance. It's not knowing — until you do."
+
+[0:09–0:12] Smooth shots of confident movement: stepping off a subway platform correctly, sitting down at a restaurant table with quiet satisfaction, walking through a palace gate in warm afternoon light. Narration: "TAERIJAY isn't a guide walking beside you."
+
+[0:12–0:15] Final shot: the person pauses, looks around calmly, takes a breath, continues walking alone into a beautiful warm-lit Seoul street. Fade to dark navy (#0A192F) background with a single soft gold (#D4AF37) glow. Narration, slow and warm: "It's what lets you guide yourself." Hold 0.5 seconds of silence before fade completes — narration must never cut off mid-sentence.
+
+Style: cinematic color grading, shallow depth of field, natural handheld movement, warm-to-cool-to-warm color arc matching the emotional journey, 24fps, documentary-realistic — not glossy or corporate.
+
+
+====================================================
+자막 없음 - 나레이션 스크립트 (풀텍스트)
+====================================================
+"New places always start the same way.
+Wrong bus. Wrong exit. A translation that doesn't quite make sense.
+The hardest part of traveling isn't the distance. It's not knowing — until you do.
+TAERIJAY isn't a guide walking beside you.
+It's what lets you guide yourself."
+
+
+====================================================
+틱톡/유튜브 업로드용 제목 (블로그·숏츠와 동일 원칙)
+====================================================
+The Hardest Part of Travel Isn't the Distance, It's Not Knowing
+
+또는
+
+Wrong Bus, Wrong Exit: Why Travel Guides Miss the Real Problem
+
+
+====================================================
+설명 (복붙용)
+====================================================
+Getting lost isn't part of the adventure. It's just wasted time.
+
+Wrong subway exit. A translation that doesn't quite make sense. Standing at a bus stop, not sure which color bus to take.
+
+TAERIJAY isn't a tour guide walking beside you. It's verified information that lets you make the call yourself — where to eat, how to get there, what to expect. No guesswork, no guide required.
+
+taerijay.com
+
+[해시태그]
+#KoreaTravel #TAERIJAY #TravelTips #SoloTravel #Seoul
