@@ -1,0 +1,281 @@
+---
+// 스타벅스 코리아 메뉴 가이드 — protocol 채널 소속의 독립 콘텐츠 페이지.
+// 구글시트 카테고리 시스템과 별개로 완전히 정적인 가이드 문서라 자체 경로로 분리.
+export const prerender = true;
+
+import Layout from '../../../layouts/Layout.astro';
+import '../../../styles/channel-page.css';
+
+const color = '#F16B24';
+
+const coffee = [
+  { kr: '아메리카노', en: 'Americano', ing: '에스프레소, 물', ingEn: 'Espresso, water' },
+  { kr: '카페라떼', en: 'Caffè Latte', ing: '에스프레소, 스팀 우유', ingEn: 'Espresso, steamed milk' },
+  { kr: '카푸치노', en: 'Cappuccino', ing: '에스프레소, 스팀 우유, 우유 거품', ingEn: 'Espresso, steamed milk, milk foam' },
+  { kr: '바닐라라떼', en: 'Vanilla Latte', ing: '에스프레소, 스팀 우유, 바닐라 시럽', ingEn: 'Espresso, steamed milk, vanilla syrup' },
+  { kr: '카라멜마키아또', en: 'Caramel Macchiato', ing: '에스프레소, 스팀 우유, 바닐라 시럽, 카라멜 드리즐', ingEn: 'Espresso, steamed milk, vanilla syrup, caramel drizzle' },
+  { kr: '카페모카', en: 'Café Mocha', ing: '에스프레소, 스팀 우유, 초콜릿 시럽, 휘핑크림', ingEn: 'Espresso, steamed milk, chocolate syrup, whipped cream' },
+  { kr: '콜드브루', en: 'Cold Brew', ing: '저온 추출 콜드브루 원액, 냉수', ingEn: 'Slow-steeped cold brew coffee, cold water' },
+  { kr: '나이트로 콜드브루', en: 'Nitro Cold Brew', ing: '콜드브루, 질소 주입', ingEn: 'Cold brew coffee, nitrogen-infused' },
+  { kr: '디카페인 아메리카노', en: 'Decaf Americano', ing: '디카페인 에스프레소, 물', ingEn: 'Decaf espresso, water' },
+];
+
+const tea = [
+  { kr: '잉글리시브렉퍼스트', en: 'English Breakfast', ing: '홍차잎, 뜨거운 물', ingEn: 'Black tea leaves, hot water' },
+  { kr: '얼그레이', en: 'Earl Grey', ing: '홍차잎, 베르가못 향', ingEn: 'Black tea leaves, bergamot flavor' },
+  { kr: '그린티', en: 'Green Tea', ing: '녹차잎, 뜨거운 물', ingEn: 'Green tea leaves, hot water' },
+  { kr: '캐모마일', en: 'Chamomile', ing: '캐모마일 꽃, 허브 블렌드', ingEn: 'Chamomile flowers, herbal blend' },
+  { kr: '피치티', en: 'Peach Tea', ing: '홍차, 복숭아 향', ingEn: 'Black tea, peach flavor' },
+  { kr: '자몽 허니 블랙티', en: 'Grapefruit Honey Black Tea', ing: '홍차, 자몽, 꿀', ingEn: 'Black tea, grapefruit, honey' },
+];
+
+const frappuccino = [
+  { kr: '커피 프라푸치노', en: 'Coffee Frappuccino', ing: '커피, 우유, 얼음, 블렌디드, 휘핑크림', ingEn: 'Coffee, milk, ice, blended, whipped cream' },
+  { kr: '자바칩 프라푸치노', en: 'Java Chip Frappuccino', ing: '커피, 우유, 초콜릿칩, 모카소스, 휘핑크림', ingEn: 'Coffee, milk, chocolate chips, mocha sauce, whipped cream' },
+  { kr: '카라멜 프라푸치노', en: 'Caramel Frappuccino', ing: '커피, 우유, 카라멜시럽, 카라멜드리즐, 휘핑크림', ingEn: 'Coffee, milk, caramel syrup, caramel drizzle, whipped cream' },
+  { kr: '그린티 프라푸치노', en: 'Green Tea Frappuccino', ing: '녹차가루, 우유, 얼음, 블렌디드, 휘핑크림', ingEn: 'Green tea powder, milk, ice, blended, whipped cream' },
+];
+
+const blendedEtc = [
+  { kr: '망고바나나 블렌디드', en: 'Mango Banana Blended', ing: '망고, 바나나, 요거트, 얼음, 블렌디드', ingEn: 'Mango, banana, yogurt, ice, blended' },
+  { kr: '딸기 블렌디드', en: 'Strawberry Blended', ing: '딸기, 요거트, 얼음, 블렌디드', ingEn: 'Strawberry, yogurt, ice, blended' },
+  { kr: '딸기 아사이 리프레셔', en: 'Strawberry Açaí Refresher', ing: '딸기 아사이 주스, 건조과일, 얼음', ingEn: 'Strawberry açaí juice, freeze-dried fruit pieces, ice' },
+  { kr: '망고 용과 리프레셔', en: 'Mango Dragonfruit Refresher', ing: '망고 용과 주스, 건조과일, 얼음', ingEn: 'Mango dragonfruit juice, freeze-dried fruit pieces, ice' },
+  { kr: '피지오', en: 'Starbucks Fizzio', ing: '탄산수, 과일시럽, 얼음', ingEn: 'Carbonated water, fruit syrup, ice' },
+  { kr: '핫초코', en: 'Hot Chocolate', ing: '초콜릿소스, 스팀 우유, 휘핑크림', ingEn: 'Chocolate sauce, steamed milk, whipped cream' },
+];
+
+const orderApp = [
+  { kr: '스타벅스 코리아 앱 다운로드', en: 'Download Starbucks Korea app' },
+  { kr: '스타벅스 카드 등록 또는 앱 카드 결제', en: 'Register Starbucks Card or app payment' },
+  { kr: '매장·음료·사이즈 선택', en: 'Choose store, drink, and size' },
+  { kr: '앱에서 주문·결제, 줄 서지 않음', en: 'Order & pay in app — skip the line' },
+  { kr: '이름·번호 호출 시 픽업', en: 'Pick up when called' },
+];
+
+const orderStore = [
+  { kr: '계산대 앞에서 줄 서기', en: 'Line up at the counter' },
+  { kr: '음료명·사이즈·핫/아이스, 직원에게 전달', en: 'Tell staff your drink, size, hot/iced' },
+  { kr: '카드·현금·스타벅스 카드로 결제', en: 'Pay by card, cash, or Starbucks Card' },
+  { kr: '이름 또는 번호 호출까지 대기', en: 'Wait for your name or number' },
+];
+
+const menuGroups = [
+  { id: 'coffee', img: '01_커피.png', titleKr: '커피', titleEn: 'Coffee', items: coffee },
+  { id: 'tea', img: '02_티바나.png', titleKr: '티(티바나)', titleEn: 'Tea (Teavana)', items: tea },
+  { id: 'frappuccino', img: '03_프라푸치노.png', titleKr: '프라푸치노', titleEn: 'Frappuccino', items: frappuccino },
+  { id: 'blended', img: '04_블렌디드리프레셔피지오기타.png', titleKr: '블렌디드·리프레셔·피지오·기타', titleEn: 'Blended · Refreshers · Fizzio · Other', items: blendedEtc },
+];
+---
+<Layout title="Starbucks Korea Menu Guide | TAERIJAY+Protocol">
+  <div class="sub-page starbucks-guide" style={`--c:${color}`}>
+    <div class="sub-topbar">
+      <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
+    </div>
+
+    <section class="sub-hero">
+      <a href="/04-channels/protocol" class="sub-parent-link">← taerijay+protocol</a>
+      <div class="sub-title">
+        <span class="sub-title-kr notranslate" translate="no">스타벅스 코리아 메뉴 & 주문법</span>
+        <span class="sub-title-en">Starbucks Korea — Complete Menu & How to Order</span>
+      </div>
+      <div class="sg-tags">
+        <span class="sg-tag notranslate" translate="no">taerijay+protocol</span>
+        <span class="sg-tag">starbucks</span>
+        <span class="sg-tag">siren order</span>
+        <span class="sg-tag notranslate" translate="no">스타벅스</span>
+        <span class="sg-tag notranslate" translate="no">사이렌오더</span>
+        <span class="sg-tag notranslate" translate="no">스타벅스 메뉴</span>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="sg-block">
+      <h2 class="sg-h2">Overview <span class="sg-h2-kr notranslate" translate="no">한눈에 보기</span></h2>
+      <ul class="sg-list">
+        <li>Starbucks Korea menu guide, by category<br /><span class="sg-kr notranslate" translate="no">스타벅스 코리아 메뉴 가이드, 카테고리별 정리</span></li>
+        <li>How to order: Siren Order (app) or in-store<br /><span class="sg-kr notranslate" translate="no">주문 방법: 사이렌오더(앱) 또는 매장 이용</span></li>
+        <li>Illustrations made by TAERIJAY to respect Starbucks Korea's copyright — not official photos<br /><span class="sg-kr notranslate" translate="no">메뉴 이미지는 스타벅스 코리아 저작권 보호를 위해 TAERIJAY가 직접 제작한 일러스트 — 공식 사진 아님</span></li>
+        <li>Basic ingredients listed below — for exact nutrition info, check the Starbucks Korea app or website<br /><span class="sg-kr notranslate" translate="no">기본 재료 구성 아래 안내 — 정확한 영양정보는 스타벅스 코리아 앱 또는 홈페이지에서 확인</span></li>
+      </ul>
+    </section>
+
+    <!-- Get the App -->
+    <section class="sg-block">
+      <h2 class="sg-h2">Get the App <span class="sg-h2-kr notranslate" translate="no">앱 다운로드</span></h2>
+      <ul class="sg-list">
+        <li>App Store: <a href="https://apps.apple.com/KR/app/id466682252" target="_blank" rel="noopener">apps.apple.com/KR/app/id466682252</a><br /><span class="sg-kr notranslate" translate="no">앱스토어: apps.apple.com/KR/app/id466682252</span></li>
+        <li>Google Play: search "Starbucks" (스타벅스) in the Play Store<br /><span class="sg-kr notranslate" translate="no">구글플레이: 플레이스토어에서 "스타벅스" 검색</span></li>
+        <li>Free to download, available on iOS and Android<br /><span class="sg-kr notranslate" translate="no">무료 다운로드, iOS·안드로이드 지원</span></li>
+      </ul>
+
+      <div class="sg-order-grid">
+        <figure class="sg-order-card">
+          <img src="/images/protocol/starbucks/01_앱주문_사이렌오더.png" alt="Order via App — Siren Order" loading="lazy" />
+          <figcaption>Order via App <span class="notranslate" translate="no">앱으로 주문 (사이렌오더)</span></figcaption>
+        </figure>
+        <figure class="sg-order-card">
+          <img src="/images/protocol/starbucks/02_매장주문.png" alt="Order In-Store" loading="lazy" />
+          <figcaption>Order In-Store <span class="notranslate" translate="no">매장에서 직접 주문</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Regular vs Reserve -->
+    <section class="sg-block">
+      <h2 class="sg-h2">Regular Stores vs Reserve Stores <span class="sg-h2-kr notranslate" translate="no">일반 매장 vs 리저브 매장</span></h2>
+      <ul class="sg-list">
+        <li>Regular stores — standard menu, standard espresso machines<br /><span class="sg-kr notranslate" translate="no">일반 매장 — 표준 메뉴, 표준 에스프레소 머신</span></li>
+        <li>Reserve (R) stores — premium single-origin beans, specialty brewing equipment, trained coffee masters<br /><span class="sg-kr notranslate" translate="no">리저브(R) 매장 — 프리미엄 싱글 오리진 원두, 전용 추출 기기, 숙련된 커피마스터 상주</span></li>
+        <li>Reserve store names include "R" (e.g. Cheongdam Star R)<br /><span class="sg-kr notranslate" translate="no">리저브 매장명에는 "R" 포함 (예: 청담스타R점)</span></li>
+      </ul>
+    </section>
+
+    <!-- Menu groups -->
+    {menuGroups.map((g) => (
+      <section class="sg-block" id={g.id}>
+        <figure class="sg-menu-hero">
+          <img src={`/images/protocol/starbucks/${g.img}`} alt={`${g.titleEn} menu card`} loading="lazy" />
+        </figure>
+        <h2 class="sg-h2">{g.titleEn} <span class="sg-h2-kr notranslate" translate="no">{g.titleKr}</span></h2>
+        <p class="sg-h2-sub">— Ingredients <span class="notranslate" translate="no">재료 구성</span></p>
+        <div class="sg-ing-grid">
+          {g.items.map((it) => (
+            <div class="sg-ing-card">
+              <div class="sg-ing-name">
+                <span class="notranslate" translate="no">{it.kr}</span>
+                <span class="sg-ing-name-en">{it.en}</span>
+              </div>
+              <p class="sg-ing-desc">
+                {it.ingEn}<br /><span class="notranslate" translate="no">{it.ing}</span>
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <p class="sg-note">
+      Note: Basic ingredients only — exact syrup brands, ratios, and nutrition info (calories, sugar, caffeine, etc.) may vary. Check the Starbucks Korea app or website for full details.<br />
+      <span class="notranslate" translate="no">참고: 기본 재료 구성만 안내 — 정확한 시럽 브랜드·비율·영양정보(칼로리·당류·카페인 등)는 다를 수 있음. 자세한 내용은 스타벅스 코리아 앱 또는 홈페이지에서 확인 바람.</span>
+    </p>
+
+    <!-- Seasonal -->
+    <section class="sg-block">
+      <h2 class="sg-h2">Seasonal & Promotional Drinks <span class="sg-h2-kr notranslate" translate="no">시즌·프로모션 음료</span></h2>
+      <ul class="sg-list">
+        <li>Changes by season and store<br /><span class="sg-kr notranslate" translate="no">시즌 및 매장별 변동</span></li>
+        <li>Check the Starbucks Korea app or official website for current offerings<br /><span class="sg-kr notranslate" translate="no">스타벅스 코리아 앱 또는 공식 홈페이지에서 현재 판매 메뉴 확인</span></li>
+        <li>Not included in this guide — availability varies<br /><span class="sg-kr notranslate" translate="no">이 가이드에 미포함 — 판매 여부 유동적</span></li>
+      </ul>
+    </section>
+
+    <!-- Order steps (how-to cards) -->
+    <section class="sg-block">
+      <h2 class="sg-h2">How to Order <span class="sg-h2-kr notranslate" translate="no">주문 방법</span></h2>
+
+      <div class="sg-steps-col">
+        <p class="sg-steps-title"><span class="sg-steps-num">01</span> Order via App <span class="sg-steps-title-kr notranslate" translate="no">앱으로 주문 (사이렌오더)</span></p>
+        <ol class="sg-steps-list">
+          {orderApp.map((s, i) => (
+            <li><span class="sg-steps-n">{i + 1}</span><div><p>{s.en}</p><p class="sg-steps-kr notranslate" translate="no">{s.kr}</p></div></li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="sg-steps-col">
+        <p class="sg-steps-title"><span class="sg-steps-num">02</span> Order In-Store <span class="sg-steps-title-kr notranslate" translate="no">매장에서 직접 주문</span></p>
+        <ol class="sg-steps-list">
+          {orderStore.map((s, i) => (
+            <li><span class="sg-steps-n">{i + 1}</span><div><p>{s.en}</p><p class="sg-steps-kr notranslate" translate="no">{s.kr}</p></div></li>
+          ))}
+        </ol>
+        <p class="sg-steps-callout">No kiosk at Starbucks — all orders go through staff<br /><span class="notranslate" translate="no">스타벅스는 키오스크 없음, 모든 주문은 직원을 통해 진행</span></p>
+      </div>
+    </section>
+
+    <!-- Wifi / restroom -->
+    <section class="sg-block">
+      <h2 class="sg-h2">Wi-Fi & Restroom <span class="sg-h2-kr notranslate" translate="no">와이파이 · 화장실</span></h2>
+      <ul class="sg-list">
+        <li>Free Wi-Fi in most locations — network &amp; password on receipt or in-store signage<br /><span class="sg-kr notranslate" translate="no">대부분 매장 무료 와이파이 — 네트워크명·비밀번호는 영수증 또는 매장 내 안내판에서 확인</span></li>
+        <li>Restroom password — check receipt, counter board, or entrance door (usually 4 digits starting with *)<br /><span class="sg-kr notranslate" translate="no">화장실 비밀번호 — 영수증·계산대 게시판·매장 출입문에서 확인 (보통 *로 시작하는 4자리 숫자)</span></li>
+        <li>Restrooms in Korea are separated by gender by law<br /><span class="sg-kr notranslate" translate="no">한국의 화장실은 법적으로 성별에 따라 구분 운영</span></li>
+        <li>Traveling with children or someone who needs assistance? Family or accessible restrooms are recommended<br /><span class="sg-kr notranslate" translate="no">자녀 동반 또는 도움이 필요한 동행자가 있다면, 가족 화장실·장애인 화장실 이용 권장</span></li>
+      </ul>
+    </section>
+
+    <!-- Source -->
+    <section class="sg-block">
+      <h2 class="sg-h2">Information Source <span class="sg-h2-kr notranslate" translate="no">정보 출처</span></h2>
+      <ul class="sg-list">
+        <li>Based on Starbucks Korea official website (starbucks.co.kr)<br /><span class="sg-kr notranslate" translate="no">스타벅스 코리아 홈페이지(starbucks.co.kr)를 참조해 구성</span></li>
+        <li>Illustrations by TAERIJAY — not official Starbucks photos<br /><span class="sg-kr notranslate" translate="no">이미지는 TAERIJAY 자체 제작 일러스트 — 공식 스타벅스 사진 아님</span></li>
+      </ul>
+    </section>
+
+    <!-- More guides -->
+    <section class="sg-more">
+      <p>More Korea Survival Guides <span class="notranslate" translate="no">더 많은 한국 여행 꿀팁</span></p>
+      <p class="sg-more-sub">300+ verified spots on TAERIJAY+Protocol <span class="notranslate" translate="no">— 검증된 정보 300개 이상</span></p>
+      <a href="/04-channels/protocol" class="channel-subscribe-btn">taerijay.com → protocol</a>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .starbucks-guide{max-width:820px}
+  .sg-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .sg-tag{font-size:.68rem;font-weight:700;letter-spacing:.02em;color:var(--c);background:color-mix(in srgb, var(--c) 14%, transparent);border:1px solid color-mix(in srgb, var(--c) 38%, transparent);border-radius:100px;padding:5px 12px}
+
+  .sg-block{margin-bottom:48px}
+  .sg-h2{font-family:var(--f-display);font-weight:900;font-size:clamp(1.1rem,3vw,1.4rem);color:var(--ivory);margin-bottom:14px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
+  .sg-h2-kr{font-size:.82em;color:var(--kr-bright);font-weight:800}
+  .sg-h2-sub{font-size:.78rem;color:var(--dim);margin:-8px 0 14px;font-weight:600}
+
+  .sg-list{display:flex;flex-direction:column;gap:12px;list-style:none;padding:0}
+  .sg-list li{font-size:.9rem;color:var(--muted);line-height:1.65;padding-left:18px;position:relative}
+  .sg-list li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--c)}
+  .sg-list a{color:var(--c);text-decoration:underline;text-underline-offset:2px}
+  .sg-kr{display:block;color:var(--dim);font-size:.86em;margin-top:2px}
+
+  .sg-order-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
+  .sg-order-card{margin:0;border:1px solid color-mix(in srgb, var(--c) 30%, transparent);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.03)}
+  .sg-order-card img{display:block;width:100%;height:auto}
+  .sg-order-card figcaption{padding:10px 14px;font-size:.8rem;font-weight:700;color:var(--ivory)}
+  .sg-order-card figcaption span{display:block;font-size:.78em;color:var(--dim);font-weight:600;margin-top:2px}
+
+  .sg-menu-hero{margin:0 0 18px;border-radius:16px;overflow:hidden;border:1px solid color-mix(in srgb, var(--c) 30%, transparent)}
+  .sg-menu-hero img{display:block;width:100%;height:auto}
+
+  .sg-ing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+  .sg-ing-card{border:1px solid color-mix(in srgb, var(--c) 26%, transparent);border-radius:12px;padding:14px 16px;background:rgba(255,255,255,.03)}
+  .sg-ing-name{font-family:var(--f-display);font-weight:800;font-size:.92rem;color:var(--kr-bright);margin-bottom:6px;display:flex;flex-direction:column;gap:2px}
+  .sg-ing-name-en{font-size:.78em;color:var(--ivory);text-transform:uppercase;font-weight:700;letter-spacing:.01em}
+  .sg-ing-desc{font-size:.78rem;color:var(--dim);line-height:1.55}
+  .sg-ing-desc span{display:block;margin-top:2px}
+
+  .sg-note{font-size:.78rem;color:var(--dim);line-height:1.7;padding:14px 18px;border-left:2px solid var(--c);background:rgba(255,255,255,.02);margin-bottom:48px}
+  .sg-note span{display:block;margin-top:4px}
+
+  .sg-steps-col{margin-bottom:28px}
+  .sg-steps-title{display:flex;align-items:baseline;gap:10px;font-weight:800;font-size:1rem;color:var(--ivory);margin-bottom:14px}
+  .sg-steps-num{font-family:var(--f-display);font-weight:900;color:var(--c);font-size:1.1rem}
+  .sg-steps-title-kr{font-size:.8em;color:var(--kr-bright);font-weight:700}
+  .sg-steps-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+  .sg-steps-list li{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid color-mix(in srgb, var(--c) 24%, transparent);border-radius:10px;background:rgba(255,255,255,.03)}
+  .sg-steps-n{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--c);color:var(--bg);font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .sg-steps-list p{margin:0;font-size:.86rem;color:var(--ivory);font-weight:600}
+  .sg-steps-kr{color:var(--dim)!important;font-size:.8em!important;font-weight:500!important;margin-top:2px!important}
+  .sg-steps-callout{text-align:center;font-size:.8rem;font-weight:700;color:var(--c);background:color-mix(in srgb, var(--c) 12%, transparent);border:1px solid color-mix(in srgb, var(--c) 30%, transparent);border-radius:10px;padding:12px;margin-top:12px}
+  .sg-steps-callout span{display:block;color:var(--dim);font-weight:600;margin-top:2px}
+
+  .sg-more{text-align:center;padding:40px 20px;border-top:1px solid color-mix(in srgb, var(--c) 24%, transparent);margin-top:16px}
+  .sg-more p{font-size:.92rem;font-weight:700;color:var(--ivory)}
+  .sg-more p span{color:var(--dim);font-weight:600}
+  .sg-more-sub{font-size:.78rem!important;color:var(--dim)!important;font-weight:500!important;margin:6px 0 18px!important}
+
+  @media (max-width:560px){
+    .sg-order-grid{grid-template-columns:1fr}
+  }
+</style>
