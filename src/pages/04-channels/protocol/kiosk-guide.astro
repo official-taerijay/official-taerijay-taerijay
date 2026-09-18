@@ -1,0 +1,151 @@
+---
+// 한국 키오스크 완전정복 가이드 — protocol 채널 소속의 독립 콘텐츠 페이지.
+// 브랜드 무관, 순수 조작법 가이드. starbucks-guide.astro와 동일한 폼으로 구성.
+export const prerender = true;
+
+import Layout from '../../../layouts/Layout.astro';
+import '../../../styles/channel-page.css';
+
+const color = '#F16B24';
+
+const tabletop = [
+  { kr: '언어 아이콘(국기 또는 \'언어\') 터치', en: 'Tap the language icon (flag or 언어)' },
+  { kr: '메뉴 둘러보고 항목 터치해서 담기', en: 'Browse menu, tap item to add' },
+  { kr: '수량·옵션 조정', en: 'Adjust quantity/options' },
+  { kr: '장바구니 아이콘 터치', en: 'Tap the cart icon' },
+  { kr: '확인 후 카드 결제', en: 'Confirm and pay by card' },
+];
+
+const standing = [
+  { kr: '화면 터치로 시작', en: 'Tap screen to start' },
+  { kr: '언어 선택 (화면 상단)', en: 'Select language (top corner)' },
+  { kr: '매장 식사 / 포장 선택', en: 'Choose dine-in or take-out' },
+  { kr: '카테고리별로 메뉴 담기', en: 'Browse categories, add items' },
+  { kr: '장바구니 확인', en: 'Review your cart' },
+  { kr: '카드 또는 모바일페이 결제', en: 'Pay by card or mobile pay' },
+  { kr: '영수증·번호표 받고 호출 대기', en: 'Take your receipt/number, wait for call' },
+];
+
+const qrOrder = [
+  { kr: '카메라 앱 열고 QR코드 비추기', en: 'Open camera app, point at QR code' },
+  { kr: '뜨는 링크 터치', en: 'Tap the link that appears' },
+  { kr: '웹 메뉴에서 언어 선택', en: 'Select language in the web menu' },
+  { kr: '메뉴 둘러보고 담기', en: 'Browse and add items' },
+  { kr: '브라우저에서 바로 결제(카드 또는 모바일페이)', en: 'Pay directly in the browser (card or mobile pay)' },
+  { kr: '테이블 번호로 자동 서빙', en: 'Food is brought to your table automatically' },
+];
+
+const kioskTypes = [
+  { id: 'tabletop', img: '05_kiosk_2_tabletop.png', numLabel: '01', titleKr: '테이블 비치형 키오스크', titleEn: 'Tabletop Kiosk', steps: tabletop,
+    note: { kr: '한식 고깃집, 패밀리레스토랑, 일부 패스트푸드 체인에서 흔함. 대부분 현금 불가 — 카드만 가능.', en: 'Common in Korean BBQ, family restaurants, some fast-food chains. No cash on most — card only.' } },
+  { id: 'standing', img: '05_kiosk_3_standing.png', numLabel: '02', titleKr: '매장 공용 키오스크', titleEn: 'Standing Shared Kiosk', steps: standing,
+    note: { kr: '줄이 길면 직원이 안내하는 경우가 많음 — 편하게 도움 요청 가능. 일부는 현금(지폐 투입구) 가능하지만 항상은 아님.', en: 'If a line forms, staff usually help — don\'t hesitate to ask. Cash sometimes accepted but not always; card is safest.' } },
+  { id: 'qr', img: '05_kiosk_4_qr.png', numLabel: '03', titleKr: 'QR코드 모바일 주문', titleEn: 'QR Code Mobile Order', steps: qrOrder,
+    note: { kr: '2023년 이후 카페·캐주얼 다이닝에서 빠르게 확산 중. QR 스캔이 안 되면 인쇄된 짧은 URL이 대체 수단으로 있는지 확인.', en: 'Growing fast in cafes and casual dining since 2023. If the QR code won\'t scan, check for a printed short URL as backup.' } },
+];
+---
+<Layout title="Korea Kiosk Guide | TAERIJAY+Protocol">
+  <div class="sub-page starbucks-guide" style={`--c:${color}`}>
+    <div class="sub-topbar">
+      <button type="button" class="back-btn" onclick="history.back()">← 뒤로가기</button>
+    </div>
+
+    <section class="sub-hero">
+      <a href="/04-channels/protocol" class="sub-parent-link">← taerijay+protocol</a>
+      <div class="sub-title">
+        <span class="sub-title-kr notranslate" translate="no">한국 키오스크 완전정복</span>
+        <span class="sub-title-en">Korea Kiosk Survival Guide — 3 Types</span>
+      </div>
+      <div class="sg-tags">
+        <span class="sg-tag notranslate" translate="no">taerijay+protocol</span>
+        <span class="sg-tag">kiosk</span>
+        <span class="sg-tag">self-order</span>
+        <span class="sg-tag notranslate" translate="no">키오스크</span>
+        <span class="sg-tag notranslate" translate="no">무인주문</span>
+        <span class="sg-tag notranslate" translate="no">QR주문</span>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="sg-block">
+      <h2 class="sg-h2">Overview <span class="sg-h2-kr notranslate" translate="no">한눈에 보기</span></h2>
+      <ul class="sg-list">
+        <li>Not brand-specific — general kiosk operating principles used across Korea<br /><span class="sg-kr notranslate" translate="no">브랜드 무관 — 한국 전역에서 통용되는 키오스크 조작 원리</span></li>
+        <li>3 types: tabletop kiosk, standing shared kiosk, QR code mobile order<br /><span class="sg-kr notranslate" translate="no">3가지 유형: 테이블 비치형, 매장 공용형, QR코드 모바일 주문</span></li>
+        <li>Most kiosks support English, Chinese, Japanese — look for the language icon first<br /><span class="sg-kr notranslate" translate="no">대부분의 키오스크는 영어·중국어·일본어 지원 — 언어 아이콘부터 확인</span></li>
+      </ul>
+    </section>
+
+    <!-- 3 kiosk types -->
+    {kioskTypes.map((t) => (
+      <section class="sg-block" id={t.id}>
+        <figure class="sg-menu-hero">
+          <img src={`/images/protocol/kiosk/${t.img}`} alt={`${t.titleEn} steps`} loading="lazy" />
+        </figure>
+        <h2 class="sg-h2"><span class="sg-steps-num">{t.numLabel}</span> {t.titleEn} <span class="sg-h2-kr notranslate" translate="no">{t.titleKr}</span></h2>
+
+        <ol class="sg-steps-list">
+          {t.steps.map((s, i) => (
+            <li><span class="sg-steps-n">{i + 1}</span><div><p>{s.en}</p><p class="sg-steps-kr notranslate" translate="no">{s.kr}</p></div></li>
+          ))}
+        </ol>
+
+        <p class="sg-note">
+          {t.note.en}<br />
+          <span class="notranslate" translate="no">{t.note.kr}</span>
+        </p>
+      </section>
+    ))}
+
+    <!-- Common tips -->
+    <section class="sg-block">
+      <h2 class="sg-h2">Common Tips <span class="sg-h2-kr notranslate" translate="no">공통 팁</span></h2>
+      <ul class="sg-list">
+        <li>Language icon usually looks like a globe or flag icon, top corner of screen<br /><span class="sg-kr notranslate" translate="no">언어 아이콘은 보통 지구본 또는 국기 모양, 화면 상단 코너</span></li>
+        <li>"매장" = dine-in, "포장" = takeout — this choice affects pricing at some places<br /><span class="sg-kr notranslate" translate="no">"매장"=매장 식사, "포장"=포장 — 일부 매장은 이 선택에 따라 가격이 다름</span></li>
+        <li>Card payment (Visa/Mastercard) is accepted almost everywhere kiosks are used<br /><span class="sg-kr notranslate" translate="no">키오스크 사용 매장 대부분 Visa/Mastercard 카드 결제 가능</span></li>
+        <li>Don't worry about making mistakes — most kiosks let you edit your cart before paying<br /><span class="sg-kr notranslate" translate="no">실수해도 괜찮음 — 대부분 결제 전 장바구니 수정 가능</span></li>
+      </ul>
+    </section>
+
+    <!-- More guides -->
+    <section class="sg-more">
+      <p>More Korea Survival Guides <span class="notranslate" translate="no">더 많은 한국 여행 꿀팁</span></p>
+      <p class="sg-more-sub">300+ verified spots on TAERIJAY+Protocol <span class="notranslate" translate="no">— 검증된 정보 300개 이상</span></p>
+      <a href="/04-channels/protocol" class="channel-subscribe-btn">taerijay.com → protocol</a>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .starbucks-guide{max-width:820px}
+  .sg-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .sg-tag{font-size:.68rem;font-weight:700;letter-spacing:.02em;color:var(--c);background:color-mix(in srgb, var(--c) 14%, transparent);border:1px solid color-mix(in srgb, var(--c) 38%, transparent);border-radius:100px;padding:5px 12px}
+
+  .sg-block{margin-bottom:48px}
+  .sg-h2{font-family:var(--f-display);font-weight:900;font-size:clamp(1.1rem,3vw,1.4rem);color:var(--ivory);margin-bottom:14px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
+  .sg-h2-kr{font-size:.82em;color:var(--kr-bright);font-weight:800}
+  .sg-steps-num{font-family:var(--f-display);font-weight:900;color:var(--c);font-size:1em}
+
+  .sg-list{display:flex;flex-direction:column;gap:12px;list-style:none;padding:0}
+  .sg-list li{font-size:.9rem;color:var(--muted);line-height:1.65;padding-left:18px;position:relative}
+  .sg-list li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--c)}
+  .sg-kr{display:block;color:var(--dim);font-size:.86em;margin-top:2px}
+
+  .sg-menu-hero{margin:0 0 18px;border-radius:16px;overflow:hidden;border:1px solid color-mix(in srgb, var(--c) 30%, transparent)}
+  .sg-menu-hero img{display:block;width:100%;height:auto}
+
+  .sg-steps-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+  .sg-steps-list li{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid color-mix(in srgb, var(--c) 24%, transparent);border-radius:10px;background:rgba(255,255,255,.03)}
+  .sg-steps-n{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--c);color:var(--bg);font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .sg-steps-list p{margin:0;font-size:.86rem;color:var(--ivory);font-weight:600}
+  .sg-steps-kr{color:var(--dim)!important;font-size:.8em!important;font-weight:500!important;margin-top:2px!important}
+
+  .sg-note{font-size:.78rem;color:var(--dim);line-height:1.7;padding:14px 18px;border-left:2px solid var(--c);background:rgba(255,255,255,.02);margin-bottom:0}
+  .sg-note span{display:block;margin-top:4px}
+
+  .sg-more{text-align:center;padding:40px 20px;border-top:1px solid color-mix(in srgb, var(--c) 24%, transparent);margin-top:16px}
+  .sg-more p{font-size:.92rem;font-weight:700;color:var(--ivory)}
+  .sg-more p span{color:var(--dim);font-weight:600}
+  .sg-more-sub{font-size:.78rem!important;color:var(--dim)!important;font-weight:500!important;margin:6px 0 18px!important}
+</style>

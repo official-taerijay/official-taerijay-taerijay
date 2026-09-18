@@ -34,9 +34,18 @@ try {
   console.error('[protocol-index] deriveCategoriesFromRows failed', e);
 }
 const merged = mergeSheetCategories('protocol', sheetCategories) || CHANNEL_MAP.protocol;
-const categories = Object.entries(merged.subs).map(([slug, cat]) => ({
-  slug, label: cat.kr, labelEn: cat.en, free: !!cat.free,
+const sheetBasedCategories = Object.entries(merged.subs).map(([slug, cat]) => ({
+  slug, label: cat.kr, labelEn: cat.en, free: !!cat.free, href: `/04-channels/protocol/${slug}`,
 }));
+
+// 구글시트 항목 그리드가 아니라 자체 제작한 정적 가이드 문서(브랜드/기기 사용법 등)는
+// 시트 카테고리 시스템 밖에서 별도 페이지로 관리하고, 여기서는 카드 그리드에만 고정 노출.
+const guideCategories = [
+  { slug: 'starbucks-guide', label: '스타벅스 메뉴 & 주문법', labelEn: 'Starbucks Menu Guide', free: true, href: '/04-channels/protocol/starbucks-guide' },
+  { slug: 'kiosk-guide', label: '키오스크 완전정복', labelEn: 'Korea Kiosk Guide', free: true, href: '/04-channels/protocol/kiosk-guide' },
+];
+
+const categories = [...guideCategories, ...sheetBasedCategories];
 const freeN = categories.filter((c) => c.free).length;
 const paidN = categories.length - freeN;
 const color = '#F16B24';
@@ -63,7 +72,7 @@ const color = '#F16B24';
     {categories.length > 0 && (
       <section class="cat-grid-section">
         {categories.map((cat) => (
-          <a href={`/04-channels/protocol/${cat.slug}`} class="cat-card">
+          <a href={cat.href} class="cat-card">
             <div class="cat-card-art">
               <span class={`cat-card-tier notranslate ${cat.free ? 'is-free' : 'is-paid'}`} translate="no">{cat.free ? '무료 FREE' : '유료 PAID'}</span>
               <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
