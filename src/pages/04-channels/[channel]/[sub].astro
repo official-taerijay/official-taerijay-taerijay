@@ -122,16 +122,34 @@ if (wantsBrandGroups) {
     }
     map.get(key).push({ item, idx });
   });
-  // 항목 수 많은 브랜드 순으로 정렬해 주요 브랜드가 먼저 보이게 함
-  order.sort((a, b) => map.get(b).length - map.get(a).length);
-  brandGroups = order.map((key) => ({
+  const isFranchise = channel === 'protocol' && sub === 'franchise';
+  if (isFranchise) {
+    // 프랜차이즈 브랜드관: 가나다 순(brand_sort가 있으면 한글 읽기 기준)
+    const sortKey = (k) => (map.get(k)[0].item.brand_sort || k).replace(/\s+/g, '');
+    order.sort((a, b) => sortKey(a).localeCompare(sortKey(b), 'ko'));
+  } else {
+    // 항목 수 많은 브랜드 순으로 정렬해 주요 브랜드가 먼저 보이게 함
+    order.sort((a, b) => map.get(b).length - map.get(a).length);
+  }
+  brandGroups = order.map((key, i) => ({
     key,
     nameKr: key,
-    nameEn: '',
+    nameEn: map.get(key)[0].item.brand_en || '',
+    cat: map.get(key)[0].item.brand_cat || '',
+    anchor: `brand-${i}`,
     img: '',
     entries: map.get(key),
   }));
 }
+// 프랜차이즈 브랜드관 전용: 카페·베이커리 / 식당 2개 카테고리로 나눔
+const FR_CATS = [
+  { key: 'cafe', kr: '카페·베이커리', en: 'Cafe & Bakery' },
+  { key: 'restaurant', kr: '식당', en: 'Restaurant' },
+];
+const isFranchiseSub = channel === 'protocol' && sub === 'franchise';
+const franchiseCats = isFranchiseSub
+  ? FR_CATS.map((c) => ({ ...c, groups: brandGroups.filter((g) => g.cat === c.key) })).filter((c) => c.groups.length > 0)
+  : [];
 // 브랜드가 딱 1종류뿐이면(예: 카테고리 전체가 한 브랜드) 그룹핑 의미가 없어 일반 그리드로 대체
 const useBrandGroups = wantsBrandGroups && brandGroups.length > 1;
 
@@ -248,8 +266,41 @@ const cardGroups = useGenreGroups ? genreGroups : (useBrandGroups ? brandGroups 
 
     {!loadError && items.length > 0 && useCardGroups && (
       <div class="genre-groups" id="itemGrid">
-        {cardGroups.map((group) => (
-          <section class="genre-group" data-group={group.key}>
+        {isFranchiseSub && franchiseCats.length > 0 && (
+          <div class="fr-tabs" id="frTabs">
+            <button type="button" class="region-chip is-active" data-cat="all">
+              <span class="region-chip-text">
+                <span class="region-chip-kr notranslate" translate="no">전체 <span class="region-chip-count">{brandGroups.length}</span></span>
+                <span class="region-chip-en">All <span class="region-chip-count">{brandGroups.length}</span></span>
+              </span>
+            </button>
+            {franchiseCats.map((c) => (
+              <button type="button" class="region-chip" data-cat={c.key}>
+                <span class="region-chip-text">
+                  <span class="region-chip-kr notranslate" translate="no">{c.kr} <span class="region-chip-count">{c.groups.length}</span></span>
+                  <span class="region-chip-en">{c.en} <span class="region-chip-count">{c.groups.length}</span></span>
+                </span>
+              </button>
+            ))}
+          </div>
+        )}
+        {(isFranchiseSub ? franchiseCats : [{ key: '', kr: '', en: '', groups: cardGroups }]).map((section) => (
+          <div class="fr-cat" data-cat={section.key}>
+            {isFranchiseSub && (
+              <div class="fr-cat-head">
+                <h2 class="fr-cat-title notranslate" translate="no">{section.kr} <span class="fr-cat-title-en">{section.en}</span></h2>
+                <nav class="fr-index" aria-label={`${section.kr} 브랜드 목록`}>
+                  {section.groups.map((g) => (
+                    <a href={`#${g.anchor}`} class="fr-index-chip notranslate" translate="no">
+                      <span class="fr-index-kr">{g.nameKr}</span>
+                      <span class="fr-index-en">{g.nameEn}</span>
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            )}
+        {section.groups.map((group) => (
+          <section class="genre-group" data-group={group.key} id={group.anchor || undefined}>
             <div class="genre-group-header">
               {group.img && (
                 <div class="genre-group-poster">
@@ -289,6 +340,8 @@ const cardGroups = useGenreGroups ? genreGroups : (useBrandGroups ? brandGroups 
               })}
             </div>
           </section>
+        ))}
+          </div>
         ))}
         {lockedCount > 0 && (
           <a href="/pricing" class="genre-group-unlock">
@@ -387,7 +440,42 @@ const cardGroups = useGenreGroups ? genreGroups : (useBrandGroups ? brandGroups 
     </script>
   )}
 
+  {isFranchiseSub && (
+    <script>
+      const frTabs = document.getElementById('frTabs');
+      if (frTabs) {
+        frTabs.addEventListener('click', (e) => {
+          const btn = e.target.closest('.region-chip');
+          if (!btn) return;
+          frTabs.querySelectorAll('.region-chip').forEach((c) => c.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          const cat = btn.getAttribute('data-cat');
+          document.querySelectorAll('.fr-cat').forEach((sec) => {
+            sec.hidden = !(cat === 'all' || sec.getAttribute('data-cat') === cat);
+          });
+        });
+      }
+    </script>
+  )}
+
   <style>
+    .fr-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
+    .fr-cat{display:flex;flex-direction:column;gap:36px}
+    .fr-cat[hidden]{display:none}
+    .fr-cat-head{display:flex;flex-direction:column;gap:12px;padding-bottom:4px}
+    .fr-cat-title{font-size:clamp(1.15rem,3vw,1.5rem);font-weight:800;color:var(--ivory);margin:0}
+    .fr-cat-title-en{font-size:.6em;font-weight:700;color:var(--c);text-transform:uppercase;letter-spacing:.03em;margin-left:6px}
+    .fr-index{display:flex;flex-wrap:wrap;gap:8px}
+    .fr-index-chip{
+      display:inline-flex;flex-direction:column;gap:1px;padding:6px 14px;border-radius:12px;
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);text-decoration:none;line-height:1.35;
+    }
+    .fr-index-chip:hover{background:rgba(255,255,255,.09)}
+    .fr-index-kr{font-size:.82rem;font-weight:700;color:var(--kr-bright)}
+    .fr-index-en{font-size:.66rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--dim)}
+    html{scroll-behavior:smooth}
+    .genre-group{scroll-margin-top:80px}
+
     .sub-count{margin-top:10px;display:flex;flex-direction:column;gap:2px}
     .sub-count-pair{display:flex;flex-wrap:wrap;gap:2px}
     .sub-count-kr{font-size:clamp(.72rem,1.9vw,.86rem);color:var(--kr-bright)}
