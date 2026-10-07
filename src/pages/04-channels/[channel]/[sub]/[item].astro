@@ -310,9 +310,17 @@ const showAddrCopy = isRealAddress;
                 <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.addr_en || item.addr_kr)}`} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-map item-link-btn-google notranslate" translate="no">구글맵 <span class="item-link-btn-en">Google Maps</span></a>
               </div>
             )}
-            {item.web && (
+            {(item.web || item.menu_url || item.store_url) && (
               <div class="item-links">
-                <a href={item.web} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web notranslate" translate="no">🌐 공식 웹사이트 <span class="item-link-btn-en">Official Website</span></a>
+                {item.web && <a href={item.web} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web notranslate" translate="no">🌐 공식 웹사이트 <span class="item-link-btn-en">Official Website</span></a>}
+                {item.menu_url && <a href={item.menu_url} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web notranslate" translate="no">📋 메뉴 페이지 <span class="item-link-btn-en">Menu Page</span></a>}
+                {item.store_url && <a href={item.store_url} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web notranslate" translate="no">📍 매장 찾기 <span class="item-link-btn-en">Store Finder</span></a>}
+              </div>
+            )}
+            {(item.app_ios || item.app_android) && (
+              <div class="item-links">
+                {item.app_android && <a href={item.app_android} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web notranslate" translate="no">🤖 {item.app_name_kr || '앱'} 안드로이드 <span class="item-link-btn-en">Google Play</span></a>}
+                {item.app_ios && <a href={item.app_ios} target="_blank" rel="noopener noreferrer" class="item-link-btn item-link-btn-web notranslate" translate="no">🍎 {item.app_name_kr || '앱'} iOS <span class="item-link-btn-en">App Store</span></a>}
               </div>
             )}
           </section>
