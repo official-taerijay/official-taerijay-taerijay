@@ -6,6 +6,7 @@ import ChannelLogo from '../../components/ChannelLogo.astro';
 import CardNewsSlider from '../../components/CardNewsSlider.astro';
 import { CHANNEL_MAP, mergeSheetCategories } from '../../lib/channelCategories.js';
 import { fetchChannelRows, deriveCategoriesFromRows } from '../../lib/sheetsCms.js';
+import { newSubSlugs } from '../../lib/itemHelpers.js';
 import '../../styles/channel-page.css';
 
 // 동시접속 대량 트래픽 대비: 공개 콘텐츠라 Vercel Edge CDN이 60초간 캐싱하도록 지시
@@ -51,6 +52,7 @@ const tabs = Object.entries(merged.subs).map(([slug, cat]) => ({
 }));
 const freeN = tabs.filter((t) => t.free).length;
 const paidN = tabs.length - freeN;
+const newSubs = newSubSlugs(allRows);
 const color = '#e8e4dc';
 ---
 <Layout title="taerijay+mini | TAERIJAY">
@@ -77,6 +79,7 @@ const color = '#e8e4dc';
         {tabs.map((tab) => (
           <a href={`/04-channels/mini/${tab.slug}`} class="cat-card">
             <div class="cat-card-art">
+              {newSubs.has(tab.slug) && <span class="item-new-badge notranslate" translate="no">NEW</span>}
               <span class={`cat-card-tier notranslate ${tab.free ? 'is-free' : 'is-paid'}`} translate="no">{tab.free ? '무료 FREE' : '유료 PAID'}</span>
               <span class="cat-card-name notranslate" translate="no">{tab.label}</span>
               <span class="cat-card-name-en">{tab.labelEn}</span>

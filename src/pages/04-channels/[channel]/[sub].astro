@@ -7,29 +7,8 @@ export const prerender = false;
 import Layout from '../../../layouts/Layout.astro';
 import { CHANNEL_MAP, mergeSheetCategories } from '../../../lib/channelCategories.js';
 import { fetchChannelRows, deriveCategoriesFromRows, toStr } from '../../../lib/sheetsCms.js';
-import { withItemSlugs, extractSido, sidoToEn } from '../../../lib/itemHelpers.js';
+import { withItemSlugs, extractSido, sidoToEn, isNewItem } from '../../../lib/itemHelpers.js';
 
-// 신규 항목 표시(NEW): 매월 10일·20일 업데이트 주기에 맞춰
-//   new_until(YYYY-MM-DD, 한국시간 기준 해당일 마지막까지)이 있으면 그날까지 표시, 다음날부터 사라짐.
-//   new_until이 없고 added_at만 있으면 added_at 기준 다음 10일/20일 업데이트 전날까지 표시.
-const kstToday = () => new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);
-const nextCycleEnd = (addedAt) => {
-  // addedAt 이후 첫 10일/20일의 전날
-  const d = new Date(addedAt + 'T00:00:00Z');
-  const y = d.getUTCFullYear(), m = d.getUTCMonth(), day = d.getUTCDate();
-  let next;
-  if (day < 10) next = Date.UTC(y, m, 10);
-  else if (day < 20) next = Date.UTC(y, m, 20);
-  else next = Date.UTC(y, m + 1, 10);
-  return new Date(next - 86400000).toISOString().slice(0, 10);
-};
-const isNewItem = (it) => {
-  if (!it) return false;
-  const until = it.new_until || (it.added_at ? nextCycleEnd(it.added_at) : '');
-  if (!until) return false;
-  const today = kstToday();
-  return (!it.added_at || today >= it.added_at) && today <= until;
-};
 import '../../../styles/channel-page.css';
 
 // 동시접속 대량 트래픽 대비: 공개 콘텐츠라 Vercel Edge CDN이 60초간 캐싱하도록 지시
@@ -278,7 +257,7 @@ const cardGroups = useGenreGroups ? genreGroups : (useBrandGroups ? brandGroups 
         {regionCounts.map(([sido, count]) => (
           <button type="button" class="region-chip" data-region={sido}>
             <span class="region-chip-text">
-              <span class="region-chip-kr notranslate" translate="no">{sido} <span class="region-chip-count">{count}</span></span>
+              <span class="region-chip-kr notranslate" translate="no">{sido} <span class="region-chip-count">{count}</span>{items.some((it) => isNewItem(it) && extractSido(it) === sido) && <span class="inline-new-badge notranslate" translate="no">NEW</span>}</span>
               <span class="region-chip-en">{sidoToEn(sido)} <span class="region-chip-count">{count}</span></span>
             </span>
           </button>
@@ -332,6 +311,7 @@ const cardGroups = useGenreGroups ? genreGroups : (useBrandGroups ? brandGroups 
               <div class="genre-group-title">
                 <span class="genre-group-name notranslate" translate="no">
                   {group.nameKr}{group.nameEn && <span class="genre-group-name-en">{group.nameEn}</span>}
+                  {group.entries.some((e) => isNewItem(e.item)) && <span class="inline-new-badge notranslate" translate="no">NEW</span>}
                 </span>
                 <span class="genre-group-count notranslate" translate="no">총 {group.entries.length}개 · {group.entries.length} items</span>
               </div>

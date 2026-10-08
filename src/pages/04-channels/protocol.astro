@@ -10,6 +10,7 @@ import ChannelLogo from '../../components/ChannelLogo.astro';
 import CardNewsSlider from '../../components/CardNewsSlider.astro';
 import { CHANNEL_MAP, mergeSheetCategories } from '../../lib/channelCategories.js';
 import { fetchChannelRows, deriveCategoriesFromRows } from '../../lib/sheetsCms.js';
+import { newSubSlugs } from '../../lib/itemHelpers.js';
 import '../../styles/channel-page.css';
 
 // 서울 야경(광화문·남대문) 컨셉 — 실제 이미지는 img 필드에 추후 URL만 채워넣으면 자동 반영됨(현재는 그라디언트 대체)
@@ -48,6 +49,7 @@ const guideCategories = [
 const categories = [...guideCategories, ...sheetBasedCategories];
 const freeN = categories.filter((c) => c.free).length;
 const paidN = categories.length - freeN;
+const newSubs = newSubSlugs(allRows);
 const color = '#F16B24';
 ---
 <Layout title="taerijay+protocol | TAERIJAY">
@@ -74,6 +76,7 @@ const color = '#F16B24';
         {categories.map((cat) => (
           <a href={cat.href} class="cat-card">
             <div class="cat-card-art">
+              {newSubs.has(cat.slug) && <span class="item-new-badge notranslate" translate="no">NEW</span>}
               <span class={`cat-card-tier notranslate ${cat.free ? 'is-free' : 'is-paid'}`} translate="no">{cat.free ? '무료 FREE' : '유료 PAID'}</span>
               <span class="cat-card-name notranslate" translate="no">{cat.label}</span>
               <span class="cat-card-name-en">{cat.labelEn}</span>

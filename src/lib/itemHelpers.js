@@ -108,3 +108,29 @@ export function priceKrToUsdHint(priceKr) {
   const usdText = usd >= 10 ? Math.round(usd).toString() : usd.toFixed(2);
   return `약 USD ${usdText}`;
 }
+
+
+// ── 신규(NEW) 표시 ─────────────────────────────────────────────
+// 매월 10일·20일 업데이트 주기에 맞춰: new_until(YYYY-MM-DD)이 있으면 그날(한국시간)까지,
+// 없고 added_at만 있으면 added_at 이후 첫 10일/20일의 전날까지 표시.
+const kstToday = () => new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);
+const nextCycleEnd = (addedAt) => {
+  const d = new Date(addedAt + 'T00:00:00Z');
+  const y = d.getUTCFullYear(), m = d.getUTCMonth(), day = d.getUTCDate();
+  const next = day < 10 ? Date.UTC(y, m, 10) : day < 20 ? Date.UTC(y, m, 20) : Date.UTC(y, m + 1, 10);
+  return new Date(next - 86400000).toISOString().slice(0, 10);
+};
+export function isNewItem(it) {
+  if (!it) return false;
+  const added = String(it.added_at || '').trim();
+  const until = String(it.new_until || '').trim() || (added ? nextCycleEnd(added) : '');
+  if (!until) return false;
+  const today = kstToday();
+  return (!added || today >= added) && today <= until;
+}
+// 신규 항목이 하나라도 있는 sub(카테고리) slug 집합
+export function newSubSlugs(rows = []) {
+  const set = new Set();
+  for (const r of rows) if (r && r.sub && isNewItem(r)) set.add(String(r.sub).trim());
+  return set;
+}
