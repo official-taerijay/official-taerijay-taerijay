@@ -17131,7 +17131,8 @@
     "app_ios": "https://apps.apple.com/kr/app/id1017265117",
     "brand_en": "Paul Bassett",
     "brand_cat": "cafe",
-    "brand_sort": "폴바셋"
+    "brand_sort": "폴바셋",
+    "added_at": "2026-10-07"
   },
   {
     "sub": "franchise",
@@ -17168,7 +17169,8 @@
     "app_android": "https://play.google.com/store/search?q=%ED%88%AC%EC%8D%B8%ED%95%98%ED%8A%B8&c=apps&hl=ko",
     "app_ios": "https://apps.apple.com/kr/app/id1225957208",
     "brand_en": "A Twosome Place",
-    "brand_cat": "cafe"
+    "brand_cat": "cafe",
+    "added_at": "2026-10-07"
   },
   {
     "sub": "franchise",
@@ -17207,7 +17209,8 @@
     "menu_url": "https://www.mega-mgccoffee.com/menu/",
     "store_url": "https://www.mega-mgccoffee.com/store/find/",
     "brand_en": "Mega MGC Coffee",
-    "brand_cat": "cafe"
+    "brand_cat": "cafe",
+    "added_at": "2026-10-07"
   },
   {
     "sub": "franchise",
@@ -17246,7 +17249,8 @@
     "menu_url": "https://oozycoffee.com/Vision",
     "store_url": "https://oozycoffee.com/47",
     "brand_en": "OOZY Coffee",
-    "brand_cat": "cafe"
+    "brand_cat": "cafe",
+    "added_at": "2026-10-07"
   },
   {
     "sub": "franchise",
@@ -17282,7 +17286,8 @@
     "app_name_kr": "커피빈",
     "app_android": "https://play.google.com/store/search?q=%EC%BB%A4%ED%94%BC%EB%B9%88%20%ED%8D%BC%ED%94%8C%EC%98%A4%EB%8D%94&c=apps&hl=ko",
     "brand_en": "Coffee Bean",
-    "brand_cat": "cafe"
+    "brand_cat": "cafe",
+    "added_at": "2026-10-07"
   },
   {
     "sub": "franchise",
@@ -17319,7 +17324,8 @@
     "app_android": "https://play.google.com/store/search?q=%EB%A1%AF%EB%8D%B0%EC%9E%87%EC%B8%A0%20Lotteeatz&c=apps&hl=ko",
     "app_ios": "https://apps.apple.com/kr/app/id939521328",
     "brand_en": "Angel-in-us Coffee",
-    "brand_cat": "cafe"
+    "brand_cat": "cafe",
+    "added_at": "2026-10-07"
   },
   {
     "sub": "franchise",
@@ -17356,7 +17362,8 @@
     "app_android": "https://play.google.com/store/search?q=%EC%BB%B4%ED%8F%AC%EC%A6%88%EC%BB%A4%ED%94%BC&c=apps&hl=ko",
     "app_ios": "https://apps.apple.com/kr/app/id6742086811",
     "brand_en": "Compose Coffee",
-    "brand_cat": "cafe"
+    "brand_cat": "cafe",
+    "added_at": "2026-10-07"
   },
   {
     "sub": "franchise",
@@ -17395,7 +17402,8 @@
     "menu_url": "https://mmthcoffee.com/sub/menu/list.html",
     "store_url": "https://mmthcoffee.com/sub/order.html",
     "brand_en": "Mammoth Coffee",
-    "brand_cat": "cafe"
+    "brand_cat": "cafe",
+    "added_at": "2026-10-07"
   },
   {
     "sub": "franchise",
@@ -17434,7 +17442,8 @@
     "menu_url": "https://www.ediya.com/contents/menu_intro.html",
     "store_url": "https://www.ediya.com/contents/find_store.html",
     "brand_en": "EDIYA Coffee",
-    "brand_cat": "cafe"
+    "brand_cat": "cafe",
+    "added_at": "2026-10-07"
   },
   {
     "sub": "restaurant",

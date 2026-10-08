@@ -9339,7 +9339,8 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "mask-pack",
@@ -9363,7 +9364,8 @@
     "sub_kr": "마스크팩",
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
-    "sub_order": 1
+    "sub_order": 1,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "skincare",
@@ -9387,7 +9389,8 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "skincare",
@@ -9411,7 +9414,8 @@
     "sub_kr": "스킨케어",
     "sub_en": "Skincare",
     "sub_free": "",
-    "sub_order": 3
+    "sub_order": 3,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "trouble-care",
@@ -9435,7 +9439,8 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "trouble-care",
@@ -9459,7 +9464,8 @@
     "sub_kr": "트러블·진정 케어",
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
-    "sub_order": 2
+    "sub_order": 2,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "color-cosmetics",
@@ -9483,7 +9489,8 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "color-cosmetics",
@@ -9507,7 +9514,8 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "color-cosmetics",
@@ -9531,7 +9539,8 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "color-cosmetics",
@@ -9555,7 +9564,8 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "color-cosmetics",
@@ -9579,7 +9589,8 @@
     "sub_kr": "색조",
     "sub_en": "Color Cosmetics",
     "sub_free": "",
-    "sub_order": 5
+    "sub_order": 5,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "gender-care",
@@ -9603,7 +9614,8 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "gender-care",
@@ -9627,7 +9639,8 @@
     "sub_kr": "남성용품·여성용품",
     "sub_en": "Men & Women Care",
     "sub_free": "",
-    "sub_order": 10
+    "sub_order": 10,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "bodycare",
@@ -9651,7 +9664,8 @@
     "sub_kr": "바디케어",
     "sub_en": "Body Care",
     "sub_free": "",
-    "sub_order": 7
+    "sub_order": 7,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "soldout-items",
@@ -9675,7 +9689,8 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "added_at": "2026-10-07"
   },
   {
     "sub": "soldout-items",
@@ -9699,6 +9714,7 @@
     "sub_kr": "품절 대란템·시즌 한정판",
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
-    "sub_order": 11
+    "sub_order": 11,
+    "added_at": "2026-10-07"
   }
 ]

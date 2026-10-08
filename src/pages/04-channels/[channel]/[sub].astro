@@ -8,6 +8,13 @@ import Layout from '../../../layouts/Layout.astro';
 import { CHANNEL_MAP, mergeSheetCategories } from '../../../lib/channelCategories.js';
 import { fetchChannelRows, deriveCategoriesFromRows, toStr } from '../../../lib/sheetsCms.js';
 import { withItemSlugs, extractSido, sidoToEn } from '../../../lib/itemHelpers.js';
+
+// 신규 항목 표시: added_at(YYYY-MM-DD)이 14일 이내이면 NEW 배지
+const NEW_DAYS = 14;
+const isNewItem = (it) => {
+  const t = it && it.added_at ? Date.parse(it.added_at) : NaN;
+  return !isNaN(t) && Date.now() - t >= 0 && Date.now() - t <= NEW_DAYS * 86400000;
+};
 import '../../../styles/channel-page.css';
 
 // 동시접속 대량 트래픽 대비: 공개 콘텐츠라 Vercel Edge CDN이 60초간 캐싱하도록 지시
@@ -325,6 +332,7 @@ const cardGroups = useGenreGroups ? genreGroups : (useBrandGroups ? brandGroups 
                     data-region={sido || ''}
                   >
                     <div class="item-card-tile-art">
+                      {isNewItem(item) && <span class="item-new-badge notranslate" translate="no">NEW</span>}
                       <span class={`cat-card-tier notranslate ${isLocked ? 'is-paid' : 'is-free'}`} translate="no">{isLocked ? '유료 PAID' : '무료 FREE'}</span>
                       <span class="item-card-tile-name notranslate" translate="no">{item.title_kr}</span>
                       {item.title_en && <span class="item-card-tile-name-en">{item.title_en}</span>}
@@ -373,6 +381,7 @@ const cardGroups = useGenreGroups ? genreGroups : (useBrandGroups ? brandGroups 
                     onerror="this.remove(); this.closest('.item-card-tile-art')?.classList.remove('item-card-tile-art-has-img');"
                   />
                 )}
+                {isNewItem(item) && <span class="item-new-badge notranslate" translate="no">NEW</span>}
                 <span class={`cat-card-tier notranslate ${isLocked ? 'is-paid' : 'is-free'}`} translate="no">{isLocked ? '유료 PAID' : '무료 FREE'}</span>
                 <span class="item-card-tile-name notranslate" translate="no">{item.title_kr}</span>
                 {item.title_en && <span class="item-card-tile-name-en">{item.title_en}</span>}
