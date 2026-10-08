@@ -115,9 +115,10 @@ export async function POST({ request }) {
         channels: allChannels,
         tier: emailTier,
         expiresAtMs: emailExpiresAtMs,
+        purchasedAtMs,
         transactionId: txn.id,
         isFree,
-        amount: isFree ? 0 : grandTotal,
+        amount: isFree ? 0 : grandTotal, // 통화 최소단위(센트) 문자열 — 이메일에서 환산
         currency: txn.currency_code || 'USD',
       });
     } catch (err) {

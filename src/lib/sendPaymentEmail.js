@@ -1,148 +1,116 @@
 // src/lib/sendPaymentEmail.js
-// Paddle 결제 완료 웹훅에서 호출하는 "결제 확인 이메일" 발송 모듈.
-// Resend(https://resend.com) API를 사용. 환경변수:
-//   RESEND_API_KEY   — Resend 대시보드에서 발급받은 API 키
-//   RESEND_FROM      — 발신자 주소 (예: "TAERIJAY <noreply@taerijay.com>")
-//                       도메인 인증 전에는 Resend 기본 발신 주소(onboarding@resend.dev)로 임시 발송 가능
-//
-// RESEND_API_KEY가 설정되지 않은 경우 발송을 건너뛰고 콘솔에 로그만 남긴다.
-// (이메일 발송 실패가 결제 처리 자체를 막지 않도록 webhook에서는 이 함수를 try/catch로 감싸 호출할 것)
+// Paddle 결제 완료 웹훅에서 호출: ① 구매자 영수증 + 상품/이용 안내 메일 ② 운영자 알림 메일.
+// 발송 실패가 결제 처리를 막지 않도록 webhook에서 try/catch로 감싸 호출한다.
+// 환경변수는 mailer.js 참고 (RESEND_API_KEY / RESEND_FROM / ADMIN_NOTIFY_EMAIL).
 
-import { Resend } from 'resend';
+import { sendMail, getAdminRecipients, wrapCustomerHtml, wrapAdminHtml, btn, row, escapeHtml, formatKstDate } from './mailer.js';
 
 const CHANNEL_LABELS = {
-  protocol: { kr: 'protocol', en: 'protocol', desc_kr: '공항·세관·대중교통 필수 규약', desc_en: 'Airport, customs & transit essentials' },
-  mini: { kr: 'mini', en: 'mini', desc_kr: '거점 도시별 여행 코스', desc_en: 'City-based travel courses' },
-  red: { kr: 'red', en: 'red', desc_kr: '균일가 생활용품 뷰티템', desc_en: 'Uniform-price beauty & living goods' },
-  green: { kr: 'green', en: 'green', desc_kr: 'MZ 스킨케어 트렌드', desc_en: 'Gen-Z skincare trends' },
-  'mart-convenience': { kr: 'mart+convenience', en: 'mart+convenience', desc_kr: '마트·편의점 통합 DB', desc_en: 'Mart & convenience store DB' },
+  protocol: { kr: 'protocol', desc_kr: '공항·세관·대중교통·프랜차이즈 필수 규약', desc_en: 'Airport, customs, transit & franchise essentials', path: '/protocol' },
+  mini: { kr: 'mini', desc_kr: '거점 도시별 여행 코스·핫플', desc_en: 'City-based travel courses & hot spots', path: '/mini' },
+  red: { kr: 'red', desc_kr: '다이소 인기 아이템', desc_en: 'Daiso picks', path: '/red' },
+  green: { kr: 'green', desc_kr: '올리브영 스킨케어 트렌드', desc_en: 'Olive Young skincare trends', path: '/green' },
+  'mart-convenience': { kr: 'mart+convenience', desc_kr: '마트·편의점 통합 DB', desc_en: 'Mart & convenience store DB', path: '/mart-convenience' },
 };
 
-const TIER_LABELS = {
-  basic: 'BASIC',
-  standard: 'STANDARD',
-  pro: 'PRO',
+const TIER_INFO = {
+  basic: { label: 'BASIC', devices: 1 },
+  standard: { label: 'STANDARD', devices: 2 },
+  pro: { label: 'PRO', devices: 3 },
 };
 
-function formatDate(ms) {
-  const d = new Date(ms);
-  return d.toISOString().slice(0, 10); // YYYY-MM-DD (이메일은 UTC 표기, 필요시 로케일 변환 가능)
+function channelListHtml(channels) {
+  return channels.map((ch) => {
+    const l = CHANNEL_LABELS[ch] || { kr: ch, desc_kr: '', desc_en: '' };
+    return `<li style="margin-bottom:10px;">
+      <strong style="color:#F16B24;">taerijay+${l.kr}</strong>
+      <div style="font-size:13px;color:#7A9AB5;">${l.desc_kr} · ${l.desc_en}</div>
+    </li>`;
+  }).join('');
 }
 
-function buildChannelListHtml(channels) {
-  return channels
-    .map((ch) => {
-      const label = CHANNEL_LABELS[ch] || { kr: ch, en: ch, desc_kr: '', desc_en: '' };
-      return `<li style="margin-bottom:8px;">
-        <strong style="color:#F16B24;">taerijay+${label.kr}</strong>
-        <div style="font-size:13px;color:#7A9AB5;">${label.desc_kr} · ${label.desc_en}</div>
-      </li>`;
-    })
-    .join('');
-}
-
-/**
- * 결제 완료 확인 이메일 발송
- * @param {Object} params
- * @param {string} params.email       수신자 이메일
- * @param {string[]} params.channels  이번 결제로 열린 채널 slug 배열
- * @param {string} params.tier        basic | standard | pro
- * @param {number} params.expiresAtMs 만료 시각(ms)
- * @param {string} params.transactionId Paddle transaction id
- * @param {boolean} params.isFree     쿠폰(100% 할인) 결제 여부
- * @param {number|string|null} params.amount 결제 금액 (grand_total, 통화 최소단위 문자열일 수 있음)
- * @param {string} params.currency    통화 코드 (예: USD)
- */
 export async function sendPaymentConfirmationEmail({
   email,
   channels = [],
   tier = 'basic',
   expiresAtMs,
+  purchasedAtMs = Date.now(),
   transactionId,
   isFree = false,
   amount = null,
   currency = 'USD',
 }) {
-  const apiKey = import.meta.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.warn('[sendPaymentEmail] RESEND_API_KEY 미설정 — 이메일 발송을 건너뜁니다.', { email, transactionId });
-    return { skipped: true };
+  const t = TIER_INFO[tier] || { label: String(tier).toUpperCase(), devices: 1 };
+  const expiresText = expiresAtMs ? formatKstDate(expiresAtMs) : '—';
+  const daysLeft = expiresAtMs ? Math.max(0, Math.ceil((expiresAtMs - Date.now()) / 86400000)) : null;
+  // Paddle grand_total은 통화 최소단위(센트 등) 문자열 → 표시용 환산
+  let amountText = '—';
+  if (isFree) amountText = '0 (쿠폰 적용 · Coupon applied)';
+  else if (amount != null && !isNaN(Number(amount))) {
+    const zeroDecimal = ['JPY', 'KRW'].includes(currency);
+    amountText = `${currency} ${zeroDecimal ? Number(amount) : (Number(amount) / 100).toFixed(2)}`;
   }
-
-  const resend = new Resend(apiKey);
-  const from = import.meta.env.RESEND_FROM || 'TAERIJAY <onboarding@resend.dev>';
-
-  const tierLabel = TIER_LABELS[tier] || tier.toUpperCase();
-  const expiresText = expiresAtMs ? formatDate(expiresAtMs) : '—';
-  const amountText = isFree
-    ? '₩0 (쿠폰 적용 · Coupon applied)'
-    : amount != null
-      ? `${currency} ${amount}`
-      : '—';
+  const periodText = isFree ? '1개월 · 1 month' : '1년 · 1 year';
 
   const subject = isFree
-    ? `[TAERIJAY] 무료 쿠폰 이용권이 활성화되었습니다 · Free pass activated`
-    : `[TAERIJAY] 결제가 완료되었습니다 · Payment confirmed`;
+    ? '[TAERIJAY] 무료 이용권이 활성화되었습니다 · Free pass activated'
+    : '[TAERIJAY] 결제 영수증 및 이용 안내 · Receipt & your pass';
 
-  const html = `
-  <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:520px;margin:0 auto;background:#0A192F;color:#FBF9F4;padding:32px 24px;border-radius:8px;">
-    <div style="font-size:22px;font-weight:800;letter-spacing:.06em;margin-bottom:4px;">
-      TAERIJAY<span style="color:#5B0E1B;font-style:italic;">+</span>
-    </div>
-    <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A9AB5;margin-bottom:28px;">
-      Payment Confirmation
-    </div>
+  const customerHtml = wrapCustomerHtml('Receipt & Guide', `
+    <p style="font-size:16px;line-height:1.6;margin:0 0 6px;"><strong>TAERIJAY를 선택해 주셔서 감사합니다!</strong></p>
+    <p style="font-size:13px;line-height:1.6;color:#B8C4D4;margin:0 0 22px;">Thank you for choosing TAERIJAY. Your payment is complete and your pass is active.</p>
 
-    <p style="font-size:15px;line-height:1.6;margin-bottom:6px;">
-      결제가 정상적으로 완료되었습니다. 아래 채널을 바로 이용하실 수 있어요.
-    </p>
-    <p style="font-size:13px;line-height:1.6;color:#B8C4D4;margin-bottom:24px;">
-      Your payment was completed successfully. You can now access the following channel(s).
-    </p>
+    <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7A9AB5;margin-bottom:8px;">구독 상품 · Your product</div>
+    <ul style="list-style:none;margin:0 0 22px;padding:0;">${channelListHtml(channels)}</ul>
 
-    <ul style="list-style:none;margin:0 0 24px;padding:0;">
-      ${buildChannelListHtml(channels)}
-    </ul>
-
-    <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:24px;">
-      <tr>
-        <td style="padding:8px 0;color:#7A9AB5;border-top:1px solid rgba(255,255,255,.08);">등급 · Tier</td>
-        <td style="padding:8px 0;text-align:right;border-top:1px solid rgba(255,255,255,.08);font-weight:700;">${tierLabel}</td>
-      </tr>
-      <tr>
-        <td style="padding:8px 0;color:#7A9AB5;border-top:1px solid rgba(255,255,255,.08);">결제 금액 · Amount</td>
-        <td style="padding:8px 0;text-align:right;border-top:1px solid rgba(255,255,255,.08);">${amountText}</td>
-      </tr>
-      <tr>
-        <td style="padding:8px 0;color:#7A9AB5;border-top:1px solid rgba(255,255,255,.08);">이용 만료일 · Expires</td>
-        <td style="padding:8px 0;text-align:right;border-top:1px solid rgba(255,255,255,.08);">${expiresText}</td>
-      </tr>
-      <tr>
-        <td style="padding:8px 0;color:#7A9AB5;border-top:1px solid rgba(255,255,255,.08);">거래 번호 · Transaction ID</td>
-        <td style="padding:8px 0;text-align:right;border-top:1px solid rgba(255,255,255,.08);font-size:11px;color:#7A9AB5;">${transactionId || '—'}</td>
-      </tr>
+    <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7A9AB5;margin-bottom:4px;">영수증 · Receipt</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:22px;">
+      ${row('등급 · Tier', `<strong>${t.label}</strong> (동시 ${t.devices}대 · ${t.devices} device${t.devices > 1 ? 's' : ''})`)}
+      ${row('결제 금액 · Amount', escapeHtml(amountText))}
+      ${row('결제일 · Purchased', formatKstDate(purchasedAtMs))}
+      ${row('이용 기간 · Period', periodText)}
+      ${row('이용 만료일 · Expires', `<strong style="color:#F16B24;">${expiresText}</strong>${daysLeft != null ? ` (D-${daysLeft})` : ''}`)}
+      ${row('거래 번호 · Transaction ID', `<span style="font-size:11px;color:#7A9AB5;">${escapeHtml(transactionId || '—')}</span>`)}
     </table>
 
-    <a href="https://taerijay.com/" style="display:inline-block;background:#F16B24;color:#0A192F;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:12px 22px;border-radius:4px;">
-      TAERIJAY 바로가기 · Go to TAERIJAY
-    </a>
+    <div style="background:rgba(255,255,255,.05);border-left:3px solid #F16B24;padding:14px 16px;border-radius:4px;margin-bottom:22px;font-size:13px;line-height:1.8;">
+      <strong>이용 안내 · How it works</strong><br/>
+      ▪ 자동 갱신이 없습니다. 추가 결제는 발생하지 않으며, <strong>${expiresText}</strong>까지 자유롭게 이용하세요.<br/>
+      &nbsp;&nbsp;<span style="color:#B8C4D4;">No auto-renewal — you will not be charged again. Use it until ${expiresText}.</span><br/>
+      ▪ 가입한 Google 계정(${escapeHtml(email)})으로 로그인하면 바로 열립니다.<br/>
+      &nbsp;&nbsp;<span style="color:#B8C4D4;">Sign in with the Google account above to unlock.</span><br/>
+      ▪ 동시 접속은 ${t.devices}대까지 가능하며, 초과 시 가장 오래된 기기가 로그아웃됩니다.<br/>
+      &nbsp;&nbsp;<span style="color:#B8C4D4;">Up to ${t.devices} device(s) at once; the oldest session is signed out when exceeded.</span><br/>
+      ▪ 만료 후에는 열람이 종료되며, 계속 이용하려면 이용권을 다시 구매해 주세요.<br/>
+      &nbsp;&nbsp;<span style="color:#B8C4D4;">After expiry access ends; purchase a new pass to continue.</span>
+    </div>
 
-    <p style="font-size:11px;line-height:1.7;color:#5d6c82;margin-top:28px;">
-      본 결제는 PCI-DSS 인증 결제 파트너 Paddle을 통해 처리되었습니다. 카드 정보는 TAERIJAY가 보관하지 않습니다.<br/>
-      This payment was processed by our PCI-DSS certified partner Paddle. TAERIJAY never stores your card details.
+    ${btn('https://taerijay.com/', 'TAERIJAY 바로가기 · Go to TAERIJAY')}
+
+    <p style="font-size:11px;line-height:1.7;color:#5d6c82;margin-top:22px;">
+      결제는 PCI-DSS 인증 파트너 Paddle을 통해 처리되었으며 카드 정보는 TAERIJAY가 보관하지 않습니다.<br/>
+      Payment processed by Paddle (PCI-DSS). TAERIJAY never stores your card details.
     </p>
-  </div>`;
+  `);
 
-  try {
-    const result = await resend.emails.send({
-      from,
-      to: email,
-      subject,
-      html,
-    });
-    return { skipped: false, result };
-  } catch (err) {
-    console.error('[sendPaymentEmail] 발송 실패', err);
-    return { skipped: false, error: err };
-  }
+  const adminHtml = wrapAdminHtml(isFree ? '무료 쿠폰 이용권 활성화' : '신규 결제 알림', [
+    ['구매자', escapeHtml(email)],
+    ['채널', channels.map((c) => CHANNEL_LABELS[c]?.kr || c).join(', ')],
+    ['등급', t.label],
+    ['금액', escapeHtml(amountText)],
+    ['유형', isFree ? '쿠폰(무료)' : '유료'],
+    ['결제일', formatKstDate(purchasedAtMs)],
+    ['만료일', expiresText],
+    ['거래 번호', escapeHtml(transactionId || '—')],
+  ]);
+
+  const [customer, admin] = await Promise.all([
+    sendMail({ to: email, subject, html: customerHtml }),
+    sendMail({
+      to: getAdminRecipients(),
+      subject: `[TAERIJAY·운영] ${isFree ? '쿠폰 활성화' : '결제 완료'}: ${email} · ${channels.join('+')}`,
+      html: adminHtml,
+    }),
+  ]);
+  return { customer, admin };
 }

@@ -600,6 +600,16 @@ import Analytics from '@vercel/analytics/astro';
         return;
       }
 
+      // 가입 환영 메일 (서버에서 최초 1회만 실제 발송 — 중복 호출은 무시됨)
+      try {
+        if (!sessionStorage.getItem('tj_welcome_' + user.uid)) {
+          sessionStorage.setItem('tj_welcome_' + user.uid, '1');
+          user.getIdToken().then((tk) =>
+            fetch('/api/welcome', { method: 'POST', headers: { Authorization: `Bearer ${tk}` } }).catch(() => {})
+          );
+        }
+      } catch (e) { /* ignore */ }
+
       const stillValid = await checkDeviceSession(user);
       if (!stillValid) return;
 

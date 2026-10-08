@@ -219,7 +219,7 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
     <p class="blog-title-kr">최신 블로그</p>
     <p class="blog-title-en" data-i18n="en">Latest From the Blog</p>
 
-    <div class="blog-grid">
+    <div class="blog-grid" id="blog-grid">
       {blogPosts.map((post) => (
         <a href={post.url} target="_blank" rel="noopener noreferrer" class="blog-card">
           <span class="blog-card-date notranslate" translate="no">{post.date}</span>
@@ -236,6 +236,25 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
         <span class="btn-blog-more-en" data-i18n="en">View All Posts →</span>
       </a>
     </div>
+
+    <script is:inline>
+      // 최신 글 자동 갱신: Blogger 피드를 읽어 카드 교체. 실패하면 위의 정적 목록을 그대로 둔다.
+      (function () {
+        var grid = document.getElementById('blog-grid');
+        if (!grid) return;
+        function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+        fetch('/api/blog-feed').then(function (r) { return r.json(); }).then(function (d) {
+          if (!d || !d.posts || !d.posts.length) return;
+          grid.innerHTML = d.posts.map(function (p) {
+            return '<a href="' + esc(p.url) + '" target="_blank" rel="noopener noreferrer" class="blog-card">' +
+              '<span class="blog-card-date notranslate" translate="no">' + esc(p.date) + '</span>' +
+              '<span class="blog-card-title-kr">' + esc(p.titleKr) + '</span>' +
+              '<span class="blog-card-title-en" data-i18n="en">' + esc(p.titleEn) + '</span>' +
+              '<span class="blog-card-arrow">읽어보기 →</span></a>';
+          }).join('');
+        }).catch(function () {});
+      })();
+    </script>
   </section>
 
   <ChannelCarousel slides={carouselSlides} />
