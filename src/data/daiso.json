@@ -9340,7 +9340,8 @@
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
     "sub_order": 1,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "mask-pack",
@@ -9365,7 +9366,8 @@
     "sub_en": "Mask Pack",
     "sub_free": "TRUE",
     "sub_order": 1,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "skincare",
@@ -9390,7 +9392,8 @@
     "sub_en": "Skincare",
     "sub_free": "",
     "sub_order": 3,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "skincare",
@@ -9415,7 +9418,8 @@
     "sub_en": "Skincare",
     "sub_free": "",
     "sub_order": 3,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "trouble-care",
@@ -9440,7 +9444,8 @@
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
     "sub_order": 2,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "trouble-care",
@@ -9465,7 +9470,8 @@
     "sub_en": "Trouble & Calming",
     "sub_free": "TRUE",
     "sub_order": 2,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "color-cosmetics",
@@ -9490,7 +9496,8 @@
     "sub_en": "Color Cosmetics",
     "sub_free": "",
     "sub_order": 5,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "color-cosmetics",
@@ -9515,7 +9522,8 @@
     "sub_en": "Color Cosmetics",
     "sub_free": "",
     "sub_order": 5,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "color-cosmetics",
@@ -9540,7 +9548,8 @@
     "sub_en": "Color Cosmetics",
     "sub_free": "",
     "sub_order": 5,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "color-cosmetics",
@@ -9565,7 +9574,8 @@
     "sub_en": "Color Cosmetics",
     "sub_free": "",
     "sub_order": 5,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "color-cosmetics",
@@ -9590,7 +9600,8 @@
     "sub_en": "Color Cosmetics",
     "sub_free": "",
     "sub_order": 5,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "gender-care",
@@ -9615,7 +9626,8 @@
     "sub_en": "Men & Women Care",
     "sub_free": "",
     "sub_order": 10,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "gender-care",
@@ -9640,7 +9652,8 @@
     "sub_en": "Men & Women Care",
     "sub_free": "",
     "sub_order": 10,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "bodycare",
@@ -9665,7 +9678,8 @@
     "sub_en": "Body Care",
     "sub_free": "",
     "sub_order": 7,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "soldout-items",
@@ -9690,7 +9704,8 @@
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
     "sub_order": 11,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   },
   {
     "sub": "soldout-items",
@@ -9715,6 +9730,7 @@
     "sub_en": "Viral & Seasonal",
     "sub_free": "",
     "sub_order": 11,
-    "added_at": "2026-10-07"
+    "added_at": "2026-10-07",
+    "new_until": "2026-10-19"
   }
 ]

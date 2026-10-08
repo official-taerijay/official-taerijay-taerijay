@@ -9,11 +9,26 @@ import { CHANNEL_MAP, mergeSheetCategories } from '../../../lib/channelCategorie
 import { fetchChannelRows, deriveCategoriesFromRows, toStr } from '../../../lib/sheetsCms.js';
 import { withItemSlugs, extractSido, sidoToEn } from '../../../lib/itemHelpers.js';
 
-// 신규 항목 표시: added_at(YYYY-MM-DD)이 14일 이내이면 NEW 배지
-const NEW_DAYS = 14;
+// 신규 항목 표시(NEW): 매월 10일·20일 업데이트 주기에 맞춰
+//   new_until(YYYY-MM-DD, 한국시간 기준 해당일 마지막까지)이 있으면 그날까지 표시, 다음날부터 사라짐.
+//   new_until이 없고 added_at만 있으면 added_at 기준 다음 10일/20일 업데이트 전날까지 표시.
+const kstToday = () => new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);
+const nextCycleEnd = (addedAt) => {
+  // addedAt 이후 첫 10일/20일의 전날
+  const d = new Date(addedAt + 'T00:00:00Z');
+  const y = d.getUTCFullYear(), m = d.getUTCMonth(), day = d.getUTCDate();
+  let next;
+  if (day < 10) next = Date.UTC(y, m, 10);
+  else if (day < 20) next = Date.UTC(y, m, 20);
+  else next = Date.UTC(y, m + 1, 10);
+  return new Date(next - 86400000).toISOString().slice(0, 10);
+};
 const isNewItem = (it) => {
-  const t = it && it.added_at ? Date.parse(it.added_at) : NaN;
-  return !isNaN(t) && Date.now() - t >= 0 && Date.now() - t <= NEW_DAYS * 86400000;
+  if (!it) return false;
+  const until = it.new_until || (it.added_at ? nextCycleEnd(it.added_at) : '');
+  if (!until) return false;
+  const today = kstToday();
+  return (!it.added_at || today >= it.added_at) && today <= until;
 };
 import '../../../styles/channel-page.css';
 
