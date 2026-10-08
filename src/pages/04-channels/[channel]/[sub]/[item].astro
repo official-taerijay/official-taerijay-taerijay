@@ -296,6 +296,12 @@ const showAddrCopy = isRealAddress;
                   <span class="item-meta-value">{item.price_kr}{priceKrToUsdHint(item.price_kr) && ` (${priceKrToUsdHint(item.price_kr)})`}</span>
                 </div>
               )}
+              {(item.budget_kr || item.price_kr) && (
+                <div class="item-price-notice">
+                  ※ 가격은 환율·물가 상승, 할인 품목 여부, 용량·구성에 따라 달라질 수 있으며 오를 때는 20% 안팎 오르기도 해요. 구매 전 매장·앱에서 꼭 확인하세요.
+                  <span class="item-price-notice-en" data-i18n="en">Prices may change with exchange rates, inflation, promotions, and size/option — increases of around 20% can happen. Please check in store or in the app before buying.</span>
+                </div>
+              )}
               {item.genre && (
                 <div class="item-meta-row"><span class="item-meta-label notranslate" translate="no">장르</span><span class="item-meta-value">{item.genre}{item.year ? ` · ${item.year}` : ''}</span></div>
               )}

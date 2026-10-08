@@ -155,6 +155,8 @@
    첫 줄(cat-card-name)에만 오른쪽 여백을 확보해 뱃지 자리를 비워둔다 */
 .cat-card-tier{position:absolute;top:10px;right:10px;z-index:1;font-size:.6rem;font-weight:800;letter-spacing:.02em;padding:4px 9px;border-radius:100px;backdrop-filter:blur(4px);white-space:nowrap}
 .item-new-badge{position:absolute;bottom:10px;right:10px;top:auto;left:auto;z-index:3;font-size:.54rem;font-weight:900;letter-spacing:.05em;line-height:1.2;padding:2px 7px;border-radius:100px;background:#FFE600;color:#1a1400;border:1px solid #FFF176;box-shadow:0 1px 5px rgba(0,0,0,.35);white-space:nowrap;pointer-events:none}
+.item-price-notice{margin:8px 0 4px;padding:9px 12px;border-radius:8px;background:rgba(255,230,0,.08);border:1px solid rgba(255,230,0,.25);font-size:.78rem;line-height:1.55;color:#e8e2c0}
+.item-price-notice-en{display:block;margin-top:3px;font-size:.72rem;color:#b9b48f}
 .inline-new-badge{display:inline-block;vertical-align:middle;margin-left:6px;font-size:.58rem;font-weight:900;letter-spacing:.06em;padding:2px 7px;border-radius:100px;background:#FFE600;color:#1a1400;line-height:1.3}
 .cat-card-tier.is-free{background:rgba(34,197,94,.92);color:#052e12;border:1px solid rgba(134,239,172,.9)}
 .cat-card-tier.is-paid{background:rgba(245,158,11,.92);color:#3d2400;border:1px solid rgba(253,204,110,.9)}
