@@ -245,12 +245,20 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
         function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
         fetch('/api/blog-feed').then(function (r) { return r.json(); }).then(function (d) {
           if (!d || !d.posts || !d.posts.length) return;
+          // Astro 스코프 CSS 속성(data-astro-cid-*)을 기존 카드에서 복사해야 스타일이 적용된다
+          var cid = '';
+          var first = grid.querySelector('.blog-card');
+          if (first) {
+            for (var i = 0; i < first.attributes.length; i++) {
+              if (first.attributes[i].name.indexOf('data-astro-cid') === 0) { cid = ' ' + first.attributes[i].name; break; }
+            }
+          }
           grid.innerHTML = d.posts.map(function (p) {
-            return '<a href="' + esc(p.url) + '" target="_blank" rel="noopener noreferrer" class="blog-card">' +
-              '<span class="blog-card-date notranslate" translate="no">' + esc(p.date) + '</span>' +
-              '<span class="blog-card-title-kr">' + esc(p.titleKr) + '</span>' +
-              '<span class="blog-card-title-en" data-i18n="en">' + esc(p.titleEn) + '</span>' +
-              '<span class="blog-card-arrow">읽어보기 →</span></a>';
+            return '<a href="' + esc(p.url) + '" target="_blank" rel="noopener noreferrer" class="blog-card"' + cid + '>' +
+              '<span class="blog-card-date notranslate" translate="no"' + cid + '>' + esc(p.date) + '</span>' +
+              '<span class="blog-card-title-kr"' + cid + '>' + esc(p.titleKr) + '</span>' +
+              '<span class="blog-card-title-en" data-i18n="en"' + cid + '>' + esc(p.titleEn) + '</span>' +
+              '<span class="blog-card-arrow"' + cid + '>읽어보기 →</span></a>';
           }).join('');
         }).catch(function () {});
       })();
