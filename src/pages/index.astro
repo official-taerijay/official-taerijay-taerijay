@@ -188,32 +188,20 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
     </p>
   </section>
 
-  <section class="reels-section">
-    <p class="reels-title-kr">최신 릴스</p>
-    <p class="reels-title-en" data-i18n="en">Latest Reels</p>
-
-    {reelsUrls.length > 0 ? (
-      <div class="reels-grid">
-        {reelsUrls.map((url) => (
-          <blockquote
-            class="instagram-media"
-            data-instgrm-permalink={url}
-            data-instgrm-version="14"
-            style="width:100%; margin:0;"
-          ></blockquote>
-        ))}
-      </div>
-    ) : (
-      <div class="reels-placeholder">
-        <span class="reels-placeholder-kr notranslate" translate="no">릴스 업로드 준비중</span>
-        <span class="reels-placeholder-en" data-i18n="en">Reels coming soon</span>
-      </div>
-    )}
+  <section class="intro-video-section">
+    <p class="intro-video-title-kr">TAERIJAY 소개</p>
+    <p class="intro-video-title-en" data-i18n="en">Meet TAERIJAY</p>
+    <div class="intro-video-wrap">
+      <video
+        class="intro-video"
+        controls
+        playsinline
+        preload="metadata"
+        poster="/videos/intro-poster.jpg"
+        src="/videos/intro.mp4"
+      ></video>
+    </div>
   </section>
-
-  {reelsUrls.length > 0 && (
-    <script is:inline async src="//www.instagram.com/embed.js"></script>
-  )}
 
   <section class="blog-section">
     <p class="blog-title-kr">최신 블로그</p>
@@ -481,6 +469,11 @@ const heroStyle = (color, slug, imgName) => `--c:${color}${imgName ? `;--hero-im
       .intro-lang-notice-en{font-size:.8rem}
     }
 
+    .intro-video-section{width:var(--container);margin:0 auto;padding:32px 0 32px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .intro-video-title-kr{font-family:var(--f-display);font-weight:800;font-size:clamp(1.05rem,2.8vw,1.3rem);color:var(--ivory);margin-bottom:2px}
+    .intro-video-title-en{font-size:.94rem;color:var(--dim);margin-bottom:20px}
+    .intro-video-wrap{max-width:720px;margin:0 auto;border-radius:12px;overflow:hidden;background:#000;border:1px solid rgba(255,255,255,.1);box-shadow:0 8px 28px rgba(0,0,0,.35)}
+    .intro-video{display:block;width:100%;height:auto;aspect-ratio:16/9}
     .reels-section{width:var(--container);margin:0 auto;padding:32px 0 8px;border-bottom:1px solid rgba(255,255,255,.08)}
     .reels-title-kr{font-family:var(--f-display);font-weight:800;font-size:clamp(1.05rem,2.8vw,1.3rem);color:var(--ivory);margin-bottom:2px}
     .reels-title-en{font-size:.94rem;color:var(--dim);margin-bottom:20px}
