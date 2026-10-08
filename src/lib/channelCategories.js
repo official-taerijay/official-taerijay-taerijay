@@ -73,6 +73,7 @@ export const CHANNEL_MAP = {
     'color-cosmetics': { kr: '색조',              en: 'Color Cosmetics' },
     haircare:          { kr: '헤어케어',           en: 'Hair Care' },
     bodycare:          { kr: '바디케어',           en: 'Body Care' },
+    'inner-beauty':    { kr: '이너뷰티·푸드뷰티',    en: 'Inner Beauty & Food' },
     perfume:           { kr: '향수',              en: 'Perfume' },
     'beauty-tools':    { kr: '뷰티 소품',          en: 'Beauty Tools' },
     'gender-care':     { kr: '남성용품·여성용품',    en: 'Men & Women Care' },
